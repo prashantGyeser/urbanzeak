@@ -5,6 +5,9 @@ describe('Controller: HomeCtrl', function () {
     // load the controller's module
     beforeEach(module('urbanfunhunterApp'));
 
+    // load the angular-ui bootstrap module
+    beforeEach(module('ui.bootstrap'));
+
     var HomeCtrl,
     scope;
 

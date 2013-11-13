@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('urbanfunhunterApp')
-    .controller('HomeCtrl', function ($scope) {
+    .controller('HomeCtrl', function ($scope, $modal) {
         $scope.awesomeThings = [
           'HTML5 Boilerplate',
           'AngularJS',
@@ -30,4 +30,59 @@ angular.module('urbanfunhunterApp')
         }];
 
 
+        $scope.items = ['item1', 'item2', 'item3'];
+
+        $scope.open = function () {
+
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: ModalInstanceCtrl,
+                resolve: {
+                    items: function () {
+                        return $scope.items;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+
     });
+
+var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
+    $scope.items = items;
+    $scope.selected = {
+        item: $scope.items[0]
+    };
+
+    $scope.ok = function () {
+        $modalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+};
+    /*
+    .controller('ModalInstanceCtrl', [ '$scope', '$modalInstance', 'items', function ($scope, $modalInstance, items) {
+        $scope.items = items;
+        $scope.selected = {
+            item: $scope.items[0]
+        };
+
+        $scope.ok = function () {
+            $modalInstance.close($scope.selected.item);
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }]);
+    */
+
