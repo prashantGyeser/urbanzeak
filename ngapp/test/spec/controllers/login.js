@@ -11,12 +11,13 @@ describe('Controller: LoginCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
+    $rootScope = $injector.get('$rootScope');
     LoginCtrl = $controller('LoginCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a user to the root scope', function () {
+    expect(rootScope.user.email).toBe("prashant@gyeser.com");
   });
 });

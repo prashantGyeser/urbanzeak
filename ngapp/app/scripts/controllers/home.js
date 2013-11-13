@@ -24,5 +24,10 @@ angular.module('urbanfunhunterApp')
 
         ];
 
+        $scope.host = [{
+            name: "Jane Doe",
+            picture: "http://someurl"
+        }];
+
 
     });
