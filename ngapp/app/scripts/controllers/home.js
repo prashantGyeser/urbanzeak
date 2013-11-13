@@ -10,16 +10,16 @@ angular.module('urbanfunhunterApp')
 
         $scope.experiences = [
             {
-                name: 'Some awesome name',
-                description: 'Some long description'
+                name: 'This is filler. The data needs to come from a service',
+                description: 'Some long description This is filler. The data needs to come from a service'
             },
             {
-                name: 'Some awesome name',
-                description: 'Some long description'
+                name: 'Some awesome name This is filler. The data needs to come from a service',
+                description: 'Some long description This is filler. The data needs to come from a service'
             },
             {
-                name: 'Some awesome name',
-                description: 'Some long description'
+                name: 'Some awesome name This is filler. The data needs to come from a service',
+                description: 'Some long description This is filler. The data needs to come from a service'
             }
 
         ];

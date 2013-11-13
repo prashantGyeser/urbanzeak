@@ -16,6 +16,14 @@ angular.module('urbanfunhunterApp', [
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/experiences', {
+        templateUrl: 'views/experiences.html',
+        controller: 'ExperiencesCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
