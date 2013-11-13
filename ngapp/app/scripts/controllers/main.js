@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('notesApp')
+angular.module('urbanfunhunterApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

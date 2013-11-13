@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('notesApp', [
+angular.module('urbanfunhunterApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -11,6 +11,10 @@ angular.module('notesApp', [
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       })
       .otherwise({
         redirectTo: '/'

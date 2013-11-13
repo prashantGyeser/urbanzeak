@@ -62,7 +62,7 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: 35729
+        livereload: 30000
       },
       livereload: {
         options: {
@@ -366,4 +366,8 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  // Adding a task to run all the unit tests automatically
+  grunt.loadNpmTasks('grunt-karma');
 };
+
