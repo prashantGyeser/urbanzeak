@@ -9,6 +9,12 @@ angular.module('urbanfunhunterApp', [
     'security'
 ])
 
+angular.module('urbanfunhunterApp').run(['security', function(security) {
+    // Get the current user when the application starts
+    // (in case they are still logged in from a previous session)
+    security.requestCurrentUser();
+}]);
+
 angular.module('urbanfunhunterApp').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
