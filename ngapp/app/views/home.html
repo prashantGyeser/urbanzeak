@@ -1,16 +1,90 @@
-<ul>
-    <li class="dropdown">
-        <a class="dropdown-toggle">
-            Click me to see some awesome things!
-        </a>
-        <ul class="dropdown-menu">
-            <li ng-repeat="thing in awesomeThings">
-                <a>{{thing}}</a>
-            </li>
-        </ul>
-    </li>
-</ul>
+<div class="topBar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="/"><img src="/assets/logo.png" alt=""/></a>
+            </div>
+            <div class="col-md-7">
+                <!--
+                <div class="input-group">
 
+                  <input type="text" class="form-control" placeholder="What are you looking for?">
+                  <span class="input-group-addon">Search</span>
+                </div>
+                -->
+            </div>
+            <div class="col-md-3">
+
+                <div class="login pull-right" ng-hide="isLoggedIn">
+                    <a href="#/users/login" class="button is-primary">Sign in / Sign up</a>
+                </div>
+
+                <div ng-show="isLoggedIn" class="pull-right">
+                    <a href="#/hosts/manage" class="button is-secondary">Manage Experiences</a>
+                    <!--<a class="button is-primary" ng-click="logout()">Logout</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top bar end -->
+
+<!-- Top navigation start -->
+<div class="topNav">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!--
+                <ul>
+                  <li><a href="#">Art</a></li>
+                  <li><a href="#">Outdoor</a></li>
+                  <li><a href="#">Indoor</a></li>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Another filter</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                </ul>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top navigation end -->
+
+
+
+<!-- Host sell section start -->
+<div class="sell">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                This is a test
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Host sell part -->
+
+<!-- Footer start -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            Footer
+        </div>
+    </div>
+</div>
+<!-- Footer end -->
+
+
+
+
+<div class="footer">
+    <p>♥ from the Yeoman team</p>
+</div>
+
+        <!--
 <div>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
@@ -33,3 +107,4 @@
     <button class="btn" ng-click="open()">Open me!</button>
     <div ng-show="selected">Selection from a modal: {{ selected }}</div>
 </div>
+  -->
