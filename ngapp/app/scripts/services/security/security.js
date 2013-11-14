@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('urbanfunhunterApp')
+angular.module('urbanfunhunterApp', ['ui.bootstrap'])
   .factory('security/security', function () {
     // Service logic
     // ...

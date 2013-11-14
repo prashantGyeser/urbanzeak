@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('urbanfunhunterApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute',
-  'ui.bootstrap'
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute',
+    'ui.bootstrap',
+    'security'
 ])
   .config(function ($routeProvider) {
     $routeProvider

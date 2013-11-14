@@ -26,6 +26,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-include src="'views/header.html'"></div>
     <div ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -76,6 +77,7 @@
         <script src="scripts/services/security/authorization.js"></script>
         <script src="scripts/services/security/retryQueue.js"></script>
         <script src="scripts/services/security/security.js"></script>
+        <script src="scripts/services/security/securityInitializer.js"></script>
         <!-- endbuild -->
 </body>
 </html>
