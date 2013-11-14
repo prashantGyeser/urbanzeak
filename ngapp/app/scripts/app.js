@@ -6,7 +6,8 @@ angular.module('urbanfunhunterApp', [
     'ngSanitize',
     'ngRoute',
     'ui.bootstrap',
-    'security'
+    //'security'
+        'security.interceptor'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -21,8 +22,10 @@ angular.module('urbanfunhunterApp', [
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
-      })
+      });
+        /*
       .otherwise({
         redirectTo: '/'
       });
+      */
   });

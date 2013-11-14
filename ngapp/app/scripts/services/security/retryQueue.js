@@ -1,7 +1,7 @@
-'use strict';
+angular.module('security.retryQueue', [])
 
-angular.module('urbanfunhunterApp')
-    .factory('security/retryQueue', function ($q, $log) {
+// This is a generic retry queue for security failures.  Each item is expected to expose two functions: retry and cancel.
+    .factory('securityRetryQueue', ['$q', '$log', function($q, $log) {
         var retryQueue = [];
         var service = {
             // The security service puts its own handler in here!
@@ -65,4 +65,4 @@ angular.module('urbanfunhunterApp')
             }
         };
         return service;
-    });
+    }]);

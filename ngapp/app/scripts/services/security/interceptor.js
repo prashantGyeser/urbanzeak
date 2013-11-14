@@ -1,8 +1,7 @@
-'use strict';
-
 angular.module('security.interceptor', ['security.retryQueue'])
-    // This factory listens for any authentication failures
-    .factory('securityInterceptor', function ($injector, queue) {
+
+// This http interceptor listens for authentication failures
+    .factory('securityInterceptor', ['$injector', 'securityRetryQueue', function($injector, queue) {
         return function(promise) {
             // Intercept failed requests
             return promise.then(null, function(originalResponse) {
@@ -16,9 +15,9 @@ angular.module('security.interceptor', ['security.retryQueue'])
                 return promise;
             });
         };
-    })
+    }])
 
-    // We have to add the interceptor to the queue as a string because the interceptor depends upon service instances that are not available in the config block.
+// We have to add the interceptor to the queue as a string because the interceptor depends upon service instances that are not available in the config block.
     .config(['$httpProvider', function($httpProvider) {
         $httpProvider.responseInterceptors.push('securityInterceptor');
     }]);
