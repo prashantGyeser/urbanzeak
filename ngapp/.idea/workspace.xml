@@ -23,97 +23,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
+      <file leaf-file-name="authorization.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/authorization.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="74" selection-start="4509" selection-end="4509" vertical-scroll-proportion="-49.666668" vertical-offset="253" max-vertical-offset="1953">
+            <state line="8" column="14" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/form.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="609">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/toolbar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="39" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/toolbar.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="353" selection-end="353" vertical-scroll-proportion="-4.9" vertical-offset="0" max-vertical-offset="693">
-              <folding>
-                <marker date="1384451821336" expanded="true" signature="57:140" placeholder="..." />
-                <marker date="1384451821336" expanded="true" signature="194:352" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interceptor.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/interceptor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="8" selection-start="1222" selection-end="1222" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-              <folding>
-                <marker date="1384447894824" expanded="true" signature="1098:1220" placeholder="[...]" />
-                <marker date="1384447894824" expanded="true" signature="1140:1219" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.31323528" vertical-offset="816" max-vertical-offset="1659">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="security.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="13" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-19.5" vertical-offset="39" max-vertical-offset="2478">
+            <state line="60" column="48" selection-start="2232" selection-end="2237" vertical-scroll-proportion="0.7188755" vertical-offset="723" max-vertical-offset="2478">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="903">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/header.html">
+      <file leaf-file-name="LoginFormController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="34" selection-start="717" selection-end="717" vertical-scroll-proportion="-11.2" vertical-offset="0" max-vertical-offset="588">
+            <state line="12" column="39" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+              <folding>
+                <marker date="1384460382112" expanded="true" signature="301:2007" placeholder="[...]" />
+                <marker date="1384460382112" expanded="true" signature="351:2006" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="retryQueue.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/retryQueue.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="33" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1554">
               <folding />
             </state>
           </provider>
@@ -129,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/controllers/home.js" />
         <option value="$PROJECT_DIR$/app/bower_components/sass-bootstrap/lib/_variables.scss" />
         <option value="$PROJECT_DIR$/test/spec/controllers/home.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/securityInitializer.js" />
@@ -139,20 +90,21 @@
         <option value="$PROJECT_DIR$/app/scripts/services/security/interceptor.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/index.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/security/security.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/login/toolbar.tpl.html" />
         <option value="$PROJECT_DIR$/app/views/header.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/login/toolbar.js" />
         <option value="$PROJECT_DIR$/app/views/home.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/security/security.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1744" />
-    <option name="y" value="146" />
-    <option name="width" value="1377" />
-    <option name="height" value="905" />
+    <option name="x" value="64" />
+    <option name="y" value="-4" />
+    <option name="width" value="1613" />
+    <option name="height" value="917" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -454,36 +406,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -546,14 +468,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1744" y="146" width="1377" height="905" extended-state="6" />
+    <frame x="64" y="-4" width="1613" height="917" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3578182" sideWeight="0.6704918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23029174" sideWeight="0.6708861" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -562,7 +485,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -592,19 +514,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/retryQueue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="16" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1554">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/interceptor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="8" selection-start="1222" selection-end="1222" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
           <folding>
-            <marker date="1384447894824" expanded="true" signature="1098:1220" placeholder="[...]" />
-            <marker date="1384447894824" expanded="true" signature="1140:1219" placeholder="{...}" />
+            <marker date="1384447894824" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1384447894824" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -616,47 +531,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/authorization.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="15" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-19.5" vertical-offset="39" max-vertical-offset="2478">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/form.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="609">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/toolbar.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="6" selection-start="353" selection-end="353" vertical-scroll-proportion="-4.9" vertical-offset="0" max-vertical-offset="693">
           <folding>
-            <marker date="1384451821336" expanded="true" signature="57:140" placeholder="..." />
-            <marker date="1384451821336" expanded="true" signature="194:352" placeholder="..." />
+            <marker date="1384451821336" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1384451821336" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -675,23 +555,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-6.4" vertical-offset="816" max-vertical-offset="1659">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/toolbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+        <state line="12" column="39" selection-start="589" selection-end="589" vertical-scroll-proportion="0.33157894" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/form.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="23" selection-start="480" selection-end="480" vertical-scroll-proportion="0.3739726" vertical-offset="0" max-vertical-offset="730">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="74" selection-start="4509" selection-end="4509" vertical-scroll-proportion="-49.666668" vertical-offset="253" max-vertical-offset="1953">
+        <state line="83" column="74" selection-start="4509" selection-end="4509" vertical-scroll-proportion="2.0781033" vertical-offset="253" max-vertical-offset="1953">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/authorization.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.31323528" vertical-offset="816" max-vertical-offset="1659">
+        <state line="8" column="14" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="39" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <folding>
+            <marker date="1384460382112" expanded="true" signature="301:2007" placeholder="[...]" />
+            <marker date="1384460382112" expanded="true" signature="351:2006" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/retryQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="33" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1554">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="48" selection-start="2232" selection-end="2237" vertical-scroll-proportion="0.7188755" vertical-offset="723" max-vertical-offset="2478">
           <folding />
         </state>
       </provider>

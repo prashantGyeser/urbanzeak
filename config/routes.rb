@@ -1,10 +1,12 @@
 LetsdineUpdated::Application.routes.draw do
 
-  devise_for :users
+  #devise_for :users, :skip => :sessions
+
   # Api namespace
   namespace :api, defaults: { format: 'json' } do 
     namespace :v1 do
       resources :experiences
+      devise_for :users
     end
   end
 
