@@ -6,10 +6,10 @@ angular.module('urbanfunhunterApp', [
     'ngSanitize',
     'ngRoute',
     'ui.bootstrap',
-    //'security'
-        'security.interceptor'
+    'security'
 ])
-  .config(function ($routeProvider) {
+
+angular.module('urbanfunhunterApp').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
