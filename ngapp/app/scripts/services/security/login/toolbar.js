@@ -10,6 +10,7 @@ angular.module('security.login.toolbar', [])
             scope: true,
             link: function($scope, $element, $attrs, $controller) {
                 $scope.isAuthenticated = security.isAuthenticated;
+                alert("Ok it is gere");
                 $scope.login = security.showLogin;
                 $scope.logout = security.logout;
                 $scope.$watch(function() {

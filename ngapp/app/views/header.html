@@ -15,15 +15,7 @@
                 -->
             </div>
             <div class="col-md-3">
-
-                <div class="login pull-right" ng-hide="isAuthenticated()">
-                    <a href="#/users/login" class="button is-primary">Sign in / Sign up</a>
-                </div>
-
-                <div ng-show="isAuthenticated()" class="pull-right">
-                    <a href="#/hosts/manage" class="button is-secondary">Manage Experiences</a>
-                    <!--<a class="button is-primary" ng-click="logout()">Logout</a>-->
-                </div>
+                <login-toolbar></login-toolbar>
             </div>
         </div>
     </div>

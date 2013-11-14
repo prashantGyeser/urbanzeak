@@ -1,3 +1,14 @@
+<div class="login pull-right" ng-hide="isAuthenticated()">
+    <a href="#/users/login" class="button is-primary">Sign in / Sign up</a>
+</div>
+
+<div ng-show="isAuthenticated()" class="pull-right">
+    <a href="#/hosts/manage" class="button is-secondary">Manage Experiences</a>
+    <!--<a class="button is-primary" ng-click="logout()">Logout</a>-->
+</div>
+
+
+<--
 <ul class="nav pull-right">
     <li class="divider-vertical"></li>
     <li ng-show="isAuthenticated()">
@@ -14,3 +25,4 @@
         </form>
     </li>
 </ul>
+-->
