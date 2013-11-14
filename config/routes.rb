@@ -1,5 +1,6 @@
 LetsdineUpdated::Application.routes.draw do
 
+  devise_for :users
   # Api namespace
   namespace :api, defaults: { format: 'json' } do 
     namespace :v1 do
