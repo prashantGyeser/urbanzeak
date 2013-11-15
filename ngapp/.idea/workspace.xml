@@ -32,10 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="security.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="28" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.7362785" vertical-offset="1088" max-vertical-offset="2478">
+            <state line="78" column="28" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="2478">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="8" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.44686648" vertical-offset="1058" max-vertical-offset="8505">
               <folding />
             </state>
           </provider>
@@ -90,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/bower_components/sass-bootstrap/lib/_variables.scss" />
         <option value="$PROJECT_DIR$/test/spec/controllers/home.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/securityInitializer.js" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
@@ -106,6 +114,7 @@
         <option value="$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/login/toolbar.tpl.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/security.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -505,11 +514,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="22" selection-start="2117" selection-end="2117" vertical-scroll-proportion="-2.2" vertical-offset="1790" max-vertical-offset="16044" />
@@ -601,7 +605,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="28" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.7362785" vertical-offset="1088" max-vertical-offset="2478">
+        <state line="78" column="28" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="2478">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="8" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.44686648" vertical-offset="1058" max-vertical-offset="8505">
           <folding />
         </state>
       </provider>
