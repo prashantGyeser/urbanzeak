@@ -14,12 +14,22 @@ angular.module('security.service', [
         }
 
         // Login form dialog stuff
-        var modal = null;
+        var loginDialog = null;
         function openLoginDialog() {
             if ( loginDialog ) {
                 throw new Error('Trying to open a dialog that is already open!');
             }
-            loginDialog = modal.open('security/login/form.tpl.html', 'LoginFormController').then(onLoginDialogClose);
+            //loginDialog = modal.open('security/login/form.tpl.html', 'LoginFormController').then(onLoginDialogClose);
+            loginDialog = $modal.open({
+                templateUrl: 'views/myModalContent.html',
+                controller: ModalInstanceCtrl,
+                resolve: {
+                    items: function () {
+                        return ["Test", "Another"];
+                    }
+                }
+
+            });
         }
         function closeLoginDialog(success) {
             if (loginDialog) {
@@ -110,3 +120,19 @@ angular.module('security.service', [
 
         return service;
     }]);
+
+var ModalInstanceCtrl = function ($scope, $modalInstance) {
+
+    $scope.items = items;
+    $scope.selected = {
+        item: $scope.items[0]
+    };
+
+    $scope.ok = function () {
+        $modalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+};

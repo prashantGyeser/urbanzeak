@@ -54,6 +54,7 @@ angular.module('urbanfunhunterApp')
 
     });
 
+
 var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
 
     $scope.items = items;
