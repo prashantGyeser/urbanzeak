@@ -1,6 +1,11 @@
 // Generated on 2013-11-13 using generator-angular 0.6.0-rc.1
 'use strict';
 
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -10,6 +15,8 @@
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
+
+  grunt.loadNpmTasks('grunt-connect-proxy');
 
   grunt.initConfig({
     yeoman: {
@@ -64,14 +71,30 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 30000
       },
-        
+      proxies: [
+          {
+              context: '/api',
+              host: 'localhost',
+              port: 3000,
+              https: false,
+              changeOrigin: false,
+              xforward: false
+          }
+      ],
       livereload: {
         options: {
           open: true,
           base: [
             '.tmp',
             '<%= yeoman.app %>'
-          ]
+          ],
+          middleware: function (connect) {
+            return [
+                proxySnippet,
+                mountFolder(connect, '.tmp'),
+                mountFolder(connect, 'app')
+            ];
+          }
         }
       },
       test: {
@@ -337,6 +360,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
+      'configureProxies',
       'autoprefixer',
       'connect:livereload',
       'watch'
