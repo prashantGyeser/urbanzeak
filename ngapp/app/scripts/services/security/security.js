@@ -21,7 +21,8 @@ angular.module('security.service', [
             }
             //loginDialog = $modal.open('security/login/form.tpl.html', 'LoginFormController').then(onLoginDialogClose);
             loginDialog = $modal.open({
-               templateUrl: 'views/loginForm.html'
+               templateUrl: 'views/loginForm.html',
+                controller: 'LoginFormController'
             });
         }
         function closeLoginDialog(success) {
