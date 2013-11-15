@@ -45,6 +45,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+a.button
+{
+  font-weight: bold;
+}
 .button:hover,
 .button:focus {
   background-color: #5a6370;
@@ -220,7 +224,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 input.button,
 button.button {
-  font-weight: normal;
+  //font-weight: normal;
   width: auto;
 }
 input.button.is-block,
@@ -622,11 +626,17 @@ NAV
 /************************************************************************/
 /* Login and register form styles */
 /************************************************************************/
-.auth-form
+.toolbar
 {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
+  //list-style: none;
+  li
+  {
+    display: inline;
+    .login
+    {
+      //margin-top: -5px;
+    }
+  }
 }
 /************************************************************************/
 /* Event Page styles */
