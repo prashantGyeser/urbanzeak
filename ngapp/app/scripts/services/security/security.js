@@ -58,7 +58,7 @@ angular.module('security.service', [
 
             // Attempt to authenticate a user by the given email and password
             login: function(email, password) {
-                var request = $http.post('api/v1/users/sign_in', {email: email, password: password});
+                var request = $http.post('users/sign_in', {email: email, password: password});
                 return request.then(function(response) {
                     service.currentUser = response.data.user;
                     if ( service.isAuthenticated() ) {
@@ -76,7 +76,7 @@ angular.module('security.service', [
 
             // Logout the current user and redirect
             logout: function(redirectTo) {
-                $http.post('api/v1/users/sign_out').then(function() {
+                $http.post('users/sign_out').then(function() {
                     service.currentUser = null;
                     redirect(redirectTo);
                 });
