@@ -3,22 +3,18 @@ class Api::V1::SessionsController < DeviseController #Api::V1::ApplicationContro
   prepend_before_filter :require_no_authentication, :only => [:create ]
   #include Devise::Controllers::InternalHelpers
   
-  before_filter :ensure_params_exist
+  #before_filter :ensure_params_exist
  
   respond_to :json
   
   def create
-  	logger.debug "The params are: #{params}"
-    build_resource
-    resource = User.find_for_database_authentication(:login=>params[:user_login][:login])
-    return invalid_login_attempt unless resource
- 
-    if resource.valid_password?(params[:user_login][:password])
-      sign_in("user", resource)
-      render :json=> {:success=>true, :auth_token=>resource.authentication_token, :login=>resource.login, :email=>resource.email}
-      return
-    end
-    invalid_login_attempt
+    respond_to do |format|  
+      format.html { super }  
+      format.json {  
+        warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")  
+        render :status => 200, :json => { :error => "Success" }  
+      }  
+    end  
   end
   
   def destroy
