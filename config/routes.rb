@@ -5,8 +5,15 @@ LetsdineUpdated::Application.routes.draw do
     namespace :v1 do
       resources :experiences
       devise_for :users
+      devise_scope :api_v1_user do
+        #post 'login' => 'sessions#create', :as => 'login'
+        #post 'logout' => 'sessions#destroy', :as => 'logout'
+        get 'current_user' => 'sessions#show_current_user', :as => 'show_current_user'
+      end
 
-      get 'current_user' => 'logged_user#user' #, :as => 'current_user'
+      #get 'current_user' => 'logged_user#user' #, :as => 'current_user'
+
+
 
     end
   end

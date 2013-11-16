@@ -4,9 +4,7 @@
         <a href="#" class="button is-secondary">{{currentUser.firstName}} {{currentUser.lastName}}</a>
     </li>
     <li ng-show="isAuthenticated()" class="logout">
-        <form class="navbar-form">
-            <button class="btn logout" ng-click="logout()">Log out</button>
-        </form>
+        <button class="button is-secondary logout" ng-click="logout()">Log out</button>
     </li>
     <li ng-hide="isAuthenticated()" class="login">
         <button class="button is-primary" ng-click="login()">Login / Register</button>

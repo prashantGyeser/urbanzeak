@@ -26,25 +26,7 @@
       <file leaf-file-name="security.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="14" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.52609307" vertical-offset="2210" max-vertical-offset="2919">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginForm.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/loginForm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="73" selection-start="1404" selection-end="1404" vertical-scroll-proportion="8.0" vertical-offset="933" max-vertical-offset="1722">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginFormController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="75" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1512">
+            <state line="97" column="19" selection-start="3818" selection-end="3818" vertical-scroll-proportion="0.17029972" vertical-offset="1996" max-vertical-offset="2919">
               <folding />
             </state>
           </provider>
@@ -126,10 +108,10 @@
         <option value="$PROJECT_DIR$/app/scripts/services/localizedMessages.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/views/toolbar.html" />
-        <option value="$PROJECT_DIR$/app/views/loginForm.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/security/security.js" />
+        <option value="$PROJECT_DIR$/app/views/toolbar.html" />
+        <option value="$PROJECT_DIR$/app/views/loginForm.html" />
       </list>
     </option>
   </component>
@@ -576,30 +558,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/toolbar.html">
+    <entry file="file://$PROJECT_DIR$/app/views/loginForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="69" selection-start="530" selection-end="530" vertical-scroll-proportion="0.32765958" vertical-offset="0" max-vertical-offset="705">
+        <state line="27" column="66" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.61276597" vertical-offset="177" max-vertical-offset="1701">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/loginForm.html">
+    <entry file="file://$PROJECT_DIR$/app/views/toolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="73" selection-start="1404" selection-end="1404" vertical-scroll-proportion="8.0" vertical-offset="933" max-vertical-offset="1722">
+        <state line="6" column="43" selection-start="316" selection-end="316" vertical-scroll-proportion="0.17872341" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="75" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1512">
+        <state line="42" column="75" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.55263156" vertical-offset="525" max-vertical-offset="1512">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="14" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.52609307" vertical-offset="2210" max-vertical-offset="2919">
+        <state line="97" column="19" selection-start="3818" selection-end="3818" vertical-scroll-proportion="0.17029972" vertical-offset="1996" max-vertical-offset="2919">
           <folding />
         </state>
       </provider>
