@@ -62,7 +62,7 @@ angular.module('security.service', [
 
             // Attempt to authenticate a user by the given email and password
             login: function(email, password) {
-                var request = $http.post('api/v1/users/sign_in', {email: email, password: password});
+                var request = $http.post('api/v1/users/sign_in', {user: {email: email, password: password}});
                 return request.then(function(response) {
                     service.currentUser = response.data.user;
                     if ( service.isAuthenticated() ) {

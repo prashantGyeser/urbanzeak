@@ -5,7 +5,7 @@ class Api::V1::LoggedUserController < Api::V1::ApplicationController
 		logger.debug "It is getting here"
 		logger.debug "The current user is: #{current_api_v1_user}"
 		test = "hello"
-		respond_with test
+		respond_with current_api_v1_user
 	end
 	
 
