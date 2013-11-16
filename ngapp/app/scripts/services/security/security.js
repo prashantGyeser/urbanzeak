@@ -74,7 +74,7 @@ angular.module('security.service', [
 
             // Send data to the backend to register a new user
             register: function(email, password, confirmPassword){
-                var request = $http.post('api/v1/users', {user: {email: email, password: password, password_confirm: confirmPassword}});
+                var request = $http.post('api/v1/users.json', {user: {email: email, password: password}});
                 return request.then(function(response){
                     service.currentUser = response.data.user;
                     if ( service.isAuthenticated() ){

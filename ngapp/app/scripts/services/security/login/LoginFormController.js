@@ -40,7 +40,7 @@ angular.module('security.login.form', ['services.localizedMessages'])
             $scope.authError = null;
 
             // Try to register
-            security.register($scope.user.newEmail, $scope.user.newPassword, $scope.user.confirmPassword).then(function(loggedIn) {
+            security.register($scope.user.newEmail, $scope.user.newPassword).then(function(loggedIn) {
                 if ( !loggedIn ) {
                     // If we get here then the login failed due to bad credentials
                     $scope.authError = localizedMessages.get('login.error.invalidCredentials');
