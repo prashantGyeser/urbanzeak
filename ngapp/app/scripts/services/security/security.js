@@ -76,7 +76,7 @@ angular.module('security.service', [
             register: function(email, password, confirmPassword){
                 var request = $http.post('api/v1/users.json', {user: {email: email, password: password}});
                 return request.then(function(response){
-                    service.currentUser = response.data.user;
+                    service.currentUser = response.data;
                     if ( service.isAuthenticated() ){
                         closeLoginDialog(true);
                     }
