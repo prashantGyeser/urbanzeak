@@ -35,6 +35,24 @@ angular.module('security.login.form', ['services.localizedMessages'])
             });
         };
 
+        $scope.register = function() {
+            // Clear any previous security errors
+            $scope.authError = null;
+
+            // Try to register
+            security.register($scope.user.newEmail, $scope.user.newPassword, $scope.user.confirmPassword).then(function(loggedIn) {
+                if ( !loggedIn ) {
+                    // If we get here then the login failed due to bad credentials
+                    $scope.authError = localizedMessages.get('login.error.invalidCredentials');
+                }
+            }, function(x) {
+                // If we get here then there was a problem with the login request to the server
+                $scope.authError = localizedMessages.get('login.error.serverError', { exception: x });
+            });
+
+
+        },
+
         $scope.clearForm = function() {
             $scope.user = {};
         };

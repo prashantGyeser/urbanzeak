@@ -1,4 +1,5 @@
-<form name="form" novalidate class="login-form">
+<!-- Login module -->
+<form name="form" novalidate class="login-form" ng-hide="registerFormShow">
     <div class="modal-header">
         <h4>Sign in</h4>
     </div>
@@ -23,7 +24,46 @@
 
     </div>
     <div class="modal-footer">
+        <a href="#" class="pull-left" ng-click="registerFormShow=true">Register</a>
         <button class="button is-primary login" ng-click="login()" ng-disabled='form.$invalid'>Sign in</button>
         <button class="button cancel" ng-click="cancelLogin()">Cancel</button>
     </div>
 </form>
+
+<!-- Registration module -->
+<form name="form" novalidate class="login-form" ng-show="registerFormShow">
+    <div class="modal-header">
+        <h4>Register</h4>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-warning" ng-show="authReason">
+            {{authReason}}
+        </div>
+        <div class="alert alert-error" ng-show="authError">
+            {{authError}}
+        </div>
+        <div class="alert alert-info">Please enter the credentials you want to login with</div>
+
+        <div class="form-group">
+            <label for="newEmail">Email address</label>
+            <input type="email" class="form-control" id="newEmail" placeholder="Enter email" ng-model="user.newEmail" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="newPassword">Password</label>
+            <input type="password" class="form-control" id="newPassword" placeholder="Password" ng-model="user.newPassword" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Password" ng-model="user.confirmPassword" required>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="pull-left" ng-click="registerFormShow=false">Back to login</a>
+        <button class="button is-primary login" ng-click="register()" ng-disabled='form.$invalid'>Register</button>
+        <button class="button cancel" ng-click="cancelLogin()">Cancel</button>
+    </div>
+</form>
+
+
