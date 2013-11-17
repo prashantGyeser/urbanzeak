@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="newEvent">
+                <form role="form" ng-submit="newEvent()">
+                    <div class="form-group">
+                        <label for="eventName">Experience name</label>
+                        <input type="text" class="form-control" id="eventName" ng-model="eventName" placeholder="Enter the name of the experience">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDescription">Experience description</label>
+                        <div id="eventDescription" text-angular text-angular-name="eventdescriptionTextArea">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventPrice">Experience price per seat</label>
+                        <input type="number" class="form-control" id="eventPrice" placeholder="How much does it cost for one person?" ng-model="eventPrice">
+                    </div>
+
+
+                    <label>Experience date</label>
+                    <div>
+                        <pre>Selected date is: <em>{{eventDate | date:'fullDate' }}</em></pre>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+
+                                <input type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="eventDate" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" class="form-control"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="open()"><i class="icon-calendar"></i></button>
+                        </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+
+
+
+
+                    <label>Experience time</label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <div ng-model="eventTime" ng-change="changed()" class="well well-small" style="display:inline-block;">
+                                    <timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                                </div>
+
+                                <pre>Time is: {{eventTime | date:'shortTime' }}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="eventVenue">Experience meeting point</label>
+                        <input type="text" class="form-control" id="eventVenue" ng-model="eventVenue" placeholder="Enter the venue of the experience">
+                        <!--
+                        Todo: Add a google map that dynamically shows the venue shown in the text box above. When a user drags the marker the langitude and lat should be stored for that new point.
+                        <div class="google-map"
+                             center="position.coords"
+                             zoom="zoomProperty"
+                             markers="markersProperty"
+                             latitude="clickedLatitudeProperty"
+                             longitude="clickedLongitudeProperty"
+                             mark-click="true"
+                             draggable="true"
+                             fit="false"
+                             events="eventsProperty"
+                             style="height: 150px; width: 100%;">
+                        </div>
+                        -->
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Upload pictures</label>
+                        <br>
+                        <a class="button is-secondary" ng-click="uploadFiles()">Upload pictures</a>
+                    </div>
+
+                    <button type="submit" class="button is-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

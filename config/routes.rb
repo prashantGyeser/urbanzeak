@@ -8,13 +8,14 @@ LetsdineUpdated::Application.routes.draw do
   namespace :api, defaults: { format: 'json' } do 
     namespace :v1 do
       resources :experiences
+      get '/current_user' => 'logged_user#user'
 #      devise_for :user, :controllers => { :session => 'api/v1/sessions' }
       devise_for :user#, :skip => :sessions
-  devise_scope :user do
-    #post "/users/sign_in" => "devise/sessions#create"
-    match "/api/v1/users/sign_in" => "devise/sessions#create", via: [:post]
-    delete "/users/sign_out" => "devise/sessions#destroy"
-  end
+      devise_scope :user do
+        #post "/users/sign_in" => "devise/sessions#create"
+        match "/api/v1/users/sign_in" => "devise/sessions#create", via: [:post]
+        delete "/users/sign_out" => "devise/sessions#destroy"
+      end
 
       
       #devise_scope :user do

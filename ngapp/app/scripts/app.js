@@ -8,6 +8,7 @@ angular.module('urbanfunhunterApp', [
     'services.i18nNotifications',
     'services.httpRequestTracker',
     'ui.bootstrap',
+    'textAngular',
     //'localStorageService',
     'security'
 ]);
@@ -98,7 +99,16 @@ angular.module('urbanfunhunterApp').config(function ($routeProvider) {
         templateUrl: 'views/host/manage.html',
         controller: 'HostManageCtrl'
       })
+      .when('/manage', {
+        templateUrl: 'views/myexperiences/manage.html',
+        controller: 'MyexperiencesManageCtrl'
+      })
+      .when('/new', {
+        templateUrl: 'views/experiences/new.html',
+        controller: 'ExperiencesNewCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
   });
