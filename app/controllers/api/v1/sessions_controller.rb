@@ -3,30 +3,38 @@ class Api::V1::SessionsController < DeviseController #Api::V1::ApplicationContro
   prepend_before_filter :require_no_authentication, :only => [:create, :destroy, :failure]
   prepend_before_filter :allow_params_authentication!, :only => :create
   prepend_before_filter :only => [ :create, :destroy ] { request.env["devise.skip_timeout"] = true }
-
-  # GET /resource/sign_in
-  def new
-    self.resource = resource_class.new(sign_in_params)
-    clean_up_passwords(resource)
-    respond_with(resource, serialize_options(resource))
-  end
-
+  
   # POST /resource/sign_in
   def create
-    current_user = User.where(:email => params[:user][:email])
-    if current_user
-      resource = warden.authenticate(:scope => resource_name, :recall => "#{controller_path}#failure")
-      render :status => 200,
-             :json => { :success => true,
-                        :info => "Logged in",
-                        :user => current_user
-             }
-    else
+    # Code taken from http://stackoverflow.com/questions/16427615/rails-devise-with-regular-authorization-and-api
+    resource = User.find_for_database_authentication(:email => params[:user][:email])
+    logger.debug "It gets past the resource call to db auth: #{resource.inspect}"
+    
+    if resource.nil?
       render :status => 401,
-             :json => { :success => false,
-                        :info => "Failed to log in. Either your email or password is wrong",
-             }
+           :json => { :success => false,
+                      :info => "Login Credentials Failed"
+           }
+    else
+      if resource.valid_password?(params[:user][:password])
+        current_user = sign_in(:user, resource)
+        logger.debug "The content in the current user is: #{current_user.inspect}"
+        dataToSendBack = Hash.new
+        dataToSendBack[:email] = current_user.email
+        logger.debug "tje cpomtent in the dataToSendBack var = #{dataToSendBack.inspect}"
+        render :status => 200,
+           :json => { :success => true,
+                      :info => "Logged in",
+                      :user => dataToSendBack
+           }
+      else
+        render :status => 401,
+           :json => { :success => false,
+                      :info => "Login Credentials Failed"
+           }
+      end
     end
+
   end
 
   # DELETE /resource/sign_out
