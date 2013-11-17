@@ -1,7 +1,7 @@
 <ul class="toolbar pull-right">
     <li class="divider-vertical"></li>
     <li ng-show="isAuthenticated()">
-        <a href="#" class="button is-secondary">Manage Experiences</a>
+        <a href="/host/{{currentUserId}}/manage" class="button is-secondary">Manage Experiences</a>
     </li>
     <!--
     <li ng-show="isAuthenticated()" class="logout">

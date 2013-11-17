@@ -2,10 +2,11 @@
 angular.module('security.service', [
         'security.retryQueue',    // Keeps track of failed requests that need to be retried once the user logs in
         'security.login',         // Contains the login form template and controller
-        'ui.bootstrap.modal'     // Used to display the login form as a modal dialog.
+        'ui.bootstrap.modal',     // Used to display the login form as a modal dialog.
+        'ngCookies'
     ])
 
-    .factory('security', ['$http', '$q', '$location', 'securityRetryQueue', '$modal', function($http, $q, $location, queue, $modal) {
+    .factory('security', ['$http', '$q', '$location', 'securityRetryQueue', '$modal', '$cookieStore', '$cookies', function($http, $q, $location, queue, $modal, localStorageService, $cookieStore, $cookies) {
 
         // Redirect to the given url (defaults to '/')
         function redirect(url) {
@@ -64,6 +65,9 @@ angular.module('security.service', [
             login: function(email, password) {
                 var request = $http.post('api/v1/user/sign_in.json', {user: {email: email, password: password}});
                 return request.then(function(response) {
+                    //$cookie.hello = "Work!";
+                    //$cookieStore.put('current.user', "hello123");
+                    $cookieStore.current_user_id = response.data.user[0].id;
                     service.currentUser = response.data.user;
                     if ( service.isAuthenticated() ) {
                         closeLoginDialog(true);
@@ -117,6 +121,10 @@ angular.module('security.service', [
             // Is the current user authenticated?
             isAuthenticated: function(){
                 return !!service.currentUser;
+            },
+
+            currentUserId: function(){
+                return $cookieStore.current_user_id;
             },
 
             // Is the current user an adminstrator?
