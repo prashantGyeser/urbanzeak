@@ -942,7 +942,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.position'])
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/datepicker.html',
+    templateUrl: 'views/partials/ui-bootstrap-tpls/datepicker/datepicker.html',
     scope: {
       dateDisabled: '&'
     },
@@ -1280,7 +1280,7 @@ function ($compile, $parse, $document, $position, dateFilter, datepickerPopupCon
     restrict:'EA',
     replace: true,
     transclude: true,
-    templateUrl: 'template/datepicker/popup.html',
+    templateUrl: 'views/partials/ui-bootstrap-tpls/datepicker/popup.html',
     link:function (scope, element, attrs) {
       element.bind('click', function(event) {
         event.preventDefault();
@@ -2789,7 +2789,7 @@ angular.module('ui.bootstrap.timepicker', [])
     require:'?^ngModel',
     replace: true,
     scope: {},
-    templateUrl: 'template/timepicker/timepicker.html',
+    templateUrl: 'views/partials/ui-bootstrap-tpls/timepicker/timepicker.html',
     link: function(scope, element, attrs, ngModel) {
       if ( !ngModel ) {
         return; // do nothing if no ng-model
