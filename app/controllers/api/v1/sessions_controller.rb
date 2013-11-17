@@ -17,10 +17,13 @@ class Api::V1::SessionsController < DeviseController #Api::V1::ApplicationContro
            }
     else
       if resource.valid_password?(params[:user][:password])
-        current_user = sign_in(:user, resource)
-        logger.debug "The content in the current user is: #{current_user.inspect}"
+        if sign_in(:user, resource) == true
+          logged_in_user = resource
+        else
+          logged_in_user = sign_in(:user, resource)  
+        end
         dataToSendBack = Hash.new
-        dataToSendBack[:email] = current_user.email
+        dataToSendBack[:email] = logged_in_user.email
         logger.debug "tje cpomtent in the dataToSendBack var = #{dataToSendBack.inspect}"
         render :status => 200,
            :json => { :success => true,
