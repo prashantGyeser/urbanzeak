@@ -53,3 +53,6 @@ gem 'devise'
 # Gem to store the session into the db rather than in a cookie. 
 # This is to prevent the cookieoverflow error that pops up when signing in
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
+# Annotate to annotate models with a list of all the fields
+gem 'annotate'

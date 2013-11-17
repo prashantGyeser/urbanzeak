@@ -45,6 +45,16 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
+    <!-- File picker -- start -->
+    <script type="text/javascript">
+        (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
+    </script>
+
+    <script>
+        filepicker.setKey('ASJiChL2QqvYT9LxDuUqgz');
+    </script>
+    <!-- File picker -- end -->
+
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
         <script src="bower_components/sass-bootstrap/js/alert.js"></script>
@@ -97,8 +107,8 @@
         <script src="scripts/controllers/myexperiences/manage.js"></script>
         <script src="scripts/services/myexperiences/manage.js"></script>
         <script src="scripts/directives/textAngular.js"></script>
-        <script src="scripts/services/experiences/new.js"></script>
         <script src="scripts/controllers/experiences/new.js"></script>
-        <!-- endbuild -->
+        <script src="scripts/services/experiences/newExperience.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

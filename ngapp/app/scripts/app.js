@@ -9,7 +9,7 @@ angular.module('urbanfunhunterApp', [
     'services.httpRequestTracker',
     'ui.bootstrap',
     'textAngular',
-    //'localStorageService',
+    //'newExperienceFactory',
     'security'
 ]);
 

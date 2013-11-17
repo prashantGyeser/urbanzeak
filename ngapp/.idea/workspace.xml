@@ -32,10 +32,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2520">
+            <state line="11" column="6" selection-start="235" selection-end="235" vertical-scroll-proportion="0.30394736" vertical-offset="0" max-vertical-offset="2625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="111" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3066">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="securityInitializer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/security/securityInitializer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
               <folding />
             </state>
           </provider>
@@ -44,24 +62,8 @@
       <file leaf-file-name="new.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
-              <folding>
-                <marker date="1384717124511" expanded="true" signature="105:3069" placeholder="{...}" />
-                <marker date="1384717124511" expanded="true" signature="140:3064" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textAngular.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/directives/textAngular.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="27" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0" vertical-offset="2457" max-vertical-offset="8841">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1384717002127" expanded="true" signature="12381:12398" placeholder="..." />
-                <marker date="1384717002127" expanded="true" signature="12399:13319" placeholder="..." />
-              </folding>
+            <state line="101" column="0" selection-start="4746" selection-end="4746" vertical-scroll-proportion="0.0" vertical-offset="1508" max-vertical-offset="2268">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,50 +71,17 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="147" selection-start="858" selection-end="858" vertical-scroll-proportion="-11.9" vertical-offset="0" max-vertical-offset="2352">
+            <state line="110" column="66" selection-start="6411" selection-end="6411" vertical-scroll-proportion="-11.733334" vertical-offset="1958" max-vertical-offset="2688">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-bootstrap-0.7.0-SNAPSHOT.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/lib/angular-ui-snapshot/ui-bootstrap-0.7.0-SNAPSHOT.js">
+      <file leaf-file-name="newExperience.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2492" column="22" selection-start="82294" selection-end="82305" vertical-scroll-proportion="31.307692" vertical-offset="53146" max-vertical-offset="71883">
+            <state line="3" column="14" selection-start="65" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popup.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/popup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="5" selection-start="731" selection-end="731" vertical-scroll-proportion="-7.7" vertical-offset="0" max-vertical-offset="399">
-              <folding>
-                <element signature="n#style#0;n#li#2;n#ul#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timepicker.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/timepicker/timepicker.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="7" selection-start="1780" selection-end="1780" vertical-scroll-proportion="-16.766666" vertical-offset="274" max-vertical-offset="1050">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datepicker.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/datepicker.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819">
-              <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -138,22 +107,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/services/security/security.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/myexperiences/manage.js" />
         <option value="$PROJECT_DIR$/app/views/toolbar.html" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/views/myexperiences/manage.html" />
-        <option value="$PROJECT_DIR$/app/scripts/services/experiences/new.js" />
         <option value="$PROJECT_DIR$/app/views/new.html" />
         <option value="$PROJECT_DIR$/app/views/experiences/new.html" />
         <option value="$PROJECT_DIR$/app/scripts/directives/textAngular.js" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/experiences/new.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/datepicker.html.html" />
         <option value="$PROJECT_DIR$/app/scripts/lib/angular-ui-snapshot/ui-bootstrap-0.7.0-SNAPSHOT.js" />
         <option value="$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/popup.html" />
         <option value="$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/timepicker/timepicker.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/experiences/new.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/experiences/new.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
       </list>
     </option>
   </component>
@@ -316,44 +285,6 @@
               <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui-bootstrap-tpls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timepicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ngapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui-bootstrap-tpls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datepicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -391,11 +322,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angular-ui-snapshot" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiences" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,16 +497,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26939788" sideWeight="0.6708861" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -574,43 +527,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/host/manage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/myexperiences/manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="204" selection-end="204" vertical-scroll-proportion="0.14383562" vertical-offset="0" max-vertical-offset="730">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="61" selection-start="3522" selection-end="3522" vertical-scroll-proportion="-46.9" vertical-offset="0" max-vertical-offset="2205">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/toolbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="24" selection-start="415" selection-end="415" vertical-scroll-proportion="0.25714287" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="710" column="26" selection-start="14824" selection-end="14824" vertical-scroll-proportion="0.3090909" vertical-offset="14927" max-vertical-offset="16296">
@@ -625,70 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/textAngular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="27" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0" vertical-offset="2457" max-vertical-offset="9282">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1384717002127" expanded="true" signature="12381:12398" placeholder="..." />
-            <marker date="1384717002127" expanded="true" signature="12399:13319" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.44210526" vertical-offset="0" max-vertical-offset="760">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
-          <folding>
-            <marker date="1384717124511" expanded="true" signature="105:3069" placeholder="{...}" />
-            <marker date="1384717124511" expanded="true" signature="140:3064" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="147" selection-start="858" selection-end="858" vertical-scroll-proportion="-11.9" vertical-offset="0" max-vertical-offset="2352">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/lib/angular-ui-snapshot/ui-bootstrap-0.7.0-SNAPSHOT.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2492" column="22" selection-start="82294" selection-end="82305" vertical-scroll-proportion="31.307692" vertical-offset="53146" max-vertical-offset="71883">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="731" selection-end="731" vertical-scroll-proportion="-7.7" vertical-offset="0" max-vertical-offset="399">
-          <folding>
-            <element signature="n#style#0;n#li#2;n#ul#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/timepicker/timepicker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="7" selection-start="1780" selection-end="1780" vertical-scroll-proportion="-16.766666" vertical-offset="274" max-vertical-offset="1050">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,6 +554,93 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/timepicker/timepicker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="7" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.9219858" vertical-offset="274" max-vertical-offset="1050">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="731" selection-end="731" vertical-scroll-proportion="0.3739726" vertical-offset="0" max-vertical-offset="730">
+          <folding>
+            <element signature="n#style#0;n#li#2;n#ul#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/textAngular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="27" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.2811245" vertical-offset="2457" max-vertical-offset="8841">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1384717002127" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1384717002127" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1596">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/securityInitializer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="111" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="61" selection-start="3522" selection-end="3522" vertical-scroll-proportion="-46.9" vertical-offset="0" max-vertical-offset="2205">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="66" selection-start="6411" selection-end="6411" vertical-scroll-proportion="-11.733334" vertical-offset="1958" max-vertical-offset="2688">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="4746" selection-end="4746" vertical-scroll-proportion="0.0" vertical-offset="1508" max-vertical-offset="2268">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="14" selection-start="65" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="235" selection-end="235" vertical-scroll-proportion="0.30394736" vertical-offset="0" max-vertical-offset="2625">
+          <folding />
         </state>
       </provider>
     </entry>

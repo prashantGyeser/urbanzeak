@@ -18,7 +18,7 @@ class Api::V1::SessionsController < DeviseController #Api::V1::ApplicationContro
     else
       if resource.valid_password?(params[:user][:password])
         logger.debug "The value before the if statement is: #{((sign_in(:user, resource)) == true)}"
-        if ((sign_in(:user, resource)) == true)
+        if ((sign_in(:user, resource))  == true)
           logger.debug "It is getting here with the value: #{sign_in(:user, resource)}"
           logged_in_user = resource
         else
