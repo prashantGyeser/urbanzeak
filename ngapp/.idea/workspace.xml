@@ -41,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
@@ -67,6 +67,15 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/host/manage.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="30" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="147" selection-start="858" selection-end="858" vertical-scroll-proportion="0.5178082" vertical-offset="0" max-vertical-offset="2352">
               <folding />
             </state>
           </provider>
@@ -112,12 +121,12 @@
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/views/myexperiences/manage.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/experiences/new.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/new.html" />
         <option value="$PROJECT_DIR$/app/views/experiences/new.html" />
         <option value="$PROJECT_DIR$/app/scripts/directives/textAngular.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/experiences/new.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -693,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="8" selection-start="4922" selection-end="5462" vertical-scroll-proportion="0.5313808" vertical-offset="1551" max-vertical-offset="2268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/directives/textAngular.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="27" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0" vertical-offset="2457" max-vertical-offset="9282">
@@ -728,6 +730,13 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="147" selection-start="858" selection-end="858" vertical-scroll-proportion="0.5178082" vertical-offset="0" max-vertical-offset="2352">
           <folding />
         </state>
       </provider>
