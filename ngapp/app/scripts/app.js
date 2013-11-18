@@ -100,11 +100,11 @@ angular.module('urbanfunhunterApp').config(function ($routeProvider) {
         templateUrl: 'views/host/manage.html',
         controller: 'HostManageCtrl'
       })
-      .when('/manage', {
+      .when('/myexperiences/manage', {
         templateUrl: 'views/myexperiences/manage.html',
         controller: 'MyexperiencesManageCtrl'
       })
-      .when('/new', {
+      .when('/experiences/new', {
         templateUrl: 'views/experiences/new.html',
         controller: 'ExperiencesNewCtrl'
       })
