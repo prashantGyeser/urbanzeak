@@ -84,7 +84,8 @@ angular.module('urbanfunhunterApp')
                 'price': $scope.eventPrice,
                 'experience_date': $scope.eventDate,
                 'experience_time': $scope.eventTime,
-                'experience_images': $scope.event_images
+                'venue': $scope.eventVenue,
+                'images': $scope.event_images
             }};
             console.log(data);
             // Todo: Show an animation while the form is being sent and the event is being created. Otherwise it looks like nothing is happening when the button is clicked.

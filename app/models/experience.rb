@@ -18,6 +18,6 @@
 #
 
 class Experience < ActiveRecord::Base
-	has_many :experience_images, :dependent => :destroy, :autosave => true
-	accepts_nested_attributes_for :experience_images
+	has_many :images, :dependent => :destroy, :autosave => true
+	accepts_nested_attributes_for :images
 end
