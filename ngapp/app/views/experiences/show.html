@@ -1,1 +1,85 @@
-<p>This is the experiences/show view.</p>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+        <div class="eventPage">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mainContent">
+                        <!-- Todo: Change this to the actual image url. This is just a filler image -->
+                        <!--
+                        <img src="https://s3.amazonaws.com/letsdine/uploads/event/event_image/111/large_scaled_tech_talks.jpg" alt=""/>
+                        -->
+                        <!--<h1>{{event.event_image.event_image.url}}</h1>-->
+                        <h4>{{ experience.name }}</h4>
+
+                        <div ng-bind-html="experience.description | renderhtml"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="eventSubDetailsContainer">
+                        <div class="eventSubDetails">
+                            <h4>{{ experience.name }}</h4>
+                            <p class="eventPrice">Rs {{event.price}}</p>
+                            <p class="eventDate">Event Date: <strong>22 January 2013</strong></p>
+                            <div class="form-group">
+                                <label>Seats</label>
+                                <select name="" id="" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <a class="button is-primary ticketPurchase" href="#">Purchase Tickets Now</a>
+
+                    </div>
+
+                    <div class="eventGeneralDetailsContainer">
+                        <div class="social">
+                            <h4>Share this experience with your friends</h4>
+                            <!-- Social plugin -->
+                            <!-- AddThis Button BEGIN -->
+                            <div addthis-toolbox class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                                <a class="addthis_button_preferred_1"></a>
+                                <a class="addthis_button_preferred_2"></a>
+                                <a class="addthis_button_preferred_3"></a>
+                                <a class="addthis_button_preferred_4"></a>
+                                <a class="addthis_button_compact"></a>
+                                <a class="addthis_counter addthis_bubble_style"></a>
+                            </div>
+
+                            <!-- AddThis Button END -->
+                        </div>
+                    </div>
+
+
+                    <div class="eventGeneralDetailsContainer">
+                        <div class="eventSubDetails">
+                            <div class="google-map"
+                                 center="position.coords"
+                                 zoom="zoomProperty"
+                                 markers="markersProperty"
+                                 latitude="clickedLatitudeProperty"
+                                 longitude="clickedLongitudeProperty"
+                                 mark-click="true"
+                                 draggable="true"
+                                 fit="false"
+                                 events="eventsProperty"
+                                 style="height: 300px; width: 100%">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

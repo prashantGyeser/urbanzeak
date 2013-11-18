@@ -6,6 +6,7 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 	end
 
 	def show
+		logger.debug "It is getting here"
 		respond_with Experience.find(params[:id])
 	end
 
@@ -33,7 +34,7 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 			end
 			render json: @experience	
 		else
-			
+
 		end
 		
 		

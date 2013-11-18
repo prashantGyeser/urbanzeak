@@ -11,7 +11,6 @@ angular.module('urbanfunhunterApp')
             save: function(experience){
                 var request = $http.post('/api/v1/experiences.json',experience);
                 return request.then(function(response){
-                    console.log(response);
                     service.newExperience = response.data;
                     var newExperiencePath = "/experiences/" + response.data.id;
                     $location.path(newExperiencePath);

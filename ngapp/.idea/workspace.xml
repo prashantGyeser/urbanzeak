@@ -26,25 +26,16 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="710" column="26" selection-start="14824" selection-end="14824" vertical-scroll-proportion="0.56666666" vertical-offset="14927" max-vertical-offset="16254">
+            <state line="710" column="26" selection-start="14824" selection-end="14824" vertical-scroll-proportion="0.56666666" vertical-offset="14927" max-vertical-offset="16317">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <file leaf-file-name="show.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/show.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="37" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.3302139" vertical-offset="614" max-vertical-offset="2856">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="24" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9009">
+            <state line="5" column="32" selection-start="256" selection-end="256" vertical-scroll-proportion="0.14037433" vertical-offset="0" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -53,34 +44,27 @@
       <file leaf-file-name="security.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="86" selection-start="4430" selection-end="4430" vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="2961">
+            <state line="108" column="84" selection-start="4428" selection-end="4428" vertical-scroll-proportion="-0.34615386" vertical-offset="2259" max-vertical-offset="3171">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
+      <file leaf-file-name="show.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/experiences/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="41" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.0" vertical-offset="1751" max-vertical-offset="2247">
-              <folding />
+            <state line="15" column="32" selection-start="649" selection-end="649" vertical-scroll-proportion="-8.4" vertical-offset="63" max-vertical-offset="2016">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newExperience.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js">
+      <file leaf-file-name="experience.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/experience.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="14" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="100" selection-start="2904" selection-end="2914" vertical-scroll-proportion="-6.0" vertical-offset="1059" max-vertical-offset="2016">
+            <state line="9" column="44" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
@@ -96,10 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/toolbar.html" />
-        <option value="$PROJECT_DIR$/app/styles/main.scss" />
-        <option value="$PROJECT_DIR$/app/views/myexperiences/manage.html" />
-        <option value="$PROJECT_DIR$/app/views/new.html" />
         <option value="$PROJECT_DIR$/app/views/experiences/new.html" />
         <option value="$PROJECT_DIR$/app/scripts/directives/textAngular.js" />
         <option value="$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/datepicker.html.html" />
@@ -109,9 +89,13 @@
         <option value="$PROJECT_DIR$/app/scripts/services/experiences/new.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/experiences/new.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/experiences/experience.js" />
+        <option value="$PROJECT_DIR$/app/scripts/filters/renderHTMLFromVariable.js" />
+        <option value="$PROJECT_DIR$/app/views/experiences/show.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/experiences/show.js" />
       </list>
     </option>
   </component>
@@ -333,6 +317,102 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiences" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -463,7 +543,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31563637" sideWeight="0.6708861" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2698182" sideWeight="0.6708861" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -490,33 +570,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="710" column="26" selection-start="14824" selection-end="14824" vertical-scroll-proportion="0.56666666" vertical-offset="14927" max-vertical-offset="16254">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/myexperiences/manage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/lib/angular-ui-snapshot/ui-bootstrap-0.7.0-SNAPSHOT.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2492" column="22" selection-start="82294" selection-end="82305" vertical-scroll-proportion="31.307692" vertical-offset="53146" max-vertical-offset="71883" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/datepicker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/timepicker/timepicker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="7" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.9219858" vertical-offset="274" max-vertical-offset="1050" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/ui-bootstrap-tpls/datepicker/popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="5" selection-start="731" selection-end="731" vertical-scroll-proportion="0.3739726" vertical-offset="0" max-vertical-offset="730" />
@@ -529,12 +582,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/security/login/LoginFormController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1596" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="100" selection-start="2904" selection-end="2914" vertical-scroll-proportion="-6.0" vertical-offset="1059" max-vertical-offset="2310">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1596">
           <folding />
         </state>
       </provider>
@@ -553,27 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="86" selection-start="4430" selection-end="4430" vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="3171">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="41" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.0" vertical-offset="1751" max-vertical-offset="2520">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="24" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9009">
@@ -583,7 +610,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="37" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.3302139" vertical-offset="614" max-vertical-offset="2856">
+        <state line="36" column="0" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.39972338" vertical-offset="614" max-vertical-offset="2856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="710" column="26" selection-start="14824" selection-end="14824" vertical-scroll-proportion="0.56666666" vertical-offset="14927" max-vertical-offset="16317">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="41" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.94285715" vertical-offset="1512" max-vertical-offset="2247">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/security/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="84" selection-start="4428" selection-end="4428" vertical-scroll-proportion="-0.34615386" vertical-offset="2259" max-vertical-offset="3171">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/newExperience.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="21" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/experiences/experience.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/filters/renderHTMLFromVariable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.08713693" vertical-offset="0" max-vertical-offset="723">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="100" selection-start="2904" selection-end="2914" vertical-scroll-proportion="0.5724234" vertical-offset="1059" max-vertical-offset="2310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/experiences/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="32" selection-start="649" selection-end="649" vertical-scroll-proportion="-8.4" vertical-offset="63" max-vertical-offset="2016">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/experiences/show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="32" selection-start="256" selection-end="256" vertical-scroll-proportion="0.14037433" vertical-offset="0" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
