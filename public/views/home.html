@@ -1,0 +1,109 @@
+<!-- Top navigation start -->
+<div class="topNav">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!--
+                <ul>
+                  <li><a href="#">Art</a></li>
+                  <li><a href="#">Outdoor</a></li>
+                  <li><a href="#">Indoor</a></li>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Another filter</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                  <li><a href="#">One more nav item</a></li>
+                </ul>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top navigation end -->
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                This is going to be a header with a picture and all. If only I can find a picture!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Summary start -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="favouriteExperiences">
+                <h2>Some of our most popular experiences</h2>
+                <p>
+                    There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row experienceRow" ng-repeat="group in experiences | group:3" id="events">
+        <div class="col-md-4" ng-repeat="experience in group">
+            <div class="favouriteItem">
+                <!-- Todo: The url for the image is crazy nested. Unnest it. -->
+                <img src="{{experience.images[0].url}}" alt="" class="img-responsive">
+                <h4><a ng-href="/{{'#/experiences/' + experience.id }}">{{ experience.name}}</a></h4>
+                In <strong>{{event.city}}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Summary end -->
+
+
+<!-- Host sell section start -->
+<div class="sell">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                This is a test
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Host sell part -->
+
+<!-- Footer start -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            Footer
+        </div>
+    </div>
+</div>
+<!-- Footer end -->
+
+
+       <!--
+<div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3>I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>
+  -->
