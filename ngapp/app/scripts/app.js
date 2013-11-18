@@ -9,6 +9,7 @@ angular.module('urbanfunhunterApp', [
     'services.httpRequestTracker',
     'ui.bootstrap',
     'textAngular',
+    'Directive.AddThis',
     //'newExperienceFactory',
     'security'
 ]);
