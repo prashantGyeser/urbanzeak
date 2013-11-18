@@ -2,7 +2,14 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 	respond_to :json
 
 	def index
-		respond_with Experience.all
+		#respond_with Experience.all
+		#@notes = Note.order("created_at desc")
+		@experiences = Experience.all
+		respond_to do |format|
+			format.json do
+				render :json => @experiences.to_json(:include => { :images => { :only => :url } })
+			end
+		end
 	end
 
 	def show

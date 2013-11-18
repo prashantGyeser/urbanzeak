@@ -22,6 +22,42 @@
 </div>
 <!-- Top navigation end -->
 
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                This is going to be a header with a picture and all. If only I can find a picture!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Summary start -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="favouriteExperiences">
+                <h2>Some of our most popular experiences</h2>
+                <p>
+                    There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-repeat="group in events | group:3" id="events">
+        <div class="col-md-4" ng-repeat="event in group">
+            <div class="favouriteItem">
+                <!-- Todo: The url for the image is crazy nested. Unnest it. -->
+                <img src="{{event.event_image.event_image.large_scaled.url}}" alt="" class="img-responsive"/>
+                <h4><a ng-href="/{{'#/events/' + event.id }}">{{ event.event_name }}</a></h4>
+                In <strong>{{event.city}}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Summary end -->
 
 
 <!-- Host sell section start -->
