@@ -14,6 +14,7 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 		#@experience = Experience.create(experience_params)
 		#@experience_with_images = @experience.build_images()
 		#logger.debug "The params for the images are: #{params[:images]}"
+		logger.debug "The description not getting stored is: #{params[:experience][:description]}"
 		@experience = Experience.new()
 		@experience.name = params[:experience][:name]
 		@experience.description = params[:experience][:description]

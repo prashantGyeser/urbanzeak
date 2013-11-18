@@ -9,9 +9,13 @@
                     </div>
                     <div class="form-group">
                         <label for="eventDescription">Experience description</label>
-                        <div id="eventDescription" text-angular text-angular-name="eventdescriptionTextArea">
+                        <div id="eventDescription" text-angular text-angular-name="eventdescriptionTextArea" ng-model="eventDescription">
                         </div>
 
+                    </div>
+
+                    <div class="lighter roboto">
+                        <p ng-bind="textAngularOpts.textAngularEditors.eventdescriptionTextArea.html" class="text-left text-med text-gray"></p>
                     </div>
 
                     <div class="form-group">

@@ -77,10 +77,9 @@ angular.module('urbanfunhunterApp')
 
         // Form submit -- start
         $scope.newEvent = function(data){
-
             var data = {'experience': {
                 'name': $scope.eventName,
-                'description': $scope.eventDescription,
+                'description': $scope.textAngularOpts.textAngularEditors.eventdescriptionTextArea.html,
                 'price': $scope.eventPrice,
                 'experience_date': $scope.eventDate,
                 'experience_time': $scope.eventTime,
