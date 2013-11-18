@@ -10,10 +10,8 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 	end
 
 	def create
-		logger.debug "It is getting here with params: #{params}"
 		@experience = Experience.create(experience_params)
-		logger.debug "The value in the experience variable is: #{@experience.inspect}"
-		respond_with @experience
+		render json: @experience
 	end
 
 	def update

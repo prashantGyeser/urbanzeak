@@ -56,3 +56,6 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 # Annotate to annotate models with a list of all the fields
 gem 'annotate'
+
+# Serializer
+gem "active_model_serializers"
