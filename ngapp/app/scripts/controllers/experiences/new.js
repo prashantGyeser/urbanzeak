@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('urbanfunhunterApp')
-  .controller('ExperiencesNewCtrl', function ($scope) {
+  .controller('ExperiencesNewCtrl', function ($scope, newExperienceFactory) {
 
         // Text angular - Event Description text are -- end
         $scope.textAngularOpts = {
@@ -78,22 +78,20 @@ angular.module('urbanfunhunterApp')
         // Form submit -- start
         $scope.newEvent = function(data){
 
-            var data = {'event': {
-                'event_name': $scope.eventName,
-                'event_description': $scope.eventDescription,
+            var data = {'experience': {
+                'name': $scope.eventName,
+                'description': $scope.eventDescription,
                 'price': $scope.eventPrice,
-                'event_date': $scope.eventDate,
-                'event_time': $scope.eventTime,
+                'experience_date': $scope.eventDate,
+                'experience_time': $scope.eventTime,
                 'event_images': $scope.event_images
             }};
             console.log(data);
             // Todo: Show an animation while the form is being sent and the event is being created. Otherwise it looks like nothing is happening when the button is clicked.
-            var newEvent = Events.save(data, function(callbackdata){
+            var newEvent = newExperienceFactory.save(data, function(callbackdata){
                 console.log("The callback is" + callbackdata);
                 console.log("The callback event is" + callbackdata.event);
-                //var newEventCreated = callbackdata;
-                //console.log(callbackdata.user_id)
-                $location.path('/events/' + callbackdata.id );
+                //$location.path('/events/' + callbackdata.id );
             });
         }
         // Form submit -- end
