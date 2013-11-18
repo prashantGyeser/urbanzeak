@@ -9,13 +9,15 @@ angular.module('urbanfunhunterApp')
         });
 
         Experience.getExperienceImages($routeParams.experienceId).then(function(data){
-            $scope.experience = data;
+            $scope.slides = data;
             console.log("The experience desc is:" + $scope.experience.description);
         });
 
 
 
         $scope.myInterval = 5000;
+
+        /*
         var slides = $scope.slides = [];
         $scope.addSlide = function() {
             var newWidth = 200 + ((slides.length + (25 * slides.length)) % 150);
@@ -28,4 +30,5 @@ angular.module('urbanfunhunterApp')
         for (var i=0; i<4; i++) {
             $scope.addSlide();
         }
+        */
   });
