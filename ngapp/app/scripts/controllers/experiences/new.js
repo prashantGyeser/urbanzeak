@@ -75,6 +75,9 @@ angular.module('urbanfunhunterApp')
         // Picture uploader -- end
 
 
+
+
+
         // Form submit -- start
         $scope.newEvent = function(data){
             var data = {'experience': {

@@ -10,6 +10,7 @@ angular.module('urbanfunhunterApp', [
     'ui.bootstrap',
     'textAngular',
     'Directive.AddThis',
+    'google-maps',
     //'newExperienceFactory',
     'security'
 ]);
