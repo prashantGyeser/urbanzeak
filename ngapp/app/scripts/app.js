@@ -30,8 +30,9 @@ angular.module('urbanfunhunterApp').constant('I18N.MESSAGES', {
 });
 
 angular.module('urbanfunhunterApp').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $routeProvider.otherwise({redirectTo:'/'});
+    //$locationProvider.html5Mode(true);
+    //$routeProvider.otherwise({redirectTo:'/'});
+    //$locationProvider.hashPrefix = '#';
 }]);
 
 angular.module('urbanfunhunterApp').run(['security', function(security) {
