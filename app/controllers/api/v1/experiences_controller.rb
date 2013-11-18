@@ -49,6 +49,12 @@ class Api::V1::ExperiencesController < Api::V1::ApplicationController
 		respond_with Experience.destroy(params[:id])
 	end
 
+	def images
+		logger.debug "The params are: #{params}"
+		exprience_images = Image.where(:experience_id => params[:experience_id])
+		respond_with exprience_images
+	end
+
 	private
 	# Strong params, taken from http://stackoverflow.com/questions/17371334/how-is-attr-accessible-used-in-rails-4
 	def experience_params
