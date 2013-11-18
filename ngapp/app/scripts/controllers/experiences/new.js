@@ -90,6 +90,7 @@ angular.module('urbanfunhunterApp')
             console.log(data);
             // Todo: Show an animation while the form is being sent and the event is being created. Otherwise it looks like nothing is happening when the button is clicked.
             var newEvent = newExperienceFactory.save(data, function(callbackdata){
+                console.log("Woohoo! It is getting to the callbackl")
                 console.log("The callback is" + callbackdata);
                 console.log("The callback event is" + callbackdata.event);
                 //$location.path('/events/' + callbackdata.id );

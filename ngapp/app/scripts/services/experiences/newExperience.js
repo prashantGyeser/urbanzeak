@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('urbanfunhunterApp')
-    .factory('newExperienceFactory', function ($http) {
+    .factory('newExperienceFactory', function ($http, $location) {
 
         var service = {}
 
@@ -12,7 +12,10 @@ angular.module('urbanfunhunterApp')
                 var request = $http.post('/api/v1/experiences.json',experience);
                 return request.then(function(response){
                     console.log(response);
-                    return response;
+                    service.newExperience = response.data;
+                    var newExperiencePath = "/experiences/" + response.data.id;
+                    $location.path(newExperiencePath);
+                    return service.newExperience;
                 });
             }
         };

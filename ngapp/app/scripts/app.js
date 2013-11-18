@@ -107,6 +107,10 @@ angular.module('urbanfunhunterApp').config(function ($routeProvider) {
         templateUrl: 'views/experiences/new.html',
         controller: 'ExperiencesNewCtrl'
       })
+      .when('/experiences/:experienceId', {
+        templateUrl: 'views/experiences/show.html',
+        controller: 'ExperiencesShowCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
