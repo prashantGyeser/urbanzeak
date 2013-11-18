@@ -45,12 +45,12 @@
         </div>
     </div>
 
-    <div class="row" ng-repeat="group in events | group:3" id="events">
-        <div class="col-md-4" ng-repeat="event in group">
+    <div class="row experienceRow" ng-repeat="group in experiences | group:3" id="events">
+        <div class="col-md-4" ng-repeat="experience in group">
             <div class="favouriteItem">
                 <!-- Todo: The url for the image is crazy nested. Unnest it. -->
-                <img src="{{event.event_image.event_image.large_scaled.url}}" alt="" class="img-responsive"/>
-                <h4><a ng-href="/{{'#/events/' + event.id }}">{{ event.event_name }}</a></h4>
+                <img src="{{experience.images[0].url}}" alt="" class="img-responsive"/>
+                <h4><a ng-href="/{{'#/experiences/' + experience.id }}">{{ experience.name}}</a></h4>
                 In <strong>{{event.city}}</strong>
             </div>
 
