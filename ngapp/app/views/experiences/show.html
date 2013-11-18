@@ -13,6 +13,26 @@
                         <img src="https://s3.amazonaws.com/letsdine/uploads/event/event_image/111/large_scaled_tech_talks.jpg" alt=""/>
                         -->
                         <!--<h1>{{event.event_image.event_image.url}}</h1>-->
+                        <div>
+                            <carousel interval="myInterval">
+                                <slide ng-repeat="slide in slides" active="slide.active">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    <div class="carousel-caption">
+                                        <h4>Slide {{$index}}</h4>
+                                        <p>{{slide.text}}</p>
+                                    </div>
+                                </slide>
+                            </carousel>
+                        </div>
+
+
+
+
+
+
+
+
+
                         <h4>{{ experience.name }}</h4>
 
                         <div ng-bind-html="experience.description | renderhtml"></div>

@@ -13,7 +13,16 @@ angular.module('urbanfunhunterApp')
               return response.data;
           });
           return promise;
+      },
+      getExperienceImages: function(experienceId) {
+          var experienceImagesURL = '/api/v1/experiences/' + experienceId + '/images';
+          var promise = $http.get(experienceImagesURL).then(function(response){
+              console.log(response);
+              return response.data;
+          });
+          return promise;
       }
+
     };
     return experience;
   });

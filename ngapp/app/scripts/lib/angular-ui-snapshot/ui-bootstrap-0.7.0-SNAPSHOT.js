@@ -612,7 +612,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     replace: true,
     controller: 'CarouselController',
     require: 'carousel',
-    templateUrl: 'template/carousel/carousel.html',
+    templateUrl: 'views/partials/ui-bootstrap-tpls/carousel/carousel.html',
     scope: {
       interval: '=',
       noTransition: '=',
@@ -691,7 +691,7 @@ function CarouselDemoCtrl($scope) {
     restrict: 'EA',
     transclude: true,
     replace: true,
-    templateUrl: 'template/carousel/slide.html',
+    templateUrl: 'views/partials/ui-bootstrap-tpls/carousel/slide.html',
     scope: {
     },
     link: function (scope, element, attrs, carouselCtrl) {
