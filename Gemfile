@@ -44,13 +44,17 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Postgres Sql gem
+gem 'pg'
+
 group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'rspec-rails'
 end
 
-group :test, :development do
+group :test do
   gem 'rspec-rails'
-  gem 'cucumber-rails'  
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
