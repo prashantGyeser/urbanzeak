@@ -9,12 +9,6 @@ describe "Experiences" do
     end
   end
 
-  describe "New experience" do
-    it 'shows the new experience page' do
-      visit new_experience_path
-
-    end
-
-  end
+  
 
 end
