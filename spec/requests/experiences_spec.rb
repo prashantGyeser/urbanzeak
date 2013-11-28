@@ -10,12 +10,9 @@ describe "Experiences" do
   end
 
   describe "New experience" do
-    it 'should create a new experience' do
+    it 'shows the new experience page' do
       visit new_experience_path
-      within('#new') do
-        fill_in 'Name', :with => 'A experience name through Capybara'
 
-      end
     end
 
   end
@@ -23,5 +20,5 @@ describe "Experiences" do
   describe "Show each experience" do
 
   end
-  
+
 end

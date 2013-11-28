@@ -48,14 +48,11 @@ end
 gem 'pg'
 
 group :development do
-  gem 'guard'
-  gem 'guard-rspec', require: false
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'annotate'
 end
 
-group :test do
+group :test, :development do
+  gem 'guard'
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
