@@ -51,6 +51,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'annotate'
 end
 
@@ -58,4 +59,9 @@ group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'guard-rspec', require: false
 end
