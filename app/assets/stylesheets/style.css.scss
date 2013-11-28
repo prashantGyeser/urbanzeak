@@ -1,0 +1,32 @@
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #efefeb;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+$contrast_green_toned_down: #e4f3d9;
+/************************************************************************/
+/* Mixins */
+/************************************************************************/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+}
+//.box { @include border-radius(10px); }
+/************************************************************************/
+/*Common styles */
+/************************************************************************/
+a
+{
+  color: $brand_blue;
+}
