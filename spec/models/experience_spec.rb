@@ -1,5 +1,22 @@
 require 'spec_helper'
 
 describe Experience do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid factory" do
+    FactoryGirl.create(:experience).should be_valid
+  end
+  it "should have a name" do
+    FactoryGirl.build(:experience, name: nil).should_not be_valid
+  end
+  it 'should have a description' do
+    FactoryGirl.build(:experience, description: nil).should_not be_valid
+  end
+  it 'should have a price' do
+    FactoryGirl.build(:experience, price: nil).should_not be_valid
+  end
+  it 'should have a exp_date' do
+    FactoryGirl.build(:experience, exp_date: nil).should_not be_valid
+  end
+  it 'should have a exp_time' do
+    FactoryGirl.build(:experience, exp_time: nil).should_not be_valid
+  end
 end

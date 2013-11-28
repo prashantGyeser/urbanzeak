@@ -64,4 +64,5 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'guard-rspec', require: false
+  gem 'guard-migrate'
 end
