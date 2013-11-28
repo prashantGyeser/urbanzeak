@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe "Experiences" do
-  describe "List experiences" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit experiences_path
-      #response.status.should be(200)
+  describe "creating a experience" do
+    it "creates a experience" do
+      visit new_experience_path
+      within("#newExperience") do
+        fill_in 'Name', :with => 'A test experience from capybara'
+      end
     end
   end
 
