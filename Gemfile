@@ -44,6 +44,11 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem 'guard'
+  gem 'guard-rspec', require: false
+end
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'cucumber-rails'  
