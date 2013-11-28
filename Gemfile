@@ -51,6 +51,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
