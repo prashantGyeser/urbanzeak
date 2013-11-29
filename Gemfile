@@ -67,3 +67,7 @@ group :test, :development do
   gem 'guard-migrate'
   gem "rb-readline", "~> 0.5.0"
 end
+
+group :test do
+  gem 'shoulda-matchers'
+end
