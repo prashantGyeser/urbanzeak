@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Home' do
-  describe 'set as homepage' do
+describe 'User' do
+  describe 'registration' do
     before :each do
       visit('/users/sign_up')
     end
@@ -27,13 +27,21 @@ describe 'Home' do
       end
     end
 
-    it 'should have a login' do
-      within("#login") do
-        fill_in 'email', :with => 'john@urbanzeak.com'
-        fill_in 'password', :with => 'password@123'
-      end
-    end
 
+
+  end
+
+  describe 'login' do
+    it 'should login a user with valid credentials' do
+      user = FactoryGirl.create(:user)
+      within('#login') do
+        fill_in 'user_email', :with => 'user.email'
+        fill_in 'user_password', :with => 'user.password'
+      end
+
+      click_button('Sign in')
+
+    end
   end
 
 end
