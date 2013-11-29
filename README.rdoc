@@ -12,6 +12,9 @@ http://www.jqueryrain.com/?EJTeRXdz - Blur
 == Carousel
 http://slippry.com/
 
+== Inspiration
+http://www.jacktorrancetrip.com/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -23,8 +23,22 @@
 .header
 {
   background: white;
-  min-height: 300px;
+  min-height: 350px;
   margin: 20px 0 0 0;
+
+  width: 100%;
+  height: 100%;
+  background-image:url("/assets/header.png");
+  background-position: top center;
+  background-size: cover;
+
+  .headerContent
+  {
+    //background: #000;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 20px;
+  }
 }
 /************************************************************************/
 /* Content */

@@ -197,7 +197,6 @@ PLATFORMS
 DEPENDENCIES
   annotate
   capybara
-  coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
   factory_girl_rails
