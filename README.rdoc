@@ -9,6 +9,9 @@ http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html
 http://camanjs.com/ - Image effects
 http://www.jqueryrain.com/?EJTeRXdz - Blur
 
+== Carousel
+http://slippry.com/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
