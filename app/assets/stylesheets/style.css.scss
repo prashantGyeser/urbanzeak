@@ -55,3 +55,36 @@ h1, h2, h3, h4
 {
   padding: 20px 0;
 }
+
+
+/************************************************************************/
+/*Modal window */
+/************************************************************************/
+.modal-content
+{
+  @include border-radius(0px);
+  @include box-shadow;
+  border: none;
+  .modal-header
+  {
+    border: none;
+  }
+  .modal-footer
+  {
+    margin-top: 40px;
+    background: #f9f9f9;
+  }
+  .input-group
+  {
+    margin-bottom: 20px;
+    .input-group-addon
+    {
+      background: none;
+    }
+    .form-control
+    {
+      border-right: none;
+    }
+  }
+
+}
