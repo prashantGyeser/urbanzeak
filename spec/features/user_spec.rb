@@ -22,9 +22,8 @@ describe 'User' do
 
         click_button('Sign up')
 
-        page.should have_content("Signed up successfully")
-
       end
+      page.should have_content("Welcome! You have signed up successfully.")
     end
 
 
