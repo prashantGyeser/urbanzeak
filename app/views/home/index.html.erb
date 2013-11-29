@@ -34,12 +34,31 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="filter">
-              This is a filter
+              <div class="cityFilter">
+                <strong class="filterHeader">Filter</strong>
+                <input type="text" class="form-control" placeholder="Enter your city"/>
+              </div>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="experiencesContainer">
-              This should be the xperiuence
+              <h3>Experiences in [city name]</h3>
+
+              <div class="experienceHomePage">
+                <div class="row">
+                  <div class="col-lg-6 image">
+                    <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
+                  </div>
+                  <div class="col-lg-6 experienceDetails">
+                    <h4>Some awesome event name</h4>
+                    <div class="experiencesubDetails">
+                      Thursday, 5 November 2013 at 1 PM
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
           </div>
         </div>
