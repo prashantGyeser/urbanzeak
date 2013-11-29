@@ -47,6 +47,9 @@ end
 # Postgres Sql gem
 gem 'pg'
 
+# Authentication
+gem 'devise'
+
 group :development do
   gem 'annotate'
 end
