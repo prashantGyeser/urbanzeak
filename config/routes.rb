@@ -1,4 +1,6 @@
 Urbanzeak::Application.routes.draw do
+  resources :hosts
+
   devise_for :users
   resources :experiences
 

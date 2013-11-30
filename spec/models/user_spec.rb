@@ -15,9 +15,6 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  city                   :string(255)
 #
 
 require 'spec_helper'
@@ -27,4 +24,5 @@ describe User do
   it {should validate_presence_of(:first_name)}
   it {should validate_presence_of(:last_name)}
   it {should validate_presence_of(:city)}
+  #it {should have_one(:host)}
 end
