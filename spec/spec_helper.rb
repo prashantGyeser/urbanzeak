@@ -14,6 +14,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+Capybara.run_server = true
+Capybara.server_port = 7000
+Capybara.app_host = "http://localhost:#{Capybara.server_port}"
+
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
