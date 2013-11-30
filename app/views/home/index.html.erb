@@ -8,8 +8,14 @@
       <div class="col-lg-6">
         <div class="login">
           <div class="userInfo pull-right">
-            <a href="#" class="button is-primary">Login</a>
-            <a href="#" class="button is-secondary">Register</a>
+
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "button is-block") %>
+          <% else %>
+              <%= link_to('Login', new_user_session_path, :class => "button is-primary")  %>
+              <%= link_to('Register', new_user_registration_path, :class => "button is-secondary")  %>
+            <% end %>
+
           </div>
 
 
