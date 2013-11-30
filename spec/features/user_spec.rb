@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe 'User' do
+
   describe 'registration' do
     before :each do
       visit('/users/sign_up')
@@ -10,6 +11,7 @@ describe 'User' do
       #page.should have_css('img.logo')
       page.status_code.should == 200
     end
+
 
     it 'should register a new account' do
       within('#new_user') do
@@ -24,18 +26,19 @@ describe 'User' do
 
       end
       page.should have_content("Welcome! You have signed up successfully.")
+
+      #User.last.should eq()
     end
-
-
-
   end
+
 
   describe 'login' do
     it 'should login a user with valid credentials' do
+      visit('/users/sign_in')
       user = FactoryGirl.create(:user)
       within('#login') do
-        fill_in 'user_email', :with => 'user.email'
-        fill_in 'user_password', :with => 'user.password'
+        fill_in 'Email', :with => 'user.email'
+        fill_in 'Password', :with => 'user.password'
       end
 
       click_button('Sign in')

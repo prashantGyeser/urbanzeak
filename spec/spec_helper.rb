@@ -6,11 +6,6 @@ require 'rspec/autorun'
 require "capybara/rspec"
 require 'database_cleaner'
 
-# Running capybara on a different port so that I can run the normal dev server if required
-Capybara.run_server = true
-Capybara.server_port = 7000
-Capybara.app_host = "http://localhost:#{Capybara.server_port}"
-
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
