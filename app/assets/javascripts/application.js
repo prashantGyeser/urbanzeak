@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require slippry.min
+//= require jquery.gomap-1.3.2.min
 //= require turbolinks
 //= require_tree .

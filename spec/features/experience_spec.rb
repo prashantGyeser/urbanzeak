@@ -8,7 +8,7 @@ describe 'Experience' do
       page.status_code.should == 200
     end
 
-    it 'should ' do
+    it 'should show a modal' do
       
     end
     
