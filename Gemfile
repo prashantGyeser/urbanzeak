@@ -47,6 +47,9 @@ end
 # Postgres Sql gem
 gem 'pg'
 
+# Ink filepicker
+gem 'filepicker-rails'
+
 # Authentication
 gem 'devise'
 

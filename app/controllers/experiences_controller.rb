@@ -16,6 +16,9 @@ class ExperiencesController < ApplicationController
   # GET /experiences/new
   def new
     @experience = Experience.new
+
+    5.times { @experience.exp_images.build }
+
   end
 
   # GET /experiences/1/edit

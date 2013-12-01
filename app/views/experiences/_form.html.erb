@@ -13,26 +13,47 @@
 
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, :class => "form-control" %>
+    <%= f.text_field :name, :class => "form-control", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description, :class => "form-control" %>
+    <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :price %>
-    <%= f.text_field :price, :class => "form-control" %>
+    <%= f.text_field :price, :class => "form-control", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_date %>
     <br/>
-    <%= f.date_select :exp_date, :class => "form-control" %>
+    <%= f.date_select :exp_date, :class => "form-control", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_time %>
     <br/>
-    <%= f.time_select :exp_time, :class => "form-control" %>
+    <%= f.time_select :exp_time, :class => "form-control", :required => "required" %>
   </div>
+
+  <div class="form-group">
+    <%# f.label :exp_images, "Upload Your Avatar:" %>
+    <%# f.filepicker_field :exp_images%>
+  </div>
+
+  <div class="alert alert-info">
+    You can upload upto <strong>five</strong> images. One will be picked at random and shown on the homepage.
+  </div>
+
+  <%= f.fields_for :exp_images do |builder| %>
+    <div class="form-group">
+      <%= builder.label :url, "Image to upload" %>
+      <br/>
+      <%= builder.filepicker_field :url %>
+
+    </div>
+  <% end%>
+
+
+
   <div class="form-group">
     <%= f.label :latitude %>
     <%= f.text_field :latitude, :class => "form-control" %>
@@ -48,3 +69,13 @@
     <%= f.submit :class => "button is-primary" %>
   </div>
 <% end %>
+
+<script>
+  $('#new_experience').validate();
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#experience_description").autoGrow();
+  });
+</script>
