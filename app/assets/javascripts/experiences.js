@@ -29,6 +29,7 @@ $(document).ready(function(){
                     // Getting the latitude and longitude for the location clicked on the map
                     console.log("The event is:", data.latLng);
                     $(this).gmap3({
+                        clear: "marker",
                         marker: {
                             latLng: data.latLng
                         }
