@@ -53,6 +53,9 @@ gem 'devise'
 # Geocoding the location
 gem 'geocoder'
 
+# Using unicorn as the server
+gem 'unicorn'
+
 group :development do
   gem 'annotate'
 end
