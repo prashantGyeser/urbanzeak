@@ -12,6 +12,7 @@ Urbanzeak::Application.routes.draw do
   get "pages/contact"
 
   devise_for :users
+  get "experiences/get/:country", to: "experiences#country"
   resources :experiences
 
   # The priority is based upon order of creation: first created -> highest priority.

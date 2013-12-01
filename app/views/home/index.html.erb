@@ -15,102 +15,115 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
+
       <div class="content">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="filter">
-              <div class="cityFilter">
-                <strong class="filterHeader">Filter</strong>
-                <input type="text" class="form-control ff_elem" id="cityFilter" placeholder="Enter your city"/>
+        <div id="homePageSpinner">
+          <div style="margin: -60px auto 0 auto; width: 128px" id="homePageSpinner">
+            <%= image_tag 'spinner-large.gif' %>
+          </div>
+        </div>
+
+        <div class="experiencesHomePage">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="filter">
+                <div class="cityFilter">
+                  <strong class="filterHeader">Filter</strong>
+                  <input type="text" class="form-control ff_elem" id="cityFilter" placeholder="Enter your city"/>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="experiencesContainer">
-              <h3>Experiences in [city name]</h3>
+            <div class="col-lg-8">
+              <div class="experiencesContainer">
+                <h3>Experiences in [city name]</h3>
+                <div id="homepageExperiences">
+                  <div class="experienceHomePage">
 
-              <div class="experienceHomePage">
-                <div class="row">
-                  <div class="col-lg-6 image">
-                    <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
                   </div>
-                  <div class="col-lg-6 experienceDetails">
-                    <h4>Some awesome event name</h4>
-                    <div class="experiencesubDetails">
-                      Thursday, 5 November 2013 at 1 PM
+                </div>
+                <div class="experienceHomePage">
+                  <div class="row">
+                    <div class="col-lg-6 image">
+                      <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
                     </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla laoreet ligula vel odio semper adipiscing et nec diam...
-                    </p>
+                    <div class="col-lg-6 experienceDetails">
+                      <h4>Some awesome event name</h4>
+                      <div class="experiencesubDetails">
+                        Thursday, 5 November 2013 at 1 PM
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla laoreet ligula vel odio semper adipiscing et nec diam...
+                      </p>
 
-                    <div class="hostDetails">
-                      <div class="hostDetailsPic pull-left">
-                        <%= image_tag "hostImageListing.jpg", class: "img-responsive" %>
+                      <div class="hostDetails">
+                        <div class="hostDetailsPic pull-left">
+                          <%= image_tag "hostImageListing.jpg", class: "img-responsive" %>
+                        </div>
+
+                        <div class="hostProfileLink pull-left">
+                          <span>Host</span>
+                          <a href="#">Jane Doe</a>
+                        </div>
+
+                        <div class="viewNow pull-right">
+                          <a href="#" class="button is-secondary">View Now</a>
+                        </div>
                       </div>
 
-                      <div class="hostProfileLink pull-left">
-                        <span>Host</span>
-                        <a href="#">Jane Doe</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="experienceHomePage">
+                  <div class="row">
+                    <div class="col-lg-6 image">
+                      <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
+                    </div>
+                    <div class="col-lg-6 experienceDetails">
+                      <h4>Some awesome event name</h4>
+                      <div class="experiencesubDetails">
+                        Thursday, 5 November 2013 at 1 PM
                       </div>
+                    </div>
+                  </div>
 
-                      <div class="viewNow pull-right">
-                        <a href="#" class="button is-secondary">View Now</a>
+                </div>
+
+                <div class="experienceHomePage">
+                  <div class="row">
+                    <div class="col-lg-6 image">
+                      <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
+                    </div>
+                    <div class="col-lg-6 experienceDetails">
+                      <h4>Some awesome event name</h4>
+                      <div class="experiencesubDetails">
+                        Thursday, 5 November 2013 at 1 PM
                       </div>
                     </div>
-
                   </div>
+
                 </div>
 
-              </div>
-
-              <div class="experienceHomePage">
-                <div class="row">
-                  <div class="col-lg-6 image">
-                    <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
-                  </div>
-                  <div class="col-lg-6 experienceDetails">
-                    <h4>Some awesome event name</h4>
-                    <div class="experiencesubDetails">
-                      Thursday, 5 November 2013 at 1 PM
+                <div class="experienceHomePage">
+                  <div class="row">
+                    <div class="col-lg-6 image">
+                      <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
+                    </div>
+                    <div class="col-lg-6 experienceDetails">
+                      <h4>Some awesome event name</h4>
+                      <div class="experiencesubDetails">
+                        Thursday, 5 November 2013 at 1 PM
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla laoreet ligula vel odio semper adipiscing et nec diam. Phasellus viverra pulvinar est. In accumsan molestie fermentum.
+                      </p>
                     </div>
                   </div>
+
                 </div>
 
               </div>
-
-              <div class="experienceHomePage">
-                <div class="row">
-                  <div class="col-lg-6 image">
-                    <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
-                  </div>
-                  <div class="col-lg-6 experienceDetails">
-                    <h4>Some awesome event name</h4>
-                    <div class="experiencesubDetails">
-                      Thursday, 5 November 2013 at 1 PM
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="experienceHomePage">
-                <div class="row">
-                  <div class="col-lg-6 image">
-                    <%= image_tag "sample-experience.jpg", :class => "img-responsive" %>
-                  </div>
-                  <div class="col-lg-6 experienceDetails">
-                    <h4>Some awesome event name</h4>
-                    <div class="experiencesubDetails">
-                      Thursday, 5 November 2013 at 1 PM
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla laoreet ligula vel odio semper adipiscing et nec diam. Phasellus viverra pulvinar est. In accumsan molestie fermentum.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
           </div>
         </div>

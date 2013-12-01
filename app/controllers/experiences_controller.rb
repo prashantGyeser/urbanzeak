@@ -65,6 +65,22 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  # Get experiences by country
+  def country
+    @country = params[:country]
+    #logger.debug "The country is selected: #{@country}"
+    @experiences = Experience.where("city like ?", "%#{@country}%")
+    #logger.debug "The experiences returned are: #{@experiences.inspect}"
+    respond_to do |format|
+      if @experiences.nil?
+        format.json { render json: @experiences, status: nil }
+      else
+        format.json { render json: @experiences}#action: 'show', status: :created, location: @experience }
+      end
+
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
