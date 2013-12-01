@@ -19,6 +19,18 @@
     <%= f.label :description %>
     <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, :class => "form-control ff_elem", :required => "required" %>
+    <!--<input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>-->
+  </div>
+
+
+
+
+
+
   <div class="form-group">
     <%= f.label :price %>
     <%= f.text_field :price, :class => "form-control", :required => "required" %>
@@ -74,5 +86,36 @@
 <script>
   $(document).ready(function() {
     $("#experience_description").autoGrow();
+  });
+</script>
+
+
+<script type="text/javascript">
+
+  jQuery(function ()
+  {
+    jQuery("#experience_city").autocomplete({
+      source: function (request, response) {
+        jQuery.getJSON(
+                "http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+                function (data) {
+                  response(data);
+                }
+        );
+      },
+      minLength: 3,
+      select: function (event, ui) {
+        var selectedObj = ui.item;
+        jQuery("#experience_city").val(selectedObj.value);
+        return false;
+      },
+      open: function () {
+        jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+      },
+      close: function () {
+        jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+      }
+    });
+    jQuery("#experience_city").autocomplete("option", "delay", 100);
   });
 </script>
