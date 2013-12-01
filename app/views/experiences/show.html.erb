@@ -18,13 +18,14 @@
           <h2><%= @experience.name%></h2>
           <div class="subDetails">
             <ul>
-              <li>Experience Date: <%= @experience.exp_date %></li>
-              <li>Experience Time: <%= @experience.exp_time %></li>
+              <li>Experience Date: <strong><%= @experience.exp_date %></strong></li>
+              <li>Experience Time: <strong><%= @experience.exp_time %></strong></li>
             </ul>
           </div>
           <div>
             <p>
-              <%= @experience.description%>
+              <%= simple_format(@experience.description).html_safe %>
+
             </p>
           </div>
         </div>
