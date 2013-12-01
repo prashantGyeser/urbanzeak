@@ -1,69 +1,52 @@
-<div class="modal fade" id="newExperienceModal" tabindex="-1" role="dialog" aria-labelledby="newExperienceLable"
-     aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">New Experience</h4>
-      </div>
-      <div class="modal-body">
-        <%= form_for(@experience) do |f| %>
-          <% if @experience.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
 
-              <ul>
-                <% @experience.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-          <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :price %>
-            <%= f.text_field :price, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :exp_date %>
-            <br/>
-            <%= f.date_select :exp_date, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :exp_time %>
-            <br/>
-            <%= f.time_select :exp_time, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :latitude %>
-            <%= f.text_field :latitude, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :longitude %>
-            <%= f.text_field :longitude, :class => "form-control" %>
-          </div>
-
-          <div id="map">
-
-          </div>
-
-          <div class="actions">
-            <%= f.submit %>
-          </div>
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_date %>
+    <br/>
+    <%= f.date_select :exp_date, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_time %>
+    <br/>
+    <%= f.time_select :exp_time, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude, :class => "form-control" %>
+  </div>
+
+  <div id="map">
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
