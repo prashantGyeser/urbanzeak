@@ -53,6 +53,9 @@ gem 'filepicker-rails'
 # Authentication
 gem 'devise'
 
+# Geocoding the location
+gem 'geocoder'
+
 group :development do
   gem 'annotate'
 end
