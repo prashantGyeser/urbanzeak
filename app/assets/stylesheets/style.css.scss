@@ -30,6 +30,11 @@ a
 {
   color: $brand_blue;
 }
+a:hover
+{
+  background: $brand_blue;
+  color: white;
+}
 a.button
 {
   color: white;
@@ -43,7 +48,8 @@ body
   background: url("/assets/bg.png");
   font-weight: 500;
   //font-size: 1.8em;
-  font-size: 15px;
+  font-size: 16px;
+  font-family: 'Segoe UI', helvetica, arial, sans-serif;
 }
 p
 {

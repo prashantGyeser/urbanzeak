@@ -1,5 +1,10 @@
 Urbanzeak::Application.routes.draw do
 
+  resources :attendees
+
+  get "checkout", to: "checkout#index"
+  get "hosts/become_host"
+  get "hosts/dashboard"
   resources :hosts
 
   get "pages/sell"

@@ -27,10 +27,13 @@ $contrast_green_toned_down: #e4f3d9;
     margin-bottom: 20px;
     color: #666;
     text-transform: uppercase;
+
     ul
     {
       margin: 0;
       padding: 0;
+      color: #aaa;
+      font-size: 16px;
       li
       {
         display: inline;
@@ -69,6 +72,13 @@ $contrast_green_toned_down: #e4f3d9;
     font-weight: bold;
     width: 100%;
   }
+  .actions
+  {
+    .button
+    {
+      width: 100%;
+    }
+  }
 
 }
 
@@ -103,4 +113,11 @@ $contrast_green_toned_down: #e4f3d9;
   {
     margin-bottom: 20px;
   }
+}
+/************************************************************************/
+/* Experience show styling */
+/************************************************************************/
+.experienceShow
+{
+
 }

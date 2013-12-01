@@ -1,39 +1,61 @@
-<p id="notice"><%= notice %></p>
+<div class="experienceShow">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="experienceShowContainer">
+          <h2><%= @experience.name%></h2>
+          <div class="subDetails">
+            <ul>
+              <li>Experience Date<%= @experience.exp_date %></li>
+              <li>Experience Time<%= @experience.exp_time %></li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              <%= @experience.description%>
+            </p>
+          </div>
+        </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @experience.name %>
-</p>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @experience.description %>
-</p>
+      <div class="col-lg-4">
+        <div class="experienceSubDetails">
+          <h4><%= @experience.name %></h4>
+          <strong>Join Now</strong>
+          <%= form_for(@attendee, :url => new_attendee_path) do |f| %>
+            <% if @attendee.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this experience from being saved:</h2>
 
-<p>
-  <strong>Price:</strong>
-  <%= @experience.price %>
-</p>
+                <ul>
+                  <% @attendee.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-<p>
-  <strong>Exp date:</strong>
-  <%= @experience.exp_date %>
-</p>
+            <div class="form-group">
+              <%= f.label :seats %>
+              <%= f.number_field :seats, :class => "form-control" %>
+            </div>
 
-<p>
-  <strong>Exp time:</strong>
-  <%= @experience.exp_time %>
-</p>
+            <div class="actions">
+              <%= f.submit "Join Experience", :class => "button is-secondary", :style => "font-weight: bold" %>
+            </div>
+          <% end %>
+        </div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @experience.latitude %>
-</p>
+        <div class="experienceSubDetails">
+          Venue text
+        </div>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @experience.longitude %>
-</p>
+        <div class="experienceSubDetails">
+          Venue Map
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_experience_path(@experience) %> |
-<%= link_to 'Back', experiences_path %>

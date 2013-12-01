@@ -1,6 +1,8 @@
 class HostsController < ApplicationController
   before_action :set_host, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:become_host, :edit, :update, :destroy, :dashboard]
+
   # GET /hosts
   # GET /hosts.json
   def index
@@ -59,6 +61,10 @@ class HostsController < ApplicationController
       format.html { redirect_to hosts_url }
       format.json { head :no_content }
     end
+  end
+
+  def dashboard
+
   end
 
   private
