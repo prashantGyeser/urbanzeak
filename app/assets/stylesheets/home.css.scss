@@ -46,7 +46,7 @@
 .content
 {
   margin-top: -60px;
-  background: url("/assets/bg.png");
+  background: image-url("bg.png");//url("/assets/bg.png");
   min-height: 500px;
   padding: 60px;
   .filter
