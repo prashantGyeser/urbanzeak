@@ -45,7 +45,7 @@ a.button
 }
 body
 {
-  background: url("/assets/bg.png");
+  background: image-url("bg.png");//url("/assets/bg.png");
   font-weight: 500;
   //font-size: 1.8em;
   font-size: 16px;
