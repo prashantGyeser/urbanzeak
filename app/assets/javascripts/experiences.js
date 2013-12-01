@@ -1,15 +1,5 @@
 $(document).ready(function(){
-    $('#newExperienceModal').modal('show');
-    function placeMarker(location) {
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map,
-        });
-        var infowindow = new google.maps.InfoWindow({
-            content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
-        });
-        infowindow.open(map,marker);
-    }
+    //$('#newExperienceModal').modal('show');
     $("#map").gmap3({
         map:{
             options:{
@@ -28,6 +18,9 @@ $(document).ready(function(){
                 click: function(event, data){
                     // Getting the latitude and longitude for the location clicked on the map
                     console.log("The event is:", data.latLng);
+                    //var latitude = $("#map").gmap3(marker.value);
+                    $('#experience_latitude').val(data.latLng.lat());
+                    $('#experience_longitude').val(data.latLng.lng());
                     $(this).gmap3({
                         clear: "marker",
                         marker: {
@@ -35,12 +28,15 @@ $(document).ready(function(){
                         }
                     });
                 }
-            },
+            }
 
         }
     });
+
+
 });
 
 $(window).load(function() {
     $('#slider').nivoSlider();
 });
+
