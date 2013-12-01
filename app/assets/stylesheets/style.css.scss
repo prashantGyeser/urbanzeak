@@ -34,6 +34,10 @@ a.button
 {
   color: white;
 }
+.button
+{
+  font-weight: bold;
+}
 body
 {
   background: url("/assets/bg.png");
@@ -145,4 +149,15 @@ p
     color: #aaa;
     margin-bottom: 20px;
   }
+}
+/************************************************************************/
+/* Login */
+/************************************************************************/
+#error_explanation
+{
+  color: #b94a48;
+  background: #f2dede;
+  border-color: #ebccd1;
+  padding: 20px;
+  margin-bottom: 20px;
 }

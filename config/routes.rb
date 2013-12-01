@@ -1,5 +1,10 @@
 Urbanzeak::Application.routes.draw do
+
   resources :hosts
+
+  get "pages/sell"
+  get "pages/about"
+  get "pages/contact"
 
   devise_for :users
   resources :experiences

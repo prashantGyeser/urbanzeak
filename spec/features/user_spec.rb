@@ -8,7 +8,6 @@ describe 'User' do
     end
 
     it "should load" do
-      #page.should have_css('img.logo')
       page.status_code.should == 200
     end
 
@@ -29,6 +28,7 @@ describe 'User' do
 
       #User.last.should eq()
     end
+
   end
 
 
@@ -44,6 +44,7 @@ describe 'User' do
       click_button('Sign in')
 
     end
+    
   end
 
 end

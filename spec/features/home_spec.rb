@@ -1,11 +1,22 @@
 require 'spec_helper'
 
 describe 'Home' do
-  describe 'set as homepage' do
+  describe 'set as root' do
     it "should be the root" do
       visit('/')
       #page.should have_css('img.logo')
       page.status_code.should == 200
+    end
+
+  end
+
+  describe 'should have a signup as host if the user is not a host already' do
+    before(:each) do
+      visit('/')
+    end
+
+    it 'should show a host your experiences link if the user is not a host' do
+      user = FactoryGirl.create(:normal_user)
     end
 
   end
