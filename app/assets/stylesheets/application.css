@@ -10,6 +10,8 @@
  *
  *= require bootstrap
  *= require buttons
+ *= require nivo-slider
+ *= require themes/light/light
  *= require_self
  *= require_tree .
  */

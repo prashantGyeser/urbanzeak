@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.nivo.slider
 //= require slippry.min
 //= require gmap3.min
 //= require turbolinks
