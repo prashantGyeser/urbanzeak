@@ -7,12 +7,6 @@ $(document).ready(function(){
         });
 
     });
-    /*
-    $('.expListingImg').caman(function(){
-        this.sunrise();
-        this.render();
-    });
-    */
 
 });
 
