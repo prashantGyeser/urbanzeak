@@ -56,6 +56,8 @@ gem 'geocoder'
 # Using unicorn as the server
 gem 'unicorn'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'annotate'
 end
