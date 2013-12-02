@@ -65,6 +65,7 @@ gem 'newrelic_rpm'
 gem "figaro"
 
 # File uploader
+gem 'rmagick'
 gem 'carrierwave'
 
 # Image uploader
