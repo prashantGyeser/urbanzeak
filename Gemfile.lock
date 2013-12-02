@@ -78,6 +78,9 @@ GEM
     faker (1.2.0)
       i18n (~> 0.5)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     filepicker-rails (1.0.0)
       rails (>= 3.2)
     formatador (0.2.4)
@@ -226,6 +229,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  figaro
   filepicker-rails
   geocoder
   guard
