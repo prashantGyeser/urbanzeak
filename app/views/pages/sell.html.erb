@@ -8,7 +8,13 @@
             UrbanZeak gives you all the tools you need to help you fill your experiences.
           </p>
           <div class="actions">
-            <%= link_to 'Become a host now', checkout_path , :class => 'button is-primary' %>
+            <%= button_to('Become a host now', {:action => 'become_host', :controller => 'hosts' , :method => :post, :remote => true}, {class: 'button is-primary', style: "font-weight: bold"}) %>
+            <!--
+            <%= form_for @user, :url => become_host_url do |f| %>
+              <%= f.submit "Become a host now", :class => "button is-primary", :style => "font-weight:bold" %>
+            <%end%>
+            -->
+            <!--<%= link_to 'Become a host now', checkout_path , :class => 'button is-primary' %>-->
             <!--<a class="button is-secondary">Product Tour</a>-->
           </div>
         </div>

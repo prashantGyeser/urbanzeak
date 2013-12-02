@@ -3,7 +3,7 @@ Urbanzeak::Application.routes.draw do
   resources :attendees
 
   get "checkout", to: "checkout#index"
-  get "hosts/become_host"
+  post "hosts/become_host" => 'hosts#become_host', :as => :become_host
   get "hosts/dashboard"
   resources :hosts
 
