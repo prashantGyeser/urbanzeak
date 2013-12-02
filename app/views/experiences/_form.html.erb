@@ -1,4 +1,4 @@
-<%= form_for(@experience) do |f| %>
+<%= form_for(@experience, :html => {:multipart => true}) do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
@@ -50,11 +50,11 @@
     You can upload upto <strong>five</strong> images. One will be picked at random and shown on the homepage.
   </div>
 
-  <%= f.fields_for :exp_images do |builder| %>
+  <%= f.fields_for :images do |builder| %>
     <div class="form-group">
       <%= builder.label :url, "Image to upload" %>
       <br/>
-      <%= builder.filepicker_field :url %>
+      <%= builder.file_field :url %>
 
     </div>
   <% end%>

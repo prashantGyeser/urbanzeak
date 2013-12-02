@@ -17,7 +17,7 @@ class ExperiencesController < ApplicationController
   def new
     @experience = Experience.new
 
-    5.times { @experience.exp_images.build }
+    1.times { @experience.images.build }
 
   end
 
@@ -89,6 +89,7 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, images_attributes: [:url])
     end
 end

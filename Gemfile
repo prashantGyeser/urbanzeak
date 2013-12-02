@@ -64,6 +64,12 @@ gem 'newrelic_rpm'
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
+# File uploader
+gem 'carrierwave'
+
+# Image uploader
+#gem "jquery-fileupload-rails"
+
 group :development do
   gem 'annotate'
 end

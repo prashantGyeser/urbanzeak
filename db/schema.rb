@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201193348) do
+ActiveRecord::Schema.define(version: 20131202202329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 20131201193348) do
     t.datetime "updated_at"
   end
 
+  create_table "images", force: true do |t|
+    t.string   "url"
+    t.integer  "experience_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -80,5 +87,52 @@ ActiveRecord::Schema.define(version: 20131201193348) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vanity_conversions", force: true do |t|
+    t.integer "vanity_experiment_id"
+    t.integer "alternative"
+    t.integer "conversions"
+  end
+
+  add_index "vanity_conversions", ["vanity_experiment_id", "alternative"], name: "by_experiment_id_and_alternative", using: :btree
+
+  create_table "vanity_experiments", force: true do |t|
+    t.string   "experiment_id"
+    t.integer  "outcome"
+    t.datetime "created_at"
+    t.datetime "completed_at"
+  end
+
+  add_index "vanity_experiments", ["experiment_id"], name: "index_vanity_experiments_on_experiment_id", using: :btree
+
+  create_table "vanity_metric_values", force: true do |t|
+    t.integer "vanity_metric_id"
+    t.integer "index"
+    t.integer "value"
+    t.string  "date"
+  end
+
+  add_index "vanity_metric_values", ["vanity_metric_id"], name: "index_vanity_metric_values_on_vanity_metric_id", using: :btree
+
+  create_table "vanity_metrics", force: true do |t|
+    t.string   "metric_id"
+    t.datetime "updated_at"
+  end
+
+  add_index "vanity_metrics", ["metric_id"], name: "index_vanity_metrics_on_metric_id", using: :btree
+
+  create_table "vanity_participants", force: true do |t|
+    t.string  "experiment_id"
+    t.string  "identity"
+    t.integer "shown"
+    t.integer "seen"
+    t.integer "converted"
+  end
+
+  add_index "vanity_participants", ["experiment_id", "converted"], name: "by_experiment_id_and_converted", using: :btree
+  add_index "vanity_participants", ["experiment_id", "identity"], name: "by_experiment_id_and_identity", using: :btree
+  add_index "vanity_participants", ["experiment_id", "seen"], name: "by_experiment_id_and_seen", using: :btree
+  add_index "vanity_participants", ["experiment_id", "shown"], name: "by_experiment_id_and_shown", using: :btree
+  add_index "vanity_participants", ["experiment_id"], name: "index_vanity_participants_on_experiment_id", using: :btree
 
 end
