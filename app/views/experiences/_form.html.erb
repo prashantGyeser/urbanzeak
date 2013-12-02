@@ -46,13 +46,9 @@
     <%# f.filepicker_field :exp_images%>
   </div>
 
-  <div class="alert alert-info">
-    You can upload upto <strong>five</strong> images. One will be picked at random and shown on the homepage.
-  </div>
-
   <%= f.fields_for :exp_images do |builder| %>
     <div class="form-group">
-      <%= builder.label :url, "Image to upload" %>
+      <%= builder.label :url, "Upload a picture to show your customers what your experience looks like" %>
       <br/>
       <%= builder.filepicker_field :url %>
 
@@ -70,7 +66,7 @@
 
 
   <div class="actions">
-    <%= f.submit :class => "button is-primary" %>
+    <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
   </div>
 <% end %>
 

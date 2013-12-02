@@ -17,7 +17,8 @@ class ExperiencesController < ApplicationController
   def new
     @experience = Experience.new
 
-    5.times { @experience.exp_images.build }
+    #5.times { @experience.exp_images.build }
+    @experience.exp_images.build
 
   end
 

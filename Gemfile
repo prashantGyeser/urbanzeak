@@ -79,7 +79,7 @@ group :test, :development do
   gem 'launchy'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
-  gem "rb-readline", "~> 0.5.0"
+  #gem "rb-readline", "~> 0.5.0"
   gem 'rack-mini-profiler'
 end
 
