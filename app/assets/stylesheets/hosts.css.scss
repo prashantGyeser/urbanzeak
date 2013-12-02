@@ -1,0 +1,95 @@
+// Place all the styles related to the hosts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #efefeb;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+$contrast_green_toned_down: #e4f3d9;
+/************************************************************************/
+/* Host about us */
+/************************************************************************/
+#about
+{
+  margin: 20px 0;
+  background: #fff;
+  padding: 40px 40px 60px 40px;
+  border-top: 6px solid $brand_orange;
+
+  -webkit-box-shadow: 0px 0px 25px rgba(140, 140, 150, 0.25);
+  -moz-box-shadow:    0px 0px 25px rgba(140, 140, 150, 0.25);
+  box-shadow:         0px 0px 25px rgba(140, 140, 150, 0.25);
+
+
+  h2
+  {
+    margin-bottom: 20px;
+  }
+
+  .form-group
+  {
+    margin-bottom: 20px;
+  }
+  .loginButton
+  {
+    margin-top: 20px;
+  }
+  .actions
+  {
+    margin-top: 20px;
+    span
+    {
+      margin-left: 20px;
+    }
+  }
+}
+.sharedLinks
+{
+  text-align: center;
+  a
+  {
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+}
+/************************************************************************/
+/* Host dashboard styling */
+/************************************************************************/
+.hostDashboard
+{
+  #dashboard
+  {
+    background: white;
+    padding: 40px;
+    font-size: 16px;
+    h1
+    {
+      margin-bottom: 20px;
+    }
+    ul
+    {
+      font-size: 16px;
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+      li
+      {
+        padding: 10px 0;
+        border-bottom: 1px dashed #ccc;
+        .subDetails
+        {
+          margin-top: 10px;
+          color: #aaa;
+          span
+          {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

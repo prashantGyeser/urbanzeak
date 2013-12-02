@@ -1,0 +1,86 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #efefeb;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+$contrast_green_toned_down: #e4f3d9;
+/************************************************************************/
+/* Mixins */
+/************************************************************************/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+}
+//.box { @include border-radius(10px); }
+/************************************************************************/
+/* Sell to the customer */
+/************************************************************************/
+.customerSell
+{
+  text-align: center;
+  margin-bottom: 40px;
+  p
+  {
+    font-size: 18px;
+  }
+}
+/************************************************************************/
+/* Exp listing */
+/************************************************************************/
+
+.listingRow
+{
+  margin-bottom: 40px;
+}
+.listingContainer
+{
+  border: 1px solid rgba(204,204,204,1);
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+  box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+}
+
+.expListingImageContainer
+{
+  .expListingImg
+  {
+    border-top: 6px solid $brand_blue;
+
+  }
+  .expOverlayDate
+  {
+    padding: 10px 20px;
+    background: rgba(0,0,0,.5);
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    top: 6px;
+    left: 40px;
+  }
+}
+
+.expListingContent
+{
+  background: #ffffff;
+  padding: 20px;
+  p
+  {
+    color: #999;
+    margin-top: 10px;
+  }
+}

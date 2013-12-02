@@ -1,0 +1,169 @@
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #efefeb;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+$contrast_green_toned_down: #e4f3d9;
+/************************************************************************/
+/* Mixins */
+/************************************************************************/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+}
+//.box { @include border-radius(10px); }
+/************************************************************************/
+/*Common styles */
+/************************************************************************/
+a
+{
+  color: $brand_blue;
+}
+a:hover
+{
+  background: $brand_blue;
+  color: white;
+}
+a.button
+{
+  color: white;
+}
+.button
+{
+  font-weight: bold;
+}
+body
+{
+  background: image-url("bg.png");//url("/assets/bg.png");
+  font-weight: 500;
+  //font-size: 1.8em;
+  font-size: 16px;
+  font-family: 'Segoe UI', helvetica, arial, sans-serif;
+}
+p
+{
+  font-size: 15px;
+  line-height: 24px;
+}
+.topBar
+{
+  padding: 20px 0;
+}
+
+
+/************************************************************************/
+/*Modal window */
+/************************************************************************/
+.modal-content
+{
+  @include border-radius(0px);
+  @include box-shadow;
+  border: none;
+  .modal-header
+  {
+    border: none;
+  }
+  .modal-footer
+  {
+    margin-top: 40px;
+    background: #f9f9f9;
+  }
+  .input-group
+  {
+    margin-bottom: 20px;
+    .input-group-addon
+    {
+      background: none;
+    }
+    .form-control
+    {
+      border-right: none;
+    }
+  }
+
+}
+/************************************************************************/
+/* Registration */
+/************************************************************************/
+#registration
+{
+  margin: 20px 0;
+  background: #fff;
+  padding: 40px 40px 60px 40px;
+  border-top: 6px solid $brand_orange;
+
+  -webkit-box-shadow: 0px 0px 25px rgba(140, 140, 150, 0.25);
+  -moz-box-shadow:    0px 0px 25px rgba(140, 140, 150, 0.25);
+  box-shadow:         0px 0px 25px rgba(140, 140, 150, 0.25);
+
+
+  h2
+  {
+    margin-bottom: 20px;
+  }
+
+  .form-group
+  {
+    margin-bottom: 20px;
+  }
+}
+/************************************************************************/
+/* Login */
+/************************************************************************/
+#login
+{
+  margin: 20px 0;
+  background: #fff;
+  padding: 40px 40px 60px 40px;
+  border-top: 6px solid $brand_orange;
+
+  -webkit-box-shadow: 0px 0px 25px rgba(140, 140, 150, 0.25);
+  -moz-box-shadow:    0px 0px 25px rgba(140, 140, 150, 0.25);
+  box-shadow:         0px 0px 25px rgba(140, 140, 150, 0.25);
+
+
+  h2
+  {
+    margin-bottom: 20px;
+  }
+
+  .form-group
+  {
+    margin-bottom: 20px;
+  }
+  .loginButton
+  {
+    margin-top: 20px;
+  }
+}
+.sharedLinks
+{
+  text-align: center;
+  a
+  {
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+}
+/************************************************************************/
+/* Login */
+/************************************************************************/
+#error_explanation
+{
+  color: #b94a48;
+  background: #f2dede;
+  border-color: #ebccd1;
+  padding: 20px;
+  margin-bottom: 20px;
+}

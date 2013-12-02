@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+# gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -44,13 +44,45 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Postgres Sql gem
+gem 'pg'
+
+# Ink filepicker
+gem 'filepicker-rails'
+
+# Authentication
+gem 'devise'
+
+# Geocoding the location
+gem 'geocoder'
+
+# Using unicorn as the server
+gem 'unicorn'
+
+gem 'newrelic_rpm'
+
+# Setting environment variables for the different values that need to be used in different environments
+gem "figaro"
+
 group :development do
-  gem 'guard'
-  gem 'guard-rspec', require: false
+  gem 'annotate'
 end
 
 group :test, :development do
+  gem 'guard'
   gem 'rspec-rails'
-  gem 'cucumber-rails'  
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'guard-rspec', require: false
+  gem 'guard-migrate'
+  gem "rb-readline", "~> 0.5.0"
+  gem 'rack-mini-profiler'
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end

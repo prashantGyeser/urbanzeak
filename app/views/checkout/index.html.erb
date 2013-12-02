@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="cart">
+        <div class="cartContent">
+          <h2>Purchase details</h2>
+          Your email address: <strong><%= current_user.email %></strong>
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th><span class="pull-right">Price</span></th>
+            </tr>
+            <tr>
+              <td>UrbanZeak subscription</td>
+              <td>1</td>
+              <td><span class="pull-right"><strong>Rs 1200</strong></span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="cartFooter">
+          <button class="button is-primary" style="font-weight: bold">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

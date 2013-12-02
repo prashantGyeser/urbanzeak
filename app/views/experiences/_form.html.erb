@@ -1,0 +1,116 @@
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, :class => "form-control ff_elem", :required => "required" %>
+    <!--<input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>-->
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, :class => "form-control", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_date %>
+    <br/>
+    <%= f.date_select :exp_date, :class => "form-control", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_time %>
+    <br/>
+    <%= f.time_select :exp_time, :class => "form-control", :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%# f.label :exp_images, "Upload Your Avatar:" %>
+    <%# f.filepicker_field :exp_images%>
+  </div>
+
+  <div class="alert alert-info">
+    You can upload upto <strong>five</strong> images. One will be picked at random and shown on the homepage.
+  </div>
+
+  <%= f.fields_for :exp_images do |builder| %>
+    <div class="form-group">
+      <%= builder.label :url, "Image to upload" %>
+      <br/>
+      <%= builder.filepicker_field :url %>
+
+    </div>
+  <% end%>
+
+    <%= f.hidden_field :latitude%>
+
+    <%= f.hidden_field :longitude %>
+
+  <div class="form-group">
+    <label>Select the meeting point on the map below</label>
+    <div id="map"></div>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit :class => "button is-primary" %>
+  </div>
+<% end %>
+
+<script>
+  $('#new_experience').validate();
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#experience_description").autoGrow();
+  });
+</script>
+
+
+<script type="text/javascript">
+
+  jQuery(function ()
+  {
+    jQuery("#experience_city").autocomplete({
+      source: function (request, response) {
+        jQuery.getJSON(
+                "http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+                function (data) {
+                  response(data);
+                }
+        );
+      },
+      minLength: 3,
+      select: function (event, ui) {
+        var selectedObj = ui.item;
+        jQuery("#experience_city").val(selectedObj.value);
+        return false;
+      },
+      open: function () {
+        jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+      },
+      close: function () {
+        jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+      }
+    });
+    jQuery("#experience_city").autocomplete("option", "delay", 100);
+  });
+</script>

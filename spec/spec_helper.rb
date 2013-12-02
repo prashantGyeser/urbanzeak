@@ -3,6 +3,8 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require "capybara/rspec"
+require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -11,6 +13,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+
+#Capybara.run_server = true
+#Capybara.server_port = 7000
+#Capybara.app_host = "http://localhost:#{Capybara.server_port}"
+
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -39,4 +46,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Configuring rspec to show backtrace for failed tests
+  config.fail_fast = true
+
 end

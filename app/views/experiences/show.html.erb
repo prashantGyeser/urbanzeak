@@ -1,0 +1,73 @@
+<div class="experienceShow">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="experienceShowContainer">
+
+          <div class="slider-wrapper theme-light">
+            <div id="slider" class="nivoSlider">
+              <%= image_tag 'slider-filler/nemo.jpg'  %>
+              <%= image_tag 'slider-filler/toy_story.jpg'  %>
+              <%= image_tag 'slider-filler/up.jpg'  %>
+              <%= image_tag 'slider-filler/walle.jpg'  %>
+            </div>
+          </div>
+
+
+
+          <h2><%= @experience.name%></h2>
+          <div class="subDetails">
+            <ul>
+              <li>Experience Date: <strong><%= @experience.exp_date %></strong></li>
+              <li>Experience Time: <strong><%= @experience.exp_time %></strong></li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              <%= simple_format(@experience.description).html_safe %>
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4">
+        <div class="experienceSubDetails">
+          <h4><%= @experience.name %></h4>
+          <strong>Join Now</strong>
+          <%= form_for(@attendee, :url => new_attendee_path) do |f| %>
+            <% if @attendee.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+                <ul>
+                  <% @attendee.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <%= f.label :seats %>
+              <%= f.number_field :seats, :class => "form-control" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Join Experience", :class => "button is-secondary", :style => "font-weight: bold" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="experienceSubDetails">
+          Venue text
+        </div>
+
+        <div class="experienceSubDetails">
+          Venue Map
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
