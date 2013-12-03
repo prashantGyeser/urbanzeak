@@ -67,9 +67,27 @@
         </div>
 
         <div class="experienceSubDetails">
-          Venue Map
+          <strong>Meeting point</strong>
+          <div id="gmap" style="width: 100%; height: 200px"></div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $("#gmap").gmap3({
+    marker:{
+      values: [
+        {latLng:[<%= @experience.latitude  %>, <%= @experience.longitude %>]}
+      ]
+
+    },
+    map:{
+      options:{
+        zoom: 14
+      }
+    }
+  });
+</script>
