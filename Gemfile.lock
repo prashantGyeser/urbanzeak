@@ -124,6 +124,8 @@ GEM
       guard (>= 2.1.1)
       rspec (~> 2.14)
     hashie (2.0.5)
+    heroku-deflater (0.5.2)
+      rack (>= 1.4.5)
     hike (1.2.3)
     httparty (0.12.0)
       json (~> 1.8)
@@ -285,6 +287,7 @@ DEPENDENCIES
   guard
   guard-migrate
   guard-rspec
+  heroku-deflater
   impressionist
   jbuilder (~> 1.2)
   jquery-rails

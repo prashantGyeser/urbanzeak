@@ -75,10 +75,13 @@ gem 'fog'
 
 
 # Monitoring tools
-gem 'sentry-raven'
-gem 'bugsnag'
-gem 'exceptiontrap'
-gem 'appsignal'
+gem 'sentry-raven', :group => :production
+gem 'bugsnag', :group => :production
+gem 'exceptiontrap', :group => :production
+gem 'appsignal', :group => :production
+
+# gzip on heroku
+gem 'heroku-deflater', :group => :production
 
 # Page tracking for hosts
 gem 'impressionist'
