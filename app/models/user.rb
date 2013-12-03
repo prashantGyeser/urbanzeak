@@ -28,4 +28,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :city, :first_name, :last_name, :presence => true
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.signup_confirmation(self).deliver
+  end
+
 end
