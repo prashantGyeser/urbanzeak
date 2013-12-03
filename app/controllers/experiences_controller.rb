@@ -16,10 +16,6 @@ class ExperiencesController < ApplicationController
   # GET /experiences/new
   def new
     @experience = Experience.new
-
-    #5.times { @experience.exp_images.build }
-    @experience.exp_images.build
-
   end
 
   # GET /experiences/1/edit
@@ -90,6 +86,7 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, :image )
     end
 end

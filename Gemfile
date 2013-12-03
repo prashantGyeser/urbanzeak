@@ -64,6 +64,9 @@ gem 'newrelic_rpm'
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
+# Carrierwave
+gem 'carrierwave'
+
 group :development do
   gem 'annotate'
 end

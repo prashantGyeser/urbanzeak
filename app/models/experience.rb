@@ -17,7 +17,9 @@
 class Experience < ActiveRecord::Base
   validates :name, :description, :price, :exp_date, :exp_time, presence: true
 
-  has_many :exp_images
-  accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
+  #has_many :exp_images
+  #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
+
+  mount_uploader :image, ImageUploader
 
 end

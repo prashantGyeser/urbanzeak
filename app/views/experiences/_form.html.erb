@@ -46,14 +46,11 @@
     <%# f.filepicker_field :exp_images%>
   </div>
 
-  <%= f.fields_for :exp_images do |builder| %>
-    <div class="form-group">
-      <%= builder.label :url, "Upload a picture to show your customers what your experience looks like" %>
-      <br/>
-      <%= builder.filepicker_field :url %>
-
-    </div>
-  <% end%>
+  <div class="form-group">
+    <%= f.label :image %>
+    <br/>
+    <%= f.file_field :image, :class => "form-control", :required => "required" %>
+  </div>
 
     <%= f.hidden_field :latitude%>
 
