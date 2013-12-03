@@ -11,6 +11,7 @@ Urbanzeak::Application.routes.draw do
   get "pages/about"
   get "pages/contact"
   get "pages/terms"
+  get "pages/privacy"
 
   devise_for :users
   get "experiences/get/:country", to: "experiences#country"
