@@ -22,9 +22,9 @@ $contrast_green_toned_down: #e4f3d9;
   background: #fff;
   padding: 40px;
 
-  -webkit-box-shadow: 0px 0px 25px rgba(140, 140, 150, 0.25);
-  -moz-box-shadow:    0px 0px 25px rgba(140, 140, 150, 0.25);
-  box-shadow:         0px 0px 25px rgba(140, 140, 150, 0.25);
+  border: 1px solid rgba(204,204,204,1);
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+  box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
 
   .subDetails
   {
@@ -62,9 +62,9 @@ $contrast_green_toned_down: #e4f3d9;
   background: #fff;
   padding: 40px;
 
-  -webkit-box-shadow: 0px 0px 25px rgba(140, 140, 150, 0.25);
-  -moz-box-shadow:    0px 0px 25px rgba(140, 140, 150, 0.25);
-  box-shadow:         0px 0px 25px rgba(140, 140, 150, 0.25);
+  border: 1px solid rgba(204,204,204,1);
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+  box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
 
   .form-group
   {

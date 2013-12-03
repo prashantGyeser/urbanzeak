@@ -77,3 +77,15 @@
   background: white;
   text-align: center;
 }
+/************************************************************************/
+/* Static pages */
+/************************************************************************/
+.static
+{
+  background: #ffffff;
+  padding: 40px;
+
+  border: 1px solid rgba(204,204,204,1);
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+  box-shadow: 0px 0px 3px 3px rgba(204, 204, 204, .4);
+}
