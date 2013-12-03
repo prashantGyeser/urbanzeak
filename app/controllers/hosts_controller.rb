@@ -78,6 +78,15 @@ class HostsController < ApplicationController
   end
 
   def dashboard
+    #@experience = Experience.last
+    #logger.debug "The impressions for a model are: #{@experience.impressionist_count()}"
+    @experiences = Experience.where(:user_id => current_user.id)
+    @total_experiences = @experiences.count
+    @total_views = 0
+
+    @experiences.each do |experience|
+      @total_views = @total_views + experience.impressionist_count(:filter=>:all)
+    end
 
   end
 

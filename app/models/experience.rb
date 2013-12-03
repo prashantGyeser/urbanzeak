@@ -25,4 +25,7 @@ class Experience < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  # Making the model impressionable so that people that view the page can be tracked
+  is_impressionable
+
 end

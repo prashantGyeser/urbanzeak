@@ -76,7 +76,7 @@
 
             <% if user_signed_in? %>
               <% if current_user.host?%>
-
+                <%= link_to('View your dashboard', hosts_dashboard_path, :class => "button is-secondary") %>
               <% else %>
                 <%= link_to('Host your experience', pages_sell_url, :class => "button is-secondary") %>
               <% end %>

@@ -3,34 +3,59 @@
     <div class="row">
       <div class="col-lg-12">
         <div id="dashboard">
-          <%= link_to "New Experience", new_experience_path, :class => "button is-primary"%>
-          <h1>Dashboard</h1>
-          <ul>
-            <li>
-              <a href="#">Sample experience</a>
-              <div class="subDetails">
-                <span>Attendees: <strong>10</strong></span>
-                <span>Expected Revenue: <strong>Rs 10000</strong></span>
-              </div>
-            </li>
 
-            <li>
-              <a href="#">Sample experience</a>
-              <div class="subDetails">
-                <span>Attendees: <strong>10</strong></span>
-                <span>Expected Revenue: <strong>Rs 10000</strong></span>
-              </div>
-            </li>
+          <h3>
+            Dashboard
+            <span class="pull-right"><%= link_to "Create Experience", new_experience_path, :class => "button is-primary"%></span>
+          </h3>
 
-            <li>
-              <a href="#">Sample experience</a>
-              <div class="subDetails">
-                <span>Attendees: <strong>10</strong></span>
-                <span>Expected Revenue: <strong>Rs 10000</strong></span>
+          <% if @experiences.empty? %>
+            <div class="noExperiences alert alert-warning"">
+              You do not have any experiences yet! <strong>Why don't you create one?</strong>
+            </div>
+          <% else %>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="keyValues">
+                  <div class="heading">
+                    Total views
+                  </div>
+                  <div class="value">
+                    <%= @total_views %>
+                  </div>
+                </div>
               </div>
-            </li>
-          </ul>
-        </div>
+
+              <div class="col-lg-6">
+                <div class="keyValues">
+                  <div class="heading">
+                    Experiences you have live
+                  </div>
+                  <div class="value">
+                    <%= @total_views %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+            <ul>
+
+              <% @experiences.each do |experience| %>
+                <li>
+                  <a href="#"><%= link_to experience.name, experiences_path(experience) %></a>
+                  <div class="subDetails">
+                    <% experience_attendees = Attendee.where(:experience_id =>  experience.id) %>
+                    <span>Attendees: <strong><%= experience_attendees.count %></strong></span>
+                    <span>Expected Revenue: <strong>Rs <%= experience_attendees.count * experience.price%></strong></span>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+
+          <% end %>
+
       </div>
     </div>
   </div>
