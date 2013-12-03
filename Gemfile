@@ -76,6 +76,7 @@ gem 'fog'
 gem 'sentry-raven'
 gem 'bugsnag'
 gem 'exceptiontrap'
+gem 'appsignal'
 
 group :development do
   gem 'annotate'

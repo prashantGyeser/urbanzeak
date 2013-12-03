@@ -30,7 +30,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
-    @experience.host = current_user.id
+    @experience.user_id = current_user.id
 
     respond_to do |format|
       if @experience.save
