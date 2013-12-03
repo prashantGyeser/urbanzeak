@@ -37,3 +37,9 @@ $(document).ready(function(){
 
 });
 
+$( "#expShowImg" ).load(function() {
+    Caman('#expShowImg', function(){
+        this.sunrise();
+        this.render();
+    });
+});
