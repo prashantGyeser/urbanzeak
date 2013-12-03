@@ -79,6 +79,7 @@ gem 'sentry-raven', :group => :production
 gem 'bugsnag', :group => :production
 gem 'exceptiontrap', :group => :production
 gem 'appsignal', :group => :production
+gem 'oboe-heroku'
 
 # gzip on heroku
 gem 'heroku-deflater', :group => :production
