@@ -44,7 +44,7 @@
 
               <% @experiences.each do |experience| %>
                 <li>
-                  <a href="#"><%= link_to experience.name, experiences_path(experience) %></a>
+                  <a href="#"><%= link_to experience.name, experience_path(experience) %></a>
                   <div class="subDetails">
                     <% experience_attendees = Attendee.where(:experience_id =>  experience.id) %>
                     <span>Attendees: <strong><%= experience_attendees.count %></strong></span>
