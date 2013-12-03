@@ -3,7 +3,7 @@ class ExperiencesController < ApplicationController
 
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
-  before_create :check_if_host
+  before_filter :check_if_host, only: [:create]
 
   # GET /experiences
   # GET /experiences.json

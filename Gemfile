@@ -63,6 +63,7 @@ gem "figaro"
 
 # Carrierwave
 gem 'carrierwave'
+gem 'carrierwave'
 
 # Image resizing
 gem 'rmagick'
