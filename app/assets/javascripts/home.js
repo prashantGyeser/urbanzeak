@@ -1,13 +1,14 @@
 $(document).ready(function(){
 
-    $('.expListingImg').each(function(index){
-        Caman(this, function(){
-            this.sunrise();
-            this.render();
+    $('#homepageExperienceSummaryContainer').load(function(){
+        $('.expListingImg').each(function(index){
+            Caman(this, function(){
+                this.sunrise();
+                this.render();
+            });
+
         });
-
     });
-
 });
 
 
