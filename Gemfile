@@ -61,6 +61,15 @@ gem 'newrelic_rpm'
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
+# Carrierwave
+gem 'carrierwave'
+
+# Image resizing
+gem 'rmagick'
+
+# Storing the images in s3
+gem 'fog'
+
 group :development do
   gem 'annotate'
 end
@@ -76,7 +85,7 @@ group :test, :development do
   gem 'launchy'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
-  gem "rb-readline", "~> 0.5.0"
+  #gem "rb-readline", "~> 0.5.0"
   gem 'rack-mini-profiler'
 end
 

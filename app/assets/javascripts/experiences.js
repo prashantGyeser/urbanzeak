@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //$('#newExperienceModal').modal('show');
+
     $("#map").gmap3({
         map:{
             options:{
@@ -34,9 +35,5 @@ $(document).ready(function(){
     });
 
 
-});
-
-$(window).load(function() {
-    $('#slider').nivoSlider();
 });
 

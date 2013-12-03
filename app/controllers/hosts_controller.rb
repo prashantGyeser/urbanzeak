@@ -63,6 +63,20 @@ class HostsController < ApplicationController
     end
   end
 
+  def become_host
+    @user = current_user
+    @user.host = true
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to root_path, notice: 'Congratulations! You can now post your experiences on UrbanZeak.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to pages_sell_path }
+        format.json { render json: @host.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def dashboard
 
   end

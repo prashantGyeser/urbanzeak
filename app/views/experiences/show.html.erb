@@ -4,15 +4,8 @@
       <div class="col-lg-8">
         <div class="experienceShowContainer">
 
-          <div class="slider-wrapper theme-light">
-            <div id="slider" class="nivoSlider">
-              <%= image_tag 'slider-filler/nemo.jpg'  %>
-              <%= image_tag 'slider-filler/toy_story.jpg'  %>
-              <%= image_tag 'slider-filler/up.jpg'  %>
-              <%= image_tag 'slider-filler/walle.jpg'  %>
-            </div>
-          </div>
 
+          <%= image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
 
 
           <h2><%= @experience.name%></h2>
