@@ -43,9 +43,11 @@
               </div>
             </div>
             <div class="expListingContent">
-              <strong><a href="#">Exp name</a></strong>
+              <strong>
+                <%= link_to experience.name, experience_path(experience) %>
+              </strong>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
+                <%= experience.description.truncate(150) %>
               </p>
             </div>
           </div>

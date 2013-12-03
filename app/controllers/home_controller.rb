@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
     if request.ip == '127.0.0.1'
       #@experiences = Experience.first(10)
-      #@experiences = Experience.all
+      @experiences = Experience.all
     else
       @experiences = Experience.where("city like ?", "%#{request.location.country}%")
       @country = request.location.country
