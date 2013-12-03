@@ -67,6 +67,9 @@ gem "figaro"
 # Carrierwave
 gem 'carrierwave'
 
+# Image resizing
+gem 'rmagick'
+
 group :development do
   gem 'annotate'
 end
