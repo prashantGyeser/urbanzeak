@@ -80,6 +80,9 @@ gem 'bugsnag'
 gem 'exceptiontrap'
 gem 'appsignal'
 
+# Page tracking for hosts
+gem 'impressionist'
+
 group :development do
   gem 'annotate'
 end
