@@ -84,3 +84,28 @@ $contrast_green_toned_down: #e4f3d9;
     margin-top: 10px;
   }
 }
+/************************************************************************/
+/* Homepage sell */
+/************************************************************************/
+.homepageSell
+{
+  background: image-url('homepagesellbg.png');
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+
+}
+.footer
+{
+  margin-top: 20px;
+  ul
+  {
+    margin: 0;
+    padding: 0;
+    li
+    {
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+}
