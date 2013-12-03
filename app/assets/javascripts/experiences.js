@@ -1,12 +1,6 @@
 $(document).ready(function(){
     //$('#newExperienceModal').modal('show');
 
-
-    Caman('#expShowImg', function(){
-        this.sunrise();
-        this.render();
-    });
-
     $("#map").gmap3({
         map:{
             options:{
@@ -42,3 +36,4 @@ $(document).ready(function(){
 
 
 });
+

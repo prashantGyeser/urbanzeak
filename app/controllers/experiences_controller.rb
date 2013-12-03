@@ -1,6 +1,10 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
+
+  before_create :check_if_host
+
   # GET /experiences
   # GET /experiences.json
   def index
@@ -26,6 +30,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+    @experience.host = current_user.id
 
     respond_to do |format|
       if @experience.save
@@ -75,6 +80,17 @@ class ExperiencesController < ApplicationController
         format.json { render json: @experiences}#action: 'show', status: :created, location: @experience }
       end
 
+    end
+  end
+
+  protected
+
+  def check_if_host
+    if signed_in?
+      raise 'Only hosts can create experiences!' unless current_user.host?
+    else
+      # or you can use the authenticate_user! devise provides to only allow signed_in users
+      raise 'Please sign in!'
     end
   end
 

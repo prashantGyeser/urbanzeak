@@ -70,6 +70,9 @@ gem 'carrierwave'
 # Image resizing
 gem 'rmagick'
 
+# Storing the images in s3
+gem 'fog'
+
 group :development do
   gem 'annotate'
 end
