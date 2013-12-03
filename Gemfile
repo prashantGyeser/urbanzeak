@@ -73,6 +73,12 @@ gem 'rmagick'
 # Storing the images in s3
 gem 'fog'
 
+
+# Monitoring tools
+gem 'sentry-raven'
+gem 'bugsnag'
+gem 'exceptiontrap'
+
 group :development do
   gem 'annotate'
 end
