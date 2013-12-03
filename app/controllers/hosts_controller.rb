@@ -68,7 +68,7 @@ class HostsController < ApplicationController
     @user.host = true
     respond_to do |format|
       if @user.save
-        format.html { redirect_to root_path, notice: 'Congratulations! You can now post your experiences on UrbanZeak.' }
+        format.html { redirect_to hosts_dashboard_path, notice: 'Congratulations! You can now post your experiences on UrbanZeak.' }
         format.json { head :no_content }
       else
         format.html { redirect_to pages_sell_path }
