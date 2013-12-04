@@ -22,7 +22,7 @@ class UserMailer < ActionMailer::Base
         }
     headers['X-MC-MergeVars'] = mergeVars.to_json
 
-    headers['X-MC-Template'] = "need-help-autoresponder"
+    headers['X-MC-Template'] = "need-help-autoresponder-urbanzeak"
     headers['X-MC-Track'] = "opens"
     headers['X-MC-SendAt'] = "#{time_to_send}"
   end
