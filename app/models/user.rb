@@ -30,11 +30,18 @@ class User < ActiveRecord::Base
   validates :city, :first_name, :last_name, :presence => true
 
   after_create :send_welcome_email
+  after_create :autoresponder
 
   private
 
   def send_welcome_email
     UserMailer.signup_confirmation(self).deliver
+  end
+
+  def autoresponder
+    time_30_mins_from_now_utc = (Time.now.utc) + (32*60)
+    time_to_send_this_mail_at = time_30_mins_from_now_utc.strftime("%Y-%m-%d %H:%M:%S")
+    UserMailer.founder_welcome(self, time_to_send_this_mail_at).deliver
   end
 
 end

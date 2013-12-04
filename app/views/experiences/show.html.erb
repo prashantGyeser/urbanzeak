@@ -30,29 +30,8 @@
       <div class="col-lg-4">
         <div class="experienceSubDetails">
           <h4><%= @experience.name %></h4>
-          <strong>Join Now</strong>
-          <%= form_for(@attendee, :url => new_attendee_path) do |f| %>
-            <% if @attendee.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this experience from being saved:</h2>
-
-                <ul>
-                  <% @attendee.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-            <div class="form-group">
-              <%= f.label :seats %>
-              <%= f.number_field :seats, :class => "form-control" %>
-            </div>
-
-            <div class="actions">
-              <%= f.submit "Join Experience", :class => "button is-secondary", :style => "font-weight: bold" %>
-            </div>
-          <% end %>
+          <strong>RSVP Now</strong>
+          <%= render partial: 'attendees/form', :locals => {:experience_id => @experience.id} %>
         </div>
 
         <div class="experienceSubDetails">
