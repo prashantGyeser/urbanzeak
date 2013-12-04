@@ -41,6 +41,17 @@
                 <div><%= experience.exp_date.strftime("%b") %></div>
                 <div>30</div>
               </div>
+              <div class="hostOverlap">
+                <% user_id = experience.user_id %>
+                <% host = Host.where(:user_id => user_id).first %>
+                <% if host.nil? %>
+
+                <% else %>
+                  <%= image_tag host.avatar_url(:thumb).to_s, :class => "img-responsive img-circle homepageHostImage" %>
+                <% end %>
+
+              </div>
+
             </div>
             <div class="expListingContent">
               <strong>

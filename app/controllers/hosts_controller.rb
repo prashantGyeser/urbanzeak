@@ -28,9 +28,11 @@ class HostsController < ApplicationController
   def create
     @host = Host.new(host_params)
 
+    @host.user_id = current_user.id
+
     respond_to do |format|
       if @host.save
-        format.html { redirect_to @host, notice: 'Host was successfully created.' }
+        format.html { redirect_to hosts_dashboard_path, notice: 'Host was successfully created.' }
         format.json { render action: 'show', status: :created, location: @host }
       else
         format.html { render action: 'new' }
@@ -84,6 +86,8 @@ class HostsController < ApplicationController
     @total_experiences = @experiences.count
     @total_views = 0
 
+    @has_about =
+
     @experiences.each do |experience|
       @total_views = @total_views + experience.impressionist_count(:filter=>:all)
     end
@@ -98,6 +102,6 @@ class HostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def host_params
-      params.require(:host).permit(:title, :about)
+      params.require(:host).permit(:title, :about, :avatar)
     end
 end
