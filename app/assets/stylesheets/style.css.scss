@@ -46,14 +46,14 @@ a.button
 body
 {
   background: image-url("bg.png");//url("/assets/bg.png");
-  font-weight: 500;
+  font-weight: 300;
   //font-size: 1.8em;
   font-size: 16px;
-  font-family: 'Segoe UI', helvetica, arial, sans-serif;
+  font-family: "museo-sans", 'Segoe UI', helvetica, arial, sans-serif;
 }
 p
 {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
 }
 .topBar
