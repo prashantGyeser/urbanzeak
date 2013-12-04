@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   def autoresponder
     time_30_mins_from_now_utc = (Time.now.utc) + (32*60)
     time_to_send_this_mail_at = time_30_mins_from_now_utc.strftime("%Y-%m-%d %H:%M:%S")
-    UserMailer.founder_welcome(user, time_to_send_this_mail_at).deliver
+    UserMailer.founder_welcome(self, time_to_send_this_mail_at).deliver
   end
 
 end
