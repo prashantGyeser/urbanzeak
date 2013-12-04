@@ -25,6 +25,9 @@ module Urbanzeak
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Precompiling assets in the vendor dir. Rails does not do it by default
+    config.assets.enable = true
+
     # Ink filepicker config
     config.filepicker_rails.api_key = "ASJiChL2QqvYT9LxDuUqgz"
 

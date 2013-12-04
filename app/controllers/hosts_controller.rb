@@ -63,7 +63,30 @@ class HostsController < ApplicationController
     end
   end
 
+  def become_host
+    @user = current_user
+    @user.host = true
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to hosts_dashboard_path, notice: 'Congratulations! You can now post your experiences on UrbanZeak.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to pages_sell_path }
+        format.json { render json: @host.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def dashboard
+    #@experience = Experience.last
+    #logger.debug "The impressions for a model are: #{@experience.impressionist_count()}"
+    @experiences = Experience.where(:user_id => current_user.id)
+    @total_experiences = @experiences.count
+    @total_views = 0
+
+    @experiences.each do |experience|
+      @total_views = @total_views + experience.impressionist_count(:filter=>:all)
+    end
 
   end
 

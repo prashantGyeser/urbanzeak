@@ -11,19 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :seats %><br>
-    <%= f.number_field :seats %>
+    <%= f.number_field :seats, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :experience_id %><br>
-    <%= f.number_field :experience_id %>
+    <%= f.hidden_field :experience_id, :value => experience_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "RSVP Now", :class => "button is-primary", :style => "font-wight: bold" %>
   </div>
 <% end %>

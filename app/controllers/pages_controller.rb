@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
+
+  before_filter :authenticate_user!, :only => [:sell]
+
   def sell
+    @user = current_user
   end
 
   def about
@@ -7,4 +11,13 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def terms
+
+  end
+
+  def privacy
+
+  end
+
 end

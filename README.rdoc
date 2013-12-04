@@ -1,5 +1,8 @@
 == README
 
+== Compiling
+RAILS_ENV=production bundle exec rake assets:clean
+
 == Useful links
 -- Getting started with testing
 http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html

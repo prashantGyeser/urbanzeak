@@ -3,13 +3,15 @@ Urbanzeak::Application.routes.draw do
   resources :attendees
 
   get "checkout", to: "checkout#index"
-  get "hosts/become_host"
+  post "hosts/become_host" => 'hosts#become_host', :as => :become_host
   get "hosts/dashboard"
   resources :hosts
 
   get "pages/sell"
   get "pages/about"
   get "pages/contact"
+  get "pages/terms"
+  get "pages/privacy"
 
   devise_for :users
   get "experiences/get/:country", to: "experiences#country"
@@ -20,6 +22,8 @@ Urbanzeak::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  get 'home/:city', to: "home#index"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

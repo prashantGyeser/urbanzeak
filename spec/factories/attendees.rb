@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: attendees
+#
+#  id            :integer          not null, primary key
+#  seats         :integer
+#  user_id       :integer
+#  experience_id :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do

@@ -1,6 +1,10 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
+
+  before_filter :check_if_host, only: [:create]
+
   # GET /experiences
   # GET /experiences.json
   def index
@@ -11,14 +15,14 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1.json
   def show
     @attendee = Attendee.new
+
+    impressionist(@experience)
+
   end
 
   # GET /experiences/new
   def new
     @experience = Experience.new
-
-    5.times { @experience.exp_images.build }
-
   end
 
   # GET /experiences/1/edit
@@ -29,6 +33,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+    @experience.user_id = current_user.id
 
     respond_to do |format|
       if @experience.save
@@ -81,6 +86,17 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  protected
+
+  def check_if_host
+    if signed_in?
+      raise 'Only hosts can create experiences!' unless current_user.host?
+    else
+      # or you can use the authenticate_user! devise provides to only allow signed_in users
+      raise 'Please sign in!'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
@@ -89,6 +105,7 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, :image )
     end
 end

@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -64,6 +61,30 @@ gem 'newrelic_rpm'
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
+# Carrierwave
+gem 'carrierwave'
+gem 'carrierwave'
+
+# Image resizing
+gem 'rmagick'
+
+# Storing the images in s3
+gem 'fog'
+
+
+# Monitoring tools
+gem 'sentry-raven', :group => :production
+gem 'bugsnag', :group => :production
+gem 'exceptiontrap', :group => :production
+gem 'appsignal', :group => :production
+gem 'oboe-heroku'
+
+# gzip on heroku
+gem 'heroku-deflater', :group => :production
+
+# Page tracking for hosts
+gem 'impressionist'
+
 group :development do
   gem 'annotate'
 end
@@ -79,7 +100,7 @@ group :test, :development do
   gem 'launchy'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
-  gem "rb-readline", "~> 0.5.0"
+  #gem "rb-readline", "~> 0.5.0"
   gem 'rack-mini-profiler'
 end
 
