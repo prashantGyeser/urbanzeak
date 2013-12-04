@@ -1,6 +1,8 @@
 class AttendeesController < ApplicationController
   before_action :set_attendee, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:create]
+
   # GET /attendees
   # GET /attendees.json
   def index
@@ -28,7 +30,8 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
-        format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
+        #format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
+        format.html { redirect_to experience_path(@attendee.experience_id), notice: 'RSVP was successfully created.' }
         format.json { render action: 'show', status: :created, location: @attendee }
       else
         format.html { render action: 'new' }
