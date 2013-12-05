@@ -15,16 +15,32 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <div class="filter">
-        <div class="input-group">
-          <input type="text" class="form-control" id="filterInput" placeholder="Enter your city name here and we will find all the experiences in your city.">
+    <div class="col-lg-12 homepageCountry">
+      <h2>All experience in <%= @country %></h2>
+      <span><a class="button is-primary pull-right" data-toggle="modal" data-target="#cityFilter">Show experiences from your city</a></span>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cityFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Change City</h4>
+          </div>
+          <div class="modal-body">
+
+              <div class="input-group">
+                <input type="text" class="form-control typeahead" id="filterInput" placeholder="Enter your city name here and we will find all the experiences in your city.">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button" id="filter">Get experiences!</button>
                 </span>
-        </div><!-- /input-group -->
-      </div>
-    </div>
+              </div><!-- /input-group -->
+
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   </div>
 </div>
 
@@ -39,8 +55,19 @@
               <%= image_tag experience.image_url(:thumb).to_s, :class => "img-responsive expListingImg"%>
               <div class="expOverlayDate">
                 <div><%= experience.exp_date.strftime("%b") %></div>
-                <div>30</div>
+                <div><%= experience.exp_date.strftime("%d") %></div>
               </div>
+              <div class="hostOverlap">
+                <% user_id = experience.user_id %>
+                <% host = Host.where(:user_id => user_id).first %>
+                <% if host.nil? %>
+
+                <% else %>
+                  <%= image_tag host.avatar_url(:thumb).to_s, :class => "img-responsive img-circle homepageHostImage" %>
+                <% end %>
+
+              </div>
+
             </div>
             <div class="expListingContent">
               <strong>
@@ -58,140 +85,60 @@
 </div>
 
 
-
-
-
-
-
-<div class="container">
-  <div id="homepageExperienceSummaryContainer">
-    <div class="row listingRow">
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg"%>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg" %>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg" %>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-
-    <div class="row listingRow">
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg" %>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg" %>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="listingContainer">
-          <div class="expListingImageContainer">
-            <%= image_tag 'homepageExpImages/experienceImage1.jpg', :class => "img-responsive expListingImg" %>
-            <div class="expOverlayDate">
-              <div>Dec</div>
-              <div>30</div>
-            </div>
-          </div>
-          <div class="expListingContent">
-            <strong><a href="#">Exp name</a></strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mi commodo enim pretium rhoncus at eu velit. Etiam non risus venenatis, mattis velit eu, convallis erat.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-
-</div>
-
-
 <div class="homepageSell">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p><strong>Do you have a fun and unique experience to provide to people in your city?</strong></p>
+        <div class="heading">
+          <h2>Features for a host</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis nisi sed sapien semper volutpat.
+          </p>
+        </div>
 
-        <p>
-          Host your experience with UrbanZeak and explore a simpler and effective way to showcase, share, manage and sell your experience
-        </p>
-        <%= link_to "Host your experience on UrbanZeak", pages_sell_path, :class => "button is-secondary" %>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="hostSellContainer">
+              <%= image_tag "homepageHostSellFillers/host1.jpg", :class => "img-responsive" %>
+              <div class="homeSellContent">
+                <h4><strong>Hosts name</strong></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="hostSellContainer">
+              <%= image_tag "homepageHostSellFillers/host2.jpg", :class => "img-responsive" %>
+              <div class="homeSellContent">
+                <h4><strong>Hosts name</strong></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="hostSellContainer">
+              <%= image_tag "homepageHostSellFillers/host3.jpg", :class => "img-responsive" %>
+              <div class="homeSellContent">
+                <h4><strong>Hosts name</strong></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="heading">
+          <%= link_to "Host your experience on UrbanZeak", pages_sell_path, :class => "button is-secondary" %>
+        </div>
+
       </div>
     </div>
   </div>
@@ -210,3 +157,4 @@
   </div>
 
 </div>
+

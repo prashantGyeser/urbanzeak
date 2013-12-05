@@ -6,7 +6,12 @@
 
           <h3>
             Dashboard
-            <span class="pull-right"><%= link_to "Create Experience", new_experience_path, :class => "button is-primary"%></span>
+            <span class="pull-right dashboardButton">
+              <%= link_to "Create Experience", new_experience_path, :class => "button is-primary", 'data-no-turbolink' => true%>
+            </span>
+              <span class="pull-right dashboardButton">
+              <%= link_to "Add an about you", new_host_path, :class => "button is-secondary"%>
+            </span>
           </h3>
 
           <% if @experiences.empty? %>

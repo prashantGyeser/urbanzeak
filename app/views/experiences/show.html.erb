@@ -13,8 +13,12 @@
           <h2><%= @experience.name%></h2>
           <div class="subDetails">
             <ul>
-              <li>Experience Date: <strong><%= @experience.exp_date %></strong></li>
-              <li>Experience Time: <strong><%= @experience.exp_time %></strong></li>
+              <li>Experience Date And Time:
+                <strong>
+                  <%= @experience.exp_date.strftime('%A %d-%B-%Y ') %> at <%= @experience.exp_time.strftime('%I:%M %p') %>
+                </strong>
+              </li>
+
             </ul>
           </div>
           <div>
@@ -30,6 +34,8 @@
       <div class="col-lg-4">
         <div class="experienceSubDetails">
           <h4><%= @experience.name %></h4>
+          <strong>Rs <%= @experience.price %></strong>
+          <br/>
           <strong>RSVP Now</strong>
           <%= render partial: 'attendees/form', :locals => {:experience_id => @experience.id} %>
         </div>
