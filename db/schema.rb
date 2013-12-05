@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204200003) do
+ActiveRecord::Schema.define(version: 20131205091332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131204200003) do
   create_table "experiences", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "price",       precision: 15, scale: 2
+    t.decimal  "price",                  precision: 15, scale: 2
     t.date     "exp_date"
     t.time     "exp_time"
     t.float    "latitude"
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20131204200003) do
     t.string   "city"
     t.string   "image"
     t.integer  "user_id"
+    t.text     "what_does_this_include"
+    t.text     "things_to_remember"
+    t.integer  "max_seats"
   end
 
   create_table "hosts", force: true do |t|
