@@ -32,6 +32,8 @@
       <div class="col-lg-4">
         <div class="experienceSubDetails">
           <h4><%= @experience.name %></h4>
+          <strong>Rs <%= @experience.price %></strong>
+          <br/>
           <strong>RSVP Now</strong>
           <%= render partial: 'attendees/form', :locals => {:experience_id => @experience.id} %>
         </div>
