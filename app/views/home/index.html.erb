@@ -55,7 +55,7 @@
               <%= image_tag experience.image_url(:thumb).to_s, :class => "img-responsive expListingImg"%>
               <div class="expOverlayDate">
                 <div><%= experience.exp_date.strftime("%b") %></div>
-                <div>30</div>
+                <div><%= experience.exp_date.strftime("%d") %></div>
               </div>
               <div class="hostOverlap">
                 <% user_id = experience.user_id %>
