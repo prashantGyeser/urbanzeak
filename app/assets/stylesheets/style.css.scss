@@ -45,15 +45,19 @@ a.button
 }
 body
 {
-  background:  image-url("bg.png");//url("/assets/bg.png");
-  font-weight: 500;
+  background: image-url("bg.png");//url("/assets/bg.png");
+  font-weight: 300;
   //font-size: 1.8em;
   font-size: 16px;
-  font-family: 'Segoe UI', helvetica, arial, sans-serif;
+  font-family: "museo-sans", 'Segoe UI', helvetica, arial, sans-serif;
+}
+h1, h2, h3, h4
+{
+  font-family: "adelle", Georgia, Cambria, "Times New Roman", Times, serif;;
 }
 p
 {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
 }
 .topBar

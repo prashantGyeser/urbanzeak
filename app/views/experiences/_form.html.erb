@@ -21,6 +21,16 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :what_does_this_include %>
+    <%= f.text_area :what_does_this_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :things_to_remember %>
+    <%= f.text_area :things_to_remember, :class => "form-control",:placeholder => "Anything specific your customers have to do before they come to the event? For example are sneakers required for your experience or is there a dress code?", :rows => 5 %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :city %>
     <%= f.text_field :city, :class => "form-control ff_elem", :placeholder => "Start typing and we find your city.", :required => "required" %>
     <!--<input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>-->
@@ -29,6 +39,11 @@
   <div class="form-group">
     <%= f.label :price %>
     <%= f.text_field :price, :class => "form-control", :placeholder => "How much should a person pay you when they attend?", :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :max_seats %>
+    <%= f.text_field :max_seats, :class => "form-control", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_date %>
@@ -74,6 +89,8 @@
 <script>
   $(document).ready(function() {
     $("#experience_description").autoGrow();
+    $("#experience_what_does_this_include").autoGrow();
+    $("#experience_things_to_remember").autoGrow();
   });
 </script>
 
