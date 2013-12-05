@@ -5,7 +5,8 @@ class HomeController < ApplicationController
       #@experiences = Experience.first(10)
       @experiences = Experience.all
     else
-      @experiences = Experience.where("city like ?", "%#{request.location.country}%")
+      location = Gocoder.search(request.ip)
+      @experiences = Experience.where("city like ?", "%#{location.country_name}%")
       @country = request.location.country
 
       if @experiences.empty?
