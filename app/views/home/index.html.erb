@@ -15,25 +15,32 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <div class="filter">
-        <div class="input-group">
-          <input type="text" class="form-control" id="filterInput" placeholder="Enter your city name here and we will find all the experiences in your city.">
+    <div class="col-lg-12 homepageCountry">
+      <h2>All experience in <%= @country %></h2>
+      <span><a class="button is-primary pull-right" data-toggle="modal" data-target="#cityFilter">Show experiences from your city</a></span>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cityFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Change City</h4>
+          </div>
+          <div class="modal-body">
+
+              <div class="input-group">
+                <input type="text" class="form-control typeahead" id="filterInput" placeholder="Enter your city name here and we will find all the experiences in your city.">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button" id="filter">Get experiences!</button>
                 </span>
-        </div><!-- /input-group -->
-      </div>
-    </div>
-  </div>
-</div>
+              </div><!-- /input-group -->
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 homepageCountry">
-      <h2>All experience in [country name]</h2>
-    </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   </div>
 </div>
 
@@ -107,3 +114,4 @@
   </div>
 
 </div>
+

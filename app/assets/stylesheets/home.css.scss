@@ -32,6 +32,28 @@ $contrast_green_toned_down: #e4f3d9;
 .homepageCountry
 {
   margin-bottom: 20px;
+  h2
+  {
+    display: inline;
+
+  }
+
+}
+/* Type ahead styling */
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-dropdown-menu {
+  width: 100%;
+}
+.tt-hint {
+  width: 100%;
+}
+.loading
+{
+  background: image-url("spinner-16x16.gif") no-repeat left center;
+
+
 }
 /************************************************************************/
 /* Sell to the customer */
