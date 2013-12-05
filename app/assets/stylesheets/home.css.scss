@@ -128,11 +128,36 @@ $contrast_green_toned_down: #e4f3d9;
 /************************************************************************/
 .homepageSell
 {
-  background: image-url('homepagesellbg.png');
+  //background: image-url('homepagesellbg.png');
+  background: white;
   padding: 20px 0;
-  color: #fff;
-  text-align: center;
+  //color: #fff;
+  //text-align: center;
+  .heading
+  {
+    text-align: center;
+  }
+  .hostSellContainer
+  {
+    border: 1px solid #eee;
+    margin: 20px 0;
+    img
+    {
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 3px 3px 0px 0px;
+      border-radius: 3px 3px 0px 0px;
+    }
+    .homeSellContent
+    {
+      padding: 20px;
+      p
+      {
+        line-height: 1.8em;
+        color: #aaa;
+      }
+    }
 
+  }
 }
 .footer
 {

@@ -6,8 +6,8 @@ class HomeController < ApplicationController
       @experiences = Experience.all
     else
       location = Geocoder.search(request.ip)
-      logger.debug "The value of location is: #{location[0].country}"
       @experiences = Experience.where("city like ?", "%#{location[0].country}%")
+
       @country = request.location.country
 
       if @experiences.empty?
