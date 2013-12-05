@@ -3,6 +3,8 @@ class HostsController < ApplicationController
 
   before_filter :authenticate_user!, only: [:become_host, :edit, :update, :destroy, :dashboard]
 
+  before_filter :check_is_host, only: [:dashboard]
+
   # GET /hosts
   # GET /hosts.json
   def index
@@ -92,6 +94,16 @@ class HostsController < ApplicationController
       @total_views = @total_views + experience.impressionist_count(:filter=>:all)
     end
 
+  end
+
+  protected
+
+  def check_is_host
+    if signed_in?
+      raise "You need to become a host to see this page" unless current_user.host?
+    else
+      raise "Please sign in!"
+    end
   end
 
   private
