@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
   def index
 
-    if request.ip == '127.0.0.1'
+    if request.ip == '100'
       #@experiences = Experience.first(10)
       @experiences = Experience.all
     else
       location = Geocoder.search(request.ip)
-      @experiences = Experience.where("city like ?", "%#{location.country_name}%")
+      logger.debug "The value of location is: #{location[0].country}"
+      @experiences = Experience.where("city like ?", "%#{location[0].country}%")
       @country = request.location.country
 
       if @experiences.empty?
@@ -31,3 +32,4 @@ class HomeController < ApplicationController
     end
   end
 end
+
