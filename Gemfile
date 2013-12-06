@@ -85,6 +85,10 @@ gem 'heroku-deflater', :group => :production
 # Page tracking for hosts
 gem 'impressionist'
 
+# Mixpanel tracking
+gem 'mixpanel-ruby'
+
+
 group :development do
   gem 'annotate'
 end
