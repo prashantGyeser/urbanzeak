@@ -157,6 +157,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
+    mixpanel-ruby (1.2.0)
     multi_json (1.8.2)
     multi_test (0.0.2)
     multi_xml (0.5.5)
@@ -295,6 +296,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  mixpanel-ruby
   newrelic_rpm
   oboe-heroku
   pg
