@@ -73,6 +73,11 @@
               <strong>
                 <%= link_to experience.name, experience_path(experience) %>
               </strong>
+
+              <p>
+                City: <strong><%= experience.city %></strong>
+              </p>
+
               <p>
                 <%= experience.description.truncate(150) %>
               </p>

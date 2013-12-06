@@ -11,10 +11,12 @@
           <h2><%= @experience.name%></h2>
           <div class="subDetails">
             <ul>
-              <li>Experience Date And Time:
+              <li>On:
                 <strong>
                   <%= @experience.exp_date.strftime('%A %d-%B-%Y ') %> at <%= @experience.exp_time.strftime('%I:%M %p') %>
                 </strong>
+                In:
+                <strong><%= @experience.city %></strong>
               </li>
 
             </ul>
