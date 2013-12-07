@@ -103,14 +103,14 @@ mixpanel.init("<%= ENV["MIXPANEL_KEY"] %>");</script><!-- end Mixpanel -->
 
             <% if user_signed_in? %>
               <% if current_user.host?%>
-                <%= link_to('View your dashboard', hosts_dashboard_path, :class => "button is-secondary") %>
+                <%= link_to('View your dashboard', hosts_dashboard_path, :class => "button is-secondary", :id => "viewHostDashboard") %>
               <% else %>
-                <%= link_to('Host your experience', pages_sell_url, :class => "button is-secondary") %>
+                <%= link_to('Host your experience', pages_sell_url, :class => "button is-secondary", :id => "topbarHostYourExperience") %>
               <% end %>
               <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "button") %>
             <% else %>
-              <%= link_to('Login', new_user_session_path, :class => "button is-primary")  %>
-              <%= link_to('Register', new_user_registration_path, :class => "button is-secondary")  %>
+              <%= link_to('Login', new_user_session_path, :class => "button is-primary", :id => "topbarLogin")  %>
+              <%= link_to('Register', new_user_registration_path, :class => "button is-secondary", :id => "topbarRegister")  %>
             <% end %>
 
           </div>
@@ -136,6 +136,62 @@ mixpanel.init("<%= ENV["MIXPANEL_KEY"] %>");</script><!-- end Mixpanel -->
     s.src = '//static.getclicky.com/js';
     ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
   })();
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('#viewHostDashboard').click(function(){
+      <% if current_user.nil? %>
+
+      <% else %>
+        mixpanel.track(
+          'Clicked view host dashboard topbar',
+          {
+            'User id': '<%= current_user.id %>'
+            'First name': '<%= current_user.first_name%>',
+            'Last name': '<%= current_user.last_name%>',
+          }
+        );
+      <% end %>
+
+    });
+
+    $('#topbarHostYourExperience').click(function(){
+      <% if current_user.nil? %>
+
+      <% else %>
+        mixpanel.track(
+          'Clicked host your experience topbar',
+          {
+            'User id': '<%= current_user.id %>'
+            'First name': '<%= current_user.first_name%>',
+            'Last name': '<%= current_user.last_name%>',
+          }
+        );
+      <% end %>
+
+    });
+
+    $('#topbarLogin').click(function(){
+        mixpanel.track(
+          'Clicked login topbar',
+          {
+            
+          }
+        );
+    });
+
+    $('#topbarRegister').click(function(){
+        mixpanel.track(
+          'Clicked register topbar',
+          {
+
+          }
+        );
+    });
+
+
+  });
 </script>
 
 </body>
