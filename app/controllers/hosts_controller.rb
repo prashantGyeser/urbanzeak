@@ -5,8 +5,6 @@ class HostsController < ApplicationController
 
   before_filter :check_is_host, only: [:dashboard]
 
-  tracker = Mixpanel::Tracker.new(ENV["MIXPANEL_KEY"])
-
   # GET /hosts
   # GET /hosts.json
   def index
@@ -31,21 +29,8 @@ class HostsController < ApplicationController
   # POST /hosts.json
   def create
     @host = Host.new(host_params)
-
     @host.user_id = current_user.id
 
-    tracker.people.set("#{current.user.email}", {
-        '$first_name' => "current_user.first_name",
-        '$last_name' => "current_user.last_name",
-        '$email' => "current_user.email"
-    })
-
-
-    tracker.track("#{current.user.email}", 'Became a host', {
-        "Registered an account on" => "#{current_user.created_at}",
-        "Became a host on" => "#{Time.now}",
-        "Number of times signed in till now" => "#{current_user.sign_in_count}"
-    })
 
     respond_to do |format|
       if @host.save
