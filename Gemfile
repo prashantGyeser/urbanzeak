@@ -53,10 +53,7 @@ gem 'devise'
 # Geocoding the location
 gem 'geocoder'
 
-# Using unicorn as the server
-gem 'unicorn', :group => :production
 
-gem 'newrelic_rpm', :group => :production
 
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
@@ -71,15 +68,27 @@ gem 'rmagick'
 gem 'fog'
 
 
-# Monitoring tools
-gem 'sentry-raven', :group => :production
-gem 'bugsnag', :group => :production
-gem 'exceptiontrap', :group => :production
-gem 'appsignal', :group => :production
-gem 'oboe-heroku'
 
-# gzip on heroku
-gem 'heroku-deflater', :group => :production
+
+group :staging, :production do
+  # gzip on heroku
+  gem 'heroku-deflater'
+
+  # Monitoring tools
+  gem 'newrelic_rpm'
+  gem 'sentry-raven'
+  gem 'bugsnag'
+  gem 'exceptiontrap'
+  gem 'appsignal'
+  gem 'oboe-heroku'
+
+  # Using unicorn as the server
+  gem 'unicorn'
+
+  # Heroku logging
+  gem 'rails_12factor'
+
+end
 
 # Page tracking for hosts
 gem 'impressionist'
@@ -113,6 +122,3 @@ end
 group :test do
   gem 'shoulda-matchers'
 end
-
-# Heroku logging
-gem 'rails_12factor', group: :production
