@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require jquery.nivo.slider
 //= require slippry.min
+//= require jquery.carouFredSel-6.2.1-packed
 //= require jquery.autogrowtextarea.min
 //= require typeahead.min
 //= require gmap3.min

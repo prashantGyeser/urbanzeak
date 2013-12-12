@@ -45,15 +45,17 @@ a.button
 }
 body
 {
-  background: image-url("bg.png");//url("/assets/bg.png");
-  font-weight: 300;
+  //background: image-url("bg.png");//url("/assets/bg.png");
+  font-weight: 400;
   //font-size: 1.8em;
-  font-size: 16px;
-  font-family: "museo-sans", 'Segoe UI', helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h1, h2, h3, h4
 {
-  font-family: "adelle", Georgia, Cambria, "Times New Roman", Times, serif;;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Raleway", Georgia, Cambria, "Times New Roman", Times, serif;;
 }
 p
 {
