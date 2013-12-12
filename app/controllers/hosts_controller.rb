@@ -5,10 +5,6 @@ class HostsController < ApplicationController
 
   before_filter :check_is_host, only: [:dashboard]
 
-<<<<<<< HEAD
-=======
-
->>>>>>> development
   # GET /hosts
   # GET /hosts.json
   def index
