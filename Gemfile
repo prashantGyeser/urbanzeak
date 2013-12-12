@@ -54,9 +54,9 @@ gem 'devise'
 gem 'geocoder'
 
 # Using unicorn as the server
-gem 'unicorn'
+gem 'unicorn', :group => :production
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', :group => :production
 
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
@@ -90,6 +90,9 @@ gem 'mixpanel-ruby'
 
 group :development do
   gem 'annotate'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "bullet"
 end
 
 group :test, :development do
@@ -110,3 +113,6 @@ end
 group :test do
   gem 'shoulda-matchers'
 end
+
+# Heroku logging
+gem 'rails_12factor', group: :production
