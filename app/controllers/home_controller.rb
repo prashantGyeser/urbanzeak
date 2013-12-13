@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
 
-    if request.ip == '100'
+    if request.ip == '127.0.0.1'
       #@experiences = Experience.first(10)
       @experiences = Experience.all
     else
@@ -17,6 +17,7 @@ class HomeController < ApplicationController
     end
 
     if params[:city].nil?
+      @experiences = Experience.all
     else
       @experiences = Experience.where("city like ?", "%#{params[:city]}%")
     end
