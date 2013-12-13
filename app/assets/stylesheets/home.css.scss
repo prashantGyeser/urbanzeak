@@ -197,6 +197,10 @@ $contrast_green_toned_down: #e4f3d9;
   top: 20%;
   left: 0;
 }
+#carousel
+{
+  overflow: hidden;
+}
 #carousel div {
   height: 500px;
   float: left;
