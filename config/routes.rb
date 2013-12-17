@@ -1,5 +1,10 @@
 Urbanzeak::Application.routes.draw do
 
+  namespace :dashboard do
+    root "home#index"
+  end
+
+  get "home/index"
   resources :attendees
 
   get "checkout", to: "checkout#index"
