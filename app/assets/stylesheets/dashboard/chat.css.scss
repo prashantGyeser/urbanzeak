@@ -15,6 +15,7 @@ $contrast_green_toned_down: #e4f3d9;
   display: none;
   height: 100%;
   overflow: hidden;
+  //border-radius: 0;
   .chatContent
   {
     float: left;
@@ -26,7 +27,7 @@ $contrast_green_toned_down: #e4f3d9;
       padding: 10px 20px;
       border-bottom: 1px solid $brand_off_white;
     }
-    .chatText
+    #chatText
     {
       //background: red;
       padding: 10px 20px;
@@ -49,10 +50,33 @@ $contrast_green_toned_down: #e4f3d9;
     }
     .customerList
     {
-      padding: 10px 20px;
+      padding-bottom: 10px;
       background: $brand_off_white;
       height: 100%;
       overflow: hidden;
+      ul
+      {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li
+        {
+          //margin: 0 -20px;
+          a
+          {
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: #abab8a;
+            font-weight: bold;
+            &:hover
+            {
+              background: white;
+              color: #656548;
+            }
+          }
+        }
+      }
     }
   }
   .chatInput
