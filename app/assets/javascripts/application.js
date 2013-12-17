@@ -19,5 +19,6 @@
 //= require jquery.autogrowtextarea.min
 //= require typeahead.min
 //= require gmap3.min
+//= require fancybox
 //= require turbolinks
 //= require_tree .

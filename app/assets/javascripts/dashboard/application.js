@@ -9,6 +9,7 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+// require_tree .
 //
 //= require jquery
 //= require jquery_ujs
@@ -16,4 +17,4 @@
 //= require dashboard/chart/jquery.flot
 //= require dashboard/chart/jquery.flot.pie
 //= require fancybox
-//= require_tree .
+//= require_directory .

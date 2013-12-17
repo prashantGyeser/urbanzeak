@@ -5,7 +5,7 @@
         <div class="experienceShowContainer">
 
 
-          <%= image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
+          <%# image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
 
 
           <h2><%= @experience.name%></h2>
@@ -20,6 +20,9 @@
               </li>
 
             </ul>
+          </div>
+          <div>
+            <a href="#chat" class="button is-primary fancybox">Chat with the host now</a>
           </div>
           <div>
             <p>
@@ -43,6 +46,7 @@
         <div class="experienceSubDetails">
           <strong>Experiences are better with friends</strong>
           <!-- AddThis Button BEGIN -->
+          <!--
           <div class="addthis_toolbox addthis_default_style ">
             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
             <a class="addthis_button_tweet"></a>
@@ -50,13 +54,15 @@
             <a class="addthis_counter addthis_pill_style"></a>
           </div>
           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-529e264e12087782"></script>
+          -->
           <!-- AddThis Button END -->
         </div>
 
         <div class="experienceSubDetails">
           <strong>Meeting point</strong>
+          <!--
           <div id="gmap" style="width: 100%; height: 200px"></div>
-
+          -->
         </div>
       </div>
     </div>
@@ -64,6 +70,7 @@
 </div>
 
 <script>
+  /*
   $("#gmap").gmap3({
     marker:{
       values: [
@@ -77,4 +84,21 @@
       }
     }
   });
+        */
 </script>
+
+
+<div id="chat">
+  <div class="chatContent">
+    <h3>Chat</h3>
+    <div class="chatText">
+      herllo
+    </div>
+    <div class="chatInput">
+      <div class="form-group">
+        <input type="text" class="form-control" id="message" style="width: 755px" placeholder="Enter your message" autofocus="true">
+      </div>
+    </div>
+  </div>
+</div>
+
