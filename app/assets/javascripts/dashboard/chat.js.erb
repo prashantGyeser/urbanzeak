@@ -41,17 +41,17 @@ $(document).ready(function(){
   // Getting the user clicked in the modal window
   $(document).on('click', '.customerList ul li a', function(){
     var customerClickedOn = $(this).text();
-    var customerMessageUrl = baseCurrentHostUrl + 'customers/' + customerClickedOn + '/';
+    var customerMessageUrl = baseCurrentHostUrl + 'customers/' + customerClickedOn + '/messages/';
     console.log("Ok the click works", customerClickedOn);
     currentUserMessagesRef = new Firebase(customerMessageUrl);
     currentUserMessagesRef.on('value', function(snapshot) {
-      console.log('k it is getting into the on function', snapshot.val());
-      var messages = snapshot.val();
-      var messageList = messages.messages;
 
-      $.each(messageList, function(key, value){
-        console.log("The key is:", value.message);
-        displayChatMessage(value.message);
+      snapshot.forEach(function(message){
+        console.log(message);
+        var currentMessage = message.val();
+        //var itemtoAppend = '<li><a>'+ currentMessage.message + '</a></li>';
+        displayChatMessage(currentMessage.message);
+
       });
 
       var message = snapshot.val();
