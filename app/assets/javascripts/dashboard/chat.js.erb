@@ -3,25 +3,42 @@
 <%# Todo: Get the actual value of the host id here %>
 <% host_id = 1 %>
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Live chat
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// common variables
+var baseCurrentHostUrl = 'https://urbanzeak.firebaseio.com/hosts/' + <%= host_id %> + '/';
+var presenceUrl = baseCurrentHostUrl + 'usersViewing/';
+//var currentUserMessagesUrl = currentUserUrl + 'messages/';
+
+// Data structure urls
+//var newUserPresenceRef = new Firebase(presenceUrl);
+//var currentUserMessagesRef = new Firebase(currentUserMessagesUrl);
+var usersViewingRef = new Firebase(presenceUrl);
+
+// Getting all the users in the list
+console.log('The users viewing thingy is:', usersViewingRef);
+usersViewingRef.on('value', function(snapshot){
+  var users = snapshot.val();
+  snapshot.forEach(function(user){
+    //console.log('The users is:', user.val());
+    var currentUserInList = user.val();
+    var itemtoAppend = '<li><a href="#">'+ currentUserInList.id + '</a></li>';
+    $('.customerList ul').append(itemtoAppend);
+  });
+});
+/*
+currentUserMessagesRef.on('child_added', function(snapshot) {
+  var message = snapshot.val();
+  displayChatMessage(message.message);
+  $('#message').val('');
+});
+function displayChatMessage(text) {
+  $('<div/>').text(text).prepend($('<em/>').text(name+' ')).appendTo($('#chatText'));
+  $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
+};
+*/
 $(document).ready(function(){
-  var firebaseUrl = 'https://urbanzeak.firebaseio.com/' + <%= host_id %> + '/';
-  var hostChatRef = new Firebase(firebaseUrl);
-
-  $('#chatMessage').keypress(function(e){
-    if (e.keyCode == 13){
-        var name = $('#chatName').val();
-        var message = $('#chatMessage').val();
-      hostChatRef.push({name:name, message: message})
-    }
-  });
-
-  hostChatRef.limit(10).on('child_added', function(snapshot){
-    var message = snapshot.val();
-    $('<div/>').text(message.message).prepend($('<em/>')
-        .text(message.name+': ')).appendTo($('#chatText'));
-    $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
-  });
-
   //$('#chat').hide();
   $(".fancybox").fancybox({
     'autoSize': false,
