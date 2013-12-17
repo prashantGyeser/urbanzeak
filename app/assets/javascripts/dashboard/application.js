@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require dashboard/chart/jquery.flot
 //= require dashboard/chart/jquery.flot.pie
+//= require fancybox
 //= require_tree .

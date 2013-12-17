@@ -73,6 +73,8 @@ gem 'rmagick'
 # Storing the images in s3
 gem 'fog'
 
+# Fancy box for a modal window
+gem 'fancybox2-rails', '~> 0.2.4'
 
 # Monitoring tools
 gem 'sentry-raven', :group => :production

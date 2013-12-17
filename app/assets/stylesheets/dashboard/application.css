@@ -10,6 +10,7 @@
  *
  *= require bootstrap
  *= require buttons
+ *= require fancybox
  *= require_self
  *= require_tree .
  */
