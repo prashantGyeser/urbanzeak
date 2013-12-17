@@ -1,0 +1,111 @@
+/************************************************************************/
+/* Colors */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #ebebe3;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+/************************************************************************/
+/* Common styles */
+/************************************************************************/
+body
+{
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+h1, h2, h3, h4
+{
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Raleway', Georgia, Cambria, 'Times New Roman', times, serif;
+}
+h1.title
+{
+  font-weight: 700;
+}
+.welcomeImage
+{
+  margin-right: 10px;
+}
+.sidebar-nav i
+{
+  text-indent: 0;
+  margin-right: 5px;
+}
+/************************************************************************/
+/* Dashboard styles */
+/************************************************************************/
+#placeholder
+{
+  margin-bottom: 40px;
+}
+.tickLabel
+{
+  font-size: 16px;
+  color: #abab8a;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+/************************************************************************/
+/* Chat styles */
+/************************************************************************/
+.chatContainer
+{
+
+
+  .col-md-3
+  {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+  .userList
+  {
+    background: $brand_blue_toned_down;
+    //padding: 20px 30px;
+    margin-left: -10px;
+    margin-top: -20px;
+    //height: 100px;
+    ul
+    {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li
+      {
+        padding: 10px 20px;
+        font-weight: bold;
+        a
+        {
+          color: #475859;
+          &:hover
+          {
+            text-decoration: none;
+          }
+        }
+        &:hover
+        {
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+/************************************************************************/
+/* Dashboard styles */
+/************************************************************************/
+
+/************************************************************************/
+/* Dashboard styles */
+/************************************************************************/
+
+/************************************************************************/
+/* Dashboard styles */
+/************************************************************************/
+
+/************************************************************************/
+/* Dashboard styles */
+/************************************************************************/
