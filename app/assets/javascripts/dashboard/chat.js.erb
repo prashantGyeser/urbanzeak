@@ -22,8 +22,14 @@ $(document).ready(function(){
     $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
   });
 
-  $('#chat').hide();
-  $(".fancybox").fancybox();
+  //$('#chat').hide();
+  $(".fancybox").fancybox({
+    'autoSize': false,
+    'padding': [0,0,0,0],
+    'width': 800,
+    'height': 400
+  });
 
+  //console.log($('#chat').height());
 
 });

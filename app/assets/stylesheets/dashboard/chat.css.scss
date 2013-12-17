@@ -1,3 +1,58 @@
-// Place all the styles related to the dashboard/chat controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #ebebe3;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+$contrast_green_toned_down: #e4f3d9;
+/************************************************************************/
+/* Chat popup styles */
+/************************************************************************/
+#chat
+{
+  display: none;
+  height: 100%;
+  overflow: hidden;
+  .chatContent
+  {
+    float: left;
+    width: 70%;
+
+    h3
+    {
+      margin: 0;
+      padding: 10px 20px;
+      border-bottom: 1px solid $brand_off_white;
+    }
+    .chatText
+    {
+      //background: red;
+      padding: 10px 20px;
+    }
+  }
+  .contactList
+  {
+
+    float: right;
+    width: 30%;
+    height: 400px;
+    //border-left: 1px solid $brand_off_white;
+    h3
+    {
+      background: $brand_blue;
+      padding: 17px 20px 13px 20px;
+      margin: 0;
+      color: white;
+      font-size: 16px;
+    }
+    .customerList
+    {
+      padding: 10px 20px;
+      background: $brand_off_white;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+}
