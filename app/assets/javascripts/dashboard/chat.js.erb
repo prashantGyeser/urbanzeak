@@ -57,7 +57,7 @@ $(document).ready(function(){
     });
   });
 
-  currentUserMessagesRef.on('child_added', function(snapshot) {
+  currentUserMessagesRef.endAt().limit(1).on('child_added', function(snapshot) {
     var message = snapshot.val();
     $('#chatText').text('');
     displayChatMessage(message.message);
