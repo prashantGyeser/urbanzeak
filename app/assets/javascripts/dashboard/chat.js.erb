@@ -18,11 +18,9 @@ var usersViewingRef = new Firebase(presenceUrl);
 var currentUserMessagesRef = new Firebase(presenceUrl);
 
 // Getting all the users in the list
-console.log('The users viewing thingy is:', usersViewingRef);
 usersViewingRef.on('value', function(snapshot){
   var users = snapshot.val();
   snapshot.forEach(function(user){
-    //console.log('The users is:', user.val());
     var currentUserInList = user.val();
     var itemtoAppend = '<li><a>'+ currentUserInList.id + '</a></li>';
     $('.customerList ul').append(itemtoAppend);
@@ -43,12 +41,10 @@ $(document).ready(function(){
     var customerClickedOn = $(this).text();
     $('#chatText').text('');
     var customerMessageUrl = baseCurrentHostUrl + 'customers/' + customerClickedOn + '/messages/';
-    console.log("Ok the click works", customerClickedOn);
     currentUserMessagesRef = new Firebase(customerMessageUrl);
     currentUserMessagesRef.on('value', function(snapshot) {
 
       snapshot.forEach(function(message){
-        console.log(message);
         var currentMessage = message.val();
         //var itemtoAppend = '<li><a>'+ currentMessage.message + '</a></li>';
         displayChatMessage(currentMessage.message);
@@ -63,7 +59,7 @@ $(document).ready(function(){
 
   currentUserMessagesRef.on('child_added', function(snapshot) {
     var message = snapshot.val();
-    console.log("Ok it is getting here just not showing the data", message);
+    $('#chatText').text('');
     displayChatMessage(message.message);
     $('#message').val('');
   });
