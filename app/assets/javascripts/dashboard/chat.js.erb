@@ -15,6 +15,7 @@ var presenceUrl = baseCurrentHostUrl + 'usersViewing/';
 //var newUserPresenceRef = new Firebase(presenceUrl);
 //var currentUserMessagesRef = new Firebase(currentUserMessagesUrl);
 var usersViewingRef = new Firebase(presenceUrl);
+var currentUserMessagesRef = new Firebase(presenceUrl);
 
 // Getting all the users in the list
 console.log('The users viewing thingy is:', usersViewingRef);
@@ -23,21 +24,11 @@ usersViewingRef.on('value', function(snapshot){
   snapshot.forEach(function(user){
     //console.log('The users is:', user.val());
     var currentUserInList = user.val();
-    var itemtoAppend = '<li><a href="#">'+ currentUserInList.id + '</a></li>';
+    var itemtoAppend = '<li><a>'+ currentUserInList.id + '</a></li>';
     $('.customerList ul').append(itemtoAppend);
   });
 });
-/*
-currentUserMessagesRef.on('child_added', function(snapshot) {
-  var message = snapshot.val();
-  displayChatMessage(message.message);
-  $('#message').val('');
-});
-function displayChatMessage(text) {
-  $('<div/>').text(text).prepend($('<em/>').text(name+' ')).appendTo($('#chatText'));
-  $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
-};
-*/
+
 $(document).ready(function(){
   //$('#chat').hide();
   $(".fancybox").fancybox({
@@ -47,6 +38,39 @@ $(document).ready(function(){
     'height': 400
   });
 
-  //console.log($('#chat').height());
+  // Getting the user clicked in the modal window
+  $(document).on('click', '.customerList ul li a', function(){
+    var customerClickedOn = $(this).text();
+    var customerMessageUrl = baseCurrentHostUrl + 'customers/' + customerClickedOn + '/';
+    console.log("Ok the click works", customerClickedOn);
+    currentUserMessagesRef = new Firebase(customerMessageUrl);
+    currentUserMessagesRef.on('value', function(snapshot) {
+      console.log('k it is getting into the on function', snapshot.val());
+      var messages = snapshot.val();
+      var messageList = messages.messages;
+
+      $.each(messageList, function(key, value){
+        console.log("The key is:", value.message);
+        displayChatMessage(value.message);
+      });
+
+      var message = snapshot.val();
+      displayChatMessage(message.message);
+      $('#message').val('');
+    });
+  });
+
+  currentUserMessagesRef.on('child_added', function(snapshot) {
+    var message = snapshot.val();
+    console.log("Ok it is getting here just not showing the data", message);
+    displayChatMessage(message.message);
+    $('#message').val('');
+  });
+  function displayChatMessage(text) {
+    $('<div/>').text(text).prepend($('<em/>').text(name+' ')).appendTo($('#chatText'));
+    $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
+  };
+
+
 
 });
