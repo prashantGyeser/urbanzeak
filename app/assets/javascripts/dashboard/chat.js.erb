@@ -41,6 +41,7 @@ $(document).ready(function(){
   // Getting the user clicked in the modal window
   $(document).on('click', '.customerList ul li a', function(){
     var customerClickedOn = $(this).text();
+    $('#chatText').text('');
     var customerMessageUrl = baseCurrentHostUrl + 'customers/' + customerClickedOn + '/messages/';
     console.log("Ok the click works", customerClickedOn);
     currentUserMessagesRef = new Firebase(customerMessageUrl);
