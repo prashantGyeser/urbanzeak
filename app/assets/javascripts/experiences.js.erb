@@ -20,7 +20,6 @@ function makeid()
 // common variables
 var currentUserAnonymousId = makeid();
 var baseCurrentHostUrl = 'https://urbanzeak.firebaseio.com/hosts/' + <%= host_id %> + '/';
-var newUserUrl = baseCurrentHostUrl + 'customers/';
 var presenceUrl = baseCurrentHostUrl + 'usersViewing/';
 var currentUserUrl = baseCurrentHostUrl + 'customers/' + currentUserAnonymousId + '/';
 var currentUserMessagesUrl = currentUserUrl + 'messages/';
@@ -38,6 +37,17 @@ $('#message').keypress(function(e){
     currentUserMessagesRef.push({message: message});
   }
 });
+
+currentUserMessagesRef.on('child_added', function(snapshot) {
+  var message = snapshot.val();
+  displayChatMessage(message.message);
+  $('#message').val('');
+});
+function displayChatMessage(text) {
+  $('<div/>').text(text).prepend($('<em/>').text(name+' ')).appendTo($('#chatText'));
+  $('#chatText')[0].scrollTop = $('#chatText')[0].scrollHeight;
+};
+
 
 /*
 hostChatRef.limit(10).on('child_added', function(snapshot){
