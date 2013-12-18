@@ -17,12 +17,15 @@ function makeCustomClientid()
 var chatApp = angular.module('clientchatApp', ["firebase"]);
 
 chatApp.controller('ClientchatCtrl', ['$scope', '$firebase', function($scope, $firebase){
+    // Creating a uid for this user
+    var userId = makeCustomClientid();
+
     var baseCurrentHostUrl = 'https://urbanzeak.firebaseio.com/hosts/1/';
     var presenceUrl = baseCurrentHostUrl + 'usersViewing/';
-    //var currentUserUrl = baseCurrentHostUrl + 'customers/' + currentUserAnonymousId + '/';
-    //var currentUserMessagesUrl = currentUserUrl + 'messages/';
+    var currentUserUrl = baseCurrentHostUrl + 'customers/' + userId + '/';
+    var currentUserMessagesUrl = currentUserUrl + 'messages/';
 
-    var userId = makeCustomClientid();
+
     //var hostRef = new Firebase("https://urbanzeak.firebaseio.com/hosts/1/customers/");
 
     // Getting all the people who have ever visited the site here.
@@ -32,10 +35,18 @@ chatApp.controller('ClientchatCtrl', ['$scope', '$firebase', function($scope, $f
 
     // Adding a user to the list of users when they view the page.
     var presenceRef = new Firebase(presenceUrl);
-    $scope.usersOnPage = $firebase(presenceRef);
-    $scope.usersOnPage.$add({userId: userId});
+    //$scope.usersOnPage = $firebase(presenceRef);
+    //$scope.usersOnPage.$add({userId: userId});
 
-    // Creating the chat when a user adds it.
-    
+    // Getting messages for this user
+    var messagesRef = new Firebase(currentUserMessagesUrl);
 
+    $scope.messages = $firebase(messagesRef);
+
+    // Creating a reference to the messages for this user.
+    $scope.addMessage = function(e) {
+        if(e.keyCode != 13) return;
+        $scope.messages.$add({message: $scope.message});
+        $scope.message = '';
+    }
 }]);

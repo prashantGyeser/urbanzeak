@@ -89,6 +89,22 @@
 
 <div id="angularChat" ng-app="clientchatApp">
   <div ng-controller="ClientchatCtrl">
+    <div class="liveChat">
+      <span>Chat live with the host now</span>
+      <div id="chatForm" ng-cloak class="ng-cloak">
+        <div class="chatTextArea">
+          <ul>
+            <li ng-repeat="message in messages">{{ message.message }}</li>
+          </ul>
+        </div>
+        <div class="chatFormInput">
+          <div class="form-group">
+            <input type="text" ng-model="message" class="form-control" placeholder="Enter your message" ng-keypress="addMessage($event)"/>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
