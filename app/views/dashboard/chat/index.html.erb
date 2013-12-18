@@ -15,6 +15,19 @@
 </div>
 
 
+<div ng-app="chatApp">
+  <div ng-controller="ChatCtrl">
+    <h1>Results</h1>
+    <ul>
+      <li ng-repeat="customer in customers">{{customer}}</li>
+    </ul>
+    <h1>Debug</h1>
+    {{ customers }}
+  </div>
+</div>
+
+
+
 <div id="chat">
   <div class="chatContent">
     <h3>Chat</h3>
