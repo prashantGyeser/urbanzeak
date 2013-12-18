@@ -8,7 +8,4 @@ chatApp.controller('ChatCtrl', ['$scope', '$firebase', function($scope, $firebas
     $scope.customers = $firebase(hostRef);
     //console.log("the values returned are:", $scope.customers);
 
-
-
-
 }]);
