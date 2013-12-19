@@ -22,7 +22,7 @@ chatApp.controller('ClientchatCtrl', ['$scope', '$firebase', function($scope, $f
 
     var baseCurrentHostUrl = 'https://urbanzeak.firebaseio.com/hosts/1/';
     var presenceUrl = baseCurrentHostUrl + 'usersViewing/';
-    var currentUserUrl = baseCurrentHostUrl + 'customers/' + userId + '/';
+    var currentUserUrl = baseCurrentHostUrl + 'customers/';
     var currentUserMessagesUrl = currentUserUrl + 'messages/';
 
 
