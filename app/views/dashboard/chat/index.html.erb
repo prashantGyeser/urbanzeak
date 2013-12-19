@@ -6,83 +6,26 @@
 </div>
 
 <!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset">
+<div class="page-content inset" ng-app="chatApp">
   <div class="row">
     <div class="col-md-12">
-      <table id="chatUserTable">
+      <table id="chatUserTable" ng-controller="ChatCtrl">
         <tr>
           <th>#</th>
           <th>Visitor</th>
           <th>Viewing</th>
         </tr>
-        <tr>
-          <td>#</td>
-          <td>7Eh7VVTx7fiY9otK</td>
+        <tr ng-repeat="(id, lead) in leads">
+          <td>{{lead.online}}</td>
+          <td>{{id}}</td>
           <td>urbanzeak.com/experiences/somepage</td>
         </tr>
       </table>
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-  <div class="row">
-    <div class="col-md-3">
-      <h4>People online now</h4>
-      <a href="#chat" class="button is-primary fancybox">Talk to people now</a>
-    </div>
-  </div>
-</div>
-
-
-<div ng-app="chatApp">
-  <div ng-controller="ChatCtrl">
-    <h1>Results</h1>
-    <div ng-repeat="(customerId, comments) in customers">
-      <h1>{{customerId}}</h1>
-      <div ng-repeat="(comment, messages) in comments">
-        <ul>
-          <li ng-repeat="message in messages">{{message.message}}</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <h1>Debug</h1>
-    {{test}}
-  </div>
 </div>
 
 
 
-<div id="chat">
-  <div class="chatContent">
-    <h3>Chat</h3>
-    <div id="chatText">
-
-    </div>
-    <div class="chatInput">
-      <div class="form-group">
-        <input type="text" class="form-control" id="message" style="width: 510px" placeholder="Enter your message" autofocus="true">
-      </div>
-    </div>
-  </div>
-  <div class="contactList">
-    <h3>Customers</h3>
-    <div class="customerList">
-      <ul>
-
-      </ul>
-    </div>
-
-  </div>
-
-</div>
 
