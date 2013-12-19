@@ -11,4 +11,13 @@ chatApp.controller('ChatCtrl', ['$scope', '$firebase', function($scope, $firebas
 
     $scope.leads = $firebase(leadsRef);
 
+    $scope.getMessages = function(leadId){
+        console.log("the id clicked was:", leadId);
+        var messagesUrl = 'https://urbanzeak-chat-development.firebaseio.com/hosts/1/leads/' + leadId + '/messages/';
+        var messagesRef = new Firebase(messagesUrl);
+
+        $scope.messages = $firebase(messagesRef);
+
+    }
+
 }]);

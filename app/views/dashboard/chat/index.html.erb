@@ -7,21 +7,34 @@
 
 <!-- Keep all page content within the page-content inset div! -->
 <div class="page-content inset" ng-app="chatApp">
-  <div class="row">
-    <div class="col-md-12">
+  <div class="row" ng-controller="ChatCtrl">
+    <div class="col-md-3 leadListContainer">
+      <div class="leadList">
+        <h4>Online</h4>
+        <ul>
+          <li ng-repeat="(id, lead) in leads"><a ng-click="getMessages(id)">{{id}}</a></li>
+        </ul>
+      </div>
+      <!--
       <table id="chatUserTable" ng-controller="ChatCtrl">
-        <tr>
-          <th>#</th>
-          <th>Visitor</th>
-          <th>Viewing</th>
-        </tr>
         <tr ng-repeat="(id, lead) in leads">
           <td>{{lead.online}}</td>
           <td>{{id}}</td>
           <td>urbanzeak.com/experiences/somepage</td>
         </tr>
       </table>
+      -->
     </div>
+
+    <div class="col-md-9">
+      <div class="chatMessages">
+        <ul>
+          <li ng-repeat="message in messages">{{message.message}}</li>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
 
 </div>

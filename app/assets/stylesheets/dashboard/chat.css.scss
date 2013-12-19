@@ -108,3 +108,54 @@ $contrast_green_toned_down: #e4f3d9;
   }
 
 }
+/************************************************************************/
+/* Chat visitor list styles */
+/************************************************************************/
+.leadListContainer
+{
+  border: 1px solid $brand_off_white;
+  margin-top: -20px;
+  margin-left: -5px;
+  margin-right: -10px;
+  padding-right: 0;
+  .leadList
+  {
+    h4
+    {
+      margin-left: 10px;
+    }
+    ul
+    {
+      list-style: none;
+      margin: 0 0 0 -20px;
+      padding: 0;
+      li
+      {
+        a
+        {
+          padding: 10px 30px;
+          width: 100%;
+          display: block;
+          text-decoration: none;
+          color: #333;
+          &:hover
+          {
+            background: $brand_off_white;
+            color: #656548;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chatMessages
+{
+  ul
+  {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
