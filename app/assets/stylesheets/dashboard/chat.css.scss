@@ -86,3 +86,25 @@ $contrast_green_toned_down: #e4f3d9;
     left: 20px;
   }
 }
+/************************************************************************/
+/* Chat table styles */
+/************************************************************************/
+#chatUserTable
+{
+  width: 100%;
+  tr
+  {
+    border-bottom: 1px solid #d6d6c5;
+    th
+    {
+      color: #a4a480;
+      padding: 0 0 10px 0;
+      text-transform: uppercase;
+    }
+    td
+    {
+      padding: 20px 0;
+    }
+  }
+
+}

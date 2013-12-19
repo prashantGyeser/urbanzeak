@@ -6,6 +6,6 @@ chatApp.controller('ChatCtrl', ['$scope', '$firebase', function($scope, $firebas
 
     // Getting all the people who have ever visited the site here.
     // Todo: Show only people that are currently on the site.
-    $scope.customers = $firebase(hostRef);
+    //$scope.customers = $firebase(hostRef);
 
 }]);
