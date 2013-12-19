@@ -28,7 +28,10 @@
 
     <div class="col-md-9">
       <div class="chatMessages">
-        <ul>
+        <div ng-show="loading" class="ajaxSpinner">
+          <%= image_tag "spinner-48x48.GIF" %>
+        </div>
+        <ul ng-hide="loading">
           <li ng-repeat="message in messages">{{message.message}}</li>
         </ul>
       </div>

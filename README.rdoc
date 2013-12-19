@@ -1,5 +1,8 @@
 == README
 
+== AJAX Spinner generated using
+http://preloaders.net/
+
 == Useful links
 -- Getting started with testing
 http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html
