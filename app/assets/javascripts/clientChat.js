@@ -21,23 +21,24 @@ chatApp.controller('ClientchatCtrl', ['$scope', '$firebase', function($scope, $f
     // Todo: Change this to the actual host id for this experience
     var currentExperienceHostId = 1;
 
-    var baseCurrentHostUrl = 'https://urbanzeak.firebaseio.com/hosts/1/';
-    var currentUserUrl = baseCurrentHostUrl + 'customers/';
-    var currentUserMessagesUrl = currentUserUrl + 'messages/';
-
+    // Data urls
+    var baseCurrentHostUrl = 'https://urbanzeak-chat-development.firebaseio.com/hosts/1/';
+    var currentUserUrl = baseCurrentHostUrl + 'leads/';
+    var currentUserMessagesUrl = currentUserUrl + leadId + '/' + 'messages/';
     var leadsUrl = 'https://urbanzeak-users-development.firebaseio.com/';
     var connectedUrl = leadsUrl + '.info/connected';
-
     var hostLeadListUrl = leadsUrl + currentExperienceHostId + '/leads/';
+
 
     // Setting a ref to the leads table
     var onlineRef = new Firebase(hostLeadListUrl);
     var connectedRef = new Firebase(connectedUrl);
+    // Getting messages for this user and initializing data stream
+    var messagesRef = new Firebase(currentUserMessagesUrl);
+
 
     // Creating a reference to the leads table and adding a lead as soon as they land on the page
     connectedRef.on('value', function(snap){
-        console.log('Conn:', snap.val());
-
         if(snap.val() === true){
             // The client is connected. Setup presence state and tell the server to set a timestamp when they leave
             var leadRef = onlineRef.child(leadId);
@@ -48,28 +49,16 @@ chatApp.controller('ClientchatCtrl', ['$scope', '$firebase', function($scope, $f
 
             // Store the last seen time stamp for this lead
             leadRef.child('logout').onDisconnect().set(Firebase.ServerValue.TIMESTAMP);
-
         }
-
     });
 
-    // Getting all the people who have ever visited the site here.
-    // Todo: Show only people that are currently on the site.
-    //$scope.customers = $firebase(hostRef);
-    //console.log("the values returned are:", $scope.customers);
-
-    //$scope.usersOnPage = $firebase(presenceRef);
-    //$scope.usersOnPage.$add({userId: userId});
-
-    // Getting messages for this user
-    //var messagesRef = new Firebase(currentUserMessagesUrl);
-
-    //$scope.messages = $firebase(messagesRef);
+    // Getting the message stream for the current leads chat
+    $scope.messages = $firebase(messagesRef);
 
     // Creating a reference to the messages for this user.
-    //$scope.addMessage = function(e) {
-        //if(e.keyCode != 13) return;
-        //$scope.messages.$add({message: $scope.message});
-        //$scope.message = '';
-    //}
+    $scope.addMessage = function(e) {
+        if(e.keyCode != 13) return;
+        $scope.messages.$add({message: $scope.message});
+        $scope.message = '';
+    }
 }]);
