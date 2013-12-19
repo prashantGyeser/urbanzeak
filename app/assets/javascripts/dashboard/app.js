@@ -8,7 +8,4 @@ chatApp.controller('ChatCtrl', ['$scope', '$firebase', function($scope, $firebas
     // Todo: Show only people that are currently on the site.
     $scope.customers = $firebase(hostRef);
 
-
-
-
 }]);

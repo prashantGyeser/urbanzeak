@@ -18,12 +18,17 @@
 <div ng-app="chatApp">
   <div ng-controller="ChatCtrl">
     <h1>Results</h1>
-    <ul>
-      <li ng-repeat="customer in customers">{{customer}}</li>
-    </ul>
+    <div ng-repeat="(customerId, comments) in customers">
+      <h1>{{customerId}}</h1>
+      <div ng-repeat="(comment, messages) in comments">
+        <ul>
+          <li ng-repeat="message in messages">{{message.message}}</li>
+        </ul>
+      </div>
+
+    </div>
+
     <h1>Debug</h1>
-    {{ customers }}
-    {{ customers }}
   </div>
 </div>
 
