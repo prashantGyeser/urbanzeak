@@ -13,12 +13,13 @@ chatApp.controller('ChatCtrl', ['$scope', '$firebase', '$q', function($scope, $f
 
     $scope.getMessages = function(leadId){
         console.log("the id clicked was:", leadId);
+
         // Setting a loading value so that it can be used in the view to show a spinner
         $scope.loading = true;
 
         var messagesUrl = 'https://urbanzeak-chat-development.firebaseio.com/hosts/1/leads/' + leadId + '/messages/';
         var messagesRef = new Firebase(messagesUrl);
-
+        
         $scope.messages = $firebase(messagesRef);
 
         $scope.messages.$on('loaded', function(){
