@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  layout :layout
+
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
     if (request.fullpath != "/users/sign_in" &&
@@ -20,6 +22,15 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     session[:previous_url] || root_path
+  end
+
+  private
+
+  def layout
+    # only turn it off for login pages:
+    is_a?(Devise::SessionsController) ? false : "application"
+    # or turn layout off for every devise controller:
+    !devise_controller? && "application"
   end
 
   protected
