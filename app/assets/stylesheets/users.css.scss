@@ -1,5 +1,5 @@
 /************************************************************************/
-/* Brand colors */
+/* Colors */
 /************************************************************************/
 $brand_orange: #f47238;
 $brand_blue: #00a9d4;
@@ -7,11 +7,23 @@ $brand_off_white: #ebebe3;
 $brand_blue_toned_down: #cad4d5;
 $contrast_green: #00e23c;
 /************************************************************************/
-/* Experiences new styles */
+/* Common styles */
 /************************************************************************/
 body
 {
-  //background: $brand_off_white;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333333;
+  background: $brand_off_white;
+}
+a
+{
+  color: $brand_blue;
+  &:hover
+  {
+    color: #0080a1;
+  }
 }
 h1, h2, h3, h4
 {
@@ -19,18 +31,31 @@ h1, h2, h3, h4
   text-transform: uppercase;
   font-family: 'Raleway', Georgia, Cambria, 'Times New Roman', times, serif;
 }
-h1.title
-{
-  font-weight: 700;
-}
 /************************************************************************/
-/* Experiences new styles */
+/* Login styles */
 /************************************************************************/
-#newExperience
+#login
 {
   background: white;
   padding: 20px;
-  border: 1px solid #ddd;
+  margin-top: 50px;
   box-shadow: 0 0 5px 2px rgba(0,0,0,.05);
-  margin: 50px 0;
+  .button
+  {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+/************************************************************************/
+/* Shared links styles */
+/************************************************************************/
+.sharedLinks
+{
+  text-align: center;
+  margin-top: 20px;
+  a
+  {
+    color: #797956;
+  }
 }

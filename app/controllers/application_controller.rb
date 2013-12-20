@@ -24,20 +24,19 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
 
-  private
-
-  def layout
-    # only turn it off for login pages:
-    is_a?(Devise::SessionsController) ? false : "application"
-    # or turn layout off for every devise controller:
-    !devise_controller? && "application"
-  end
-
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :first_name,
                                                             :last_name, :city) }
+  end
+
+  def layout
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
   end
 
 end
