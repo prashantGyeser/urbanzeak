@@ -3,6 +3,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   end
 
   def new
+    render :layout => false
   end
 
   def show
