@@ -1,0 +1,32 @@
+/************************************************************************/
+/* Brand colors */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #ebebe3;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+/************************************************************************/
+/* Experiences new styles */
+/************************************************************************/
+body
+{
+  background: $brand_off_white;
+}
+/************************************************************************/
+/* Experiences new styles */
+/************************************************************************/
+#newExperience
+{
+  background: white;
+  padding: 20px;
+  width:600px;
+  height:500px;
+  position:absolute;
+  left:40%;
+  top:30%;
+  margin:-100px 0 0 -150px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.05)
+
+}
