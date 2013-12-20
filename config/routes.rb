@@ -4,6 +4,9 @@ Urbanzeak::Application.routes.draw do
   namespace :dashboard do
     root "home#index"
     get "chat" => "chat#index"
+    get "experiences" => "experiences#index"
+    post "experiences/new"
+    get "experiences/show"
   end
 
   get "home/index"
