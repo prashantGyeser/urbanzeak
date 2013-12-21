@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205091332) do
+ActiveRecord::Schema.define(version: 20131221103432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,23 @@ ActiveRecord::Schema.define(version: 20131205091332) do
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
+
+  create_table "integration_tokens", force: true do |t|
+    t.string   "token"
+    t.string   "provider"
+    t.integer  "user_id"
+    t.text     "returned_values"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "integrations", force: true do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.string   "provider"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -92,6 +93,8 @@ gem 'impressionist'
 # Mixpanel tracking
 gem 'mixpanel-ruby'
 
+# External service integration api
+gem 'temboo'
 
 group :development do
   gem 'annotate'

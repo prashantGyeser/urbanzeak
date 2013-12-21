@@ -9,6 +9,8 @@ Urbanzeak::Application.routes.draw do
     get "experiences/new"
     get "experiences/show"
     get "integrations/index"
+    get 'integrations/facebook'
+    get 'integrations/facebook_finalizeOAuth'
   end
 
   get "home/index"
