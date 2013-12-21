@@ -8,7 +8,7 @@ Urbanzeak::Application.routes.draw do
     get "experiences" => "experiences#index"
     get "experiences/new"
     get "experiences/show"
-    get "integrations/index"
+    get "integrations" => "integrations#index"
     get 'integrations/facebook'
     get 'integrations/facebook_finalizeOAuth'
   end

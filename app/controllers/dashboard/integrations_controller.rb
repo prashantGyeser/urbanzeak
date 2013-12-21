@@ -36,8 +36,6 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
 
     cookies[:tembooCallbackID] = @callbackID
 
-    redirect_to @authorizationURL
-
   end
 
   def facebook_finalizeOAuth
@@ -65,6 +63,12 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
 
     # Store the access token in a cookie, for reuse
     cookies[:facebookAccessToken] = @accessToken
+
+    # Storing the access token in the database
+    userId = current_user.id
+    @tokens = IntegrationToken.create(token: @accessToken,provider: 'Facebook', user_id: userId)
+
   end
 
 end
+
