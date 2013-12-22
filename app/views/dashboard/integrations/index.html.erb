@@ -7,6 +7,7 @@
 
 <!-- Keep all page content within the page-content inset div! -->
 <div class="page-content inset" ng-app="chatApp">
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="integrationsExplanation">
@@ -19,13 +20,30 @@
     </div>
   </div>
 
+  <% if flash[:notice] %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      </div>
+      </md-12>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-md-12">
       <ul id="integrationsList">
         <li>
           <div class="titleContainer">
             <div class="iconContainer">
-              <%= image_tag "icons/fbIcon.png" %>
+              <% if @facebookIntegrationDone == true %>
+                <%= image_tag "icons/facebook-live.png" %>
+              <% else %>
+                <%= image_tag "icons/facebook-grey.png" %>
+              <% end %>
+
+
             </div>
             <div class="listing">
               <strong> <%= link_to "Facebook", dashboard_integrations_facebook_path %></strong>
@@ -39,6 +57,8 @@
             <% if @facebookIntegrationDone == true %>
               <strong>Facebook integration active</strong>
               <input type="checkbox"/>
+              <input type="text" id="messageToPostToFB" class="form-control" placeholder="Enter the message you want to post to Facebook"/>
+              <input type="submit" class="button is-secondary" id="postMessageToFB"/>
             <% else %>
               <%= link_to "Connect", dashboard_integrations_facebook_path, :class => "button is-primary" %>
             <% end %>
@@ -49,7 +69,7 @@
         <li>
           <div class="titleContainer">
             <div class="iconContainer">
-              <%= image_tag "icons/twitterIcon.png" %>
+              <%= image_tag "icons/twitter-grey.png" %>
             </div>
             <div class="listing">
               <strong><a href="#">Twitter</a></strong>
@@ -67,7 +87,7 @@
         <li>
           <div class="titleContainer">
             <div class="iconContainer">
-              <%= image_tag "icons/googleIcon.png" %>
+              <%= image_tag "icons/googleplus-grey.png" %>
             </div>
             <div class="listing">
               <strong><a href="#">Google Plus</a></strong>
@@ -88,3 +108,5 @@
 
 
 </div>
+
+
