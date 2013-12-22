@@ -5,6 +5,13 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   # FINALIZE_OAUTH_CONTROLLER = "http://localhost:3000/integrations/facebook_finalizeOAuth"
 
   def index
+    # Checking to see if the user already is signed up for the various services available
+    fbCheckTokenPresent = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook')
+    if !fbCheckTokenPresent.nil?
+      @facebookIntegrationDone = true
+    end
+
+
   end
 
   def facebook

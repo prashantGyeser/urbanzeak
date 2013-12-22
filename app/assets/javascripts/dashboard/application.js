@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require fancybox
+//= require dashboard/icheck
 //= require turbolinks
 //= require_tree .

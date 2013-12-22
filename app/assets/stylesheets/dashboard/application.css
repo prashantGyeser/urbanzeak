@@ -10,7 +10,7 @@
  *
  *= require bootstrap
  *= require buttons
- *= require fancybox
+ *= require icheck/blue.css
  *= require_self
  *= require_tree .
  */
