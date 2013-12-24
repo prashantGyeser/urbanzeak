@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require dashboard/icheck
+//= require jquery.easydropdown
 //= require turbolinks
 //= require_tree .

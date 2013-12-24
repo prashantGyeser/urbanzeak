@@ -18,6 +18,7 @@
 #  what_does_this_include :text
 #  things_to_remember     :text
 #  max_seats              :integer
+#  template               :boolean
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

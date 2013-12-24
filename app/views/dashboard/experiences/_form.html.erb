@@ -21,6 +21,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :template, "Is this a template?" %>
+    <%# f.select("template", "<option value='true'>Yes</option><option value='false'>No</option>".html_safe, {:class => "dropdown"}) %>
+    <%# select("template", "id", { "Yes" => "true", "No" => "false"}, html_options = {:class => "dropdown"}) %>
+    <%= select(:template, '', [['Yes', true], ['No', false]], {}, :class => "dropdown") %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :what_does_this_include %>
     <%= f.text_area :what_does_this_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
   </div>
@@ -81,46 +88,3 @@
     <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
   </div>
 <% end %>
-
-<script>
-  $('#new_experience').validate();
-</script>
-
-<script>
-  $(document).ready(function() {
-    $("#experience_description").autoGrow();
-    $("#experience_what_does_this_include").autoGrow();
-    $("#experience_things_to_remember").autoGrow();
-  });
-</script>
-
-
-<script type="text/javascript">
-
-  jQuery(function ()
-  {
-    jQuery("#experience_city").autocomplete({
-      source: function (request, response) {
-        jQuery.getJSON(
-                "http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
-                function (data) {
-                  response(data);
-                }
-        );
-      },
-      minLength: 3,
-      select: function (event, ui) {
-        var selectedObj = ui.item;
-        jQuery("#experience_city").val(selectedObj.value);
-        return false;
-      },
-      open: function () {
-        jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
-      },
-      close: function () {
-        jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
-      }
-    });
-    jQuery("#experience_city").autocomplete("option", "delay", 100);
-  });
-</script>

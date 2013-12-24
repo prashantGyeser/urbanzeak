@@ -5,7 +5,8 @@
   </h1>
   <row>
     <div class="col-md-2 col-md-offset-5 pull-right newExperienceButton">
-      <a href="#" class="button is-primary"><i class="fa fa-plus"></i> Create Template</a>
+      <!--<a href="#" class="button is-primary"><i class="fa fa-plus"></i> Create Template</a>-->
+      <%= link_to "Create Template", new_experience_path, :class => "button is-primary" %>
     </div>
   </row>
 </div>
@@ -20,6 +21,9 @@
           <%= image_tag "templateIcon.png" %>
           <p>
             Templates are reusable experiences. They have the same content as you put. Once you have a template you can create as many experiences from it without having to retype the content into the form.
+          </p>
+          <p>
+            <%= link_to "Create Template", new_experience_path %>
           </p>
         </div>
       </div>
