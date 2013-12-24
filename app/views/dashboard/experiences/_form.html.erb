@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.text_field :name, :class => "form-control textLabel",:placeholder => "Experience title", :autofocus => true, :required => "required" %>
+  <div>
+    <%= f.text_field :name, :class => "formInput",:placeholder => "Experience title", :autofocus => true, :required => "required" %>
   </div>
   <div class="form-group">
-    <%= f.text_area :description, :class => "form-control textLabel",:placeholder => "Describe this experience", :rows => 5, :required => "required" %>
+    <%= f.text_area :description, :placeholder => "Describe this experience", :rows => 1, :required => "required" %>
   </div>
 
   <div class="form-group">
@@ -26,29 +26,24 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :what_does_this_include %>
-    <%= f.text_area :what_does_this_include, :class => "form-control textLabel",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
+    <%= f.text_area :what_does_this_include,:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 1 %>
   </div>
 
   <div class="form-group">
-    <%= f.label :things_to_remember %>
-    <%= f.text_area :things_to_remember, :class => "form-control textLabel",:placeholder => "Anything specific your customers have to do before they come to the event? For example are sneakers required for your experience or is there a dress code?", :rows => 5 %>
+    <%= f.text_area :things_to_remember,:placeholder => "Should your customer bring something?", :rows => 1 %>
   </div>
 
   <div class="form-group">
-    <%= f.label :city %>
-    <%= f.text_field :city, :class => "form-control ff_elem textLabel", :placeholder => "Start typing and we find your city.", :required => "required" %>
-    <!--<input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>-->
+    <%= f.text_field :city, :placeholder => "Enter the address of the location where the experience is happening", :required => "required" %>
+    <div class="map_canvas"></div>
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
-    <%= f.text_field :price, :class => "form-control textLabel", :placeholder => "How much should a person pay you when they attend?", :required => "required" %>
+    <%= f.text_field :price, :placeholder => "How much per ticket?", :required => "required" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :max_seats %>
-    <%= f.text_field :max_seats, :class => "form-control textLabel", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
+    <%= f.text_field :max_seats, :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_date %>
@@ -86,3 +81,5 @@
     <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
   </div>
 <% end %>
+
+

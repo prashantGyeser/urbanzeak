@@ -16,5 +16,6 @@
 //= require dashboard/icheck
 //= require jquery.easydropdown
 //= require jvfloat
+//= require jquery.geocomplete
 //= require turbolinks
 //= require_tree .
