@@ -15,7 +15,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1.json
   def show
     @attendee = Attendee.new
-
+    @message = Message.new
     impressionist(@experience)
 
   end

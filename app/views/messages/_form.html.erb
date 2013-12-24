@@ -1,0 +1,34 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message, :class => "form-control" %>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => host_id %>
+
+  <%= f.hidden_field :experience_id, :value => experience_id %>
+
+  <div class="actions">
+    <%= f.submit "Send message", :class => "button", :id => "sendMessage" %>
+  </div>
+<% end %>

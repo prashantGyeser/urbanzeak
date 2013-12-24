@@ -1,6 +1,8 @@
 Urbanzeak::Application.routes.draw do
 
 
+  resources :messages
+
   get "chat/index"
   namespace :dashboard do
     root "home#index"

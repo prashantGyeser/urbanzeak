@@ -22,7 +22,7 @@
             </ul>
           </div>
           <div>
-            <a href="#chat" class="button is-primary fancybox">Chat with the host now</a>
+            <a href="#messageHost" class="button fancybox">Ask a question</a>
           </div>
           <div>
             <p>
@@ -69,6 +69,35 @@
   </div>
 </div>
 
+<div id="messageHost">
+  <h4><strong>Message host</strong></h4>
+
+  <div id="response"></div>
+
+  <%= render :partial => "messages/form", :locals => {:host_id => @experience.user_id, :experience_id => @experience.id } %>
+
+  <!--
+  <form name="messageForm" id="messageForm" action="/messages" method="POST">
+    <div class="form-group">
+      <input type="text" placeholder="Your name" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <input type="email" placeholder="Your email address" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <textarea name="message" id="" rows="5" placeholder="Your message" class="form-control"></textarea>
+    </div>
+
+    <input type="hidden" value="<%= @experience.user_id %>"/>
+
+    <button type="submit" id="submitQuestion" class="btn btn-default">Send message</button>
+
+  </form>
+  -->
+</div>
+
 <script>
   /*
   $("#gmap").gmap3({
@@ -86,43 +115,3 @@
   });
         */
 </script>
-
-<div id="angularChat" ng-app="clientchatApp">
-  <div ng-controller="ClientchatCtrl">
-    <div class="liveChat">
-      <span>Chat live with the host now</span>
-      <div id="chatForm" ng-cloak class="ng-cloak">
-        <div class="chatTextArea">
-          <ul>
-            <li ng-repeat="message in messages">{{ message.message }}</li>
-          </ul>
-        </div>
-        <div class="chatFormInput">
-          <div class="form-group">
-            <input type="text" ng-model="message" class="form-control" placeholder="Enter your message" ng-keypress="addMessage($event)"/>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-
-<div id="chat">
-  <div class="chatContent">
-    <h3>Chat</h3>
-    <div id="chatText"></div>
-    <div class="chatInput">
-      <div class="form-group">
-        <input type="text" class="form-control" id="message" style="width: 755px" placeholder="Enter your message" autofocus="true">
-      </div>
-    </div>
-  </div>
-</div>
-

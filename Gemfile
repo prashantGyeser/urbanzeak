@@ -96,6 +96,10 @@ gem 'mixpanel-ruby'
 # External service integration api
 gem 'temboo'
 
+# Realtime Notifications
+gem 'pubnub'
+gem 'json'
+
 group :development do
   gem 'annotate'
   gem "better_errors"
