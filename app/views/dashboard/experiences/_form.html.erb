@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name, "Name your experience" %>
-    <%= f.text_field :name, :class => "form-control",:placeholder => "A short name for people to recognize what your experience is about", :autofocus => true, :required => "required" %>
+    <%= f.text_field :name, :class => "form-control textLabel",:placeholder => "Experience title", :autofocus => true, :required => "required" %>
   </div>
   <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, :class => "form-control",:placeholder => "Tell people what your experience is about. You can be as descritive as you like. Paint a picture about your experience with words.", :rows => 5, :required => "required" %>
+    <%= f.text_area :description, :class => "form-control textLabel",:placeholder => "Describe this experience", :rows => 5, :required => "required" %>
   </div>
 
   <div class="form-group">
@@ -29,38 +27,38 @@
 
   <div class="form-group">
     <%= f.label :what_does_this_include %>
-    <%= f.text_area :what_does_this_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
+    <%= f.text_area :what_does_this_include, :class => "form-control textLabel",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
   </div>
 
   <div class="form-group">
     <%= f.label :things_to_remember %>
-    <%= f.text_area :things_to_remember, :class => "form-control",:placeholder => "Anything specific your customers have to do before they come to the event? For example are sneakers required for your experience or is there a dress code?", :rows => 5 %>
+    <%= f.text_area :things_to_remember, :class => "form-control textLabel",:placeholder => "Anything specific your customers have to do before they come to the event? For example are sneakers required for your experience or is there a dress code?", :rows => 5 %>
   </div>
 
   <div class="form-group">
     <%= f.label :city %>
-    <%= f.text_field :city, :class => "form-control ff_elem", :placeholder => "Start typing and we find your city.", :required => "required" %>
+    <%= f.text_field :city, :class => "form-control ff_elem textLabel", :placeholder => "Start typing and we find your city.", :required => "required" %>
     <!--<input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>-->
   </div>
 
   <div class="form-group">
     <%= f.label :price %>
-    <%= f.text_field :price, :class => "form-control", :placeholder => "How much should a person pay you when they attend?", :required => "required" %>
+    <%= f.text_field :price, :class => "form-control textLabel", :placeholder => "How much should a person pay you when they attend?", :required => "required" %>
   </div>
 
   <div class="form-group">
     <%= f.label :max_seats %>
-    <%= f.text_field :max_seats, :class => "form-control", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
+    <%= f.text_field :max_seats, :class => "form-control textLabel", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_date %>
     <br/>
-    <%= f.date_select :exp_date, :class => "form-control", :required => "required" %>
+    <%= f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>
   </div>
   <div class="form-group">
     <%= f.label :exp_time %>
     <br/>
-    <%= f.time_select :exp_time, :class => "form-control", :required => "required" %>
+    <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
   </div>
 
   <div class="form-group">
