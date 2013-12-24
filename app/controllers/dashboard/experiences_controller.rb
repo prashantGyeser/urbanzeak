@@ -9,4 +9,8 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
   def show
   end
+
+  def template
+    @templates = Experience.where(:template => true)
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131221103432) do
+ActiveRecord::Schema.define(version: 20131224002308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20131221103432) do
     t.text     "what_does_this_include"
     t.text     "things_to_remember"
     t.integer  "max_seats"
+    t.boolean  "template"
   end
 
   create_table "hosts", force: true do |t|
