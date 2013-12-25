@@ -100,6 +100,9 @@ gem 'temboo'
 gem 'pubnub'
 gem 'json'
 
+# Email management for messages to the host from their customers
+gem 'griddler'
+
 group :development do
   gem 'annotate'
   gem "better_errors"

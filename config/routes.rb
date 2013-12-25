@@ -1,6 +1,5 @@
 Urbanzeak::Application.routes.draw do
 
-
   resources :messages
 
   get "chat/index"
