@@ -374,11 +374,7 @@ DEPENDENCIES
   sdoc
   sentry-raven
   shoulda-matchers
-<<<<<<< HEAD
-=======
-  sqlite3
   temboo
->>>>>>> contactHost
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
