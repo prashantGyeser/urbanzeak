@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery.carouFredSel-6.2.1-packed
 //= require jquery.autogrowtextarea.min
-//= require typeahead.min
 //= require gmap3.min
+//= require fancybox
 //= require turbolinks
 //= require_tree .

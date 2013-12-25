@@ -13,6 +13,7 @@
  *= require nivo-slider
  *= require themes/light/light
  *= require typeahead-bootstrap
+ *= require fancybox
  *= require_self
  *= require_tree .
  */

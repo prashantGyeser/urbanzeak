@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -67,6 +68,8 @@ gem 'rmagick'
 # Storing the images in s3
 gem 'fog'
 
+# Fancy box for a modal window
+gem 'fancybox2-rails', '~> 0.2.4'
 
 
 
@@ -96,12 +99,22 @@ gem 'impressionist'
 # Mixpanel tracking
 gem 'mixpanel-ruby'
 
+# External service integration api
+gem 'temboo'
+
+# Realtime Notifications
+gem 'pubnub'
+gem 'json'
+
+# Email management for messages to the host from their customers
+gem 'griddler'
 
 group :development do
   gem 'annotate'
   gem "better_errors"
   gem "binding_of_caller"
   gem "bullet"
+  gem "localtunnel"
 end
 
 group :test, :development do

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="UrbanZeak">
+
+  <title>Dashboard | UrbanZeak</title>
+  <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "simple-sidebar", media: "all", "data-turbolinks-track" => true %>
+
+  <!-- Add custom CSS here -->
+  <!--
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
+  -->
+
+  <%= csrf_meta_tags %>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <!--<img src="img/fillerImages/hostImage.jpg" alt="" class="img-circle welcomeImage"/>-->
+        <%= image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
+        <span>Hi, Jane Doe</span>
+      </li>
+      <li><a href="#"><i class="fa fa-bar-chart-o"></i>Dashboard</a>
+      </li>
+      <li><a href="#"><i class="fa fa-dot-circle-o" style="margin-right: 7px"></i>Experiences</a></li>
+      <li><a href="#"><i class="fa fa-users"></i>Attendees</a></li>
+      <li><a href="#"><i class="fa fa-road"></i>Traffic Sources</a></li>
+      <li><a href="#"><i class="fa fa-comment"></i>Notifications</a></li>
+    </ul>
+  </div>
+
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+    <%= yield %>
+  </div>
+
+</div>
+
+<!-- JavaScript -->
+<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+<%= yield :javascript_includes %>
+<!--[if IE]><script language="javascript" type="text/javascript" src="js/libs/excanvas.js"></script><![endif]-->
+
+<!-- Custom JavaScript for the Menu Toggle -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+  });
+</script>
+
+
+
+</body>
+</html>

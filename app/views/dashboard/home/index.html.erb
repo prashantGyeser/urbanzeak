@@ -1,0 +1,118 @@
+<!--Todo: Chats to add -->
+<!--1. Visitors chart -->
+<!--2. Total revenue chart -->
+<!--2. Total attendees chart -->
+
+
+<div class="content-header">
+  <h1 class="title">
+    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+    Dashboard
+  </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>People who viewed you page vs people who signed up</h4>
+      <div id="placeholder" style="width: 100%; height: 400px"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Key Stats</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div id="stat1" style="width: 100%; height: 200px"></div>
+    </div>
+
+    <div class="col-md-4">
+      <div id="stat2" style="width: 100%; height: 200px"></div>
+    </div>
+
+    <div class="col-md-4">
+      <div id="stat3" style="width: 100%; height: 200px"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+  $(function() {
+
+    var d5 = [];
+    for (var i = 0; i < 14; i += 0.5) {
+      d5.push([i, Math.sqrt(i)]);
+    }
+
+    var d6 = [];
+    for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+      d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+    }
+
+    $.plot("#placeholder", [{
+      data: d5,
+      shadowSize: 0,
+      lines: { show: true, lineWidth: 1 },
+      points: { show: true, radius: 6 },
+      color: '#f47238'
+    },
+      {
+        data: d6,
+        shadowSize: 0,
+        lines: { show: true, lineWidth: 1 },
+        points: { show: true, radius: 6 },
+        color: '#00a9d4'
+      }
+    ],
+            {
+              grid: {borderWidth: 0, color: "#3d3d2c"}
+            }
+    );
+
+  });
+
+
+  $(document).ready(function(){
+    var data = [
+      { data: 19.5, color: "#f47238"},
+      { data: 4.5, color: "#00a9d4"}
+    ];
+
+    $.plot($("#stat1"), data,
+            {
+              series: {
+                pie: {
+                  innerRadius: 0.7,
+                  show: true
+                }
+              }
+            })
+
+    $.plot($("#stat2"), data,
+            {
+              series: {
+                pie: {
+                  innerRadius: 0.7,
+                  show: true
+                }
+              }
+            })
+
+    $.plot($("#stat3"), data,
+            {
+              series: {
+                pie: {
+                  innerRadius: 0.7,
+                  show: true
+                }
+              }
+            })
+  });
+
+</script>

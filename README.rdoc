@@ -1,7 +1,12 @@
 == README
 
+
 == Compiling
 RAILS_ENV=production bundle exec rake assets:clean
+
+== AJAX Spinner generated using
+http://preloaders.net/
+
 
 == Useful links
 -- Getting started with testing

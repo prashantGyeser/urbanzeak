@@ -1,0 +1,81 @@
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.text_field :name, :class => "formInput",:placeholder => "Experience title", :autofocus => true, :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, :placeholder => "Describe this experience", :rows => 1, :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :template, "Is this a template?" %>
+    <%# f.select("template", "<option value='true'>Yes</option><option value='false'>No</option>".html_safe, {:class => "dropdown"}) %>
+    <%# select("template", "id", { "Yes" => "true", "No" => "false"}, html_options = {:class => "dropdown"}) %>
+    <%= select(:template, '', [['Yes', true], ['No', false]], {}, :class => "dropdown") %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :what_does_this_include,:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 1 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :things_to_remember,:placeholder => "Should your customer bring something?", :rows => 1 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :city, :placeholder => "Enter the address of the location where the experience is happening", :required => "required" %>
+    <div class="map_canvas"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :price, :placeholder => "How much per ticket?", :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :max_seats, :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_date %>
+    <br/>
+    <%= f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exp_time %>
+    <br/>
+    <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
+  </div>
+
+  <div class="form-group">
+    <%# f.label :exp_images, "Upload Your Avatar:" %>
+    <%# f.filepicker_field :exp_images%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <br/>
+    <%= f.file_field :image, :class => "form-control", :required => "required" %>
+  </div>
+
+  <%= f.hidden_field :latitude%>
+
+  <%= f.hidden_field :longitude %>
+
+
+
+  <div class="actions">
+    <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
+  </div>
+<% end %>
+
+

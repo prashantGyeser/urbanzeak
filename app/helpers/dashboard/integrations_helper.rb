@@ -1,0 +1,2 @@
+module Dashboard::IntegrationsHelper
+end

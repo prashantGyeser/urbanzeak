@@ -9,7 +9,6 @@
           </div>
 
 
-
           <h2><%= @experience.name%></h2>
           <div class="subDetails">
             <ul>
@@ -22,6 +21,9 @@
               </li>
 
             </ul>
+          </div>
+          <div>
+            <a href="#messageHost" class="button fancybox">Ask a question</a>
           </div>
           <div>
             <p>
@@ -45,6 +47,7 @@
         <div class="experienceSubDetails">
           <strong>Experiences are better with friends</strong>
           <!-- AddThis Button BEGIN -->
+          <!--
           <div class="addthis_toolbox addthis_default_style ">
             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
             <a class="addthis_button_tweet"></a>
@@ -52,20 +55,52 @@
             <a class="addthis_counter addthis_pill_style"></a>
           </div>
           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-529e264e12087782"></script>
+          -->
           <!-- AddThis Button END -->
         </div>
 
         <div class="experienceSubDetails">
           <strong>Meeting point</strong>
+          <!--
           <div id="gmap" style="width: 100%; height: 200px"></div>
-
+          -->
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div id="messageHost">
+  <h4><strong>Message host</strong></h4>
+
+  <div id="response"></div>
+
+  <%= render :partial => "messages/form", :locals => {:host_id => @experience.user_id, :experience_id => @experience.id } %>
+
+  <!--
+  <form name="messageForm" id="messageForm" action="/messages" method="POST">
+    <div class="form-group">
+      <input type="text" placeholder="Your name" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <input type="email" placeholder="Your email address" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <textarea name="message" id="" rows="5" placeholder="Your message" class="form-control"></textarea>
+    </div>
+
+    <input type="hidden" value="<%= @experience.user_id %>"/>
+
+    <button type="submit" id="submitQuestion" class="btn btn-default">Send message</button>
+
+  </form>
+  -->
+</div>
+
 <script>
+  /*
   $("#gmap").gmap3({
     marker:{
       values: [
@@ -79,4 +114,5 @@
       }
     }
   });
+        */
 </script>

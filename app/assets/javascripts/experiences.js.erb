@@ -1,6 +1,12 @@
+<%# Todo: Get the actual value of the host id here %>
+<% host_id = 1 %>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// General
+///////////////////////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function(){
     //$('#newExperienceModal').modal('show');
-
+    /*
     $("#map").gmap3({
         map:{
             options:{
@@ -33,13 +39,39 @@ $(document).ready(function(){
 
         }
     });
+    */
+  // Message the host modal
+  $(".fancybox").fancybox({
+    'autoSize': false,
+    'padding': [0,0,0,0],
+    'width': 600,
+    'height': 360
+  });
 
+
+  // Message host
+  $("#new_message").submit(function(e)
+  {
+    var postData = $(this).serializeArray();
+    var formURL = $(this).attr("action");
+    $.ajax(
+            {
+              url : formURL,
+              type: "POST",
+              data : postData,
+              success:function(data, textStatus, jqXHR)
+              {
+                console.log("Success!");
+              },
+              error: function(jqXHR, textStatus, errorThrown)
+              {
+                console.log("Error!");
+              }
+            });
+    e.preventDefault(); //STOP default action
+  });
+
+  $("#new_message").submit(); //Submit  the FORM
 
 });
 
-$( "#expShowImg" ).load(function() {
-    Caman('#expShowImg', function(){
-        this.sunrise();
-        this.render();
-    });
-});

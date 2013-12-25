@@ -1,5 +1,23 @@
 Urbanzeak::Application.routes.draw do
 
+  resources :messages
+
+  get "chat/index"
+  namespace :dashboard do
+    root "home#index"
+    get "chat" => "chat#index"
+    get "experiences" => "experiences#index"
+    get "experiences/new"
+    get "experiences/show"
+    get "experiences/templates"
+    get "integrations" => "integrations#index"
+    get 'integrations/facebook'
+    get 'integrations/facebook_finalizeOAuth'
+    post 'integrations/postToFacebook'
+    get "notifications/communication"
+  end
+
+  get "home/index"
   resources :attendees
 
   get "checkout", to: "checkout#index"
