@@ -14,6 +14,7 @@ Urbanzeak::Application.routes.draw do
     get 'integrations/facebook'
     get 'integrations/facebook_finalizeOAuth'
     post 'integrations/postToFacebook'
+    get "notifications/communication"
   end
 
   get "home/index"
