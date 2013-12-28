@@ -35,6 +35,10 @@ $contrast_green: #00e23c;
   border: 1px solid #eff0f2;
   margin-left: -31px;
   //padding: 20px;
+  textarea
+  {
+    width: 100%;
+  }
   .messageHeader
   {
     color: #aaa;

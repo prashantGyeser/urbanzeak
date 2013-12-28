@@ -19,6 +19,7 @@
 #  last_name              :string(255)
 #  city                   :string(255)
 #  host                   :boolean
+#  guid                   :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -27,14 +28,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :city, :first_name, :last_name, :presence => true
+  #validates :city, :first_name, :last_name, :presence => true
 
   has_many :integration_tokens
 
-  after_create :send_welcome_email
-  after_create :autoresponder
+  #after_create :send_welcome_email
+  #after_create :autoresponder
+  after_create :add_guid
 
   private
+
+  def add_guid
+    self.guid = ('a'..'z').to_a.shuffle[0,20].join
+    self.save
+  end
 
   def send_welcome_email
     UserMailer.signup_confirmation(self).deliver

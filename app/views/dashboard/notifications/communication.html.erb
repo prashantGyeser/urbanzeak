@@ -17,6 +17,7 @@
     </div>
     <div class="col-md-8">
       <div class="messageContainer">
+        <textarea name="message" id="message" rows="10" class="form-control"></textarea>
         <% @messages_by_email.each do |name, messages| %>
           <div class="messageHeader">
             <h4>conversation with <strong><%= name %></strong></h4>

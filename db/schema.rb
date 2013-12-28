@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224144343) do
+ActiveRecord::Schema.define(version: 20131228212155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,12 +118,20 @@ ActiveRecord::Schema.define(version: 20131224144343) do
 
   create_table "messages", force: true do |t|
     t.string   "name"
-    t.string   "email"
-    t.text     "message"
     t.integer  "user_id"
     t.integer  "experience_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "to"
+    t.string   "from"
+    t.string   "cc"
+    t.string   "subject"
+    t.text     "body"
+    t.text     "raw_text"
+    t.text     "raw_html"
+    t.text     "raw_body"
+    t.text     "headers"
+    t.text     "raw_headers"
   end
 
   create_table "users", force: true do |t|
@@ -143,6 +151,7 @@ ActiveRecord::Schema.define(version: 20131224144343) do
     t.string   "last_name"
     t.string   "city"
     t.boolean  "host"
+    t.string   "guid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
