@@ -4,10 +4,9 @@
   <title>Urbanzeak</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 
-  <!--
+
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
-  -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -36,25 +35,6 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="login">
-          <div class="userInfo pull-right">
-
-            <% if user_signed_in? %>
-              <% if current_user.host?%>
-                <%= link_to('View your dashboard', hosts_dashboard_path, :class => "button is-secondary", :id => "viewHostDashboard") %>
-              <% else %>
-                <%= link_to('Host your experience', pages_sell_url, :class => "button is-secondary", :id => "topbarHostYourExperience") %>
-              <% end %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "button") %>
-            <% else %>
-              <%= link_to('Login', new_user_session_path, :class => "button is-primary", :id => "topbarLogin")  %>
-              <%= link_to('Register', new_user_registration_path, :class => "button is-secondary", :id => "topbarRegister")  %>
-            <% end %>
-
-          </div>
-
-
-        </div>
       </div>
     </div>
   </div>
