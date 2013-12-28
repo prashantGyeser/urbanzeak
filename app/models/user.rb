@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
 
   def add_guid
     self.guid = ('a'..'z').to_a.shuffle[0,20].join
+    self.internal_email_id = self.guid + '@inbound.urbanzeak.com'
     self.save
   end
 
