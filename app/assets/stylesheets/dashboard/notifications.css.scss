@@ -1,3 +1,67 @@
-// Place all the styles related to the dashboard/Notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/************************************************************************/
+/* Colors */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #ebebe3;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00e23c;
+/************************************************************************/
+/* Messages */
+/************************************************************************/
+.messageSender
+{
+  list-style: none;
+  padding: 0;
+  margin-left: -20px;
+  border-right: 1px solid #eff0f2;
+  border-top: 1px solid #eff0f2;
+  li
+  {
+    padding: 20px;
+    //background: red;
+    font-weight: bold;
+    border-bottom: 1px solid #eff0f2;
+    &:hover
+    {
+      background: $brand_blue;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+.messageContainer
+{
+  border: 1px solid #eff0f2;
+  margin-left: -31px;
+  //padding: 20px;
+  .messageHeader
+  {
+    color: #aaa;
+    font-weight: 500;
+    background: $brand_off_white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    strong
+    {
+      color: #656548;
+      font-weight: 700;
+    }
+  }
+  ul
+  {
+    list-style: none;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    li
+    {
+      margin-bottom: 10px;
+      .sender
+      {
+        text-transform: uppercase;
+        color: #aaa;
+        margin-top: 10px;
+      }
+    }
+  }
+}

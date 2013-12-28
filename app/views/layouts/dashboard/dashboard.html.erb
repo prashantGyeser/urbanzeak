@@ -11,13 +11,13 @@
   <%= stylesheet_link_tag    "simple-sidebar", media: "all", "data-turbolinks-track" => true %>
 
   <!-- Add custom CSS here -->
-  <!--
+
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
-  -->
+
 
   <%= csrf_meta_tags %>
 
@@ -32,8 +32,12 @@
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
         <!--<img src="img/fillerImages/hostImage.jpg" alt="" class="img-circle welcomeImage"/>-->
-        <%= image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
-        <span>Hi, Jane Doe</span>
+        <%# image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
+
+        <!--<span>Hi, Jane Doe</span>-->
+
+        <%= image_tag "logo-white.png" %>
+
       </li>
       <li><a href="#"><i class="fa fa-bar-chart-o"></i>Dashboard</a>
       </li>
