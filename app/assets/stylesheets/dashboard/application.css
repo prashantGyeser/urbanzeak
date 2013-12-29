@@ -11,6 +11,7 @@
  *= require bootstrap
  *= require buttons
  *= require icheck/blue.css
+ *= require nanoscroller
  *= require_self
  *= require_tree .
  */

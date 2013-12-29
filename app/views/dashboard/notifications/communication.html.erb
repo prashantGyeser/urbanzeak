@@ -9,39 +9,43 @@
 <div class="page-content inset">
   <div class="row">
 
-    <% if @messages_by_email.blank? %>
+    <% if @messages_by_name.blank? %>
       <div class="alert alert-warning"><strong>Now messages yet.</strong> As soon as someone sends you a message it will show up here.</div>
     <% else %>
       <div class="col-md-4">
         <ul class="messageSender">
-          <% @messages_by_email.each do |name, messages| %>
+          <% @messages_by_name.each do |name, messages| %>
             <li><%= name %></li>
           <% end %>
         </ul>
       </div>
       <div class="col-md-8">
         <div class="messageContainer">
-          <textarea name="message" id="message" rows="10" class="form-control"></textarea>
-          <% @messages_by_email.each do |name, messages| %>
+
+          <% @messages_by_name.each do |name, messages| %>
             <div class="messageHeader">
               <h4>conversation with <strong><%= name %></strong></h4>
             </div>
             <ul>
-              <% messages.each do |message| %>
+              <% sorted_messages = messages.sort_by{|e| e[:time_ago]} %>
+              <% sorted_messages.each do |message| %>
                 <li>
                   <div class="sender">
                     <strong><%= message.name %></strong>
                   </div>
-                  <%= message.message %>
+                  <%= message.body %>
                   <div class="sender">
                     <strong><%= message.name %></strong>
                   </div>
-                  <%= message.message %>
+                  <%= message.body %>
 
                 </li>
               <% end %>
             </ul>
           <% end %>
+
+          <textarea name="message" id="message" rows="10" class="form-control"></textarea>
+
         </div>
 
       </div>
