@@ -8,39 +8,46 @@
 <!-- Keep all page content within the page-content inset div! -->
 <div class="page-content inset">
   <div class="row">
-    <div class="col-md-4">
-      <ul class="messageSender">
-        <% @messages_by_email.each do |name, messages| %>
-          <li><%= name %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-md-8">
-      <div class="messageContainer">
-        <textarea name="message" id="message" rows="10" class="form-control"></textarea>
-        <% @messages_by_email.each do |name, messages| %>
-          <div class="messageHeader">
-            <h4>conversation with <strong><%= name %></strong></h4>
-          </div>
-          <ul>
-            <% messages.each do |message| %>
-              <li>
-                <div class="sender">
-                  <strong><%= message.name %></strong>
-                </div>
-                <%= message.message %>
-                <div class="sender">
-                  <strong><%= message.name %></strong>
-                </div>
-                <%= message.message %>
 
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
+    <% if @messages_by_email.blank? %>
+      <div class="alert alert-warning"><strong>Now messages yet.</strong> As soon as someone sends you a message it will show up here.</div>
+    <% else %>
+      <div class="col-md-4">
+        <ul class="messageSender">
+          <% @messages_by_email.each do |name, messages| %>
+            <li><%= name %></li>
+          <% end %>
+        </ul>
       </div>
+      <div class="col-md-8">
+        <div class="messageContainer">
+          <textarea name="message" id="message" rows="10" class="form-control"></textarea>
+          <% @messages_by_email.each do |name, messages| %>
+            <div class="messageHeader">
+              <h4>conversation with <strong><%= name %></strong></h4>
+            </div>
+            <ul>
+              <% messages.each do |message| %>
+                <li>
+                  <div class="sender">
+                    <strong><%= message.name %></strong>
+                  </div>
+                  <%= message.message %>
+                  <div class="sender">
+                    <strong><%= message.name %></strong>
+                  </div>
+                  <%= message.message %>
 
-    </div>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+
+
   </div>
 </div>
 
