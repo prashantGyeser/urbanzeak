@@ -20,6 +20,7 @@
 #  city                   :string(255)
 #  host                   :boolean
 #  guid                   :string(255)
+#  internal_email_id      :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
