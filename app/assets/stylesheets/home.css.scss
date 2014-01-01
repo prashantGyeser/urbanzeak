@@ -31,7 +31,7 @@ $contrast_green_toned_down: #e4f3d9;
 /************************************************************************/
 .topBar
 {
-  background: $brand_off_white;
+  background: white;
   border-bottom: 1px solid #d1d1c5;
 }
 /************************************************************************/
@@ -49,15 +49,84 @@ $contrast_green_toned_down: #e4f3d9;
   }
 }
 /************************************************************************/
-/* Homepage heading */
+/* Key features styles */
 /************************************************************************/
-
+.keyFeatures
+{
+  background: $brand_off_white;
+  padding: 40px 0 20px 0;
+  .row
+  {
+    margin-bottom: 20px;
+  }
+  .col-md-4
+  {
+    text-align: center;
+    &:hover
+    {
+      i
+      {
+        color: $brand_blue;
+      }
+    }
+    i
+    {
+      font-size: 70px;
+      margin-bottom: 10px;
+      color: #a4a48d;
+    }
+  }
+  p
+  {
+    font-size: 14px;
+  }
+}
 
 /************************************************************************/
-/* Homepage heading */
+/* Screenshots styling */
 /************************************************************************/
-
-
+.screenShots
+{
+  margin: 40px 0;
+  h2
+  {
+    text-align: center;
+  }
+  p
+  {
+    text-align: center;
+  }
+  .screenShotsList
+  {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    p
+    {
+      text-align: left;
+      font-size: 14px;
+    }
+    li
+    {
+      padding: 10px 20px;
+      &:hover
+      {
+        background: $brand_blue;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    li.selected
+    {
+      background: $brand_blue;
+      color: white;
+    }
+  }
+  img
+  {
+    margin-top: 10px;
+  }
+}
 /************************************************************************/
 /* Homepage heading */
 /************************************************************************/
