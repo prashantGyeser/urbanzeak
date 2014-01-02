@@ -17,5 +17,6 @@
 //= require jquery.easydropdown
 //= require jvfloat
 //= require jquery.geocomplete
+//= require jquery.nanoscroller
 //= require turbolinks
 //= require_tree .

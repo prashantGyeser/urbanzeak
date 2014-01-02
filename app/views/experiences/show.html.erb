@@ -4,9 +4,12 @@
       <div class="col-lg-8">
         <div class="experienceShowContainer">
 
+
           <div id="experienceShowImg">
             <%= image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
           </div>
+
+          <%# image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
 
 
           <h2><%= @experience.name%></h2>
@@ -77,26 +80,6 @@
 
   <%= render :partial => "messages/form", :locals => {:host_id => @experience.user_id, :experience_id => @experience.id } %>
 
-  <!--
-  <form name="messageForm" id="messageForm" action="/messages" method="POST">
-    <div class="form-group">
-      <input type="text" placeholder="Your name" class="form-control"/>
-    </div>
-
-    <div class="form-group">
-      <input type="email" placeholder="Your email address" class="form-control"/>
-    </div>
-
-    <div class="form-group">
-      <textarea name="message" id="" rows="5" placeholder="Your message" class="form-control"></textarea>
-    </div>
-
-    <input type="hidden" value="<%= @experience.user_id %>"/>
-
-    <button type="submit" id="submitQuestion" class="btn btn-default">Send message</button>
-
-  </form>
-  -->
 </div>
 
 <script>
