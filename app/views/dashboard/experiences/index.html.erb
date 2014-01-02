@@ -6,7 +6,11 @@
   <row>
     <div class="col-md-4 col-md-offset-3 pull-right newExperienceButton">
       <a href="#" class="button is-secondary">My Templates</a>
-      <a href="#" class="button is-primary"><i class="fa fa-plus"></i> Create Experience</a>
+      <%= link_to dashboard_experiences_new_path, :class=> "button is-primary" do %>
+        <i class="fa fa-plus"></i>
+        Create Experience
+      <% end %>
+
     </div>
     </div>
   </row>
