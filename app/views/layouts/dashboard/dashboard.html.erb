@@ -35,12 +35,41 @@
         <%= image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
         <span>Hi, Jane Doe</span>
       </li>
-      <li><a href="#"><i class="fa fa-bar-chart-o"></i>Dashboard</a>
+
+      <li>
+        <%= link_to dashboard_root_path do %>
+          <i class="fa fa-bar-chart-o"></i>
+          Dashboard
+        <% end %>
       </li>
+
+      <li>
+        <%= link_to dashboard_experiences_path do %>
+          <i class="fa fa-dot-circle-o" style="margin-right: 7px"></i>
+          Experiences
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to dashboard_experiences_path do %>
+          <i class="fa fa-users"></i>
+          Attendees
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to dashboard_experiences_path do %>
+          <i class="fa fa-road"></i>
+          Traffic Sources
+        <% end %>
+      </li>
+      <!--
+      <li><a href="#"><i class="fa fa-bar-chart-o"></i>Dashboard</a></li>
       <li><a href="#"><i class="fa fa-dot-circle-o" style="margin-right: 7px"></i>Experiences</a></li>
       <li><a href="#"><i class="fa fa-users"></i>Attendees</a></li>
       <li><a href="#"><i class="fa fa-road"></i>Traffic Sources</a></li>
       <li><a href="#"><i class="fa fa-comment"></i>Notifications</a></li>
+      -->
     </ul>
   </div>
 
