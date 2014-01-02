@@ -1,187 +1,122 @@
-<div id="wrapper">
-  <div id="carousel">
-    <div><%= image_tag "headerSlider/header1.jpg"%></div>
-    <div><%= image_tag "headerSlider/header2.jpg"%></div>
-    <div><%= image_tag "headerSlider/header3.jpg"%></div>
-  </div>
-  <div id="title">
-    <h3>
-      <span>Do</span>
-      something new
-      <span>today</span>
-    </h3>
-    <!--<p><a href="http://gigapica.geenstijl.nl/2013/01/the_netherlands_covered_in_sno.html">images from gigapica.geenstijl.nl</a></p>-->
-  </div>
-  <div id="pager"></div>
-</div>
-
-<div class="clearfix"></div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-
-      <div class="whatIsUrbanZeak">
-        <!--<h1>Do something new in your city today</h1>-->
-        <p>
-          UrbanZeak is a place to find new experiences in your city. It can be something as simple as learning how to cook or something as complicated as learning how to build a rocket. Try something today.
-        </p>
-      </div>
-
-
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 homepageCountry">
-      <h2>All experience in <%= @country %></h2>
-      <span><a class="button is-primary pull-right" data-toggle="modal" data-target="#cityFilter">Show experiences from your city</a></span>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="cityFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Change City</h4>
-          </div>
-          <div class="modal-body">
-
-              <div class="input-group">
-                <input type="text" class="form-control typeahead" id="filterInput" placeholder="Enter your city name here and we will find all the experiences in your city.">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button" id="filter">Get experiences!</button>
-                </span>
-              </div><!-- /input-group -->
-
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-  </div>
-</div>
-
-
-<div class="container">
-  <% @experiences.in_groups_of(3, false).each do |experienceRow| %>
-    <div class="row listingRow">
-      <% experienceRow.each do |experience| %>
-        <div class="col-lg-4">
-          <div class="listingContainer">
-            <div class="expListingImageContainer">
-              <%= image_tag experience.image_url(:thumb).to_s, :class => "img-responsive expListingImg"%>
-              <div class="expOverlayDate">
-                <div><%= experience.exp_date.strftime("%b") %></div>
-                <div><%= experience.exp_date.strftime("%d") %></div>
-              </div>
-              <div class="hostOverlap">
-                <% user_id = experience.user_id %>
-                <% host = Host.where(:user_id => user_id).first %>
-                <% if host.nil? %>
-
-                <% else %>
-                  <%= image_tag host.avatar_url(:thumb).to_s, :class => "img-responsive img-circle homepageHostImage" %>
-                <% end %>
-
-              </div>
-
-            </div>
-            <div class="expListingContent">
-              <strong>
-                <%= link_to experience.name, experience_path(experience) %>
-              </strong>
-
-              <p>
-                City: <strong><%= experience.city %></strong>
-              </p>
-
-              <p>
-                <%= experience.description.truncate(150) %>
-              </p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-
-<div class="homepageSell">
+<div class="header">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <div class="heading">
-          <h2>Features for a host</h2>
+      <div class="col-md-12">
+        <h1>Fill seats <span>faster</span></h1>
+        <%= image_tag "headerImage/headerImage.png" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="keyFeatures">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <i class="fa fa-comments fa-5"></i>
+        <div class="content">
+          <h4>Some heading</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis nisi sed sapien semper volutpat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
           </p>
         </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="hostSellContainer">
-              <%= image_tag "homepageHostSellFillers/host1.jpg", :class => "img-responsive" %>
-              <div class="homeSellContent">
-                <h4><strong>Hosts name</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="hostSellContainer">
-              <%= image_tag "homepageHostSellFillers/host2.jpg", :class => "img-responsive" %>
-              <div class="homeSellContent">
-                <h4><strong>Hosts name</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="hostSellContainer">
-              <%= image_tag "homepageHostSellFillers/host3.jpg", :class => "img-responsive" %>
-              <div class="homeSellContent">
-                <h4><strong>Hosts name</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim nisl leo, sed commodo dui rutrum et. Sed volutpat feugiat mauris.
-                </p>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-compass"></i>
+        <div class="content">
+          <h4>Some heading</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
+          </p>
         </div>
-
-
-        <div class="heading">
-          <%= link_to "Host your experience on UrbanZeak", pages_sell_path, :class => "button is-secondary" %>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa fa-envelope"></i>
+        <div class="content">
+          <h4>Some heading</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
+          </p>
         </div>
-
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <i class="fa fa-eye"></i>
+        <div class="content">
+          <h4>Some heading</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-mobile-phone"></i>
+        <div class="content">
+          <h4>Some heading</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-quote-left"></i>
+        <div class="content">
+          <h4>Some heading</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<div class="footer">
+
+<div class="screenShots">
   <div class="container">
+
     <div class="row">
-      <div class="col-lg-12">
-        <ul>
-          <li><%= link_to "Terms and Conditions", pages_terms_path %></li>
-          <li><%= link_to "Privacy Policy", pages_privacy_path %></li>
+      <div class="col-md-12">
+        <h2>Screenshots</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="screenShotsList">
+          <li class="selected">
+            <h4>Powerful dashboard</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
+            </p>
+          </li>
+
+          <li>
+            <h4>Powerful dashboard</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
+            </p>
+          </li>
+
+          <li>
+            <h4>Powerful dashboard</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
+            </p>
+          </li>
+
+
         </ul>
       </div>
+      <div class="col-md-6">
+        <%= image_tag "fillerImages/content/contentImage.png", :class => "img-responsive" %>
+      </div>
     </div>
   </div>
-
 </div>
-
