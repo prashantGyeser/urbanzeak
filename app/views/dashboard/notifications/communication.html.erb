@@ -17,7 +17,8 @@
           <% @messages_by_name.each do |name, messages| %>
             <li>
               <%= name %>
-              <input type="hidden" name="from_email" value="<%= messages.first.id %>"/>
+              <input type="hidden" name="from_id" value="<%= messages.first.id %>"/>
+              <input type="hidden" name="from_email" value="<%= messages.first.from %>"/>
             </li>
 
           <% end %>

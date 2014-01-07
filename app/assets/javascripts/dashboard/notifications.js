@@ -4,13 +4,16 @@ $(document).ready(function(){
 
     $('.messageSender li').click(function(){
         $('#noNameClickedAlert').hide();
-        var emailClicked = $(this).find('input[type="hidden"]').val();
+        var emailClicked = $(this).find('input[name="from_id"]').val();
         $('.messages').show();
         $('.messageItems').hide();
-        console.log(emailClicked);
         var messagesToShow =  '#' + emailClicked;
-        console.log(messagesToShow);
         $(messagesToShow).show();
+
+        // Getting the from address for the person this mail has to be sent to
+        var contactEmail = $(this).find('input[name="from_email"]').val();
+        $('#message_to').val(contactEmail);
+
     });
 
 
