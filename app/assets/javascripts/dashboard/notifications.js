@@ -1,4 +1,19 @@
 $(document).ready(function(){
+
+    $('.messages').hide();
+
+    $('.messageSender li').click(function(){
+        $('#noNameClickedAlert').hide();
+        var emailClicked = $(this).find('input[type="hidden"]').val();
+        $('.messages').show();
+        $('.messageItems').hide();
+        console.log(emailClicked);
+        var messagesToShow =  '#' + emailClicked;
+        console.log(messagesToShow);
+        $(messagesToShow).show();
+    });
+
+
     $("#new_message").submit(function(e)
     {
         var postData = $(this).serializeArray();

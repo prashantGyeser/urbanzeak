@@ -15,36 +15,48 @@
       <div class="col-md-4">
         <ul class="messageSender">
           <% @messages_by_name.each do |name, messages| %>
-            <li><%= name %></li>
+            <li>
+              <%= name %>
+              <input type="hidden" name="from_email" value="<%= messages.first.id %>"/>
+            </li>
+
           <% end %>
         </ul>
       </div>
       <div class="col-md-8">
         <div class="messageContainer">
 
-          <% @messages_by_name.each do |name, messages| %>
-            <div class="messageHeader">
-              <h4>conversation with <strong><%= name %></strong></h4>
+          <div class="noNameClicked">
+            <div class="alert alert-info" id="noNameClickedAlert">
+              <strong>Click</strong> on one of the names on the left to all the messages they sent.
             </div>
-            <ul>
-              <% sorted_messages = messages.sort_by{|e| e[:time_ago]} %>
-              <% sorted_messages.each do |message| %>
-                <li>
-                  <div class="sender">
-                    <strong><%= message.name %></strong>
-                  </div>
-                  <%= message.body %>
-                  <div class="sender">
-                    <strong><%= message.name %></strong>
-                  </div>
-                  <%= message.body %>
+          </div>
 
-                </li>
-              <% end %>
-            </ul>
-          <% end %>
+          <div class="messages">
+            <% @messages_by_name.each do |name, messages| %>
+              <% id = messages.first.id %>
+              <div id="<%= id %>" class="messageItems">
+                <% messagesId = messages.first.id %>
+                <div class="messageHeader" id="<%= messagesId %>">
+                  <h4>conversation with <strong><%= name %></strong></h4>
+                </div>
+                <ul>
+                  <% sorted_messages = messages.sort_by{|e| e[:time_ago]} %>
+                  <% sorted_messages.each do |message| %>
+                    <li>
+                      <div class="sender">
+                        <strong><%= message.name %></strong>
+                      </div>
+                      <%= message.body %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-          <%= render :partial => "messages/hostReply" %>
+            <%= render :partial => "messages/hostReply" %>
+          </div>
+
 
         </div>
 
