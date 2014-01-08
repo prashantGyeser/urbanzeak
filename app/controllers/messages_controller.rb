@@ -26,11 +26,14 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.from = current_user.internal_email_id
+    if @message.guid.blank?
+      #('a'..'z').to_a.shuffle[0,20].join
+    end
 
     respond_to do |format|
       if @message.save
-        logger.debug @message.body
-        ReplyMailer.host_reply(@message).deliver
+        #ReplyMailer.host_reply(@message).deliver
+
         format.json { render action: 'show', status: :created, location: @message }
         #format.json { render json: @message, status: :created }
       else
@@ -71,6 +74,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:name, :from, :body, :user_id, :experience_id, :to)
+      params.require(:message).permit(:name, :from, :body, :user_id, :experience_id, :to, :guid)
     end
 end
