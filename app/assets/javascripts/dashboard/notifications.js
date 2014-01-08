@@ -5,6 +5,7 @@ $(document).ready(function(){
     $('.messageSender li').click(function(){
         $('#noNameClickedAlert').hide();
         var emailClicked = $(this).find('input[name="from_id"]').val();
+        $('#currentListItem').val(emailClicked);
         $('.messages').show();
         $('.messageItems').hide();
         var messagesToShow =  '#' + emailClicked;
@@ -21,6 +22,9 @@ $(document).ready(function(){
     {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
+        //var locationToAddTo = $(this)
+
+
         $.ajax(
             {
                 url : formURL,
@@ -29,6 +33,13 @@ $(document).ready(function(){
                 success:function(data, textStatus, jqXHR)
                 {
                     console.log("Success!");
+                    console.log(data);
+                    var locationToAddTo = '#' + $('#currentListItem').val();
+                    //content
+                    var contentToAppend = '<li><div class="sender"><strong>You</strong></div>' + data.body + '</li>';
+                    $(locationToAddTo).find('ul').append(contentToAppend);
+
+                    $('#message_body').val('');
                 },
                 error: function(jqXHR, textStatus, errorThrown)
                 {

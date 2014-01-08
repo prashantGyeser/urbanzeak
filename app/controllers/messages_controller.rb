@@ -29,7 +29,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        logger.debug "Ok it is getting here"
+        logger.debug @message.body
+        ReplyMailer.host_reply(@message).deliver
         format.json { render action: 'show', status: :created, location: @message }
         #format.json { render json: @message, status: :created }
       else

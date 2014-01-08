@@ -8,4 +8,4 @@ ActionMailer::Base.smtp_settings = {
     :domain => 'urbanzeak.com' # your domain to identify your server when connecting
 }
 ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.default_url_options[:host] = "urbanzeak.com"
+#ActionMailer::Base.default_url_options[:host] = "urbanzeak.com"
