@@ -9,15 +9,14 @@
 <div class="page-content inset">
   <input type="hidden" id="currentListItem"/>
   <div class="row">
-
-    <% if @messages_by_name.blank? %>
+    <% if @messages_by_email.blank? %>
       <div class="alert alert-warning"><strong>Now messages yet.</strong> As soon as someone sends you a message it will show up here.</div>
     <% else %>
       <div class="col-md-4">
         <ul class="messageSender">
-          <% @messages_by_name.each do |name, messages| %>
+          <% @messages_by_email.each do |email, messages| %>
             <li>
-              <%= name %>
+              <%= email %>
               <input type="hidden" name="from_id" value="<%= messages.first.id %>"/>
               <input type="hidden" name="from_email" value="<%= messages.first.from %>"/>
             </li>
@@ -35,15 +34,21 @@
           </div>
 
           <div class="messages">
-            <% @messages_by_name.each do |name, messages| %>
+            <% @messages_by_email.each do |email, messages| %>
               <% id = messages.first.id %>
+              <% name = messages.first.name %>
+
               <div id="<%= id %>" class="messageItems">
                 <% messagesId = messages.first.id %>
                 <div class="messageHeader" id="<%= messagesId %>">
                   <h4>conversation with <strong><%= name %></strong></h4>
                 </div>
+
+                <%# Todo: Fix this call. These calls should be in the model %>
+                <% all_messages = Message.where(:from => email) %>
+                <% all_messages += Message.where(:to => email) %>
+                <% sorted_messages = all_messages.sort_by{|e| e[:time_ago]} %>
                 <ul>
-                  <% sorted_messages = messages.sort_by{|e| e[:time_ago]} %>
                   <% sorted_messages.each do |message| %>
                     <li>
                       <div class="sender">
@@ -53,10 +58,17 @@
                     </li>
                   <% end %>
                 </ul>
+
+
               </div>
+
+              <!--
+
+              -->
             <% end %>
 
             <%= render :partial => "messages/hostReply" %>
+
           </div>
 
 

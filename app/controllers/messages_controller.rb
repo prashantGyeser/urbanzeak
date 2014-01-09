@@ -25,15 +25,13 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    @message.from = current_user.internal_email_id
-    if @message.guid.blank?
-      #('a'..'z').to_a.shuffle[0,20].join
+    if @message.from.blank?
+      @message.from = current_user.internal_email_id
     end
 
     respond_to do |format|
       if @message.save
-        #ReplyMailer.host_reply(@message).deliver
-
+        ReplyMailer.host_reply(@message).deliver
         format.json { render action: 'show', status: :created, location: @message }
         #format.json { render json: @message, status: :created }
       else

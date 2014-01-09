@@ -23,8 +23,8 @@
     <%= f.label :body, "Your message" %>
     <%= f.text_area :body, :class => "form-control" %>
   </div>
-
-  <%= f.hidden_field :user_id, :value => host_id %>
+  <% host_email = User.find(host_id) %>
+  <%= f.hidden_field :to, :value => host_email.internal_email_id %>
 
   <%= f.hidden_field :experience_id, :value => experience_id %>
 
