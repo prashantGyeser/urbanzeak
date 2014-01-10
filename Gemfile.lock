@@ -279,6 +279,8 @@ GEM
       faraday (>= 0.7.6)
       hashie (>= 1.1.0)
       uuidtools
+    shortener (0.3.0)
+      rails (>= 3.0.7)
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     slop (3.4.7)
@@ -366,6 +368,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   sentry-raven
+  shortener
   shoulda-matchers
   temboo
   turbolinks

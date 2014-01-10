@@ -71,6 +71,8 @@ gem 'fog'
 # Fancy box for a modal window
 gem 'fancybox2-rails', '~> 0.2.4'
 
+# Url shortner
+gem 'shortener'
 
 
 group :staging, :production do

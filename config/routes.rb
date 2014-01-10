@@ -44,6 +44,9 @@ Urbanzeak::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get 'home/:city', to: "home#index"
+    
+    
+  match '/:id' => "shortener/shortened_urls#show", via: [:get, :post]
 
 
   # Example of regular route:

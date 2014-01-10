@@ -1,3 +1,6 @@
+require 'temboo'
+require 'Library/Facebook'
+
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
@@ -38,11 +41,12 @@ class ExperiencesController < ApplicationController
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     postToFBWall = fbCheckToken.post_to_fb_wall
       
-    if postToFBWall == true
+    if postToFBWall == false
         token = fbCheckToken.token    
         
         # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
       session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
+        logger.debug "Tje session is: #{session}"
       postChoreo = Facebook::Publishing::Post.new(session)
 
       # Get an InputSet object for the choreo
@@ -60,6 +64,11 @@ class ExperiencesController < ApplicationController
       
     respond_to do |format|
       if @experience.save
+        url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
+          
+        @experience.shortened_url = root_url + url.unique_key + '/'
+        @experience.save
+          
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
         format.json { render action: 'show', status: :created, location: @experience }
       else
