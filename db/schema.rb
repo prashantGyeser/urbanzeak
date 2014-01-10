@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110141210) do
+ActiveRecord::Schema.define(version: 20140110162428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,17 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.datetime "updated_at"
   end
 
+  add_index "attendees", ["experience_id"], name: "index_attendees_on_experience_id", using: :btree
+  add_index "attendees", ["user_id"], name: "index_attendees_on_user_id", using: :btree
+
   create_table "exp_images", force: true do |t|
     t.string   "url"
     t.integer  "experience_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "exp_images", ["experience_id"], name: "index_exp_images_on_experience_id", using: :btree
 
   create_table "experiences", force: true do |t|
     t.string   "name"
@@ -59,6 +64,8 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.string   "shortened_url"
   end
 
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
+
   create_table "hosts", force: true do |t|
     t.string   "title"
     t.text     "about"
@@ -68,12 +75,16 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.integer  "user_id"
   end
 
+  add_index "hosts", ["user_id"], name: "index_hosts_on_user_id", using: :btree
+
   create_table "images", force: true do |t|
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "experience_id"
   end
+
+  add_index "images", ["experience_id"], name: "index_images_on_experience_id", using: :btree
 
   create_table "impressions", force: true do |t|
     t.string   "impressionable_type"
@@ -110,6 +121,8 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.boolean  "post_to_fb_wall"
   end
 
+  add_index "integration_tokens", ["user_id"], name: "index_integration_tokens_on_user_id", using: :btree
+
   create_table "integrations", force: true do |t|
     t.string   "access_token"
     t.integer  "user_id"
@@ -117,6 +130,8 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "integrations", ["user_id"], name: "index_integrations_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.string   "name"
@@ -135,6 +150,9 @@ ActiveRecord::Schema.define(version: 20140110141210) do
     t.text     "headers"
     t.text     "raw_headers"
   end
+
+  add_index "messages", ["experience_id"], name: "index_messages_on_experience_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "shortened_urls", force: true do |t|
     t.integer  "owner_id"

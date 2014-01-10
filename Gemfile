@@ -116,6 +116,9 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "bullet"
+  gem "rails_best_practices"
+  gem "reek"
+  gem "metric_fu"
 end
 
 group :test, :development do
