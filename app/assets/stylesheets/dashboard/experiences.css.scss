@@ -32,7 +32,12 @@
     .experienceDetails
     {
       float: left;
-      margin-top: 20px;
+      margin-top: 10px;
+      .shareUrl
+      {
+        margin-top:10px;
+      }
+    
     }
     .experienceThumb
     {
@@ -80,7 +85,7 @@
 .experienceCommands
 
 {
-    margin-top:20px;
+    margin-top:10px;
     padding-right:80px;
     .btn
     {

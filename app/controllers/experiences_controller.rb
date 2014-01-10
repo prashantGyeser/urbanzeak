@@ -60,8 +60,7 @@ class ExperiencesController < ApplicationController
       postResults = postChoreo.execute(postInputs)
         
     end
-      
-      
+          
     respond_to do |format|
       if @experience.save
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)

@@ -20,9 +20,9 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="experienceList">
-        <li class="clearfix">
+          <% @experiences.each do |experience| %>
+            <li class="clearfix">
             
-            <% @experiences.each do |experience| %>
                 <div class="experienceDetails">
                     <div class="heading">
                         <strong><%= link_to experience.name, experience_path(experience)%></strong>
@@ -32,9 +32,12 @@
                             <li>Attendees: <strong>5</strong></li>
                             <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
                         </ul>
+                        <div class="shareUrl">
+                            <strong>URL to share:</strong>
+                            <span><%= link_to experience.shortened_url, experience.shortened_url %></span>
+                        </div>
                     </div>
                 </div>
-            <% end %>
             
             <div class="experienceCommands pull-right">
                 <!-- Split button -->
@@ -51,39 +54,8 @@
                   </ul>
                 </div>
               </div>
-            
-            
-        </li>
-
-        <li class="clearfix">
-          <img src="http://lorempixel.com/200/100" class="experienceThumb"/>
-          <div class="experienceDetails">
-            <div class="heading">
-              <strong><a href="#">Some awesome experience name</a></strong>
-            </div>
-            <div class="subDetails">
-              <ul>
-                <li>Attendees: <strong>5</strong></li>
-                <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="clearfix">
-          <img src="http://lorempixel.com/200/100" class="experienceThumb"/>
-          <div class="experienceDetails">
-            <div class="heading">
-              <strong><a href="#">Some awesome experience name</a></strong>
-            </div>
-            <div class="subDetails">
-              <ul>
-                <li>Attendees: <strong>5</strong></li>
-                <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
-              </ul>
-            </div>
-          </div>
-        </li>
+            </li>
+          <% end %>
 
       </ul>
     </div>
