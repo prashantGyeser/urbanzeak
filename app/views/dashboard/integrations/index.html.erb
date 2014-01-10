@@ -12,7 +12,7 @@
     <div class="col-md-6 col-md-offset-3">
       <div class="integrationsExplanation">
         <%= image_tag "integrationIcon.png" %>
-        <h4><strong>Integrate with external service</strong></h4>
+        <h4><strong>Integrate with external services</strong></h4>
         <p>
           <strong>Todo:</strong> Explain what these integrations do and how it can help the hosts. Give some concrete examples
         </p>
@@ -47,17 +47,19 @@
             <div class="listing">
               <strong> <%= link_to "Facebook", dashboard_integrations_facebook_path %></strong>
             <span>
-              Post to your fan page and you wall when you create an experience
+              Post to your wall when you create an experience
             </span>
             </div>
           </div>
 
           <div class="settings content">
             <% if @facebookIntegrationDone == true %>
-              <strong>Facebook integration active</strong>
-              <input type="checkbox"/>
-              <input type="text" id="messageToPostToFB" class="form-control" placeholder="Enter the message you want to post to Facebook"/>
-              <input type="submit" class="button is-secondary" id="postMessageToFB"/>
+              <strong><i class="fa fa-check-circle-o"></i> Facebook integration active</strong>
+              <br>
+              <div class="configOptionsForIntegration">
+                  <input type="checkbox" id="fbFeedPost"/> <span>Post to your wall when you create an experience</span>
+              </div>
+              
             <% else %>
               <%= link_to "Connect", dashboard_integrations_facebook_path, :class => "button" %>
             <% end %>
