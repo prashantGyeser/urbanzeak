@@ -16,7 +16,7 @@ class Dashboard::HomeController < Dashboard::ApplicationController
   		i = i + 1
   	end
   	
-  	logger.debug "The value in the views is: #{@views.inspect}"
+  	
 
   end
 end
