@@ -4,36 +4,55 @@
     Your Experiences
   </h1>
   <row>
-    <div class="col-md-4 col-md-offset-3 pull-right newExperienceButton">
-      <a href="#" class="button is-secondary">My Templates</a>
-      <%= link_to dashboard_experiences_new_path, :class=> "button is-primary" do %>
-        <i class="fa fa-plus"></i>
-        Create Experience
-      <% end %>
-
-    </div>
     </div>
   </row>
 </div>
 
 <!-- Keep all page content within the page-content inset div! -->
 <div class="page-content inset" ng-app="chatApp">
+    <div class="experienceButtonContainer">
+        <%= link_to dashboard_experiences_new_path, :class=> "button" do %>
+            <i class="fa fa-plus"></i>
+            Create Experience
+        <% end %>
+    </div>
+    
   <div class="row">
     <div class="col-md-12">
       <ul class="experienceList">
         <li class="clearfix">
-          <img src="http://lorempixel.com/200/100" class="experienceThumb"/>
-          <div class="experienceDetails">
-            <div class="heading">
-              <strong><a href="#">Some awesome experience name</a></strong>
-            </div>
-            <div class="subDetails">
-              <ul>
-                <li>Attendees: <strong>5</strong></li>
-                <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
-              </ul>
-            </div>
-          </div>
+            
+            <% @experiences.each do |experience| %>
+                <div class="experienceDetails">
+                    <div class="heading">
+                        <strong><%= link_to experience.name, experience_path(experience)%></strong>
+                    </div>
+                    <div class="subDetails">
+                        <ul>
+                            <li>Attendees: <strong>5</strong></li>
+                            <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
+            
+            <div class="experienceCommands pull-right">
+                <!-- Split button -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Edit</button>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+            
+            
         </li>
 
         <li class="clearfix">

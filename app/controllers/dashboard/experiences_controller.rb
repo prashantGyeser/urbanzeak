@@ -1,5 +1,6 @@
 class Dashboard::ExperiencesController < Dashboard::ApplicationController
   def index
+      @experiences = Experience.where(:user_id => current_user.id)
   end
 
   def new
