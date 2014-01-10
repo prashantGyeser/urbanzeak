@@ -105,6 +105,27 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
       token = integrationUser.token
     end
   end
-
+    
+    
+    def setConfig
+        @fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
+        
+        if params[:post] == 'false'
+            @fbCheckToken.post_to_fb_wall = false   
+        else
+            @fbCheckToken.post_to_fb_wall = true
+        end
+        
+        respond_to do |format|
+          if @fbCheckToken.save
+            format.json { head :no_content }
+          else
+            format.json { render json: @fbCheckToken.errors, status: :unprocessable_entity }
+          end
+        end
+        
+        
+    end
+    
 end
 
