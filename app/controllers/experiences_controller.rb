@@ -34,7 +34,30 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
+    
+    fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
+    postToFBWall = fbCheckToken.post_to_fb_wall
+      
+    if postToFBWall == true
+        token = fbCheckToken.token    
+        
+        # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
+      session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
+      postChoreo = Facebook::Publishing::Post.new(session)
 
+      # Get an InputSet object for the choreo
+      postInputs = postChoreo.new_input_set()
+
+      # Set inputs
+      postInputs.set_AccessToken(token);
+      postInputs.set_Message("This is a test message from UrbanZeak");
+
+      # Execute Choreo
+      postResults = postChoreo.execute(postInputs)
+        
+    end
+      
+      
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
