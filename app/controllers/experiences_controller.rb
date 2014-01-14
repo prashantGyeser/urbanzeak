@@ -3,16 +3,8 @@ require 'Library/Facebook'
 
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
-
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
-
   before_filter :check_if_host, only: [:create]
-
-  # GET /experiences
-  # GET /experiences.json
-  def index
-    #@experiences = Experience.all
-  end
 
   # GET /experiences/1
   # GET /experiences/1.json
@@ -20,16 +12,7 @@ class ExperiencesController < ApplicationController
     @attendee = Attendee.new
     @message = Message.new
     impressionist(@experience)
-
-  end
-
-  # GET /experiences/new
-  def new
-    @experience = Experience.new
-  end
-
-  # GET /experiences/1/edit
-  def edit
+    render layout: false
   end
 
   # POST /experiences
@@ -98,22 +81,6 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to experiences_url }
       format.json { head :no_content }
-    end
-  end
-
-  # Get experiences by country
-  def country
-    @country = params[:country]
-    #logger.debug "The country is selected: #{@country}"
-    @experiences = Experience.where("city like ?", "%#{@country}%")
-    #logger.debug "The experiences returned are: #{@experiences.inspect}"
-    respond_to do |format|
-      if @experiences.nil?
-        format.json { render json: @experiences, status: nil }
-      else
-        format.json { render json: @experiences}#action: 'show', status: :created, location: @experience }
-      end
-
     end
   end
 

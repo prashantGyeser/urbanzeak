@@ -1,0 +1,39 @@
+/************************************************************************/
+/* Brand colors and styles */
+/************************************************************************/
+.container {
+  padding: 20px 0; }
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden; }
+
+.wizard {
+  text-align: center;
+  margin: 0 0 20px 40px; }
+  .wizard:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */ }
+  .wizard .wizard-nav {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+    padding: 10px 15px; }
+  .wizard i {
+    float: left;
+    margin-right: 30px; }
+  .wizard i.completed {
+    font-size: 39px;
+    color: #00e23c; }
+  .wizard i.active {
+    font-size: 39px;
+    color: #333; }
+  .wizard i.inactive {
+    color: #aaa;
+    margin-top: 13px; }

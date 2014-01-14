@@ -1,0 +1,25 @@
+.image-controls
+{
+  background: red;
+  position: relative;
+  z-index: 1000;
+  display: inline-block;
+  float: right;
+  //margin-right: 20px;
+  //margin-top: 20px;
+}
+.editable
+{
+  border: 1px solid red;
+}
+.editableHover
+{
+    //border: 1px solid red;
+    outline:#00a9d4 dotted thin;
+}
+.imageOverlay
+{
+    background:rgba(0,0,0,.5);
+    z-index: 1200;
+}
+

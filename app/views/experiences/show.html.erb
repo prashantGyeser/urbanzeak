@@ -1,104 +1,324 @@
-<% e = Experience.first %>
-<h1><%= experience_url(e) %></h1>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Experince Name</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width" />
 
-<div class="experienceShow">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="experienceShowContainer">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
 
 
-          <div id="experienceShowImg">
-            <%= image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
-          </div>
+        <!-- Colors Style -->
+        <link rel="stylesheet" href="css/color/orange.css" />
+        
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-          <%# image_tag @experience.image_url(:show).to_s, :id => "expShowImg", :style => "width: 100%"  %>
+  <!--<script src="http://fast.fonts.net/jsapi/3dca1e78-579f-4502-8da9-3eb91453e0dc.js"></script>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <body class="orange">
+      <div id="mask">   
+            <div class="loader">
+              <img src="img/loading.gif" alt='loading' />
+            </div>
+        </div>
+        
+      <div id="anchor1"></div>
+        <div class="image-controls">
+          <button class="button is-primary">Add image</button>
+        </div>
+        <section id="home" class="clear">
+            <!--<div id="anchor1">--><div>
+                <ul class="slider-controls">
+                    <li><a id="vegas-next" class="s-next" href="#"></a></li>
+                    <li><a id="vegas-prev" class="s-prev" href="#"></a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="main-title">
+            <div class="title-container">                
+                <ul class="editable">
+                    <li class="t-current">Photo art</li>
+                </ul>
 
-
-          <h2><%= @experience.name%></h2>
-          <div class="subDetails">
-            <ul>
-              <li>On:
-                <strong>
-                  <%= @experience.exp_date.strftime('%A %d-%B-%Y ') %> at <%= @experience.exp_time.strftime('%I:%M %p') %>
-                </strong>
-                In:
-                <strong><%= @experience.city %></strong>
-              </li>
-
-            </ul>
-          </div>
-          <div>
-            <a href="#messageHost" class="button fancybox">Ask a question</a>
-          </div>
-          <div>
-            <p>
-              <%= simple_format(@experience.description).html_safe %>
-
-            </p>
+                <div class="spacer"></div>
+                <!--<a href="#anchor2"><div class="slider-logo">Get Started</div></a>-->
+                <div class="second-title editable">We build perfection, so you can get a product which complies with our quality standarts. Take action & keep it simple.</div>
+                <a href="#anchor2"><div class="buy-logo">Get Started<span></span></div></a>
           </div>
         </div>
-
-      </div>
-
-      <div class="col-lg-4">
-        <div class="experienceSubDetails">
-          <h4><%= @experience.name %></h4>
-          <strong>Rs <%= @experience.price %></strong>
-          <br/>
-          <strong>RSVP Now</strong>
-          <%= render partial: 'attendees/form', :locals => {:experience_id => @experience.id} %>
-        </div>
-
-        <div class="experienceSubDetails">
-          <strong>Experiences are better with friends</strong>
-          <!-- AddThis Button BEGIN -->
+        <div id="logx"></div>
+        <header class="header">
+          <div class="logo">Todo: Add the RSVP button and form here</div>
           <!--
-          <div class="addthis_toolbox addthis_default_style ">
-            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            <a class="addthis_button_tweet"></a>
-            <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-529e264e12087782"></script>
+            <div class="logo"><span><span></span></span>solido</div>
+            <nav id="nav2" role="navigation">
+                <a class="jump-menu" title="Show navigation">Show navigation</a>
+                <ul>
+                    <li class="current"><a href="#anchor1">home</a></li>
+                    <li><a href="#anchor2">about</a></li>
+                    <li><a href="#anchor3">team</a></li>
+                    <li><a href="#anchor4">services</a></li>
+                    <li><a href="#anchor5">portfolio</a></li>
+                    <li><a href="#anchor6">contact</a></li>
+                </ul>
+            </nav>
+            <nav class="menu">
+                <ul id="nav">
+                    <li class="current"><a href="#anchor1">home</a></li>
+                    <li><a href="#anchor2">about</a></li>
+                    <li><a href="#anchor3">team</a></li>
+                    <li><a href="#anchor4">services</a></li>
+                    <li><a href="#anchor5">portfolio</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#anchor6">contact</a></li>
+                </ul>
+            </nav>
           -->
-          <!-- AddThis Button END -->
+        </header>
+          
+            
+            
+        </article>
+        <article class="content light">
+          <div class="full">
+              <section class="half car-show-1">
+                  <header class="title-one">Previous locations</header>
+                    <div class="title-two">Amazing Locations</div>
+                    <div class="show hideme dontHide">
+                        <div class="caroussel imageUpload">
+                            <div class="caroussel-list">
+                                <div class="car-img"><img src="img/caroussel/caroussel-01.jpg" alt='img' /></div>
+                                <div class="car-img"><img src="img/caroussel/caroussel-02.jpg" alt='img' /></div>
+                                <div class="car-img"><img src="img/caroussel/caroussel-03.jpg" alt='img' /></div>
+                            </div>
+                        </div>
+                        <div class="car-prev"></div>
+                        <div class="car-next"></div>
+                    </div>
+                    <div class="controller">
+                      <ul>
+                        </ul>
+                    </div>
+                </section>
+                <section class="half">
+                  <header class="title-one">Photography Art</header>
+                    <div class="title-two">About the experience</div>
+                    <div class="half-content hideme dontHide">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <a href="#">dolore magna</a> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /><br />Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur <a href="#">sint occaecat</a> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. pariatur. Stet clita kasd gubergren, no sea takimata est. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. pariatur sunt in culpa qui. Stet clita kasd gubergren, no sea <a href="#">takimata</a> est.
+                    </div>
+                </section>
+            </div>
+            <div class="clear"></div>
+        </article>
+        <div class="clear"></div>
+        <article class="parallax p-one">
+          <div class="p-title-one">Easy Customizable</div>
+            <div class="p-title-two">Add Your Content</div>
+            <div class="spacer"></div>
+            <div class="p-image-02">
+                <div class="p-image-second hideme-slide dontHide delay"><img src="img/parallax/p-image-03.png" alt='img' /></div>
+                <div class="p-image-first hideme-slide dontHide"><img src="img/parallax/p-image-02.png" alt='img' /></div>
+            </div>
+        </article>
+
+
+        <article id="anchor5" class="content dark">
+          <header class="title one">All Pictures</header>
+            <div class="spacer"></div>
+            <div class="title two">We have been privileged to work and grow with a diverse range of clients. We have worked with brands in Canada, USA, UK, and many others.</div>
+            <div id="portfolio" class="container">
+                <div class="section portfoliocontent">
+
+                    <div class="clear"></div>
+                    <div id="project-show"></div>
+                    <section class="project-window">
+                        <div class="project-content"></div><!-- AJAX Dinamic Content -->
+                    </section>
+                    <section id="i-portfolio" class="clear">
+                      <div class="inici"></div>
+                        
+                        <div class="ch-grid element graphic music" id="portfolio-1.html">
+                            <img class="ch-item" src="img/portfolio/thumb-01.jpg" alt='img' />
+                            <div>
+                              <span>
+                                  <span class="p-category"></span>
+                                    Kallo
+                                    <span class="cat2">Graphic Design</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="ch-grid element graphic vector" id="portfolio-2.html">
+                            <img class="ch-item" src="img/portfolio/thumb-02.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>The Inside<span class="cat2">Photography</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element illustration" id="portfolio-1b.html">
+                            <img class="ch-item" src="img/portfolio/thumb-03.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Leitberg<span class="cat2">Graphic Design</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element illustration" id="portfolio-3.html">
+                            <img class="ch-item" src="img/portfolio/thumb-04.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Fashion Brand<span class="cat2">Graphic Design</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element graphic vector" id="portfolio-1c.html">
+                            <img class="ch-item" src="img/portfolio/thumb-05.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>The Chop Shop<span class="cat2">Website</span></span>
+                            </div>
+                        </div>
+
+                        <div class="ch-grid element graphic vector illustration" id="portfolio-1d.html">
+                            <img class="ch-item" src="img/portfolio/thumb-06.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Prego<span class="cat2">Website</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element music" id="portfolio-4.html">
+                            <img class="ch-item" src="img/portfolio/thumb-07.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Behurs<span class="cat2">Graphic Design</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element graphic vector music" id="portfolio-1e.html">
+                            <img class="ch-item" src="img/portfolio/thumb-08.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>The New Girl<span class="cat2">Photography</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element illustration music" id="portfolio-4b.html">
+                            <img class="ch-item" src="img/portfolio/thumb-09.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Shut Up & Shoot<span class="cat2">Graphic Design</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ch-grid element music" id="portfolio-3b.html">
+                            <img class="ch-item" src="img/portfolio/thumb-10.jpg" alt='img' />
+                            <div>
+                              <span><span class="p-category"></span>Kulisha 79000<span class="cat2">Graphic Design</span></span>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+
+        </article>
+        <footer id="anchor6" class="footer light">
+            <div class="footer-container">
+              <div class="title one no-top">Contact</div>
+                <div class="spacer"></div>
+                <div class="title two f-bottom">We like to create things with fun, like-minded people.<br /> Feel free to say hello!</div>
+                <div class="foot-third hideme dontHide">
+                    <div class="f-title-one">contact</div>
+                    <div class="f-title-two">Visit Our Office</div>
+                    <div class="f-data adress"><img src="img/adress-ico.png" alt='img' /> Adress: <span>1234 Street Name, City Name</span></div>
+                    <div class="f-data phone"><img src="img/phone-ico.png" alt='img' /> Phone: <span>(123) 456-7890</span></div>
+                    <div class="f-data e-mail"><img src="img/mail-ico.png" alt='img' /> Email: <span>theme@solido.com</span></div>
+                </div>
+                <div class="foot-third hideme dontHide">
+                    <div class="f-title-one">contact</div>
+                    <div class="f-title-two">Business Hours</div>
+                    <div class="f-data hour-1"><img src="img/hours-ico.png" alt='img' /> Mon. - Fri. <span>8am to 5pm</span></div>
+                    <div class="f-data hour-2"><img src="img/hours-ico.png" alt='img' /> Sat. <span>8am to 11am</span></div>
+                    <div class="f-data hour-3"><img src="img/hours-ico.png" alt='img' /> Sun. <span>Closed</span></div>
+                </div>
+                <div class="foot-third hideme dontHide">
+                  <form method="post" class="peThemeContactForm" />
+                        <div id="personal" class="bay form-horizontal">
+                            <div class="control-group"><!--name field-->
+                                <div class="controls">
+                                    <input class="required span9" type="text" name="author" data-fieldid="0" value="Full Name" onclick="if(this.value=='Full Name') this.value=''" onblur="if(this.value=='') this.value='Full Name'" />
+                                </div>
+                            </div>
+                            <div class="control-group"><!--email field-->
+                                <div class="controls">
+                                    <input class="required span9" type="text" name="email" data-fieldid="1" value="Your Email" onclick="if(this.value=='Your Email') this.value=''" onblur="if(this.value=='') this.value='Your Email'" />
+                                </div>
+                            </div>
+                            <div class="control-group"><!--message field-->
+                                <div class="controls">
+                                    <textarea name="message" rows="12" class="required span9" data-fieldid="2" onclick="if(this.value=='Type Message') this.value=''" onblur="if(this.value=='') this.value='Type Message'">Type Message</textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls send-btn">
+                                    <button type="submit" class="contour-btn red">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notifications">
+                            <div id="contactFormSent" class="formSent alert alert-success">
+                                <strong>Your Message Has Been Sent!</strong> Thank you for contacting us.</div> 
+                            <div id="contactFormError" class="formError alert alert-error">
+                                <strong>Oops, An error has ocurred!</strong> See the marked fields above to fix the errors.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <a href="#" class="scrollup">^</a>
+        <div id="maps">
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <div class="map-content">
+              <div class="wpgmappity_container inner-map" id="wpgmappitymap"></div>
+            </div>
         </div>
 
-        <div class="experienceSubDetails">
-          <strong>Meeting point</strong>
-          <!--
-          <div id="gmap" style="width: 100%; height: 200px"></div>
-          -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- JavaScript -->
+        <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
+        
+        <script>
+            $(document).ready(function(){
+                
+            /* VEGAS Home Slider */
+                function loadVegas(){
+                    $.vegas('slideshow', {
+                          backgrounds:[
+                            
+                            { src:'img/slider/01.jpg', fade:1000 },
+            { src:'img/slider/01.jpg', fade:1000 },
+            { src:'img/slider/02.jpg', fade:1000 },
+            { src:'img/slider/03.jpg', fade:1000 },
+            { src:'img/slider/04.jpg', fade:1000 }
+                          ]
+                        })('overlay', {
+                          src:'css/vegas/overlays/05.png'
+                        });
+                        $( "#vegas-next" ).click(function() {
+                          $.vegas('next');
+                        });
+                        $( "#vegas-prev" ).click(function() {
+                          $.vegas('previous');
+                    });
+                }
+                
+                loadVegas();
+            });
+        </script>
 
-<div id="messageHost">
-  <h4><strong>Message host</strong></h4>
-
-  <div id="response"></div>
-
-  <%= render :partial => "messages/form", :locals => {:host_id => @experience.user_id, :experience_id => @experience.id } %>
-
-</div>
-
-<script>
-  /*
-  $("#gmap").gmap3({
-    marker:{
-      values: [
-        {latLng:[<%= @experience.latitude  %>, <%= @experience.longitude %>]}
-      ]
-
-    },
-    map:{
-      options:{
-        zoom: 14
-      }
-    }
-  });
-        */
-</script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('#inline').magnificPopup();
+          });
+        </script>
+    </body>
+</html>
