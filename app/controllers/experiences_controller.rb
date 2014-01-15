@@ -1,32 +1,19 @@
+require 'temboo'
+require 'Library/Facebook'
+
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
-
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
-
   before_filter :check_if_host, only: [:create]
-
-  # GET /experiences
-  # GET /experiences.json
-  def index
-    #@experiences = Experience.all
-  end
 
   # GET /experiences/1
   # GET /experiences/1.json
   def show
     @attendee = Attendee.new
     @message = Message.new
+    @advance_booking = AdvanceBooking.new
     impressionist(@experience)
-
-  end
-
-  # GET /experiences/new
-  def new
-    @experience = Experience.new
-  end
-
-  # GET /experiences/1/edit
-  def edit
+    render layout: false
   end
 
   # POST /experiences
@@ -34,9 +21,37 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
+    
+    fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
+    postToFBWall = fbCheckToken.post_to_fb_wall
+      
+    if postToFBWall == false
+        token = fbCheckToken.token    
+        
+        # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
+      session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
+        logger.debug "Tje session is: #{session}"
+      postChoreo = Facebook::Publishing::Post.new(session)
 
+      # Get an InputSet object for the choreo
+      postInputs = postChoreo.new_input_set()
+
+      # Set inputs
+      postInputs.set_AccessToken(token);
+      postInputs.set_Message("This is a test message from UrbanZeak");
+
+      # Execute Choreo
+      postResults = postChoreo.execute(postInputs)
+        
+    end
+          
     respond_to do |format|
       if @experience.save
+        url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
+          
+        @experience.shortened_url = root_url + url.unique_key + '/'
+        @experience.save
+          
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
         format.json { render action: 'show', status: :created, location: @experience }
       else
@@ -67,22 +82,6 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to experiences_url }
       format.json { head :no_content }
-    end
-  end
-
-  # Get experiences by country
-  def country
-    @country = params[:country]
-    #logger.debug "The country is selected: #{@country}"
-    @experiences = Experience.where("city like ?", "%#{@country}%")
-    #logger.debug "The experiences returned are: #{@experiences.inspect}"
-    respond_to do |format|
-      if @experiences.nil?
-        format.json { render json: @experiences, status: nil }
-      else
-        format.json { render json: @experiences}#action: 'show', status: :created, location: @experience }
-      end
-
     end
   end
 

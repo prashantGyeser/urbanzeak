@@ -1,3 +1,18 @@
 // Place all the styles related to the dashboard/home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.keyStat
+{
+	background: #eee;
+	text-align: center;
+	padding: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	span
+	{
+		font-size: 15px;
+		display: block;
+		text-transform: uppercase;
+		color: #bbb;
+	}
+}

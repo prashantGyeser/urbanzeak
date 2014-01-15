@@ -9,6 +9,7 @@
 #  returned_values :text
 #  created_at      :datetime
 #  updated_at      :datetime
+#  post_to_fb_wall :boolean
 #
 
 require 'spec_helper'

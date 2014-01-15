@@ -19,6 +19,7 @@
 #  things_to_remember     :text
 #  max_seats              :integer
 #  template               :boolean
+#  shortened_url          :string(255)
 #
 
 require 'spec_helper'

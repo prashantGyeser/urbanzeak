@@ -69,6 +69,8 @@ gem 'fog'
 # Fancy box for a modal window
 gem 'fancybox2-rails', '~> 0.2.4'
 
+# Url shortner
+gem 'shortener'
 
 
 group :staging, :production do
@@ -112,7 +114,9 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "bullet"
-  gem "localtunnel"
+  gem "rails_best_practices"
+  gem "reek"
+  gem "metric_fu"
 end
 
 group :test, :development do

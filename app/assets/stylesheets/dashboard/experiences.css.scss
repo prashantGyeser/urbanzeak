@@ -32,7 +32,12 @@
     .experienceDetails
     {
       float: left;
-      margin-top: 20px;
+      margin-top: 10px;
+      .shareUrl
+      {
+        margin-top:10px;
+      }
+    
     }
     .experienceThumb
     {
@@ -67,4 +72,24 @@
     margin: 0 auto 20px auto;
     display: block;
   }
+}
+
+.experienceButtonContainer
+{
+    margin-bottom:20px;
+    i
+    {
+        margin-right:10px;
+    }
+}
+.experienceCommands
+
+{
+    margin-top:10px;
+    padding-right:80px;
+    .btn
+    {
+        font-weight:bold;
+    }
+    
 }

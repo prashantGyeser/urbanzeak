@@ -17,7 +17,7 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   def facebook
     logger.debug "Starting the request to get facebook permission"
     # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
-    session = TembooSession.new("urbanzeak", ENV["TEMBOO_APP_KEY_NAME"], ENV["TEMBOO_APP_KEY_VALUE"])
+    session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
 
     initializeOAuthChoreo = Facebook::OAuth::InitializeOAuth.new(session)
 
@@ -46,8 +46,8 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   def facebook_finalizeOAuth
     logger.debug "Ok it is getting here"
 
-    session = TembooSession.new("urbanzeak", ENV["TEMBOO_APP_KEY_NAME"], ENV["TEMBOO_APP_KEY_VALUE"])
-
+    session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
+      
     # Grab the callback ID out of the cookie
     @retrievedCallbackID = cookies[:tembooCallbackID]
 
@@ -105,6 +105,27 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
       token = integrationUser.token
     end
   end
-
+    
+    
+    def setConfig
+        @fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
+        
+        if params[:post] == 'false'
+            @fbCheckToken.post_to_fb_wall = false   
+        else
+            @fbCheckToken.post_to_fb_wall = true
+        end
+        
+        respond_to do |format|
+          if @fbCheckToken.save
+            format.json { head :no_content }
+          else
+            format.json { render json: @fbCheckToken.errors, status: :unprocessable_entity }
+          end
+        end
+        
+        
+    end
+    
 end
 

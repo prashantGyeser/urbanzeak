@@ -1,6 +1,10 @@
 Urbanzeak::Application.routes.draw do
 
+  resources :advance_bookings
+
   resources :messages
+
+  #get "/email_processor", to: proc { [200, {}, ["OK"]] }, as: "mandrill_head_test_request"
 
   get "chat/index"
   namespace :dashboard do
@@ -14,6 +18,7 @@ Urbanzeak::Application.routes.draw do
     get 'integrations/facebook'
     get 'integrations/facebook_finalizeOAuth'
     post 'integrations/postToFacebook'
+    post 'integrations/setConfig'
     get "notifications/communication"
   end
 
@@ -41,6 +46,9 @@ Urbanzeak::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get 'home/:city', to: "home#index"
+    
+    
+  match '/:id' => "shortener/shortened_urls#show", via: [:get, :post]
 
 
   # Example of regular route:

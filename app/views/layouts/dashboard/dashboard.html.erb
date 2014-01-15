@@ -14,7 +14,6 @@
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
 
@@ -32,8 +31,12 @@
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
         <!--<img src="img/fillerImages/hostImage.jpg" alt="" class="img-circle welcomeImage"/>-->
-        <%= image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
-        <span>Hi, Jane Doe</span>
+        <%# image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
+
+        <!--<span>Hi, Jane Doe</span>-->
+
+        <%= image_tag "logo-white.png" %>
+
       </li>
 
       <li>
@@ -63,7 +66,14 @@
           Traffic Sources
         <% end %>
       </li>
-
+        
+        <li>
+            <%= link_to dashboard_integrations_path do %>
+            <i class="fa fa-th-large" style="margin-right: 7px"></i>
+            Integrations
+            <% end %>
+        </li>
+    
     </ul>
   </div>
 
@@ -87,7 +97,7 @@
   });
 </script>
 
-
+  <%= yield :charts %>
 
 </body>
 </html>
