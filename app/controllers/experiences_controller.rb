@@ -24,7 +24,7 @@ class ExperiencesController < ApplicationController
     
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     if fbCheckToken.blank?
-      postToFBWall == false  
+      postToFBWall = false  
     else
       postToFBWall = fbCheckToken.post_to_fb_wall
     end    
