@@ -12,6 +12,7 @@
                     <%= render :partial => "messages/form", :locals => {:host_id => @experience.user_id, :experience_id => @experience.id } %>
                 </div>
                 <h1>Advance booking</h1>
+                <%= render :partial => "advance_bookings/form", :locals => {:experience_id => @experience.id } %>
             </div>
         </div>
     </div>

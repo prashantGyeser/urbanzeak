@@ -11,6 +11,7 @@ class ExperiencesController < ApplicationController
   def show
     @attendee = Attendee.new
     @message = Message.new
+    @advance_booking = AdvanceBooking.new
     impressionist(@experience)
     render layout: false
   end
