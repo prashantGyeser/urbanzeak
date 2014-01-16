@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // Change this to the location of your server-side upload handler:
-    var url = '/images';
+    var url = '/images/create_header';
 
     $('#fileupload').fileupload({
         url: url,

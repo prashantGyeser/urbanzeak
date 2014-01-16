@@ -1,5 +1,10 @@
 Urbanzeak::Application.routes.draw do
 
+  resources :experience_images
+
+  post "images/create_header"
+  post "image/create_slider"
+  
   resources :advance_bookings
 
   resources :messages
