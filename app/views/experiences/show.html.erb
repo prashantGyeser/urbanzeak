@@ -14,35 +14,16 @@
 
         <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
         
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-    <script src="http://fast.fonts.net/jsapi/3dca1e78-579f-4502-8da9-3eb91453e0dc.js"></script>
+    <!--<script src="http://fast.fonts.net/jsapi/3dca1e78-579f-4502-8da9-3eb91453e0dc.js"></script>-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
     <body>
         <div id="mask">   
             <div class="loader">
-              <img src="img/loading.gif" alt='loading' />
+              <!--<img src="img/loading.gif" alt='loading' />-->
+              <%= image_tag "loading.gif" %>
             </div>
         </div>
-        <div class="color-picker">
-            <div class="picker-btn"></div>
-            <div class="pickerTitle">Style Switcher</div>
-            <div class="pwrapper">
-                <div class="pickersubTitle">Layout Selector</div>
-                <div class="light-version"><img title="" alt='img' src="img/light.jpg" /></div>
-                <div class="dark-version"><img title="" alt='img' src="img/dark.jpg" /></div>
-                <div class="pickersubTitle"> Color scheme </div>
-                <div class="picker-blue"></div>
-                <div class="picker-black"></div>
-                <div class="picker-green"></div>
-                <div class="picker-yellow"></div>
-                <div class="picker-red"></div>
-                <div class="picker-purple"></div>
-                <div class="picker-turquoise"></div>
-                <div class="picker-orange"></div>
-                <div class="clear nopick"></div>
-            </div>
-        </div>       
         
         <div id="anchor1"></div>
         <section id="home" class="clear">
@@ -93,109 +74,6 @@
                 </ul>
             </nav>
         </header>
-        <article id="anchor2" class="content menu-top dark">
-            <header class="title one">Featured Works</header>
-            <div class="spacer"></div>
-            <div class="title two">Visuals work in every language. We communicate in images where words fail to transmit our message. Keep it simple.</div>
-            <section class="featured-slider">
-                <div id="ca-container" class="ca-container">
-                    <div class="nav-featured">
-                        <div class="prev-featured"></div>
-                        <a href="#anchor5"><div class="btn-featured">go portfolio</div></a>
-                        <div class="next-featured"></div>
-                    </div>
-                    <div class="main-carousel hideme dontHide">
-                        <div class="ca-wrapper">
-                            <div class="ca-item ca-item-1">
-                                <div class="f-single">
-                                    <a href="img/featured/big/big01.jpg">
-                                        <div class="f-image">
-                                            <img src="img/featured/feat-01.jpg" alt='img' />
-                                            <div class="image-hover-overlay"></div>
-                                            <span class="f-category"></span>
-                                            <div class="portfolio-meta">
-                                                <div>Single Portfolio - Wide Image</div>
-                                                <div class="clear"></div>
-                                                <div>Photography</div>
-                                            </div>
-                                        </div>
-                                        <div class="f-info">Young Eckless</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="ca-item ca-item-2">
-                                <div class="f-single">
-                                    <a href="img/featured/big/big02.jpg">
-                                        <div class="f-image">
-                                            <img src="img/featured/feat-02.jpg" alt='img' />
-                                            <div class="image-hover-overlay"></div>
-                                            <span class="f-category"></span>
-                                            <div class="portfolio-meta">
-                                                <div>Single Portfolio - Wide Image</div>
-                                                <div class="clear"></div>
-                                                <div>Photography</div>
-                                            </div>
-                                        </div>
-                                        <div class="f-info">Sweet Home</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="ca-item ca-item-3">
-                                <div class="f-single">
-                                    <a href="img/featured/big/big03.jpg">
-                                        <div class="f-image">
-                                            <img src="img/featured/feat-03.jpg" alt='img' />
-                                            <div class="image-hover-overlay"></div>
-                                            <span class="f-category"></span>
-                                            <div class="portfolio-meta">
-                                                <div>Single Portfolio - Wide Image</div>
-                                                <div class="clear"></div>
-                                                <div>Photography</div>
-                                            </div>
-                                        </div>
-                                        <div class="f-info">Desk Showcase</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="ca-item ca-item-4">
-                                <div class="f-single">
-                                    <a href="http://www.youtube.com/watch?v=cH6kxtzovew" class="mfp-iframe" title="My YouTube Video">
-                                        <div class="f-image">
-                                            <img src="img/featured/feat-04.jpg" alt='img' />
-                                            <div class="image-hover-overlay"></div>
-                                            <span class="f-category"></span>
-                                            <div class="portfolio-meta">
-                                                <div>Single Portfolio - Wide Image</div>
-                                                <div class="clear"></div>
-                                                <div>Video</div>
-                                            </div>
-                                        </div>
-                                        <div class="f-info">Motion Reel</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="ca-item ca-item-5">
-                                <div class="f-single">
-                                    <a href="img/featured/big/big05.jpg">
-                                        <div class="f-image">
-                                            <img src="img/featured/feat-05.jpg" alt='img' />
-                                            <div class="image-hover-overlay"></div>
-                                            <span class="f-category"></span>
-                                            <div class="portfolio-meta">
-                                                <div>Single Portfolio - Wide Image</div>
-                                                <div class="clear"></div>
-                                                <div>Photography</div>
-                                            </div>
-                                        </div>
-                                        <div class="f-info">Shutter Island</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </article>
         <article class="content light">
             <div class="full">
                 <section class="half car-show-1">
@@ -560,55 +438,6 @@
             <div class="clear"></div>
         </article>
         <div class="clear"></div>
-        <article class="container-video">
-            <div class="parallax-info">
-                <div class="p-video-title">Show <span><img src="img/video-ico.png" alt='img' /></span> Reel</div>
-            </div>
-            <div class="mk-video-mask"></div>
-
-
-<!--<div class="video-container">
-         <iframe width="auto" height="auto" src="//www.youtube.com/embed/tDvBwPzJ7dY?autoplay=1&loop=1&controls=0&start=31&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-</div>-->
-    <!-- 1. The <div> tag will contain the <iframe> (and video player) -->
-    <div class="video-container"><div id="player"></div></div>
-<script>      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-      tag.src = "http://www.youtube.com/player_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubePlayerAPIReady() {
-        player = new YT.Player('player', {
-          height: '100%',
-          width: '100%',            
-          playerVars: { 'rel':0 , 'autoplay': 1, 'loop':1, 'controls':0,'autohide':1,'wmode':'opaque' },
-          videoId: 'tDvBwPzJ7dY',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange}
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.mute();
-//      event.target.setSize(width:100, height:750);
-      }
-      
-     // when video ends
-        function onPlayerStateChange(event) {        
-            if(event.data === 0) {          
-                event.target.playVideo();
-            }
-        }
-</script>
-
-
-        </article>
         <article id="anchor5" class="content dark">
             <header class="title one">Our Portfolio</header>
             <div class="spacer"></div>
@@ -799,5 +628,38 @@
             <div class="copy">2013 © Solido. All rights reserved.</div>            
         </div>
         <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
+
+        <script>
+
+
+$(document).ready(function(){
+    
+/* VEGAS Home Slider */
+    function loadVegas(){
+        $.vegas('slideshow', {
+              backgrounds:[
+                
+                { src:'http://lorempixel.com/400/200', fade:1000 },
+{ src:'http://lorempixel.com/400/200', fade:1000 },
+{ src:'http://lorempixel.com/400/200', fade:1000 },
+{ src:'http://lorempixel.com/400/200', fade:1000 },
+{ src:'http://lorempixel.com/400/200', fade:1000 }
+              ]
+            })('overlay', {
+              //src:'css/vegas/overlays/05.png'
+              src:'/assets/05.png'
+            });
+            $( "#vegas-next" ).click(function() {
+              $.vegas('next');
+            });
+            $( "#vegas-prev" ).click(function() {
+              $.vegas('previous');
+        });
+    }
+    
+    loadVegas();
+});
+        </script>
+
     </body>
 </html>
