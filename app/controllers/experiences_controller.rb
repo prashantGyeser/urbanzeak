@@ -12,6 +12,7 @@ class ExperiencesController < ApplicationController
     @attendee = Attendee.new
     @message = Message.new
     @advance_booking = AdvanceBooking.new
+    @header_images = ExperienceImage.where(:random_id => @experience.random_id)
     impressionist(@experience)
     render layout: false
   end

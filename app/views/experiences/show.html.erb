@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
-        <title>Experience title</title>
+        <title><%= @experience.name %></title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width" />
 
@@ -36,13 +36,13 @@
         </section>
         <div class="main-title">
             <div class="title-container">
-                <div class="welcome">Hello</div>
+                
                 <ul>
-                    <li class="t-current">Title</li>
+                    <li class="t-current"><%= @experience.name %></li>
                 </ul>
                 <div class="spacer"></div>
                 <!--<a href="#anchor2"><div class="slider-logo">Get Started</div></a>-->
-                <div class="second-title">We build perfection, so you can get a product which complies with our quality standarts. Take action & keep it simple.</div>
+                <div class="second-title"><%= @experience.summary  %></div>
                 <a href="#anchor2"><div class="buy-logo">Get Started<span></span></div></a>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 <section class="half">
                     <div class="title-two">About the experience</div>
                     <div class="half-content hideme dontHide">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <a href="#">dolore magna</a> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /><br />Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur <a href="#">sint occaecat</a> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. pariatur. Stet clita kasd gubergren, no sea takimata est. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. pariatur sunt in culpa qui. Stet clita kasd gubergren, no sea <a href="#">takimata</a> est.
+                        <%= simple_format(@experience.description)  %>
                     </div>
                 </section>
             </div>
@@ -345,8 +345,11 @@
                 </div>
             </div>
             <div class="clear"></div>
-            <div class="copy">2013 © Solido. All rights reserved.</div>            
+            <div class="copy">2013 © Solido. All rights reserved.</div>           
         </div>
+
+
+
         <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
 
         <script>
@@ -358,12 +361,17 @@ $(document).ready(function(){
     function loadVegas(){
         $.vegas('slideshow', {
               backgrounds:[
+                <% total_images = @header_images.count %>
+                <% counter = 1 %>
+                <% @header_images.each do |image| %>
+                    <% if ((counter+1) > total_images) %>
+                        { src:'<%= image.image_url %>', fade:1000 }
+                    <% else %>
+                        { src:'<%= image.image_url %>', fade:1000 },
+                    <% end %>
+                <% end %>
                 
-                { src:'http://lorempixel.com/400/200', fade:1000 },
-{ src:'http://lorempixel.com/400/200', fade:1000 },
-{ src:'http://lorempixel.com/400/200', fade:1000 },
-{ src:'http://lorempixel.com/400/200', fade:1000 },
-{ src:'http://lorempixel.com/400/200', fade:1000 }
+
               ]
             })('overlay', {
               src:'/assets/05.png'
