@@ -5,6 +5,8 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
   def new
     @experience = Experience.new
+    @experience_image = ExperienceImage.new
+    
     render :layout => false
   end
 

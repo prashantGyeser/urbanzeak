@@ -53,23 +53,9 @@
         <h4 class="modal-title" id="myModalLabel">Upload header images</h4>
       </div>
       <div class="modal-body">
-        <!-- Fileupload - start -->
-        <span class="btn btn-success fileinput-button">
-            <i class="glyphicon glyphicon-plus"></i>
-            <span>Select files...</span>
-            <!-- The file input field used as target for the file upload widget -->
-            <input id="fileupload" type="file" name="files[]" multiple>
-        </span>
-        <br>
+        
+        <%= render :partial => "experience_images/form" %>
 
-        <!-- The global progress bar -->
-    <div id="progress" class="progress">
-        <div class="progress-bar progress-bar-success"></div>
-    </div>
-    <!-- The container for the uploaded files -->
-    <div id="files" class="files"></div>
-    <br>
-    <!-- Fileupload - end -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
