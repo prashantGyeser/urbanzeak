@@ -12,22 +12,44 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :name, :class => "form-control",:placeholder => "Experience title", :autofocus => true, :required => "required" %>
+    <%= f.label :name, "Name your experience" %>
+    <%= f.text_field :name, :class => "form-control",:placeholder => "Write a short title for this experience. Should be less than 3 words", :autofocus => true, :required => "required" %>
   </div>
   <div class="form-group">
+    <%= f.label :summary, "Give a short summary of your experience" %>
+    <%= f.text_area :summary, :class => "form-control", :placeholder => "Catch peoples attention. Tell them about your experience in as few words as possible", :rows => 2, :required => "required" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Describe your experience in detail" %>
     <%= f.text_area :description, :class => "form-control", :placeholder => "Describe this experience", :rows => 5, :required => "required" %>
   </div>
 
   <div class="form-group">
+    <%= f.label :description, "What is included in your experience" %>
     <%= f.text_area :what_does_this_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
   </div>
 
   <div class="form-group">
+    <%= f.label :description, "Specific things people should bring" %>
     <%= f.text_area :things_to_remember, :class => "form-control",:placeholder => "Should your customer bring something?", :rows => 5 %>
   </div>
 
+  <label>Address</label>
+  <div class="address">
+    <div class="form-group">
+      <%= f.text_field :line_one, :class => "form-control",:placeholder => "Address line one" %>
+      <%= f.text_field :line_two, :class => "form-control",:placeholder => "Address line one" %>
+      <%= f.text_field :land_mark, :class => "form-control",:placeholder => "City" %>
+      <%= f.text_field :state, :class => "form-control",:placeholder => "State" %>
+      <%= f.text_field :country, :class => "form-control",:placeholder => "Country" %>
+      <%= f.text_field :pincode, :class => "form-control",:placeholder => "Pincode" %>
+    </div>  
+  </div>
+  
+
   <div class="form-group">
-    <%= f.text_field :city, :class => "form-control", :placeholder => "Enter the address of the location where the experience is happening", :required => "required" %>
+    <%= f.label :city, "Land mark" %>
+    <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
     <div class="map_canvas"></div>
   </div>
 

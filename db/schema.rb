@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115123343) do
+ActiveRecord::Schema.define(version: 20140116063923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: true do |t|
+    t.string   "line_one"
+    t.string   "line_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "pincode"
+    t.string   "country"
+    t.integer  "experience_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "advance_bookings", force: true do |t|
     t.string   "name"
@@ -71,6 +83,13 @@ ActiveRecord::Schema.define(version: 20140115123343) do
     t.integer  "max_seats"
     t.boolean  "template"
     t.string   "shortened_url"
+    t.text     "summary"
+    t.string   "line_one"
+    t.string   "line_two"
+    t.string   "state"
+    t.string   "pincode"
+    t.string   "country"
+    t.string   "land_mark"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree

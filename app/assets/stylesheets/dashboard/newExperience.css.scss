@@ -8,9 +8,15 @@ $brand_blue_toned_down: #cad4d5;
 $contrast_green: #00e23c;
 
 /************************************************************************/
-/* Dropdown styles */
+/* Address */
 /************************************************************************/
-
+.address
+{
+  input
+  {
+    margin-bottom: 20px;
+  }
+}
 /************************************************************************/
 /* Experiences new styles */
 /************************************************************************/
@@ -38,14 +44,7 @@ h1.title
   border: 1px solid #ddd;
   box-shadow: 0 0 5px 2px rgba(0,0,0,.05);
   margin: 50px 0;
-
-  #experience_name
-  {
-    font-size: 21px;
-    font-weight: bold;
-  }
-
-
+  
   .map_canvas
   {
     width: 100%;
