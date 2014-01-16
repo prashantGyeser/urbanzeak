@@ -10,7 +10,3 @@
 
 .editableHover {
   outline: #00a9d4 dotted thin; }
-
-.imageOverlay {
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1200; }
