@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require dashboard/icheck
 //= require jquery.easydropdown
-//= require jvfloat
 //= require jquery.geocomplete
 //= require jquery.nanoscroller
 //= require dashboard/chart/jquery.flot
