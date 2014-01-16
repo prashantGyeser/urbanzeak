@@ -9,11 +9,12 @@
   <title>Dashboard | UrbanZeak</title>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "buttons", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "fileuploader/jquery.fileupload", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/newExperience", media: "all", "data-turbolinks-track" => true %>
  
   <!-- JavaScript -->
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+
   <!--[if IE]><script language="javascript" type="text/javascript" src="js/libs/excanvas.js"></script><![endif]-->
 
 
@@ -42,12 +43,52 @@
     <div class="col-md-3"></div>
   </div>
 </div>
+  
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Upload header images</h4>
+      </div>
+      <div class="modal-body">
+        <!-- Fileupload - start -->
+        <span class="btn btn-success fileinput-button">
+            <i class="glyphicon glyphicon-plus"></i>
+            <span>Select files...</span>
+            <!-- The file input field used as target for the file upload widget -->
+            <input id="fileupload" type="file" name="files[]" multiple>
+        </span>
+        <br>
+
+        <!-- The global progress bar -->
+    <div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>
+    <!-- The container for the uploaded files -->
+    <div id="files" class="files"></div>
+    <br>
+    <!-- Fileupload - end -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <%= javascript_include_tag "newExperience/jquery.ui.widget"%>
+  <%= javascript_include_tag "newExperience/jquery.iframe-transport"%>
+  <%= javascript_include_tag "newExperience/jquery.fileupload"%>
 
 </body>
 </html>
-
+<!--
 <script>
   $('#experience_city').geocomplete({
     map: ".map_canvas"
   });
 </script>
+-->

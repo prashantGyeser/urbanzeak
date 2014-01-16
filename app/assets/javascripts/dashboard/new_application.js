@@ -10,17 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
 //= require bootstrap
-//= require dashboard/icheck
-//= require jquery.easydropdown
 //= require jquery.geocomplete
-//= require jquery.nanoscroller
-//= require dashboard/chart/jquery.flot
-//= require dashboard/chart/jquery.flot.pie
+//= require dashboard/fileuploader/jquery.ui.widget
 //= require dashboard/fileuploader/jquery.fileupload-jquery-ui
 //= require dashboard/fileuploader/jquery.iframe-transport
 //= require dashboard/fileuploader/jquery.fileupload
 //= require turbolinks
-//= require_tree .
