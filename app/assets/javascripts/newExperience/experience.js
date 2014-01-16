@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
+    $('#new_experience_image').fileupload();
+
     // Change this to the location of your server-side upload handler:
+    /*
     var url = '/images/create_header';
 
     $('#fileupload').fileupload({
@@ -20,5 +23,6 @@ $(document).ready(function(){
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
+    */
 })
 

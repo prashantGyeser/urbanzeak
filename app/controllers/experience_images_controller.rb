@@ -24,7 +24,11 @@ class ExperienceImagesController < ApplicationController
   # POST /experience_images
   # POST /experience_images.json
   def create
+    logger.debug "Thge params coming in are: #{params.inspect}"
     @experience_image = ExperienceImage.new(experience_image_params)
+    #@experience_image = ExperienceImage.new(params[:image][:image])
+    logger.debug "The experience image stored is: #{@experience_image.inspect}"
+
 
     respond_to do |format|
       if @experience_image.save
