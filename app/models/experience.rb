@@ -35,7 +35,9 @@ class Experience < ActiveRecord::Base
   #has_many :exp_images
   #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
 
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
+
+  has_many :experience_images
 
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable

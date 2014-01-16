@@ -22,6 +22,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
     
+    images = ExperienceImage.where(:random_id => @experience.random_id)    
+
+    images.each do |image|
+      image.experience_id = @experience.id
+      image.save
+    end
+
+
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     postToFBWall = fbCheckToken.post_to_fb_wall
       
@@ -105,6 +113,6 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, :image, :what_does_this_include, :things_to_remember, :max_seats, :template, :land_mark, :country, :line_one, :line_two, :state, :pincode )
+      params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, :image, :what_does_this_include, :things_to_remember, :max_seats, :template, :land_mark, :country, :line_one, :line_two, :state, :pincode, :random_id )
     end
 end

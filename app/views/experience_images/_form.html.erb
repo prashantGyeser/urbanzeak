@@ -15,15 +15,13 @@
     <%= f.label :image %><br>
     <%= f.file_field :image, :multiple => true, :name => "experience_image[image]" %>
   </div>
-  <div class="field">
-    <%= f.label :experience_id %><br>
-    <%= f.number_field :experience_id %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
+  
+  <%= f.hidden_field :experience_id %>
+  <%= f.hidden_field :image_type, :value => "header" %>
+  <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
+  
+  
   <div class="actions">
-    <%= f.submit %>
+    
   </div>
 <% end %>

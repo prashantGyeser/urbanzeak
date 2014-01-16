@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116124912) do
+ActiveRecord::Schema.define(version: 20140116134825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,9 +68,10 @@ ActiveRecord::Schema.define(version: 20140116124912) do
   create_table "experience_images", force: true do |t|
     t.string   "image"
     t.integer  "experience_id"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "random_id"
+    t.string   "image_type"
   end
 
   create_table "experiences", force: true do |t|
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 20140116124912) do
     t.string   "pincode"
     t.string   "country"
     t.string   "land_mark"
+    t.string   "random_id"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
