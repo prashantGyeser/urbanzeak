@@ -31,9 +31,14 @@ class ExperiencesController < ApplicationController
 
 
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
-    postToFBWall = fbCheckToken.post_to_fb_wall
+    if fbCheckToken.blank?
+      postToFBWall = false  
+    else
+      postToFBWall = fbCheckToken.post_to_fb_wall
+    end    
+    
       
-    if postToFBWall == false
+    if postToFBWall == true
         token = fbCheckToken.token    
         
         # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:

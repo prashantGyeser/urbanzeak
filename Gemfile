@@ -56,8 +56,6 @@ gem 'devise'
 # Geocoding the location
 gem 'geocoder'
 
-
-
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
