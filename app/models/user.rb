@@ -21,6 +21,7 @@
 #  host                   :boolean
 #  guid                   :string(255)
 #  internal_email_id      :string(255)
+#  tour_completed         :boolean
 #
 
 class User < ActiveRecord::Base
@@ -37,12 +38,18 @@ class User < ActiveRecord::Base
   #after_create :send_welcome_email
   #after_create :autoresponder
   after_create :add_guid
+  after_create :set_tour_status
 
   private
 
   def add_guid
     self.guid = ('a'..'z').to_a.shuffle[0,20].join
     self.internal_email_id = self.guid + '@inbound.urbanzeak.com'
+    self.save
+  end
+
+  def set_tour_status
+    self.tour_completed = false
     self.save
   end
 
