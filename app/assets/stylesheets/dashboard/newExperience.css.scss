@@ -40,7 +40,7 @@ h1.title
 #newExperience
 {
   background: white;
-  padding: 20px;
+  padding: 40px;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px 2px rgba(0,0,0,.05);
   margin: 50px 0;
@@ -52,6 +52,55 @@ h1.title
     background: #CCCCCC;
   }
 
+  .wizard
+  {
+    ul
+    {
+      padding: 0;
+      list-style: none;
+      li
+      {
+        display: inline;
+        margin-right: 20px;
+      }
 
+    }
+
+    .steps
+    {
+      margin-bottom: 20px;
+      a
+      {
+        color: $brand_blue;
+      }
+      ul
+      {
+        li.current
+        {
+          background: $brand_blue;
+          padding: 10px;
+          a
+          {
+            color: white;
+          }
+        }
+        li
+        {
+          a
+          {
+            &:hover
+            {
+              background: $brand_blue;
+              padding: 10px;  
+              color: white;
+              text-decoration: none
+            }
+          }
+        }
+
+      }
+    }
+
+  }
 
 }
