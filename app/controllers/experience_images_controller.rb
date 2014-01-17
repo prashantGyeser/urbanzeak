@@ -33,7 +33,7 @@ class ExperienceImagesController < ApplicationController
     respond_to do |format|
       if @experience_image.save
         format.html { redirect_to @experience_image, notice: 'Experience image was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @experience_image }
+        format.json { render status: :created, location: @experience_image }
       else
         format.html { render action: 'new' }
         format.json { render json: @experience_image.errors, status: :unprocessable_entity }

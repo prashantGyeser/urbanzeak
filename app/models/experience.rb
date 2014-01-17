@@ -28,6 +28,7 @@
 #  country                :string(255)
 #  land_mark              :string(255)
 #  random_id              :string(255)
+#  template_id            :integer
 #
 
 class Experience < ActiveRecord::Base
@@ -37,7 +38,7 @@ class Experience < ActiveRecord::Base
   #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
 
   #mount_uploader :image, ImageUploader
-
+  belongs_to :template
   has_many :experience_images
 
   # Making the model impressionable so that people that view the page can be tracked

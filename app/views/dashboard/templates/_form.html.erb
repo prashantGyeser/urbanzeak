@@ -1,3 +1,7 @@
+<div class="alert alert-danger"><strong>Akki: </strong>All the content in brackets i.e. () are my notes, things I do not like. Let me know if you come up with alternatives</div>
+
+<div class="alert alert-warning"><strong>Akki: </strong>Anything in yellow like this one is my notes/questions</div>
+
 <%= form_for([:dashboard, @template]) do |f| %>
   <% if @template.errors.any? %>
     <div id="error_explanation">
@@ -15,104 +19,106 @@
     <!-- First step - start -->
     <h3>Details</h3>
     <div>
-      First step content
+      <div class="form-group">
+        <%= f.label :name, "Name your experience (See if this label makes sense in this template form.)" %>
+        <%= f.text_field :name, :class => "form-control",:placeholder => "Write a short title for this experience. Should be less than 3 words", :autofocus => true, :required => "required" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :summary, "Give a short summary of your experience" %>
+        <%= f.text_area :summary, :class => "form-control", :placeholder => "Catch peoples attention. Tell them about your experience in as few words as possible", :rows => 2, :required => "required" %>
+      </div>
+      <div class="alert alert-warning"><strong></strong>Can this break up be improved i.e. should the description be seperated from special instructions.</div>
+
+
+      <div class="form-group">
+        <%= f.label :description, "Describe your experience in detail" %>
+        <%= f.text_area :description, :class => "form-control", :placeholder => "Describe this experience", :rows => 5, :required => "required" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :what_does_it_include, "What is included in your experience" %>
+        <%= f.text_area :what_does_it_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "Specific things people should bring" %>
+        <%= f.text_area :things_to_remember, :class => "form-control",:placeholder => "Should your customer bring something?", :rows => 5 %>
+      </div>
+
     </div>
     <!-- First step - end -->
 
     <!-- Second step - start -->
     <h3>Date and Time</h3>
     <div>
-      Second step content
+      <div class="form-group">
+        <%= f.label :exp_date %>
+        <br/>
+        <%= f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :exp_time %>
+        <br/>
+        <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
+      </div>
     </div>
     <!-- Second step - end -->
 
     <!-- Second step - start -->
     <h3>Location</h3>
     <div>
-      Third step content
+      <label>Address</label>
+      <div class="address">
+        <div class="form-group">
+          <%= f.text_field :address_line_one, :class => "form-control",:placeholder => "Address line one" %>
+          <%= f.text_field :address_line_two, :class => "form-control",:placeholder => "Address line one" %>
+          <%= f.text_field :landmark, :class => "form-control",:placeholder => "City" %>
+          <%= f.text_field :state, :class => "form-control",:placeholder => "State" %>
+          <%= f.text_field :country, :class => "form-control",:placeholder => "Country" %>
+          <%= f.text_field :zipcode, :class => "form-control",:placeholder => "Pincode" %>
+        </div>  
+      </div>
+      
+
+      <div class="form-group">
+        <%= f.label :city, "Land mark" %>
+        <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
+        <div class="map_canvas"></div>
+      </div>
     </div>
     <!-- Second step - end -->
 
     <!-- Second step - start -->
     <h3>Pictures</h3>
     <div>
-      Fourth step content
+      <div class="form-group">
+        <%= f.text_field :price, :class => "form-control", :placeholder => "How much per ticket?", :required => "required" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :max_seats, :class => "form-control", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
+      </div>
+      
+
+      <div class="form-group">
+        <%= f.label :image, "Upload header images" %>
+        <br>
+        <!-- Button trigger modal -->
+    <button class="button" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
     </div>
     <!-- Second step - end -->
 
   </div>
 
-  <div class="form-group">
-    <%= f.label :name, "Name your experience" %>
-    <%= f.text_field :name, :class => "form-control",:placeholder => "Write a short title for this experience. Should be less than 3 words", :autofocus => true, :required => "required" %>
-
-  </div>
-  <div class="form-group">
-    <%= f.label :summary, "Give a short summary of your experience" %>
-    <%= f.text_area :summary, :class => "form-control", :placeholder => "Catch peoples attention. Tell them about your experience in as few words as possible", :rows => 2, :required => "required" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description, "Describe your experience in detail" %>
-    <%= f.text_area :description, :class => "form-control", :placeholder => "Describe this experience", :rows => 5, :required => "required" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :what_does_it_include, "What is included in your experience" %>
-    <%= f.text_area :what_does_it_include, :class => "form-control",:placeholder => "Tell people exactly what they will get when they attend this experience", :rows => 5 %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :description, "Specific things people should bring" %>
-    <%= f.text_area :things_to_remember, :class => "form-control",:placeholder => "Should your customer bring something?", :rows => 5 %>
-  </div>
-
-  <label>Address</label>
-  <div class="address">
-    <div class="form-group">
-      <%= f.text_field :address_line_one, :class => "form-control",:placeholder => "Address line one" %>
-      <%= f.text_field :address_line_two, :class => "form-control",:placeholder => "Address line one" %>
-      <%= f.text_field :landmark, :class => "form-control",:placeholder => "City" %>
-      <%= f.text_field :state, :class => "form-control",:placeholder => "State" %>
-      <%= f.text_field :country, :class => "form-control",:placeholder => "Country" %>
-      <%= f.text_field :zipcode, :class => "form-control",:placeholder => "Pincode" %>
-    </div>  
-  </div>
+  
   
 
-  <div class="form-group">
-    <%= f.label :city, "Land mark" %>
-    <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
-    <div class="map_canvas"></div>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :price, :class => "form-control", :placeholder => "How much per ticket?", :required => "required" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :max_seats, :class => "form-control", :placeholder => "Maximum number of people that can attend this event", :required => "required" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :exp_date %>
-    <br/>
-    <%= f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :exp_time %>
-    <br/>
-    <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :image, "Upload header images" %>
-    <br>
-    <!-- Button trigger modal -->
-<button class="button" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
+  
 
   </div>
-  <%= f.hidden_field :latitude%>>
+  <%= f.hidden_field :latitude%>
   <%= f.hidden_field :longitude %>
   <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
 

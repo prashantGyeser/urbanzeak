@@ -1,2 +1,392 @@
-<h1>Dashboard::Templates#show</h1>
-<p>Find me in app/views/dashboard/templates/show.html.erb</p>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title><%= @template.name %></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
+        
+
+    <!--<script src="http://fast.fonts.net/jsapi/3dca1e78-579f-4502-8da9-3eb91453e0dc.js"></script>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <body>
+        <div id="mask">   
+            <div class="loader">
+              <!--<img src="img/loading.gif" alt='loading' />-->
+              <%= image_tag "loading.gif" %>
+            </div>
+        </div>
+        
+        <div id="anchor1"></div>
+        <section id="home" class="clear">
+            <!--<div id="anchor1">--><div>
+                <ul class="slider-controls">
+                    <li><a id="vegas-next" class="s-next" href="#"></a></li>
+                    <li><a id="vegas-prev" class="s-prev" href="#"></a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="main-title">
+            <div class="title-container">
+                
+                <ul>
+                    <li class="t-current"><%= @template.name %></li>
+                </ul>
+                <div class="spacer"></div>
+                <!--<a href="#anchor2"><div class="slider-logo">Get Started</div></a>-->
+                <div class="second-title"><%= @template.summary  %></div>
+                <a href="#anchor2"><div class="buy-logo">Get Started<span></span></div></a>
+            </div>
+        </div>
+        <div id="logx"></div>
+        <header class="header">
+            <div class="logo">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Phone number">
+                <button>Join now</button>
+            </div>
+            
+        </header>
+        <article class="content light">
+            <div class="full">
+                <section class="half car-show-1">
+                    <div class="title-two">Experience photos</div>
+                    <div class="show hideme dontHide">
+                        <div class="caroussel">
+                            <div class="caroussel-list">
+                                <div class="car-img"><img src="http://lorempixel.com/500/350" alt='img' /></div>
+                                <div class="car-img"><img src="http://lorempixel.com/500/350" alt='img' /></div>
+                                <div class="car-img"><img src="http://lorempixel.com/500/350" alt='img' /></div>
+                            </div>
+                        </div>
+                        <div class="car-prev"></div>
+                        <div class="car-next"></div>
+                    </div>
+                    <div class="controller">
+                        <ul>
+                        </ul>
+                    </div>
+                </section>
+                <section class="half">
+                    <div class="title-two">About the experience</div>
+                    <div class="half-content hideme dontHide">
+                        <%= simple_format(@template.description)  %>
+                    </div>
+                </section>
+            </div>
+            <div class="clear"></div>
+        </article>
+        <div class="clear"></div>
+        <article id="anchor3" class="content dark">
+            <header class="title one">About us</header>
+            <div class="spacer"></div>
+            <div class="title two">We are a fun mix of designers and strategists with a great passion for all things creative.</div>
+            <section class="team-box">
+                <div class="s-container team-grid">
+                    <div class="t-list">
+                        <div class="t-element hideme dontHide">
+                            <div class="t-photo">
+                                <div class="image-hover-overlay"></div>
+                                <a class="f-category" href="#"></a>
+                                <a href="mailto:john@solido.com"><div class="portfolio-meta">
+                                    <div>john@solido.com</div>
+                                </div></a>
+                                <img src="img/team/team-01.jpg" alt='img' />
+                            </div>
+                            <div class="t-data">
+                                <div class="t-name">John Matas</div>
+                                <div class="t-info">CEO</div>
+                                <div class="t-spacer"></div>
+                                <div class="t-social">
+                                    <div class="in-social">
+                                        <a href="#"><div class="ts facebook"></div></a>
+                                        <a href="#"><div class="ts twitter"></div></a>
+                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
+                                        <a href="#"><div class="ts tumblr"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-element hideme dontHide">
+                            <div class="t-photo">
+                                <div class="image-hover-overlay"></div>
+                                <a class="f-category" href="#"></a>
+                                <a href="mailto:lia@solido.com"><div class="portfolio-meta">
+                                    <div>lia@solido.com</div>
+                                </div></a>
+                                <img src="img/team/team-02.jpg" alt='img' />
+                            </div>
+                            <div class="t-data">
+                                <div class="t-name">Lia Duprois</div>
+                                <div class="t-info">Developer</div>
+                                <div class="t-spacer"></div>
+                                <div class="t-social">
+                                    <div class="in-social">
+                                        <a href="#"><div class="ts facebook"></div></a>
+                                        <a href="#"><div class="ts twitter"></div></a>
+                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
+                                        <a href="#"><div class="ts tumblr"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-element hideme dontHide">
+                            <div class="t-photo">
+                                <div class="image-hover-overlay"></div>
+                                <a class="f-category" href="#"></a>
+                                <a href="mailto:diego@solido.com"><div class="portfolio-meta">
+                                    <div>diego@solido.com</div>
+                                </div></a>
+                                <img src="img/team/team-03.jpg" alt='img' />
+                            </div>
+                            <div class="t-data">
+                                <div class="t-name">Diego Smith</div>
+                                <div class="t-info">Graphic Designer</div>
+                                <div class="t-spacer"></div>
+                                <div class="t-social">
+                                    <div class="in-social">
+                                        <a href="#"><div class="ts facebook"></div></a>
+                                        <a href="#"><div class="ts twitter"></div></a>
+                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
+                                        <a href="#"><div class="ts tumblr"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-element hideme dontHide">
+                            <div class="t-photo">
+                                <div class="image-hover-overlay"></div>
+                                <a class="f-category" href="#"></a>
+                                <a href="mailto:elisa@solido.com"><div class="portfolio-meta">
+                                    <div>elisa@solido.com</div>
+                                </div></a>
+                                <img src="img/team/team-04.jpg" alt='img' />
+                            </div>
+                            <div class="t-data">
+                                <div class="t-name">Elisa Ronald</div>
+                                <div class="t-info">Marketing</div>
+                                <div class="t-spacer"></div>
+                                <div class="t-social">
+                                    <div class="in-social">
+                                        <a href="#"><div class="ts facebook"></div></a>
+                                        <a href="#"><div class="ts twitter"></div></a>
+                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
+                                        <a href="#"><div class="ts tumblr"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix"></div>
+        </article>
+        
+        
+        <article class="content light">
+            <div class="full">
+                <section class="half hideme dontHide">
+                    <div class="title-one">WHAT WE DO</div>
+                    <div class="title-two">Our Awesome Skills</div>
+                    <div class="half-content">
+                        <div class="sk-container">
+                            <div class="skill-content">
+                                <div class="progress-bar skill-1">
+                                  <div class="skill-in" title="90"><div class="info-skills">web developement <span>- 90%</span></div></div>
+                                </div>
+                            </div>
+                            <div class="skill-content">
+                                <div class="progress-bar skill-2">
+                                  <div class="skill-in" title="70"><div class="info-skills">web design <span>- 70%</span></div></div>
+                                </div>
+                            </div>
+                            <div class="skill-content">
+                                <div class="progress-bar skill-3">
+                                  <div class="skill-in" title="80"><div class="info-skills">video edition <span>- 80%</span></div></div>
+                                </div>
+                            </div>
+                            <div class="skill-content">
+                                <div class="progress-bar skill-4">
+                                  <div class="skill-in" title="60"><div class="info-skills">marketing online <span>- 60%</span></div></div>
+                                </div>
+                            </div>
+                            <div class="skill-content">
+                                <div class="progress-bar skill-5">
+                                  <div class="skill-in" title="100"><div class="info-skills">communication <span>- 100%</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="half car-show-2 hideme dontHide">
+                    <div class="title-one">Testimonials</div>
+                    <div class="title-two">Our Happy Clients</div>
+                    <div class="show">
+                        <div class="caroussel-2">
+                            <div class="caroussel-list-2">
+                                <div class="car-quote">
+                                    <div class="testimonials">
+                                        <div class="avatar"><img src="img/testimonials/avatar-01.jpg" alt='img' /></div>
+                                        <div class="comment">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."<br /><br /><span>Julia Smith, </span>CEO</div>
+                                        <div class="clear q-spacer"></div>
+                                        <div class="avatar"><img src="img/testimonials/avatar-02.jpg" alt='img' /></div>
+                                        <div class="comment">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."<br /><br /><span>Steve Ronald, </span>Developer</div>
+                                    </div>
+                                </div>
+                                <div class="car-quote">
+                                    <div class="testimonials">
+                                        <div class="avatar"><img src="img/testimonials/avatar-01.jpg" alt='img' /></div>
+                                        <div class="comment">"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Stet clita kasd gubergren, no sea takimat, lorem ipsum st."<br /><br /><span>Julia Smith, </span>CEO</div>
+
+                                        <div class="clear q-spacer"></div>
+                                        <div class="avatar"><img src="img/testimonials/avatar-02.jpg" alt='img' /></div>
+                                        <div class="comment">"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Stet clita kasd gubergren, no sea takimat, lorem ipsum st."<br /><br /><span>Steve Ronald, </span>Developer</div>
+                                    </div>
+                                </div>
+                                <div class="car-quote">
+                                    <div class="testimonials">
+                                        <div class="avatar"><img src="img/testimonials/avatar-01.jpg" alt='img' /></div>
+                                        <div class="comment">"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Stet clita kasd gubergren, no sea takimat, lorem ipsum st."<br /><br /><span>Julia Smith, </span>CEO</div>
+
+                                        <div class="clear q-spacer"></div>
+                                        <div class="avatar"><img src="img/testimonials/avatar-02.jpg" alt='img' /></div>
+                                        <div class="comment">"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Stet clita kasd gubergren, no sea takimat, lorem ipsum st."<br /><br /><span>Steve Ronald, </span>Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-prev-2"></div>
+                        <div class="car-next-2"></div>
+                    </div>
+                    <div class="controller-2">
+                        <ul>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="clear"></div>
+        </article>
+        <div class="clear"></div>
+        
+        <footer id="anchor6" class="footer light">
+            <div class="footer-container">
+                <div class="title one no-top">Contact</div>
+                <div class="spacer"></div>
+                <div class="title two f-bottom">We like to create things with fun, like-minded people.<br /> Feel free to say hello!</div>
+                <div class="foot-third hideme dontHide">
+                    <div class="f-title-one">contact</div>
+                    <div class="f-title-two">Visit Our Office</div>
+                    <div class="f-data adress"><img src="img/adress-ico.png" alt='img' /> Adress: <span>1234 Street Name, City Name</span></div>
+                    <div class="f-data phone"><img src="img/phone-ico.png" alt='img' /> Phone: <span>(123) 456-7890</span></div>
+                    <div class="f-data e-mail"><img src="img/mail-ico.png" alt='img' /> Email: <span>theme@solido.com</span></div>
+                </div>
+                <div class="foot-third hideme dontHide">
+                    <div class="f-title-one">contact</div>
+                    <div class="f-title-two">Business Hours</div>
+                    <div class="f-data hour-1"><img src="img/hours-ico.png" alt='img' /> Mon. - Fri. <span>8am to 5pm</span></div>
+                    <div class="f-data hour-2"><img src="img/hours-ico.png" alt='img' /> Sat. <span>8am to 11am</span></div>
+                    <div class="f-data hour-3"><img src="img/hours-ico.png" alt='img' /> Sun. <span>Closed</span></div>
+                </div>
+                <div class="foot-third hideme dontHide">
+                    <form method="post" class="peThemeContactForm" />
+                        <div id="personal" class="bay form-horizontal">
+                            <div class="control-group"><!--name field-->
+                                <div class="controls">
+                                    <input class="required span9" type="text" name="author" data-fieldid="0" value="Full Name" onclick="if(this.value=='Full Name') this.value=''" onblur="if(this.value=='') this.value='Full Name'" />
+                                </div>
+                            </div>
+                            <div class="control-group"><!--email field-->
+                                <div class="controls">
+                                    <input class="required span9" type="text" name="email" data-fieldid="1" value="Your Email" onclick="if(this.value=='Your Email') this.value=''" onblur="if(this.value=='') this.value='Your Email'" />
+                                </div>
+                            </div>
+                            <div class="control-group"><!--message field-->
+                                <div class="controls">
+                                    <textarea name="message" rows="12" class="required span9" data-fieldid="2" onclick="if(this.value=='Type Message') this.value=''" onblur="if(this.value=='') this.value='Type Message'">Type Message</textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls send-btn">
+                                    <button type="submit" class="contour-btn red">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notifications">
+                            <div id="contactFormSent" class="formSent alert alert-success">
+                                <strong>Your Message Has Been Sent!</strong> Thank you for contacting us.</div> 
+                            <div id="contactFormError" class="formError alert alert-error">
+                                <strong>Oops, An error has ocurred!</strong> See the marked fields above to fix the errors.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <a href="#" class="scrollup">^</a>
+        <div id="maps">
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <div class="map-content">
+                <div class="wpgmappity_container inner-map" id="wpgmappitymap"></div>
+            </div>
+        </div>
+        <div class="socialFooter">
+            <div class="social-icons">
+                <div class="social">
+                    <a href="https://es-es.facebook.com/" target="_blank"><div class="face"></div></a>
+                    <a href="https://twitter.com/" target="_blank"><div class="twitt"></div></a>
+                    <a href="https://plus.google.com/" target="_blank"><div class="plus"></div></a>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="copy">2013 © Solido. All rights reserved.</div>           
+        </div>
+
+
+
+        <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
+
+        <script>
+
+
+$(document).ready(function(){
+    
+/* VEGAS Home Slider */
+    function loadVegas(){
+        $.vegas('slideshow', {
+              backgrounds:[
+                <% total_images = @header_images.count %>
+                <% counter = 1 %>
+                <% @header_images.each do |image| %>
+                    <% if ((counter+1) > total_images) %>
+                        { src:'<%= image.image_url %>', fade:1000 }
+                    <% else %>
+                        { src:'<%= image.image_url %>', fade:1000 },
+                    <% end %>
+                <% end %>
+                
+
+              ]
+            })('overlay', {
+              src:'/assets/05.png'
+            });
+            $( "#vegas-next" ).click(function() {
+              $.vegas('next');
+            });
+            $( "#vegas-prev" ).click(function() {
+              $.vegas('previous');
+        });
+    }
+    
+    loadVegas();
+});
+        </script>
+
+    </body>
+</html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117130111) do
+ActiveRecord::Schema.define(version: 20140117194147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140117130111) do
     t.string   "country"
     t.string   "land_mark"
     t.string   "random_id"
+    t.integer  "template_id"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree

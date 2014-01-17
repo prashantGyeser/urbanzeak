@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   #validates :city, :first_name, :last_name, :presence => true
 
   has_many :integration_tokens
+  has_many :templates
 
   #after_create :send_welcome_email
   #after_create :autoresponder

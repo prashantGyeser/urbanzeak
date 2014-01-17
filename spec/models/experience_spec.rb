@@ -28,6 +28,7 @@
 #  country                :string(255)
 #  land_mark              :string(255)
 #  random_id              :string(255)
+#  template_id            :integer
 #
 
 require 'spec_helper'
