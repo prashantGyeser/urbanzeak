@@ -11,6 +11,22 @@
     </div>
   <% end %>
 
+  <div id="wizard">
+    <!-- First step - start -->
+    <h3>First Step</h3>
+    <div>
+      First step content
+    </div>
+    <!-- First step - end -->
+
+    <!-- Second step - start -->
+    <h3>Second Step</h3>
+    <div>
+      Second step content
+    </div>
+    <!-- Second step - end -->
+  </div>
+
   <div class="form-group">
     <%= f.label :name, "Name your experience" %>
     <%= f.text_field :name, :class => "form-control",:placeholder => "Write a short title for this experience. Should be less than 3 words", :autofocus => true, :required => "required" %>
@@ -71,20 +87,6 @@
     <br/>
     <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
   </div>
-
-  <div class="form-group">
-    <%# f.label :exp_images, "Upload Your Avatar:" %>
-    <%# f.filepicker_field :exp_images%>
-  </div>
-
-
-  <!--
-  <div class="form-group">
-    <%# f.label :image %>
-    <br/>
-    <%# f.file_field :image, :class => "form-control", :required => "required" %>
-  </div>
-  -->
 
   <div class="form-group">
     <%= f.label :image, "Upload header images" %>

@@ -70,7 +70,22 @@
   <%= javascript_include_tag "newExperience/jquery.iframe-transport"%>
   <%= javascript_include_tag "newExperience/jquery.fileupload"%>
   <%= javascript_include_tag "newExperience/bootstrap"%>
+  <%= javascript_include_tag "newExperience/jquery.steps"%>
   <%= javascript_include_tag "newExperience/experience"%>
+
+  <script>
+    $(document).ready(function(){
+
+      $('#wizard h3').hide();
+
+      $('#wizard').steps({
+        headerTag: "h3",
+        bodyTag: "div"
+        //transitionEffect: "slideLeft"
+      });
+    });
+  </script>
+
 </body>
 </html>
 <!--
