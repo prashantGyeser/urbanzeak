@@ -25,6 +25,8 @@ Urbanzeak::Application.routes.draw do
     post 'integrations/postToFacebook'
     post 'integrations/setConfig'
     get "notifications/communication"
+    get "templates" => "templates#index"
+    resources :templates
   end
 
   get "home/index"

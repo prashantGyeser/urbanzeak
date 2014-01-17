@@ -1,0 +1,63 @@
+<div class="content-header">
+  <h1 class="title">
+    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+    Your Templates
+  </h1>
+  <row>
+    </div>
+  </row>
+</div>
+
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset" ng-app="chatApp">
+    <div class="experienceButtonContainer">
+        <%= link_to dashboard_templates_new_path, :class=> "button" do %>
+            <i class="fa fa-plus"></i>
+            Create Template
+        <% end %>
+    </div>
+    
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="experienceList">
+          <% @templates.each do |template| %>
+            <li class="clearfix">
+            
+                <div class="experienceDetails">
+                    <div class="heading">
+                        <strong><%= link_to template.name, template_path(template)%></strong>
+                    </div>
+                    <div class="subDetails">
+                        <ul>
+                            <li>Attendees: <strong>5</strong></li>
+                            <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
+                        </ul>
+                        <div class="shareUrl">
+                            <strong>URL to share:</strong>
+                            <span><%# link_to experience.shortened_url, experience.shortened_url %></span>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="experienceCommands pull-right">
+                <!-- Split button -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Edit</button>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </li>
+          <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
