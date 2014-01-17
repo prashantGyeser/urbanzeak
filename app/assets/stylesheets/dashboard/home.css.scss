@@ -1,6 +1,38 @@
-// Place all the styles related to the dashboard/home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/************************************************************************/
+/* Colors */
+/************************************************************************/
+$brand_orange: #f47238;
+$brand_blue: #00a9d4;
+$brand_off_white: #ebebe3;
+$brand_blue_toned_down: #cad4d5;
+$contrast_green: #00932c;
+/************************************************************************/
+/* Onboarding section styles */
+/************************************************************************/
+.onboarding_steps
+{
+	//color: #aaa;
+	ul
+	{
+		list-style: none;
+		padding: 0;
+		li
+		{
+			margin-top: 20px;
+			border-top: 1px solid #eee;
+			border-bottom: 1px solid #eee;
+			padding: 20px 0;
+			img
+			{
+				float: left;
+				margin-right: 20px;
+			}
+		}
+	}
+}
+/************************************************************************/
+/* Reports section styles */
+/************************************************************************/
 .keyStat
 {
 	background: #eee;
