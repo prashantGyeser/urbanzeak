@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117073457) do
+ActiveRecord::Schema.define(version: 20140117120053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -212,6 +212,30 @@ ActiveRecord::Schema.define(version: 20140117073457) do
   add_index "shortened_urls", ["owner_id", "owner_type"], name: "index_shortened_urls_on_owner_id_and_owner_type", using: :btree
   add_index "shortened_urls", ["unique_key"], name: "index_shortened_urls_on_unique_key", unique: true, using: :btree
   add_index "shortened_urls", ["url"], name: "index_shortened_urls_on_url", using: :btree
+
+  create_table "templates", force: true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.text     "description"
+    t.text     "what_does_it_include"
+    t.text     "things_to_remember"
+    t.decimal  "price"
+    t.date     "exp_date"
+    t.time     "exp_time"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address_line_one"
+    t.string   "address_line_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zipcode"
+    t.string   "landmark"
+    t.integer  "max_seats"
+    t.string   "random_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
