@@ -22,10 +22,29 @@ $contrast_green: #00932c;
 			border-top: 1px solid #eee;
 			border-bottom: 1px solid #eee;
 			padding: 20px 0;
+			.step
+			{
+				//margin-right: 60px;
+				display: inline;
+			}
+			p
+			{
+				margin-right: 60px;
+				margin-top: 5px;
+				//float: left;
+
+			}			
 			img
 			{
 				float: left;
 				margin-right: 20px;
+			}
+			.step_status
+			{
+				font-size: 30px;
+				color: $contrast_green;
+				display: inline;
+				margin-top: -75px;
 			}
 		}
 	}
