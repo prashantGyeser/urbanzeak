@@ -5,9 +5,10 @@
 #  id            :integer          not null, primary key
 #  image         :string(255)
 #  experience_id :integer
-#  type          :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  random_id     :string(255)
+#  image_type    :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

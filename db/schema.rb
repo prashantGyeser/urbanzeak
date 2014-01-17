@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116134825) do
+ActiveRecord::Schema.define(version: 20140117073457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,6 +191,14 @@ ActiveRecord::Schema.define(version: 20140116134825) do
   add_index "messages", ["experience_id"], name: "index_messages_on_experience_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
+  create_table "reviews", force: true do |t|
+    t.text     "comment"
+    t.integer  "experience_id"
+    t.string   "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shortened_urls", force: true do |t|
     t.integer  "owner_id"
     t.string   "owner_type", limit: 20
@@ -224,6 +232,7 @@ ActiveRecord::Schema.define(version: 20140116134825) do
     t.boolean  "host"
     t.string   "guid"
     t.string   "internal_email_id"
+    t.boolean  "tour_completed"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -21,6 +21,7 @@
 #  host                   :boolean
 #  guid                   :string(255)
 #  internal_email_id      :string(255)
+#  tour_completed         :boolean
 #
 
 require 'spec_helper'
