@@ -9,6 +9,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     @experience = Experience.new
     @experience_image = ExperienceImage.new
     @random_temp_experience_id = SecureRandom.hex(15)
+    @template_id = params[:template_id]
     render :layout => false
   end
 

@@ -1,0 +1,32 @@
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <div class="form-group">
+      <%= f.label :exp_date %>
+      <br/>
+      <%= f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :exp_time %>
+      <br/>
+      <%= f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
+    </div>
+  </div>
+  <%= f.hidden_field :template_id, :value => @template_id %>
+  <div class="actions">
+    <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
+  </div>
+<% end %>
+
+

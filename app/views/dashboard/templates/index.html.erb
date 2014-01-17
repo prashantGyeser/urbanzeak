@@ -11,7 +11,7 @@
 <!-- Keep all page content within the page-content inset div! -->
 <div class="page-content inset" ng-app="chatApp">
     <div class="experienceButtonContainer">
-        <%= link_to dashboard_templates_new_path, :class=> "button" do %>
+        <%= link_to new_dashboard_template_path, :class=> "button" do %>
             <i class="fa fa-plus"></i>
             Create Template
         <% end %>
@@ -25,7 +25,7 @@
             
                 <div class="experienceDetails">
                     <div class="heading">
-                        <strong><%= link_to template.name, template_path(template)%></strong>
+                        <strong><%= link_to template.name, dashboard_template_path(template)%></strong>
                     </div>
                     <div class="subDetails">
                         <ul>
@@ -40,9 +40,12 @@
                 </div>
             
             <div class="experienceCommands pull-right">
+              <% path_to_new_exp_form = dashboard_experiences_new_path + '/' + template.id.to_s %>
+              <%= link_to "Create experience", path_to_new_exp_form, :class => "button" %>
                 <!-- Split button -->
+                <!--
                 <div class="btn-group">
-                  <button type="button" class="btn btn-default">Edit</button>
+                  <button type="button" class="btn btn-default">Create experience from template</button>
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
@@ -53,6 +56,7 @@
                     
                   </ul>
                 </div>
+              -->
               </div>
             </li>
           <% end %>
