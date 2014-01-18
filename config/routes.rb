@@ -16,6 +16,7 @@ Urbanzeak::Application.routes.draw do
     root "home#index"
     get "chat" => "chat#index"
     get "experiences" => "experiences#index"
+    get "experiences/new/:experience_id" => "experiences#new"
     get "experiences/new"
     get "experiences/show"
     get "experiences/templates"

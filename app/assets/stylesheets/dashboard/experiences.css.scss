@@ -51,11 +51,15 @@
         list-style: none;
         margin: 10px 0 0 0;
         padding: 0;
-        color: #6f6f4f;
         li
         {
           display: inline;
           margin-right: 10px;
+          color: #c8c8c8;
+          strong
+          {
+            color: #797979;
+          }
         }
       }
     }
