@@ -41,7 +41,10 @@
             
             <div class="experienceCommands pull-right">
               <% url_to_go_to = dashboard_experiences_new_path + '/' + experience.id.to_s  %>
-              <%= link_to "Replicate", url_to_go_to, :class => "button"  %>
+              <div class="button-group pull-left">
+                <%= link_to "Edit", dashboard_experience_edit_path(experience), :class => "button"  %>
+                <%= link_to "Replicate", url_to_go_to, :class => "button"  %>
+              </div><!-- /.button-group -->
             </div>
             </li>
           <% end %>

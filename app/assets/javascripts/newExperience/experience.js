@@ -1,6 +1,14 @@
 $(document).ready(function(){
 
-    $('#new_experience_image').fileupload();
+    $('#new_experience_image').fileupload({
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    });
 
     // Change this to the location of your server-side upload handler:
     /*
