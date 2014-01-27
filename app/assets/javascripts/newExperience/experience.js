@@ -10,6 +10,10 @@ $(document).ready(function(){
         }
     });
 
+    $(function(){
+        $('select').selectric();
+    });
+
     // Change this to the location of your server-side upload handler:
     /*
     var url = '/images/create_header';

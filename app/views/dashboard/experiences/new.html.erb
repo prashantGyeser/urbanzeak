@@ -9,8 +9,9 @@
   <title>Dashboard | UrbanZeak</title>
   
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "buttons", media: "all", "data-turbolinks-track" => true %>
+  <%# stylesheet_link_tag    "buttons", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "fileuploader/jquery.fileupload", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "dashboard/selectric", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/newExperience", media: "all", "data-turbolinks-track" => true %>
  
   <!-- JavaScript -->
@@ -21,22 +22,22 @@
 
 
   <!-- Add custom CSS here -->
-  <!--  
+
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-
+  
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
-  -->
+  
 
 </head>
 
-<body style="background: #ebebe3;">
+<body style="background: #3d4548;">
 
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2">
       <div id="newExperience">
         <%# render 'form' %>
         <%= render 'form' %>
@@ -72,6 +73,8 @@
   <%= javascript_include_tag "newExperience/jquery.fileupload"%>
   <%= javascript_include_tag "newExperience/bootstrap"%>
   <%= javascript_include_tag "newExperience/experience"%>
+  <%= javascript_include_tag "newExperience/jquery.selectric"%>
+  
 </body>
 </html>
 <!--

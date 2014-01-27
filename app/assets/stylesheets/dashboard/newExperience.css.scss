@@ -6,7 +6,9 @@ $brand_blue: #00a9d4;
 $brand_off_white: #ebebe3;
 $brand_blue_toned_down: #cad4d5;
 $contrast_green: #00e23c;
-
+$header_bg_color: #ecf0f3;
+$trial_bg_color: #3d4548;
+$sub_blue: #ccd1d2;
 /************************************************************************/
 /* Address */
 /************************************************************************/
@@ -22,13 +24,14 @@ $contrast_green: #00e23c;
 /************************************************************************/
 body
 {
-  //background: $brand_off_white;
+  background: $trial_bg_color;
 }
 h1, h2, h3, h4
 {
   font-weight: 500;
   text-transform: uppercase;
   font-family: 'Raleway', Georgia, Cambria, 'Times New Roman', times, serif;
+  color: #8d989a;
 }
 h1.title
 {
@@ -44,46 +47,71 @@ h1.title
   border: 1px solid #d5d5d5;
   margin: 50px 0;
   border-radius: 6px;
-  .first-title
+
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(61,69,71,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(61,69,71,1);
+  box-shadow: 0px 0px 10px 5px rgba(61,69,71,1);
+
+  input[type=text]
   {
-    //text-transform: uppercase;
-    margin-bottom: 40px;
-    color: #999;
-    h2
-    {
-      padding-top: 8px;
-    }
-    .numberCircle
-    {
-      // Circle styling -- start
-      border-radius: 50%;
-      behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-
-      width: 50px;
-      height: 50px;
-      padding: 2px 8px 8px 8px;
-
-      background: #fff;
-      border: 2px solid #999;
-      color: #999;
-      text-align: center;
-
-      font-size: 32px;
-      // Circle styling -- end
-      float: left;
-      margin-right: 20px;
-    }
+    border: 1px solid $sub_blue;
   }
 
   .form-group
   {
-    margin-left: 74px;
-    label
+    margin-bottom: 20px;
+
+  }
+
+  .first-title
+  {
+    //text-transform: uppercase;
+    margin-bottom: 40px;
+    //color: #999;
+    h2
     {
-      color: #bbb;
-      text-transform: uppercase;
-      padding: 0 10px;
+      padding-top: 15px;
+      font-size: 16px;
     }
+    img
+    {
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  .subRows 
+  {
+    margin-left: 74px;
+    margin-bottom: 20px;
+    .image-upload
+    {
+      //margin-right: -74px;
+      border: 2px dashed $sub_blue;
+      padding:  20px 5px;
+      text-align: center;
+      span
+      {
+        color: $brand_blue;
+      }
+      i
+      {
+        display: block;
+        font-size: 60px;
+        color: $sub_blue;
+        margin: 10px 0;
+      }
+    }
+    
+  }
+  label
+  {
+    color: #bbb;
+    font-size: 12px;
+    display: block;
+  }
+  .form-group
+  {
+    margin-left: 74px;
   }
 
   .map_canvas
@@ -140,6 +168,52 @@ h1.title
         }
 
       }
+    }
+
+  }
+  .experienceSchedule 
+  {
+    margin-left: 74px;
+    .scheduleFor
+    {
+      //float: left;
+      font-weight: bold;
+    }
+    .dayBox
+    {
+      background: $sub_blue;
+      display: inline-block;
+      padding: 5px 10px;
+      color: $trial_bg_color;
+      font-weight: bold;
+      &:hover
+      {
+        background: $trial_bg_color;
+        color: $sub_blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .description
+  {
+    margin-left: 74px;
+    textarea
+    {
+      border: 1px solid $sub_blue;
+      border-top-left-radius:4px;
+      border-top-right-radius:4px;
+      border-bottom-right-radius:0;
+      border-bottom-left-radius:0;
+
+    }
+    .additionaActions
+    {
+      border: 1px solid $sub_blue;
+      border-top: none;
+      padding: 10px;
+      border-bottom-right-radius:4px;
+      border-bottom-left-radius:4px;
     }
 
   }
