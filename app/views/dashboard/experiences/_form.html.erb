@@ -27,7 +27,9 @@
           <div class="col-md-4">
             <label>Upload Image</label>
             <div class="image-upload">
-              <a href="#" class="button is-secondary" style="color: white">Browse Images</a>
+              <button class="button is-secondary" data-toggle="modal" data-target="#fileUploadModal" style="font-weight:bold; color:white;">
+                Browser Images
+              </button>
             </div>
           </div>
           <div class="col-md-8">
@@ -74,7 +76,7 @@
         </div>
 
 
-        
+
 
       </div>
     </div>
@@ -196,3 +198,37 @@
 <% end %>
 
 
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="fileUploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Browse and upload images</h4>
+      </div>
+      <div class="modal-body">
+        <span class="btn btn-success fileinput-button">
+            <i class="fa fa-plus"></i>
+            <span>Add files...</span>
+            <!-- The file input field used as target for the file upload widget -->
+            <input id="new_experience_image" type="file" name="files[]" multiple>
+        </span>
+        <br>
+        <br>
+        <!-- Progress -->
+        <!-- The global progress bar -->
+        <div id="progress" class="progress">
+            <div class="progress-bar progress-bar-success"></div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+    
     /*
     $('#new_experience_image').fileupload({
         progressall: function (e, data) {
@@ -9,7 +11,8 @@ $(document).ready(function(){
             );
         }
     });
-
+*/
+    /*
     $(function(){
         $('select').selectric();
     });
@@ -27,10 +30,10 @@ $(document).ready(function(){
 
 
     // Change this to the location of your server-side upload handler:
-    /*
+    
     var url = '/images/create_header';
 
-    $('#fileupload').fileupload({
+    $('#new_experience_image').fileupload({
         url: url,
         dataType: 'json',
         done: function (e, data) {
@@ -47,6 +50,6 @@ $(document).ready(function(){
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
-    */
+    
 })
 

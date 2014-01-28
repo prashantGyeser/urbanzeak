@@ -12,6 +12,7 @@
  *= require buttons
  *= require icheck/blue.css
  *= require nanoscroller
+ *= require fileuploader/jquery.fileupload
  *= require_self
  *= require_tree .
  */

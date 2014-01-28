@@ -93,3 +93,16 @@ $contrast_green: #00932c;
     		}
     	}
 }  
+.ui-state-highlight
+{
+	background: $brand_blue;
+	color: white;
+	a
+	{
+		color: white;
+	}
+}
+.ui-state-active
+{
+	color: white;
+}
