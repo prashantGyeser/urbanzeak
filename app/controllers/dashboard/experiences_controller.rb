@@ -20,7 +20,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
 
     
-    render :layout => false
+    #render :layout => false
   end
 
   def show

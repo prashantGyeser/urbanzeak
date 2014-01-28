@@ -11,69 +11,84 @@
     </div>
   <% end %>
   <div class="first-title">
-    <%= image_tag "new-experience-general-info.png" %>
-    <h2>Experience details</h2>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :name, "Name your experience" %>
-    <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
-  </div>
-
-  <div class="subRows">
     <div class="row">
-      <div class="col-md-4">
-        <label>Upload Image</label>
-        <div class="image-upload">
-          <span>Drag and drop images</span>
-          <i class="fa fa-picture-o"></i>
-          <a href="#" class="button is-secondary">Or Browse</a>
-        </div>
+      <div class="col-md-1">
+        <%= image_tag "new-experience-general-info.png", :class => "img-responsive pull-left" %>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-11">
+        <h2>Experience details</h2>
+
+        <div class="form-group">
+          <%= f.label :name, "Name your experience" %>
+          <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+        </div>
+
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
+            <label>Upload Image</label>
+            <div class="image-upload">
+              <a href="#" class="button is-secondary" style="color: white">Browse Images</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
 
 
-            <%= f.label :price, "Price per ticket" %>
-            <div class="input-group">
-              <!-- Todo: This needs to be changed to reflect the symbol for each users currency -->
-              <span class="input-group-addon">$</span>
-              <%= f.text_field :price, :class => "form-control", :required => "required" %>        
+                <%= f.label :price, "Price per ticket" %>
+                <div class="input-group">
+                  <!-- Todo: This needs to be changed to reflect the symbol for each users currency -->
+                  <span class="input-group-addon">$</span>
+                  <%= f.text_field :price, :class => "form-control", :required => "required" %>        
+                </div>
+
+              </div>
+              <div class="col-md-6">
+                <%= f.label :max_seats, "Total number of tickets" %>
+                <%= f.text_field :max_seats, :class => "form-control", :required => "required" %>
+              </div>
             </div>
 
+
+                <%# f.label :exp_date %>
+                <!--
+                <label>Experience schedule</label>
+                <input type="text">
+              -->
+                <%# f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>  
           </div>
-          <div class="col-md-6">
-            <%= f.label :max_seats, "Total number of tickets" %>
-            <%= f.text_field :max_seats, :class => "form-control", :required => "required" %>
+        </div>
+            
+        <div class="experienceSchedule">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Experience schedule</label>
+              <div id="schedule_calendar"></div>
+            </div>
+
+            <div class="col-md-6">
+              <label>Experience Days</label>
+              
+            </div>
           </div>
         </div>
 
 
-          <%# f.label :exp_date %>
-          <!--
-          <label>Experience schedule</label>
-          <input type="text">
-        -->
-          <%# f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>  
+        
+
       </div>
     </div>
+    
   </div>
   
 
-  <div class="experienceSchedule">
-    <div class="row">
-      <div class="col-md-6">
-        <label>Experience schedule</label>
-        <div id="schedule_calendar"></div>
-      </div>
 
-      <div class="col-md-6">
-        <label>Experience Days</label>
-        
-      </div>
-    </div>
-  </div>
+  
+
+  
+  
+
+  
 
 
   

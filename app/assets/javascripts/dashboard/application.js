@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dashboard/jquery-ui/jquery-ui
+//= require dashboard/datepicker/jquery-ui.multidatespicker
 //= require bootstrap
 //= require dashboard/icheck
 //= require jquery.easydropdown

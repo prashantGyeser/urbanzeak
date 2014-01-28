@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     /*
     $('#new_experience_image').fileupload({
         progressall: function (e, data) {
@@ -18,7 +17,11 @@ $(document).ready(function(){
     //$('#schedule_calendar').multiDatesPicker();
 
     $(function() {
-        $( "#schedule_calendar" ).multiDatesPicker();
+        $( "#schedule_calendar" ).multiDatesPicker({
+            dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>'
+        });
       });
 
 

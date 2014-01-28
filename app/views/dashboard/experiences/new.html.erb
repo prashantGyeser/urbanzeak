@@ -1,94 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="UrbanZeak">
-
-  <title>Dashboard | UrbanZeak</title>
-  
-  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-
-  <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
-  <%# stylesheet_link_tag    "buttons", media: "all", "data-turbolinks-track" => true %>
-
-
-
-  <%= stylesheet_link_tag    "fileuploader/jquery.fileupload", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/selectric", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/newExperience", media: "all", "data-turbolinks-track" => true %>
- 
-  <!-- JavaScript -->
-  <!--
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  -->
-  <!--[if IE]><script language="javascript" type="text/javascript" src="js/libs/excanvas.js"></script><![endif]-->
-
-
-  <!-- Add custom CSS here -->
-
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-  
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
-  
-
-</head>
-
-<body>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div id="newExperience">
-        <%# render 'form' %>
-        <%= render 'form' %>
-      </div>
+<div class="content-header">
+  <h1 class="title">
+    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+    New experience
+  </h1>
+  <row>
     </div>
-    <div class="col-md-3"></div>
+  </row>
+</div>
+
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset" ng-app="chatApp">
+  <div id="newExperience">
+    <%= render 'form' %>
   </div>
 </div>
-  
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Upload header images</h4>
-      </div>
-      <div class="modal-body">
-        
-        <%# render :partial => "experience_images/form" %>
-        <%= render :partial => "experience_images/form" %>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <%= javascript_include_tag "newExperience/jquery-ui.multidatespicker.js"%>
-  <%= javascript_include_tag "newExperience/jquery.ui.widget"%>
-  <%= javascript_include_tag "newExperience/jquery.iframe-transport"%>
-  <%= javascript_include_tag "newExperience/jquery.fileupload"%>
-  <%= javascript_include_tag "newExperience/bootstrap"%>
-  <%= javascript_include_tag "newExperience/experience"%>
-  <%= javascript_include_tag "newExperience/jquery.selectric"%>
-
-    
-</body>
-</html>
-<!--
-<script>
-  $('#experience_city').geocomplete({
-    map: ".map_canvas"
-  });
-</script>
--->
