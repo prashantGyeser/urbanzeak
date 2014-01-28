@@ -14,6 +14,14 @@ $(document).ready(function(){
         $('select').selectric();
     });
 
+    //$('#schedule_calendar').multiDatesPicker();
+
+    $(function() {
+        $( "#schedule_calendar" ).multiDatesPicker();
+      });
+
+
+
     // Change this to the location of your server-side upload handler:
     /*
     var url = '/images/create_header';

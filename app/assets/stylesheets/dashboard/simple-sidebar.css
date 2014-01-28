@@ -7,7 +7,8 @@
   margin-left: -250px;
   left: 250px;
   width: 250px;
-  background: #ebebe3;
+  /*background: #ebebe3;*/
+  background: #323232;
   position: fixed;
   height: 100%;
   overflow-y: auto;
@@ -34,14 +35,15 @@
 }
 
 .sidebar-nav li a {
-  color: #abab8a;
+  /*color: #abab8a;*/
+  color: #fff;
   display: block;
   text-decoration: none;
   font-weight: bold;
 }
 
 .sidebar-nav li a:hover {
-  color: #656548;
+  color: #323232;
   /*background: rgba(255,255,255,0.2);*/
   background: white;
   text-decoration: none;

@@ -8,8 +8,13 @@
 
   <title>Dashboard | UrbanZeak</title>
   
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
   <%# stylesheet_link_tag    "buttons", media: "all", "data-turbolinks-track" => true %>
+
+
+
   <%= stylesheet_link_tag    "fileuploader/jquery.fileupload", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/selectric", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/newExperience", media: "all", "data-turbolinks-track" => true %>
@@ -32,7 +37,7 @@
 
 </head>
 
-<body style="background: #3d4548;">
+<body>
 
 
 <div class="container">
@@ -68,13 +73,16 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <%= javascript_include_tag "newExperience/jquery-ui.multidatespicker.js"%>
   <%= javascript_include_tag "newExperience/jquery.ui.widget"%>
   <%= javascript_include_tag "newExperience/jquery.iframe-transport"%>
   <%= javascript_include_tag "newExperience/jquery.fileupload"%>
   <%= javascript_include_tag "newExperience/bootstrap"%>
   <%= javascript_include_tag "newExperience/experience"%>
   <%= javascript_include_tag "newExperience/jquery.selectric"%>
-  
+
+    
 </body>
 </html>
 <!--
