@@ -24,7 +24,7 @@ class ExperiencesController < ApplicationController
     #@experience = Experience.new(experience_params)
     
     @experience = Experience.new
-    logger.debug "the params are: #{params}"
+    logger.debug "the params are from the experience ocntroller: #{params}"
     @experience.user_id = current_user.id
 
     #images = ExperienceImage.where(:random_id => @experience.random_id)    

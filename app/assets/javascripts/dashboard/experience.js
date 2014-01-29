@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    
+
     $('#special_instructions').hide();
+
+    var dates = [];
 
     $('#add_special_instructions').click(function(e){
         e.preventDefault();
@@ -33,7 +35,11 @@ $(document).ready(function(){
         $( "#schedule_calendar" ).multiDatesPicker({
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             prevText: '<i class="fa fa-chevron-left"></i>',
-            nextText: '<i class="fa fa-chevron-right"></i>'
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            onSelect: function(date) {
+                dates = $('#schedule_calendar').multiDatesPicker('getDates');    
+                console.log('The dates are:', dates);
+            }
         });
       });
  
@@ -60,14 +66,6 @@ $(document).ready(function(){
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
-    
-
-    $('#new_experience').submit(function(){
-        var dates = $('#schedule_calendar').multiDatesPicker('getDates');    
-        console.log("the dates are:", date);
-    })
-
-    
 
 })
 
