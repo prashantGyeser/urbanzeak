@@ -23,7 +23,7 @@ class ExperiencesController < ApplicationController
 
     #@experience = Experience.new(experience_params)
     
-    @experience = Experience.new
+    @experience = Experience.new(experience_params)
     logger.debug "the params are from the experience ocntroller: #{params}"
     @experience.user_id = current_user.id
     logger.debug "The value in the dates is: #{params[:experience][:exp_date]}"
@@ -74,7 +74,7 @@ class ExperiencesController < ApplicationController
           @experience_date.experience_id = @experience.id
           @experience_date.save
         end
-        
+
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
           
         @experience.shortened_url = root_url + url.unique_key + '/'
@@ -133,6 +133,6 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:exp_date, :exp_time, :template_id)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id)
     end
 end
