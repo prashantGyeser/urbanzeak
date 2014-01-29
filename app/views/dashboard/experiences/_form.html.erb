@@ -168,7 +168,7 @@
       </div>
       <div class="col-md-11">
         <div class="actions">
-          <%= f.submit :class => "button is-primary", :style => "font-weight: bold; color: white" %>
+          <%= f.submit :class => "button is-primary", :style => "font-weight: bold; color: white", :id => "new_experience_form_submit" %>
         </div>
       </div>
     </div><!-- Row end -->
@@ -178,6 +178,7 @@
   <%= f.hidden_field :latitude%>>
   <%= f.hidden_field :longitude %>
   <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
+  <%= f.hidden_field :exp_date %>
 
 <% end %>
 

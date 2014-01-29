@@ -7,9 +7,7 @@ $(document).ready(function(){
     $('#add_special_instructions').click(function(e){
         e.preventDefault();
         $('.additionaActions').hide();
-
         $('#special_instructions').show();
-
     });
 
     
@@ -36,9 +34,11 @@ $(document).ready(function(){
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
+            dateFormat: 'yy-mm-dd',
             onSelect: function(date) {
                 dates = $('#schedule_calendar').multiDatesPicker('getDates');    
-                console.log('The dates are:', dates);
+                $('#experience_exp_date').val(dates);
+                console.log('The value in the hidden field is:', $('#experience_exp_date').val());
             }
         });
       });

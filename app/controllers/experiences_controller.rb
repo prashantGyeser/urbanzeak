@@ -26,13 +26,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new
     logger.debug "the params are from the experience ocntroller: #{params}"
     @experience.user_id = current_user.id
-
+    logger.debug "The value in the dates is: #{params[:experience][:exp_date]}"
     #images = ExperienceImage.where(:random_id => @experience.random_id)    
 
     #images.each do |image|
       #image.experience_id = @experience.id
       #image.save
     #end
+    
 
 
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
@@ -62,9 +63,18 @@ class ExperiencesController < ApplicationController
       postResults = postChoreo.execute(postInputs)
         
     end
-          
+         
     respond_to do |format|
       if @experience.save
+        experience_dates = params[:experience][:exp_date].split(',')
+
+        experience_dates.each do |experience_date|
+          @experience_date = ExperienceDate.new
+          @experience_date.experience_date =   experience_date
+          @experience_date.experience_id = @experience.id
+          @experience_date.save
+        end
+        
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
           
         @experience.shortened_url = root_url + url.unique_key + '/'
