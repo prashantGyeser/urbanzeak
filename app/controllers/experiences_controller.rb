@@ -22,19 +22,10 @@ class ExperiencesController < ApplicationController
   def create
 
     #@experience = Experience.new(experience_params)
-    template = Template.find(params[:experience][:template_id])
+    
     @experience = Experience.new
     logger.debug "the params are: #{params}"
-
     @experience.user_id = current_user.id
-    @experience.name = template.name
-    @experience.summary = template.name
-    @experience.description = template.description
-    @experience.exp_date = params[:experience][:exp_date]
-    @experience.exp_time = params[:experience][:exp_time]
-    @experience.price = params[:experience][:exp_time]
-    @experience.max_seats = params[:experience][:exp_time]
-    @experience.random_id = template.random_id
 
     #images = ExperienceImage.where(:random_id => @experience.random_id)    
 
