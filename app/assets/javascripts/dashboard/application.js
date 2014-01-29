@@ -22,5 +22,6 @@
 //= require dashboard/chart/jquery.flot
 //= require dashboard/chart/jquery.flot.pie
 //= require dashboard/fileuploader/jquery.fileupload
+//= require dashboard/timepicker/bootstrap-timepicker
 //= require turbolinks
 //= require_tree .

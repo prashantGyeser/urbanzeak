@@ -1,5 +1,15 @@
 $(document).ready(function(){
     
+    $('#special_instructions').hide();
+
+    $('#add_special_instructions').click(function(e){
+        e.preventDefault();
+        $('.additionaActions').hide();
+
+        $('#special_instructions').show();
+
+    });
+
     
     /*
     $('#new_experience_image').fileupload({
@@ -26,8 +36,8 @@ $(document).ready(function(){
             nextText: '<i class="fa fa-chevron-right"></i>'
         });
       });
-
-
+ 
+    $('#timepicker').timepicker();
 
     // Change this to the location of your server-side upload handler:
     
@@ -51,5 +61,13 @@ $(document).ready(function(){
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
     
+
+    $('#new_experience').submit(function(){
+        var dates = $('#schedule_calendar').multiDatesPicker('getDates');    
+        console.log("the dates are:", date);
+    })
+
+    
+
 })
 

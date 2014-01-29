@@ -69,18 +69,87 @@
             </div>
 
             <div class="col-md-6">
-              <label>Experience Days</label>
-              
+              <label>Experience Time</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                <input type="text" class="form-control" id="timepicker">
+              </div>
             </div>
           </div>
         </div>
 
 
-
-
-      </div>
+      </div> <!-- Col 11 end -->
     </div>
     
+    <div class="row" style="margin-top: 40px">
+      <div class="col-md-1">
+        <div class="first-title">
+          <%= image_tag "new-experience-general-info.png" %>
+        </div>      
+      </div>
+      <div class="col-md-11">
+        <h2>Experience description and things needed</h2>
+        <div class="description">
+          <%= f.label :description, "Describe your experience" %>
+          <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
+          <div class="additionaActions">
+            <a href="#" id="add_special_instructions">Add special instructions</a>
+          </div>
+        </div>
+
+        <div class="description" id="special_instructions">
+          <%= f.label :things_to_remember, "Special instructions" %>
+          <%= f.text_area :things_to_remember, :class => "form-control", :rows => 5, :required => "required" %>
+        </div>        
+
+      </div><!-- Col 11 end -->
+    </div><!-- Row end -->
+
+    <div class="row">
+      <div class="col-md-1">
+        <div class="first-title">
+          <%= image_tag "new-experience-general-info.png" %>
+          
+        </div>
+      </div>
+      <div class="col-md-11">
+
+        <h2>Meeting place</h2>
+        <!--
+        <label>Address</label>
+        <div class="address">
+          <div class="form-group">
+            <%= f.text_field :line_one, :class => "form-control",:placeholder => "Address line one" %>
+            <%= f.text_field :line_two, :class => "form-control",:placeholder => "Address line one" %>
+            <%= f.text_field :land_mark, :class => "form-control",:placeholder => "City" %>
+            <%= f.text_field :state, :class => "form-control",:placeholder => "State" %>
+            <%= f.text_field :country, :class => "form-control",:placeholder => "Country" %>
+            <%= f.text_field :pincode, :class => "form-control",:placeholder => "Pincode" %>
+          </div>  
+        </div>
+        -->
+
+        <div class="form-group">
+          <%= f.label :city, "Land mark" %>
+          <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
+          <div class="map_canvas"></div>
+        </div>
+      </div><!-- Col 11 end -->
+    </div><!-- Row end -->
+
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-11">
+        <div class="actions">
+          <%= f.submit :class => "button is-primary", :style => "font-weight: bold; color: white" %>
+        </div>
+      </div>
+    </div><!-- Row end -->
+
+
+
   </div>
   
 
@@ -100,18 +169,7 @@
     <%# f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
   </div>
 
-  <div class="first-title">
-    <%= image_tag "new-experience-general-info.png" %>
-    <h2>Experience description and things needed</h2>
-  </div>
 
-  <div class="description">
-    <%= f.label :description, "Describe your experience" %>
-    <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
-    <div class="additionaActions">
-      <a href="#">Add special instructions</a>
-    </div>
-  </div>
 
   <!--
   <div class="form-group">
@@ -130,30 +188,7 @@
   </div>
   -->
 
-  <div class="first-title">
-    <%= image_tag "new-experience-general-info.png" %>
-    <h2>Meeting place</h2>
-  </div>
-
-  <!--
-  <label>Address</label>
-  <div class="address">
-    <div class="form-group">
-      <%= f.text_field :line_one, :class => "form-control",:placeholder => "Address line one" %>
-      <%= f.text_field :line_two, :class => "form-control",:placeholder => "Address line one" %>
-      <%= f.text_field :land_mark, :class => "form-control",:placeholder => "City" %>
-      <%= f.text_field :state, :class => "form-control",:placeholder => "State" %>
-      <%= f.text_field :country, :class => "form-control",:placeholder => "Country" %>
-      <%= f.text_field :pincode, :class => "form-control",:placeholder => "Pincode" %>
-    </div>  
-  </div>
-  -->
-
-  <div class="form-group">
-    <%= f.label :city, "Land mark" %>
-    <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
-    <div class="map_canvas"></div>
-  </div>
+  
 
   
   
@@ -192,9 +227,7 @@
   <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
 
 
-  <div class="actions">
-    <%= f.submit :class => "button is-primary", :style => "font-weight: bold" %>
-  </div>
+  
 <% end %>
 
 
