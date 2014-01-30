@@ -90,109 +90,28 @@
         <article id="anchor3" class="content dark">
             <header class="title one">About us</header>
             <div class="spacer"></div>
-            <div class="title two">We are a fun mix of designers and strategists with a great passion for all things creative.</div>
-            <section class="team-box">
-                <div class="s-container team-grid">
-                    <div class="t-list">
-                        <div class="t-element hideme dontHide">
-                            <div class="t-photo">
-                                <div class="image-hover-overlay"></div>
-                                <a class="f-category" href="#"></a>
-                                <a href="mailto:john@solido.com"><div class="portfolio-meta">
-                                    <div>john@solido.com</div>
-                                </div></a>
-                                <img src="img/team/team-01.jpg" alt='img' />
-                            </div>
-                            <div class="t-data">
-                                <div class="t-name">John Matas</div>
-                                <div class="t-info">CEO</div>
-                                <div class="t-spacer"></div>
-                                <div class="t-social">
-                                    <div class="in-social">
-                                        <a href="#"><div class="ts facebook"></div></a>
-                                        <a href="#"><div class="ts twitter"></div></a>
-                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
-                                        <a href="#"><div class="ts tumblr"></div></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="t-element hideme dontHide">
-                            <div class="t-photo">
-                                <div class="image-hover-overlay"></div>
-                                <a class="f-category" href="#"></a>
-                                <a href="mailto:lia@solido.com"><div class="portfolio-meta">
-                                    <div>lia@solido.com</div>
-                                </div></a>
-                                <img src="img/team/team-02.jpg" alt='img' />
-                            </div>
-                            <div class="t-data">
-                                <div class="t-name">Lia Duprois</div>
-                                <div class="t-info">Developer</div>
-                                <div class="t-spacer"></div>
-                                <div class="t-social">
-                                    <div class="in-social">
-                                        <a href="#"><div class="ts facebook"></div></a>
-                                        <a href="#"><div class="ts twitter"></div></a>
-                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
-                                        <a href="#"><div class="ts tumblr"></div></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="t-element hideme dontHide">
-                            <div class="t-photo">
-                                <div class="image-hover-overlay"></div>
-                                <a class="f-category" href="#"></a>
-                                <a href="mailto:diego@solido.com"><div class="portfolio-meta">
-                                    <div>diego@solido.com</div>
-                                </div></a>
-                                <img src="img/team/team-03.jpg" alt='img' />
-                            </div>
-                            <div class="t-data">
-                                <div class="t-name">Diego Smith</div>
-                                <div class="t-info">Graphic Designer</div>
-                                <div class="t-spacer"></div>
-                                <div class="t-social">
-                                    <div class="in-social">
-                                        <a href="#"><div class="ts facebook"></div></a>
-                                        <a href="#"><div class="ts twitter"></div></a>
-                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
-                                        <a href="#"><div class="ts tumblr"></div></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="t-element hideme dontHide">
-                            <div class="t-photo">
-                                <div class="image-hover-overlay"></div>
-                                <a class="f-category" href="#"></a>
-                                <a href="mailto:elisa@solido.com"><div class="portfolio-meta">
-                                    <div>elisa@solido.com</div>
-                                </div></a>
-                                <img src="img/team/team-04.jpg" alt='img' />
-                            </div>
-                            <div class="t-data">
-                                <div class="t-name">Elisa Ronald</div>
-                                <div class="t-info">Marketing</div>
-                                <div class="t-spacer"></div>
-                                <div class="t-social">
-                                    <div class="in-social">
-                                        <a href="#"><div class="ts facebook"></div></a>
-                                        <a href="#"><div class="ts twitter"></div></a>
-                                        <!--<a href="#"><div class="ts pinterest"></div></a>-->
-                                        <a href="#"><div class="ts tumblr"></div></a>
-                                    </div>
-                                </div>
+            <div class="full">
+                <section class="half car-show-1">
+                    <div class="title-two">Host picture</div>
+                    <div class="show hideme dontHide">
+                        <div class="caroussel">
+                            <div class="caroussel-list">
+                                <div class="car-img"><img src="http://lorempixel.com/500/350" alt='img' /></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <section class="half">
+                    <div class="title-two">About the host</div>
+                    <div class="half-content hideme dontHide">
+                        <%= simple_format(@experience.description)  %>
+                    </div>
+                </section>
+            </div>
             <div class="clearfix"></div>
         </article>
         
-        
+        <!--  
         <article class="content light">
             <div class="full">
                 <section class="half hideme dontHide">
@@ -276,6 +195,7 @@
             </div>
             <div class="clear"></div>
         </article>
+    -->
         <div class="clear"></div>
         
         <footer id="anchor6" class="footer light">
@@ -298,7 +218,7 @@
                     <div class="f-data hour-3"><img src="img/hours-ico.png" alt='img' /> Sun. <span>Closed</span></div>
                 </div>
                 <div class="foot-third hideme dontHide">
-                    <form method="post" class="peThemeContactForm" />
+                    <form method="post" class="peThemeContactForm" id="sendMessage"/>
                         <div id="personal" class="bay form-horizontal">
                             <div class="control-group"><!--name field-->
                                 <div class="controls">
