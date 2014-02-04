@@ -51,9 +51,31 @@
         <div id="logx"></div>
         <header class="header">
             <div class="logo">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Phone number">
-                <button>Join now</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group" style="margin-top: 17px;">
+                                <input type="number" class="form-control input-lg" id="seats" placeholder="Seats">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group" style="margin-top: 17px;">
+                                <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-2">
+                            <button class="button is-secondary" style="color: white; font-weight:bold; width: 100%">Join now</button>
+                        </div>
+                        <div class="col-md-2">
+                            $<%= @experience.price %>/Ticket
+                        </div>
+
+                    </div>
+                </div>
+                
+        
             </div>
             
         </header>
