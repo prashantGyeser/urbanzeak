@@ -1,0 +1,60 @@
+<%= form_for(@host, :html => {:class => "form-horizontal", :role => "form"}) do |f| %>
+  <% if @host.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@host.errors.count, "error") %> prohibited this host from being saved:</h2>
+
+      <ul>
+      <% @host.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="row">
+      <%= f.label :about, :class => "col-md-2 control-label" %>
+      <div class="col-md-4">
+        <p>
+          Tell your visitors a bit about yourself, what you like doing and how you got started with what yoou are doing. You know how important a first impression can be!
+        </p>
+      </div>
+      <div class="col-md-6">
+        <%= f.text_area :about, :class => "form-control", :rows => "6" %>
+      </div>
+      
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <div class="form-group">
+      <label for="about" class="col-md-2 control-label">Picture</label>
+      <div class="col-md-4">
+        <%# profile_pic = false %>
+        <% if @host.avatar.blank? %>
+          <div class="noPic">
+            <i class="fa fa-cloud-upload"></i>
+            <p>Upload a photo</p>
+          </div>  
+        <% else %>
+          <%= image_tag @host.avatar_url(:thumb) %>
+        <% end %>
+        
+      </div>
+      <div class="col-md-6">
+        <!--
+        <button class="button is-secondary" style="font-weight:bold; color:white;">Upload a picture</button>
+      -->
+        <%= f.file_field :avatar, :class => "form-control"%>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="actions">
+    <%= f.submit 'Add about', :class => "button is-primary", :style => 'font-weight: bold;color:white;' %>
+    <span>or <%= link_to 'Cancel', root_path%></span>
+  </div>
+<% end %>
