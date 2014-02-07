@@ -1,3 +1,164 @@
+<!-- NEW EXPERIENCE FORM -->
+<%= form_for(@experience) do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="grid simple">
+        <!-- GRID TITLE -->
+        <div class="grid-title no-border">
+          <h4>Describe your experience</h4>
+        </div>
+        <!-- END GRID TITLE -->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Details</span></h3>
+          <p>
+            In this section give your experience a catchy title and describe it in detail. Paint a picture, tell people what they will get when they attend your experience and tell them why they should attend.
+          </p>
+          <br>
+          <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
+          <br>
+          <%= f.text_area :description, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+        </div>
+        <!--END GRID BODY-->
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="grid simple">
+        <!-- GRID TITLE -->
+        <div class="grid-title no-border">
+          <h4>Schedule your experience</h4>
+        </div>
+        <!-- END GRID TITLE -->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Schedule</span></h3>
+          <p>
+            How often does your experience happen? Select all the dates when it happens in the calendar below
+          </p>
+          <br>
+          <!-- START DATE AND TIME PICKER -->
+          <div class="input-append success date">
+            <input type="text" class="form-control" id="sandbox-advance">
+            <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span>
+          </div>
+          <br>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <div class="input-append bootstrap-timepicker-component">
+                <input type="text" class="timepicker-default span12">
+                <span class="add-on"><span class="arrow"></span><i class="fa fa-clock-o"></i></span> </div>
+            </div>
+          </div>
+          <!-- END DATE AND TIME PICKER -->
+
+          <div class="clearfix"></div>
+        </div>
+        <!--END GRID BODY-->
+      </div>
+    </div> <!-- END COL 4 - EXPERIENCE SCHEDULE -->
+
+  </div> <!-- END ROW -->
+
+  <div class="row">
+    <!-- 8 COL -->
+    <div class="col-md-8">
+      <div class="grid simple">
+        <!--HEADING-->
+        <div class="grid-title no-border">
+          Where should people come for this experience
+        </div>
+        <!--END HEADING-->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Meeting Place</span></h3>
+          <p>
+            Tell people where they should come for the experience.
+          </p>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :line_one, :class => "form-control", :placeholder=>"Address Line One" %>
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <%= f.text_field :line_two, :class => "form-control", :placeholder=>"Address Line Two" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :city, :class => "form-control", :placeholder=>"City" %>
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <%= f.text_field :state, :class => "form-control", :placeholder=>"State" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :country, :class => "form-control", :placeholder=>"Country" %>
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <%= f.text_field :pincode, :class => "form-control", :placeholder=>"Zipcode" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Landmark"/>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="map" style="width: 100%; height: 300px; background: #eee;"></div>
+            </div>
+          </div>
+
+        </div>
+        <!--END GRID BODY-->
+      </div>
+    </div>
+<% end %>
+    <!-- END 8 COL -->
+    <!-- 4 COL -->
+    <div class="col-md-4">
+      <div class="grid simple">
+        <div class="grid-title no-border">
+          <h4>Upload <span class="semi-bold">Pictures</span></h4>
+        </div>
+        <div class="grid-body no-border">
+          <div class="row-fluid">
+            <form action="/file-upload" class="dropzone no-margin dz-clickable">
+              <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END 4 COL -->
+  </div>
+
+
+<!-- END NEW EXPERIENCE FORM -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%= form_for(@experience) do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
@@ -183,37 +344,3 @@
 <% end %>
 
 
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="fileUploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Browse and upload images</h4>
-      </div>
-      <div class="modal-body">
-        <span class="btn btn-success fileinput-button">
-            <i class="fa fa-plus"></i>
-            <span>Add files...</span>
-            <!-- The file input field used as target for the file upload widget -->
-            <input id="new_experience_image" type="file" name="files[]" multiple>
-        </span>
-        <br>
-        <br>
-        <!-- Progress -->
-        <!-- The global progress bar -->
-        <div id="progress" class="progress">
-            <div class="progress-bar progress-bar-success"></div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

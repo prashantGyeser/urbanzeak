@@ -3,6 +3,11 @@
 <!--2. Total revenue chart -->
 <!--2. Total attendees chart -->
 
+<%= content_for :js do %>
+  <%= javascript_include_tag "dashboard/dashboard.js", 'data-turbolinks-track' => true %>
+<% end %>
+
+
 <!-- BEGIN PlACE PAGE CONTENT HERE -->
 <!-- BEGIN PAGE TITLE -->
 <div class="page-title">

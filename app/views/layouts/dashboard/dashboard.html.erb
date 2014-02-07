@@ -8,12 +8,17 @@
   <meta content="" name="description" />
   <meta content="" name="author" />
 
+  <!--CUSTOM CSS-->
+
+  <!--END CUSTOM CSS-->
+
   <!-- NEED TO WORK ON -->
   <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/animate.min", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/style", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/responsive", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/custom-icon-set", media: "all", "data-turbolinks-track" => true %>
+  <%= yield :css %>
 
   <!-- BEGIN CORE JS FRAMEWORK-->
   <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
@@ -25,16 +30,22 @@
   <%= javascript_include_tag "pace/pace.min", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "jquery-numberAnimate/jquery.animateNumbers", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "jquery-morris-chart/js/morris.min", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "dashboard/dashboard.js", 'data-turbolinks-track' => true %>
   <!-- END PAGE LEVEL PLUGINS -->
 
   <!-- BEGIN CORE TEMPLATE JS -->
-  <script src="assets/js/core.js" type="text/javascript"></script>
-  <script src="assets/js/chat.js" type="text/javascript"></script>
-  <script src="assets/js/demo.js" type="text/javascript"></script>
+  <%= javascript_include_tag "dashboard/core.js", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/chat.js", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/demo.js", 'data-turbolinks-track' => true %>
   <!-- END CORE TEMPLATE JS -->
 
   <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
+
+
 
 </head>
 <body class="">

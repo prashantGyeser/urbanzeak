@@ -1,16 +1,16 @@
-<div class="content-header">
-  <h1 class="title">
-    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
-    New experience
-  </h1>
-  <row>
-    </div>
-  </row>
-</div>
+<%= content_for :css do %>
+  <%= stylesheet_link_tag    "dropzone/css/dropzone.css", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+<%= content_for :js do %>
+  <%= javascript_include_tag "dropzone/dropzone.min.js", 'data-turbolinks-track' => true %>
+<% end %>
 
-<!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset" ng-app="chatApp">
-  <div id="newExperience">
-    <%= render 'form' %>
-  </div>
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>New Experience</h3>
 </div>
+<!-- END PAGE TITLE -->
+
+<!-- BEGIN PlACE PAGE CONTENT HERE -->
+<%= render 'form' %>
+<!-- END PLACE PAGE CONTENT HERE -->
