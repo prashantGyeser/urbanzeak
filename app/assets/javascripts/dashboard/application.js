@@ -12,16 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dashboard/jquery-ui/jquery-ui
-//= require dashboard/datepicker/jquery-ui.multidatespicker
-//= require bootstrap
-//= require dashboard/icheck
-//= require jquery.easydropdown
-//= require jquery.geocomplete
-//= require jquery.nanoscroller
-//= require dashboard/chart/jquery.flot
-//= require dashboard/chart/jquery.flot.pie
-//= require dashboard/fileuploader/jquery.fileupload
-//= require dashboard/timepicker/bootstrap-timepicker
+//= require jquery-ui/jquery-ui-1.10.1.custom.min
+//= require boostrapv3/js/bootstrap.min
+//= require breakpoints
+//= require jquery-unveil/jquery.unveil.min
+//= require jquery-block-ui/jqueryblockui
 //= require turbolinks
-//= require_tree .
+// require_tree .

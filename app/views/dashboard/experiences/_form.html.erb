@@ -1,219 +1,159 @@
+<!-- NEW EXPERIENCE FORM -->
 <%= form_for(@experience) do |f| %>
-  <% if @experience.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
-
-      <ul>
-        <% @experience.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="first-title">
-    <div class="row">
-      <div class="col-md-1">
-        <%= image_tag "new-experience-general-info.png", :class => "img-responsive pull-left" %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="grid simple">
+        <!-- GRID TITLE -->
+        <div class="grid-title no-border">
+          <h4>Describe your experience</h4>
+        </div>
+        <!-- END GRID TITLE -->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Details</span></h3>
+          <p>
+            In this section give your experience a catchy title and describe it in detail. Paint a picture, tell people what they will get when they attend your experience and tell them why they should attend.
+          </p>
+          <br>
+          <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
+          <br>
+          <%= f.text_area :description, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+        </div>
+        <!--END GRID BODY-->
       </div>
-      <div class="col-md-11">
-        <h2>Experience details</h2>
+    </div>
 
-        <div class="form-group">
-          <%= f.label :name, "Name your experience" %>
-          <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+    <div class="col-md-4">
+      <div class="grid simple">
+        <!-- GRID TITLE -->
+        <div class="grid-title no-border">
+          <h4>Date and Time</h4>
         </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <label>Upload Image</label>
-            <div class="image-upload">
-              <button class="button is-secondary" data-toggle="modal" data-target="#fileUploadModal" style="font-weight:bold; color:white;">
-                Browse Images
-              </button>
+        <!-- END GRID TITLE -->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Schedule</span></h3>
+          <p>
+            How often does your experience happen? Select all the dates when it happens in the calendar below
+          </p>
+          <br>
+          <!-- START DATE AND TIME PICKER -->
+          <div class="input-append success date">
+            <input type="text" class="form-control" id="experience_date">
+            <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span>
+          </div>
+          <br>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <div class="input-append bootstrap-timepicker-component">
+                <input type="text" class="timepicker-default span12">
+                <span class="add-on"><span class="arrow"></span><i class="fa fa-clock-o"></i></span> </div>
             </div>
           </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-6">
+          <!-- END DATE AND TIME PICKER -->
 
-
-                <%= f.label :price, "Price per ticket" %>
-                <div class="input-group">
-                  <!-- Todo: This needs to be changed to reflect the symbol for each users currency -->
-                  <span class="input-group-addon">$</span>
-                  <%= f.text_field :price, :class => "form-control", :required => "required" %>        
-                </div>
-
-              </div>
-              <div class="col-md-6">
-                <%= f.label :max_seats, "Total number of tickets" %>
-                <%= f.text_field :max_seats, :class => "form-control", :required => "required" %>
-              </div>
-            </div>
-
-
-                <%# f.label :exp_date %>
-                <!--
-                <label>Experience schedule</label>
-                <input type="text">
-              -->
-                <%# f.date_select :exp_date, :class => "form-control dropdown", :required => "required" %>  
-          </div>
+          <div class="clearfix"></div>
         </div>
-            
-        <div class="experienceSchedule">
+        <!--END GRID BODY-->
+      </div>
+    </div> <!-- END COL 4 - EXPERIENCE SCHEDULE -->
+
+  </div> <!-- END ROW -->
+
+  <div class="row">
+    <!-- 8 COL -->
+    <div class="col-md-8">
+      <div class="grid simple">
+        <!--HEADING-->
+        <div class="grid-title no-border">
+          <h4>Where should people come for this experience</h4>
+        </div>
+        <!--END HEADING-->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Meeting Place</span></h3>
+          <p>
+            Tell people where they should come for the experience.
+          </p>
+          <br>
           <div class="row">
             <div class="col-md-6">
-              <label>Experience schedule</label>
-              <div id="schedule_calendar"></div>
-            </div>
-
+              <%= f.text_field :line_one, :class => "form-control", :placeholder=>"Address Line One" %>
+            </div> <!-- END COL 6 -->
             <div class="col-md-6">
-              <label>Experience Time</label>
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                <input type="text" class="form-control" id="timepicker">
-                <%# f.time_select :exp_time, :class => "form-control textLabel", :required => "required" %>
-              </div>
+              <%= f.text_field :line_two, :class => "form-control", :placeholder=>"Address Line Two" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :city, :class => "form-control", :placeholder=>"City" %>
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <%= f.text_field :state, :class => "form-control", :placeholder=>"State" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :country, :class => "form-control", :placeholder=>"Country" %>
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <%= f.text_field :pincode, :class => "form-control", :placeholder=>"Zipcode" %>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Landmark"/>
             </div>
           </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="map" style="width: 100%; height: 300px; background: #eee;"></div>
+            </div>
+          </div>
+
         </div>
-
-
-      </div> <!-- Col 11 end -->
+        <!--END GRID BODY-->
+      </div>
     </div>
-    
-    <div class="row" style="margin-top: 40px">
-      <div class="col-md-1">
-        <div class="first-title">
-          <%= image_tag "new-experience-general-info.png" %>
-        </div>      
-      </div>
-      <div class="col-md-11">
-        <h2>Experience description and things needed</h2>
-        <div class="description">
-          <%= f.label :description, "Describe your experience" %>
-          <%= f.text_area :description, :class => "form-control", :rows => 5, :required => "required" %>
-          <div class="additionaActions">
-            <a href="#" id="add_special_instructions">Add special instructions</a>
-          </div>
-        </div>
-
-        <div class="description" id="special_instructions">
-          <%= f.label :things_to_remember, "Special instructions" %>
-          <%= f.text_area :things_to_remember, :class => "form-control", :rows => 5, :required => "required" %>
-        </div>        
-
-      </div><!-- Col 11 end -->
-    </div><!-- Row end -->
-
-    <div class="row">
-      <div class="col-md-1">
-        <div class="first-title">
-          <%= image_tag "new-experience-general-info.png" %>
-        </div>
-      </div>
-      <div class="col-md-11">
-
-        <h2>Meeting place</h2>
-        
-        <div class="address">
-          <div class="row">
-            <div class="col-md-4">
-              <label>Address line one</label>
-              <%= f.text_field :line_one, :class => "form-control" %>
-            </div>
-            <div class="col-md-4">
-              <label>Address line two</label>
-              <%= f.text_field :line_two, :class => "form-control" %>
-            </div>
-            <div class="col-md-4">
-              <label>City</label>
-              <%= f.text_field :land_mark, :class => "form-control" %>
-            </div>
-          </div><!-- Row end -->
-
-          <div class="row">
-            <div class="col-md-4">
-              <label>State</label>
-              <%= f.text_field :state, :class => "form-control" %>
-            </div>
-            <div class="col-md-4">
-              <label>Country</label>
-              <%= f.text_field :country, :class => "form-control" %>
-            </div>
-            <div class="col-md-4">
-              <label>Zipcode</label>
-              <%= f.text_field :pincode, :class => "form-control" %>  
-            </div>
-          </div>
-
-        </div>
-        
-
-        
-        <div class="address">
-          <div class="form-group">
-            <%= f.label :city, "Land mark" %>
-            <%= f.text_field :city, :class => "form-control", :placeholder => "Where should people come. Enter a land mark", :required => "required" %>
-            <div class="map_canvas"></div>
-          </div>
-        </div>
-        
-      </div><!-- Col 11 end -->
-    </div><!-- Row end -->
-
-    <div class="row">
-      <div class="col-md-1">
-      </div>
-      <div class="col-md-11">
-        <div class="actions">
-          <%= f.submit :class => "button is-primary", :style => "font-weight: bold; color: white", :id => "new_experience_form_submit" %>
-        </div>
-      </div>
-    </div><!-- Row end -->
-  </div>
-
-  </div>
-  <%= f.hidden_field :latitude%>>
-  <%= f.hidden_field :longitude %>
-  <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
-  <%= f.hidden_field :exp_date %>
-
 <% end %>
-
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="fileUploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Browse and upload images</h4>
-      </div>
-      <div class="modal-body">
-        <span class="btn btn-success fileinput-button">
-            <i class="fa fa-plus"></i>
-            <span>Add files...</span>
-            <!-- The file input field used as target for the file upload widget -->
-            <input id="new_experience_image" type="file" name="files[]" multiple>
-        </span>
-        <br>
-        <br>
-        <!-- Progress -->
-        <!-- The global progress bar -->
-        <div id="progress" class="progress">
-            <div class="progress-bar progress-bar-success"></div>
+    <!-- END 8 COL -->
+    <!-- 4 COL -->
+    <div class="col-md-4">
+      <div class="grid simple">
+        <div class="grid-title no-border">
+          <h4>Picture upload</h4>
         </div>
+        <div class="grid-body no-border">
+          <h3>Experience <span class="semi-bold">Photos</span></h3>
+          <p>
+            Tell people where they should come for the experience.
+          </p>
+          <div class="row-fluid">
+            <form action="/file-upload" class="dropzone no-margin dz-clickable">
+              <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END 4 COL -->
+  </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+<!-- END NEW EXPERIENCE FORM -->
+
+
+
+
+
+
+
+
+
+
+

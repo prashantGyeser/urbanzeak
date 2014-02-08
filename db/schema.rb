@@ -125,11 +125,10 @@ ActiveRecord::Schema.define(version: 20140129154057) do
   add_index "hosts", ["user_id"], name: "index_hosts_on_user_id", using: :btree
 
   create_table "images", force: true do |t|
-    t.string   "image"
-    t.integer  "experience_id"
-    t.string   "type"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "experience_id"
   end
 
   create_table "impressions", force: true do |t|
@@ -167,8 +166,6 @@ ActiveRecord::Schema.define(version: 20140129154057) do
     t.boolean  "post_to_fb_wall"
   end
 
-  add_index "integration_tokens", ["user_id"], name: "index_integration_tokens_on_user_id", using: :btree
-
   create_table "integrations", force: true do |t|
     t.string   "access_token"
     t.integer  "user_id"
@@ -176,8 +173,6 @@ ActiveRecord::Schema.define(version: 20140129154057) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "integrations", ["user_id"], name: "index_integrations_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.string   "name"
@@ -195,17 +190,7 @@ ActiveRecord::Schema.define(version: 20140129154057) do
     t.text     "raw_body"
     t.text     "headers"
     t.text     "raw_headers"
-  end
-
-  add_index "messages", ["experience_id"], name: "index_messages_on_experience_id", using: :btree
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "reviews", force: true do |t|
-    t.text     "comment"
-    t.integer  "experience_id"
-    t.string   "email_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "guid"
   end
 
   create_table "shortened_urls", force: true do |t|
