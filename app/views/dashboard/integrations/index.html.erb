@@ -1,120 +1,85 @@
-<div class="content-header">
-  <h1 class="title">
-    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
-    Integrations
-  </h1>
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Integrations</h3>
 </div>
+<!-- END PAGE TITLE -->
 
-<!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset" ng-app="chatApp">
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="integrationsExplanation">
-        <%= image_tag "integrationIcon.png" %>
-        <h4><strong>Integrate with external services</strong></h4>
-        <p>
-          <strong>Todo:</strong> Explain what these integrations do and how it can help the hosts. Give some concrete examples
-        </p>
+<!-- BEGIN PlACE PAGE CONTENT HERE -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="grid simple">
+      <!--TITLE START-->
+      <div class="grid-title no-border">
+        <h4>External  <span class="semi-bold">Integrations</span></h4>
       </div>
-    </div>
-  </div>
-
-  <% if flash[:notice] %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="alert alert-success">
-          <%= flash[:notice] %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-12">
-      <ul id="integrationsList">
-        <li>
-          <div class="titleContainer">
-            <div class="iconContainer">
-              <% if @facebookIntegrationDone == true %>
-                <%= image_tag "icons/facebook-live.png" %>
-              <% else %>
-                <%= image_tag "icons/facebook-grey.png" %>
-              <% end %>
-
-
-            </div>
-            <div class="listing">
-              <strong> <%= link_to "Facebook", dashboard_integrations_facebook_path %></strong>
-            <span>
-              Post to your wall when you create an experience
-            </span>
-            </div>
-          </div>
-
-          <div class="settings content">
-            <% if @facebookIntegrationDone == true %>
-              <strong><i class="fa fa-check-circle-o"></i> Facebook integration active</strong>
-              <br>
-              <div class="configOptionsForIntegration">
-                  <%@fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first %>
-                  <% if @fbCheckToken.post_to_fb_wall == true %>
-                    <input type="checkbox" id="fbFeedPost" checked/>
-                  <% else %>
-                    <input type="checkbox" id="fbFeedPost"/>
-                  <% end %>
-                   <span>Post to your wall when you create an experience</span>
-                  <!--<input type="checkbox" id="fbFeedPost"/> <span>Post to your wall when you create an experience</span>-->
+      <!--TITLE END-->
+      <!--CONTENT START-->
+      <div class="grid-body no-border">
+        <h3>Integrations</h3>
+        <!--INTEGRATION LIST START-->
+        <table class="table no-more-tables">
+          <!--HEADING START-->
+          <thead>
+          <tr>
+            <th style="width:1%" >
+              <div class="checkbox check-default">
+                <input id="checkbox10" type="checkbox" value="1" class="checkall">
+                <label for="checkbox10"></label>
               </div>
-              
-            <% else %>
-              <%= link_to "Connect", dashboard_integrations_facebook_path, :class => "button" %>
-            <% end %>
-
-          </div>
-        </li>
-
-        <li>
-          <div class="titleContainer">
-            <div class="iconContainer">
-              <%= image_tag "icons/twitter-grey.png" %>
-            </div>
-            <div class="listing">
-              <strong><a href="#">Twitter</a></strong>
-            <span>
-              Post to your fan page and you wall when you create an experience
-            </span>
-            </div>
-          </div>
-
-          <div class="settings">
-            <a href="#" class="button">Connect</a>
-          </div>
-        </li>
-
-        <li>
-          <div class="titleContainer">
-            <div class="iconContainer">
-              <%= image_tag "icons/googleplus-grey.png" %>
-            </div>
-            <div class="listing">
-              <strong><a href="#">Google Plus</a></strong>
-            <span>
-              Post to your fan page and you wall when you create an experience
-            </span>
-            </div>
-          </div>
-
-          <div class="settings">
-            <a href="#" class="button">Connect</a>
-          </div>
-        </li>
-
-      </ul>
+            </th>
+            <th style="width:9%">Provider</th>
+            <th style="width:22%">Description</th>
+            <th style="width:6%">Status</th>
+            <th style="width:10%">Actions</th>
+          </tr>
+          </thead>
+          <!--HEADING END-->
+          <!--TABLE BODY START-->
+          <tbody>
+            <!--ROW 1 START-->
+            <tr>
+              <td class="v-align-middle">
+                <div class="checkbox check-default">
+                  <input id="checkbox11" type="checkbox" value="1">
+                  <label for="checkbox11"></label>
+                </div>
+              </td>
+              <td class="v-align-middle">Facebook</td>
+              <td class="v-align-middle"><span class="muted">Post your experience to fb when created</span>
+              </td>
+              <td><span class="muted"><span class="label">NOT INTEGRATED</span></span>
+              </td>
+              <td class="v-align-middle">
+                <button class="btn btn-primary btn-sm btn-small" type="button">Integrate Now</button>
+              </td>
+            </tr>
+            <!--ROW 1 END-->
+            <!--ROW 2 START-->
+            <tr>
+              <td class="v-align-middle">
+                <div class="checkbox check-default">
+                  <input id="checkbox11" type="checkbox" value="1">
+                  <label for="checkbox11"></label>
+                </div>
+              </td>
+              <td class="v-align-middle">Twitter</td>
+              <td class="v-align-middle"><span class="muted">Post your experience to fb when created</span>
+              </td>
+              <td>
+                <span class="label label-success">INTEGRATED</span>
+              </td>
+              <td class="v-align-middle">
+                <button class="btn btn-default btn-sm btn-small" type="button">Disable</button>
+              </td>
+            </tr>
+            <!--ROW 2 END-->
+          </tbody>
+          <!--TABLE BODY END-->
+        </table>
+        <!--INTEGRATION LIST END-->
+      </div>
+      <!--CONTENT END-->
     </div>
   </div>
-
-
 </div>
-
-
+<!-- END PLACE PAGE CONTENT HERE -->
