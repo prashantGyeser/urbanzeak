@@ -9,7 +9,7 @@
   <meta content="" name="author" />
 
   <!--CUSTOM CSS-->
-
+  <%= yield :css %>
   <!--END CUSTOM CSS-->
 
   <!-- NEED TO WORK ON -->
@@ -18,7 +18,6 @@
   <%= stylesheet_link_tag    "dashboard/style", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/responsive", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "dashboard/custom-icon-set", media: "all", "data-turbolinks-track" => true %>
-  <%= yield :css %>
 
   <!-- BEGIN CORE JS FRAMEWORK-->
   <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>

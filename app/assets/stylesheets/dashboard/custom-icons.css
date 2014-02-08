@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'custom';
-	src:url('../fonts/custom.eot');
-	src:url('../fonts/custom.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/custom.woff') format('woff'),
-		url('../fonts/custom.ttf') format('truetype'),
-		url('../fonts/custom.svg#custom') format('svg');
+	src:url('/assets/custom.eot');
+	src:url('/assets/custom.eot?#iefix') format('embedded-opentype'),
+		url('/assets/custom.woff') format('woff'),
+		url('/assets/custom.ttf') format('truetype'),
+		url('/assets/custom.svg#custom') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
