@@ -1,55 +1,58 @@
-<div class="content-header">
-  <h1 class="title">
-    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
-    Your Experiences
-  </h1>
-  <row>
-    </div>
-  </row>
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Experiences - Option 2</h3>
+  <%= link_to "New Experience", dashboard_experiences_new_path, :class => "btn btn-primary btn-cons pull-right" %>
 </div>
+<!-- END PAGE TITLE -->
 
-<!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset" ng-app="chatApp">
-    <div class="experienceButtonContainer">
-        <%= link_to dashboard_experiences_new_path, :class=> "button" do %>
-            <i class="fa fa-plus"></i>
-            Create Experience
-        <% end %>
-    </div>
-    
+
+
+<% @experiences.in_groups_of(3, false) do |experiences| %>
   <div class="row">
-    <div class="col-md-12">
-      <ul class="experienceList">
-          <% @experiences.each do |experience| %>
-            <li class="clearfix">
-            
-                <div class="experienceDetails">
-                    <div class="heading">
-                        <strong><%= link_to experience.name, experience_path(experience)%></strong>
-                    </div>
-                    <div class="subDetails">
-                        <ul>
-                            <li>Attendees: <strong>5</strong></li>
-                            <li>Revenue: <strong><span class="currency">Rs </span> 5000</strong></li>
-                        </ul>
-                        <div class="shareUrl">
-                            <strong>URL to share:</strong>
-                            <span><%= link_to experience.shortened_url, experience.shortened_url %></span>
-                        </div>
-                    </div>
+    <% experiences.each do |experience| %>
+      <div class="col-md-4">
+        <div class="widget-item narrow-margin">
+          <div style="max-height:214px" class="tiles green  overflow-hidden full-height">
+            <div class="overlayer bottom-right fullwidth">
+              <div class="overlayer-wrapper">
+                <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
+                  <div class="pull-right"> <a class="hashtags transparent" href="#"> #Art Design </a> </div>
+                  <div class="clearfix"></div>
                 </div>
-            
-            <div class="experienceCommands pull-right">
-              <% url_to_go_to = dashboard_experiences_new_path + '/' + experience.id.to_s  %>
-              <div class="button-group pull-left">
-                <%= link_to "Edit", dashboard_experience_edit_path(experience), :class => "button"  %>
-                <%= link_to "Replicate", url_to_go_to, :class => "button"  %>
-              </div><!-- /.button-group -->
+              </div>
             </div>
-            </li>
-          <% end %>
-
-      </ul>
-    </div>
+            <!--TODO: Change this image to the image of the experience-->
+            <img class="lazy hover-effect-img image-responsive-width" alt="" src="assets/img/others/10.png"> </div>
+          <div class="tiles white ">
+            <div class="tiles-body">
+              <div class="row">
+                <div class="user-comment-wrapper pull-left">
+                  <div class="comment">
+                    <div class="user-name text-black bold"> <%= experience.name %> </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="p-l-15 p-t-10 p-r-20">
+                  <p><%= truncate(experience.description, length: 100) %></p>
+                  <div class="post p-t-10 p-b-10">
+                    <ul class="action-bar no-margin p-b-20 ">
+                      <li><a href="#" class="text-info bold"><i class="fa fa-users  m-r-10"></i>1584</a> </li>
+                      <li><a href="#" class="text-info bold"><i class="fa fa-heart  m-r-10"></i>47k</a> </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- END EXPERIENCE ITEM -->
+    <% end %>
   </div>
-</div>
+<% end %>
+
+
+
+
+

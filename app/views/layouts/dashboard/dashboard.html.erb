@@ -1,103 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="UrbanZeak">
+  <title>Title Goes Here</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
 
-  <title>Dashboard | UrbanZeak</title>
+  <!--CUSTOM CSS-->
+  <%= yield :css %>
+  <!--END CUSTOM CSS-->
+
+  <!-- NEED TO WORK ON -->
   <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
-  <%# stylesheet_link_tag    "simple-sidebar", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "dashboard/animate.min", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "dashboard/style", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "dashboard/responsive", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "dashboard/custom-icon-set", media: "all", "data-turbolinks-track" => true %>
 
-  <!-- Add custom CSS here -->
-  
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,500' rel='stylesheet' type='text/css'>
-  -->
+  <!-- BEGIN CORE JS FRAMEWORK-->
+  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+  <!-- END CORE JS FRAMEWORK -->
+  <!-- BEGIN PAGE LEVEL JS -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <%= javascript_include_tag "jquery-slider/jquery.sidr.min", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery-slimscroll/jquery.slimscroll.min", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "pace/pace.min", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "jquery-numberAnimate/jquery.animateNumbers", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "jquery-morris-chart/js/morris.min", 'data-turbolinks-track' => true %>
+  <!-- END PAGE LEVEL PLUGINS -->
 
-  <%= csrf_meta_tags %>
+  <!-- BEGIN CORE TEMPLATE JS -->
+  <%= javascript_include_tag "dashboard/core.js", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/chat.js", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/demo.js", 'data-turbolinks-track' => true %>
+  <!-- END CORE TEMPLATE JS -->
+
+  <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
+
+
 
 </head>
-
-<body>
-
-<div id="wrapper">
-
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <!--<img src="img/fillerImages/hostImage.jpg" alt="" class="img-circle welcomeImage"/>-->
-        <%# image_tag "dashboard/fillerImages/hostImage.jpg", :class => "img-circle welcomeImage" %>
-
-        <!--<span>Hi, Jane Doe</span>-->
-
-        <%= image_tag "logo-white.png" %>
-
-      </li>
-
-      <li>
-        <%= link_to dashboard_root_path do %>
-          <i class="fa fa-bar-chart-o"></i>
-          Dashboard
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to dashboard_experiences_path do %>
-          <i class="fa fa-dot-circle-o" style="margin-right: 7px"></i>
-          Experiences
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to dashboard_experiences_path do %>
-          <i class="fa fa-users"></i>
-          Attendees
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to dashboard_experiences_path do %>
-          <i class="fa fa-road"></i>
-          Traffic Sources
-        <% end %>
-      </li>
-        
-        <li>
-            <%= link_to dashboard_integrations_path do %>
-            <i class="fa fa-th-large" style="margin-right: 7px"></i>
-            Integrations
-            <% end %>
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+    <!-- BEGIN NAVIGATION HEADER -->
+    <div class="header-seperation">
+      <!-- BEGIN MOBILE HEADER -->
+      <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+        <li class="dropdown">
+          <a id="main-menu-toggle" href="#main-menu" class="">
+            <div class="iconset top-menu-toggle-white"></div>
+          </a>
         </li>
-    
-    </ul>
+      </ul>
+      <!-- END MOBILE HEADER -->
+      <!-- BEGIN LOGO -->
+      <a href="#">
+        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => 'logo.png', :src_retina => "logo2x.png"} %>
+      </a>
+      <!-- END LOGO -->
+      <!-- BEGIN LOGO NAV BUTTONS -->
+      <ul class="nav pull-right notifcation-center">
+        <li class="dropdown" id="header_task_bar">
+          <a href="#" class="dropdown-toggle active" data-toggle="">
+            <div class="iconset top-home"></div>
+          </a>
+        </li>
+        <li class="dropdown" id="header_inbox_bar">
+          <a href="#" class="dropdown-toggle">
+            <div class="iconset top-messages"></div>
+            <span class="badge" id="msgs-badge">2</span>
+          </a>
+        </li>
+        <!-- BEGIN MOBILE CHAT TOGGLER -->
+        <li class="dropdown" id="portrait-chat-toggler" style="display:none">
+          <a href="#sidr" class="chat-menu-toggle">
+            <div class="iconset top-chat-white"></div>
+          </a>
+        </li>
+        <!-- END MOBILE CHAT TOGGLER -->
+      </ul>
+      <!-- END LOGO NAV BUTTONS -->
+    </div>
+    <!-- END NAVIGATION HEADER -->
+    <!-- BEGIN CONTENT HEADER -->
+    <div class="header-quick-nav">
+      <!-- BEGIN HEADER LEFT SIDE SECTION -->
+      <div class="pull-left">
+        <!-- BEGIN SLIM NAVIGATION TOGGLE -->
+        <ul class="nav quick-section">
+          <li class="quicklinks">
+            <a href="#" class="" id="layout-condensed-toggle">
+              <div class="iconset top-menu-toggle-dark"></div>
+            </a>
+          </li>
+        </ul>
+        <!-- END SLIM NAVIGATION TOGGLE -->
+        <!-- BEGIN HEADER QUICK LINKS -->
+        <ul class="nav quick-section">
+          <li class="quicklinks"><a href="#" class=""><div class="iconset top-reload"></div></a></li>
+          <li class="quicklinks"><span class="h-seperate"></span></li>
+          <li class="quicklinks"><a href="#" class=""><div class="iconset top-tiles"></div></a></li>
+          <!-- BEGIN SEARCH BOX -->
+          <li class="m-r-10 input-prepend inside search-form no-boarder">
+            <span class="add-on"><span class="iconset top-search"></span></span>
+            <input name="" type="text" class="no-boarder" placeholder="Search Dashboard" style="width:250px;">
+          </li>
+          <!-- END SEARCH BOX -->
+        </ul>
+        <!-- BEGIN HEADER QUICK LINKS -->
+      </div>
+      <!-- END HEADER LEFT SIDE SECTION -->
+      <!-- BEGIN HEADER RIGHT SIDE SECTION -->
+      <div class="pull-right">
+        <div class="chat-toggler">
+          <!-- BEGIN NOTIFICATION CENTER -->
+          <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom" data-content="" data-toggle="dropdown" data-original-title="Notifications">
+            <div class="user-details">
+              <div class="username">
+                <span class="badge badge-important">3</span>&nbsp;John<span class="bold">&nbsp;Smith</span>
+              </div>
+            </div>
+            <div class="iconset top-down-arrow"></div>
+          </a>
+          <div id="notification-list" style="display:none">
+            <div style="width:300px">
+              <!-- BEGIN NOTIFICATION MESSAGE -->
+              <div class="notification-messages info">
+                <div class="user-profile">
+                  <%= image_tag "profiles/d.jpg", :width => "35", :height => "35", :alt => "Profile Picture", :date => { :src => "profiles/d.jpg", :src_retina => "profiles/d2x.jpg" } %>
+                </div>
+                <div class="message-wrapper">
+                  <div class="heading">Title of Notification</div>
+                  <div class="description">Description...</div>
+                  <div class="date pull-left">A min ago</div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <!-- END NOTIFICATION MESSAGE -->
+            </div>
+          </div>
+          <!-- END NOTIFICATION CENTER -->
+          <!-- BEGIN PROFILE PICTURE -->
+          <div class="profile-pic">
+            <%= image_tag "profiles/avatar_small.jpg", :width => "35", :height => "35", :data => { :src => "profiles/avatar_small.jpg", :src_retina => "profiles/avatar_small2x.jpg"}  %>
+          </div>
+          <!-- END PROFILE PICTURE -->
+        </div>
+        <!-- BEGIN HEADER NAV BUTTONS -->
+        <ul class="nav quick-section">
+          <!-- BEGIN SETTINGS -->
+          <li class="quicklinks">
+            <a data-toggle="dropdown" class="dropdown-toggle pull-right" href="#" id="user-options">
+              <div class="iconset top-settings-dark"></div>
+            </a>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="user-options">
+              <li><a href="#">Normal Link</a></li>
+              <li><a href="#">Badge Link&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Separated Link</a></li>
+            </ul>
+          </li>
+          <!-- END SETTINGS -->
+          <li class="quicklinks"><span class="h-seperate"></span></li>
+          <!-- BEGIN CHAT SIDEBAR TOGGLE -->
+          <li class="quicklinks">
+            <a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle">
+              <div class="iconset top-chat-dark"><span class="badge badge-important hide" id="chat-message-count">1</span></div>
+            </a>
+            <!-- BEGIN OPTIONAL RECENT CHAT POP UP NOTIFICATION -->
+            <div class="simple-chat-popup chat-menu-toggle hide">
+              <div class="simple-chat-popup-arrow"></div>
+              <div class="simple-chat-popup-inner">
+                <div style="width:100px">
+                  <div class="semi-bold">Name</div>
+                  <div class="message">Message...</div>
+                </div>
+              </div>
+            </div>
+            <!-- END OPTIONAL RECENT CHAT POP UP NOTIFICATION -->
+          </li>
+          <!-- END CHAT SIDEBAR TOGGLE -->
+        </ul>
+        <!-- END HEADER NAV BUTTONS -->
+      </div>
+      <!-- END HEADER RIGHT SIDE SECTION -->
+    </div>
+    <!-- END CONTENT HEADER -->
   </div>
-
-  <!-- Page content -->
-  <div id="page-content-wrapper">
-    <%= yield %>
-  </div>
-
+  <!-- END TOP NAVIGATION BAR -->
 </div>
+<!-- END HEADER -->
 
-<!-- JavaScript -->
-<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
-<%= yield :javascript_includes %>
-<!--[if IE]><script language="javascript" type="text/javascript" src="js/libs/excanvas.js"></script><![endif]-->
+<!-- BEGIN CONTENT -->
+<div class="page-container row-fluid">
+<!-- BEGIN SIDEBAR -->
+<!-- BEGIN MENU -->
+<div class="page-sidebar" id="main-menu">
+  <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+    <!-- BEGIN MINI-PROFILE -->
+    <div class="user-info-wrapper">
+      <div class="profile-wrapper">
+        <%= image_tag "profiles/avatar.jpg", :width => "69", :height => "69", :data => { :src => "profiles/avatar.jpg", :src_retina => "profiles/avatar2x.jpg"}  %>
+      </div>
+      <div class="user-info">
+        <div class="greeting">Welcome</div>
+        <div class="username">John <span class="semi-bold">Smith</span></div>
+        <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
+      </div>
+    </div>
+    <!-- END MINI-PROFILE -->
+    <!-- BEGIN SIDEBAR MENU -->
+    <p class="menu-title">BROWSE<span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+    <ul>
+      <!-- BEGIN SELECTED LINK -->
+      <li class="start active">
+        <a href="#">
+          <i class="icon-custom-home"></i>
+          <span class="title">Dashboard</span>
+          <span class="selected"></span>
+        </a>
+      </li>
+      <!-- END SELECTED LINK -->
+      <!-- BEGIN BADGE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-envelope"></i>
+          <span class="title">Experiences</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+        </a>
+      </li>
+      <!-- END BADGE LINK -->
+      <!-- BEGIN SINGLE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-flag"></i>
+          <span class="title">Integrations</span>
+        </a>
+      </li>
+      <!-- END SINGLE LINK -->
+      <!-- BEGIN BADGE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-envelope"></i>
+          <span class="title">Messages</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+          <span class="badge badge-important pull-right">5</span>
+        </a>
+      </li>
+      <!-- END BADGE LINK -->
+    </ul>
+    <!-- END SIDEBAR MENU -->
+    <!-- BEGIN SIDEBAR WIDGETS -->
+    <div class="clearfix"></div>
+    <!-- END SIDEBAR WIDGETS -->
+  </div>
+</div>
+<!-- BEGIN SCROLL UP HOVER -->
+<a href="#" class="scrollup">Scroll</a>
+<!-- END SCROLL UP HOVER -->
+<!-- END MENU -->
+<!-- BEGIN SIDEBAR FOOTER WIDGET -->
+<div class="footer-widget">
+  <div class="pull-right">
+    <a href="#"><i class="fa fa-power-off"></i></a>
+  </div>
+</div>
+<!-- END SIDEBAR FOOTER WIDGET -->
+<!-- END SIDEBAR -->
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">
 
-<!-- Custom JavaScript for the Menu Toggle -->
-<script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("active");
-  });
-</script>
+    <%= yield %>
 
-  <%= yield :charts %>
+  </div>
+</div>
+<!-- END PAGE CONTAINER -->
+</div>
+<!-- END CONTENT -->
 
 </body>
 </html>
