@@ -12,9 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require jquery.autogrowtextarea.min
-//= require gmap3.min
-//= require fancybox
 //= require turbolinks
 //= require_tree .
