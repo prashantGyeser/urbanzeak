@@ -8023,7 +8023,7 @@ ul.my-friends li .profile-pic{
 	-o-transform: scale(1.1,1.1);
 	-webkit-transform: scale(1.1,1.1);
 	transform: scale(1.1,1.1);
-	opacity:0.6
+	opacity:0.6;
 	filter: contrast(130%);
 -webkit-filter: contrast(130%);
 }
