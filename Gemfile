@@ -119,6 +119,7 @@ group :development do
   gem "rails_best_practices"
   gem "reek"
   gem "metric_fu"
+  gem 'sprockets_better_errors'
 end
 
 group :test, :development do

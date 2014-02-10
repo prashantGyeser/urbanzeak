@@ -27,6 +27,7 @@ Urbanzeak::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Setting 
+  # To raise any errors in the sprokets compile
+  config.assets.raise_production_errors = true
 
 end
