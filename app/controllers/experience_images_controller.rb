@@ -26,15 +26,15 @@ class ExperienceImagesController < ApplicationController
   def create
     logger.debug "Thge params coming in are: #{params.inspect}"
 
-    @experience_image = ExperienceImage.new(experience_image_params)
+    #@experience_image = ExperienceImage.new(experience_image_params)
+    @experience_image = ExperienceImage.new(image: params[:file])
+    logger.debug "The file created is: #{@experience_image.inspect}"
 
 
     respond_to do |format|
       if @experience_image.save
-        format.html { redirect_to @experience_image, notice: 'Experience image was successfully created.' }
         format.json{ render :json => @experience_image }
       else
-        format.html { render action: 'new' }
         format.json { render json: @experience_image.errors, status: :unprocessable_entity }
       end
     end

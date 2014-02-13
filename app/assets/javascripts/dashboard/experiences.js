@@ -17,12 +17,13 @@ ready = function() {
 
     $(function() {
         var mediaDropzone;
-        mediaDropzone = new Dropzone("#media-dropzone");
+        mediaDropzone = new Dropzone("#new_experience_image");
         return mediaDropzone.on("success", function(file, responseText) {
             console.log("The file from the server is:", file);
             console.log("The response from the server is:", responseText);
             var imageUrl;
             imageUrl = responseText.file_name.url;
+            console.log("The url is:", imageUrl);
         });
     });
 

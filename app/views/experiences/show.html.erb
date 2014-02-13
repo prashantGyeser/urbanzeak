@@ -34,11 +34,13 @@
     <div class="tp-banner" id="home" >
       <ul>
 
+        <%= @header_images.inspect %>
+
         <% @header_images.each do |image| %>
           <!--INVIDIDUAL SLIDE START -->
           <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
             <!-- MAIN IMAGE -->
-            <%= image_tag image_url.to_s, :data => { :bgfit => "cover", :bgposition => "center center", :bgrepeat => "no-repeat"  } %>
+            <%= image_tag image.image_url.to_s, :data => { :bgfit => "cover", :bgposition => "center center", :bgrepeat => "no-repeat"  } %>
           </li>
           <!--INVIDIDUAL SLIDE END -->
         <% end %>
