@@ -119,7 +119,18 @@
         </div>
         <!--END GRID BODY-->
       </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.submit :class => "btn btn-primary btn-cons" %>
+        </div>
+      </div>
+      <br/>
+      <br/>
+
+
     </div>
+
 <% end %>
     <!-- END 8 COL -->
     <!-- 4 COL -->
@@ -134,9 +145,14 @@
             Tell people where they should come for the experience.
           </p>
           <div class="row-fluid">
-            <form action="/file-upload" class="dropzone no-margin dz-clickable">
-              <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
-            </form>
+
+
+            <%= form_for(@experience_image, :html => {:multipart => true, :class => "dropzone"}) do |f| %>
+              <%= f.file_field :image, :multiple => true, :name => "experience_image[image]", :class => "hidden" %>
+              <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
+            <% end %>
+
+
           </div>
         </div>
       </div>
@@ -144,16 +160,4 @@
     <!-- END 4 COL -->
   </div>
 
-
 <!-- END NEW EXPERIENCE FORM -->
-
-
-
-
-
-
-
-
-
-
-

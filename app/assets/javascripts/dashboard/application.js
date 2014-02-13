@@ -18,4 +18,3 @@
 //= require jquery-unveil/jquery.unveil.min
 //= require jquery-block-ui/jqueryblockui
 //= require turbolinks
-//= require_tree .
