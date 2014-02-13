@@ -15,6 +15,13 @@ ready = function() {
         showMeridian: false
     });
 
+    // "myAwesomeDropzone" is the camelized version of the HTML element's ID
+    Dropzone.options.newExperienceImage = {
+        paramName: "experience_image[image]", // The name that will be used to transfer the file
+        maxFilesize: 1 // MB
+    };
+
+
     $(function() {
         var mediaDropzone;
         mediaDropzone = new Dropzone("#new_experience_image");

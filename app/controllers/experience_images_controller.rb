@@ -24,10 +24,9 @@ class ExperienceImagesController < ApplicationController
   # POST /experience_images
   # POST /experience_images.json
   def create
-    logger.debug "Thge params coming in are: #{params.inspect}"
-
     #@experience_image = ExperienceImage.new(experience_image_params)
-    @experience_image = ExperienceImage.new(image: params[:file])
+    logger.debug "The params coming in are:#{params.inspect}"
+    @experience_image = ExperienceImage.new(experience_image_params)
     logger.debug "The file created is: #{@experience_image.inspect}"
 
 
