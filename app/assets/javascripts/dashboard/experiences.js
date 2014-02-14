@@ -43,6 +43,18 @@ ready = function() {
         }
     });
 
+    $('#experience_land_mark').bind("geocode:result", function(event, result){
+        console.log(result);
+        $("#experience_latitude").val(result.geometry.location.lat());
+        $("#experience_longitude").val(result.geometry.location.lng());
+    });
+
+    $("#experience_land_mark").bind("geocode:dragged", function(event, latLng){
+        $("#experience_latitude").val(latLng.lat());
+        $("#experience_longitude").val(latLng.lng());
+        $("#reset").show();
+    });
+
 
 };
 
