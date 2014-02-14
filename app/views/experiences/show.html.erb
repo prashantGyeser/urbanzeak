@@ -52,6 +52,7 @@
                  data-endeasing="Power1.easeIn"
                  data-captionhidden="off"
                  style="z-index: 6">
+              <h2 class="text-white custom-font title "><%= @experience.name %></h2>
 
             </div>
             <div class="tp-caption sfb slider tp-resizeme slider"
@@ -64,7 +65,7 @@
                  data-endspeed="300"
                  data-endeasing="Power1.easeIn"
                  data-captionhidden="off"
-                 style="z-index: 6">	<a href="#" class="btn btn-danger btn-lg  btn-large m-r-10">VIEW IT NOW</a>
+                 style="z-index: 6">
             </div>
 
           </li>
@@ -87,7 +88,7 @@
 <div class="section ">
   <div class="container">
     <div class="p-t-40 p-b-40">
-      <h2 class="text-center">The experience title goes here, if there is no title in the image. <a href="#" class="btn btn-purple btn-lg  btn-large m-r-10">BUY IT NOW</a></h2>
+      <h2 class="text-center"><%= @experience.name %></h2>
     </div>
   </div>
 </div>
@@ -97,16 +98,8 @@
     <div class="p-t-60 p-b-60">
       <div class="row">
         <div class="col-md-6 feature-list ">
-          <h2 class="normal">Experience name</h2>
-          <p class="normal-text">
-            NASA is not about the ‘Adventure of Human Space Exploration’…We won’t be doing it just to get out there in space – we’ll be doing it because the things we learn out there will be making life better for a lot of people who won’t be able to go.
-          </p>
-          <p>
-            NASA is not about the ‘Adventure of Human Space Exploration’…We won’t be doing it just to get out there in space – we’ll be doing it because the things we learn out there will be making life better for a lot of people who won’t be able to go.
-          </p>
-          <p>
-            NASA is not about the ‘Adventure of Human Space Exploration’…We won’t be doing it just to get out there in space – we’ll be doing it because the things we learn out there will be making life better for a lot of people who won’t be able to go.
-          </p>
+          <h2 class="normal"><span class="semi-bold">About </span> the experience</h2>
+          <%= simple_format(@experience.description) %>
 
         </div>
         <div class="col-md-6 col-vlg-4 col-sm-12 ">
