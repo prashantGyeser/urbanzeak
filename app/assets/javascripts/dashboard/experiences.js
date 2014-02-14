@@ -35,6 +35,14 @@ ready = function() {
     });
 
 
+    // Landmark auto complete
+    $('#experience_land_mark').geocomplete({
+        map: "#map",
+        markerOptions: {
+            draggable: true
+        }
+    });
+
 
 };
 

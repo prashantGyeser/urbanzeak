@@ -106,13 +106,15 @@
           <br>
           <div class="row">
             <div class="col-md-12">
-              <input type="text" class="form-control" placeholder="Landmark"/>
+              <%= f.text_field :land_mark, :class => "form-control", :placeholder => "Landmark" %>
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-md-12">
-              <div id="map" style="width: 100%; height: 300px; background: #eee;"></div>
+              <div id="map" style="width: 100%; height: 300px; background: #eee;">
+                <h2>Type an address in the input above</h2>
+              </div>
             </div>
           </div>
 

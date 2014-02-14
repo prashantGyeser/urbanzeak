@@ -17,4 +17,5 @@
 //= require breakpoints
 //= require jquery-unveil/jquery.unveil.min
 //= require jquery-block-ui/jqueryblockui
+//= require ubilabs-geocomplete/jquery.geocomplete.min
 //= require turbolinks
