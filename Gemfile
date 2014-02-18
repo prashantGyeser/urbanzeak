@@ -111,6 +111,9 @@ gem 'json'
 # Email management for messages to the host from their customers
 gem 'griddler'
 
+# Gem to allow access of controller data from a javascript file
+gem 'gon'
+
 group :development do
   gem 'annotate'
   gem "better_errors"

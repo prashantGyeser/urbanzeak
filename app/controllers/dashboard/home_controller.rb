@@ -23,7 +23,8 @@ class Dashboard::HomeController < Dashboard::ApplicationController
   		@views << [i, total_views]
   		i = i + 1
   	end
-  	
+
+    gon.page_views = @views
   	
 
   end

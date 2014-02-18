@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    alert(gon.page_views);
+
     // Moris Charts - Line Charts
 
     Morris.Line({

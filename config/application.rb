@@ -42,5 +42,16 @@ module Urbanzeak
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
+    # Adding this to fix the issue with dashboard/application.js not being served
+    config.assets.precompile += %w( dashboard/dashboard.js )
+    config.assets.precompile += %w( jquery-slider/jquery.sidr.min )
+    config.assets.precompile += %w( jquery-slimscroll/jquery.slimscroll.min )
+    config.assets.precompile += %w( pace/pace.min )
+    config.assets.precompile += %w( jquery-numberAnimate/jquery.animateNumbers )
+    config.assets.precompile += %w( jquery-morris-chart/js/morris.min )
+    config.assets.precompile += %w( dashboard/core.js )
+    config.assets.precompile += %w( dashboard/chat.js )
+    config.assets.precompile += %w( dashboard/demo.js )
+
   end
 end
