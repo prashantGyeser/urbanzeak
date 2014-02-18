@@ -44,4 +44,34 @@ class Experience < ActiveRecord::Base
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable
 
+  def self.total_visits_this_month(user_id)
+    experiences = Experience.where(:user_id => user_id)
+    @views = 0
+    experiences.each do |experience|
+      @views = @views + experience.impressionist_count
+    end
+    return @views
+  end
+
+  def self.total_visits_today(user_id)
+    experiences = Experience.where(:user_id => user_id)
+    views_for_the_day = 0
+    experiences.each do |experience|
+      views_for_the_day = experience.impressionist_count(:start_date=> (Date.today - 1))
+    end
+    return views_for_the_day
+  end
+
+
+  def self.todays_sales(user_id)
+    experiences = Experience.where(:user_id => user_id)
+    sales_today = 0
+    experiences.each do |experience|
+      attendees = Attendee.where(:experience_id => experience.id).where(:created_at => Date.today)
+      .pluck(:seats).sum
+      sales_today = sales_today + (attendees * experience.price )
+    end
+    return sales_today
+  end
+
 end
