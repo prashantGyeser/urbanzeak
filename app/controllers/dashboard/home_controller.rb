@@ -1,5 +1,12 @@
 class Dashboard::HomeController < Dashboard::ApplicationController
   def index
+
+    # Views from the beginning of time for all the experiences for this user
+    @total_views = Experience.total_visits_this_month(current_user.id)
+    @total_views_today = Experience.total_visits_today(current_user.id)
+    @total_sales_today = 0#Experience.todays_sales(current_user.id)
+
+
   	# Getting the views for the last 7 days and storing it in an array
   	#@views = []
   	i = 1

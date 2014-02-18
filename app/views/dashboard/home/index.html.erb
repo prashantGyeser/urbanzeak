@@ -15,20 +15,14 @@
 </div>
 <!-- END PAGE TITLE -->
 
-
 <!--KEY VALUES-->
 <div class="row">
   <!--BOX 1-->
   <div class="col-md-3">
     <div class="tiles blue added-margin">
       <div class="tiles-body">
-        <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-        <div class="tiles-title"> TODAY’S SERVER LOAD </div>
-        <div class="heading"> <span class="animate-number" data-value="26.8" data-animation-duration="1200">26.8</span>% </div>
-        <div class="progress transparent progress-small no-radius">
-          <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="26.8%" style="width: 26.8%;"></div>
-        </div>
-        <div class="description"><i class="icon-custom-up"></i><span class="text-white mini-description ">&nbsp; 4% higher <span class="blend">than last month</span></span></div>
+        <div class="tiles-title"> TOTAL VISITS </div>
+        <div class="heading"> <span class="animate-number" data-value="<%= @total_views %>" data-animation-duration="1200"><%= @total_views %></span> </div>
       </div>
     </div>
   </div>
@@ -37,13 +31,8 @@
   <div class="col-md-3">
     <div class="tiles green added-margin">
       <div class="tiles-body">
-        <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
         <div class="tiles-title"> TODAY’S VISITS </div>
-        <div class="heading"> <span class="animate-number" data-value="2545665" data-animation-duration="1000">2,545,665</span> </div>
-        <div class="progress transparent progress-small no-radius">
-          <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="79%" style="width: 79%;"></div>
-        </div>
-        <div class="description"><i class="icon-custom-up"></i><span class="text-white mini-description ">&nbsp; 2% higher <span class="blend">than last month</span></span></div>
+        <div class="heading"> <span class="animate-number" data-value="<%= @total_views_today %>" data-animation-duration="1000"><%= @total_views_today %></span> </div>
       </div>
     </div>
   </div>
@@ -52,13 +41,8 @@
   <div class="col-md-3">
     <div class="tiles red added-margin">
       <div class="tiles-body">
-        <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
         <div class="tiles-title"> TODAY’S SALES </div>
-        <div class="heading"> $ <span class="animate-number" data-value="14500" data-animation-duration="1200">14,500</span> </div>
-        <div class="progress transparent progress-white progress-small no-radius">
-          <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="45%" style="width: 45%;"></div>
-        </div>
-        <div class="description"><i class="icon-custom-up"></i><span class="text-white mini-description ">&nbsp; 5% higher <span class="blend">than last month</span></span></div>
+        <div class="heading"> $ <span class="animate-number" data-value="<%= @total_sales_today %>" data-animation-duration="1200"><%= @total_sales_today %></span> </div>
       </div>
     </div>
   </div>
@@ -84,9 +68,6 @@
 <!--END KEY VALUES-->
 <br>
 <br>
-
-
-
 
 <!--TOP LINE CHART-->
 <div class="row">
