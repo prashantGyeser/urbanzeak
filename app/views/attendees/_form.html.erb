@@ -11,14 +11,34 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :seats %><br>
-    <%= f.number_field :seats, :class => "form-control" %>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <%= f.number_field :seats, :class => "form-control", :placeholder => "Seats" %>
+    </div>
   </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <%= f.text_field :phone_number, :class => "form-control", :placeholder => "Phone number" %>
+    </div>
+  </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+    </div>
+  </div>
+
+
   <div class="field">
     <%= f.hidden_field :experience_id, :value => experience_id %>
   </div>
-  <div class="actions">
-    <%= f.submit "RSVP Now", :class => "button is-primary", :style => "font-wight: bold" %>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <%= f.submit "RSVP Now", :class => "btn btn-primary btn-cons" %>
+    </div>
   </div>
+
 <% end %>

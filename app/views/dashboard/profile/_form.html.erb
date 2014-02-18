@@ -1,4 +1,4 @@
-<%= form_for(@host, :html => {:class => "form-horizontal", :role => "form"}) do |f| %>
+<%= form_for(@host, :html => {:class => "", :role => "form", :style => "background: none;border: none; padding: 0"}) do |f| %>
   <% if @host.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@host.errors.count, "error") %> prohibited this host from being saved:</h2>
@@ -11,50 +11,44 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <div class="row">
-      <%= f.label :about, :class => "col-md-2 control-label" %>
-      <div class="col-md-4">
-        <p>
-          Tell your visitors a bit about yourself, what you like doing and how you got started with what yoou are doing. You know how important a first impression can be!
-        </p>
-      </div>
-      <div class="col-md-6">
-        <%= f.text_area :about, :class => "form-control", :rows => "6" %>
-      </div>
-      
-    </div>
-  </div>
-  
 
   <div class="row">
-    <div class="form-group">
-      <label for="about" class="col-md-2 control-label">Picture</label>
-      <div class="col-md-4">
-        <%# profile_pic = false %>
-        <% if @host.avatar.blank? %>
-          <div class="noPic">
-            <i class="fa fa-cloud-upload"></i>
-            <p>Upload a photo</p>
-          </div>  
-        <% else %>
-          <%= image_tag @host.avatar_url(:thumb) %>
-        <% end %>
-        
+    <div class="col-md-8">
+      <div class="grid simple">
+        <!-- GRID TITLE -->
+        <div class="grid-title no-border">
+          <h4>Describe yourself</h4>
+        </div>
+        <!-- END GRID TITLE -->
+        <!--GRID BODY-->
+        <div class="grid-body no-border">
+          <h3>Your <span class="semi-bold">Experience</span></h3>
+          <p>
+            In this section give your experience a catchy title and describe it in detail. Paint a picture, tell people what they will get when they attend your experience and tell them why they should attend.
+          </p>
+          <br>
+          <%= f.text_area :about, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+        </div>
+        <!--END GRID BODY-->
       </div>
-      <div class="col-md-6">
-        <!--
-        <button class="button is-secondary" style="font-weight:bold; color:white;">Upload a picture</button>
-      -->
-        <%= f.file_field :avatar, :class => "form-control"%>
+      <%= f.submit 'Add about', :class => "btn btn-primary btn-cons" %>
+    </div>
+    <div class="col-md-4">
+      <div class="grid simple">
+        <div class="grid-title no-border">
+          <h4>Picture upload</h4>
+        </div>
+        <div class="grid-body no-border">
+          <h3>Your <span class="semi-bold">Photo</span></h3>
+          <p>
+            Tell people where they should come for the experience.
+          </p>
+          <div class="row-fluid">
+            <%= f.file_field :avatar, :class => "form-control"%>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-
-  
-  <div class="actions">
-    <%= f.submit 'Add about', :class => "button is-primary", :style => 'font-weight: bold;color:white;' %>
-    <span>or <%= link_to 'Cancel', root_path%></span>
-  </div>
 <% end %>

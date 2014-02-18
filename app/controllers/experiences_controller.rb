@@ -12,7 +12,8 @@ class ExperiencesController < ApplicationController
     @attendee = Attendee.new
     @message = Message.new
     @advance_booking = AdvanceBooking.new
-    @header_images = ExperienceImage.where(:random_id => @experience.random_id)
+    @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
+    @images =ExperienceImage.where(:random_id => @experience.random_id)
     impressionist(@experience)
     render layout: false
   end
@@ -24,17 +25,14 @@ class ExperiencesController < ApplicationController
     #@experience = Experience.new(experience_params)
     
     @experience = Experience.new(experience_params)
-    logger.debug "the params are from the experience ocntroller: #{params}"
     @experience.user_id = current_user.id
     logger.debug "The value in the dates is: #{params[:experience][:exp_date]}"
-    #images = ExperienceImage.where(:random_id => @experience.random_id)    
+    images = ExperienceImage.where(:random_id => @experience.random_id)
 
-    #images.each do |image|
-      #image.experience_id = @experience.id
-      #image.save
-    #end
-    
-
+    images.each do |image|
+      image.experience_id = @experience.id
+      image.save
+    end
 
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     if fbCheckToken.blank?
@@ -66,14 +64,14 @@ class ExperiencesController < ApplicationController
          
     respond_to do |format|
       if @experience.save
-        experience_dates = params[:experience][:exp_date].split(',')
+        #experience_dates = params[:experience][:exp_date].split(',')
 
-        experience_dates.each do |experience_date|
-          @experience_date = ExperienceDate.new
-          @experience_date.experience_date =   experience_date
-          @experience_date.experience_id = @experience.id
-          @experience_date.save
-        end
+        #experience_dates.each do |experience_date|
+          #@experience_date = ExperienceDate.new
+          #@experience_date.experience_date =   experience_date
+          #@experience_date.experience_id = @experience.id
+          #@experience_date.save
+        #end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
           

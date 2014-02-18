@@ -18,6 +18,7 @@
 #  raw_body      :text
 #  headers       :text
 #  raw_headers   :text
+#  guid          :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

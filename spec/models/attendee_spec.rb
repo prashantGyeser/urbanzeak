@@ -8,6 +8,8 @@
 #  experience_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  phone_number  :string(255)
+#  email         :string(255)
 #
 
 require 'spec_helper'

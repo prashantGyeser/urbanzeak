@@ -18,6 +18,7 @@
 #  raw_body      :text
 #  headers       :text
 #  raw_headers   :text
+#  guid          :string(255)
 #
 
 class Message < ActiveRecord::Base
