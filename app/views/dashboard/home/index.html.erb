@@ -77,7 +77,9 @@
         <h4>Visitors <span class="semi-bold">By Day</span></h4>
         <p> Line graphs are probably the most widely used graph for showing trends.
           Chart.js has a ton of customisation features for line graphs, along with support for multiple datasets to be plotted on one chart. </p>
-        <div id="line-example"> </div>
+        <!--<div id="line-example"> </div>-->
+
+        <%= content_tag :div, "", id: "visits_chart", :data => { :views => @total_views_by_day} %>
       </div>
     </div>
   </div>

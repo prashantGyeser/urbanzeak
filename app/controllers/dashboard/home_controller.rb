@@ -14,17 +14,26 @@ class Dashboard::HomeController < Dashboard::ApplicationController
   	@experiences = Experience.where(:user_id => current_user.id)
   	@views = []
 
-  	while i < 8
-  		total_views = 0
-  		@experiences.each do |experience|
-  			views_for_the_day = experience.impressionist_count(:start_date=> (Date.today - (i + 1)),:end_date=>(Date.today - i))
-  			total_views = total_views + views_for_the_day
-  		end
-  		@views << [i, total_views]
-  		i = i + 1
-  	end
 
-    gon.page_views = @views
+    while i < 8
+      total_views = 0
+
+      @experiences.each do |experience|
+        views_for_the_day = experience.impressionist_count(:start_date=> (Date.today - (i + 1)),:end_date=>(Date.today - i))
+        total_views = total_views + views_for_the_day
+      end
+      @views << [i, total_views]
+
+      i = i + 1
+    end
+
+    @total_views_by_day = []
+
+    @views.each { |record| @total_views_by_day << {'day' => record[0], 'total_views' => record[1].to_i} }
+
+    logger.debug "The value in the views is: #{@total_views_by_day}"
+
+    #gon.page_views = @views
   	
 
   end
