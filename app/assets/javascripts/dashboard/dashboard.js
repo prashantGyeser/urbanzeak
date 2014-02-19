@@ -22,21 +22,14 @@ $(document).ready(function() {
         lineColors:['#0aa699']
     });
 
-    Morris.Line({
-        element: 'most_valuable_referrer_1',
+    Morris.Donut({
+        element: 'referrer-breakdown',
         data: [
-            { y: '2006', a: 50, b: 40 },
-            { y: '2007', a: 65,  b: 55 },
-            { y: '2008', a: 50,  b: 40 },
-            { y: '2009', a: 75,  b: 65 },
-            { y: '2010', a: 50,  b: 40 },
-            { y: '2011', a: 75,  b: 65 },
-            { y: '2012', a: 100, b: 90 }
+            {label: "Download Sales", value: 12},
+            {label: "In-Store Sales", value: 30},
+            {label: "Mail-Order Sales", value: 20}
         ],
-        xkey: 'y',
-        ykeys: ['a', 'b'],
-        labels: ['Series A', 'Series B'],
-        lineColors:['#0aa699','#d1dade']
+        colors:['#60bfb6','#91cdec','#eceff1']
     });
 
     Morris.Line({

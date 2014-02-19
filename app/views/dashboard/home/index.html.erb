@@ -98,10 +98,12 @@
         <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
       </div>
       <div class="grid-body no-border">
-        <h3>Most Valuable</h3>
+        <h3>Referrer Breakdown</h3>
         <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
         <br>
-        <div id="most_valuable_referrer_1"> </div>
+        <h1><%= @referrer.count %></h1>
+        <!--<div id="most_valuable_referrer_1"> </div>-->
+        <div id="referrer-breakdown" style="height:200px;"> </div>
       </div>
     </div>
   </div>
