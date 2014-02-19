@@ -52,6 +52,7 @@ module Urbanzeak
     config.assets.precompile += %w( dashboard/core.js )
     config.assets.precompile += %w( dashboard/chat.js )
     config.assets.precompile += %w( dashboard/demo.js )
+    config.assets.precompile += %w( dashboard/calendar.js )
 
   end
 end

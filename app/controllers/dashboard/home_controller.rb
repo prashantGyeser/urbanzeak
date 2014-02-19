@@ -32,14 +32,6 @@ class Dashboard::HomeController < Dashboard::ApplicationController
     @views.each { |record| @total_views_by_day << {'day' => record[0], 'total_views' => record[1].to_i} }
 
 
-    @referrer = []
-
-    @experiences.each do |experience|
-      @referrer[0] << Impression.where(:impressionable_id => experience.id).pluck(:referrer)
-    end
-
-
-
 
   end
 end
