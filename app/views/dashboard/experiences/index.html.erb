@@ -1,3 +1,7 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag "dashboard/experience_index.js", 'data-turbolinks-track' => true %>
+<% end %>
+
 <!-- BEGIN PAGE TITLE -->
 <div class="page-title">
   <h3>Experiences - Option 2</h3>
@@ -39,9 +43,11 @@
                   <p><%= truncate(experience.description, length: 100) %></p>
 
                   <div class="post p-t-10 p-b-10">
-                    <a href="#" data-toggle="modal" data-target="#review_list"><span class="bold text-success">View Reviews</span></a>
+                    <% reviews = Review.where(:experience_id => experience.id) %>
+                    <a href="#" data-toggle="modal" data-target="#review_list_<%= experience.id %>"><span class="bold text-success">View Reviews</span></a>
                     <!--REVIEWS LIST START-->
-                    <div class="modal fade" id="review_list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                    <div class="modal fade" id="review_list_<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -56,7 +62,6 @@
                               <div class="col-md-12">
                                 <div class="grid simple ">
                                   <div class="grid-body no-border">
-                                    <h3>Experience Name  <span class="semi-bold">Reviews</span></h3>
                                     <table class="table no-more-tables">
                                       <thead>
                                       <tr>
@@ -71,53 +76,25 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-                                      <tr>
-                                        <td class="v-align-middle">
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" value="1" id="checkbox11">
-                                            <label for="checkbox11"></label>
-                                          </div>
-                                        </td>
-                                        <td class="v-align-middle">
-                                          Early Bird
-                                          <br/>
-                                          <div style="margin-top: 10px">
-                                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                          </div>
-                                        </td>
-                                        <td class="v-align-middle"><a href="#">View Review</a></td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" value="1" id="checkbox12">
-                                            <label for="checkbox12"></label>
-                                          </div>
-                                        </td>
-                                        <td>Angry Birds&nbsp;&nbsp;&nbsp;<span class="label label-success">SELECTED</span>
-                                        </td>
-                                        <td class="v-align-middle"><a href="#">View Review</a></td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" value="1" id="checkbox13">
-                                            <label for="checkbox13"></label>
-                                          </div>
-                                        </td>
-                                        <td>PHP Login page</td>
-                                        <td class="v-align-middle"><a href="#">View Review</a></td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" value="1" id="checkbox14">
-                                            <label for="checkbox14"></label>
-                                          </div>
-                                        </td>
-                                        <td>Zombies</td>
-                                        <td class="v-align-middle"><a href="#">View Review</a></td>
-                                      </tr>
+
+                                      <% reviews.each do |review| %>
+                                        <tr>
+                                          <td class="v-align-middle">
+                                            <div class="checkbox check-default">
+                                              <input type="checkbox" value="1" id="checkbox11">
+                                              <label for="checkbox11"></label>
+                                            </div>
+                                          </td>
+                                          <td class="v-align-middle">
+                                            <%= review.name %>
+                                            <br/>
+                                            <div style="margin-top: 10px" class="review_comment" id="<%= experience.id %>_<%= review.id %>">
+                                              <%= review.comment %>
+                                            </div>
+                                          </td>
+                                          <td class="v-align-middle"><a href="#<%= experience.id %>_<%= review.id %>" class="view_review">View Review</a></td>
+                                        </tr>
+                                      <% end %>
                                       </tbody>
                                     </table>
                                   </div>
