@@ -56,6 +56,7 @@ Urbanzeak::Application.routes.draw do
   devise_for :users
   get "experiences/get/:country", to: "experiences#country"
   resources :experiences
+  post 'experiences/create_review' => "experiences#create_review"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -65,7 +66,7 @@ Urbanzeak::Application.routes.draw do
   get 'home/:city', to: "home#index"
     
     
-  match '/:id' => "shortener/shortened_urls#show", via: [:get, :post]
+  match '/:id' => "shortener/shortened_urls#show", via: [:get]
 
 
   # Example of regular route:

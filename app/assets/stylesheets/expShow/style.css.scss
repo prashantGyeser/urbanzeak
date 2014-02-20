@@ -2800,4 +2800,23 @@ margin-bottom:0px;
 .item-info-overlay .button + .button {
     margin-left: 5px;
 }
-   
+/*** Modals **/
+.modal{
+  border-radius:3px;
+}
+.modal-header{
+  text-align:center;
+}
+.modal-body{
+  background-color:#e5e9ec;
+}
+.modal-footer{
+  border-top:none;
+  box-shadow:none;
+  background-color: #F3F5F6;
+  margin-top: 0;
+}
+
+.modal-header p{
+  color:#8b91a0
+}
