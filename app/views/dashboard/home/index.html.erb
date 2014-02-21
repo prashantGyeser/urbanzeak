@@ -139,13 +139,3 @@
 
 
 
-
-<!-- Keep all page content within the page-content inset div! -->
-<div class="page-content inset">
-  <% if current_user.tour_completed == true %>
-    <%= render :partial => "reports" %>
-  <% else %>
-    <%= render :partial => "onboarding" %>
-  <% end %>
-
-</div>
