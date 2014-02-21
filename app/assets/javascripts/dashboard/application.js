@@ -19,4 +19,13 @@
 //= require jquery-block-ui/jqueryblockui
 //= require ubilabs-geocomplete/jquery.geocomplete.min
 //= require fullcalendar/fullcalendar.min
+//= require raphael/raphael-min
+//= require jquery-morris-chart/js/morris.min
+//= require jquery-slider/jquery.sidr.min
+//= require jquery-slimscroll/jquery.slimscroll.min
+//= require pace/pace.min
+//= require jquery-numberAnimate/jquery.animateNumbers
+//= require dashboard/core
+//= require dashboard/chat
+//= require dashboard/demo
 //= require turbolinks
