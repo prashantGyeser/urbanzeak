@@ -11,6 +11,10 @@ ready = function() {
         $(divToOpen).show();
     });
 
+    $('.review_select').click(function(){
+        alert('K clicked');
+    });
+
 };
 
 $(document).ready(ready);
