@@ -4,6 +4,12 @@
 == Compiling
 RAILS_ENV=production bundle exec rake assets:clean
 
+== Migrating the database in production
+rake db:migrate RAILS_ENV="production"
+
+== Running rails server using the production environment
+rails server -e production
+
 == AJAX Spinner generated using
 http://preloaders.net/
 
