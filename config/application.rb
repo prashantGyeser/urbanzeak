@@ -60,6 +60,8 @@ module Urbanzeak
     config.assets.precompile += %w( bootstrap-datepicker/js/bootstrap-datepicker.js )
     config.assets.precompile += %w( bootstrap-timepicker/js/bootstrap-timepicker.min.js )
     config.assets.precompile += %w( dashboard/experiences.js )
+    config.assets.precompile += %w( dashboard/profile.js )
+    config.assets.precompile += %w( dashboard/experience_index.js )
 
   end
 end

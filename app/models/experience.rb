@@ -40,6 +40,7 @@ class Experience < ActiveRecord::Base
   #mount_uploader :image, ImageUploader
   belongs_to :template
   has_many :experience_images
+  has_many :reviews
 
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable

@@ -111,6 +111,23 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def create_review
+
+    #@review = Review.new(review_params)
+    @review = Review.new(review_params)
+    logger.debug "The params are: #{params.inspect}"
+    respond_to do |format|
+      if @review.save
+        logger.debug "It is getting to the save"
+        #format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
+        format.json { render json: @review }
+      else
+        logger.debug "It is getting to the error"
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   protected
 
   def check_if_host
@@ -133,4 +150,11 @@ class ExperiencesController < ApplicationController
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
       params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id)
     end
+
+    def review_params
+      #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+      params.require(:review).permit(:name, :email, :comment, :experience_id)
+    end
+
+
 end
