@@ -8,15 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require owl-carousel/owl.carousel
- *= require owl-carousel/owl.theme
- *= require headereffects/css/component
- *= require headereffects/css/normalize
- *= require pace/pace-theme-flash
- *= require boostrapv3/css/bootstrap.min
- *= require boostrapv3/css/bootstrap-theme.min
- *= require font-awesome/css/font-awesome.min
- *= require rs-plugin/css/settings
+ *= require plugins/owl-carousel/owl.carousel
+ *= require plugins/owl-carousel/owl.theme
+ *= require plugins/headereffects/css/component
+ *= require plugins/headereffects/css/normalize
+ *= require plugins/pace/pace-theme-flash
+ *= require plugins/boostrapv3/css/bootstrap.min
+ *= require plugins/boostrapv3/css/bootstrap-theme.min
+ *= require plugins/font-awesome/css/font-awesome.min
+ *= require plugins/rs-plugin/css/settings
  *= require_self
  *= require_tree .
  */
