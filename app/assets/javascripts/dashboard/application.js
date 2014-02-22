@@ -12,11 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/jquery-ui-1.10.1.custom.min
-//= require boostrapv3/js/bootstrap.min
-//= require breakpoints
-//= require jquery-unveil/jquery.unveil.min
-//= require jquery-block-ui/jqueryblockui
-//= require ubilabs-geocomplete/jquery.geocomplete.min
-//= require fullcalendar/fullcalendar.min
+//= require plugins/jquery-ui/jquery-ui-1.10.1.custom.min
+//= require plugins/boostrapv3/js/bootstrap.min
+//= require plugins/breakpoints
+//= require plugins/jquery-unveil/jquery.unveil.min
+//= require plugins/jquery-block-ui/jqueryblockui
+//= require plugins/ubilabs-geocomplete/jquery.geocomplete.min
+//= require plugins/fullcalendar/fullcalendar.min
+//= require plugins/raphael/raphael-min
+//= require plugins/jquery-morris-chart/js/morris.min
+//= require plugins/jquery-slider/jquery.sidr.min
+//= require plugins/jquery-slimscroll/jquery.slimscroll.min
+//= require plugins/pace/pace.min
+//= require plugins/jquery-numberAnimate/jquery.animateNumbers
+//= require dashboard/core
+//= require dashboard/chat
+//= require dashboard/demo
 //= require turbolinks

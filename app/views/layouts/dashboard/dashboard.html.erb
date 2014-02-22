@@ -14,30 +14,12 @@
 
   <!-- NEED TO WORK ON -->
   <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/animate.min", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/style", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/responsive", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/custom-icon-set", media: "all", "data-turbolinks-track" => true %>
 
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
   <!-- BEGIN CORE JS FRAMEWORK-->
   <%= include_gon %>
   <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
   <!-- END CORE JS FRAMEWORK -->
-  <!-- BEGIN PAGE LEVEL JS -->
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-  <%= javascript_include_tag "jquery-slider/jquery.sidr.min", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery-slimscroll/jquery.slimscroll.min", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "pace/pace.min", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "jquery-numberAnimate/jquery.animateNumbers", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "jquery-morris-chart/js/morris.min", 'data-turbolinks-track' => true %>
-  <!-- END PAGE LEVEL PLUGINS -->
-
-  <!-- BEGIN CORE TEMPLATE JS -->
-  <%= javascript_include_tag "dashboard/core.js", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "dashboard/chat.js", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "dashboard/demo.js", 'data-turbolinks-track' => true %>
-  <!-- END CORE TEMPLATE JS -->
 
   <!-- END NEED TO WORK ON -->
 
