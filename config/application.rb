@@ -42,6 +42,9 @@ module Urbanzeak
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
+    # Adding the vendor/plugin dir to the precompile list
+    config.assets.paths << Rails.root.join("vendor")
+
     # Adding this to fix the issue with dashboard/application.js not being served
     config.assets.precompile += %w( dashboard/dashboard.js )
     config.assets.precompile += %w( jquery-slider/jquery.sidr.min )
