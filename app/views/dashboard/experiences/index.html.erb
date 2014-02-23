@@ -27,7 +27,12 @@
             <!--TODO: Change this image to the image of the experience-->
             <!--<img class="lazy hover-effect-img image-responsive-width" alt="" src="assets/img/others/10.png"> -->
             <% experience_image = ExperienceImage.where(:random_id => experience.random_id).first %>
-            <%= image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
+            <% if experience_image.nil? %>
+
+            <% else %>
+              <%= image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
+            <%end%>
+
           </div>
           <div class="tiles white ">
             <div class="tiles-body">
