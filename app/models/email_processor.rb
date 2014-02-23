@@ -6,7 +6,10 @@ class EmailProcessor
     @message.to = email.to
     @message.from = email.from
     @message.subject = email.subject
-    @message.body = email.body
+    @message.body = email.text
+
+    logger.debug "The message trying to be saved is: #{@message.inspect}"
+
     @message.save
   end
 end
