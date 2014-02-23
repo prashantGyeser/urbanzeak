@@ -22,4 +22,7 @@
 #
 
 class Message < ActiveRecord::Base
+  # Serializing the to column becuase it comes in as an array from Mandrill
+  # Refer http://api.rubyonrails.org/classes/ActiveRecord/Base.html for details on serialization
+  serialize :to
 end
