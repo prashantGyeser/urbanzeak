@@ -7,7 +7,7 @@
 <br>
 <div class="row-fluid">
 <div class="row-fluid dataTables_wrapper">
-  <h2 class=" inline">Inbox </h2>
+  <h2 class=" inline">Messages </h2>
 
   <div class="pull-right">
     <div class="dataTables_paginate paging_bootstrap pagination">
@@ -32,6 +32,31 @@
 </tr>
 </thead>
 <tbody>
+
+<% @messages.each do |message| %>
+  <!--INDIVIDUAL MESSAGE START-->
+  <tr>
+    <td class="small-cell v-align-middle">
+      <div class="checkbox check-success ">
+        <input type="checkbox" value="1" id="checkbox8">
+        <label for="checkbox8"></label>
+      </div>
+    </td>
+    <td class="small-cell v-align-middle">
+      <div class="star">
+        <input type="checkbox" checked="" value="1" id="checkbox9">
+        <label for="checkbox9"></label>
+      </div>
+    </td>
+    <td class="clickable v-align-middle">David Nester</td>
+    <td class="clickable tablefull v-align-middle"><span class="muted">Less spam, and mobile access. Gmail is email that's intuitive, ...efficient, and useful. And maybe even fun.</span></td>
+    <td class="clickable"><span class="muted">Yesterday </span></td>
+
+  </tr>
+  <!--INDIVIDUAL MESSAGE END-->
+
+<% end %>
+
 <tr>
   <td class="small-cell v-align-middle">
     <div class="checkbox check-success ">
