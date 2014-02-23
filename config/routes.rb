@@ -37,6 +37,8 @@ Urbanzeak::Application.routes.draw do
     get "templates" => "templates#index"
     resources :templates
     get "profile/about"
+    get "messages" => "messages#index"
+    get "messages/show"
   end
 
   get "home/index"
