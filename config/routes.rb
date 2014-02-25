@@ -38,7 +38,8 @@ Urbanzeak::Application.routes.draw do
     resources :templates
     get "profile/about"
     get "messages" => "messages#index"
-    get "messages/show"
+    get "messages/:id" => "messages#show"
+    post "messages/create" => "messages#create"
   end
 
   get "home/index"

@@ -1,2 +1,47 @@
-<h1>Dashboard::Messages#show</h1>
-<p>Find me in app/views/dashboard/messages/show.html.erb</p>
+<div class="row">
+  <div style="display: block;" id="preview-email-wrapper" class="col-md-12 animated fadeIn">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="grid simple">
+          <div class="grid-title no-border">
+            <h4></h4>
+            <div class="tools">
+              <a class="remove" href="javascript:;"></a>
+            </div>
+          </div>
+          <div style="min-height: 850px;" class="grid-body no-border">
+            <div class="">
+              <h1 id="emailheading">Conversation with <span class="semi-bold"> <%= @name %> </span></h1>
+              <br>
+
+              <% @ordered_by_date_messages.each do |message| %>
+                <div class="email-message">
+                  <div class="control">
+                    <div class="pull-left">
+                      <span class="bold"><%= message.from %></span>
+                      <label class="inline"><span class="muted">&nbsp;to&nbsp;</span></label>
+                      <span class="bold small-text"><%= message.to %></span>
+                    </div>
+                    <div class="pull-right">
+                      <!--<span class="muted small-text">August 5 2013 11.30PM</span>-->
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <br>
+                  <div class="email-body">
+                    <%= message.body %>
+                  </div>
+                </div>
+                <br/>
+              <% end %>
+
+              <%= render 'form' %>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

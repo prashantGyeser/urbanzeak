@@ -1,2 +1,12 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+var ready;
+ready = function() {
+
+    $('tr').click(function(){
+        var messageIdSelected = $(this).data('message-id');
+        window.location = "/dashboard/messages/" + messageIdSelected;
+    });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
