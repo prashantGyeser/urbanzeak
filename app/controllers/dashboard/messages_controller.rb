@@ -35,7 +35,20 @@ class Dashboard::MessagesController < Dashboard::ApplicationController
 
 
   def create
-    logger.debug "Ok it is getting here"
+    to = params[:to]
+    message = params[:message]
+    @message = Message.new(from: current_user.internal_email_id, to: to, body: message)
+
+    respond_to do |format|
+      if @message.save
+        format.json{ render :json => @message }
+      else
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
+    end
+
+
+
   end
 
 end

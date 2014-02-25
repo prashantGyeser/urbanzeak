@@ -33,9 +33,13 @@ ready = function() {
 
     $('.form-control').keypress(function(event){
 
-        var keycode = (event.keyCode ? event.keyCode : event.which);
+    var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            alert('You pressed a "enter" key in textbox');
+            var person_to_message = $(this).siblings('.hidden_email').val();
+            var message = $(this).val();
+            $.post( "messages/create", { message: message, to: person_to_message }, function(data){
+                console.log('K it is getting here, need to add the message to the list of messages on top');
+            });
         }
 
     });
