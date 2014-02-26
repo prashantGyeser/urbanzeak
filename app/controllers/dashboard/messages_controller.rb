@@ -7,7 +7,7 @@ class Dashboard::MessagesController < Dashboard::ApplicationController
     @messages_from = Message.where(:from => current_user.internal_email_id)
     @messages = [@messages_to, @messages_from].flatten
     #@messages_groups = @messages.group_by(&:from)
-    @messages_groups = @messages.group_by { |m| m[:from] }
+    @messages_groups = @messages.group_by { |m| [m[:from], m[:to]] }
   end
 
   def show
