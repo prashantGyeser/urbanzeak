@@ -28,9 +28,12 @@ class Dashboard::MessagesController < Dashboard::ApplicationController
 
 
   def create
-    to = params[:to]
+    conversation_id = params[:conversation_id]
     message = params[:message]
-    @message = Message.new(from: current_user.internal_email_id, to: to, body: message)
+    conversation = Conversation.find(conversation_id)
+    to = conversation.sender_email_id
+
+    @message = Message.new(from: current_user.internal_email_id, conversation_id: conversation_id, body: message, to: to)
 
     respond_to do |format|
       if @message.save
@@ -39,8 +42,6 @@ class Dashboard::MessagesController < Dashboard::ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
-
-
 
   end
 

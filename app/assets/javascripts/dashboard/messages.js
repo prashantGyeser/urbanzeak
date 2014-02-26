@@ -35,10 +35,10 @@ ready = function() {
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            var person_to_message = $(this).siblings('.hidden_email').val();
+            var conversation_reply_to = $(this).siblings('.hidden_conversation_id').val();
             var message = $(this).val();
-            $.post( "messages/create", { message: message, to: person_to_message }, function(data){
-                console.log('K it is getting here, need to add the message to the list of messages on top');
+            $.post( "messages/create", { message: message, conversation_id: conversation_reply_to }, function(data){
+                console.log('Need to add this message to the list of messages on the top');
             });
         }
 
