@@ -11,7 +11,7 @@ class NotificationsMailer < ActionMailer::Base
 
   end
 
-  def host_message_notification(message, conversation)
+  def host_message_notification(message, conversation, host)
     @message = message
     to = "#{host.first_name} <#{host.email}>"
     from = "#{conversation.customer_name} <#{conversation.sender_email_id}>"
