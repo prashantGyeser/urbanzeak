@@ -8,4 +8,10 @@ class NotificationsMailer < ActionMailer::Base
     headers['Reply-To'] = reply_to
 
   end
+
+  def host_message_notification(message, conversation)
+    @message = message
+    mail(:to => message.to, :subject => "You have a new message", :from => message.from)
+  end
+
 end
