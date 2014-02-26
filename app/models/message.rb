@@ -38,10 +38,10 @@ class Message < ActiveRecord::Base
     conversation = Conversation.find(self.conversation_id)
     host = User.find(conversation.user_id)
     if self.to == host.email
-      NotificationsMailer.host_message_notification(self, conversation).deliver
+      NotificationsMailer.host_message_notification(self, conversation, host).deliver
     else
       logger.debug "It is getting to the else also why?"
-      NotificationsMailer.message_notification(self, conversation).deliver
+      NotificationsMailer.message_notification(self, conversation, host).deliver
     end
     logger.debug "Ok it is getting into the right function, now need to check why it is being sent twice"
 
