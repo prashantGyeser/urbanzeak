@@ -1,0 +1,18 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag "dashboard/messages.js", 'data-turbolinks-track' => true %>
+<% end %>
+
+
+<div class="page-title">
+  <h3>Support</h3>
+</div>
+
+<!--ROW START-->
+<div class="row">
+  <!--12 COL START-->
+  <div class="col-md-12">
+    <%= render :partial => "conversations", locals: { conversations: @conversations } %>
+  </div>
+  <!--12 COL END-->
+</div>
+<!--ROW END-->

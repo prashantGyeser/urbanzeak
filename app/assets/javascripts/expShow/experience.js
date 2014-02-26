@@ -11,4 +11,17 @@ $(document).ready(function(){
             'json'
         );
     });
+
+    $('#send_conversation').click(function(e){
+        e.preventDefault();
+
+        $.post('/conversations/create', $('form#new_conversation').serialize(), function(data){
+            $('.modal-body').hide();
+            $('#review_created_success').show();
+            $('#create_review').attr('disabled', true);
+            $('#create_review').addClass('disabled');
+        },
+            'json'
+        );
+    });
 });

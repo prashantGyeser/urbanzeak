@@ -1,5 +1,8 @@
 Urbanzeak::Application.routes.draw do
 
+
+  post "conversations/create" => "conversations#create"
+
   # Sending a user to the dashboard page once they login
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
   authenticated :user do 
@@ -37,6 +40,9 @@ Urbanzeak::Application.routes.draw do
     get "templates" => "templates#index"
     resources :templates
     get "profile/about"
+    get "messages" => "messages#index"
+    get "messages/:id" => "messages#show"
+    post "messages/create" => "messages#create"
   end
 
   get "home/index"
