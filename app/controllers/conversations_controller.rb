@@ -4,13 +4,14 @@ class ConversationsController < ApplicationController
   # POST /messages.json
   def create
     @conversation = Conversation.new()
-    @conversation.sender_email_id = params[:message][:email]
+    @conversation.sender_email_id = params[:message][:from]
     experience = Experience.find(params[:message][:experience_id])
     user = User.find(experience.user_id)
     @conversation.user_id = user.id
     @conversation.experience_id = experience.id
     @conversation.customer_name = params[:message][:name]
     @message = @conversation.messages.build(message_params)
+
 
     respond_to do |format|
       if @conversation.save

@@ -1,0 +1,26 @@
+<% conversations.each do |conversation| %>
+
+
+  <div class="grid simple no-border">
+    <!--GRID TITLE START-->
+    <div class="grid-title no-border descriptive clickable">
+      <h4 class="semi-bold">Message from <%= conversation.customer_name %> </h4>
+      <p>
+        <span class="text-success bold">Ticket #<%= conversation.id %></span>
+        - Created on <%= conversation.created_at.strftime("%m/%d/%Y") %>
+        <!--<span class="label label-info">NEW MESSAGE</span>-->
+      </p>
+      <div class="actions">
+        <a class="view" href="javascript:;"><i class="fa fa-search"></i></a>
+        <a class="remove" href="javascript:;"><i class="fa fa-times"></i></a>
+      </div>
+    </div>
+    <!--GRID TITLE END-->
+
+    <%= render :partial => "messages", locals: { messages: conversation.messages, conversation_id: conversation.id } %>
+
+
+  </div>
+
+
+<% end %>
