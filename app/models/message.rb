@@ -26,6 +26,7 @@ class Message < ActiveRecord::Base
   # Refer http://api.rubyonrails.org/classes/ActiveRecord/Base.html for details on serialization
   #serialize :to
 
+  belongs_to :conversation
 
 
 
