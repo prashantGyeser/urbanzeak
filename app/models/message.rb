@@ -29,6 +29,14 @@ class Message < ActiveRecord::Base
 
   belongs_to :conversation
 
+  after_create :send_email_notification
+
+  private
+
+  def send_email_notification
+    NotificationsMailer.message_notification(self, Conversation.find(self.conversation_id))
+  end
+
 
 
 end
