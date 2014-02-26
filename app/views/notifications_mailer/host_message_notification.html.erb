@@ -145,15 +145,19 @@
             <table cellpadding="0" cellspacing="0" border="0" align="left">
               <tr>
                 <td>
-                  <h1 style="margin-bottom: 0px;">Reply to your query</h1>
+                  <h1 style="margin-bottom: 0px;">Persons name</h1>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #b6bfc5; font-size: 18px;">
+                  <p>
+                    Sent you a message
+                  </p>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <%= @message.body %>
-                  <br/>
-                  <br/>
-                  Reply to this email in case you have any additional queries.
+                  Go to your <%= link_to "dashboard to view the message", :controller => "dashboard/messages", :action => "index", :only_path => false, :host => "urbanzeak.com" %>
                 </td>
               </tr>
             </table>
