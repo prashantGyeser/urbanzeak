@@ -11,10 +11,11 @@ class ConversationsController < ApplicationController
     @conversation.experience_id = experience.id
     @conversation.customer_name = params[:message][:name]
     @message = @conversation.messages.build(message_params)
-
+    @message.to = user.email
 
     respond_to do |format|
       if @conversation.save
+        @message.save
         format.json{ render :json => @conversation }
       else
         format.json { render json: @conversation.errors, status: :unprocessable_entity }

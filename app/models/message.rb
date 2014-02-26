@@ -34,7 +34,7 @@ class Message < ActiveRecord::Base
   private
 
   def send_email_notification
-    NotificationsMailer.message_notification(self, Conversation.find(self.conversation_id))
+    NotificationsMailer.message_notification(self, Conversation.find(self.conversation_id)).deliver
   end
 
 
