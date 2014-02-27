@@ -1434,7 +1434,7 @@ span.iconset{
   display: block;
   width: 8px;
   height: 25px;
-  background-image: image-url("sidebar-menu-arrow.png");
+  background-image: asset-url("sidebar-menu-arrow.png", image);
   float: right;
   position: absolute;
   right:-8px;
@@ -1595,7 +1595,7 @@ span.iconset{
 
 /*** Scroll to top *****/
 .scrollup{
-	background: image-url('pullup.png') no-repeat;
+	background: asset-url("pullup.png", image) no-repeat;
 	background-position:0px 0px;
     width: 27px; height: 27px;
     position:fixed;
@@ -3453,7 +3453,7 @@ form legend,.form-view legend {
 }
  .grid.simple .grid-title .tools a,.grid.solid .grid-title .tools a{
   	position:relative;
-	background:  image-url('icon/portlet-tray.png');
+	background:  asset-url("icon/portlet-tray.png", image);
 	transition: all 0.1s linear 0s;
 }
 .grid.simple .grid-title .tools > a.remove, 
@@ -3832,7 +3832,7 @@ border-left:4px solid #736086; border-top:none !important;
           transition: width 30.0s ease !important;
 }
 .status-icon{
-	background: image-url('icon/status.png') no-repeat;
+	background: asset-url("icon/status.png", image) no-repeat;
 	position: relative;
 	display:inline-block;
 	margin-right:10px;
