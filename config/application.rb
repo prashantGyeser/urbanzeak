@@ -69,7 +69,5 @@ module Urbanzeak
     config.assets.precompile += %w( plugins/bootstrap-datepicker/css/datepicker.css )
     config.assets.precompile += %w( plugins/bootstrap-datepicker/js/bootstrap-datepicker.js )
 
-    config.assets.precompile += ["fontawesome-webfont.ttf","fontawesome-webfont.eot","fontawesome-webfont.svg","fontawesome-webfont.woff"]
-
   end
 end
