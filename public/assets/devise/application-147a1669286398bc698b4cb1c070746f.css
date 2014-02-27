@@ -2975,7 +2975,7 @@ span.iconset{
 }
 
 .iconset{
-	background: url('../img/icon/top-tray.png') no-repeat;
+	background: asset-url("icon/top-tray.png", image) no-repeat;
 	position: relative;
 	top: 1px;
 }
