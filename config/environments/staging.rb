@@ -80,9 +80,9 @@ Urbanzeak::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Config for heroku to use cloudfront cdn
-  config.static_cache_control = 'public, max-age=31536000'
+  #config.static_cache_control = 'public, max-age=31536000'
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
+  #config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
 
 end
