@@ -12,7 +12,6 @@
  *= require plugins/jquery-slider/css/jquery.sidr.light
  *= require plugins/boostrapv3/css/bootstrap.min
  *= require plugins/boostrapv3/css/bootstrap-theme.min
- *= require plugins/font-awesome/css/font-awesome
  *= require plugins/jquery-morris-chart/css/morris
  *= require_self
  *= require_tree .
