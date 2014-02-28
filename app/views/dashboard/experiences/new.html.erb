@@ -1,12 +1,4 @@
-<%= content_for :css do %>
-  <%= stylesheet_link_tag    "dropzone/css/dropzone.css", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "bootstrap-datepicker/css/datepicker.css", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "bootstrap-timepicker/css/bootstrap-timepicker.css", media: "all", "data-turbolinks-track" => true %>
-<% end %>
 <%= content_for :js do %>
-  <%= javascript_include_tag "dropzone/dropzone.min.js", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "bootstrap-datepicker/js/bootstrap-datepicker.js", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "bootstrap-timepicker/js/bootstrap-timepicker.min.js", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "dashboard/experiences.js", 'data-turbolinks-track' => true %>
 <% end %>
 

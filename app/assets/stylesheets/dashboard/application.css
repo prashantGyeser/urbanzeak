@@ -13,6 +13,9 @@
  *= require plugins/boostrapv3/css/bootstrap.min
  *= require plugins/boostrapv3/css/bootstrap-theme.min
  *= require plugins/jquery-morris-chart/css/morris
+ *= require plugins/dropzone/css/dropzone
+ *= require plugins/bootstrap-datepicker/css/datepicker
+ *= require plugins/bootstrap-timepicker/css/bootstrap-timepicker
  *= require_self
  *= require_tree .
  */
