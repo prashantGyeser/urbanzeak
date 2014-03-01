@@ -7,7 +7,8 @@ ready = function() {
         todayHighlight: true
     });
 
-    $('.input-daterange').datepicker({
+    $('#date_picker').datepicker({
+        multidate: true
     });
 
 
