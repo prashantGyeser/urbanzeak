@@ -7,6 +7,10 @@ ready = function() {
         todayHighlight: true
     });
 
+    $('.input-daterange').datepicker({
+    });
+
+
     //Time pickers
     $('.timepicker-default').timepicker();
     $('.timepicker-24').timepicker({
