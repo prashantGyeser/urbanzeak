@@ -7,8 +7,11 @@ ready = function() {
         todayHighlight: true
     });
 
+    console.log("The time is:", "<%=  Date.today.strftime('%m/%d/%Y') %>");
+
     $('#date_picker').datepicker({
-        multidate: true
+        multidate: true,
+        startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
 
 
