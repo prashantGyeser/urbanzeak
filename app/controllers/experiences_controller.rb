@@ -29,6 +29,10 @@ class ExperiencesController < ApplicationController
     logger.debug "The value in the dates is: #{params[:experience][:exp_date]}"
     images = ExperienceImage.where(:random_id => @experience.random_id)
 
+
+
+
+
     images.each do |image|
       image.experience_id = @experience.id
       image.save
@@ -64,14 +68,14 @@ class ExperiencesController < ApplicationController
          
     respond_to do |format|
       if @experience.save
-        #experience_dates = params[:experience][:exp_date].split(',')
+        experience_dates = params[:experience][:exp_date].split(',')
 
-        #experience_dates.each do |experience_date|
-          #@experience_date = ExperienceDate.new
-          #@experience_date.experience_date =   experience_date
-          #@experience_date.experience_id = @experience.id
-          #@experience_date.save
-        #end
+        experience_dates.each do |experience_date|
+          @experience_date = ExperienceDate.new
+          @experience_date.experience_date =   experience_date
+          @experience_date.experience_id = @experience.id
+          @experience_date.save
+        end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
           
@@ -148,7 +152,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude)
     end
 
     def review_params
