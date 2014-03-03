@@ -21,8 +21,9 @@
   <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "plugins/bootstrap-datepicker/js/bootstrap-datepicker.js", 'data-turbolinks-track' => true %>
   <!--JAVASCRIPT INCLUDES END-->
+  <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({publisher: "ur-f415c526-5c4a-be58-2e64-d2846b5b53ee", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  <script type="text/javascript">stLight.options({publisher: "ur-bdccc91-2edd-103e-668f-89b5c48e233", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
   <%= csrf_meta_tag %>
 </head>
 <!-- END HEAD -->
@@ -30,145 +31,12 @@
 <div class="main-wrapper">
 
 <!--HEADER START-->
-<%= render partial: 'header', :locals => {:header_images => @header_images, :experience => @experience} %>
+<%= render partial: 'about_experience', :locals => {:experience => @experience} %>
 <!--HEADER END-->
 
+<!--ABOUT EXPERIENCE AND JOIN NOW START-->
+<!--ABOUT EXPERIENCE AND JOIN NOW END-->
 
-<div class="section white ha-waypoint"  data-animate-down="ha-header-color" data-animate-up="ha-header-hide" >
-  <div class="container">
-
-    <div class="p-t-60 p-b-60">
-      <div class="row">
-        <div class="col-md-6 feature-list ">
-          <h2 class="normal"><span class="semi-bold">About </span> the experience</h2>
-          <%= simple_format(@experience.description) %>
-
-        </div>
-        <div class="col-md-6 col-vlg-4 col-sm-12 ">
-          <h3><span class="semi-bold">Join </span>now</h3>
-          <h4>$ <span class="semi-bold"><%= @experience.price %></span></h4>
-          <%= render partial: 'attendees/form', :locals => {:experience_id => @experience.id} %>
-
-
-          <!--SEND A MESSAGE START-->
-          <button class="btn btn-lg" data-toggle="modal" data-target="#messageHost"> Questions? </button>
-          <!-- Modal -->
-          <div class="modal fade" id="messageHost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <form action="" id="new_conversation">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <br>
-                    <h4 id="myModalLabel" class="semi-bold">Have a question?</h4>
-                    <p class="no-margin">Send the host a message and they will get back to you shortly. </p>
-                    <br>
-
-                    <div class="alert alert-success" id="review_created_success">
-                      <button data-dismiss="alert" class="close"></button>
-                      Success: Your message was submitted successfully.
-                    </div>
-
-                  </div>
-                  <div class="modal-body">
-                    <div class="row form-row">
-                      <div class="col-md-6">
-                        <input type="text" id="message_name" class="form-control" name="message[name]" placeholder="Your Name">
-                      </div>
-                      <div class="col-md-6">
-                        <input type="text" id="message_email" class="form-control" name="message[from]" placeholder="Your Email Id">
-                      </div>
-                    </div>
-                    <div class="row form-row">
-                      <div class="col-md-12">
-                        <!--<input type="text" class="form-control" placeholder="Card Holder's Name">-->
-                        <textarea id="message_body" class="form-control" rows="5" name="message[body]" placeholder="Your Message"></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <input type="hidden" name="message[experience_id]" id="message_experience_id" value="<%= @experience.id %>"/>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="send_conversation">Send Message</button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
-          <!--SEND A MESSAGE END-->
-
-          <!--SOCIAL MEDIA SHARE BUTTONS START-->
-          <span class='st_facebook_hcount' displayText='Facebook'></span>
-          <span class='st_twitter_hcount' displayText='Tweet'></span>
-          <span class='st_pinterest_hcount' displayText='Pinterest'></span>
-          <!--SOCIAL MEDIA SHARE BUTTONS END-->
-          <br/>
-          <br/>
-          <!--LEAVE A COMMENT START-->
-          <button class="btn btn-lg" data-toggle="modal" data-target="#myModal"> Leave a review </button>
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <form action="" id="new_review">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <br>
-                    <h4 id="myModalLabel" class="semi-bold">Leave a review for this experience</h4>
-                    <p class="no-margin">Tell us what you thought of the experience. </p>
-                    <br>
-
-                    <div class="alert alert-success" id="review_created_success">
-                      <button data-dismiss="alert" class="close"></button>
-                      Success: Your review was submitted successfully.
-                    </div>
-
-                  </div>
-                  <div class="modal-body">
-                    <div class="row form-row">
-                      <div class="col-md-6">
-                        <input type="text" id="review_name" class="form-control" name="review[name]" placeholder="Your Name">
-                      </div>
-                      <div class="col-md-6">
-                        <input type="text" id="review_email" class="form-control" name="review[email]" placeholder="Your Email Id">
-                      </div>
-                    </div>
-                    <div class="row form-row">
-                      <div class="col-md-12">
-                        <!--<input type="text" class="form-control" placeholder="Card Holder's Name">-->
-                        <textarea id="review_comment" class="form-control" rows="5" name="review[comment]" placeholder="Your Review"></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <input type="hidden" name="review[experience_id]" id="review_experience_id" value="<%= @experience.id %>"/>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="create_review">Submit Review</button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
-          <!--LEAVE A COMMENT END-->
-        </div>
-
-      </div>
-      <br>
-      <div class="clearfix"></div>
-    </div>
-
-  </div>
-</div>
 
 
 <!--GALLERY START-->
@@ -220,6 +88,62 @@
               I don't know what you could say about a day in which you have seen four beautiful sunsets.
 
           </div>
+
+          <!--LEAVE A COMMENT START-->
+          <div class="center-text">
+            <button class="btn btn-lg" data-toggle="modal" data-target="#myModal"> Leave a review </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form action="" id="new_review">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <br>
+                    <h4 id="myModalLabel" class="semi-bold">Leave a review for this experience</h4>
+                    <p class="no-margin">Tell us what you thought of the experience. </p>
+                    <br>
+
+                    <div class="alert alert-success" id="review_created_success">
+                      <button data-dismiss="alert" class="close"></button>
+                      Success: Your review was submitted successfully.
+                    </div>
+
+                  </div>
+                  <div class="modal-body">
+                    <div class="row form-row">
+                      <div class="col-md-6">
+                        <input type="text" id="review_name" class="form-control" name="review[name]" placeholder="Your Name">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="review_email" class="form-control" name="review[email]" placeholder="Your Email Id">
+                      </div>
+                    </div>
+                    <div class="row form-row">
+                      <div class="col-md-12">
+                        <!--<input type="text" class="form-control" placeholder="Card Holder's Name">-->
+                        <textarea id="review_comment" class="form-control" rows="5" name="review[comment]" placeholder="Your Review"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="hidden" name="review[experience_id]" id="review_experience_id" value="<%= @experience.id %>"/>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="create_review">Submit Review</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+          <!-- /.modal -->
+          <!--LEAVE A COMMENT END-->
+
         </div>
       </div>
     </div>
@@ -246,6 +170,7 @@
       </div>
       <br>
       <div class="clearfix"></div>
+
     </div>
 
   </div>
@@ -254,41 +179,18 @@
   <div class="container">
     <div class="p-t-60 p-b-50 ">
       <div class="row feature-list">
-        <div class="col-md-3 ">
-          <h4 class="custom-font title">CUSTOMERS SERVED</h4>
-          <h1 class="custom-font"><span class="number-animator" data-value="4500" data-animation-duration="800">0</span></h1>
-          <div class="col-md-8 no-padding">
-            <div class="progress transparent progress-small no-radius ">
-              <div class="progress-bar progress-bar-black animated-progress-bar " data-percentage="79%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h4 class="custom-font title">SITES</h4>
-          <h1 class="custom-font"><span class="number-animator" data-value="505" data-animation-duration="800">0</span></h1>
-          <div class="col-md-8 no-padding">
-            <div class="progress transparent progress-small no-radius no-margin">
-              <div class="progress-bar progress-bar-black animated-progress-bar" data-percentage="45%" ></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h4 class="custom-font title">PROJECTS</h4>
-          <h1 class="custom-font"><span class="number-animator" data-value="1500" data-animation-duration="800">0</span></h1>
-          <div class="col-md-8 no-padding">
-            <div class="progress transparent progress-small no-radius no-margin">
-              <div class="progress-bar progress-bar-black animated-progress-bar" data-percentage="12%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h4 class="custom-font title">JOBS</h4>
-          <h1 class="custom-font"><span class="number-animator" data-value="14000" data-animation-duration="800">0</span></h1>
-          <div class="col-md-8 no-padding">
-            <div class="progress transparent progress-small no-radius no-margin">
-              <div class="progress-bar progress-bar-black animated-progress-bar" data-percentage="85%"></div>
-            </div>
-          </div>
+        <div class="col-md-6 col-md-offset-3">
+          <!--SOCIAL MEDIA SHARE BUTTONS START-->
+          <span class='st_facebook_hcount' displayText='Facebook' style="padding-bottom: 5px;"></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+          <span class='st_googleplus_hcount' displayText='Google +'></span>
+          <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+          <!--SOCIAL MEDIA SHARE BUTTONS END-->
+
+          <br/>
+          <br/>
+
         </div>
       </div>
     </div>
