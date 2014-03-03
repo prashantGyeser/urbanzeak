@@ -29,71 +29,11 @@
 <body>
 <div class="main-wrapper">
 
-<div class="section ha-waypoint"  data-animate-down="ha-header-hide" data-animate-up="ha-header-hide">
-
-  <!--BEGIN SLIDER -->
-  <div class="tp-banner-container">
-    <div class="tp-banner" id="home" >
-      <!-- SLIDE  -->
-      <ul>
-
-        <% @header_images.each do |image| %>
-          <!--INVIDIDUAL SLIDE START -->
-          <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
-            <!-- MAIN IMAGE -->
-            <%= image_tag image.image_url.to_s, :data => { :bgfit => "cover", :bgposition => "center center", :bgrepeat => "no-repeat"  } %>
-
-            <!-- LAYERS -->
-            <div class="tp-caption mediumlarge_light_white_center sft tp-resizeme slider"
-                 data-x="center" data-hoffset="0"
-                 data-y="60"
-                 data-speed="500"
-                 data-start="800"
-                 data-easing="Power4.easeOut"
-                 data-endspeed="300"
-                 data-endeasing="Power1.easeIn"
-                 data-captionhidden="off"
-                 style="z-index: 6">
-              <h2 class="text-white custom-font title "><%= @experience.name %></h2>
-
-            </div>
-            <div class="tp-caption sfb slider tp-resizeme slider"
-                 data-x="center"
-                 data-hoffset="0"
-                 data-y="240"
-                 data-speed="800"
-                 data-start="1000"
-                 data-easing="Power4.easeOut"
-                 data-endspeed="300"
-                 data-endeasing="Power1.easeIn"
-                 data-captionhidden="off"
-                 style="z-index: 6">
-            </div>
-
-          </li>
-
-          <!--INVIDIDUAL SLIDE END -->
-        <% end %>
-        <!-- SLIDE  -->
-
-      </ul>
-      <div class="tp-bannertimer"></div>
-    </div>
-  </div>
-  <!--END SLIDER
-
-  -->
+<!--HEADER START-->
+<%= render partial: 'header', :locals => {:header_images => @header_images, :experience => @experience} %>
+<!--HEADER END-->
 
 
-
-</div>
-<div class="section ">
-  <div class="container">
-    <div class="p-t-40 p-b-40">
-      <h2 class="text-center"><%= @experience.name %></h2>
-    </div>
-  </div>
-</div>
 <div class="section white ha-waypoint"  data-animate-down="ha-header-color" data-animate-up="ha-header-hide" >
   <div class="container">
 
