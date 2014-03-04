@@ -14,6 +14,7 @@ class ExperiencesController < ApplicationController
     @advance_booking = AdvanceBooking.new
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
     @images =ExperienceImage.where(:random_id => @experience.random_id)
+    @host = Host.where(:user_id => @experience.user_id).first
     impressionist(@experience)
     render layout: false
   end

@@ -1,0 +1,81 @@
+<!--ABOUT HOST START-->
+<div class="section white">
+  <div class="p-t-40 p-b-60">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="center-text">
+            <h3 class="normal"><span class="semi-bold">About</span> the host</h3>
+
+            <!--<img width="156" height="156" data-src-retina="assets/img/profiles/avatar2x.jpg" data-src="assets/img/profiles/avatar2x.jpg" src="assets/img/profiles/avatar2x.jpg" alt="" class="img-circle">-->
+            <%= image_tag host.avatar_url.to_s,:width => "156", :height => "156", :class => "img-circle" %>
+
+            <% user = User.find(host.user_id) %>
+            <h4><%= user.first_name %></h4>
+            <p>
+              <%= host.about %>
+            </p>
+
+          </div>
+
+          <!--LEAVE A COMMENT START-->
+          <div class="center-text">
+            <button class="btn btn-lg" data-toggle="modal" data-target="#myModal"> Leave a review </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form action="" id="new_review">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <br>
+                    <h4 id="myModalLabel" class="semi-bold">Leave a review for this experience</h4>
+                    <p class="no-margin">Tell us what you thought of the experience. </p>
+                    <br>
+
+                    <div class="alert alert-success" id="review_created_success">
+                      <button data-dismiss="alert" class="close"></button>
+                      Success: Your review was submitted successfully.
+                    </div>
+
+                  </div>
+                  <div class="modal-body">
+                    <div class="row form-row">
+                      <div class="col-md-6">
+                        <input type="text" id="review_name" class="form-control" name="review[name]" placeholder="Your Name">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="review_email" class="form-control" name="review[email]" placeholder="Your Email Id">
+                      </div>
+                    </div>
+                    <div class="row form-row">
+                      <div class="col-md-12">
+                        <!--<input type="text" class="form-control" placeholder="Card Holder's Name">-->
+                        <textarea id="review_comment" class="form-control" rows="5" name="review[comment]" placeholder="Your Review"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="hidden" name="review[experience_id]" id="review_experience_id" value="<%= experience_id %>"/>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="create_review">Submit Review</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+          <!-- /.modal -->
+          <!--LEAVE A COMMENT END-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--ABOUT HOST END-->
