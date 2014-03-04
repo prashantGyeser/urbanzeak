@@ -18,6 +18,17 @@
           <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
           <br>
           <%= f.text_area :description, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+          <br/>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.number_field :price, :class => "form-control", :placeholder => "Enter the price per ticket", :required => "required" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.number_field :max_seats, :class => "form-control", :placeholder => "Total number of tickets than can be sold", :required => "required" %>
+            </div>
+          </div>
+          <br/>
+
         </div>
         <!--END GRID BODY-->
       </div>
