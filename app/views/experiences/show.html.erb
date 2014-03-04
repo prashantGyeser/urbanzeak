@@ -31,10 +31,11 @@
 <div class="main-wrapper">
 
 <!--HEADER START-->
-<%= render partial: 'about_experience', :locals => {:experience => @experience} %>
+
 <!--HEADER END-->
 
 <!--ABOUT EXPERIENCE AND JOIN NOW START-->
+<%= render partial: 'about_experience', :locals => {:experience => @experience} %>
 <!--ABOUT EXPERIENCE AND JOIN NOW END-->
 
 
@@ -43,6 +44,7 @@
 <div class="container">
   <!--MARGIN TOP AND BOTTOM START-->
   <div class="p-t-60 p-b-80">
+    <h2>Experience <span class="semi-bold">Pictures</span></h2>
     <div class="portfolio-grid portfolioContainer ">
       <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 1406px;">
 
@@ -337,5 +339,14 @@
 <%= javascript_include_tag "expShow/google_maps", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "expShow/core", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "expShow/experience", "data-turbolinks-track" => true %>
+
+
+<script id="map_location_latitude" type="text/json">
+  <%= @experience.latitude.to_json %>
+</script>
+
+<script id="map_location_longitude" type="text/json">
+  <%= @experience.longitude.to_json %>
+</script>
 
 </body>

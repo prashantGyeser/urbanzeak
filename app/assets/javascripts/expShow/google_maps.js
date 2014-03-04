@@ -1,9 +1,20 @@
-$(document).ready(function() {		
+$(document).ready(function() {
+
+    var myVarsJSON = $("#map_location_latitude").html(),
+        latitude     = $.parseJSON(myVarsJSON);
+
+    //console.log(latitude);
+
+    var myVarsJSON = $("#map_location_longitude").html(),
+        longitude     = $.parseJSON(myVarsJSON);
+
+    //console.log(longitude);
+
 	  //Initialize Map
 	  map = new GMaps({
         el: '#map',
-        lat: -12.043333,
-        lng: -77.028333,
+        lat: latitude,
+        lng: longitude,
         zoomControl : false,
         zoomControlOpt: {
             style : 'SMALL',
@@ -18,7 +29,7 @@ $(document).ready(function() {
         streetViewControl : false,
         mapTypeControl: false,
         overviewMapControl: false,
-		
+
       });
 	  // Add a random mark
 	  setTimeout( function(){
@@ -78,16 +89,16 @@ $(document).ready(function() {
               strokeColor: '#131540',
               strokeOpacity: 0.6,
               strokeWeight: 6
-            });  
+            });
           });
         }
       });
 	  $("#map-zoom-out").click(function() {
-		 map.zoomOut(1);		  
+		 map.zoomOut(1);
 	  });
-	  
+
 	  $("#map-zoom-in").click(function() {
-		map.zoomIn(1);	  
+		map.zoomIn(1);
 	  });
-	  
+
 });
