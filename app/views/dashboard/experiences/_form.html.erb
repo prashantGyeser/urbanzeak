@@ -16,7 +16,7 @@
           </p>
           <br>
           <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
-          <br>
+          <br/>
           <%= f.text_area :description, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
           <br/>
           <div class="row">
@@ -28,6 +28,13 @@
             </div>
           </div>
           <br/>
+
+          <%= f.text_area :what_does_this_include, :class => "form-control", :placeholder => "What does this experience include?", :rows => 5, :required => "required" %>
+          <br/>
+
+          <%= f.text_area :things_to_remember, :class => "form-control", :placeholder => "Specific things people should bring for this experience", :rows => 5, :required => "required" %>
+          <br/>
+
 
         </div>
         <!--END GRID BODY-->
