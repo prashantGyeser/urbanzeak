@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require plugins/jquery-ui/jquery-ui-1.10.1.custom.min
 //= require plugins/rs-plugin/js/jquery.themepunch.plugins.min.js
 //= require plugins/rs-plugin/js/jquery.themepunch.revolution.min.js
 //= require plugins/boostrapv3/js/bootstrap.min.js

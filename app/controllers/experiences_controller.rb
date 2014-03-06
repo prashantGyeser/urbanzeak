@@ -15,6 +15,7 @@ class ExperiencesController < ApplicationController
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
     @images =ExperienceImage.where(:random_id => @experience.random_id)
     @host = Host.where(:user_id => @experience.user_id).first
+    @dates = ExperienceDate.where(:experience_id => @experience.id)
     impressionist(@experience)
     render layout: false
   end
@@ -73,9 +74,13 @@ class ExperiencesController < ApplicationController
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
-          @experience_date.experience_date =   experience_date
+          logger.debug "The date is: #{experience_date}"
+          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          logger.debug "The date right after creation is 1: #{@experience_date.inspect}"
           @experience_date.experience_id = @experience.id
+          logger.debug "The date right after creation is 2: #{@experience_date.inspect}"
           @experience_date.save
+          logger.debug "The date right after creation is 3: #{@experience_date.inspect}"
         end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
@@ -153,7 +158,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats)
     end
 
     def review_params

@@ -199,4 +199,22 @@
   <%= @experience.longitude.to_json %>
 </script>
 
+<script>
+  var datesEnabled = <%= @dates %>;
+
+  $('#attendee_date_select').datepicker({
+
+    beforeShowDay: function(date) {
+      if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), datesEnabled) == -1) {
+        return {
+          enabled: false
+        };
+      }
+      return;
+    }
+  });
+</script>
+
+
+
 </body>
