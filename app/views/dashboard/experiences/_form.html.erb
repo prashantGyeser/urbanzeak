@@ -17,7 +17,9 @@
           <br>
           <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
           <br/>
-          <%= f.text_area :description, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+          <%= f.text_field :tagline, :class => "form-control", :placeholder => "Enter a tagline", :required => "required" %>
+          <br/>
+          <%= f.text_area :what_does_this_include, :class => "form-control", :placeholder => "What does this experience include?", :rows => 5, :required => "required" %>
           <br/>
           <div class="row">
             <div class="col-md-6">
@@ -27,9 +29,6 @@
               <%= f.number_field :max_seats, :class => "form-control", :placeholder => "Total number of tickets than can be sold", :required => "required" %>
             </div>
           </div>
-          <br/>
-
-          <%= f.text_area :what_does_this_include, :class => "form-control", :placeholder => "What does this experience include?", :rows => 5, :required => "required" %>
           <br/>
 
           <%= f.text_area :things_to_remember, :class => "form-control", :placeholder => "Specific things people should bring for this experience", :rows => 5, :required => "required" %>

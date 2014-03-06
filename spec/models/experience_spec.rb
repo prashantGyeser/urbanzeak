@@ -29,6 +29,7 @@
 #  land_mark              :string(255)
 #  random_id              :string(255)
 #  template_id            :integer
+#  tagline                :string(255)
 #
 
 require 'spec_helper'

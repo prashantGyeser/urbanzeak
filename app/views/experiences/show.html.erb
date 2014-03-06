@@ -74,30 +74,12 @@
 <% end %>
 <!--ABOUT HOST END-->
 
-<div class="section grey">
-  <div class="container">
-    <div class="p-t-60 p-b-60">
-      <div class="row">
-        <div class="col-md-6">
-          <h3>What you <span class="semi-bold">get</span></h3>
-          <p class="p-r-50">
-            <%= @experience.what_does_this_include %>
-          </p>
-        </div>
-        <div class="col-md-6">
-          <h3>Things to <span class="semi-bold">remember</span></h3>
-          <p class="p-r-50">
-            <%= @experience.things_to_remember %>
-          </p>
-        </div>
-      </div>
-      <br>
-      <div class="clearfix"></div>
 
-    </div>
+<!--THINGS TO REMEMBER START-->
+<%= render :partial => "things_to_remember", :locals => {:experience => @experience} %>
+<!--THINGS TO REMEMBER END-->
 
-  </div>
-</div>
+
 <div class="section white">
   <div class="container">
     <div class="p-t-60 p-b-50 ">
