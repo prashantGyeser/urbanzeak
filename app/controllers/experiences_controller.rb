@@ -15,6 +15,13 @@ class ExperiencesController < ApplicationController
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
     @images =ExperienceImage.where(:random_id => @experience.random_id)
     @host = Host.where(:user_id => @experience.user_id).first
+    dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
+    @dates_array = []
+
+    dates_hash.each do |experience_date_item|
+      @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s
+    end
+
     impressionist(@experience)
     render layout: false
   end
@@ -73,7 +80,7 @@ class ExperiencesController < ApplicationController
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
-          @experience_date.experience_date =   experience_date
+          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
           @experience_date.experience_id = @experience.id
           @experience_date.save
         end
@@ -153,7 +160,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats)
     end
 
     def review_params

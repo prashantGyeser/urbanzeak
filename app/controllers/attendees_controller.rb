@@ -1,7 +1,7 @@
 class AttendeesController < ApplicationController
   before_action :set_attendee, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!, only: [:create]
+  #before_filter :authenticate_user!, only: [:create]
 
   # GET /attendees
   # GET /attendees.json
@@ -73,6 +73,6 @@ class AttendeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendee_params
-      params.require(:attendee).permit(:seats, :avatar)
+      params.require(:attendee).permit(:seats, :phone_number, :email, :experience_id)
     end
 end

@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+    //var dateToCheck = '03/08/2014';
+
+
+
+
     $('#review_created_success').hide();
     $('#conversation_created_success').hide();
     $('#create_review').click(function(e){
