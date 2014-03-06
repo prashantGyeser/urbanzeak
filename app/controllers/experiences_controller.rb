@@ -15,7 +15,13 @@ class ExperiencesController < ApplicationController
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
     @images =ExperienceImage.where(:random_id => @experience.random_id)
     @host = Host.where(:user_id => @experience.user_id).first
-    @dates = ExperienceDate.where(:experience_id => @experience.id)
+    dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
+    @dates_array = []
+
+    dates_hash.each do |experience_date_item|
+      @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s
+    end
+
     impressionist(@experience)
     render layout: false
   end
@@ -74,13 +80,9 @@ class ExperiencesController < ApplicationController
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
-          logger.debug "The date is: #{experience_date}"
           @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
-          logger.debug "The date right after creation is 1: #{@experience_date.inspect}"
           @experience_date.experience_id = @experience.id
-          logger.debug "The date right after creation is 2: #{@experience_date.inspect}"
           @experience_date.save
-          logger.debug "The date right after creation is 3: #{@experience_date.inspect}"
         end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
