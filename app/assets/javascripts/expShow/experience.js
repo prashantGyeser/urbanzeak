@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+    $('#datepicker').datepicker({
+        daysOfWeekDisabled: [0,1,2,3,4,5,6]
+    });
+
+
+
     $('#review_created_success').hide();
     $('#conversation_created_success').hide();
     $('#create_review').click(function(e){
