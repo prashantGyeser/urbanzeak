@@ -29,10 +29,18 @@
 <!-- END HEAD -->
 <body>
 <div class="main-wrapper">
+<!--NAV AFTER WAYPOINT START-->
+  <%= render "navigation_after_waypoint" %>
+<!--NAV AFTER WAYPOINT END-->
 
 <!--HEADER START-->
   <%= render partial: 'header', :locals => {:experience => @experience, :header_images => @header_images} %>
 <!--HEADER END-->
+
+<!--TAGLINE START-->
+  <%= render partial: 'tagline', :locals => {:experience => @experience} %>
+<!--TAGLINE END-->
+
 
 <!--ABOUT EXPERIENCE AND JOIN NOW START-->
 <%= render partial: 'about_experience', :locals => {:experience => @experience} %>
@@ -43,7 +51,7 @@
 <!--GALLERY START-->
 <div class="container">
   <!--MARGIN TOP AND BOTTOM START-->
-  <div class="p-t-60 p-b-80">
+  <div class="p-t-60 p-b-80" id="experience_pictures">
     <h2>Experience <span class="semi-bold">Pictures</span></h2>
     <div class="portfolio-grid portfolioContainer ">
       <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 1406px;">

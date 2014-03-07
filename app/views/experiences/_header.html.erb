@@ -1,31 +1,6 @@
-<div class="section ">
-  <div class="container">
-    <div class="p-t-40 p-b-40">
-      <h2 class="text-center"><%= experience.name %></h2>
-      <h4 class="text-center"><%= experience.tagline %></h4>
-    </div>
-  </div>
-</div>
-
-<br/>
-<div class="clearfix"></div>
-
 <div class="section ha-waypoint"  data-animate-down="ha-header-hide" data-animate-up="ha-header-hide">
 
-
-  <!--TITLE START-->
-  <div role="navigation" class="navbar navbar-transparent navbar-top" style="background: #f2f4f6; color: #505458;">
-    <div class="container">
-      <div class="compressed">
-        <div class="navbar-collapse collapse">
-          <h2 class="text-center semi-bold"><%= experience.name %></h2>
-          <h4 class="text-center"><%= experience.tagline %></h4>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!--TITLE END-->
+  <%= render "navigation" %>
 
   <!--BEGIN SLIDER -->
   <div class="tp-banner-container">
@@ -50,7 +25,9 @@
                  data-endeasing="Power1.easeIn"
                  data-captionhidden="off"
                  style="z-index: 6">
-
+              <h2 class="text-white custom-font title ">
+                <%= @experience.name %>
+              </h2>
 
             </div>
             <div class="tp-caption sfb slider tp-resizeme slider"
