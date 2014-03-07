@@ -1,0 +1,26 @@
+<!--GALLERY START-->
+<div class="container">
+  <!--MARGIN TOP AND BOTTOM START-->
+  <div class="p-t-60" id="experience_pictures">
+    <!--<h2 class="p-t-10">Experience <span class="semi-bold">Pictures</span></h2>-->
+    <h2 class="p-t-10 center-text semi-bold p-b-40"><%= @experience.name %></h2>
+    <div class="portfolio-grid portfolioContainer ">
+      <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 1406px;">
+
+        <% @images.each do |image| %>
+          <li class="item web isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px);">
+            <div class="portfolio-image-wrapper" style="height: 271px;">
+              <%= image_tag image.image_url.to_s %>
+            </div>
+            <div class="clearfix"></div>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+  <!--MARGIN TOP AND BOTTOM END-->
+</div>
+<br>
+<br>
+<!--GALLERY END-->
