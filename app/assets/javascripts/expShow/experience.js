@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-    //var dateToCheck = '03/08/2014';
+    // SINGLE PAGE NAV START
+    $('#top-nav').singlePageNav();
+    // SINGLE PAGE NAV END
 
 
 
