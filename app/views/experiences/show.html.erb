@@ -29,10 +29,18 @@
 <!-- END HEAD -->
 <body>
 <div class="main-wrapper">
+<!--NAV AFTER WAYPOINT START-->
+  <%= render "navigation_after_waypoint" %>
+<!--NAV AFTER WAYPOINT END-->
 
 <!--HEADER START-->
   <%= render partial: 'header', :locals => {:experience => @experience, :header_images => @header_images} %>
 <!--HEADER END-->
+
+<!--TAGLINE START-->
+  <%= render partial: 'tagline', :locals => {:experience => @experience} %>
+<!--TAGLINE END-->
+
 
 <!--ABOUT EXPERIENCE AND JOIN NOW START-->
 <%= render partial: 'about_experience', :locals => {:experience => @experience} %>
