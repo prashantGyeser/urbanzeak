@@ -1,6 +1,8 @@
 var ready;
 ready = function() {
 
+  var allFilesUploaded = false;
+
   //Date Pickers
   $('.input-append.date').datepicker({
     autoclose: true,
@@ -26,7 +28,15 @@ ready = function() {
   // "myAwesomeDropzone" is the camelized version of the HTML element's ID
   Dropzone.options.newExperienceImage = {
     paramName: "experience_image[image]", // The name that will be used to transfer the file
-    maxFilesize: 1 // MB
+    maxFilesize: 1, // MB
+    parallelUploads: 6,
+    init: function() {
+      this.on("complete", function() {
+        if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
+          allFilesUploaded = true;
+        }
+      });
+    }
   };
 
 
@@ -34,11 +44,8 @@ ready = function() {
     var mediaDropzone;
     mediaDropzone = new Dropzone("#new_experience_image");
     return mediaDropzone.on("success", function(file, responseText) {
-      console.log("The file from the server is:", file);
-      console.log("The response from the server is:", responseText);
       var imageUrl;
-      imageUrl = responseText.file_name.url;
-      console.log("The url is:", imageUrl);
+      imageUrl = responseText.image.url;
     });
   });
 
@@ -62,6 +69,19 @@ ready = function() {
     $("#experience_longitude").val(latLng.lng());
     $("#reset").show();
   });
+
+  // Checking to see if all the files are uploaded.
+  $('#create_experience').submit(function(event){
+    event.preventDefault();
+    if( allFilesUploaded == true ){
+      $("#new_experience").submit();
+    }
+    else{
+      setTimeout(function(){
+        waitForElement();
+      },250);
+    }
+  })
 
 
 };
