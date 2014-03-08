@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -9,8 +8,8 @@
   <meta content="" name="author" />
 
   <!-- BEGIN CSS TEMPLATE -->
-  <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "plugins/bootstrap-datepicker/css/datepicker.css", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
   <!-- END CSS TEMPLATE -->
 
   <!--CUSTOM CSS START-->
@@ -185,7 +184,7 @@
 <script>
   var datesEnabled = <%= raw @dates_array %>;
 
-  $('#attendee_date_select').datepicker({
+  $('#attendee_attending_date').datepicker({
 
     beforeShowDay: function(date) {
       if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), datesEnabled) == -1) {
