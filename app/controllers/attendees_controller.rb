@@ -29,6 +29,7 @@ class AttendeesController < ApplicationController
   def create
     @attendee = Attendee.new(attendee_params)
 
+    @attendee.attending_date = Date.strptime(params[:attendee][:attending_date].to_s, '%m/%d/%Y')
     respond_to do |format|
       if @attendee.save
         #format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
