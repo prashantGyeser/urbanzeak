@@ -158,18 +158,10 @@
         <!--END GRID BODY-->
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.submit :class => "btn btn-primary btn-cons", :id => "create_experience" %>
-        </div>
-      </div>
-      <br/>
-      <br/>
+
 
 
     </div>
-
-<% end %>
     <!-- END 8 COL -->
     <!-- 4 COL -->
     <div class="col-md-4">
@@ -182,13 +174,10 @@
           <p>
             Tell people where they should come for the experience.
           </p>
-          <div class="row-fluid">
+          <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
 
+            <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", dragdrop: true, drag_text: "Drag files and drop files here or click here", drag_class: "ink-file-uploader", container: "modal", button_class: "btn btn-default btn-cons" %>
 
-            <%= form_for(@experience_image, :html => {:multipart => true, :class => "dropzone"}) do |f| %>
-              <%= f.file_field :image, :multiple => true, :name => "experience_image[image]", :class => "hidden" %>
-              <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
-            <% end %>
 
 
           </div>
@@ -196,6 +185,24 @@
       </div>
     </div>
     <!-- END 4 COL -->
+
   </div>
 
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.submit :class => "btn btn-primary btn-cons", :id => "create_experience" %>
+    </div>
+  </div>
+  <br/>
+  <br/>
+<% end %>
 <!-- END NEW EXPERIENCE FORM -->
+
+
+
+<%# f.filepicker_field :avatar_url %> <!-- User#avatar_url is a regular string column -->
+
+<%= form_for(@experience_image, :html => {:multipart => true, :class => "dropzone"}) do |f| %>
+  <%= f.file_field :image, :multiple => true, :name => "experience_image[image]", :class => "hidden" %>
+  <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
+<% end %>

@@ -6,6 +6,7 @@
 //= depend_on_asset "icon/portlet-tray.png"
 //= depend_on_asset "icon/status.png"
 //= depend_on_asset "icon/noti-cross.png"
+//= depend_on_asset "spritemap.png"
 
 /* Font Import */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
@@ -8043,3 +8044,25 @@ ul.my-friends li .profile-pic{
 
 }
 
+
+/* INK FILE PICKER STYLES */
+/* INK FILE PICKER DRAG AND DROP STYLES */
+.ink-file-uploader
+{
+  border: 1px solid rgba(0,0,0,0.03) !important;
+  min-height: 360px !important;
+  -webkit-border-radius: 3px !important;
+  border-radius: 3px !important;
+  background: rgba(0,0,0,0.03) !important;
+  padding: 23px !important;
+  position: relative !important;
+  margin: 5px 0 0 0 !important;
+  //display: block !important;
+  color: #22262e !important;
+  font-weight: bold;
+  text-align: center;
+  display:table-cell !important;
+  vertical-align:middle;
+
+
+}

@@ -29,7 +29,7 @@ module Urbanzeak
     config.assets.enable = true
 
     # Ink filepicker config
-    config.filepicker_rails.api_key = "ASJiChL2QqvYT9LxDuUqgz"
+    config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
 
     config.generators do |g|
       g.test_framework :rspec,

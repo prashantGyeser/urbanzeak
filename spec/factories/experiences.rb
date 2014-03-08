@@ -30,6 +30,7 @@
 #  random_id              :string(255)
 #  template_id            :integer
 #  tagline                :string(255)
+#  images                 :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
     @message = Message.new
     @advance_booking = AdvanceBooking.new
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
-    @images =ExperienceImage.where(:random_id => @experience.random_id)
+    @images =ExperienceImage.where(:experience_id=> @experience.id)
     @host = Host.where(:user_id => @experience.user_id).first
     dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
     @dates_array = []
@@ -34,18 +34,9 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    logger.debug "The value in the dates is: #{params[:experience][:exp_date]}"
-    images = ExperienceImage.where(:random_id => @experience.random_id)
-
-
-
-
-
-    images.each do |image|
-      image.experience_id = @experience.id
-      image.save
-    end
-
+    logger.debug "The value in the dates is: #{params[:experience][:images]}"
+    images = params[:experience][:images].split(',')
+    logger.debug "The image array is #{images}"
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     if fbCheckToken.blank?
       postToFBWall = false  
@@ -83,6 +74,14 @@ class ExperiencesController < ApplicationController
           @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
           @experience_date.experience_id = @experience.id
           @experience_date.save
+        end
+
+        images.each do |image|
+          exp_image = ExperienceImage.new
+          logger.debug "The image in the loop is #{image}"
+          exp_image.image = image
+          exp_image.experience_id = @experience.id
+          exp_image.save
         end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
