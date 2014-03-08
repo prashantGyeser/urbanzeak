@@ -10,7 +10,8 @@
         <% @images.each do |image| %>
           <li class="item web isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px);">
             <div class="portfolio-image-wrapper" style="height: 271px;">
-              <%= image_tag image.image_url.to_s %>
+              <%# image_tag image.image_url.to_s %>
+              <%= filepicker_image_tag image.image, w: 160, h: 160, fit: 'clip' %>
             </div>
             <div class="clearfix"></div>
           </li>

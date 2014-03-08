@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
     @message = Message.new
     @advance_booking = AdvanceBooking.new
     @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
-    @images =ExperienceImage.where(:random_id => @experience.random_id)
+    @images =ExperienceImage.where(:experience_id=> @experience.id)
     @host = Host.where(:user_id => @experience.user_id).first
     dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
     @dates_array = []
