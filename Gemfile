@@ -74,8 +74,6 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
-# File uploader
-gem 'filepicker-rails'
 
 group :staging, :production do
   # gzip on heroku
