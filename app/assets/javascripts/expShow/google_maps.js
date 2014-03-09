@@ -34,8 +34,8 @@ $(document).ready(function() {
 	  // Add a random mark
 	  setTimeout( function(){
 		  map.addMarker({
-				  lat: -12.043333,
-				  lng: -77.028333,
+				  lat: latitude,
+				  lng: longitude,
 				  animation: google.maps.Animation.DROP,
 				  draggable:true,
 				  title: 'New marker'
