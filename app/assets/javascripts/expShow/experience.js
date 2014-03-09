@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('#join-notifications').hide();
+
     // SINGLE PAGE NAV START
     $('#top-nav').singlePageNav();
     // SINGLE PAGE NAV END
@@ -37,11 +39,12 @@ $(document).ready(function(){
         var experience_id = $('#experience_id').val();
         var url_to_get = "/experiences/available_dates?seats_required=" + number_of_seats + "&experience_id=" + experience_id;
 
+        $('#join-notifications').show();
+
         $.get( url_to_get, function( data ) {
             $( ".result" ).html( data );
             console.log("The data returend from the server is:", data);
             var available_dates = data;
-
             // Removing the datepicker if is already there
             $('#attendee_attending_date').datepicker('remove');
 
@@ -54,21 +57,13 @@ $(document).ready(function(){
                         };
                     }
                     return;
+
                 }
             });
 
         });
-
-
-
-
-
-
-
     });
 
     //var datesEnabled = <%= raw @dates_array %>;
-
-
 
 });
