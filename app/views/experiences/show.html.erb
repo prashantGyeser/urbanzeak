@@ -63,6 +63,37 @@
 <!--THINGS TO REMEMBER END-->
 
 
+  <div class="section white">
+    <div class="container">
+      <div class="p-t-60 p-b-50 ">
+        <div class="row feature-list">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="center-text">
+              <h3 class="normal">Experience <span class="semi-bold">Venue</span></h3>
+              <address>
+                <%= @experience.line_one %>
+                <br/>
+                <%= @experience.line_two %>
+                <br/>
+                <%= @experience.city %>
+                <br/>
+                <%= @experience.state %>
+                <br/>
+                <%= @experience.country %> - <%= @experience.pincode %>
+                <br/>
+
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 <div class="section white">
   <div class="container">
     <div class="p-t-60 p-b-50 ">
@@ -84,6 +115,9 @@
     </div>
   </div>
 </div>
+
+
+
 
 
 <!--LOCATION MAP START-->
@@ -129,36 +163,18 @@
 </div>
 <div class="section white footer">
   <div class="container">
-    <div class="p-t-30 p-b-50">
+    <div class="p-b-50">
       <div class="row">
-        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12 xs-m-b-20">
-          <img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>
-        </div>
-        <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
-          <address class="xs-no-padding  col-md-6 col-lg-6 col-sm-6  col-xs-12">
-            Crossraid<br>
-            85/B Cross Street,<br>
-            New York, USA<br>
-            NA1 42SL
-          </address>
-          <div class="xs-no-padding col-md-6 col-lg-6 col-sm-6">
-            <div>(0039) 389 957 5552</div>
-            support@revox.io
+        <div class="col-md-8 col-lg-8 col-sm-8  col-xs-12 xs-m-b-20">
+          <div class="xs-no-padding col-md-4 col-lg-4 col-sm-4">
+            <!--SEND A MESSAGE START-->
+            <button class="btn btn-cons" data-toggle="modal" data-target="#messageHost" id="ask_a_question"> Ask a question </button>
+            <!--SEND A MESSAGE END-->
           </div>
           <div class="clearfix"></div>
         </div>
-        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
-          Copyright © 2013
-          Privacy Policy
-          Design by Revox
-        </div>
-        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
-          <div class="bold">RECRUITMENT</div>
-          We are frequently on the lookout for new talent!
-        </div>
-        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 ">
-          <div class="bold">FOLLOW US</div>
-          We are frequently on the lookout for new talent!
+        <div class="col-md-4 col-lg-4 col-sm-4  col-xs-12 xs-m-b-20">
+          <h4>This page is powered by <a href="urbanzeak.com">Urbanzeak</a></h4>
         </div>
       </div>
     </div>
