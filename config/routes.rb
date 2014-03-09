@@ -60,7 +60,8 @@ Urbanzeak::Application.routes.draw do
   get "pages/privacy"
 
   devise_for :users
-  get "experiences/get/:country", to: "experiences#country"
+  #get "experiences/get/:country", to: "experiences#country"
+  get "experiences/available_dates", to: "experiences#available_dates"
   resources :experiences
   post 'experiences/create_review' => "experiences#create_review"
 

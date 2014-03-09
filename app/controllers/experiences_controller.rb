@@ -112,6 +112,40 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  # Getting available dates
+  def available_dates
+
+    logger.debug "The seats required are: #{params[:seats_required]}"
+    logger.debug "The experiences_id is: #{params[:experience_id]}"
+
+    experience = Experience.find(params[:experience_id])
+
+    attendees = Attendee.where(:experience_id => experience.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => experience.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      logger.debug "The values in the dates_with_attendees is: #{dates_with_attendees}"
+      logger.debug "The params seats is: #{params[:seats_required].to_i}"
+      logger.debug "The max seats are: #{experience.max_seats}"
+      logger.debug "The seats subtracted are: #{dates_with_attendees - params[:seats_required].to_i}"
+
+      if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
+        available_dates << experience_date.experience_date.strftime("%Y-%m-%d").to_s
+      end
+
+    end
+    logger.debug "The vailable dates are: #{available_dates}"
+
+    respond_to do |format|
+      format.json{ render :json => available_dates }
+    end
+  end
+
+
   # DELETE /experiences/1
   # DELETE /experiences/1.json
   def destroy
