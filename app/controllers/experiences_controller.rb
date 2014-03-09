@@ -34,9 +34,20 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    logger.debug "The value in the dates is: #{params[:experience][:images]}"
     images = params[:experience][:images].split(',')
-    logger.debug "The image array is #{images}"
+
+    case params[:experience][:category]
+      when 1
+        @experience.category = "City Tour"
+      when 2
+        @experience.category = "Hobby Class"
+      when 3
+        @experience.category = "Adventure Activity"
+      else
+        logger.debug "No field selected"
+    end
+
+
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     if fbCheckToken.blank?
       postToFBWall = false  
@@ -193,7 +204,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category)
     end
 
     def review_params

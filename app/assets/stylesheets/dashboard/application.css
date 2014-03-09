@@ -16,6 +16,7 @@
  *= require plugins/dropzone/css/dropzone
  *= require plugins/bootstrap-datepicker/css/datepicker
  *= require plugins/bootstrap-timepicker/css/bootstrap-timepicker
+ *= require plugins/bootstrap-select2/select2.css
  *= require_self
  *= require_tree .
  */
