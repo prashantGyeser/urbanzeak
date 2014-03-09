@@ -17,6 +17,13 @@
           <br>
           <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
           <br/>
+          <select name="experience[category]" class="form-control select2" id="source">
+            <option value="1">City Tour</option>
+            <option value="2">Hobby Class</option>
+            <option value="3">Adventure Activity</option>
+          </select>
+
+          <br/>
           <%= f.text_field :tagline, :class => "form-control", :placeholder => "Enter a tagline", :required => "required" %>
           <br/>
           <%= f.text_area :what_does_this_include, :class => "form-control", :placeholder => "What does this experience include?", :rows => 5, :required => "required" %>
@@ -176,7 +183,7 @@
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
 
-            <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", dragdrop: true, drag_text: "Drag files and drop files here or click here", drag_class: "ink-file-uploader", container: "modal", button_class: "btn btn-default btn-cons" %>
+            <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons" %>
 
 
 

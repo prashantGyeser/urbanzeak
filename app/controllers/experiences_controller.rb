@@ -34,9 +34,20 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    logger.debug "The value in the dates is: #{params[:experience][:images]}"
     images = params[:experience][:images].split(',')
-    logger.debug "The image array is #{images}"
+
+    case params[:experience][:category]
+      when 1
+        @experience.category = "City Tour"
+      when 2
+        @experience.category = "Hobby Class"
+      when 3
+        @experience.category = "Adventure Activity"
+      else
+        logger.debug "No field selected"
+    end
+
+
     fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
     if fbCheckToken.blank?
       postToFBWall = false  
@@ -112,6 +123,40 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  # Getting available dates
+  def available_dates
+
+    logger.debug "The seats required are: #{params[:seats_required]}"
+    logger.debug "The experiences_id is: #{params[:experience_id]}"
+
+    experience = Experience.find(params[:experience_id])
+
+    attendees = Attendee.where(:experience_id => experience.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => experience.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      logger.debug "The values in the dates_with_attendees is: #{dates_with_attendees}"
+      logger.debug "The params seats is: #{params[:seats_required].to_i}"
+      logger.debug "The max seats are: #{experience.max_seats}"
+      logger.debug "The seats subtracted are: #{dates_with_attendees - params[:seats_required].to_i}"
+
+      if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
+        available_dates << experience_date.experience_date.strftime("%Y-%m-%d").to_s
+      end
+
+    end
+    logger.debug "The vailable dates are: #{available_dates}"
+
+    respond_to do |format|
+      format.json{ render :json => available_dates }
+    end
+  end
+
+
   # DELETE /experiences/1
   # DELETE /experiences/1.json
   def destroy
@@ -159,7 +204,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category)
     end
 
     def review_params

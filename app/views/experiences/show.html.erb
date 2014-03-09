@@ -37,11 +37,12 @@
 <!--HEADER END-->
 
 <!--TAGLINE START-->
-  <%= render partial: 'tagline', :locals => {:experience => @experience} %>
+  <%# render partial: 'tagline', :locals => {:experience => @experience} %>
 <!--TAGLINE END-->
 
 
 <!--ABOUT EXPERIENCE AND JOIN NOW START-->
+  <input type="hidden" id="experience_id" value="<%= @experience.id %>"/>
 <%= render partial: 'about_experience', :locals => {:experience => @experience} %>
 <!--ABOUT EXPERIENCE AND JOIN NOW END-->
 
@@ -172,7 +173,6 @@
 <%= javascript_include_tag "expShow/core", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "expShow/experience", "data-turbolinks-track" => true %>
 
-
 <script id="map_location_latitude" type="text/json">
   <%= @experience.latitude.to_json %>
 </script>
@@ -182,23 +182,7 @@
 </script>
 
 <script>
-  var datesEnabled = <%= raw @dates_array %>;
 
-  $('#attendee_attending_date').datepicker({
-
-    beforeShowDay: function(date) {
-      if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), datesEnabled) == -1) {
-        console.log("The dates array is:", datesEnabled);
-        console.log("The formated date is: ", $.datepicker.formatDate('yy-mm-dd', date));
-        console.log("The value of the check is:", $.inArray($.datepicker.formatDate('yy-mm-dd', date), datesEnabled));
-        console.log(date);
-        return {
-          enabled: false
-        };
-      }
-      return;
-    }
-  });
 </script>
 
 

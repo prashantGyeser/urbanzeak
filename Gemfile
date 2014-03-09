@@ -74,7 +74,6 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
-
 group :staging, :production do
   # gzip on heroku
   gem 'heroku-deflater'
