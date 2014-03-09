@@ -15,32 +15,81 @@
             In this section give your experience a catchy title and describe it in detail. Paint a picture, tell people what they will get when they attend your experience and tell them why they should attend.
           </p>
           <br>
-          <%= f.text_field :name, :class => "form-control", :placeholder => "Enter your experience name", :autofocus => true, :required => "required" %>
-          <br/>
-          <select name="experience[category]" class="form-control select2" id="source">
-            <option value="1">City Tour</option>
-            <option value="2">Hobby Class</option>
-            <option value="3">Adventure Activity</option>
-          </select>
 
-          <br/>
-          <%= f.text_field :tagline, :class => "form-control", :placeholder => "Enter a tagline", :required => "required" %>
-          <br/>
-          <%= f.text_area :what_does_this_include, :class => "form-control", :placeholder => "What does this experience include?", :rows => 5, :required => "required" %>
-          <br/>
+          <div class="form-group">
+            <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What type of experience are you conducting? ( select 1)</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <select name="experience[category]" class="form-control select2" id="source">
+                <option value="1">City Tour</option>
+                <option value="2">Hobby Class</option>
+                <option value="3">Adventure Activity</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Describe your experience in a line ( under 15 words )</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_field :tagline, :class => "form-control", :required => "required" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What is included in the experience</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_area :what_does_this_include, :class => "form-control", :rows => 5, :required => "required" %>
+            </div>
+          </div>
+
+
           <div class="row">
             <div class="col-md-6">
-              <%= f.number_field :price, :class => "form-control", :placeholder => "Enter the price per ticket", :required => "required" %>
+              <div class="form-group">
+                <label class="form-label">Price per ticket (all inclusive)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.number_field :price, :class => "form-control", :required => "required" %>
+                </div>
+              </div>
+
             </div>
             <div class="col-md-6">
-              <%= f.number_field :max_seats, :class => "form-control", :placeholder => "Total number of tickets than can be sold", :required => "required" %>
+              <div class="form-group">
+                <label class="form-label">Maximum number of people per session</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.number_field :max_seats, :class => "form-control", :required => "required" %>
+                </div>
+              </div>
             </div>
           </div>
           <br/>
 
-          <%= f.text_area :things_to_remember, :class => "form-control", :placeholder => "Specific things people should bring for this experience", :rows => 5, :required => "required" %>
-          <br/>
-
+          <div class="form-group">
+            <label class="form-label">Any special instructions?</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_area :things_to_remember, :class => "form-control", :rows => 5, :required => "required" %>
+            </div>
+          </div>
 
         </div>
         <!--END GRID BODY-->
@@ -74,24 +123,31 @@
             <!--<input type="text" class="input-sm form-control" name="end" />-->
           <!--</div>-->
 
-          <div class="input-group">
-            <!--<input type="text" class="form-control" id="date_picker">-->
-            <%= f.text_field :exp_date, :class => "form-control" %>
-            <span class="input-group-btn">
+          <div class="form-group">
+            <label class="form-label">Select the dates when this expeirence is available</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <div class="input-group">
+                <!--<input type="text" class="form-control" id="date_picker">-->
+                <%= f.text_field :exp_date, :class => "form-control" %>
+                <span class="input-group-btn">
               <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
             </span>
-          </div><!-- /input-group -->
+              </div><!-- /input-group -->
+            </div>
+          </div>
 
-
-          <br>
-          <br>
-          <div class="control-group">
+          <div class="form-group">
+            <label class="form-label">What time does the experience happen every day</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
+              <!--<input type="text" class="form-control">-->
               <div class="input-append bootstrap-timepicker-component">
                 <input type="text" class="timepicker-default span12">
                 <span class="add-on"><span class="arrow"></span><i class="fa fa-clock-o"></i></span> </div>
             </div>
           </div>
+
           <!-- END DATE AND TIME PICKER -->
 
           <div class="clearfix"></div>
@@ -120,34 +176,88 @@
           <br>
           <div class="row">
             <div class="col-md-6">
-              <%= f.text_field :line_one, :class => "form-control", :placeholder=>"Address Line One" %>
+
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :line_one, :class => "form-control", :placeholder=>"Address Line One" %>
+                </div>
+              </div>
             </div> <!-- END COL 6 -->
             <div class="col-md-6">
-              <%= f.text_field :line_two, :class => "form-control", :placeholder=>"Address Line Two" %>
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :line_two, :class => "form-control", :placeholder=>"Address Line Two" %>
+                </div>
+              </div>
+            </div> <!-- END COL 6 -->
+          </div> <!-- END ROW -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :city, :class => "form-control", :placeholder=>"City" %>
+                </div>
+              </div>
+
+            </div> <!-- END COL 6 -->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :state, :class => "form-control", :placeholder=>"State" %>
+                </div>
+              </div>
+
             </div> <!-- END COL 6 -->
           </div> <!-- END ROW -->
           <br>
           <div class="row">
             <div class="col-md-6">
-              <%= f.text_field :city, :class => "form-control", :placeholder=>"City" %>
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :country, :class => "form-control", :placeholder=>"Country" %>
+                </div>
+              </div>
+
             </div> <!-- END COL 6 -->
             <div class="col-md-6">
-              <%= f.text_field :state, :class => "form-control", :placeholder=>"State" %>
-            </div> <!-- END COL 6 -->
-          </div> <!-- END ROW -->
-          <br>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.text_field :country, :class => "form-control", :placeholder=>"Country" %>
-            </div> <!-- END COL 6 -->
-            <div class="col-md-6">
-              <%= f.text_field :pincode, :class => "form-control", :placeholder=>"Zipcode" %>
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :pincode, :class => "form-control", :placeholder=>"Zipcode" %>
+                </div>
+              </div>
+
             </div> <!-- END COL 6 -->
           </div> <!-- END ROW -->
           <br>
           <div class="row">
             <div class="col-md-12">
-              <%= f.text_field :land_mark, :class => "form-control", :placeholder => "Landmark" %>
+              <div class="form-group">
+                <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+                <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+                <div class="controls">
+                  <!--<input type="text" class="form-control">-->
+                  <%= f.text_field :land_mark, :class => "form-control"%>
+                </div>
+              </div>
             </div>
           </div>
           <br>
@@ -179,7 +289,7 @@
         <div class="grid-body no-border">
           <h3>Experience <span class="semi-bold">Photos</span></h3>
           <p>
-            Tell people where they should come for the experience.
+            Upload pictures to show your customers what your expeirnce looks like.
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
 
