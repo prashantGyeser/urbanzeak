@@ -40,21 +40,27 @@ $(document).ready(function(){
         $.get( url_to_get, function( data ) {
             $( ".result" ).html( data );
             console.log("The data returend from the server is:", data);
-            //alert( "Load was performed." );
-        });
+            var available_dates = data;
 
+            // Removing the datepicker if is already there
+            $('#attendee_attending_date').datepicker('remove');
 
-        $('#attendee_attending_date').datepicker({
-
-            beforeShowDay: function(date) {
-                if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), datesEnabled) == -1) {
-                    return {
-                        enabled: false
-                    };
+            // Loading the date picker after the number of seats is selected.
+            $('#attendee_attending_date').datepicker({
+                beforeShowDay: function(date) {
+                    if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), available_dates) == -1) {
+                        return {
+                            enabled: false
+                        };
+                    }
+                    return;
                 }
-                return;
-            }
+            });
+
         });
+
+
+
 
 
 
