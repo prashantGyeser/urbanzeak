@@ -1,6 +1,5 @@
 Urbanzeak::Application.routes.draw do
 
-
   post "conversations/create" => "conversations#create"
 
   # Sending a user to the dashboard page once they login
@@ -43,6 +42,7 @@ Urbanzeak::Application.routes.draw do
     get "messages" => "messages#index"
     get "messages/:id" => "messages#show"
     post "messages/create" => "messages#create"
+    get "purchases" => "purchases#index"
   end
 
   get "home/index"

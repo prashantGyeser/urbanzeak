@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   has_many :integration_tokens
   has_many :templates
   has_many :conversations
+  has_many :experiences
 
   #after_create :send_welcome_email
   #after_create :autoresponder
