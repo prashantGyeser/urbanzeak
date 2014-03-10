@@ -1,6 +1,8 @@
 var ready;
 ready = function() {
 
+  $('#file-upload-success-message').hide();
+
   var allFilesUploaded = false;
 
   //Date Pickers
@@ -83,8 +85,23 @@ ready = function() {
     }
   });
 
-
 };
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+function onPhotoUpload(event){
+  var filesUploaded = event.fpfiles;
+  $('#file-upload-success-message').hide();
+
+  $(filesUploaded).each(function(index){
+    var file_attached = $(this).get(0).filename;
+    //console.log("The file name is:", file_attached);
+    var row_to_add = '<tr><td></td>' + file_attached + '<td><span class="label label-success">UPLOADED</span></td></tr>';
+    //console.log("The row is:", row_to_add);
+    //$('#files-uploaded-list tr:last').after(row_to_add);
+    $('#file-upload-success-message').show();
+  });
+
+
+}
