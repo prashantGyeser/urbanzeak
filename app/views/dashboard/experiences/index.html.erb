@@ -12,7 +12,7 @@
 
 
 <% @experiences.in_groups_of(3, false) do |experiences| %>
-  <div class="row">
+  <div class="row" style="margin-bottom: 20px;">
     <% experiences.each do |experience| %>
       <div class="col-md-4">
         <div class="widget-item narrow-margin">
@@ -26,11 +26,12 @@
             </div>
             <!--TODO: Change this image to the image of the experience-->
             <!--<img class="lazy hover-effect-img image-responsive-width" alt="" src="assets/img/others/10.png"> -->
-            <% experience_image = ExperienceImage.where(:random_id => experience.random_id).first %>
+            <% experience_image = ExperienceImage.where(:experience_id => experience.id).first %>
             <% if experience_image.nil? %>
 
             <% else %>
-              <%= image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
+              <%# image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
+              <%= filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
             <%end%>
 
           </div>
