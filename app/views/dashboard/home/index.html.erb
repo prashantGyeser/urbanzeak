@@ -76,8 +76,9 @@
       </div>
       <div class="grid-body no-border">
         <h4>Visitors <span class="semi-bold">By Day</span></h4>
-        <p> Line graphs are probably the most widely used graph for showing trends.
-          Chart.js has a ton of customisation features for line graphs, along with support for multiple datasets to be plotted on one chart. </p>
+        <p>
+          This charts gives you an overview of the number of people viewing your page each day for the last seven days.
+        </p>
         <!--<div id="line-example"> </div>-->
 
         <%= content_tag :div, "", id: "visits_chart", :data => { :views => @total_views_by_day} %>
@@ -100,7 +101,9 @@
       </div>
       <div class="grid-body no-border">
         <h3>Referrer Breakdown</h3>
-        <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+        <p>
+          This section outlines the sites that are sending the most people to your page. The chart below shows a list of the three most major sources of traffic to your page.
+        </p>
         <br>
 
         <!--<div id="most_valuable_referrer_1"> </div>-->
@@ -113,15 +116,16 @@
   <div class="col-md-8">
     <div class="grid simple">
       <div class="grid-title no-border">
-        <h4>Upcoming <span class="semi-bold">Experiences</span></h4>
+        <h4>Tickets <span class="semi-bold">Purchased</span></h4>
       </div>
       <div class="grid-body no-border">
-        <h3>Bookmarks</h3>
-        <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+        <h3>RSVPs for the next four weeks</h3>
+        <p>
+          This chart shows the number of people that have signed up for your experience over the next four weeks.
+        </p>
         <br>
-
+        <%= content_tag :div, "", id: "purchases_chart", :data => { :purchases => @purchases.to_json} %>
         <!--<div id="most_valuable_referrer_1"> </div>-->
-
       </div>
     </div>
   </div>
