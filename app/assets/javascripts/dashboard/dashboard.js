@@ -24,9 +24,9 @@ $(document).ready(function() {
     Morris.Donut({
         element: 'referrer-breakdown',
         data: [
-            {label: "Download Sales", value: 12},
-            {label: "In-Store Sales", value: 30},
-            {label: "Mail-Order Sales", value: 20}
+            {label: "twitter.com", value: 12},
+            {label: "meraevents.com", value: 30},
+            {label: "google.com", value: 20}
         ],
         colors:['#60bfb6','#91cdec','#eceff1']
     });
