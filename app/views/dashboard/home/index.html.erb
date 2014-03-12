@@ -1,79 +1,81 @@
-<!--Todo: Chats to add -->
-<!--1. Visitors chart -->
-<!--2. Total revenue chart -->
-<!--2. Total attendees chart -->
-
-<%= content_for :js do %>
-  <%= javascript_include_tag "dashboard/reports.js", 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "dashboard/calendar.js", 'data-turbolinks-track' => true %>
-<% end %>
-
-
 <!-- BEGIN PlACE PAGE CONTENT HERE -->
 <!-- BEGIN PAGE TITLE -->
 <div class="page-title">
-  <h3>Reports</h3>
+  <h3>Dashboard</h3>
 </div>
 <!-- END PAGE TITLE -->
 
-<!--KEY VALUES-->
-<div class="row">
-  <!--BOX 1-->
-  <div class="col-md-3">
-    <div class="tiles blue added-margin">
-      <div class="tiles-body">
-        <div class="tiles-title"> TOTAL VISITS </div>
-        <div class="heading"> <span class="animate-number" data-value="<%= @total_views %>" data-animation-duration="1200"><%= @total_views %></span> </div>
-      </div>
-    </div>
-  </div>
-  <!--END BOX 1-->
-  <!--BOX 2-->
-  <div class="col-md-3">
-    <div class="tiles green added-margin">
-      <div class="tiles-body">
-        <div class="tiles-title"> TODAY’S VISITS </div>
-        <div class="heading"> <span class="animate-number" data-value="<%= @total_views_today %>" data-animation-duration="1000"><%= @total_views_today %></span> </div>
-      </div>
-    </div>
-  </div>
-  <!--END BOX 2-->
-  <!--BOX 3-->
-  <div class="col-md-3">
-    <div class="tiles red added-margin">
-      <div class="tiles-body">
-        <div class="tiles-title"> TODAY’S SALES </div>
-        <div class="heading"> $ <span class="animate-number" data-value="<%= @total_sales_today %>" data-animation-duration="1200"><%= @total_sales_today %></span> </div>
-      </div>
-    </div>
-  </div>
-  <!--END BOX 3-->
-  <!--BOX 4-->
-  <div class="col-md-3">
-    <div class="tiles purple added-margin ">
-      <div class="tiles-body">
-        <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-        <div class="tiles-title"> TOTAL SALES </div>
-        <div class="row-fluid">
-          <div class="heading"> $ <span class="animate-number" data-value="<%= @total_sales %>" data-animation-duration="700"><%= @total_sales %></span> </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--END BOX 4-->
-</div>
-<!--END KEY VALUES-->
-<br>
-<br>
-
 <!--TOP LINE CHART-->
 <div class="row">
-  <div class="col-md-12">
+  <!--6 COL START-->
+  <div class="col-md-6">
     <div class="grid simple">
+      <!--GRID TITLE START-->
+      <div class="grid-title no-border">
+        <h4>Purchases</h4>
+      </div>
+      <!--GRID TITLE END-->
+      <!--GRID BODY START-->
+      <div class="grid-body no-border">
+        <% @purchases.each do |experience| %>
+          <h4><%= experience.name %></h4>
+          <!--TABLE START-->
+          <table class="table no-more-tables">
+
+            <% attendee_records_available = false %>
+            <% header_added = false %>
+            <tbody>
+            <% experience.attendees.last(6).each do |attendee| %>
+
+              <% if header_added == false %>
+                <% header_added = true %>
+                <thead>
+                <tr>
+                  <th style="width:22%">Email</th>
+                  <th style="width:10%">Tickets</th>
+                  <th style="width:10%">Total</th>
+                </tr>
+                </thead>
+              <% end %>
+              <% attendee_records_available = true %>
+              <tr>
+                <td class="v-align-middle">
+                  <%= attendee.email %>
+                </td>
+                <td class="v-align-middle">
+                  <%= attendee.seats %>
+                </td>
+                <td>
+                  <%= attendee.seats * experience.price %>
+                </td>
+              </tr>
+
+            </tbody>
+            <% end %>
+
+            <% if attendee_records_available == false %>
+              <p class="semi-bold">No purchases today!</p>
+            <% end %>
+
+          </table>
+          <!--TABLE END-->
+        <% end %>
+
+
+      </div>
+      <!--GRID BODY END-->
+    </div>
+  </div>
+  <!--6 COL END-->
+  <!--6 COL START-->
+  <div class="col-md-6">
+    <div class="grid simple">
+      <!--GRID TITLE START-->
       <div class="grid-title no-border">
         <h4>Visitors <span class="semi-bold">This Week</span></h4>
-        <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
       </div>
+      <!--GRID TITLE END-->
+      <!--GRID BODY START-->
       <div class="grid-body no-border">
         <h4>Visitors <span class="semi-bold">By Day</span></h4>
         <p>
@@ -83,8 +85,10 @@
 
         <%= content_tag :div, "", id: "visits_chart", :data => { :views => @total_views_by_day} %>
       </div>
+      <!--GRID BODY END-->
     </div>
   </div>
+  <!--6 COL END-->
 </div>
 <!--END TOP LINE CHART-->
 
