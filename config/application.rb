@@ -46,7 +46,7 @@ module Urbanzeak
     config.assets.paths << Rails.root.join("vendor")
 
     # Adding this to fix the issue with dashboard/application.js not being served
-    config.assets.precompile += %w( dashboard/dashboard.js )
+    config.assets.precompile += %w( dashboard/reports.js )
     config.assets.precompile += %w( jquery-slider/jquery.sidr.min )
     config.assets.precompile += %w( jquery-slimscroll/jquery.slimscroll.min )
     config.assets.precompile += %w( pace/pace.min )

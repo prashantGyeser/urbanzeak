@@ -5,7 +5,7 @@ Urbanzeak::Application.routes.draw do
   # Sending a user to the dashboard page once they login
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
   authenticated :user do 
-    root :to => "dashboard/home#index", :as => "authenticated_root"
+    root :to => "dashboard/reports#index", :as => "authenticated_root"
   end  
 
   resources :experience_images
@@ -21,7 +21,9 @@ Urbanzeak::Application.routes.draw do
 
   get "chat/index"
   namespace :dashboard do
-    root "home#index"
+    get "home" => "home#index"
+    #root "home/index"
+    root :to => "home#index"
     get "chat" => "chat#index"
     get "experiences" => "experiences#index"
     get "experiences/new/:experience_id" => "experiences#new"
@@ -43,9 +45,10 @@ Urbanzeak::Application.routes.draw do
     get "messages/:id" => "messages#show"
     post "messages/create" => "messages#create"
     get "purchases" => "purchases#index"
+    get "reports" => "reports#index"
   end
 
-  get "home/index"
+  get "reports/index"
   resources :attendees
 
   get "checkout", to: "checkout#index"
@@ -69,8 +72,8 @@ Urbanzeak::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
-  get 'home/:city', to: "home#index"
+  root 'reports#index'
+  get 'reports/:city', to: "reports#index"
     
     
   match '/:id' => "shortener/shortened_urls#show", via: [:get]
