@@ -1,4 +1,4 @@
-class Dashboard::HomeController < Dashboard::ApplicationController
+class Dashboard::ReportsController < Dashboard::ApplicationController
   def index
 
     # Views from the beginning of time for all the experiences for this user
