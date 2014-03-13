@@ -49,7 +49,7 @@ Urbanzeak::Application.routes.draw do
     get "reports" => "reports#index"
   end
 
-  get "reports/index"
+  get "home/index"
   resources :attendees
 
   get "checkout", to: "checkout#index"
@@ -73,9 +73,7 @@ Urbanzeak::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'reports#index'
-  get 'reports/:city', to: "reports#index"
-    
+  root 'home#index'
     
   match '/:id' => "shortener/shortened_urls#show", via: [:get]
 
