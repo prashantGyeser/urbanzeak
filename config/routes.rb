@@ -5,8 +5,9 @@ Urbanzeak::Application.routes.draw do
   # Sending a user to the dashboard page once they login
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
   authenticated :user do 
-    root :to => "dashboard/reports#index", :as => "authenticated_root"
-  end  
+    #root :to => "dashboard/reports#index", :as => "authenticated_root"
+    root :to => "dashboard/home#index", :as => "authenticated_root"
+  end
 
   resources :experience_images
 
