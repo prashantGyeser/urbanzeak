@@ -62,7 +62,7 @@ $(document).ready(function(){
                 }
             })
                 .on('changeDate', function(event){
-                    var date_to_write = $.datepicker.formatDate('mm/dd/yy', event.date)
+                    var date_to_write = $.datepicker.formatDate('dd-mm-yy', event.date)
                     $('#attendee_attending_date').val(date_to_write);
                 })
                 .on('show', function(event){
