@@ -3,6 +3,7 @@ ready = function() {
 
   $('#file-upload-success-message').hide();
 
+
   var allFilesUploaded = false;
 
   //Date Pickers
@@ -96,12 +97,20 @@ function onPhotoUpload(event){
 
   $(filesUploaded).each(function(index){
     var file_attached = $(this).get(0).filename;
-    //console.log("The file name is:", file_attached);
-    var row_to_add = '<tr><td></td>' + file_attached + '<td><span class="label label-success">UPLOADED</span></td></tr>';
+    console.log("The file name of the attached file is:", file_attached);
+
+    var row_to_add = '<tr><td>' + file_attached + '</td><td><span class="label label-success">UPLOADED</span></td></tr>';
+
     //console.log("The row is:", row_to_add);
     //$('#files-uploaded-list tr:last').after(row_to_add);
+    $('#files_uploaded_list').append(row_to_add);
     $('#file-upload-success-message').show();
   });
 
 
 }
+
+/*
+var fileName = "This is a test";
+var rowToAppend = '<tr class="child"><td>' + fileName + '</td></tr>';
+*/
