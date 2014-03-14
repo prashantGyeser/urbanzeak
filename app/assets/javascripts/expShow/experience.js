@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#join-notifications').hide();
+    //$('#join-notifications').hide();
 
     // SINGLE PAGE NAV START
     $('#top-nav').singlePageNav();
@@ -33,8 +33,47 @@ $(document).ready(function(){
         );
     });
 
+    $('#get_dates').click(function(event){
+        event.preventDefault();
+        var number_of_seats = $('#attendee_seats').val();
+        var experience_id = $('#experience_id').val();
+        var url_to_get = "/experiences/available_dates?seats_required=" + number_of_seats + "&experience_id=" + experience_id;
+
+        $('#join-notifications').show();
 
 
+        $.get( url_to_get, function( data ) {
+            $( ".result" ).html( data );
+            console.log("The data returend from the server is:", data);
+            var available_dates = data;
+            // Removing the datepicker if is already there
+            $('#attending_date').datepicker('remove');
+
+            // Loading the date picker after the number of seats is selected.
+            $('#attending_date').datepicker({
+                beforeShowDay: function(date) {
+                    if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), available_dates) == -1) {
+                        return {
+                            enabled: false
+                        };
+                    }
+                    return;
+
+                }
+            })
+                .on('changeDate', function(event){
+                    var date_to_write = $.datepicker.formatDate('mm/dd/yy', event.date)
+                    $('#attendee_attending_date').val(date_to_write);
+                })
+                .on('show', function(event){
+                    $('#join-notifications').hide();
+                });
+
+        });
+    });
+
+
+    /*
     $( "#attendee_seats" ).change(function(e) {
 
         var number_of_seats = $(this).val();
@@ -70,7 +109,7 @@ $(document).ready(function(){
         });
 
     });
-
+    */
     //var datesEnabled = <%= raw @dates_array %>;
 
 });

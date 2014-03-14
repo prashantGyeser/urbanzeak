@@ -28,8 +28,10 @@ class AttendeesController < ApplicationController
   # POST /attendees.json
   def create
     @attendee = Attendee.new(attendee_params)
+    logger.debug "The params are: #{params.inspect}"
+    #@attendee.attending_date = Date.strptime(params[:attendee][:attending_date].to_s, '%m/%d/%Y')
 
-    @attendee.attending_date = Date.strptime(params[:attendee][:attending_date].to_s, '%m/%d/%Y')
+
     respond_to do |format|
       if @attendee.save
         #format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }

@@ -1,3 +1,11 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert"></button>
+    Success:<%= flash[:notice] %>
+  </div>
+<% end %>
+
+
 <%= form_for(@attendee) do |f| %>
   <% if @attendee.errors.any? %>
     <div id="error_explanation">
@@ -11,50 +19,62 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="col-md-10">
-      <div id="join-notifications">
-        <div class="alert alert-info">
-          Info: Getting available dates, please wait...
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
   <div class="row form-row">
     <div class="col-md-10">
-      <%= f.number_field :seats, :class => "form-control", :placeholder => "Seats" %>
+      <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
+        <label class="form-label">Tickets</label>
+        <span class="help">How many people are coming?</span>
+        <div class="controls">
+          <div class="input-group">
+            <%= f.number_field :seats, :class => "form-control"%>
+            <span class="input-group-btn">
+              <button class="btn btn-success btn-cons" id="get_dates" type="button">Find dates</button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="row form-row">
     <div class="col-md-10">
       <div class="input-group">
-        <!--<input type="text" class="form-control" id="date_picker">-->
-        <%# f.text_field :exp_date, :class => "form-control" %>
-        <!--<input type="text" class="form-control" id="attendee_date_select"/>-->
-
-        <div id="attendee_attending_date"></div>
+        <div id="join-notifications">
+          <div class="alert alert-info">
+            Info: Enter the number of tickets and available dates will be shown here.
+          </div>
+        </div>
+        <div id="attending_date"></div>
+        <%= f.hidden_field :attending_date, :value => "" %>
       </div><!-- /input-group -->
-
-
-    </div>
-  </div>
-  <br/>
-
-  <div class="row form-row">
-    <div class="col-md-10">
-      <%= f.text_field :phone_number, :class => "form-control", :placeholder => "Phone number" %>
     </div>
   </div>
 
   <div class="row form-row">
     <div class="col-md-10">
-      <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <span class="help">e.g. "(541) 754-3010"</span>
+        <div class="controls">
+          <%= f.text_field :phone_number, :class => "form-control" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <span class="help">e.g. "example@example.com"</span>
+        <div class="controls">
+          <%= f.text_field :email, :class => "form-control" %>
+        </div>
+      </div>
+
     </div>
   </div>
 
