@@ -33,6 +33,8 @@ $(document).ready(function(){
         );
     });
 
+
+
     $( "#attendee_seats" ).change(function(e) {
 
         var number_of_seats = $(this).val();
@@ -40,6 +42,7 @@ $(document).ready(function(){
         var url_to_get = "/experiences/available_dates?seats_required=" + number_of_seats + "&experience_id=" + experience_id;
 
         $('#join-notifications').show();
+
 
         $.get( url_to_get, function( data ) {
             $( ".result" ).html( data );
@@ -59,9 +62,13 @@ $(document).ready(function(){
                     return;
 
                 }
-            });
+            })
+                .on('show', function(event){
+                    $('#join-notifications').hide();
+                });
 
         });
+
     });
 
     //var datesEnabled = <%= raw @dates_array %>;
