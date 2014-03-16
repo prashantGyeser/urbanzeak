@@ -84,7 +84,6 @@ group :staging, :production do
   gem 'bugsnag'
   gem 'exceptiontrap'
   gem 'appsignal'
-  gem 'oboe-heroku'
 
   # Using unicorn as the server
   gem 'unicorn'
