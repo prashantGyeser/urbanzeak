@@ -8032,3 +8032,32 @@ ul.my-friends li .profile-pic{
 .rickshaw_graph{
 	overflow:hidden;
 }
+
+#error_explanation
+{
+    color: #e76e70;
+    background-color: #fff6f4;
+    border: 1px solid #f8cdcd;
+    padding: 15px 19px 15px 17px;
+    margin-bottom: 20px;
+}
+
+#error_explanation h2
+{
+    color: #e76e70;
+    font-weight: 600;
+}
+
+.field_with_errors input
+{
+    border: 1px solid #f35958;
+}
+
+#flash_alert
+{
+    color: #e76e70;
+    background-color: #fff6f4;
+    border: 1px solid #f8cdcd;
+    padding: 15px 19px 15px 17px;
+    margin-bottom: 20px;
+}

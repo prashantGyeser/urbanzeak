@@ -23,8 +23,7 @@ Urbanzeak::Application.routes.draw do
   get "chat/index"
   namespace :dashboard do
     get "home" => "home#index"
-    #root "home/index"
-    root :to => "home#index"
+    root :to => "experiences#new"
     get "chat" => "chat#index"
     get "experiences" => "experiences#index"
     get "experiences/new/:experience_id" => "experiences#new"

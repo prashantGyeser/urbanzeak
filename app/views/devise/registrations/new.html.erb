@@ -1,56 +1,89 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <div id="registration">
-        <h2>Sign up</h2>
+  <div class="row login-container column-seperation">
+    <div class="col-md-5 col-md-offset-1">
+      <h2>Sign up for urbanzeak</h2>
+      <p>
+        urbanzeak is the easiest way to create, show and find customers.
+        Sign up for a <span class="semi-bold">30 free trial</span> and start finding customers.
+        <br/>
+        <a href="#">Sign In Now!</a> if you already have an account.
+      </p>
+      <br>
 
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+    </div>
+    <div class="col-md-5 "> <br>
 
-          <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, :class => "form-control", :autofocus => true
-            %>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :email, :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.email_field :email, :class => "form-control", :autofocus => true %>
+              </div>
+            </div>
           </div>
-          <!--
-          <div class="form-group">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, :class => "form-control" %>
-          </div>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, :class => "form-control" %>
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :first_name, "Name" , :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.text_field :first_name, :class => "form-control" %>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :city %>
-            <%= f.text_field :city, :class => "form-control" %>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :password, :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.password_field :password, :class => "form-control" %>
+              </div>
+            </div>
           </div>
-          -->
-          <div class="form-group">
-            <%= f.label :password %>
-            <%= f.password_field :password, :class => "form-control" %>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :password_confirmation, :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.password_field :password_confirmation, :class => "form-control" %>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, :class => "form-control" %>
+        <div class="row">
+          <div class="col-md-10">
+            <div class="sharedLinks">
+              <%= render "devise/shared/links" %>
+            </div>
+            <%= f.submit "Sign up", :class => 'btn btn-primary btn-cons pull-right' %>
           </div>
+        </div>
+      <% end %>
 
-          <div><%= f.submit "Sign up", :class => 'button is-primary' %></div>
-        <% end %>
-
-      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-      <div class="sharedLinks">
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+
+
+
+
+
+
+
+
