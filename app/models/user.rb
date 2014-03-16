@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
   #after_create :autoresponder
   after_create :add_guid
   after_create :set_tour_status
+  after_create :set_host
 
   private
 
@@ -54,6 +55,11 @@ class User < ActiveRecord::Base
   def set_tour_status
     self.tour_completed = false
     self.save
+  end
+
+  def set_host
+    self.host = true
+    save
   end
 
   def send_welcome_email
