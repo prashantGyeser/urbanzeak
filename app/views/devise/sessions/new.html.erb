@@ -2,21 +2,17 @@
   <div class="row login-container column-seperation">
     <div class="col-md-5 col-md-offset-1">
       <h2>Sign in to urbanzeak</h2>
-      <p>Use Facebook, Twitter or your email to sign in.<br>
-        <a href="#">Sign up Now!</a> for a webarch account,It's free and always will be..</p>
+      <p>
+        Sign into your account to see your dashboard and the purchases your customers have made.<br>
+        <%= link_to "Sign up for a free 30 day trial!", new_registration_path(resource_name) %> for urbanzeak.</p>
       <br>
 
-      <button class="btn btn-block btn-info col-md-8" type="button">
-        <span class="pull-left"><i class="icon-facebook"></i></span>
-        <span class="bold">Login with Facebook</span> </button>
-      <button class="btn btn-block btn-success col-md-8" type="button">
-        <span class="pull-left"><i class="icon-twitter"></i></span>
-        <span class="bold">Login with Twitter</span>
-      </button>
     </div>
     <div class="col-md-5 "> <br>
 
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "login-form" }) do |f| %>
+
+        <%= devise_error_messages! %>
 
         <div class="row">
           <div class="form-group col-md-10">
