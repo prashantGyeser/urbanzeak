@@ -50,8 +50,8 @@
       </ul>
       <!-- END MOBILE HEADER -->
       <!-- BEGIN LOGO -->
-      <a href="#">
-        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => 'logo.png', :src_retina => "logo2x.png"} %>
+      <a href="/">
+        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
       </a>
       <!-- END LOGO -->
       <!-- BEGIN LOGO NAV BUTTONS -->
@@ -122,7 +122,13 @@
     <!-- BEGIN MINI-PROFILE -->
     <div class="user-info-wrapper">
       <div class="profile-wrapper">
-        <%= image_tag "profiles/avatar.jpg", :width => "69", :height => "69", :data => { :src => "profiles/avatar.jpg", :src_retina => "profiles/avatar2x.jpg"}  %>
+        <% @host = Host.where(:user_id => current_user.id).first %>
+        <%if @host.nil? %>
+          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
+        <% elsif @host.avatar.blank? %>
+          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
+        <% else %>
+        <% end %>
       </div>
       <div class="user-info">
         <div class="greeting">Welcome</div>

@@ -46,6 +46,7 @@ Urbanzeak::Application.routes.draw do
     post "messages/create" => "messages#create"
     get "purchases" => "purchases#index"
     get "reports" => "reports#index"
+    get "algo" => "algo#index"
   end
 
   get "home/index"

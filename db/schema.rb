@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309084121) do
+ActiveRecord::Schema.define(version: 20140316101354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -189,6 +189,14 @@ ActiveRecord::Schema.define(version: 20140309084121) do
     t.datetime "updated_at"
   end
 
+  create_table "leads", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "potential_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "experience_id"
+  end
+
   create_table "messages", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -207,6 +215,16 @@ ActiveRecord::Schema.define(version: 20140309084121) do
     t.text     "raw_headers"
     t.string   "guid"
     t.integer  "conversation_id"
+  end
+
+  create_table "potentials", force: true do |t|
+    t.string   "site"
+    t.string   "site_type"
+    t.string   "potential_type"
+    t.text     "description"
+    t.text     "todo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reviews", force: true do |t|
@@ -277,6 +295,7 @@ ActiveRecord::Schema.define(version: 20140309084121) do
     t.string   "guid"
     t.string   "internal_email_id"
     t.boolean  "tour_completed"
+    t.string   "subdomain"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

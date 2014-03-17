@@ -4,7 +4,6 @@ class Dashboard::ProfileController < Dashboard::ApplicationController
   	@host = Host.where(:user_id => current_user.id).first
 
   	if @host.blank?
-  		logger.debug "It is getting into the if"
   		@host = Host.new
   	end
   end
