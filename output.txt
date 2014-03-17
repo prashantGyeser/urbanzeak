@@ -1,0 +1,1192 @@
+[fog][WARNING] Unable to load the 'unf' gem. Your AWS strings may not be properly encoded.
+=> Booting WEBrick
+=> Rails 4.0.1 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/assets/expShow/style.css?body=1" for 127.0.0.1 at 2014-02-13 11:04:57 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/experiences/39" for 127.0.0.1 at 2014-02-13 11:05:11 +0530
+Processing by ExperiencesController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[35mExperience Load (9.7ms)[0m  SELECT "experiences".* FROM "experiences" WHERE "experiences"."id" = $1 LIMIT 1  [["id", "39"]]
+  [1m[36m (1.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.4ms)[0m  INSERT INTO "impressions" ("action_name", "controller_name", "created_at", "impressionable_id", "impressionable_type", "ip_address", "request_hash", "session_hash", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["action_name", "show"], ["controller_name", "experiences"], ["created_at", Thu, 13 Feb 2014 05:35:12 UTC +00:00], ["impressionable_id", 39], ["impressionable_type", "Experience"], ["ip_address", "127.0.0.1"], ["request_hash", "8a05e05b4c6d3f092de3c681bd7b8e13b444d9e89273d4477ea6bd08e5e4da31"], ["session_hash", "0b4b2aba86f089ba9a8f414b0d90d1b5"], ["updated_at", Thu, 13 Feb 2014 05:35:12 UTC +00:00]]
+  [1m[36m (21.6ms)[0m  [1mCOMMIT[0m
+  Rendered experiences/show.html.erb (381.6ms)
+Completed 200 OK in 975ms (Views: 397.9ms | ActiveRecord: 245.1ms)
+
+
+Started GET "/assets/headereffects/css/normalize.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/pace/pace-theme-flash.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/owl-carousel/owl.theme.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/owl-carousel/owl.carousel.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/headereffects/css/component.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/boostrapv3/css/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/boostrapv3/css/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/font-awesome/css/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/rs-plugin/css/settings.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/expShow/application.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/expShow/style.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/expShow/magic_space.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/expShow/responsive.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/expShow/animate.min.css?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/rs-plugin/js/jquery.themepunch.plugins.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/rs-plugin/js/jquery.themepunch.revolution.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/boostrapv3/js/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/pace/pace.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/jquery-unveil/jquery.unveil.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/owl-carousel/owl.carousel.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:13 +0530
+
+
+Started GET "/assets/waypoints.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/parrallax/js/jquery.parallax-1.1.3.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/jquery-nicescroll/jquery.nicescroll.min.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/jquery-appear/jquery.appear.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/jquery-gmap/gmaps.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/expShow/core.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/jquery-numberAnimate/jquery.animateNumbers.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/jquery-isotope/jquery.isotope.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/expShow/google_maps.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/expShow/application.js?body=1" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+
+Started GET "/experiences/assets/img/gallery/3.jpg" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/3.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (137.2ms)
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (95.9ms)
+
+
+Started GET "/experiences/assets/img/gallery/4.jpg" for 127.0.0.1 at 2014-02-13 11:05:14 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/4.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (242.2ms)
+
+
+Started GET "/experiences/assets/img/gallery/2.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (101.0ms)
+
+
+Started GET "/experiences/assets/img/gallery/1.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/1.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (226.8ms)
+
+
+Started GET "/experiences/assets/img/gallery/5.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/5.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (28.2ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (103.2ms)
+
+
+Started GET "/assets/rs-plugin/assets/timer.png" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+
+Started GET "/experiences/assets/img/gallery/9.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/9.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (94.7ms)
+
+
+Started GET "/experiences/assets/img/gallery/10.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/10.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (209.1ms)
+
+
+Started GET "/experiences/assets/img/profiles/avatar2x.jpg" for 127.0.0.1 at 2014-02-13 11:05:15 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/profiles/avatar2x.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (24.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (113.5ms)
+
+
+Started GET "/experiences/assets/img/logo_condensed.png" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/logo_condensed.png"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (31.2ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (122.1ms)
+
+
+Started GET "/assets/rs-plugin/assets/loader.gif" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (30.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (127.3ms)
+
+
+Started GET "/assets/rs-plugin/assets/large_left.png" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+
+Started GET "/assets/rs-plugin/assets/large_right.png" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+
+Started GET "/experiences/assets/img/gallery/6.jpg" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/6.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (98.3ms)
+
+
+Started GET "/experiences/assets/img/gallery/7.jpg" for 127.0.0.1 at 2014-02-13 11:05:16 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/7.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (216.3ms)
+
+
+Started GET "/experiences/assets/img/gallery/8.jpg" for 127.0.0.1 at 2014-02-13 11:05:17 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/gallery/8.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.2ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (87.8ms)
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:05:31 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (19.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (79.8ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:05:46 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:06:01 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.3ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (193.0ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:06:16 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:06:32 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (82.1ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:06:47 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:07:02 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (77.1ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:07:17 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:07:32 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (174.0ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:07:48 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:08:03 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (82.1ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:08:18 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:08:33 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (83.5ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:08:48 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:09:03 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (78.8ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:09:19 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:09:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (81.2ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:09:49 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:10:04 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (187.1ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:10:19 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:10:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (78.0ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:10:50 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:11:05 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (19.3ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (82.4ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:11:20 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:11:35 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (74.4ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:11:50 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:12:06 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.0ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (77.8ms)
+
+
+Started GET "/assets/expShow/bg/headerImage-1.jpg" for 127.0.0.1 at 2014-02-13 11:12:21 +0530
+
+
+Started GET "/experiences/assets/img/bg/headerImage-2.jpg" for 127.0.0.1 at 2014-02-13 11:12:36 +0530
+
+ActionController::RoutingError (No route matches [GET] "/experiences/assets/img/bg/headerImage-2.jpg"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  rack-mini-profiler (0.1.31) Ruby/lib/mini_profiler/profiler.rb:278:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/prashant/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (120.1ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/prashant/.rvm/gems/ruby-2.0.0-p247@urbanzeak/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (180.3ms)
+Exiting

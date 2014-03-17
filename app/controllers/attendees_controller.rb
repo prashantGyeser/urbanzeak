@@ -1,7 +1,7 @@
 class AttendeesController < ApplicationController
   before_action :set_attendee, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!, only: [:create]
+  #before_filter :authenticate_user!, only: [:create]
 
   # GET /attendees
   # GET /attendees.json
@@ -28,6 +28,9 @@ class AttendeesController < ApplicationController
   # POST /attendees.json
   def create
     @attendee = Attendee.new(attendee_params)
+    logger.debug "The params are: #{params.inspect}"
+    #@attendee.attending_date = Date.strptime(params[:attendee][:attending_date].to_s, '%m/%d/%Y')
+
 
     respond_to do |format|
       if @attendee.save
@@ -73,6 +76,6 @@ class AttendeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendee_params
-      params.require(:attendee).permit(:seats, :user_id, :experience_id)
+      params.require(:attendee).permit(:seats, :phone_number, :email, :experience_id, :attending_date)
     end
 end

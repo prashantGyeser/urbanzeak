@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title Goes Here</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+
+  <!--CUSTOM CSS-->
+  <%= yield :css %>
+  <!--END CUSTOM CSS-->
+
+  <!-- NEED TO WORK ON -->
+  <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <!-- BEGIN CORE JS FRAMEWORK-->
+  <%= include_gon %>
+  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+  <!-- END CORE JS FRAMEWORK -->
+
+  <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
+
+  <%= csrf_meta_tag %>
+
+</head>
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+    <!-- BEGIN NAVIGATION HEADER -->
+    <div class="header-seperation">
+      <!-- BEGIN MOBILE HEADER -->
+      <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+        <li class="dropdown">
+          <a id="main-menu-toggle" href="#main-menu" class="">
+            <div class="iconset top-menu-toggle-white"></div>
+          </a>
+        </li>
+      </ul>
+      <!-- END MOBILE HEADER -->
+      <!-- BEGIN LOGO -->
+      <a href="/">
+        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+      </a>
+      <!-- END LOGO -->
+      <!-- BEGIN LOGO NAV BUTTONS -->
+      <ul class="nav pull-right notifcation-center">
+        <li class="dropdown" id="header_task_bar">
+          <a href="#" class="dropdown-toggle active" data-toggle="">
+            <div class="iconset top-home"></div>
+          </a>
+        </li>
+        <li class="dropdown" id="header_inbox_bar">
+          <a href="#" class="dropdown-toggle">
+            <div class="iconset top-messages"></div>
+            <span class="badge" id="msgs-badge">2</span>
+          </a>
+        </li>
+        <!-- BEGIN MOBILE CHAT TOGGLER -->
+        <li class="dropdown" id="portrait-chat-toggler" style="display:none">
+          <a href="#sidr" class="chat-menu-toggle">
+            <div class="iconset top-chat-white"></div>
+          </a>
+        </li>
+        <!-- END MOBILE CHAT TOGGLER -->
+      </ul>
+      <!-- END LOGO NAV BUTTONS -->
+    </div>
+    <!-- END NAVIGATION HEADER -->
+    <!-- BEGIN CONTENT HEADER -->
+    <div class="header-quick-nav">
+      <!-- BEGIN HEADER LEFT SIDE SECTION -->
+      <div class="pull-left">
+        <!-- BEGIN SLIM NAVIGATION TOGGLE -->
+        <ul class="nav quick-section">
+          <li class="quicklinks">
+            <a href="#" class="" id="layout-condensed-toggle">
+              <div class="iconset top-menu-toggle-dark"></div>
+            </a>
+          </li>
+        </ul>
+        <!-- END SLIM NAVIGATION TOGGLE -->
+        <!-- BEGIN HEADER QUICK LINKS -->
+        <ul class="nav quick-section">
+          <li class="quicklinks"><a href="#" class=""><div class="iconset top-reload"></div></a></li>
+          <li class="quicklinks"><span class="h-seperate"></span></li>
+          <li class="quicklinks"><a href="#" class=""><div class="iconset top-tiles"></div></a></li>
+          <!-- BEGIN SEARCH BOX -->
+          <li class="m-r-10 input-prepend inside search-form no-boarder">
+            <span class="add-on"><span class="iconset top-search"></span></span>
+            <input name="" type="text" class="no-boarder" placeholder="Search Dashboard" style="width:250px;">
+          </li>
+          <!-- END SEARCH BOX -->
+        </ul>
+        <!-- BEGIN HEADER QUICK LINKS -->
+      </div>
+      <!-- END HEADER LEFT SIDE SECTION -->
+    </div>
+    <!-- END CONTENT HEADER -->
+  </div>
+  <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+
+<!-- BEGIN CONTENT -->
+<div class="page-container row-fluid">
+<!-- BEGIN SIDEBAR -->
+<!-- BEGIN MENU -->
+<div class="page-sidebar" id="main-menu">
+  <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+    <!-- BEGIN MINI-PROFILE -->
+    <div class="user-info-wrapper">
+      <div class="profile-wrapper">
+        <% @host = Host.where(:user_id => current_user.id).first %>
+        <%if @host.nil? %>
+          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
+        <% elsif @host.avatar.blank? %>
+          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
+        <% else %>
+        <% end %>
+      </div>
+      <div class="user-info">
+        <div class="greeting">Welcome</div>
+        <div class="username">John <span class="semi-bold">Smith</span></div>
+        <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
+      </div>
+    </div>
+    <!-- END MINI-PROFILE -->
+    <!-- BEGIN SIDEBAR MENU -->
+    <p class="menu-title">BROWSE<span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+    <ul>
+      <!-- BEGIN SELECTED LINK -->
+      <li class="start active">
+        <a href="#">
+          <i class="icon-custom-home"></i>
+          <span class="title">Dashboard</span>
+          <span class="selected"></span>
+        </a>
+      </li>
+      <!-- END SELECTED LINK -->
+      <!-- BEGIN BADGE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-envelope"></i>
+          <span class="title">Experiences</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+        </a>
+      </li>
+      <!-- END BADGE LINK -->
+      <!-- BEGIN SINGLE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-flag"></i>
+          <span class="title">Integrations</span>
+        </a>
+      </li>
+      <!-- END SINGLE LINK -->
+      <!-- BEGIN BADGE LINK -->
+      <li class="">
+        <a href="#">
+          <i class="fa fa-envelope"></i>
+          <span class="title">Messages</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+          <span class="badge badge-important pull-right">5</span>
+        </a>
+      </li>
+      <!-- END BADGE LINK -->
+    </ul>
+    <!-- END SIDEBAR MENU -->
+    <!-- BEGIN SIDEBAR WIDGETS -->
+    <div class="clearfix"></div>
+    <!-- END SIDEBAR WIDGETS -->
+  </div>
+</div>
+<!-- BEGIN SCROLL UP HOVER -->
+<a href="#" class="scrollup">Scroll</a>
+<!-- END SCROLL UP HOVER -->
+<!-- END MENU -->
+<!-- BEGIN SIDEBAR FOOTER WIDGET -->
+<div class="footer-widget">
+  <div class="pull-right">
+    <a href="#"><i class="fa fa-power-off"></i></a>
+  </div>
+</div>
+<!-- END SIDEBAR FOOTER WIDGET -->
+<!-- END SIDEBAR -->
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">
+
+    <%= yield %>
+
+  </div>
+</div>
+<!-- END PAGE CONTAINER -->
+</div>
+<!-- END CONTENT -->
+
+</body>
+</html>

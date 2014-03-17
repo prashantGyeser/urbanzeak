@@ -19,20 +19,48 @@
 #  last_name              :string(255)
 #  city                   :string(255)
 #  host                   :boolean
+#  guid                   :string(255)
+#  internal_email_id      :string(255)
+#  tour_completed         :boolean
 #
 
 class User < ActiveRecord::Base
+  has_shortened_urls
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :city, :first_name, :last_name, :presence => true
+  #validates :city, :first_name, :last_name, :presence => true
 
-  after_create :send_welcome_email
-  after_create :autoresponder
+  has_many :integration_tokens
+  has_many :templates
+  has_many :conversations
+  has_many :experiences
+
+  #after_create :send_welcome_email
+  #after_create :autoresponder
+  after_create :add_guid
+  after_create :set_tour_status
+  after_create :set_host
 
   private
+
+  def add_guid
+    self.guid = ('a'..'z').to_a.shuffle[0,20].join
+    self.internal_email_id = self.guid + '@inbound.urbanzeak.com'
+    self.save
+  end
+
+  def set_tour_status
+    self.tour_completed = false
+    self.save
+  end
+
+  def set_host
+    self.host = true
+    save
+  end
 
   def send_welcome_email
     UserMailer.signup_confirmation(self).deliver

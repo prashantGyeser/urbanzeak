@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @experience_image.image %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @experience_image.experience_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @experience_image.type %>
+</p>
+
+<%= link_to 'Edit', edit_experience_image_path(@experience_image) %> |
+<%= link_to 'Back', experience_images_path %>

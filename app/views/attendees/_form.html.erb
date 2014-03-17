@@ -1,3 +1,11 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert"></button>
+    Success:<%= flash[:notice] %>
+  </div>
+<% end %>
+
+
 <%= form_for(@attendee) do |f| %>
   <% if @attendee.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +19,98 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :seats %><br>
-    <%= f.number_field :seats, :class => "form-control" %>
+  <div class="row form-row">
+    <div class="col-md-10">
+      <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
+        <label class="form-label">Tickets</label>
+        <span class="help">How many people are coming?</span>
+        <div class="controls">
+          <div class="input-group">
+            <%= f.number_field :seats, :class => "form-control"%>
+            <span class="input-group-btn">
+              <button class="btn btn-success btn-cons" id="get_dates" type="button">Find dates</button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <div class="input-group">
+        <div id="join-notifications">
+          <div class="alert alert-info">
+            Info: Enter the number of tickets and available dates will be shown here.
+          </div>
+        </div>
+        <div id="attending_date"></div>
+        <%= f.hidden_field :attending_date, :value => "" %>
+      </div><!-- /input-group -->
+    </div>
+  </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <span class="help">e.g. "(541) 754-3010"</span>
+        <div class="controls">
+          <%= f.text_field :phone_number, :class => "form-control" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <span class="help">e.g. "example@example.com"</span>
+        <div class="controls">
+          <%= f.text_field :email, :class => "form-control" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--
+  <div class="row form-row">
+    <div class="col-md-10">
+      <div class="checkbox check-default">
+        <input value="1" id="checkbox1" type="checkbox">
+        <label for="checkbox1">I have read and agree to the Terms and Conditions</label>
+      </div>
+    </div>
+  </div>
+  -->
+
   <div class="field">
     <%= f.hidden_field :experience_id, :value => experience_id %>
+
   </div>
-  <div class="actions">
-    <%= f.submit "RSVP Now", :class => "button is-primary", :style => "font-wight: bold" %>
+
+  <div class="row form-row">
+    <div class="col-md-10">
+      <%= f.submit "RSVP Now", :class => "btn btn-primary btn-cons" %>
+
+      <span style="font-size: 13px; font-weight: bold; margin-right: 5px;">OR</span>
+
+      <!--SEND A MESSAGE START-->
+      <button class="btn btn-cons" data-toggle="modal" data-target="#messageHost" id="ask_a_question"> Ask a question </button>
+
+      <!--SEND A MESSAGE END-->
+
+    </div>
   </div>
+
 <% end %>
+
+
+<!--SEND MESSAGE MODAL WINDOW START-->
+<%= render partial: 'attendees/new_conversation', :locals => {:experience_id => experience.id, :experience => experience} %>
+<!--SEND MESSAGE MODAL WINDOW END-->

@@ -1,0 +1,116 @@
+var ready;
+ready = function() {
+
+  $('#file-upload-success-message').hide();
+
+
+  var allFilesUploaded = false;
+
+  //Date Pickers
+  $('.input-append.date').datepicker({
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  console.log("The time is:", "<%=  Date.today.strftime('%m/%d/%Y') %>");
+
+  $('#experience_exp_date').datepicker({
+    multidate: true,
+    startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
+  });
+
+
+  //Time pickers
+  $('.timepicker-default').timepicker();
+  $('.timepicker-24').timepicker({
+    minuteStep: 1,
+    showSeconds: true,
+    showMeridian: false
+  });
+
+  // "myAwesomeDropzone" is the camelized version of the HTML element's ID
+  Dropzone.options.newExperienceImage = {
+    paramName: "experience_image[image]", // The name that will be used to transfer the file
+    maxFilesize: 1, // MB
+    parallelUploads: 6,
+    init: function() {
+      this.on("complete", function() {
+        if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
+          allFilesUploaded = true;
+        }
+      });
+    }
+  };
+
+
+  $(function() {
+    var mediaDropzone;
+    mediaDropzone = new Dropzone("#new_experience_image");
+    return mediaDropzone.on("success", function(file, responseText) {
+      var imageUrl;
+      imageUrl = responseText.image.url;
+    });
+  });
+
+
+  // Landmark auto complete
+  $('#experience_land_mark').geocomplete({
+    map: "#map",
+    markerOptions: {
+      draggable: true
+    }
+  });
+
+  $('#experience_land_mark').bind("geocode:result", function(event, result){
+    console.log(result);
+    $("#experience_latitude").val(result.geometry.location.lat());
+    $("#experience_longitude").val(result.geometry.location.lng());
+  });
+
+  $("#experience_land_mark").bind("geocode:dragged", function(event, latLng){
+    $("#experience_latitude").val(latLng.lat());
+    $("#experience_longitude").val(latLng.lng());
+    $("#reset").show();
+  });
+
+  // Checking to see if all the files are uploaded.
+  $('#create_experience').submit(function(event){
+    event.preventDefault();
+    if( allFilesUploaded == true ){
+      $("#new_experience").submit();
+    }
+    else{
+      setTimeout(function(){
+        waitForElement();
+      },250);
+    }
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+function onPhotoUpload(event){
+  var filesUploaded = event.fpfiles;
+  $('#file-upload-success-message').hide();
+
+  $(filesUploaded).each(function(index){
+    var file_attached = $(this).get(0).filename;
+    console.log("The file name of the attached file is:", file_attached);
+
+    var row_to_add = '<tr><td>' + file_attached + '</td><td><span class="label label-success">UPLOADED</span></td></tr>';
+
+    //console.log("The row is:", row_to_add);
+    //$('#files-uploaded-list tr:last').after(row_to_add);
+    $('#files_uploaded_list').append(row_to_add);
+    $('#file-upload-success-message').show();
+  });
+
+
+}
+
+/*
+var fileName = "This is a test";
+var rowToAppend = '<tr class="child"><td>' + fileName + '</td></tr>';
+*/

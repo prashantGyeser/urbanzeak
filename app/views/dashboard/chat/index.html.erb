@@ -1,0 +1,47 @@
+<div class="content-header">
+  <h1 class="title">
+    <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+    Visitors on your page
+  </h1>
+</div>
+
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset" ng-app="chatApp">
+  <div class="row" ng-controller="ChatCtrl">
+    <div class="col-md-3 leadListContainer">
+      <div class="leadList">
+        <h4>Online</h4>
+        <ul>
+          <li ng-repeat="(id, lead) in leads"><a ng-click="getMessages(id)">{{id}}</a></li>
+        </ul>
+      </div>
+      <!--
+      <table id="chatUserTable" ng-controller="ChatCtrl">
+        <tr ng-repeat="(id, lead) in leads">
+          <td>{{lead.online}}</td>
+          <td>{{id}}</td>
+          <td>urbanzeak.com/experiences/somepage</td>
+        </tr>
+      </table>
+      -->
+    </div>
+
+    <div class="col-md-9">
+      <div class="chatMessages">
+        <div ng-show="loading" class="ajaxSpinner">
+          <%= image_tag "spinner-48x48.GIF" %>
+        </div>
+        <ul ng-hide="loading">
+          <li ng-repeat="message in messages">{{message.message}}</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

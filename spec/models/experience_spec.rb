@@ -18,6 +18,19 @@
 #  what_does_this_include :text
 #  things_to_remember     :text
 #  max_seats              :integer
+#  template               :boolean
+#  shortened_url          :string(255)
+#  summary                :text
+#  line_one               :string(255)
+#  line_two               :string(255)
+#  state                  :string(255)
+#  pincode                :string(255)
+#  country                :string(255)
+#  land_mark              :string(255)
+#  random_id              :string(255)
+#  template_id            :integer
+#  tagline                :string(255)
+#  images                 :string(255)
 #
 
 require 'spec_helper'

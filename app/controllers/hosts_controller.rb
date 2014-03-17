@@ -29,7 +29,6 @@ class HostsController < ApplicationController
   # POST /hosts.json
   def create
     @host = Host.new(host_params)
-
     @host.user_id = current_user.id
 
     respond_to do |format|
@@ -70,6 +69,26 @@ class HostsController < ApplicationController
   def become_host
     @user = current_user
     @user.host = true
+
+    logger.debug "The mixpanel key is: #{ENV["MIXPANEL_KEY"]}"
+
+    tracker = Mixpanel::Tracker.new(ENV["MIXPANEL_KEY"])
+
+    tracker.people.set("#{current_user.email}", {
+        #'$name'
+        '$first_name' => "#{current_user.first_name}",
+        '$last_name' => "#{current_user.last_name}",
+        '$email' => "#{current_user.email}",
+        'host' => "true"
+    })
+
+
+    tracker.track("#{current_user.email}", 'Became a host', {
+        "Registered an account on" => "#{current_user.created_at}",
+        "Became a host on" => "#{Time.now}",
+        "Number of times signed in till now" => "#{current_user.sign_in_count}"
+    })
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to hosts_dashboard_path, notice: 'Congratulations! You can now post your experiences on UrbanZeak.' }
@@ -88,7 +107,7 @@ class HostsController < ApplicationController
     @total_experiences = @experiences.count
     @total_views = 0
 
-    @has_about =
+    #@has_about =
 
     @experiences.each do |experience|
       @total_views = @total_views + experience.impressionist_count(:filter=>:all)

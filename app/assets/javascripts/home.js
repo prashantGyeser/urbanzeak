@@ -1,17 +1,18 @@
 $(document).ready(function(){
 
+    /*
     $(document).keypress(function(e) {
         if(e.which == 13) {
             var city = $('#filterInput').val();
-            var urlToGet = "/home/" + city;
+            var urlToGet = "/reports/" + city;
             window.location.replace(urlToGet);
         }
     });
-
+    */
     $('#filter').click(function(event){
         event.preventDefault();
         var city = $('#filterInput').val();
-        var urlToGet = "/home/" + city;
+        var urlToGet = "/reports/" + city;
         window.location.replace(urlToGet);
     });
 
@@ -35,7 +36,24 @@ $(document).ready(function(){
         minLength: 3
     });
 
+
+
 });
 
-
+$(function() {
+    $('#carousel').carouFredSel({
+        responsive: true,
+        items: {
+            visible: 1,
+            width: 900,
+            height: 500
+        },
+        scroll: {
+            duration: 500,
+            timeoutDuration: 5000,
+            fx: 'uncover-fade'
+        },
+        pagination: '#pager'
+    });
+});
 

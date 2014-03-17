@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advance_booking.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advance_booking.email %>
+</p>
+
+<p>
+  <strong>Booking date:</strong>
+  <%= @advance_booking.booking_date %>
+</p>
+
+<%= link_to 'Edit', edit_advance_booking_path(@advance_booking) %> |
+<%= link_to 'Back', advance_bookings_path %>

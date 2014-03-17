@@ -12,7 +12,8 @@
 #
 
 class Host < ActiveRecord::Base
-  validates :title, :about, :presence => true
+  validates :about, :presence => true
+  validates :user_id, :uniqueness => true
 
   mount_uploader :avatar, AvatarUploader
 

@@ -1,0 +1,31 @@
+<h1>Listing experience_images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Experience</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experience_images.each do |experience_image| %>
+      <tr>
+        <td><%= experience_image.image %></td>
+        <td><%= experience_image.experience_id %></td>
+        <td><%= experience_image.type %></td>
+        <td><%= link_to 'Show', experience_image %></td>
+        <td><%= link_to 'Edit', edit_experience_image_path(experience_image) %></td>
+        <td><%= link_to 'Destroy', experience_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Experience image', new_experience_image_path %>

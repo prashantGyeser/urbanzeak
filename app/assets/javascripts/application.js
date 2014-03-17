@@ -12,11 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require jquery.nivo.slider
-//= require slippry.min
-//= require jquery.autogrowtextarea.min
-//= require typeahead.min
-//= require gmap3.min
 //= require turbolinks
 //= require_tree .

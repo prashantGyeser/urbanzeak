@@ -1,0 +1,37 @@
+<!--GRID BODY START -- HIDDEN TO BEGIN WITH OPENS ON USER CLICK-->
+<div class="grid-body no-border" style="display: none">
+  <% messages.each do |message|%>
+    <!--INDIVIDUAL POST START-->
+    <div class="post p-b-20">
+      <h4><span class="semi-bold"><%= message.from %></span> said:</h4>
+      <div class="info-wrapper">
+        <div class="info">
+          <%= message.body %>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!--INDIVIDUAL POST END-->
+    <br/>
+  <% end %>
+  <!--SUBMIT REPLY FORM START-->
+  <div class="form-actions">
+    <div class="post col-md-12">
+
+      <div class="info-wrapper">
+        <div class="form-group">
+          <label class="form-label"><i class="fa fa-reply"></i>&nbsp;Post a reply</label>
+          <div class="controls">
+            <input type="text" class="form-control">
+            <input type="hidden" class="hidden_conversation_id" value="<%= conversation_id %>"/>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--SUBMIT REPLY FORM END-->
+</div>
+<!--GRID BODY END -- HIDDEN TO BEGIN WITH OPENS ON USER CLICK-->

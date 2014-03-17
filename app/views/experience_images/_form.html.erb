@@ -1,0 +1,27 @@
+<%= form_for(@experience_image, :html => {:multipart => true}) do |f| %>
+  <% if @experience_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience_image.errors.count, "error") %> prohibited this experience_image from being saved:</h2>
+
+      <ul>
+      <% @experience_image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :multiple => true, :name => "experience_image[image]" %>
+  </div>
+  
+  <%= f.hidden_field :experience_id %>
+  <%= f.hidden_field :image_type, :value => "header" %>
+  <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
+  
+  
+  <div class="actions">
+    
+  </div>
+<% end %>

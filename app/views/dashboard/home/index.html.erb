@@ -1,0 +1,181 @@
+<!-- BEGIN PlACE PAGE CONTENT HERE -->
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Dashboard</h3>
+</div>
+<!-- END PAGE TITLE -->
+
+<!--ROW START-->
+<div class="row">
+  <!--6 COL START-->
+  <div class="col-md-6">
+    <div class="grid simple">
+      <!--GRID TITLE START-->
+      <div class="grid-title no-border">
+        <h4>Purchases</h4>
+      </div>
+      <!--GRID TITLE END-->
+      <!--GRID BODY START-->
+      <div class="grid-body no-border">
+        <% @purchases.each do |experience| %>
+          <h4><%= experience.name %></h4>
+          <!--TABLE START-->
+          <table class="table no-more-tables">
+
+            <% attendee_records_available = false %>
+            <% header_added = false %>
+            <tbody>
+            <% experience.attendees.last(6).each do |attendee| %>
+
+              <% if header_added == false %>
+                <% header_added = true %>
+                <thead>
+                <tr>
+                  <th style="width:22%">Email</th>
+                  <th style="width:10%">Tickets</th>
+                  <th style="width:10%">Total</th>
+                </tr>
+                </thead>
+              <% end %>
+              <% attendee_records_available = true %>
+              <tr>
+                <td class="v-align-middle">
+                  <%= attendee.email %>
+                </td>
+                <td class="v-align-middle">
+                  <%= attendee.seats %>
+                </td>
+                <td>
+                  <%= attendee.seats * experience.price %>
+                </td>
+              </tr>
+
+            </tbody>
+            <% end %>
+
+            <% if attendee_records_available == false %>
+              <p class="semi-bold">No purchases today!</p>
+            <% end %>
+
+          </table>
+          <!--TABLE END-->
+        <% end %>
+
+
+      </div>
+      <!--GRID BODY END-->
+    </div>
+  </div>
+  <!--6 COL END-->
+  <!--6 COL START-->
+  <div class="col-md-6">
+    <div class="grid simple">
+      <!--GRID TITLE START-->
+      <div class="grid-title no-border">
+        <h4>Purchases</h4>
+      </div>
+      <!--GRID TITLE END-->
+      <!--GRID BODY START-->
+      <div class="grid-body no-border">
+          <h4>Last Six Conversations</h4>
+          <!--TABLE START-->
+          <table class="table no-more-tables">
+            <thead>
+            <tr>
+              <th style="width:10%">Name</th>
+              <th style="width:22%">Email</th>
+              <th style="width:10%">Experience</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @conversations.each do |conversation| %>
+
+              <tr>
+                <td class="v-align-middle">
+                  <%= conversation.customer_name%>
+                </td>
+                <td class="v-align-middle">
+                  <%= conversation.sender_email_id %>
+                </td>
+                <td>
+                  <%= Experience.find(conversation.experience_id).name %>
+                </td>
+              </tr>
+
+              </tbody>
+            <% end %>
+
+            </table>
+          <!--TABLE END-->
+
+
+
+      </div>
+      <!--GRID BODY END-->
+    </div>
+  </div>
+  <!--6 COL END-->
+</div>
+<!--ROW END-->
+
+<!--ROW START-->
+<div class="row">
+  <!--6 COL START-->
+  <div class="col-md-6">
+    <div class="grid simple">
+      <!--GRID TITLE START-->
+      <div class="grid-title no-border">
+        <h4>Reviews</h4>
+      </div>
+      <!--GRID TITLE END-->
+      <!--GRID BODY START-->
+      <div class="grid-body no-border">
+        <% @reviews.each do |experience| %>
+          <h4><%= experience.name %></h4>
+          <!--TABLE START-->
+          <table class="table no-more-tables">
+
+            <% attendee_records_available = false %>
+            <% header_added = false %>
+            <tbody>
+            <% experience.reviews.last(6).each do |review| %>
+
+              <% if header_added == false %>
+                <% header_added = true %>
+                <thead>
+                <tr>
+                  <th style="width:22%">Name</th>
+                  <th style="width:20%">Email</th>
+                </tr>
+                </thead>
+              <% end %>
+              <% attendee_records_available = true %>
+              <tr>
+                <td class="v-align-middle">
+                  <%= review.name %>
+                </td>
+                <td class="v-align-middle">
+                  <%= review.email %>
+                </td>
+              </tr>
+
+              </tbody>
+            <% end %>
+
+            <% if attendee_records_available == false %>
+              <p class="semi-bold">No reviews today!</p>
+            <% end %>
+
+            </table>
+          <!--TABLE END-->
+        <% end %>
+
+
+      </div>
+      <!--GRID BODY END-->
+    </div>
+  </div>
+  <!--6 COL END-->
+</div>
+<!--ROW END-->

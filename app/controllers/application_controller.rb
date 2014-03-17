@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  layout :layout
+
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
     if (request.fullpath != "/users/sign_in" &&
@@ -27,6 +29,14 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :first_name,
                                                             :last_name, :city) }
+  end
+
+  def layout
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
   end
 
 end

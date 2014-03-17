@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -23,6 +24,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -53,16 +56,10 @@ gem 'devise'
 # Geocoding the location
 gem 'geocoder'
 
-# Using unicorn as the server
-gem 'unicorn'
-
-gem 'newrelic_rpm'
-
 # Setting environment variables for the different values that need to be used in different environments
 gem "figaro"
 
 # Carrierwave
-gem 'carrierwave'
 gem 'carrierwave'
 
 # Image resizing
@@ -71,22 +68,59 @@ gem 'rmagick'
 # Storing the images in s3
 gem 'fog'
 
+# Fancy box for a modal window
+gem 'fancybox2-rails', '~> 0.2.4'
 
-# Monitoring tools
-gem 'sentry-raven', :group => :production
-gem 'bugsnag', :group => :production
-gem 'exceptiontrap', :group => :production
-gem 'appsignal', :group => :production
-gem 'oboe-heroku'
+# Url shortner
+gem 'shortener'
 
-# gzip on heroku
-gem 'heroku-deflater', :group => :production
+group :staging, :production do
+  # gzip on heroku
+  gem 'heroku-deflater'
+
+  # Monitoring tools
+  gem 'newrelic_rpm'
+  gem 'sentry-raven'
+  gem 'bugsnag'
+  gem 'exceptiontrap'
+  gem 'appsignal'
+
+  # Using unicorn as the server
+  gem 'unicorn'
+
+  # Heroku logging
+  gem 'rails_12factor'
+
+end
 
 # Page tracking for hosts
 gem 'impressionist'
 
+# Mixpanel tracking
+gem 'mixpanel-ruby'
+
+# External service integration api
+gem 'temboo'
+
+# Realtime Notifications
+gem 'pubnub'
+gem 'json'
+
+# Email management for messages to the host from their customers
+gem 'griddler'
+
+# Gem to allow access of controller data from a javascript file
+gem 'gon'
+
 group :development do
   gem 'annotate'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "bullet"
+  gem "rails_best_practices"
+  gem "reek"
+  gem "metric_fu"
+  gem 'sprockets_better_errors'
 end
 
 group :test, :development do

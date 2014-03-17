@@ -1,0 +1,31 @@
+<h1>Listing advance_bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Booking date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advance_bookings.each do |advance_booking| %>
+      <tr>
+        <td><%= advance_booking.name %></td>
+        <td><%= advance_booking.email %></td>
+        <td><%= advance_booking.booking_date %></td>
+        <td><%= link_to 'Show', advance_booking %></td>
+        <td><%= link_to 'Edit', edit_advance_booking_path(advance_booking) %></td>
+        <td><%= link_to 'Destroy', advance_booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Advance booking', new_advance_booking_path %>
