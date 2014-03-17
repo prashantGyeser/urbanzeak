@@ -37,7 +37,7 @@ class ExperiencesController < ApplicationController
     @experience.user_id = current_user.id
     images = params[:experience][:images].split(',')
 
-    case params[:experience][:category]
+    case params[:experience][:category].to_i
       when 1
         @experience.category = "City Tour"
       when 2

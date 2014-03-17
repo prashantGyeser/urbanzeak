@@ -64,7 +64,19 @@
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
-                  <%= f.number_field :price, :class => "form-control", :required => "required" %>
+
+                  <div class="input-group">
+                    <span class="input-group-addon primary">
+                    <span class="arrow" style="right: 0"></span>
+                      <i class="fa fa-usd"></i>
+                    </span>
+                    <!--<input type="text" placeholder="Username" class="form-control">-->
+                    <%= f.number_field :price, :class => "form-control", :required => "required" %>
+                  </div>
+
+
+
+
                 </div>
               </div>
 
@@ -325,12 +337,4 @@
 <% end %>
 <!-- END NEW EXPERIENCE FORM -->
 
-
-
-<%# f.filepicker_field :avatar_url %> <!-- User#avatar_url is a regular string column -->
-
-<%= form_for(@experience_image, :html => {:multipart => true, :class => "dropzone"}) do |f| %>
-  <%= f.file_field :image, :multiple => true, :name => "experience_image[image]", :class => "hidden" %>
-  <%= f.hidden_field :random_id, :value => @random_temp_experience_id %>
-<% end %>
 
