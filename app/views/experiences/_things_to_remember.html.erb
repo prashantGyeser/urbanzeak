@@ -3,16 +3,33 @@
   <div class="p-t-40 p-b-20">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="center-text">
+        <div class="col-md-6">
+          <div class="">
             <h3 class="normal">Things to <span class="semi-bold">remember</span></h3>
-
             <%= simple_format(experience.things_to_remember) %>
+          </div>
+        </div>
 
+        <div class="col-md-6">
+          <div class="">
+            <h3 class="normal"><span class="semi-bold">Address</span></h3>
+            <address>
+              <%= @experience.line_one %>
+              <br/>
+              <%= @experience.line_two %>
+              <br/>
+              <%= @experience.city %>
+              <br/>
+              <%= @experience.state %>
+              <br/>
+              <%= @experience.country %> - <%= @experience.pincode %>
+              <br/>
+
+            </address>
           </div>
 
-
         </div>
+
       </div>
     </div>
   </div>

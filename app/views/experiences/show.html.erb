@@ -47,8 +47,9 @@
 <%= render partial: 'about_experience', :locals => {:experience => @experience} %>
 <!--ABOUT EXPERIENCE AND JOIN NOW END-->
 
-
-
+  <!--VENUE MAP START-->
+  <%= render partial: 'venue_map'%>
+  <!--VENUE MAP END-->
 
 <!--ABOUT HOST START-->
 <% if @host.nil? %>
@@ -57,42 +58,6 @@
     <%= render :partial => "about_host", :locals =>{:host => @host, :experience_id => @experience.id } %>
 <% end %>
 <!--ABOUT HOST END-->
-
-
-<!--THINGS TO REMEMBER START-->
-<%= render :partial => "things_to_remember", :locals => {:experience => @experience} %>
-<!--THINGS TO REMEMBER END-->
-
-
-  <div class="section white">
-    <div class="container">
-      <div class="p-t-60 p-b-50 ">
-        <div class="row feature-list">
-          <div class="col-md-6 col-md-offset-3">
-            <div class="center-text">
-              <h3 class="normal">Experience <span class="semi-bold">Venue</span></h3>
-              <address>
-                <%= @experience.line_one %>
-                <br/>
-                <%= @experience.line_two %>
-                <br/>
-                <%= @experience.city %>
-                <br/>
-                <%= @experience.state %>
-                <br/>
-                <%= @experience.country %> - <%= @experience.pincode %>
-                <br/>
-
-              </address>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
 
 
 <div class="section white">
@@ -119,25 +84,6 @@
 </div>
 
 
-
-
-
-<!--LOCATION MAP START-->
-  <div class="section white">
-    <div class="container">
-      <div class="p-t-60 p-b-50 ">
-        <div class="row feature-list">
-          <div class="col-md-12">
-            <h2 class="text-center">Experience <span class="semi-bold">Venue</span></h2>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<div class="section white" style="height:350px; width: 100%" id="map"></div>
-
-<!--LOCATION MAP END-->
 
 
 <div class="section white">
@@ -176,6 +122,12 @@
     </div>
   </div>
 </div>
+
+<!--THINGS TO REMEMBER START-->
+<%= render :partial => "things_to_remember", :locals => {:experience => @experience} %>
+<!--THINGS TO REMEMBER END-->
+
+
 <div class="section white footer">
   <div class="container">
     <div class="p-b-50">
@@ -188,7 +140,7 @@
           </div>
           <div class="clearfix"></div>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-4  col-xs-12 xs-m-b-20">
+        <div class="col-md-12 col-lg-12 col-sm-12  col-xs-12 xs-m-b-20">
           <h4>This page is powered by <a href="urbanzeak.com">Urbanzeak</a></h4>
         </div>
       </div>
