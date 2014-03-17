@@ -1,0 +1,2 @@
+module Dashboard::AlgoHelper
+end

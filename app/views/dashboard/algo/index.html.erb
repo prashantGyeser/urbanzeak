@@ -1,0 +1,82 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag "dashboard/algo", 'data-turbolinks-track' => true %>
+  <%= filepicker_js_include_tag %>
+<% end %>
+
+
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Potential Customers</h3>
+</div>
+<!-- END PAGE TITLE -->
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="grid simple ">
+      <div class="grid-title no-border">
+        <h4>Leads</h4>
+        <div class="tools">	<a href="javascript:;" class="collapse"></a>
+          <a href="#grid-config" data-toggle="modal" class="config"></a>
+          <a href="javascript:;" class="reload"></a>
+          <a href="javascript:;" class="remove"></a>
+        </div>
+      </div>
+      <div class="grid-body no-border">
+        <h3><span class="semi-bold">Influencers</span> and  <span class="semi-bold">Customers</span></h3>
+        <table class="table no-more-tables">
+          <thead>
+          <tr>
+            <th style="width:1%">
+              <div class="checkbox check-default">
+                <input id="checkbox10" type="checkbox" value="1" class="checkall">
+                <label for="checkbox10"></label>
+              </div>
+            </th>
+            <th style="width:9%">Name</th>
+            <th style="width:22%">Description</th>
+            <th style="width:16%">URL</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="v-align-middle">
+              <div class="checkbox check-default">
+                <input id="checkbox11" type="checkbox" value="1">
+                <label for="checkbox11"></label>
+              </div>
+            </td>
+            <td class="v-align-middle">
+              John Doe
+              <span class="label" style="margin-left: 10px;">CUSTOMER</span>
+            </td>
+            <td class="v-align-middle">
+              <span class="muted">Redesign project template</span>
+              <a href="#" class="bold">Create Experience Now</a>
+            </td>
+            <td><span class="muted"><a href="http://google.com">http://google.com</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox check-default">
+                <input id="checkbox12" type="checkbox" value="1">
+                <label for="checkbox12"></label>
+              </div>
+            </td>
+            <td>Angry Birds <span class="label label-success" style="margin-left: 10px;">INFLUENCER</span>
+            </td>
+            <td><span class="muted">Something goes here</span>
+            </td>
+            <td><span class="muted"><a href="http://google.com">http://google.com</a></span>
+            </td>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
