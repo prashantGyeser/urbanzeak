@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
-
+  <%= oboe_rum_header rescue "" %>
   <!--CUSTOM CSS-->
   <%= yield :css %>
   <!--END CUSTOM CSS-->
@@ -206,6 +206,6 @@
 <!-- END PAGE CONTAINER -->
 </div>
 <!-- END CONTENT -->
-
+<%= oboe_rum_footer rescue "" %>
 </body>
 </html>
