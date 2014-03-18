@@ -84,6 +84,7 @@ class ExperiencesController < ApplicationController
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
           @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
           @experience_date.experience_id = @experience.id
           @experience_date.save
         end

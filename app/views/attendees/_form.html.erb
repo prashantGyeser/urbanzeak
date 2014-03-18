@@ -19,8 +19,15 @@
     </div>
   <% end %>
 
+  <div class="row">
+    <div class="col-md-12">
+      <% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>
+      <p>All the experiences happen at <span class="semi-bold"><%= exp_time.experience_time %></span></p>
+    </div>
+  </div>
+
   <div class="row form-row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
         <label class="form-label">Tickets</label>
         <span class="help">How many people are coming?</span>
@@ -37,7 +44,7 @@
   </div>
 
   <div class="row form-row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <div class="input-group">
         <div id="join-notifications">
           <div class="alert alert-info">
@@ -51,7 +58,7 @@
   </div>
 
   <div class="row form-row">
-    <div class="col-md-10">
+    <div class="col-md-12">
 
       <div class="form-group">
         <label class="form-label">Phone Number</label>
@@ -65,7 +72,7 @@
   </div>
 
   <div class="row form-row">
-    <div class="col-md-10">
+    <div class="col-md-12">
 
       <div class="form-group">
         <label class="form-label">Email</label>
