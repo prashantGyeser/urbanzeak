@@ -22,6 +22,7 @@
 #  guid                   :string(255)
 #  internal_email_id      :string(255)
 #  tour_completed         :boolean
+#  subdomain              :string(255)
 #
 
 class User < ActiveRecord::Base

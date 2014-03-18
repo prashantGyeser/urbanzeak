@@ -133,6 +133,36 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <label class="form-label">Experience duration</label>
+
+            <div class="row">
+              <div class="col-md-6">
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                      Hours
+                    </span>
+                  <!--<input type="text" placeholder="Username" class="form-control">-->
+                  <%= f.number_field :hours, :class => "form-control" %>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                      Minutes
+                    </span>
+                  <!--<input type="text" placeholder="Username" class="form-control">-->
+                  <%= f.number_field :minutes, :class => "form-control" %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
           <!-- END DATE AND TIME PICKER -->
 
           <div class="clearfix"></div>
