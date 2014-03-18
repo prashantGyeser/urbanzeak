@@ -87,8 +87,8 @@ group :staging, :production do
   gem 'exceptiontrap'
   gem 'appsignal'
 
-  # Using unicorn as the server
-  gem 'unicorn'
+  # Using puma as the web server
+  gem 'puma'
 
   # Heroku logging
   gem 'rails_12factor'
