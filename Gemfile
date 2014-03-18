@@ -74,12 +74,14 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
+# New relic monitoring tool
+gem 'newrelic_rpm'
+
 group :staging, :production do
   # gzip on heroku
   gem 'heroku-deflater'
 
   # Monitoring tools
-  gem 'newrelic_rpm'
   gem 'sentry-raven'
   gem 'bugsnag'
   gem 'exceptiontrap'
