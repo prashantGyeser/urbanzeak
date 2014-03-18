@@ -89,6 +89,8 @@ group :staging, :production do
 
   # Using puma as the web server
   gem 'puma'
+  # Refer to https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server for details on this.
+  gem "rack-timeout"
 
   # Heroku logging
   gem 'rails_12factor'
