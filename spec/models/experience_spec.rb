@@ -31,6 +31,9 @@
 #  template_id            :integer
 #  tagline                :string(255)
 #  images                 :string(255)
+#  category               :string(255)
+#  hours                  :integer
+#  minutes                :integer
 #
 
 require 'spec_helper'

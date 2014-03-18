@@ -74,8 +74,12 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
+
 # New relic monitoring tool
 gem 'newrelic_rpm'
+
+gem 'friendly_id'
+
 
 group :staging, :production do
   # gzip on heroku
