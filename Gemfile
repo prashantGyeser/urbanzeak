@@ -95,6 +95,10 @@ group :staging, :production do
 
 end
 
+group :production do
+  gem 'oboe-heroku'
+end
+
 # Page tracking for hosts
 gem 'impressionist'
 
