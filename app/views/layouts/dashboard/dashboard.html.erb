@@ -51,7 +51,8 @@
       <!-- END MOBILE HEADER -->
       <!-- BEGIN LOGO -->
       <a href="/">
-        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+        <%# image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+        <%= image_tag asset_path("logo.png"), :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
       </a>
       <!-- END LOGO -->
       <!-- BEGIN LOGO NAV BUTTONS -->
