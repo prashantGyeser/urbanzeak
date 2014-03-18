@@ -1,5 +1,6 @@
+# config/unicorn.rb
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
-timeout 30
+timeout 15
 preload_app true
 
 before_fork do |server, worker|
@@ -10,8 +11,6 @@ before_fork do |server, worker|
 
   defined?(ActiveRecord::Base) and
       ActiveRecord::Base.connection.disconnect!
-
-  ::Oboe.disconnect!
 end
 
 after_fork do |server, worker|
@@ -21,8 +20,4 @@ after_fork do |server, worker|
 
   defined?(ActiveRecord::Base) and
       ActiveRecord::Base.establish_connection
-
-  defined?(::Oboe) and
-      ::Oboe.reconnect!
-
 end

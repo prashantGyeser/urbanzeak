@@ -96,7 +96,7 @@ group :staging, :production do
 end
 
 group :production do
-  
+
 end
 
 # Page tracking for hosts
