@@ -52,6 +52,10 @@ class Experience < ActiveRecord::Base
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable
 
+  # Changing the url so that it uses a friendly id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   def self.total_visits_this_month(user_id)
     experiences = Experience.where(:user_id => user_id)
     @views = 0
