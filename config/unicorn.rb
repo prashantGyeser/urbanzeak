@@ -10,6 +10,8 @@ before_fork do |server, worker|
 
   defined?(ActiveRecord::Base) and
       ActiveRecord::Base.connection.disconnect!
+
+  ::Oboe.disconnect!
 end
 
 after_fork do |server, worker|
@@ -22,4 +24,5 @@ after_fork do |server, worker|
 
   defined?(::Oboe) and
       ::Oboe.reconnect!
+
 end
