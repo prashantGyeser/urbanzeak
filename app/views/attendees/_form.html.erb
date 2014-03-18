@@ -22,7 +22,8 @@
   <div class="row">
     <div class="col-md-12">
       <% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>
-      <p>All the experiences happen at <span class="semi-bold"><%= exp_time.experience_time %></span></p>
+      <p>All the experiences happen at <span class="bold"><%= exp_time.experience_time.strftime("%I:%M%p")
+      %></span> and go on for <%= experience.hours %> hours and <%= experience.minutes  %> minutes </p>
     </div>
   </div>
 
