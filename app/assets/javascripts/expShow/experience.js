@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     //$('#join-notifications').hide();
-
+    $('#available_date').hide();
     // SINGLE PAGE NAV START
     $('#top-nav').singlePageNav();
     // SINGLE PAGE NAV END
@@ -62,11 +62,13 @@ $(document).ready(function(){
                 }
             })
                 .on('changeDate', function(event){
-                    var date_to_write = $.datepicker.formatDate('dd-mm-yy', event.date)
+                    var date_to_write = $.datepicker.formatDate('dd-mm-yy', event.date);
                     $('#attendee_attending_date').val(date_to_write);
                 })
                 .on('show', function(event){
                     $('#join-notifications').hide();
+                    $('#available_date').show();
+                    $('#first_available_date').text(available_dates[0]);
                 });
 
         });

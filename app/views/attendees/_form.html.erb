@@ -52,6 +52,15 @@
             Info: Enter the number of tickets and available dates will be shown here.
           </div>
         </div>
+        <div id="available_date">
+
+          <div class="alert alert-info">
+            <button data-dismiss="alert" class="close"></button>
+            Available Date: Earliest available date is on <span class="bold" id="first_available_date"></span>
+          </div>
+
+
+        </div>
         <div id="attending_date"></div>
         <%= f.hidden_field :attending_date, :value => "" %>
       </div><!-- /input-group -->
