@@ -15,4 +15,13 @@
 
 class Attendee < ActiveRecord::Base
   belongs_to :experience
+  after_create :confirmation_email
+
+
+  def confirmation_email
+    experience = Experience.find(self.experience_id)
+    experience_time = ExperienceDate.where(:experience_id => experience.id).first.experience_time
+    NotificationsMailer.joined_experience(experience, self, experience_time).deliver
+  end
+
 end

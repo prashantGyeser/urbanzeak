@@ -18,4 +18,12 @@ class NotificationsMailer < ActionMailer::Base
     mail(:to => message.to, :subject => "You have a new message", :from => message.from)
   end
 
+  def joined_experience(experience, attendee, exp_time)
+    @experience = experience
+    @attendee = attendee
+    @experience_time = exp_time
+
+    mail(:to => @attendee.email, :subject => "Experience details and RSVP Confirmation", :from => "notifications@urbanzeak.com")
+  end
+
 end
