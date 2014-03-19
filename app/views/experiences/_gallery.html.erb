@@ -10,11 +10,11 @@
     </div>
 
     <div class="portfolio-grid portfolioContainer p-b-20">
-      <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 562px;">
+      <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 1406px">
 
         <% @images.each do |image| %>
-          <li class="item web isotope-item"  style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px); margin-bottom: 10px;">
-            <div class="portfolio-image-wrapper">
+          <li class="item web isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px); margin-bottom: 10px;">
+            <div class="portfolio-image-wrapper" style="height: 271px">
               <%# image_tag image.image_url.to_s %>
               <%= filepicker_image_tag image.image, w: 371, h: 271, fit: 'crop', style: "margin-bottom: 10px" %>
             </div>
