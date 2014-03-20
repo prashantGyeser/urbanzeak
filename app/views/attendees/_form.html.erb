@@ -6,129 +6,149 @@
 <% end %>
 
 
-<%= form_for(@attendee) do |f| %>
-  <% if @attendee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+<div class="new-attendee-form">
+  <%= form_for(@attendee) do |f| %>
 
-      <ul>
-      <% @attendee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+    <div class="form-container">
+      <% if @attendee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+          <ul>
+            <% @attendee.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="row">
-    <div class="col-md-12">
-      <% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>
-      <p>All the experiences happen at <span class="bold"><%= exp_time.experience_time.strftime("%I:%M%p")
-      %></span> and go on for <%= experience.hours %> hours</p>
-    </div>
-  </div>
 
-  <!--<div class="row">-->
-    <!--<div class="col-md-12">-->
+      <div class="date-container">
+        <div class="radio radio-success">
+          <div class="date-option">
+            <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
+            <label for="yes">Mar 22 2014</label>
+            9PM to 12PM
+            <span class="pull-right text-info">5 Spots Remaining</span>
+          </div>
+          <div class="date-option">
+            <input type="radio" value="no" name="optionyes" id="no">
+            <label for="no">Mar 22 2014</label>
+            9PM to 12PM
+            <span class="pull-right text-info">5 Spots Remaining</span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+          <!--<% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>-->
+          <!--<p>All the experiences happen at <span class="bold"><%= exp_time.experience_time.strftime("%I:%M%p")
+          %></span> and go on for <%= experience.hours %> hours</p> -->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="row">-->
+      <!--<div class="col-md-12">-->
       <!--click on one of the dates below to select it.-->
-    <!--</div>-->
-  <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
-        <label class="form-label">Available Dates</label>
-      </div>
-    </div>
-  </div>
+      <!---->
+      <!--<div class="row">-->
+      <!--<div class="col-md-12">-->
+      <!--<div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">-->
+      <!--<label class="form-label">Available Dates</label>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
 
-  <div class="row form-row">
+      <!--<div class="row form-row">-->
 
-    <% @available_dates.each do |available_date| %>
-      <% seats = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum  %>
+      <!--<% @available_dates.each do |available_date| %>-->
+        <!--<% seats = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum  %>-->
 
-      <div class="col-md-6">
-        <a class="btn btn-block date_select"><%= available_date.experience_date.strftime("%m/%d/%Y").to_s %> - <%= seats %> Tickets Available</a>
-      </div>
+        <!--<div class="col-md-6">-->
+        <!--<a class="btn btn-block date_select"><%= available_date.experience_date.strftime("%m/%d/%Y").to_s %> - <%= seats %> Tickets Available</a>-->
+        <!--</div>-->
 
-    <% end %>
-  </div>
-  <%= f.hidden_field :attending_date, :value => "" %>
-  <br/>
+        <!--<% end %>-->
+      <!--</div>-->
+      <!--<%= f.hidden_field :attending_date, :value => "" %>-->
+      <!--<br/>-->
 
 
-  <div class="row form-row">
-    <div class="col-md-12">
-      <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
-        <label class="form-label">Tickets</label>
-        <span class="help">How many people are coming?</span>
-        <div class="controls">
+      <div class="row form-row">
+        <div class="col-md-12">
+          <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
+            <label class="form-label">Tickets</label>
+            <span class="help">How many people are coming?</span>
+            <div class="controls">
 
-          <%= f.number_field :seats, :class => "form-control"%>
+              <%= f.number_field :seats, :class => "form-control"%>
 
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row form-row">
-    <div class="col-md-12">
-
-      <div class="form-group">
-        <label class="form-label">Phone Number</label>
-        <span class="help">e.g. "(541) 754-3010"</span>
-        <div class="controls">
-          <%= f.text_field :phone_number, :class => "form-control" %>
+            </div>
+          </div>
         </div>
       </div>
 
-    </div>
-  </div>
+      <div class="row form-row">
+        <div class="col-md-12">
 
-  <div class="row form-row">
-    <div class="col-md-12">
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <span class="help">e.g. "(541) 754-3010"</span>
+            <div class="controls">
+              <%= f.text_field :phone_number, :class => "form-control" %>
+            </div>
+          </div>
 
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <span class="help">e.g. "example@example.com"</span>
-        <div class="controls">
-          <%= f.text_field :email, :class => "form-control" %>
         </div>
       </div>
 
-    </div>
-  </div>
+      <div class="row form-row">
+        <div class="col-md-12">
 
-  <!--
-  <div class="row form-row">
-    <div class="col-md-10">
-      <div class="checkbox check-default">
-        <input value="1" id="checkbox1" type="checkbox">
-        <label for="checkbox1">I have read and agree to the Terms and Conditions</label>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <span class="help">e.g. "example@example.com"</span>
+            <div class="controls">
+              <%= f.text_field :email, :class => "form-control" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!--
+      <div class="row form-row">
+        <div class="col-md-10">
+          <div class="checkbox check-default">
+            <input value="1" id="checkbox1" type="checkbox">
+            <label for="checkbox1">I have read and agree to the Terms and Conditions</label>
+          </div>
+        </div>
+      </div>
+      -->
+
+      <div class="field">
+        <%= f.hidden_field :experience_id, :value => experience_id %>
+
+      </div>
+
+    </div>
+
+    <div class="row form-row">
+      <div class="col-md-12">
+        <%= f.submit "RSVP Now", :class => "btn btn-primary btn-cons btn-block", :style => "margin-top: 10px" %>
       </div>
     </div>
-  </div>
-  -->
 
-  <div class="field">
-    <%= f.hidden_field :experience_id, :value => experience_id %>
 
-  </div>
-
-  <div class="row form-row">
-    <div class="col-md-10">
-      <%= f.submit "RSVP Now", :class => "btn btn-primary btn-cons" %>
-
-      <span style="font-size: 13px; font-weight: bold; margin-right: 5px;">OR</span>
-
-      <!--SEND A MESSAGE START-->
-      <button class="btn btn-cons" data-toggle="modal" data-target="#messageHost" id="ask_a_question"> Ask a question </button>
-
-      <!--SEND A MESSAGE END-->
-
-    </div>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
 
 
 <!--SEND MESSAGE MODAL WINDOW START-->
