@@ -25,18 +25,33 @@
 
       <div class="date-container">
         <div class="radio radio-success">
-          <div class="date-option">
-            <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
-            <label for="yes">Mar 22 2014</label>
-            9PM to 12PM
-            <span class="pull-right text-info">5 Spots Remaining</span>
-          </div>
-          <div class="date-option">
-            <input type="radio" value="no" name="optionyes" id="no">
-            <label for="no">Mar 22 2014</label>
-            9PM to 12PM
-            <span class="pull-right text-info">5 Spots Remaining</span>
-          </div>
+
+          <% duration = (@experience.hours.to_i).hours  %>
+          <% @available_dates.each_with_index do |available_date, i| %>
+
+            <% seats = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum %>
+
+            <% if i == 0 %>
+              <div class="date-option">
+                <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
+                <label for="yes"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
+                <%= available_date.experience_time.strftime('%I:%d %p') %>
+                to
+                <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>
+                <span class="pull-right text-info"><%= seats %> Spots Remaining</span>
+              </div>
+            <% else %>
+              <div class="date-option">
+                <input type="radio" value="no" name="optionyes" id="no">
+                <label for="no"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
+                <%= available_date.experience_time.strftime('%I:%d %p') %>
+                to
+                <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>
+                <span class="pull-right text-info"><%= seats %> Spots Remaining</span>
+              </div>
+            <% end %>
+
+          <% end %>
 
         </div>
       </div>
