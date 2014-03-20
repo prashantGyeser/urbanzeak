@@ -23,6 +23,27 @@ class ExperiencesController < ApplicationController
       @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s
     end
 
+    # Finding available dates -- start
+    experience = @experience
+    attendees = Attendee.where(:experience_id => experience.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => experience.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+      logger.debug "The experience date is: #{experience_date.experience_date}"
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
+        available_dates << experience_date
+      end
+
+    end
+
+    @available_dates = available_dates
+
+    # Finding available dates -- end
+
+
     impressionist(@experience)
     render layout: false
   end
