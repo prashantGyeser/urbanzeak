@@ -29,8 +29,8 @@
           <% duration = (@experience.hours.to_i).hours  %>
           <% @available_dates.each_with_index do |available_date, i| %>
 
-            <% seats = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum %>
-
+            <% seats_filled = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum %>
+            <% seats = @experience.max_seats - seats_filled %>
             <% if i == 0 %>
               <div class="date-option">
                 <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
