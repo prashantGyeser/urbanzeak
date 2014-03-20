@@ -22,13 +22,33 @@
         </div>
       <% end %>
 
-      <div class="row">
-        <div class="col-md-12">
-          <% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>
-          <p>All the experiences happen at <span class="bold"><%= exp_time.experience_time.strftime("%I:%M%p")
-          %></span> and go on for <%= experience.hours %> hours</p>
+
+      <div class="date-container">
+        <div class="radio radio-success">
+          <div class="date-option">
+            <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
+            <label for="yes">Mar 22 2014</label>
+            9PM to 12PM
+            <span class="pull-right text-info">5 Spots Remaining</span>
+          </div>
+          <div class="date-option">
+            <input type="radio" value="no" name="optionyes" id="no">
+            <label for="no">Mar 22 2014</label>
+            9PM to 12PM
+            <span class="pull-right text-info">5 Spots Remaining</span>
+          </div>
+
         </div>
       </div>
+
+
+      <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+          <!--<% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>-->
+          <!--<p>All the experiences happen at <span class="bold"><%= exp_time.experience_time.strftime("%I:%M%p")
+          %></span> and go on for <%= experience.hours %> hours</p> -->
+        <!--</div>-->
+      <!--</div>-->
 
       <!--<div class="row">-->
       <!--<div class="col-md-12">-->
