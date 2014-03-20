@@ -74,6 +74,9 @@ $(document).ready(function(){
         });
     });
 
+    $('.date_select').click(function(e){
+        $(this).addClass('disabled');
+    });
 
     /*
     $( "#attendee_seats" ).change(function(e) {
