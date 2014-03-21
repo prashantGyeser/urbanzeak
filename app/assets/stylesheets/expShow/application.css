@@ -17,5 +17,4 @@
  *= require plugins/boostrapv3/css/bootstrap-theme.min
  *= require plugins/rs-plugin/css/settings
  *= require_self
- *= require_tree .
  */

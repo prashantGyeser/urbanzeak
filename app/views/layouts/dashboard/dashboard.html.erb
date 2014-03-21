@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
-
   <!--CUSTOM CSS-->
   <%= yield :css %>
   <!--END CUSTOM CSS-->
@@ -18,16 +17,7 @@
 
 
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  <!-- BEGIN CORE JS FRAMEWORK-->
-  <%= include_gon %>
-  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
-  <!-- END CORE JS FRAMEWORK -->
 
-  <!-- END NEED TO WORK ON -->
-
-  <!-- CUSTOM JAVASCRIPT -->
-  <%= yield :js %>
-  <!-- END CUSTOM JAVASCRIPT -->
 
 
   <%= csrf_meta_tag %>
@@ -207,6 +197,17 @@
 <!-- END PAGE CONTAINER -->
 </div>
 <!-- END CONTENT -->
+
+<!-- BEGIN CORE JS FRAMEWORK-->
+<%= include_gon %>
+<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+<!-- END CORE JS FRAMEWORK -->
+
+<!-- END NEED TO WORK ON -->
+
+<!-- CUSTOM JAVASCRIPT -->
+<%= yield :js %>
+<!-- END CUSTOM JAVASCRIPT -->
 
 </body>
 </html>

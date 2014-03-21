@@ -23,6 +23,27 @@ class ExperiencesController < ApplicationController
       @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s
     end
 
+    # Finding available dates -- start
+    experience = @experience
+    attendees = Attendee.where(:experience_id => experience.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => experience.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+      logger.debug "The experience date is: #{experience_date.experience_date}"
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
+        available_dates << experience_date
+      end
+
+    end
+
+    @available_dates = available_dates
+
+    # Finding available dates -- end
+
+
     impressionist(@experience)
     render layout: false
   end
@@ -84,6 +105,7 @@ class ExperiencesController < ApplicationController
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
           @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
           @experience_date.experience_id = @experience.id
           @experience_date.save
         end
@@ -193,7 +215,7 @@ class ExperiencesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
-      @experience = Experience.find(params[:id])
+      @experience = Experience.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

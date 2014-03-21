@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem "rails", "~> 4.0.4"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -74,22 +74,34 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
+
+# New relic monitoring tool
+gem 'newrelic_rpm'
+
+gem 'friendly_id'
+
+
 group :staging, :production do
   # gzip on heroku
   gem 'heroku-deflater'
 
   # Monitoring tools
-  gem 'newrelic_rpm'
   gem 'sentry-raven'
   gem 'bugsnag'
   gem 'exceptiontrap'
   gem 'appsignal'
 
-  # Using unicorn as the server
-  gem 'unicorn'
+  # Using puma as the web server
+  gem 'puma'
+  # Refer to https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server for details on this.
+  gem "rack-timeout"
 
   # Heroku logging
   gem 'rails_12factor'
+
+end
+
+group :production do
 
 end
 
