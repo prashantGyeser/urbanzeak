@@ -25,9 +25,20 @@
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "ur-bdccc91-2edd-103e-668f-89b5c48e233", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
   <%= csrf_meta_tag %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39739783-2', 'urbanzeak.com');
+    ga('send', 'pageview');
+
+  </script>
 </head>
 <!-- END HEAD -->
 <body>
+
 <div class="main-wrapper">
 <!--NAV AFTER WAYPOINT START-->
   <%= render "navigation" %>
