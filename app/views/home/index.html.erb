@@ -1,122 +1,304 @@
-<div class="header">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>Webarch - Responsive Frontend & Admin Dashboard Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+
+
+  <%= stylesheet_link_tag    "homepage/application", media: "all", "data-turbolinks-track" => true %>
+
+  <%= stylesheet_link_tag "homepage/template", media: "all", "data-turbolinks-track" => true %>
+
+  <!-- BEGIN CORE CSS FRAMEWORK -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- END CORE CSS FRAMEWORK -->
+
+</head>
+<!-- END HEAD -->
+<body>
+
+<div class="main-wrapper">
+<header id="ha-header" class="ha-header ha-header-hide " >
+  <div class="ha-header-perspective">
+    <div class="ha-header-front navbar navbar-default">
+
+      <div class="compressed">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand compressed">
+            <!--<img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>-->
+            <%= image_tag "homepage/logo.png" %>
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" >
+            <li ><a href="index.html">Home</a></li>
+            <li ><a href="tour.html">Tour</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li ><a href="portfolio.html">Portfolio</a></li>
+            <li ><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </div>
+  </div>
+</header>
+<div class="section full-view ha-waypoint" data-animate-down="ha-header-hide" data-animate-up="ha-header-hide">
+  <div role="navigation" class="navbar navbar-transparent navbar-top">
+    <div class="container">
+      <div class="compressed">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand"><img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" >
+            <li ><a href="index.html">Home</a></li>
+            <li ><a href="tour.html">Tour</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li ><a href="portfolio.html">Portfolio</a></li>
+            <li ><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <%= render :partial => "slider" %>
+</div>
+<div class="section white text-center p-t-40 p-b-40" id="banner-footer">
+  <h2 class="normal m-b-10">Small + Medium + <span class="semi-bold">Large...</span> Responsive for <span class="semi-bold">every</span> screen!</h2>
+  <p>No matter where you go , our product is made to fit any screen.. mobile , tablet and desktop</p>
+  <button type="button" class="btn btn-primary btn-cons m-t-10">Learn More</button>
+</div>
+<div id="cbp-so-scroller" class="cbp-so-scroller section white ha-waypoint"  data-animate-down="ha-header-color" data-animate-up="ha-header-hide">
+
+  <section class="cbp-so-section">
+    <figure class="cbp-so-side cbp-so-side-left">
+      <img src="assets/img/Retina.png" alt="img01">
+    </figure>
+    <article class="cbp-so-side cbp-so-side-right text-center middle">
+      <div class="row">
+        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+          <img src="assets/img/retina_icon.png" alt="" class="normal">
+          <h1 class="m-b-20"><span class="semi-bold">Retin</span> Ready</h1>
+          <p>Devices with Retina Display are really awesome, the image quality is incredible and this theme is ready to handle this feature. Logo and favicons have the optional retina version and we also offer support to Font Icons, since they are showed with maximum quality in these devices.</p>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="cbp-so-section">
+    <article class="cbp-so-side cbp-so-side-left text-center middle">
+      <div class="row">
+        <div class="col-md-12 p-t-40 col-vlg-8 col-vlg-offset-2">
+          <img src="assets/img/Stressfree_icon.png" alt="" class="normal">
+          <h1 class="m-b-20">Stress <span class="semi-bold">Free</span> Colors</h1>
+          <p>Color affects the way we feel. It can affect our moods in either a positive or negative manner. After a great research about color stress reduction , our team came up with a perfect color pallet . With the use of Colored overlays we found that the  visual stress is reduced and speed of reading is increased. And the more use of calm colors and less use of bright luminous colors we were able to give our users the best experience of stress free colors.
+          </p>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+        </div>
+      </div>
+    </article>
+    <figure class="cbp-so-side cbp-so-side-right">
+      <img src="assets/img/Stressfree.png" alt="img01">
+    </figure>
+  </section>
+
+  <section class="cbp-so-section">
+    <figure class="cbp-so-side cbp-so-side-left">
+      <img src="assets/img/Front.png" alt="img01">
+    </figure>
+    <article class="cbp-so-side cbp-so-side-right text-center middle">
+      <div class="row">
+        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+          <img src="assets/img/frontend_icon.png" alt="" class="normal">
+          <h1 class="m-b-20"><span class="semi-bold">All</span> in one!</h1>
+          <p>Devices with Retina Display are really awesome, the image quality is incredible and this theme is ready to handle this feature. Logo and favicons have the optional retina version and we also offer support to Font Icons, since they are showed with maximum quality in these devices.</p>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="cbp-so-section">
+    <article class="cbp-so-side cbp-so-side-left text-center middle">
+      <div class="row">
+        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+          <img src="assets/img/condensed_icon.png" alt="" class="normal">
+          <h1 class="m-b-20"><span class="semi-bold">Condensed</span> menu</h1>
+          <p>Color affects the way we feel. It can affect our moods in either a positive or negative manner. After a great research about color stress reduction , our team came up with a perfect color pallet . With the use of Colored overlays we found that the  visual stress is reduced and speed of reading is increased. And the more use of calm colors and less use of bright luminous colors we were able to give our users the best experience of stress free colors.
+          </p>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+        </div>
+      </div>
+    </article>
+    <figure class="cbp-so-side cbp-so-side-right">
+      <img src="assets/img/condensed.png" alt="img01">
+    </figure>
+  </section>
+</div>
+<div class="section table-layout">
+  <div id="working-section" class="table-cell v-middle">
+    <div >
+      <h2 class="text-white text-center custom-font  no-margin">MILLIONS OF SATISFIED CUSTOMERS</h2>
+    </div>
+  </div>
+</div>
+<div class="section white">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Fill seats <span>faster</span></h1>
-        <%= image_tag "headerImage/headerImage.png" %>
+    <div class="p-t-60 p-b-50">
+      <div id="testomonials" class="owl-carousel row">
+        <div class="item">
+          <div class="col-md-6   col-md-offset-3">
+            <h3 class="normal text-center">
+              I’m really happy that webarch is able to offer
+              support specifically tailored to creative businesses and I’d love Nottingham to become renowned for this.
+            </h3>
+            <p class="text-center">Caroline Hennigan, Programme Director, Broadway</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-md-6   col-md-offset-3">
+            <h3 class="normal text-center">
+              I’m really happy that webarch is able to offer
+              support specifically tailored to creative businesses and I’d love Nottingham to become renowned for this.
+            </h3>
+            <p class="text-center">Caroline Hennigan, Programme Director, Broadway</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-md-6   col-md-offset-3">
+            <h3 class="semi-bold text-center">
+              I’m really happy that webarch is able to offer
+              support specifically tailored to creative businesses and I’d love Nottingham to become renowned for this.
+            </h3>
+            <p class="text-center">Caroline Hennigan, Programme Director, Broadway</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="keyFeatures">
+<div class="section black">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <i class="fa fa-comments fa-5"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
+    <div class="p-t-60 p-b-60">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2 class="text-center text-white m-b-30">Would you like to sign up for our <span class="semi-bold">programme?</span>
+            Register your interest below</h2>
+          <div class="row form-row">
+            <div class="col-md-6 col-md-offset-2 no-padding  col-sm-6 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+              <input name="form3Occupation" id="form3Occupation" type="text" class="form-control " placeholder="Enter your email addres">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 xs-p-l-10">
+              <button type="button" class="btn btn-primary btn-cons">Subscribe</button>
+            </div>
+          </div>
+          <div class="row">
+            <a href="#" class="text-white text-center col-md-11 col-sm-11 col-xs-11">or suscribte to newsletter</a>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row m-t-30">
+            <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2">
+              <div class="checkbox check-default">
+                <input id="checkbox1" type="checkbox" value="1">
+                <label for="checkbox1">Daily newsletters</label>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="checkbox check-default">
+                <input id="checkbox2" type="checkbox" value="1">
+                <label for="checkbox2">No promotions</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2">
+              <div class="checkbox check-default">
+                <input id="checkbox3" type="checkbox" value="1">
+                <label for="checkbox3">Industry specific events</label>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="checkbox check-default">
+                <input id="checkbox4" type="checkbox" value="1">
+                <label for="checkbox4">Accessing News letters</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <i class="fa fa-compass"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa fa-envelope"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">
-        <i class="fa fa-eye"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa-mobile-phone"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa-quote-left"></i>
-        <div class="content">
-          <h4>Some heading</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem. Aliquam erat volutpat. Duis vel mi augue.
-          </p>
-        </div>
-      </div>
     </div>
-
   </div>
 </div>
-
-
-<div class="screenShots">
+<div class="section white footer">
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Screenshots</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <ul class="screenShotsList">
-          <li class="selected">
-            <h4>Powerful dashboard</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
-            </p>
-          </li>
-
-          <li>
-            <h4>Powerful dashboard</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
-            </p>
-          </li>
-
-          <li>
-            <h4>Powerful dashboard</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas orci tellus, ornare in porta non, tempus et lorem.
-            </p>
-          </li>
-
-
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <%= image_tag "fillerImages/content/contentImage.png", :class => "img-responsive" %>
+    <div class="p-t-30 p-b-50">
+      <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12 xs-m-b-20">
+          <!--<img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>-->
+          <%= image_tag "homepage/logo.png" %>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
+          <address class="xs-no-padding  col-md-6 col-lg-6 col-sm-6  col-xs-12">
+            Crossraid<br>
+            85/B Cross Street,<br>
+            New York, USA<br>
+            NA1 42SL
+          </address>
+          <div class="xs-no-padding col-md-6 col-lg-6 col-sm-6">
+            <div>(0039) 389 957 5552</div>
+            support@revox.io
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
+          Copyright © 2013
+          Privacy Policy
+          Design by Revox
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
+          <div class="bold">RECRUITMENT</div>
+          We are frequently on the lookout for new talent!
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 ">
+          <div class="bold">FOLLOW US</div>
+          We are frequently on the lookout for new talent!
+        </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+
+<!-- BEGIN CORE JS FRAMEWORK -->
+
+<!-- END CORE JS FRAMEWORK -->
+
+<%= javascript_include_tag "homepage/application", "data-turbolinks-track" => true %>
+<script>
+  new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+</script>
+
+<%= javascript_include_tag "homepage/core", "data-turbolinks-track" => true %>
+
+</body>
+</html>
