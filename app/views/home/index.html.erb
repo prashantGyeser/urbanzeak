@@ -65,7 +65,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand"><img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/></a>
+          <a href="#" class="navbar-brand">
+            <!--<img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>-->
+            <%= image_tag "homepage/logo_condensed.png" %>
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
@@ -82,23 +85,31 @@
   <%= render :partial => "slider" %>
 </div>
 <div class="section white text-center p-t-40 p-b-40" id="banner-footer">
-  <h2 class="normal m-b-10">Small + Medium + <span class="semi-bold">Large...</span> Responsive for <span class="semi-bold">every</span> screen!</h2>
-  <p>No matter where you go , our product is made to fit any screen.. mobile , tablet and desktop</p>
-  <button type="button" class="btn btn-primary btn-cons m-t-10">Learn More</button>
+  <h2 class="normal m-b-10">
+    All your customers are online...<span class="semi-bold">are you?</span>
+  </h2>
+  <p>
+    You can setup your website in <span class="semi-bold">under 5 minutes</span>
+  </p>
+
+  <button type="button" class="btn btn-primary btn-cons m-t-10">Join Now</button>
+
 </div>
 <div id="cbp-so-scroller" class="cbp-so-scroller section white ha-waypoint"  data-animate-down="ha-header-color" data-animate-up="ha-header-hide">
 
   <section class="cbp-so-section">
     <figure class="cbp-so-side cbp-so-side-left">
-      <img src="assets/img/Retina.png" alt="img01">
+      <!--<img src="assets/img/Retina.png" alt="img01">-->
+      <%= image_tag "homepage/create_experience_with_pc.png" %>
     </figure>
     <article class="cbp-so-side cbp-so-side-right text-center middle">
       <div class="row">
         <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
-          <img src="assets/img/retina_icon.png" alt="" class="normal">
-          <h1 class="m-b-20"><span class="semi-bold">Retin</span> Ready</h1>
-          <p>Devices with Retina Display are really awesome, the image quality is incredible and this theme is ready to handle this feature. Logo and favicons have the optional retina version and we also offer support to Font Icons, since they are showed with maximum quality in these devices.</p>
-          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+          <h1 class="m-b-20"><span class="semi-bold">No 'IT guy'</span> required</h1>
+          <p>
+            urbanzeak lets you create your own website in minutes, without having to spends weeks or months talking to an IT guy. Fill in your content and you are ready to show the world what your experience is about.
+          </p>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Join Now</button>
         </div>
       </div>
     </article>
@@ -108,51 +119,39 @@
     <article class="cbp-so-side cbp-so-side-left text-center middle">
       <div class="row">
         <div class="col-md-12 p-t-40 col-vlg-8 col-vlg-offset-2">
-          <img src="assets/img/Stressfree_icon.png" alt="" class="normal">
-          <h1 class="m-b-20">Stress <span class="semi-bold">Free</span> Colors</h1>
-          <p>Color affects the way we feel. It can affect our moods in either a positive or negative manner. After a great research about color stress reduction , our team came up with a perfect color pallet . With the use of Colored overlays we found that the  visual stress is reduced and speed of reading is increased. And the more use of calm colors and less use of bright luminous colors we were able to give our users the best experience of stress free colors.
+
+          <h1 class="m-b-20">Measure, analyse and <span class="semi-bold">grow</span></h1>
+          <p>
+            Find out if your marketing is working. Find out how many people visited your website and from where. Find the most effective marketing channels so that you focus your energy on places that give you the most sales.
           </p>
-          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
+          <button type="button" class="btn btn-primary btn-cons m-t-20">Join Now</button>
         </div>
       </div>
     </article>
     <figure class="cbp-so-side cbp-so-side-right">
-      <img src="assets/img/Stressfree.png" alt="img01">
+      <%= image_tag "homepage/analytics.png" %>
     </figure>
   </section>
 
   <section class="cbp-so-section">
     <figure class="cbp-so-side cbp-so-side-left">
-      <img src="assets/img/Front.png" alt="img01">
+      <!--<img src="assets/img/Front.png" alt="img01">-->
+      <%= image_tag "homepage/social-media-integration.png" %>
     </figure>
     <article class="cbp-so-side cbp-so-side-right text-center middle">
       <div class="row">
         <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
-          <img src="assets/img/frontend_icon.png" alt="" class="normal">
-          <h1 class="m-b-20"><span class="semi-bold">All</span> in one!</h1>
-          <p>Devices with Retina Display are really awesome, the image quality is incredible and this theme is ready to handle this feature. Logo and favicons have the optional retina version and we also offer support to Font Icons, since they are showed with maximum quality in these devices.</p>
+          <h1 class="m-b-20">Keep your <span class="semi-bold">followers informed</span> </h1>
+          <p>
+            You have worked hard to build up likes/followers on your favorite social media like Facebook or Twitter. Do not let that hard work go to waste. urbanzeak integrates with most major social networks so that all your followers there stay informed when you create an experience.
+          </p>
           <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
         </div>
       </div>
     </article>
   </section>
 
-  <section class="cbp-so-section">
-    <article class="cbp-so-side cbp-so-side-left text-center middle">
-      <div class="row">
-        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
-          <img src="assets/img/condensed_icon.png" alt="" class="normal">
-          <h1 class="m-b-20"><span class="semi-bold">Condensed</span> menu</h1>
-          <p>Color affects the way we feel. It can affect our moods in either a positive or negative manner. After a great research about color stress reduction , our team came up with a perfect color pallet . With the use of Colored overlays we found that the  visual stress is reduced and speed of reading is increased. And the more use of calm colors and less use of bright luminous colors we were able to give our users the best experience of stress free colors.
-          </p>
-          <button type="button" class="btn btn-primary btn-cons m-t-20">Learn More</button>
-        </div>
-      </div>
-    </article>
-    <figure class="cbp-so-side cbp-so-side-right">
-      <img src="assets/img/condensed.png" alt="img01">
-    </figure>
-  </section>
+
 </div>
 <div class="section table-layout">
   <div id="working-section" class="table-cell v-middle">
