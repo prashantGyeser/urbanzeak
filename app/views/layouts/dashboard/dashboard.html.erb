@@ -96,15 +96,7 @@
   <div class="page-sidebar-wrapper" id="main-menu-wrapper">
     <!-- BEGIN MINI-PROFILE -->
     <div class="user-info-wrapper">
-      <div class="profile-wrapper">
-        <% @host = Host.where(:user_id => current_user.id).first %>
-        <%if @host.nil? %>
-          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
-        <% elsif @host.avatar.blank? %>
-          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
-        <% else %>
-        <% end %>
-      </div>
+      
       <div class="user-info">
         <div class="greeting">Welcome</div>
         <div class="username"><%= current_user.first_name %></div>
