@@ -10,12 +10,10 @@
     <!--PURCHASES GRID START-->
     <div class="grid simple ">
 
-      <% if @no_experiences == true %>
+      <% if @has_experiences == false %>
         <%= render :partial => "no_experiences" %>
-      <% elsif @no_purchases == true %>
-        <%= render :partial => "no_purchases" %>
       <% else %>
-
+        <%= render :partial => "purchases" %>
       <% end %>
     </div>
     <!--PURCHASES GRID END-->
