@@ -1,0 +1,40 @@
+<!--GRID TITLE START-->
+<div class="grid-title">
+  <h4>Customer <span class="semi-bold">Purchase Details</span></h4>
+</div>
+<!--GRID TITLE END-->
+<!--GRID BODY START-->
+<div class="grid-body ">
+  <!--TABLE START-->
+  <table class="table table-hover table-condensed" id="example">
+    <thead>
+    <tr>
+
+      <!--<th style="width:1%"><div class="checkbox check-default" style="margin-right:auto;margin-left:auto;">-->
+      <!--<input type="checkbox" value="1" id="checkbox1">-->
+      <!--<label for="checkbox1"></label>-->
+      <!--</div></th>-->
+      <th style="width:10%">Customer Email</th>
+      <th style="width:22%" data-hide="phone,tablet">Tickets Purchases For</th>
+      <th style="width: 6%">Attending On</th>
+      <th style="width:6%">Tickets</th>
+      <th style="width:10%" data-hide="phone,tablet">Total Paid</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @experiences.each do |experience| %>
+      <% experience.attendees.each do |attendee| %>
+        <tr>
+          <td><%= attendee.email %></td>
+          <td><span class="muted"><%= experience.name %></span></td>
+          <td><%= attendee.attending_date %></td>
+          <td><%= attendee.seats %></td>
+          <td>$<%= attendee.seats * experience.price %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+  <!--TABLE END-->
+</div>
+<!--GRID BODY END-->

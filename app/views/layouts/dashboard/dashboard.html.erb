@@ -96,7 +96,7 @@
   <div class="page-sidebar-wrapper" id="main-menu-wrapper">
     <!-- BEGIN MINI-PROFILE -->
     <div class="user-info-wrapper">
-      
+
       <div class="user-info">
         <div class="greeting">Welcome</div>
         <div class="username"><%= current_user.first_name %></div>
@@ -121,6 +121,13 @@
         <a href="<%= dashboard_experiences_path %>">
           <i class="fa fa-envelope"></i>
           <span class="title">Experiences</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+        </a>
+      </li>
+      <li class="">
+        <a href="<%= dashboard_profile_about_path %>">
+          <i class="fa fa-envelope"></i>
+          <span class="title">About You</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
