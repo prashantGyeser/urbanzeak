@@ -65,6 +65,15 @@ class Experience < ActiveRecord::Base
     return @views
   end
 
+  def self.host_has_experiences(user_id)
+    experiences_count = Experience.where(:user_id => user_id).count
+    if experiences_count > 0
+      return true
+    else
+      return false
+    end
+  end
+
   def self.total_visits_today(user_id)
     experiences = Experience.where(:user_id => user_id)
     views_for_the_day = 0

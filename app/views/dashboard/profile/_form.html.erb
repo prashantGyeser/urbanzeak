@@ -22,10 +22,7 @@
         <!-- END GRID TITLE -->
         <!--GRID BODY-->
         <div class="grid-body no-border">
-          <h3>Your <span class="semi-bold">Experience</span></h3>
-          <p>
-            In this section give your experience a catchy title and describe it in detail. Paint a picture, tell people what they will get when they attend your experience and tell them why they should attend.
-          </p>
+
           <br>
           <%= f.text_area :about, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
         </div>
@@ -36,13 +33,10 @@
     <div class="col-md-4">
       <div class="grid simple">
         <div class="grid-title no-border">
-          <h4>Picture upload</h4>
+          <h4>Your photo</h4>
         </div>
         <div class="grid-body no-border">
-          <h3>Your <span class="semi-bold">Photo</span></h3>
-          <p>
-            Tell people where they should come for the experience.
-          </p>
+
           <div class="row-fluid">
             <%= f.file_field :avatar, :class => "form-control"%>
           </div>

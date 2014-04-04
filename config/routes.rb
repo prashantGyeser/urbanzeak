@@ -6,7 +6,7 @@ Urbanzeak::Application.routes.draw do
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
   authenticated :user do 
     #root :to => "dashboard/reports#index", :as => "authenticated_root"
-    root :to => "dashboard/experiences#new", :as => "authenticated_root"
+    root :to => "dashboard/purchases#index", :as => "authenticated_root"
   end
 
   resources :experience_images
@@ -23,7 +23,7 @@ Urbanzeak::Application.routes.draw do
   get "chat/index"
   namespace :dashboard do
     get "home" => "home#index"
-    root :to => "experiences#new"
+    root :to => "purchases#index"
     get "chat" => "chat#index"
     get "experiences" => "experiences#index"
     get "experiences/new/:experience_id" => "experiences#new"
