@@ -26,11 +26,8 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
 
     # Set inputs
     initializeOAuthInputs.set_AppID("555128847910730")
-    logger.debug "Before setting scope"
     initializeOAuthInputs.set_Scope("publish_actions,publish_stream,manage_pages");
-    logger.debug "After setting scope"
     initializeOAuthInputs.set_ForwardingURL(dashboard_integrations_facebook_finalizeOAuth_url)
-    logger.debug "the finalize path ios: #{dashboard_integrations_facebook_finalizeOAuth_url}"
     # Execute Choreo
     initializeOAuthResults = initializeOAuthChoreo.execute(initializeOAuthInputs)
 
