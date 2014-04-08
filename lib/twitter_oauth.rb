@@ -1,8 +1,7 @@
 require 'temboo'
-require 'Library/Facebook'
+require 'Library/Twitter'
 
-class Auth
-  # Initializing the facebook auth process
+def TwitterAuth
   def self.initialize_auth(forwarding_url)
 
 

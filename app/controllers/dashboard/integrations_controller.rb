@@ -1,5 +1,6 @@
 require 'temboo'
 require 'Library/Facebook'
+require 'facebook_oauth'
 
 class Dashboard::IntegrationsController < Dashboard::ApplicationController
   # FINALIZE_OAUTH_CONTROLLER = "http://localhost:3000/integrations/facebook_finalizeOAuth"
@@ -15,66 +16,25 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   end
 
   def facebook
-    logger.debug "Starting the request to get facebook permission"
-    # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
-    session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
 
-    initializeOAuthChoreo = Facebook::OAuth::InitializeOAuth.new(session)
+    authorizationURL, callbackId = Auth.initialize_auth(dashboard_integrations_facebook_finalizeOAuth_url)
 
-    # Get an InputSet object for the choreo
-    initializeOAuthInputs = initializeOAuthChoreo.new_input_set()
-
-    # Set inputs
-    initializeOAuthInputs.set_AppID("555128847910730")
-    initializeOAuthInputs.set_Scope("publish_actions,publish_stream,manage_pages");
-    initializeOAuthInputs.set_ForwardingURL(dashboard_integrations_facebook_finalizeOAuth_url)
-    # Execute Choreo
-    initializeOAuthResults = initializeOAuthChoreo.execute(initializeOAuthInputs)
-
-    @callbackID = initializeOAuthResults.get_CallbackID()
-    @authorizationURL = initializeOAuthResults.get_AuthorizationURL()
-
-    cookies[:tembooCallbackID] = @callbackID
-
-    redirect_to @authorizationURL
-
+    cookies[:tembooCallbackID] = callbackId
+    redirect_to authorizationURL
   end
 
   def facebook_finalizeOAuth
     logger.debug "Ok it is getting here"
-
-    session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
-      
-    # Grab the callback ID out of the cookie
-    @retrievedCallbackID = cookies[:tembooCallbackID]
-
-    # Instantiate the Choreo, using a previously instantiated TembooSession object,
-    finalizeOAuthChoreo = Facebook::OAuth::FinalizeOAuth.new(session)
-
-    # Get an InputSet object for the choreo
-    finalizeOAuthInputs = finalizeOAuthChoreo.new_input_set()
-
-    # Set inputs
-    finalizeOAuthInputs.set_CallbackID(@retrievedCallbackID)
-    finalizeOAuthInputs.set_AppSecret("67e4d163ed22eaf2464a88f9b488e6aa")
-    finalizeOAuthInputs.set_AppID("555128847910730")
-
-
-
-    # Execute Choreo
-    finalizeOAuthResults = finalizeOAuthChoreo.execute(finalizeOAuthInputs)
-
-    # Get the Facebook access token
-    @accessToken = finalizeOAuthResults.get_AccessToken();
-
+    callbackId = cookies[:tembooCallbackID]
+    accessToken = Auth.finalize_auth(callbackId)
     # Store the access token in a cookie, for reuse
-    cookies[:facebookAccessToken] = @accessToken
+    cookies[:facebookAccessToken] = accessToken
 
     # Storing the access token in the database
     userId = current_user.id
-    @tokens = IntegrationToken.create(token: @accessToken,provider: 'Facebook', user_id: userId)
+    @tokens = IntegrationToken.create(token: accessToken,provider: 'Facebook', user_id: userId)
 
-    flash[:notice] = 'Facebook integration successfully added.'
+    flash[:notice] = 'Facebook connection successfully added.'
     redirect_to dashboard_integrations_path
 
   end
@@ -104,25 +64,35 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   end
     
     
-    def setConfig
-        @fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
-        
-        if params[:post] == 'false'
-            @fbCheckToken.post_to_fb_wall = false   
+  def setConfig
+      @fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
+
+      if params[:post] == 'false'
+          @fbCheckToken.post_to_fb_wall = false
+      else
+          @fbCheckToken.post_to_fb_wall = true
+      end
+
+      respond_to do |format|
+        if @fbCheckToken.save
+          format.json { head :no_content }
         else
-            @fbCheckToken.post_to_fb_wall = true
+          format.json { render json: @fbCheckToken.errors, status: :unprocessable_entity }
         end
-        
-        respond_to do |format|
-          if @fbCheckToken.save
-            format.json { head :no_content }
-          else
-            format.json { render json: @fbCheckToken.errors, status: :unprocessable_entity }
-          end
-        end
-        
-        
-    end
+      end
+  end
+
+  def twitter
+
+  end
+
+  def twitter_finalizeOAuth
+    authorizationURL, callbackId = TwitterAuth.initialize_auth(dashboard_integrations_facebook_finalizeOAuth_url)
+
+    cookies[:tembooCallbackID] = callbackId
+    redirect_to authorizationURL
+  end
+
     
 end
 
