@@ -21,12 +21,6 @@
           <!--HEADING START-->
           <thead>
           <tr>
-            <th style="width:1%" >
-              <div class="checkbox check-default">
-                <input id="checkbox10" type="checkbox" value="1" class="checkall">
-                <label for="checkbox10"></label>
-              </div>
-            </th>
             <th style="width:9%">Provider</th>
             <th style="width:22%">Description</th>
             <th style="width:6%">Status</th>
@@ -38,30 +32,38 @@
           <tbody>
             <!--ROW 1 START-->
             <tr>
-              <td class="v-align-middle">
-                <div class="checkbox check-default">
-                  <input id="checkbox11" type="checkbox" value="1">
-                  <label for="checkbox11"></label>
-                </div>
-              </td>
               <td class="v-align-middle">Facebook</td>
-              <td class="v-align-middle"><span class="muted">Post your experience to fb when created</span>
+              <td class="v-align-middle"><span class="muted">Post your experience to Facebook when created</span>
               </td>
-              <td><span class="muted"><span class="label">NOT INTEGRATED</span></span>
+              <td>
+
+                <% if @facebookIntegrationDone == true %>
+                  <span class="label label-success">CONNECTED</span>
+                <% else %>
+                  <span class="muted">
+                    <span class="label">NOT CONNECTED
+                    </span>
+                  </span>
+                <% end %>
+
+
               </td>
+
               <td class="v-align-middle">
-                <button class="btn btn-primary btn-sm btn-small" type="button">Integrate Now</button>
+
+                <% if @facebookIntegrationDone == true %>
+
+                <% else %>
+                  <%= link_to "Connect", dashboard_integrations_facebook_path, :class => "btn btn-primary btn-sm btn-small" %>
+                <% end %>
+
+
+
               </td>
             </tr>
             <!--ROW 1 END-->
             <!--ROW 2 START-->
             <tr>
-              <td class="v-align-middle">
-                <div class="checkbox check-default">
-                  <input id="checkbox11" type="checkbox" value="1">
-                  <label for="checkbox11"></label>
-                </div>
-              </td>
               <td class="v-align-middle">Twitter</td>
               <td class="v-align-middle"><span class="muted">Post your experience to fb when created</span>
               </td>

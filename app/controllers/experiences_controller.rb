@@ -6,6 +6,12 @@ class ExperiencesController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_filter :check_if_host, only: [:create]
 
+
+  def index
+    host = User.find_by_subdomain(request.subdomain)
+    @experiences = Experience.where(:user_id => host.id)
+  end
+
   # GET /experiences/1
   # GET /experiences/1.json
   def show
