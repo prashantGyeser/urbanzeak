@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
 
   def index
     host = User.find_by_subdomain(request.subdomain)
-    @experiences = Experience.find_by_user_id(host.id)
+    @experiences = Experience.where(:user_id => host.id)
   end
 
   # GET /experiences/1
