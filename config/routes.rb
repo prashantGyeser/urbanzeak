@@ -3,6 +3,7 @@ Urbanzeak::Application.routes.draw do
   post "conversations/create" => "conversations#create"
 
   # Redirecting when a subdomain is found to the appropriate page
+  #get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
   get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
 
 
