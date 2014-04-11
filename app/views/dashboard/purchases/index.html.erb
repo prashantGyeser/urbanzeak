@@ -16,7 +16,11 @@
       <% if @has_experiences == false %>
         <%= render :partial => "no_experiences" %>
       <% else %>
-        <%= render :partial => "purchases" %>
+        <% if @has_purchases == true %>
+          <%= render :partial => "purchases" %>
+        <% else %>
+          <%= render :partial => "no_purchases" %>
+        <% end %>
       <% end %>
     </div>
     <!--PURCHASES GRID END-->
