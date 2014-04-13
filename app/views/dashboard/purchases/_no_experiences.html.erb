@@ -1,0 +1,51 @@
+<!--GRID BODY START-->
+<div class="grid-body">
+  <!--NOTIFICATION ABOUT NO EXPERIENCES START-->
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="get-started-title p-b-40 text-center">
+        <h1>Welcome to urbanzeak</h1>
+        <h4>Your are 2 steps away from launching your site.</h4>
+      </div>
+
+      <div class="get-started p-b-40">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="step-icon"><i class="fa fa-picture-o fa-3" style="font-size: 6em"></i></div>
+          </div>
+          <div class="col-md-9">
+            <h4 style="margin-top: 0;">Create an experience to see your site</h4>
+            <!--<a href="#" class="btn btn-default btn-cons">Create Experience</a>-->
+            <%= link_to "New Experience", dashboard_experiences_new_path, :class => "btn btn-default btn-cons" %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="get-started">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="step-icon"><i class="fa fa-user" style="font-size: 6em"></i></div>
+          </div>
+          <div class="col-md-9">
+            <h4 style="margin-top: 0;">Tell people about yourself</h4>
+            <!--<a href="#" class="btn btn-default btn-cons">Create Experience</a>-->
+            <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-default btn-cons" %>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+      <%# link_to "New Experience", dashboard_experiences_new_path, :class => "btn btn-primary btn-cons"  %>
+    </div>
+  </div>
+
+
+  <!--NOTIFICATION ABOUT NO EXPERIENCES END-->
+</div>
+<!--GRID BODY END-->

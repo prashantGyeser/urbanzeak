@@ -74,6 +74,9 @@ gem 'fancybox2-rails', '~> 0.2.4'
 # Url shortner
 gem 'shortener'
 
+# Heoku cannot find this gem when pushing so adding it there
+# Refer to http://stackoverflow.com/questions/22510461/could-not-find-thread-safe-0-3-0-in-any-of-the-sources for details
+gem 'thread_safe', '0.2.0'
 
 # New relic monitoring tool
 gem 'newrelic_rpm'

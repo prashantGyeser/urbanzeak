@@ -2,11 +2,16 @@ Urbanzeak::Application.routes.draw do
 
   post "conversations/create" => "conversations#create"
 
+  # Redirecting when a subdomain is found to the appropriate page
+  #get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
+  get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
+
+
   # Sending a user to the dashboard page once they login
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
   authenticated :user do 
     #root :to => "dashboard/reports#index", :as => "authenticated_root"
-    root :to => "dashboard/experiences#new", :as => "authenticated_root"
+    root :to => "dashboard/purchases#index", :as => "authenticated_root"
   end
 
   resources :experience_images
@@ -23,7 +28,7 @@ Urbanzeak::Application.routes.draw do
   get "chat/index"
   namespace :dashboard do
     get "home" => "home#index"
-    root :to => "experiences#new"
+    root :to => "purchases#index"
     get "chat" => "chat#index"
     get "experiences" => "experiences#index"
     get "experiences/new/:experience_id" => "experiences#new"
@@ -73,8 +78,9 @@ Urbanzeak::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dashboard/experiences#new'
-    
+  root 'home#index'
+  # Redirecting when a subdomain is found to the appropriate page
+  get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
   match '/:id' => "shortener/shortened_urls#show", via: [:get]
 
 

@@ -1,8 +1,27 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top">
+
+
+  <% if current_user.id == @experience.user_id %>
+    <div class="host-nav alert alert-info" style="margin-bottom: 0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="host-nav-content" style="margin: 0 25px">
+              <%= link_to "Go back to your dashboard", dashboard_purchases_path, :class => "link" %>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="container">
     <div class="compressed">
       <div class="navbar-header">
         <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+
+
+
 
       </div>
       <div class="navbar-collapse collapse">

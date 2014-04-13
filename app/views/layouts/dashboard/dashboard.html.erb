@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Title Goes Here</title>
+  <title>urbanzeak | Host Dashboard</title>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
-  <%= oboe_rum_header rescue "" %>
   <!--CUSTOM CSS-->
   <%= yield :css %>
   <!--END CUSTOM CSS-->
@@ -18,16 +17,7 @@
 
 
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  <!-- BEGIN CORE JS FRAMEWORK-->
-  <%= include_gon %>
-  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
-  <!-- END CORE JS FRAMEWORK -->
 
-  <!-- END NEED TO WORK ON -->
-
-  <!-- CUSTOM JAVASCRIPT -->
-  <%= yield :js %>
-  <!-- END CUSTOM JAVASCRIPT -->
 
 
   <%= csrf_meta_tag %>
@@ -51,30 +41,12 @@
       <!-- END MOBILE HEADER -->
       <!-- BEGIN LOGO -->
       <a href="/">
-        <%= image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+        <%# image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+        <%= image_tag asset_path("logo.png"), :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
       </a>
       <!-- END LOGO -->
       <!-- BEGIN LOGO NAV BUTTONS -->
-      <ul class="nav pull-right notifcation-center">
-        <li class="dropdown" id="header_task_bar">
-          <a href="#" class="dropdown-toggle active" data-toggle="">
-            <div class="iconset top-home"></div>
-          </a>
-        </li>
-        <li class="dropdown" id="header_inbox_bar">
-          <a href="#" class="dropdown-toggle">
-            <div class="iconset top-messages"></div>
-            <span class="badge" id="msgs-badge">2</span>
-          </a>
-        </li>
-        <!-- BEGIN MOBILE CHAT TOGGLER -->
-        <li class="dropdown" id="portrait-chat-toggler" style="display:none">
-          <a href="#sidr" class="chat-menu-toggle">
-            <div class="iconset top-chat-white"></div>
-          </a>
-        </li>
-        <!-- END MOBILE CHAT TOGGLER -->
-      </ul>
+
       <!-- END LOGO NAV BUTTONS -->
     </div>
     <!-- END NAVIGATION HEADER -->
@@ -92,19 +64,23 @@
         </ul>
         <!-- END SLIM NAVIGATION TOGGLE -->
         <!-- BEGIN HEADER QUICK LINKS -->
-        <ul class="nav quick-section">
-          <li class="quicklinks"><a href="#" class=""><div class="iconset top-reload"></div></a></li>
-          <li class="quicklinks"><span class="h-seperate"></span></li>
-          <li class="quicklinks"><a href="#" class=""><div class="iconset top-tiles"></div></a></li>
-          <!-- BEGIN SEARCH BOX -->
-          <li class="m-r-10 input-prepend inside search-form no-boarder">
-            <span class="add-on"><span class="iconset top-search"></span></span>
-            <input name="" type="text" class="no-boarder" placeholder="Search Dashboard" style="width:250px;">
-          </li>
-          <!-- END SEARCH BOX -->
-        </ul>
+        
         <!-- BEGIN HEADER QUICK LINKS -->
       </div>
+      <!-- END USER PROFILE -->
+      <div class="pull-right">
+        <div class="chat-toggler" style="min-width: 0; margin-right: 20px;">
+          <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom" data-content="" data-toggle="dropdown" data-original-title="Notifications">
+          <div class="user-details">
+            <div class="username"> <span class="semi-bold"><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></span> </div>
+          </div>
+            <!--<div class="iconset top-down-arrow"></div>-->
+          </a>
+
+        </div>
+      </div>
+      <!-- END USER PROFILE -->
+
       <!-- END HEADER LEFT SIDE SECTION -->
     </div>
     <!-- END CONTENT HEADER -->
@@ -121,58 +97,49 @@
   <div class="page-sidebar-wrapper" id="main-menu-wrapper">
     <!-- BEGIN MINI-PROFILE -->
     <div class="user-info-wrapper">
-      <div class="profile-wrapper">
-        <% @host = Host.where(:user_id => current_user.id).first %>
-        <%if @host.nil? %>
-          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
-        <% elsif @host.avatar.blank? %>
-          <%= image_tag "/assets/profiles/avatar.png", :width => "69", :height => "69", :data => { :src => "/assets/images/profiles/avatar.jpg"}  %>
-        <% else %>
-        <% end %>
-      </div>
+
       <div class="user-info">
         <div class="greeting">Welcome</div>
-        <div class="username">John <span class="semi-bold">Smith</span></div>
-        <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
+        <div class="username"><%= current_user.first_name %></div>
+
       </div>
     </div>
     <!-- END MINI-PROFILE -->
     <!-- BEGIN SIDEBAR MENU -->
-    <p class="menu-title">BROWSE<span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+    <div class="clearfix"></div>
     <ul>
       <!-- BEGIN SELECTED LINK -->
       <li class="start active">
-        <a href="#">
+        <a href="<%= dashboard_purchases_path %>">
           <i class="icon-custom-home"></i>
-          <span class="title">Dashboard</span>
+          <span class="title">Purchases</span>
           <span class="selected"></span>
         </a>
       </li>
       <!-- END SELECTED LINK -->
       <!-- BEGIN BADGE LINK -->
       <li class="">
-        <a href="#">
+        <a href="<%= dashboard_experiences_path %>">
           <i class="fa fa-envelope"></i>
           <span class="title">Experiences</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
-      <!-- END BADGE LINK -->
-      <!-- BEGIN SINGLE LINK -->
       <li class="">
-        <a href="#">
-          <i class="fa fa-flag"></i>
-          <span class="title">Integrations</span>
+        <a href="<%= dashboard_profile_about_path %>">
+          <i class="fa fa-envelope"></i>
+          <span class="title">About You</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
-      <!-- END SINGLE LINK -->
+      <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
       <li class="">
-        <a href="#">
+        <a href="<%= dashboard_messages_path %>">
           <i class="fa fa-envelope"></i>
           <span class="title">Messages</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
-          <span class="badge badge-important pull-right">5</span>
+          <!--<span class="badge badge-important pull-right">5</span>-->
         </a>
       </li>
       <!-- END BADGE LINK -->
@@ -190,7 +157,7 @@
 <!-- BEGIN SIDEBAR FOOTER WIDGET -->
 <div class="footer-widget">
   <div class="pull-right">
-    <a href="#"><i class="fa fa-power-off"></i></a>
+
   </div>
 </div>
 <!-- END SIDEBAR FOOTER WIDGET -->
@@ -206,6 +173,17 @@
 <!-- END PAGE CONTAINER -->
 </div>
 <!-- END CONTENT -->
-<%= oboe_rum_footer rescue "" %>
+
+<!-- BEGIN CORE JS FRAMEWORK-->
+<%= include_gon %>
+<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+<!-- END CORE JS FRAMEWORK -->
+
+<!-- END NEED TO WORK ON -->
+
+<!-- CUSTOM JAVASCRIPT -->
+<%= yield :js %>
+<!-- END CUSTOM JAVASCRIPT -->
+
 </body>
 </html>
