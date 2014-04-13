@@ -1,8 +1,11 @@
-<!--PAGE TITLE START-->
-<div class="page-title">
-  <h3>Purchases - <span class="semi-bold">By Experience</span></h3>
-</div>
-<!--PAGE TITLE START-->
+<% if @has_experiences == false %>
+<% else %>
+  <!--PAGE TITLE START-->
+  <div class="page-title">
+    <h3>Purchases - <span class="semi-bold">By Experience</span></h3>
+  </div>
+  <!--PAGE TITLE START-->
+<% end %>
 <!--ROW START-->
 <div class="row">
   <!--12 COL START-->
@@ -13,7 +16,11 @@
       <% if @has_experiences == false %>
         <%= render :partial => "no_experiences" %>
       <% else %>
-        <%= render :partial => "purchases" %>
+        <% if @has_purchases == true %>
+          <%= render :partial => "purchases" %>
+        <% else %>
+          <%= render :partial => "no_purchases" %>
+        <% end %>
       <% end %>
     </div>
     <!--PURCHASES GRID END-->
