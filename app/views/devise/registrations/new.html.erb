@@ -66,6 +66,18 @@
         </div>
 
         <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :subdomain, "Shop Name" , :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.text_field :subdomain, :class => "form-control" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-md-10">
             <div class="sharedLinks">
               <%= render "devise/shared/links" %>
