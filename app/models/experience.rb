@@ -83,6 +83,20 @@ class Experience < ActiveRecord::Base
     return views_for_the_day
   end
 
+  def self.host_has_purchases(host)
+    experiences = Experience.where(:user_id => host.id)
+    has_experience = false
+
+    experiences.each do |experience|
+      attendees_count = Attendee.where(:experience_id => experience.id).count
+      if attendees_count == 0
+        has_experience = true
+      end
+    end
+
+    return has_experience
+
+  end
 
   def self.todays_sales(user_id)
     experiences = Experience.where(:user_id => user_id)

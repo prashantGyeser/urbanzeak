@@ -3,6 +3,7 @@ Urbanzeak::Application.routes.draw do
   post "conversations/create" => "conversations#create"
 
   # Redirecting when a subdomain is found to the appropriate page
+  #get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
   get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
 
 
@@ -78,7 +79,8 @@ Urbanzeak::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-    
+  # Redirecting when a subdomain is found to the appropriate page
+  get '/' => "experiences#index", :constraints => { :subdomain => /.+/ }
   match '/:id' => "shortener/shortened_urls#show", via: [:get]
 
 

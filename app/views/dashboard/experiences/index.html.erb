@@ -9,128 +9,35 @@
 </div>
 <!-- END PAGE TITLE -->
 
+<% if @experiences.count == 0 %>
+  <%= render :partial => "no_experiences" %>
+<% else %>
 
+  <% if @about.blank? %>
 
-<% @experiences.in_groups_of(3, false) do |experiences| %>
-  <div class="row" style="margin-bottom: 20px;">
-    <% experiences.each do |experience| %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= render :partial => "experiences", :locals => { :columns => 2 } %>
+      </div>
       <div class="col-md-4">
-        <div class="widget-item narrow-margin">
-          <div style="max-height:214px" class="tiles green  overflow-hidden full-height">
-            <div class="overlayer bottom-right fullwidth">
-              <div class="overlayer-wrapper">
-                <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-            <!--TODO: Change this image to the image of the experience-->
-            <!--<img class="lazy hover-effect-img image-responsive-width" alt="" src="assets/img/others/10.png"> -->
-            <% experience_image = ExperienceImage.where(:experience_id => experience.id).first %>
-            <% if experience_image.nil? %>
-
-            <% else %>
-              <%# image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
-              <%= filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
-            <%end%>
-
-          </div>
-          <div class="tiles white ">
-            <div class="tiles-body">
-              <div class="row">
-                <div class="user-comment-wrapper pull-left">
-                  <div class="comment">
-                    <div class="user-name text-black bold"> <%= experience.name %> </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="p-l-15 p-t-10 p-r-20">
-                  <p><%= truncate(experience.description, length: 100) %></p>
-
-                  <div class="post p-t-10 p-b-10">
-                    <% reviews = Review.where(:experience_id => experience.id) %>
-                    <a href="#" data-toggle="modal" data-target="#review_list_<%= experience.id %>"><span class="bold text-success">View Reviews</span></a>
-                    <!--REVIEWS LIST START-->
-
-                    <div class="modal fade" id="review_list_<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <br>
-                            <i class="icon-credit-card icon-7x"></i>
-                            <h4 id="myModalLabel" class="semi-bold">List of reviews</h4>
-                            <br>
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                              <div class="col-md-12">
-                                <div class="grid simple ">
-                                  <div class="grid-body no-border">
-                                    <table class="table no-more-tables">
-                                      <thead>
-                                      <tr>
-                                        <th style="width:1%">
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" class="checkall" value="1" id="checkbox10">
-                                            <label for="checkbox10"></label>
-                                          </div>
-                                        </th>
-                                        <th style="width:35%">Review By</th>
-                                        <th style="width:12%"></th>
-                                      </tr>
-                                      </thead>
-                                      <tbody>
-
-                                      <% reviews.each do |review| %>
-                                        <tr>
-                                          <td class="v-align-middle">
-                                            <div class="checkbox check-default">
-                                              <input type="checkbox" value="<%= review.id %>" class="review_select" id="checkbox<%= review.id %>">
-                                              <label for="checkbox<%= review.id %>"></label>
-                                            </div>
-                                          </td>
-                                          <td class="v-align-middle">
-                                            <%= review.name %>
-                                            <br/>
-                                            <div style="margin-top: 10px" class="review_comment" id="<%= experience.id %>_<%= review.id %>">
-                                              <%= review.comment %>
-                                            </div>
-                                          </td>
-                                          <td class="v-align-middle"><a href="#<%= experience.id %>_<%= review.id %>" class="view_review">View Review</a></td>
-                                        </tr>
-                                      <% end %>
-                                      </tbody>
-                                    </table>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                        <!-- /.modal-content -->
-                      </div>
-                      <!-- /.modal-dialog -->
-                    </div>
-                    <!--REVIEWS LIST END-->
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="well well-large">
+          <h4>
+            <span class="semi-bold">No about</span>
+            you added
+            <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
+          </h4>
+          <p>
+            An about you helps your customers find out a little about who you are and why you love conducting your experiences.
+          </p>
+          <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-success btn-con" %>
         </div>
-      </div> <!-- END EXPERIENCE ITEM -->
-    <% end %>
-  </div>
+      </div>
+
+    </div>
+
+  <% else %>
+    <%= render :partial => "experiences", :locals => { :columns => 3 } %>
+  <% end %>
+
+
 <% end %>
-
-
-
-
-
