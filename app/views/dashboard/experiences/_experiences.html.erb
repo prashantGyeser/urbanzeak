@@ -1,8 +1,14 @@
 
-<% @experiences.in_groups_of(3, false) do |experiences| %>
+<% @experiences.in_groups_of(columns, false) do |experiences| %>
   <div class="row" style="margin-bottom: 20px;">
     <% experiences.each do |experience| %>
-      <div class="col-md-4">
+
+      <% if columns == 2 %>
+        <div class="col-md-6">
+      <% else %>
+        <div class="col-md-4">
+      <% end %>
+
         <div class="widget-item narrow-margin">
           <div style="max-height:214px" class="tiles green  overflow-hidden full-height">
             <div class="overlayer bottom-right fullwidth">
@@ -28,86 +34,15 @@
               <div class="row">
                 <div class="user-comment-wrapper pull-left">
                   <div class="comment">
-                    <div class="user-name text-black bold"> <%= experience.name %> </div>
+                    <div class="user-name text-black bold"> <%= link_to experience.name, experience_path(experience) %> </div>
                   </div>
                   <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="p-l-15 p-t-10 p-r-20">
-                  <p><%= truncate(experience.description, length: 100) %></p>
+                  <p><%= truncate(experience.what_does_this_include, length: 100) %></p>
 
-                  <div class="post p-t-10 p-b-10">
-                    <% reviews = Review.where(:experience_id => experience.id) %>
-                    <a href="#" data-toggle="modal" data-target="#review_list_<%= experience.id %>"><span class="bold text-success">View Reviews</span></a>
-                    <!--REVIEWS LIST START-->
 
-                    <div class="modal fade" id="review_list_<%= experience.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <br>
-                            <i class="icon-credit-card icon-7x"></i>
-                            <h4 id="myModalLabel" class="semi-bold">List of reviews</h4>
-                            <br>
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                              <div class="col-md-12">
-                                <div class="grid simple ">
-                                  <div class="grid-body no-border">
-                                    <table class="table no-more-tables">
-                                      <thead>
-                                      <tr>
-                                        <th style="width:1%">
-                                          <div class="checkbox check-default">
-                                            <input type="checkbox" class="checkall" value="1" id="checkbox10">
-                                            <label for="checkbox10"></label>
-                                          </div>
-                                        </th>
-                                        <th style="width:35%">Review By</th>
-                                        <th style="width:12%"></th>
-                                      </tr>
-                                      </thead>
-                                      <tbody>
-
-                                      <% reviews.each do |review| %>
-                                        <tr>
-                                          <td class="v-align-middle">
-                                            <div class="checkbox check-default">
-                                              <input type="checkbox" value="<%= review.id %>" class="review_select" id="checkbox<%= review.id %>">
-                                              <label for="checkbox<%= review.id %>"></label>
-                                            </div>
-                                          </td>
-                                          <td class="v-align-middle">
-                                            <%= review.name %>
-                                            <br/>
-                                            <div style="margin-top: 10px" class="review_comment" id="<%= experience.id %>_<%= review.id %>">
-                                              <%= review.comment %>
-                                            </div>
-                                          </td>
-                                          <td class="v-align-middle"><a href="#<%= experience.id %>_<%= review.id %>" class="view_review">View Review</a></td>
-                                        </tr>
-                                      <% end %>
-                                      </tbody>
-                                    </table>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                        <!-- /.modal-content -->
-                      </div>
-                      <!-- /.modal-dialog -->
-                    </div>
-                    <!--REVIEWS LIST END-->
-                    <div class="clearfix"></div>
-                  </div>
                 </div>
               </div>
             </div>

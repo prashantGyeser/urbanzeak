@@ -12,5 +12,32 @@
 <% if @experiences.count == 0 %>
   <%= render :partial => "no_experiences" %>
 <% else %>
-  <%= render :partial => "experiences" %>
+
+  <% if @about.blank? %>
+
+    <div class="row">
+      <div class="col-md-8">
+        <%= render :partial => "experiences", :locals => { :columns => 2 } %>
+      </div>
+      <div class="col-md-4">
+        <div class="well well-large">
+          <h4>
+            <span class="semi-bold">No about</span>
+            you added
+            <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
+          </h4>
+          <p>
+            An about you helps your customers find out a little about who you are and why you love conducting your experiences.
+          </p>
+          <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-success btn-con" %>
+        </div>
+      </div>
+
+    </div>
+
+  <% else %>
+    <%= render :partial => "experiences", :locals => { :columns => 3 } %>
+  <% end %>
+
+
 <% end %>
