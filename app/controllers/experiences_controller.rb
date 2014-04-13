@@ -10,6 +10,14 @@ class ExperiencesController < ApplicationController
   def index
     host = User.find_by_subdomain(request.subdomain)
     @experiences = Experience.where(:user_id => host.id)
+
+    if @experiences.count == 1
+      #url_to_redirect_to = request.subdomain + '.' + request.domain + request.port_string +experiences_path(@experiences)
+      redirect_to experience_path(@experiences.first)
+    else
+      
+    end
+    
   end
 
   # GET /experiences/1
