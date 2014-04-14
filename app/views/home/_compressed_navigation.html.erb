@@ -1,0 +1,25 @@
+<header id="ha-header" class="ha-header ha-header-hide " >
+  <div class="ha-header-perspective">
+    <div class="ha-header-front navbar navbar-default">
+
+      <div class="compressed">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand compressed"><%= image_tag "homepage/logo.png" %></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" >
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path  %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </div>
+  </div>
+</header>
