@@ -2801,3 +2801,8 @@ form legend,
   margin-left: 5px;
 }
    
+/* Fix for the homepage where there is additional space showing up below the images*/
+.tp-fullwidth-forcer
+{
+  height: 270px !important;
+}

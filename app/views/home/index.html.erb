@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
-  <title>Webarch - Responsive Frontend & Admin Dashboard Template</title>
+  <title>urbanzeak - The easiest way to sell online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
@@ -23,70 +23,9 @@
 <body>
 
 <div class="main-wrapper">
-<header id="ha-header" class="ha-header ha-header-hide " >
-  <div class="ha-header-perspective">
-    <div class="ha-header-front navbar navbar-default">
-
-      <div class="compressed">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand compressed">
-            <!--<img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>-->
-            <%= image_tag "homepage/logo.png" %>
-          </a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right" >
-            <li >
-              <!--<a href="">Sign Up</a>-->
-              <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
-            <li >
-              <%= link_to "Login", new_user_session_path  %>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-
-    </div>
-  </div>
-</header>
+  <%= render :partial => "compressed_navigation" %>
 <div class="section full-view ha-waypoint" data-animate-down="ha-header-hide" data-animate-up="ha-header-hide">
-  <div role="navigation" class="navbar navbar-transparent navbar-top">
-    <div class="container">
-      <div class="compressed">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand">
-            <!--<img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo_condensed.png" data-src-retina="assets/img/logo2x.png" width="119" height="22"/>-->
-            <%= image_tag "homepage/logo_condensed.png" %>
-          </a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right" >
-            <li >
-              <!--<a href="">Sign Up</a>-->
-              <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
-            <li >
-              <%= link_to "Login", new_user_session_path  %>
-            </li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  </div>
+  <%= render :partial => "navigation" %>
   <%= render :partial => "slider" %>
 </div>
 <div class="section white text-center p-t-40 p-b-40" id="banner-footer">

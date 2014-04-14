@@ -161,7 +161,8 @@ $(document).ready(function(){
 			var imgHeight=$(this).find("img").height();			
 			$(this).find(".portfolio-image-wrapper").height(imgHeight);			
 
-	});	
+	});
+
 
 });	
 
