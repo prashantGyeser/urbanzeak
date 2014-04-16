@@ -29,16 +29,6 @@ ready = function() {
   });
 
 
-  $(function() {
-    var mediaDropzone;
-    mediaDropzone = new Dropzone("#new_experience_image");
-    return mediaDropzone.on("success", function(file, responseText) {
-      var imageUrl;
-      imageUrl = responseText.image.url;
-    });
-  });
-
-
   // Landmark auto complete
   $('#experience_land_mark').geocomplete({
     map: "#map",
