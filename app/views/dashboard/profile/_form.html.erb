@@ -38,7 +38,12 @@
         <div class="grid-body no-border">
 
           <div class="row-fluid">
-            <%= f.file_field :avatar, :class => "form-control"%>
+            <% if @host.avatar.blank? %>
+              <%= f.file_field :avatar, :class => "form-control"%>
+            <% else %>
+              <%= image_tag @host.avatar, :class => "img-responsive" %>
+            <% end %>
+
           </div>
         </div>
       </div>
