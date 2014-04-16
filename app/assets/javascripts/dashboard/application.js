@@ -25,7 +25,6 @@
 //= require plugins/jquery-slimscroll/jquery.slimscroll.min
 //= require plugins/pace/pace.min
 //= require plugins/jquery-numberAnimate/jquery.animateNumbers
-//= require plugins/dropzone/dropzone.min
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
 //= require plugins/bootstrap-timepicker/js/bootstrap-timepicker.min
 //= require plugins/bootstrap-select2/select2.min
