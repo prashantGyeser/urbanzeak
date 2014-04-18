@@ -2,7 +2,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
-  <title>urbanzeak - Find customers fast</title>
+  <title><%= @experience.name %> in <%= @experience.city %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
@@ -102,7 +102,7 @@
 
 <% else %>
   <!--REVIEWS START-->
-  <%# render :partial => "reviews" %>
+  <%= render :partial => "reviews" %>
   <!--REVIEWS END-->
 <% end %>
 
@@ -133,12 +133,6 @@
 </div>
 </div>
 
-
-
-
-<%= javascript_include_tag "expShow/google_maps", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "expShow/core", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "expShow/experience", "data-turbolinks-track" => true %>
 
 <script id="map_location_latitude" type="text/json">
   <%= @experience.latitude.to_json %>

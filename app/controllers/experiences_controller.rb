@@ -29,7 +29,7 @@ class ExperiencesController < ApplicationController
     @host = Host.where(:user_id => @experience.user_id).first
     dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
     @dates_array = []
-    @reviews = Review.find_by_experience_id(@experience.id)
+    @reviews = Review.where(:experience_id => @experience.id).where(:show => true).limit(3)
 
     dates_hash.each do |experience_date_item|
       @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s

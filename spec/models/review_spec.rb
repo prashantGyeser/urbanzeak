@@ -9,6 +9,7 @@
 #  experience_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  show          :boolean
 #
 
 require 'spec_helper'
