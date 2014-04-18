@@ -3,7 +3,6 @@ ready = function() {
 
   $('#file-upload-success-message').hide();
 
-
   var allFilesUploaded = false;
 
   //Date Pickers
@@ -28,30 +27,6 @@ ready = function() {
     showMeridian: false
   });
 
-  // "myAwesomeDropzone" is the camelized version of the HTML element's ID
-  Dropzone.options.newExperienceImage = {
-    paramName: "experience_image[image]", // The name that will be used to transfer the file
-    maxFilesize: 1, // MB
-    parallelUploads: 6,
-    init: function() {
-      this.on("complete", function() {
-        if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
-          allFilesUploaded = true;
-        }
-      });
-    }
-  };
-
-
-  $(function() {
-    var mediaDropzone;
-    mediaDropzone = new Dropzone("#new_experience_image");
-    return mediaDropzone.on("success", function(file, responseText) {
-      var imageUrl;
-      imageUrl = responseText.image.url;
-    });
-  });
-
 
   // Landmark auto complete
   $('#experience_land_mark').geocomplete({
@@ -74,6 +49,7 @@ ready = function() {
   });
 
   // Checking to see if all the files are uploaded.
+  /*
   $('#create_experience').submit(function(event){
     event.preventDefault();
     if( allFilesUploaded == true ){
@@ -85,7 +61,7 @@ ready = function() {
       },250);
     }
   });
-
+  */
 };
 
 $(document).ready(ready);

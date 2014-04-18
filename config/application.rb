@@ -56,10 +56,8 @@ module Urbanzeak
     config.assets.precompile += %w( dashboard/chat.js )
     config.assets.precompile += %w( dashboard/demo.js )
     config.assets.precompile += %w( dashboard/calendar.js )
-    config.assets.precompile += %w( dropzone/css/dropzone.css )
     config.assets.precompile += %w( bootstrap-datepicker/css/datepicker.css )
     config.assets.precompile += %w( bootstrap-timepicker/css/bootstrap-timepicker.css )
-    config.assets.precompile += %w( dropzone/dropzone.min.js )
     config.assets.precompile += %w( bootstrap-datepicker/js/bootstrap-datepicker.js )
     config.assets.precompile += %w( bootstrap-timepicker/js/bootstrap-timepicker.min.js )
     config.assets.precompile += %w( dashboard/experiences.js.erb )
@@ -68,6 +66,7 @@ module Urbanzeak
     config.assets.precompile += %w( dashboard/messages.js )
     config.assets.precompile += %w( plugins/bootstrap-datepicker/css/datepicker.css )
     config.assets.precompile += %w( plugins/bootstrap-datepicker/js/bootstrap-datepicker.js )
+    config.assets.precompile += %w( dashboard/reviews.js )
 
   end
 end
