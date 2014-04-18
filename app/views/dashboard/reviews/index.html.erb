@@ -46,9 +46,9 @@
                   <td class="v-align-middle">
                     <div class="checkbox check-default">
                       <% if review.show == true %>
-                        <input id="<%= experience.id %>_<%= review.id %>" type="checkbox" value="1" checked>
+                        <input id="<%= experience.id %>_<%= review.id %>" type="checkbox" value="<%= review.id %>" checked>
                       <% else %>
-                        <input id="<%= experience.id %>_<%= review.id %>" type="checkbox" value="1">
+                        <input id="<%= experience.id %>_<%= review.id %>" type="checkbox" value="<%= review.id %>">
                       <% end %>
 
                       <label for="<%= experience.id %>_<%= review.id %>"></label>
