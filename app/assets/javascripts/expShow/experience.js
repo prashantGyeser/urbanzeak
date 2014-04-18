@@ -11,13 +11,15 @@ $(document).ready(function(){
     $('#create_review').click(function(e){
         e.preventDefault();
         $.post('/experiences/create_review', $('form#new_review').serialize(), function(data){
-            $('.modal-body').hide();
-            $('#review_created_success').show();
-            $('#create_review').attr('disabled', true);
-            $('#create_review').addClass('disabled');
-        },
+                $('.modal-body').hide();
+                $('#review_created_success').show();
+
+                $('#create_review').attr('disabled', true);
+                $('#create_review').addClass('disabled');
+            },
             'json'
         );
+
     });
 
     $('#send_conversation').click(function(e){
@@ -48,7 +50,7 @@ $(document).ready(function(){
             var available_dates = data;
             // Removing the datepicker if is already there
             $('#attending_date').datepicker('remove');
-
+console.log($('form#new_review').serialize());
             // Loading the date picker after the number of seats is selected.
             $('#attending_date').datepicker({
                 beforeShowDay: function(date) {

@@ -51,6 +51,7 @@ Urbanzeak::Application.routes.draw do
     get "purchases" => "purchases#index"
     get "reports" => "reports#index"
     get "algo" => "algo#index"
+    get "reviews" => "reviews#index"
   end
 
   get "home/index"
