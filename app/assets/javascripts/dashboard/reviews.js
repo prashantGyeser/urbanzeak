@@ -4,8 +4,9 @@ $(document).ready(function(){
         {
             // Todo: Send the data to the server and check this box
             // Todo: Check if a host has already selected 3 reviews. If yes throw an error
-            $.post('/dashboard/reviews/add_review_to_show', {experience_id: 77, review_id: 33}, function(data){
-                    alert('data posted');
+            var review_selected = $(this).val();
+            $.post('/dashboard/reviews/add_review_to_show', {review_id: review_selected}, function(data){
+
                 },
                 'json'
             );
