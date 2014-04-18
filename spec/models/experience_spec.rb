@@ -34,6 +34,7 @@
 #  category               :string(255)
 #  hours                  :integer
 #  minutes                :integer
+#  slug                   :string(255)
 #
 
 require 'spec_helper'

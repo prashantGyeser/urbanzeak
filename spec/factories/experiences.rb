@@ -34,6 +34,7 @@
 #  category               :string(255)
 #  hours                  :integer
 #  minutes                :integer
+#  slug                   :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
