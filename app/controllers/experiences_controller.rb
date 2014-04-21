@@ -91,8 +91,8 @@ class ExperiencesController < ApplicationController
     
       
     if postToFBWall == true
-        token = fbCheckToken.token    
-        
+        token = fbCheckToken.token
+
         # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
       session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
         logger.debug "Tje session is: #{session}"

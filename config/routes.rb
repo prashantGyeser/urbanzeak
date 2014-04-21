@@ -53,6 +53,7 @@ Urbanzeak::Application.routes.draw do
     get "algo" => "algo#index"
     get "reviews" => "reviews#index"
     post 'reviews/add_review_to_show' => "reviews#add_review_to_show"
+    post 'experiences/facebook_share' => "experiences#facebook_share"
   end
 
   get "home/index"

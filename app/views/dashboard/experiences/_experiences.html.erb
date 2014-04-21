@@ -1,3 +1,4 @@
+<input type="hidden" name="experience_id" id="experience_id" value="" />
 
 <% @experiences.in_groups_of(columns, false) do |experiences| %>
   <div class="row" style="margin-bottom: 20px;">
@@ -11,13 +12,7 @@
 
         <div class="widget-item narrow-margin">
           <div style="max-height:214px" class="tiles green  overflow-hidden full-height">
-            <div class="overlayer bottom-right fullwidth">
-              <div class="overlayer-wrapper">
-                <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
+
             <!--TODO: Change this image to the image of the experience-->
             <!--<img class="lazy hover-effect-img image-responsive-width" alt="" src="assets/img/others/10.png"> -->
             <% experience_image = ExperienceImage.where(:experience_id => experience.id).first %>
@@ -25,7 +20,7 @@
 
             <% else %>
               <%# image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
-              <%= filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
+              <%# filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
             <%end%>
 
           </div>
@@ -41,8 +36,9 @@
                 <div class="clearfix"></div>
                 <div class="p-l-15 p-t-10 p-r-20">
                   <p><%= truncate(experience.what_does_this_include, length: 100) %></p>
-
-
+                  <div class="p-t-10">
+                    <button class="btn btn-cons share-button-load-modal" data-toggle="modal" data-target="#share"  data-button="<%= experience.id %>"> Share </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,7 +49,9 @@
   </div>
 <% end %>
 
-
+<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- START -->
+<%= render :partial => "share" %>
+<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- END -->
 
 
 
