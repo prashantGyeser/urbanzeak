@@ -118,14 +118,14 @@ class Experience < ActiveRecord::Base
   private
 
   def store_version
-
+    puts "Ok it is fetting intho the check"
     if self.id.present?
       version = Version.new
       if self.price_changed?
-        version.price = self.price
+        version.price = self.price_was
       end
       if self.max_seats_changed?
-        version.max_seats = self.max_seats
+        version.max_seats = self.max_seats_was
       end
       version.save
     end
