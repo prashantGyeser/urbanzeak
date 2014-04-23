@@ -5,7 +5,7 @@
 
 <!-- BEGIN PAGE TITLE -->
 <div class="page-title">
-  <h3>New Experience</h3>
+  <h3>Edit Experience</h3>
 </div>
 <!-- END PAGE TITLE -->
 
@@ -17,7 +17,21 @@
   <script>
     $('#experience_exp_date').datepicker({
       multidate: true,
-      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>",
+      beforeShowDay: function(date) {
+        if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), <%=raw @available_dates.to_json %>) == -1) {
+//          console.log($(this));
+//          return {
+//            enabled: false
+//          };
+          return 'highlight';
+        }
+        return [true, ''];
+
+      }
     });
+
   </script>
 <% end %>
+
+

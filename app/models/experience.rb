@@ -49,6 +49,7 @@ class Experience < ActiveRecord::Base
   has_many :experience_images
   has_many :reviews
   has_many :attendees
+  has_many :versions
 
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable
@@ -56,6 +57,9 @@ class Experience < ActiveRecord::Base
   # Changing the url so that it uses a friendly id
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  before_save :store_version
+
 
   def self.total_visits_this_month(user_id)
     experiences = Experience.where(:user_id => user_id)
@@ -108,6 +112,22 @@ class Experience < ActiveRecord::Base
       sales_today = sales_today + (attendees * experience.price )
     end
     return sales_today
+  end
+
+
+  private
+
+  def store_version
+    if self.id.present?
+      version = Version.new
+      if self.price_changed?
+        version.price = self.price_was
+      end
+      if self.max_seats_changed?
+        version.max_seats = self.max_seats_was
+      end
+      version.save
+    end
   end
 
 end

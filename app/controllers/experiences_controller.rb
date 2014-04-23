@@ -148,6 +148,45 @@ class ExperiencesController < ApplicationController
   # PATCH/PUT /experiences/1.json
   def update
     respond_to do |format|
+    
+      logger.debug "Okay it is getting here"
+      experience_dates = params[:experience][:exp_date].split(',')
+      images = params[:experience][:images].split(',')
+      logger.debug "The dates that are coming in are: #{experience_dates.inspect}"
+
+      if experience_dates.blank?
+        
+      else
+        previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+        previous_dates.each do |prev_date|
+          prev_date.destroy
+        end
+        experience_dates.each do |experience_date|
+          if images.blank?
+            @experience_date = ExperienceDate.new
+            @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+            @experience_date.experience_id = @experience.id
+            @experience_date.save
+          else
+            @experience_date = ExperienceDate.new
+            @experience_date.experience_date =  Date.strptime(experience_date[1..10].to_s, '%m/%d/%Y')
+            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+            @experience_date.experience_id = @experience.id
+            @experience_date.save
+          end
+
+        end
+      end
+      logger.debug "The images are: #{images.inspect}"
+      images.each do |image|
+        exp_image = ExperienceImage.new
+        logger.debug "The image in the loop is #{image}"
+        exp_image.image = image
+        exp_image.experience_id = @experience.id
+        exp_image.save
+      end
+
       if @experience.update(experience_params)
         format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
@@ -233,7 +272,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category, :hours, :images)
     end
 
     def review_params

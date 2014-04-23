@@ -11,13 +11,6 @@ ready = function() {
     todayHighlight: true
   });
 
-  console.log("The time is:", "<%=  Date.today.strftime('%m/%d/%Y') %>");
-
-  $('#experience_exp_date').datepicker({
-    multidate: true,
-    startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
-  });
-
 
   //Time pickers
   $('.timepicker-default').timepicker();
@@ -48,6 +41,44 @@ ready = function() {
     $("#reset").show();
   });
 
+  /*
+  $('.remove-photo').click(function(e){
+    e.preventDefault();
+    var link = $(this).attr('data-photo-id');
+    console.log(link);
+    if(link == "")
+    {
+      alert("Link empty");
+    }
+    else
+    {
+      alert("Woohoo!");
+    }
+  });
+  */
+  $(function(){
+    $('#files_uploaded_list').on('click','button', function(e){
+      e.preventDefault();
+      var link = $(this).attr('data-photo-id');
+
+      if(link == null)
+      {
+
+      }
+      else
+      {
+        var button_clicked = $(this);
+
+        $.post('/dashboard'+link, function(data){
+                  button_clicked.closest('td').closest('tr').hide();
+                },
+                'json'
+        );
+
+      }
+    });
+  });
+
 
   // Checking to see if all the files are uploaded.
   /*
@@ -74,9 +105,10 @@ function onPhotoUpload(event){
 
   $(filesUploaded).each(function(index){
     var file_attached = $(this).get(0).filename;
+    var file_attached_url = $(this).get(0).url;
     console.log("The file name of the attached file is:", file_attached);
 
-    var row_to_add = '<tr><td>' + file_attached + '</td><td><span class="label label-success">UPLOADED</span></td></tr>';
+    var row_to_add = '<tr style="border-top:5px solid #fff"><td><img src="' + file_attached_url + '" class="img-responsive"/> </td><td></td></tr>';
 
     //console.log("The row is:", row_to_add);
     //$('#files-uploaded-list tr:last').after(row_to_add);

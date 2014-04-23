@@ -19,6 +19,58 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   def show
   end
 
+  def edit
+    @available_dates = []
+    @experience = Experience.find(params[:id])
+    experience_dates = ExperienceDate.where(:experience_id => @experience.id)
+    total_number_of_dates = experience_dates.count
+    counter = 0
+    experience_dates.each do |experience_date|
+      #@available_dates << (experience_date.experience_date.strftime("%Y/%m/%d").to_s)
+      @available_dates << (experience_date.experience_date.strftime("%m/%d/%Y").to_s)
+    end
+    #@experience.exp_date = @available_dates
+    if @available_dates.blank?
+      
+    else
+      @experience.exp_date = @available_dates.map(&:inspect).join(', ')  
+    end
+    @experience.exp_time = @experience.exp_time.strftime("%I:%M %p") #"7:15 PM"
+    @experience_images = ExperienceImage.where(:experience_id => @experience.id)
+    @experience_images = ExperienceImage.where(:experience_id => @experience.id).where.not(status: "closed")
+  end
+
+
+  # PATCH/PUT /experiences/1
+  # PATCH/PUT /experiences/1.json
+  def update
+    respond_to do |format|
+      if @experience.update(experience_params)
+        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def remove_photo
+    logger.debug "The params are: #{params.inspect}"
+
+    experience_image = ExperienceImage.find(params[:id])
+    experience_image.status = "closed"
+    logger.debug "The image is: #{experience_image}"
+
+    respond_to do |format|
+      if experience_image.save
+        format.json { render json: experience_image }
+      else
+        format.json { render json: experience_image.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def template
     @templates = Experience.where(:template => true)
   end
@@ -68,9 +120,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
 
     end
-
-
-
   end
+
 
 end
