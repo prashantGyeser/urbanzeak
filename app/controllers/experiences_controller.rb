@@ -148,23 +148,37 @@ class ExperiencesController < ApplicationController
   # PATCH/PUT /experiences/1.json
   def update
     respond_to do |format|
-
+    
       logger.debug "Okay it is getting here"
       experience_dates = params[:experience][:exp_date].split(',')
       images = params[:experience][:images].split(',')
+      logger.debug "The dates that are coming in are: #{experience_dates.inspect}"
 
-      experience_dates.each do |experience_date|
+      if experience_dates.blank?
+        
+      else
         previous_dates = ExperienceDate.where(:experience_id => @experience.id)
         previous_dates.each do |prev_date|
           prev_date.destroy
         end
-        @experience_date = ExperienceDate.new
-        @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
-        @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-        @experience_date.experience_id = @experience.id
-        @experience_date.save
-      end
+        experience_dates.each do |experience_date|
+          if images.blank?
+            @experience_date = ExperienceDate.new
+            @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+            @experience_date.experience_id = @experience.id
+            @experience_date.save
+          else
+            @experience_date = ExperienceDate.new
+            @experience_date.experience_date =  Date.strptime(experience_date[1..10].to_s, '%m/%d/%Y')
+            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+            @experience_date.experience_id = @experience.id
+            @experience_date.save
+          end
 
+        end
+      end
+      logger.debug "The images are: #{images.inspect}"
       images.each do |image|
         exp_image = ExperienceImage.new
         logger.debug "The image in the loop is #{image}"

@@ -55,6 +55,7 @@ Urbanzeak::Application.routes.draw do
     post 'reviews/add_review_to_show' => "reviews#add_review_to_show"
     post 'experiences/facebook_share' => "experiences#facebook_share"
     get 'experiences/:id/edit' => "experiences#edit"
+    post 'experiences/:id/remove-photo' => "experiences#remove_photo"
   end
 
   get "home/index"
