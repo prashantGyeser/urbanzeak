@@ -1,0 +1,14 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag "dashboard/experiences", 'data-turbolinks-track' => true %>
+  <%= filepicker_js_include_tag %>
+<% end %>
+
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Edit Experience</h3>
+</div>
+<!-- END PAGE TITLE -->
+
+<!-- BEGIN PlACE PAGE CONTENT HERE -->
+<%= render 'form' %>
+<!-- END PLACE PAGE CONTENT HERE -->

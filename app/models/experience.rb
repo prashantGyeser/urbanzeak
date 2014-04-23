@@ -118,7 +118,6 @@ class Experience < ActiveRecord::Base
   private
 
   def store_version
-    puts "Ok it is fetting intho the check"
     if self.id.present?
       version = Version.new
       if self.price_changed?

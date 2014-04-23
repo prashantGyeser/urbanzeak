@@ -19,6 +19,24 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   def show
   end
 
+  def edit
+    @experience = Experience.find(params[:id])
+  end
+
+  # PATCH/PUT /experiences/1
+  # PATCH/PUT /experiences/1.json
+  def update
+    respond_to do |format|
+      if @experience.update(experience_params)
+        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def template
     @templates = Experience.where(:template => true)
   end
@@ -68,9 +86,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
 
     end
-
-
-
   end
+
 
 end
