@@ -31,6 +31,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
     #@experience.exp_date = @available_dates
     @experience.exp_date = @available_dates.map(&:inspect).join(', ')
+    @experience.exp_time = experience_dates.first.experience_time.strftime("%I:%M %p") #"7:15 PM"
   end
 
 
