@@ -12,3 +12,12 @@
 <!-- BEGIN PlACE PAGE CONTENT HERE -->
 <%= render 'form' %>
 <!-- END PLACE PAGE CONTENT HERE -->
+
+<%= content_for :edit_js do %>
+  <script>
+    $('#experience_exp_date').datepicker({
+      multidate: true,
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
+    });
+  </script>
+<% end %>

@@ -12,3 +12,27 @@
 <!-- BEGIN PlACE PAGE CONTENT HERE -->
 <%= render 'form' %>
 <!-- END PLACE PAGE CONTENT HERE -->
+
+<%= content_for :edit_js do %>
+  <script>
+    $('#experience_exp_date').datepicker({
+      multidate: true,
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>",
+      beforeShowDay: function(date) {
+        if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), <%=raw @available_dates.to_json %>) == -1) {
+//          console.log($(this));
+//          return {
+//            enabled: false
+//          };
+          return 'highlight';
+        }
+        return [true, ''];
+
+      }
+    });
+    $('#experience_exp_date').data({date: '2014-04-08'});
+    $('#experience_exp_date').datepicker('update');
+  </script>
+<% end %>
+
+

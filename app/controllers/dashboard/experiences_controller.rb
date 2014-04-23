@@ -20,8 +20,19 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   end
 
   def edit
+    @available_dates = []
     @experience = Experience.find(params[:id])
+    experience_dates = ExperienceDate.where(:experience_id => @experience.id)
+    total_number_of_dates = experience_dates.count
+    counter = 0
+    experience_dates.each do |experience_date|
+      #@available_dates << (experience_date.experience_date.strftime("%Y/%m/%d").to_s)
+      @available_dates << (experience_date.experience_date.strftime("%m/%d/%Y").to_s)
+    end
+    #@experience.exp_date = @available_dates
+    @experience.exp_date = @available_dates.map(&:inspect).join(', ')
   end
+
 
   # PATCH/PUT /experiences/1
   # PATCH/PUT /experiences/1.json
