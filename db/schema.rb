@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418104156) do
+ActiveRecord::Schema.define(version: 20140423072402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 20140418104156) do
     t.string   "phone_number"
     t.string   "email"
     t.date     "attending_date"
+    t.decimal  "price"
+    t.date     "attending_on"
+    t.time     "attending_at"
   end
 
   add_index "attendees", ["experience_id"], name: "index_attendees_on_experience_id", using: :btree
@@ -351,5 +354,15 @@ ActiveRecord::Schema.define(version: 20140418104156) do
   add_index "vanity_participants", ["experiment_id", "seen"], name: "by_experiment_id_and_seen", using: :btree
   add_index "vanity_participants", ["experiment_id", "shown"], name: "by_experiment_id_and_shown", using: :btree
   add_index "vanity_participants", ["experiment_id"], name: "index_vanity_participants_on_experiment_id", using: :btree
+
+  create_table "versions", force: true do |t|
+    t.decimal  "price"
+    t.date     "experience_date"
+    t.time     "experience_time"
+    t.integer  "experience_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "max_seats"
+  end
 
 end

@@ -11,6 +11,9 @@
 #  phone_number   :string(255)
 #  email          :string(255)
 #  attending_date :date
+#  price          :decimal(, )
+#  attending_on   :date
+#  attending_at   :time
 #
 
 class Attendee < ActiveRecord::Base
