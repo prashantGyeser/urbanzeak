@@ -158,19 +158,31 @@ class ExperiencesController < ApplicationController
         
       else
         previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+        prev_date_count = previous_dates.count
         previous_dates.each do |prev_date|
           prev_date.destroy
         end
+        logger.debug "the incoming count is: #{experience_dates.count}"
+        logger.debug "the currebnt count is: #{previous_dates.count}"
         experience_dates.each do |experience_date|
+          #if experience_dates.count == prev_date_count
           if images.blank?
-            @experience_date = ExperienceDate.new
-            @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
-            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-            @experience_date.experience_id = @experience.id
-            @experience_date.save
+            if experience_dates.count == prev_date_count
+              @experience_date = ExperienceDate.new
+              @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+              @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+              @experience_date.experience_id = @experience.id
+              @experience_date.save
+            else
+              @experience_date = ExperienceDate.new
+              @experience_date.experience_date =  Date.strptime(experience_date[1,10].to_s, '%m/%d/%Y')
+              @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+              @experience_date.experience_id = @experience.id
+              @experience_date.save
+            end
           else
             @experience_date = ExperienceDate.new
-            @experience_date.experience_date =  Date.strptime(experience_date[1..10].to_s, '%m/%d/%Y')
+            @experience_date.experience_date =  Date.strptime(experience_date[2..10].to_s, '%m/%d/%Y')
             @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
             @experience_date.experience_id = @experience.id
             @experience_date.save

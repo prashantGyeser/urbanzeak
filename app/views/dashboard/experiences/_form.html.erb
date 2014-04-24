@@ -301,18 +301,20 @@
 
             <table id="files_uploaded_list" class="table table-striped table-flip-scroll cf" style="width: 100%">
               <tbody>
+                <% if @experience_images.present? %>
                 <% @experience_images.each do |exp_image| %>
-                <tr style="border-top:5px solid #fff">
-                  <td>
-                    <img src="<%= exp_image.image %>" class="img-responsive"/>
-                  </td>
-                  <td>
+                  <tr style="border-top:5px solid #fff">
+                    <td>
+                      <img src="<%= exp_image.image %>" class="img-responsive"/>
+                    </td>
+                    <td>
                     <span>
                       <!--<a href="/experiences/<%= exp_image.id %>/remove-photo" class="remove-photo">Delete</a>-->
                       <button class="btn btn-danger btn-sm btn-small remove-photo" type="button" data-photo-id="/experiences/<%= exp_image.id %>/remove-photo">Delete</button>
                     </span>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                <% end %>
                 <% end %>
                 <tr></tr>
               </tbody>
