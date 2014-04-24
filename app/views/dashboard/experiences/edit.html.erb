@@ -15,21 +15,25 @@
 
 <%= content_for :edit_js do %>
   <script>
+    var dates_previous_selected = <%= @available_dates %>;
+    console.log("the previous dates are:" + dates_previous_selected)
+    $.each(dates_previous_selected, function( index, value ) {
+      dates_previous_selected[index] = new Date(dates_previous_selected[index] * 1000);
+    });
+
     $('#experience_exp_date').datepicker({
       multidate: true,
-      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>",
-      beforeShowDay: function(date) {
-        if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), <%=raw @available_dates.to_json %>) == -1) {
-//          console.log($(this));
-//          return {
-//            enabled: false
-//          };
-          return 'highlight';
-        }
-        return [true, ''];
-
-      }
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
+    $('#experience_exp_date').datepicker('setDates', dates_previous_selected);
+    $('#experience_exp_date').datepicker('update');
+  </script>
+  <script>
+
+    $(document).ready(function(){
+      $("#experience_land_mark").trigger("geocode");
+    })
+
 
   </script>
 <% end %>

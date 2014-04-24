@@ -166,28 +166,11 @@ class ExperiencesController < ApplicationController
         logger.debug "the currebnt count is: #{previous_dates.count}"
         experience_dates.each do |experience_date|
           #if experience_dates.count == prev_date_count
-          if images.blank?
-            if experience_dates.count == prev_date_count
-              @experience_date = ExperienceDate.new
-              @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
-              @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-              @experience_date.experience_id = @experience.id
-              @experience_date.save
-            else
-              @experience_date = ExperienceDate.new
-              @experience_date.experience_date =  Date.strptime(experience_date[1,10].to_s, '%m/%d/%Y')
-              @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-              @experience_date.experience_id = @experience.id
-              @experience_date.save
-            end
-          else
-            @experience_date = ExperienceDate.new
-            @experience_date.experience_date =  Date.strptime(experience_date[2..10].to_s, '%m/%d/%Y')
-            @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-            @experience_date.experience_id = @experience.id
-            @experience_date.save
-          end
-
+          @experience_date = ExperienceDate.new
+          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+          @experience_date.experience_id = @experience.id
+          @experience_date.save
         end
       end
       logger.debug "The images are: #{images.inspect}"
