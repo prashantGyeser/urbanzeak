@@ -15,14 +15,12 @@
 
 <%= content_for :edit_js do %>
   <script>
-    console.log(<%= @available_dates %>);
     var dates_previous_selected = <%= @available_dates %>;
+    console.log("the previous dates are:" + dates_previous_selected)
     $.each(dates_previous_selected, function( index, value ) {
-      console.log("The valuye in the loop is: "+ dates_previous_selected[index]);
       dates_previous_selected[index] = new Date(dates_previous_selected[index] * 1000);
-      console.log("The valuye in the loop after calc is: "+ dates_previous_selected[index]);
     });
-    console.log(dates_previous_selected);
+
     $('#experience_exp_date').datepicker({
       multidate: true,
       startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
