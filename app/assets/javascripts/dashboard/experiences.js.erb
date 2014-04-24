@@ -6,10 +6,28 @@ ready = function() {
   var allFilesUploaded = false;
 
   //Date Pickers
-  $('.input-append.date').datepicker({
-    autoclose: true,
-    todayHighlight: true
-  });
+//  $('.input-append.date').datepicker({
+//    autoclose: true,
+//    todayHighlight: true
+//  });
+
+  var coursedates = new Array();
+  coursedates[0] = new Date(1405794600000 * 1000);
+  coursedates[1] = new Date(1405794600000 * 1000);
+  coursedates[2] = new Date(1405794600000 * 1000);
+  coursedates[3] = new Date(1405794600000 * 1000);
+  $('.input-append.date').datepicker('setDates', coursedates);
+  // This works -- Check in May
+  //var end_date = new Date(2014,04,26)
+  //$("#experience_exp_date").datepicker("setDate", end_date);
+  // Also this
+//  var coursedates = new Array();
+//  coursedates[0] = new Date(2014,04,26);
+//  coursedates[1] = new Date(2014,04,27);
+//  coursedates[2] = new Date(2014,04,28);
+//  coursedates[3] = new Date(2014,04,29);
+  //$("#experience_exp_date").datepicker("setDates",coursedates);
+
 
 
   //Time pickers

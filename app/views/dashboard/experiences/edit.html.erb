@@ -15,21 +15,22 @@
 
 <%= content_for :edit_js do %>
   <script>
+    console.log(<%= @available_dates %>);
+    var dates_previous_selected = <%= @available_dates %>;
+    $.each(dates_previous_selected, function( index, value ) {
+      console.log("The valuye in the loop is: "+ dates_previous_selected[index]);
+      dates_previous_selected[index] = new Date(dates_previous_selected[index] * 1000);
+      console.log("The valuye in the loop after calc is: "+ dates_previous_selected[index]);
+    });
+    console.log(dates_previous_selected);
     $('#experience_exp_date').datepicker({
       multidate: true,
-      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>",
-      beforeShowDay: function(date) {
-        if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), <%=raw @available_dates.to_json %>) == -1) {
-//          console.log($(this));
-//          return {
-//            enabled: false
-//          };
-          return 'highlight';
-        }
-        return [true, ''];
-
-      }
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
+    $('#experience_exp_date').datepicker('setDates', dates_previous_selected);
+    $('#experience_exp_date').datepicker('update');
+  </script>
+  <script>
 
   </script>
 <% end %>
