@@ -37,7 +37,6 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
     @experience.exp_time = @experience.exp_time.strftime("%I:%M %p") #"7:15 PM"
     @experience_images = ExperienceImage.where(:experience_id => @experience.id)
-    @experience_images = ExperienceImage.where(:experience_id => @experience.id).where.not(status: "closed")
   end
 
 
@@ -59,15 +58,10 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     logger.debug "The params are: #{params.inspect}"
 
     experience_image = ExperienceImage.find(params[:id])
-    experience_image.status = "closed"
-    logger.debug "The image is: #{experience_image}"
+    experience_image.destroy
 
     respond_to do |format|
-      if experience_image.save
-        format.json { render json: experience_image }
-      else
-        format.json { render json: experience_image.errors, status: :unprocessable_entity }
-      end
+      format.json { render json: experience_image }
     end
   end
 
