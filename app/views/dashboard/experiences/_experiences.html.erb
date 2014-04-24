@@ -20,7 +20,7 @@
 
             <% else %>
               <%# image_tag experience_image.image_url.to_s, :class => "lazy hover-effect-img image-responsive-width" %>
-              <%# filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
+              <%= filepicker_image_tag experience_image.image, w: 600, h: 600, fit: 'crop' %>
             <%end%>
 
           </div>
