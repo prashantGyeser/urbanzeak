@@ -81,19 +81,24 @@ ready = function() {
     $('#files_uploaded_list').on('click','button', function(e){
       e.preventDefault();
       var link = $(this).attr('data-photo-id');
+      var image_url_of_button_clicked = $(this).attr('data-photo-url');
+      console.log("The photo url is:", image_url_of_button_clicked);
 
       if(link != null)
       {
         var button_clicked = $(this);
 
-
-
+        var images = $('#experience_images').val();
+        var images_array = images.split(',');
+        var index_of_link_to_remove = images_array.indexOf(image_url_of_button_clicked);
+        images_array.splice(index_of_link_to_remove,1);
+        $('#experience_images').val(images_array.toString());
+        console.log("The images are:" + $('#experience_images').val());
         $.post('/dashboard'+link, function(data){
                   button_clicked.closest('td').closest('tr').hide();
                 },
                 'json'
         );
-
       }
     });
   });
