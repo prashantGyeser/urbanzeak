@@ -56,14 +56,17 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
   end
 
-  def remove_photo
+  def remove_photos
     logger.debug "The params are: #{params.inspect}"
 
-    experience_image = ExperienceImage.find(params[:id])
-    experience_image.destroy
+    experience_images = ExperienceImage.where(:experience_id => params[:experience_id])
+    experience_images.each do |experience_image|
+      experience_image.destroy
+    end
+
 
     respond_to do |format|
-      format.json { render json: experience_image }
+      format.json { render json: experience_images}
     end
   end
 
