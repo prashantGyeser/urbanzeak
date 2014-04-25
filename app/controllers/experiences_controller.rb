@@ -148,22 +148,20 @@ class ExperiencesController < ApplicationController
   # PATCH/PUT /experiences/1.json
   def update
     respond_to do |format|
-    
-      logger.debug "Okay it is getting here"
+
       experience_dates = params[:experience][:exp_date].split(',')
       images = params[:experience][:images].split(',')
-      logger.debug "The dates that are coming in are: #{experience_dates.inspect}"
 
       if experience_dates.blank?
         
       else
         previous_dates = ExperienceDate.where(:experience_id => @experience.id)
         prev_date_count = previous_dates.count
+
         previous_dates.each do |prev_date|
           prev_date.destroy
         end
-        logger.debug "the incoming count is: #{experience_dates.count}"
-        logger.debug "the currebnt count is: #{previous_dates.count}"
+
         experience_dates.each do |experience_date|
           #if experience_dates.count == prev_date_count
           @experience_date = ExperienceDate.new
