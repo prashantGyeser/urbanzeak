@@ -84,7 +84,7 @@ ready = function() {
       var image_url_of_button_clicked = $(this).attr('data-photo-url');
       console.log("The photo url is:", image_url_of_button_clicked);
 
-      if(link != null)
+      if(typeof link !== 'undefined')
       {
         var button_clicked = $(this);
 
@@ -99,6 +99,18 @@ ready = function() {
                 },
                 'json'
         );
+      }
+      else
+      {
+        var button_clicked = $(this);
+
+        var images = $('#experience_images').val();
+        var images_array = images.split(',');
+        var index_of_link_to_remove = images_array.indexOf(image_url_of_button_clicked);
+        images_array.splice(index_of_link_to_remove,1);
+        $('#experience_images').val(images_array.toString());
+        console.log("The images are:" + $('#experience_images').val());
+        button_clicked.closest('td').closest('tr').hide();
       }
     });
   });
@@ -132,7 +144,7 @@ function onPhotoUpload(event){
     var file_attached_url = $(this).get(0).url;
     console.log("The file name of the attached file is:", file_attached);
 
-    var row_to_add = '<tr style="border-top:5px solid #fff"><td><img src="' + file_attached_url + '" class="img-responsive"/> </td><td></td></tr>';
+    var row_to_add = '<tr style="border-top:5px solid #fff"><td><img src="' + file_attached_url + '" class="img-responsive"/> </td><td><button class="btn btn-danger btn-sm btn-small remove-photo" type="button" data-photo-url="'+ file_attached_url + '">Delete</button></td></tr>';
 
     //console.log("The row is:", row_to_add);
     //$('#files-uploaded-list tr:last').after(row_to_add);
