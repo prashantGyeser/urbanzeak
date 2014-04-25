@@ -64,14 +64,6 @@ ready = function() {
     }
   });
 
-//  $("#experience_land_mark").on({
-//    keyup: trigger_geocode(),
-//    change: trigger_geocode(),
-//    focus: trigger_geocode(),
-//    blur: trigger_geocode(),
-//    onfocusout: trigger_geocode()
-//  });
-
   $('#experience_land_mark').bind("geocode:result", function(event, result){
     console.log(result);
     $("#experience_latitude").val(result.geometry.location.lat());
@@ -84,33 +76,17 @@ ready = function() {
     $("#reset").show();
   });
 
-  /*
-  $('.remove-photo').click(function(e){
-    e.preventDefault();
-    var link = $(this).attr('data-photo-id');
-    console.log(link);
-    if(link == "")
-    {
-      alert("Link empty");
-    }
-    else
-    {
-      alert("Woohoo!");
-    }
-  });
-  */
+
   $(function(){
     $('#files_uploaded_list').on('click','button', function(e){
       e.preventDefault();
       var link = $(this).attr('data-photo-id');
 
-      if(link == null)
-      {
-
-      }
-      else
+      if(link != null)
       {
         var button_clicked = $(this);
+
+
 
         $.post('/dashboard'+link, function(data){
                   button_clicked.closest('td').closest('tr').hide();
