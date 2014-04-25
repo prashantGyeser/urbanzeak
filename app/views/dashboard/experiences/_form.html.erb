@@ -290,13 +290,26 @@
             Upload pictures to show your customers what your experience looks like. <span class="bold">( Maximum 6 )</span>
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
+            <div id="file-picker">
+              <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons pick-files", onchange: 'onPhotoUpload(event)' %>
+            </div>
 
-            <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons", onchange: 'onPhotoUpload(event)' %>
+            <% if @experience_images.present? %>
+              <input type="hidden" name="images_exist" value="0" id="experience_exist"/>
+            <% else %>
+              <input type="hidden" name="images_exist" value="1" id="experience_exist"/>
+            <% end %>
+
 
             <div id="file-upload-success-message" class="alert alert-success">
               <button data-dismiss="alert" class="close"></button>
               Success: Pictures <a class="link" href="#">uploaded</a>
             </div>
+
+            <div id="delete-all-files-container">
+              <button class="btn btn-danger btn-cons" id="delete-all-files" data-experience-id="<%= @experience.id %>">Delete All Files</button>
+            </div>
+
 
 
             <table id="files_uploaded_list" class="table table-striped table-flip-scroll cf" style="width: 100%">
@@ -306,12 +319,6 @@
                   <tr style="border-top:5px solid #fff">
                     <td>
                       <img src="<%= exp_image.image %>" class="img-responsive"/>
-                    </td>
-                    <td>
-                    <span>
-                      <!--<a href="/experiences/<%= exp_image.id %>/remove-photo" class="remove-photo">Delete</a>-->
-                      <button class="btn btn-danger btn-sm btn-small remove-photo" type="button" data-photo-id="/experiences/<%= exp_image.id %>/remove-photo" data-photo-url="<%= exp_image.image %>">Delete</button>
-                    </span>
                     </td>
                   </tr>
                 <% end %>
