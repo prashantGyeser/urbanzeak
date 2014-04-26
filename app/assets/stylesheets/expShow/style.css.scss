@@ -24,7 +24,7 @@ html{
 }
 body { 
   color: #6f7b8a; 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:13px;
   padding: 0px !important;
   margin: 0px !important;
@@ -33,6 +33,12 @@ body {
   font-weight: normal;
   background-color:#f2f4f6;  
   text-rendering: optimizeLegibility;
+}
+p
+{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 .main-wrapper{
 	opacity:0;
@@ -204,7 +210,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 	font-size: 62%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans';
+  font-family: "skolar", 'Open Sans';
   font-weight: 300;
   color:#505458;
 }
@@ -621,7 +627,6 @@ img.resize{
 }
 p {
 margin: 0 0 10px;
-line-height: 21px;
 }
 /** Buttons **/
 .btn {
