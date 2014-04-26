@@ -9,8 +9,11 @@
 
             <!--<img width="156" height="156" data-src-retina="assets/img/profiles/avatar2x.jpg" data-src="assets/img/profiles/avatar2x.jpg" src="assets/img/profiles/avatar2x.jpg" alt="" class="img-circle">-->
             <%= image_tag host.avatar_url.to_s,:width => "156", :height => "156", :class => "img-circle" %>
+            <% if host.name.blank? %>
+            <% else %>
+              <h4><%= host.name %></h4>
+            <% end %>
 
-            <h4><%= host.name %></h4>
             <p>
               <%= host.about %>
             </p>
