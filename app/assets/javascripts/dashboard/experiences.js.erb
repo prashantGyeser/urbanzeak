@@ -82,6 +82,19 @@ ready = function() {
   $(function(){
     $('#delete-all-files-container').on('click','button', function(e){
       e.preventDefault();
+
+      // Removing all the files from inkfilepicker -- Start
+      var images =$('#experience_images').val();
+      var images_array = images.split(',');
+      $.each( images_array, function( key, file_url ) {
+        var ink_blob = {url: file_url};
+        console.log('Removing:' + file_url);
+        filepicker.remove(ink_blob, function(){
+          console.log("Removed");
+        });
+      });
+      // Removing all the files from inkfilepicker -- End
+
       $('#experience_images').val("");
       var current_experience_id = $(this).attr('data-experience-id');
       var delete_images_for_this_experience_url = '/dashboard/experiences/' + current_experience_id + '/remove-photos';

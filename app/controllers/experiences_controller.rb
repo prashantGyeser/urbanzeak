@@ -156,10 +156,15 @@ class ExperiencesController < ApplicationController
         
       else
         previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+        previous_images = ExperienceImage.where(:experience_id => @experience.id)
         prev_date_count = previous_dates.count
 
         previous_dates.each do |prev_date|
           prev_date.destroy
+        end
+
+        previous_images.each do |previous_image|
+          previous_image.destroy
         end
 
         experience_dates.each do |experience_date|
