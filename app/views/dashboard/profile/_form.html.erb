@@ -17,14 +17,33 @@
       <div class="grid simple">
         <!-- GRID TITLE -->
         <div class="grid-title no-border">
-          <h4>Describe yourself</h4>
+          <h4>Describe the host</h4>
         </div>
         <!-- END GRID TITLE -->
         <!--GRID BODY-->
         <div class="grid-body no-border">
 
+          <div class="form-group">
+            <label class="form-label">Name of the person hosting the experience.</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Catch your customers attention with a nice title ( under 5 words)</label>
+            <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
+            <div class="controls">
+              <label class="form-label">About the person hosting the experience.</label>
+              <!--<input type="text" class="form-control">-->
+              <%= f.text_area :about, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+            </div>
+          </div>
+
           <br>
-          <%= f.text_area :about, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+
         </div>
         <!--END GRID BODY-->
       </div>
