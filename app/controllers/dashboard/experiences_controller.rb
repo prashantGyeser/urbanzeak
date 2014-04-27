@@ -14,6 +14,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     @random_temp_experience_id = SecureRandom.hex(15)
     #@template_id = params[:template_id]
     #render :layout => false
+    @experience.experience_images.build
   end
 
   def show

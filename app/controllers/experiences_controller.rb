@@ -68,51 +68,17 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    images = params[:experience][:images].split(',')
 
-    case params[:experience][:category].to_i
-      when 1
-        @experience.category = "City Tour"
-      when 2
-        @experience.category = "Hobby Class"
-      when 3
-        @experience.category = "Adventure Activity"
-      else
-        logger.debug "No field selected"
-    end
+    images_string = params[:experience][:images]
+    images_array = images_string.split(',')
 
-
-    fbCheckToken = IntegrationToken.where(:user_id => current_user.id).where(:provider => 'Facebook').first
-    if fbCheckToken.blank?
-      postToFBWall = false  
-    else
-      postToFBWall = fbCheckToken.post_to_fb_wall
-    end    
-    
-      
-    if postToFBWall == true
-        token = fbCheckToken.token
-
-        # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
-      session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
-        logger.debug "Tje session is: #{session}"
-      postChoreo = Facebook::Publishing::Post.new(session)
-
-      # Get an InputSet object for the choreo
-      postInputs = postChoreo.new_input_set()
-
-      # Set inputs
-      postInputs.set_AccessToken(token);
-      postInputs.set_Message("This is a test message from UrbanZeak");
-
-      # Execute Choreo
-      postResults = postChoreo.execute(postInputs)
-        
-    end
-         
     respond_to do |format|
       if @experience.save
         experience_dates = params[:experience][:exp_date].split(',')
+
+        images_array.each do |image|
+          ExperienceImage.create!(:experience_id => @experience.id, :image => image)
+        end
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
@@ -120,14 +86,6 @@ class ExperiencesController < ApplicationController
           @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
           @experience_date.experience_id = @experience.id
           @experience_date.save
-        end
-
-        images.each do |image|
-          exp_image = ExperienceImage.new
-          logger.debug "The image in the loop is #{image}"
-          exp_image.image = image
-          exp_image.experience_id = @experience.id
-          exp_image.save
         end
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
@@ -176,13 +134,8 @@ class ExperiencesController < ApplicationController
           @experience_date.save
         end
       end
-      logger.debug "The images are: #{images.inspect}"
       images.each do |image|
-        exp_image = ExperienceImage.new
-        logger.debug "The image in the loop is #{image}"
-        exp_image.image = image
-        exp_image.experience_id = @experience.id
-        exp_image.save
+        ExperienceImage.create!(:experience_id => @experience.id, :image => image)
       end
 
       if @experience.update(experience_params)
@@ -270,7 +223,7 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
-      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category, :hours)
+      params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category, :hours, :experience_image_attributes => [:id, :image])
     end
 
     def review_params
