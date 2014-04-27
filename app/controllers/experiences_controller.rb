@@ -109,7 +109,9 @@ class ExperiencesController < ApplicationController
 
       experience_dates = params[:experience][:exp_date].split(',')
       images = params[:experience][:images].split(',')
-
+      logger.debug "the images thingy is: #{images}"
+      logger.debug "the images are blank: #{images.blank?}"
+      logger.debug "the images are present: #{images.present?}"
       if experience_dates.blank?
         
       else
@@ -121,10 +123,6 @@ class ExperiencesController < ApplicationController
           prev_date.destroy
         end
 
-        previous_images.each do |previous_image|
-          previous_image.destroy
-        end
-
         experience_dates.each do |experience_date|
           #if experience_dates.count == prev_date_count
           @experience_date = ExperienceDate.new
@@ -134,9 +132,24 @@ class ExperiencesController < ApplicationController
           @experience_date.save
         end
       end
-      images.each do |image|
-        ExperienceImage.create!(:experience_id => @experience.id, :image => image)
+      #logger.debug "the images are blank: #{imageasas.blank?}"
+
+      if images.blank?
+        logger.debug "Okay it is getting to the blank part"
+      else
+        previous_images.each do |previous_image|
+          previous_image.destroy
+        end
       end
+
+      if images.blank?
+        logger.debug "Okay it is getting to the blank part"
+      else
+        images.each do |image|
+          ExperienceImage.create!(:experience_id => @experience.id, :image => image)
+        end
+      end
+
 
       if @experience.update(experience_params)
         format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
