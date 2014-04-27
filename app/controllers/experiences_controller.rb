@@ -68,10 +68,9 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    
+
     images_string = params[:experience][:images]
     images_array = images_string.split(',')
-
 
     respond_to do |format|
       if @experience.save
@@ -135,13 +134,8 @@ class ExperiencesController < ApplicationController
           @experience_date.save
         end
       end
-      logger.debug "The images are: #{images.inspect}"
       images.each do |image|
-        exp_image = ExperienceImage.new
-        logger.debug "The image in the loop is #{image}"
-        exp_image.image = image
-        exp_image.experience_id = @experience.id
-        exp_image.save
+        ExperienceImage.create!(:experience_id => @experience.id, :image => image)
       end
 
       if @experience.update(experience_params)
