@@ -69,11 +69,17 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
 
-    logger.debug "the params are: #{paramsd.iinspect}"
+    images_string = params[:experience][:experience_images_attributes]["0"][:image]
+    images_array = images_string.split(',')
+
 
     respond_to do |format|
       if @experience.save
         experience_dates = params[:experience][:exp_date].split(',')
+
+        images_array.each do |image|
+          ExperienceImage.create!(:experience_id => @experience.id, :image => image)
+        end
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
