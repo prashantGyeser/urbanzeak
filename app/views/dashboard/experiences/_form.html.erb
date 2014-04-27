@@ -278,12 +278,7 @@
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
             <div id="file-picker">
-
-              <%= f.fields_for :experience_images do |builder|%>
-                <%= builder.filepicker_field :image, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons pick-files", onchange: 'onPhotoUpload(event)' %>
-              <% end %>
-
-
+              <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons pick-files", onchange: 'onPhotoUpload(event)' %>
             </div>
 
             <% if @experience_images.present? %>

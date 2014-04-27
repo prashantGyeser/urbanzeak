@@ -68,8 +68,8 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-
-    images_string = params[:experience][:experience_images_attributes]["0"][:image]
+    
+    images_string = params[:experience][:images]
     images_array = images_string.split(',')
 
 
