@@ -54,6 +54,8 @@ class Experience < ActiveRecord::Base
   # Making the model impressionable so that people that view the page can be tracked
   is_impressionable
 
+  accepts_nested_attributes_for :experience_images
+
   # Changing the url so that it uses a friendly id
   extend FriendlyId
   friendly_id :name, use: :slugged
