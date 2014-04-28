@@ -1,13 +1,5 @@
-//var ready;
-//ready = function() {
-//    filepicker.setKey('A3jfEp0c0TaW9SW7XnHV6z');
-//    filepicker.pick(function(InkBlob){
-//        console.log(InkBlob.url);
-//    });
-//};
-//$(document).ready(ready);
-//$(document).on('page:load', ready);
-$(document).ready(function(){
+var ready;
+ready = function() {
     filepicker.setKey('A3jfEp0c0TaW9SW7XnHV6z');
 
     $('#file_picker').hide();
@@ -30,4 +22,6 @@ $(document).ready(function(){
             }
         );
     });
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);
