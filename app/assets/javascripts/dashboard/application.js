@@ -18,7 +18,6 @@
 //= require plugins/jquery-unveil/jquery.unveil.min
 //= require plugins/jquery-block-ui/jqueryblockui
 //= require plugins/ubilabs-geocomplete/jquery.geocomplete.min
-//= require plugins/fullcalendar/fullcalendar.min
 //= require plugins/raphael/raphael-min
 //= require plugins/jquery-morris-chart/js/morris.min
 //= require plugins/jquery-slider/jquery.sidr.min

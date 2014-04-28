@@ -263,8 +263,6 @@
       </div>
 
 
-
-
     </div>
     <!-- END 8 COL -->
     <!-- 4 COL -->
@@ -277,8 +275,14 @@
             Upload pictures to show your customers what your experience looks like. <span class="bold">( Maximum 6 )</span>
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
-            <div id="file-picker">
-              <%= f.filepicker_field :images, multiple: true, store_location: "S3", services: "COMPUTER", container: "modal", button_class: "btn btn-default btn-cons pick-files", onchange: 'onPhotoUpload(event)' %>
+            <a href="#" id="file_picker_button" class="btn">Select Pictures</a>
+            <div id="file_picker">
+              <% if @experience_images.blank? %>
+                <input type="hidden" name="experience_image[image]" id="experience_image_image">
+              <% else %>
+                <input type="hidden" name="experience_image[image]" id="experience_image_image" value="<%= @experience_images.to_json %>">
+              <% end %>
+
             </div>
 
             <% if @experience_images.present? %>

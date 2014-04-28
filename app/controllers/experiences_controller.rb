@@ -68,17 +68,17 @@ class ExperiencesController < ApplicationController
     
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-
     images_string = params[:experience][:images]
-    images_array = images_string.split(',')
+    experience_images = JSON.parse(params[:experience_image][:image])
 
     respond_to do |format|
       if @experience.save
         experience_dates = params[:experience][:exp_date].split(',')
 
-        images_array.each do |image|
-          ExperienceImage.create!(:experience_id => @experience.id, :image => image)
+        experience_images.each do |experience_image|
+          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
         end
+
 
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
@@ -87,6 +87,8 @@ class ExperiencesController < ApplicationController
           @experience_date.experience_id = @experience.id
           @experience_date.save
         end
+
+
 
         url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
           
@@ -108,10 +110,9 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
 
       experience_dates = params[:experience][:exp_date].split(',')
-      images = params[:experience][:images].split(',')
-      logger.debug "the images thingy is: #{images}"
-      logger.debug "the images are blank: #{images.blank?}"
-      logger.debug "the images are present: #{images.present?}"
+      experience_images = JSON.parse(params[:experience_image][:image])
+      logger.debug "The experience_images are: #{experience_images}"
+
       if experience_dates.blank?
         
       else
@@ -134,20 +135,12 @@ class ExperiencesController < ApplicationController
       end
       #logger.debug "the images are blank: #{imageasas.blank?}"
 
-      if images.blank?
-        logger.debug "Okay it is getting to the blank part"
-      else
-        previous_images.each do |previous_image|
-          previous_image.destroy
-        end
+      previous_images.each do |previous_image|
+        previous_image.destroy
       end
 
-      if images.blank?
-        logger.debug "Okay it is getting to the blank part"
-      else
-        images.each do |image|
-          ExperienceImage.create!(:experience_id => @experience.id, :image => image)
-        end
+      experience_images.each do |experience_image|
+        ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
       end
 
 

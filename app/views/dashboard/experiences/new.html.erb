@@ -1,6 +1,6 @@
 <%= content_for :js do %>
   <%= javascript_include_tag "dashboard/experiences", 'data-turbolinks-track' => true %>
-  <%= filepicker_js_include_tag %>
+  <%= javascript_include_tag "dashboard/file_picker" %>
 <% end %>
 
 <!-- BEGIN PAGE TITLE -->
@@ -21,3 +21,4 @@
     });
   </script>
 <% end %>
+
