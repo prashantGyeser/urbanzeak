@@ -110,14 +110,23 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
 
       experience_dates = params[:experience][:exp_date].split(',')
-      experience_images = JSON.parse(params[:experience_image][:image])
+      images = params[:experience_image][:image]
+      if images.blank?
+        
+      else
+        experience_images = JSON.parse(params[:experience_image][:image])
+      end
+
       logger.debug "The experience_images are: #{experience_images}"
+
+      previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+      previous_images = ExperienceImage.where(:experience_id => @experience.id)
+
 
       if experience_dates.blank?
         
       else
-        previous_dates = ExperienceDate.where(:experience_id => @experience.id)
-        previous_images = ExperienceImage.where(:experience_id => @experience.id)
+
         prev_date_count = previous_dates.count
 
         previous_dates.each do |prev_date|
@@ -135,12 +144,18 @@ class ExperiencesController < ApplicationController
       end
       #logger.debug "the images are blank: #{imageasas.blank?}"
 
-      previous_images.each do |previous_image|
-        previous_image.destroy
+      if previous_images.blank?
+      else
+        previous_images.each do |previous_image|
+          previous_image.destroy
+        end
       end
 
-      experience_images.each do |experience_image|
-        ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+
+      if experience_images.present?
+        experience_images.each do |experience_image|
+          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+        end
       end
 
 
