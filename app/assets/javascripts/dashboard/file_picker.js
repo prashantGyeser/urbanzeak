@@ -1,12 +1,12 @@
 var ready;
 ready = function() {
-    filepicker.setKey('A3jfEp0c0TaW9SW7XnHV6z');
 
     $('#file_picker').hide();
 
     $('#file_picker_button').click(function(e){
         e.preventDefault();
         $('#file_picker').hide();
+        filepicker.setKey('A3jfEp0c0TaW9SW7XnHV6z');
         filepicker.pickMultiple({
                 mimetypes: 'image/*',
                 container: 'modal',
