@@ -67,7 +67,8 @@ class ExperiencesController < ApplicationController
     #@experience = Experience.new(experience_params)
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    images_string = params[:experience][:images]
+    #images_string = params[:experience][:images]
+    images = params[:experience_image][:image]
 
     if images.blank?
     else
