@@ -1,6 +1,9 @@
 var ready;
 ready = function() {
 
+  // Auto saving the form using sisyphus
+  $('#new_experience').sisyphus();
+
   //Time pickers
   $('.timepicker-default').timepicker();
   $('.timepicker-24').timepicker({
