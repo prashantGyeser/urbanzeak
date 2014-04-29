@@ -80,9 +80,12 @@ class ExperiencesController < ApplicationController
       if @experience.save
         experience_dates = params[:experience][:exp_date].split(',')
 
-        experience_images.each do |experience_image|
-          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+        if experience_images.present?
+          experience_images.each do |experience_image|
+            ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+          end
         end
+
 
 
         experience_dates.each do |experience_date|
