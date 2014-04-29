@@ -65,11 +65,15 @@ class ExperiencesController < ApplicationController
   def create
 
     #@experience = Experience.new(experience_params)
-    
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
     images_string = params[:experience][:images]
-    experience_images = JSON.parse(params[:experience_image][:image])
+
+    if images.blank?
+    else
+      experience_images = JSON.parse(params[:experience_image][:image])
+    end
+
 
     respond_to do |format|
       if @experience.save
