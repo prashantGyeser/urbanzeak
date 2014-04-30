@@ -67,7 +67,8 @@ class ExperiencesController < ApplicationController
     #@experience = Experience.new(experience_params)
     @experience = Experience.new(experience_params)
     @experience.user_id = current_user.id
-    images_string = params[:experience][:images]
+    #images_string = params[:experience][:images]
+    images = params[:experience_image][:image]
 
     if images.blank?
     else
@@ -79,9 +80,12 @@ class ExperiencesController < ApplicationController
       if @experience.save
         experience_dates = params[:experience][:exp_date].split(',')
 
-        experience_images.each do |experience_image|
-          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+        if experience_images.present?
+          experience_images.each do |experience_image|
+            ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+          end
         end
+
 
 
         experience_dates.each do |experience_date|
