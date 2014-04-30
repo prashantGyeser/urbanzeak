@@ -85,4 +85,7 @@ Urbanzeak::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   #config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
 
+  # Setting default host for devise
+  config.action_mailer.default_url_options = {:host => "urbanzeak.com"}
+
 end

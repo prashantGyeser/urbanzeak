@@ -1,12 +1,61 @@
-<h2>Forgot your password?</h2>
+<div class="container">
+  <div class="row login-container column-seperation">
+    <div class="col-md-5 col-md-offset-1">
+      <h2>Forgot your password?</h2>
+      <p>
+        Enter your email and we will send you password reset instructions.
+        <br>
+      </p>
+      <br>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+    <div class="col-md-5 "> <br>
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'login-form' }) do |f| %>
 
-<%= render "devise/shared/links" %>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
+        <% end %>
+
+        <%= devise_error_messages! %>
+
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :email, :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.email_field :email, :class => "form-control", :autofocus => true %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="row">
+          <div class="control-group  col-md-12">
+            <div class="checkbox checkbox check-success">
+              <%= render "devise/shared/links" %>
+              <!--<label for="checkbox1">Remember me </label>-->
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-md-10">
+            <%= f.submit "Send me reset instructions", :class => "btn btn-primary btn-cons pull-right" %>
+          </div>
+        </div>
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>
+
+
