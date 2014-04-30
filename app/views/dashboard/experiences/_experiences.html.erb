@@ -37,7 +37,7 @@
                 <div class="p-l-15 p-t-10 p-r-20">
                   <p><%= truncate(experience.what_does_this_include, length: 100) %></p>
                   <div class="p-t-10">
-                    <button class="btn btn-cons share-button-load-modal" data-toggle="modal" data-target="#share"  data-button="<%= experience.id %>"> Share </button>
+                    <button class="btn btn-cons share-button-load-modal" data-toggle="modal" data-target="#share"  data-button="<%= experience.id %>" data-name="<%= experience.name %>" data-url="http:// <%= @current_user.subdomain %>.urbanzeak.com/<%= experience.slug %>"> Share </button>
                     
                     <% edit_url = dashboard_experiences_path + '/' + experience.id.to_s + '/edit' %>
                     <%= link_to "Edit", edit_url, :class => "btn btn-success btn-cons" %>
