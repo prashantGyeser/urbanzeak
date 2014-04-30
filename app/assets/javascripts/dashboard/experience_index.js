@@ -7,6 +7,15 @@ ready = function() {
     // Post to the location the user shared
     $('button.share-button-load-modal').click(function(){
         var experience_id_clicked = $(this).attr('data-button');
+        var experience_url = $(this).attr('data-url');
+        var experience_name = $(this).attr('data-name');
+
+        // Adding a message to show the user what will be posted to their network
+//        Come join us for a great experience: <%# experience.name %> by going to http://<%= @current_user.subdomain %>.urbanzeak.com/<%# experience.slug %>
+        var message_that_will_be_posted = 'Come join us for a great experience:' + experience_name + 'by going to ' + experience_url;
+        $('#share-message').text(message_that_will_be_posted);
+
+
         //$( "div" ).data( "role" )
         $('#experience_id').val(experience_id_clicked);
         console.log('The value in the hidden field is:'+$('#experience_id').val());
