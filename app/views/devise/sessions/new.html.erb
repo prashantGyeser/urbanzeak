@@ -51,7 +51,8 @@
           <div class="row">
             <div class="control-group  col-md-10">
               <div class="checkbox checkbox check-success">
-                <%= link_to "Forgot your password?", new_user_password_path %>&nbsp;&nbsp;
+                <%# link_to "Forgot your password?", new_user_password_path %>&nbsp;&nbsp;
+                <%= link_to "Forgot your password?",  new_password_path(resource_name) %>&nbsp;&nbsp;
                 <!--<a href="#">Trouble login in?</a>&nbsp;&nbsp;-->
                 <!--<input type="checkbox" id="checkbox1" value="1">-->
                 <%= f.check_box :remember_me  %>

@@ -51,7 +51,7 @@ gem 'pg'
 gem 'filepicker-rails'
 
 # Authentication
-gem 'devise'
+gem 'devise', '~> 3.2.4'
 
 # Geocoding the location
 gem 'geocoder'
