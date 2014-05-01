@@ -55,6 +55,7 @@ gem 'carrierwave'
 # Image resizing
 gem 'rmagick'
 
+gem 'gon'
 
 group :staging, :production do
   # gzip on heroku
