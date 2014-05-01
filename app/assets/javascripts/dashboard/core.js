@@ -1,4 +1,5 @@
-$(document).ready(function() {		
+var ready;
+ready = function() {
 	calculateHeight();
 	$(".remove-widget").click(function() {		
 		$(this).parent().parent().parent().addClass('animated fadeOut');
@@ -526,4 +527,7 @@ $(document).ready(function() {
 			if(911 > contentHeight){	
 				console.log("Small");
 			}	
-	}	
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
