@@ -55,6 +55,9 @@ gem 'carrierwave'
 # Image resizing
 gem 'rmagick'
 
+# Storing the images in s3
+gem 'fog'
+
 gem 'gon'
 
 group :staging, :production do
