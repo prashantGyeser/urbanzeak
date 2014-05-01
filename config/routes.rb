@@ -2,13 +2,13 @@ require 'subdomain'
 
 Urbanzeak::Application.routes.draw do
 
-  post "conversations/create" => "conversations#create"
+  devise_for :users
 
-  devise_for :users#, :controller => {:passwords => 'passwords'}
+  post "conversations/create" => "conversations#create"
 
   # Sending a user to the dashboard page once they login
   # Taken from http://excid3.com/blog/rails-tip-5-authenticated-root-and-dashboard-routes-with-devise/
-  authenticated :user do
+  authenticated :users do
     #root :to => "dashboard/reports#index", :as => "authenticated_root"
     root :to => "dashboard/purchases#index", :as => "authenticated_root"
   end
