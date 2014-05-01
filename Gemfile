@@ -49,6 +49,13 @@ gem 'shortener'
 
 gem 'friendly_id'
 
+# Carrierwave
+gem 'carrierwave'
+
+# Image resizing
+gem 'rmagick'
+
+
 group :staging, :production do
   # gzip on heroku
   gem 'heroku-deflater'
