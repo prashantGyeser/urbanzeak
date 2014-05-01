@@ -85,6 +85,6 @@ Urbanzeak::Application.configure do
   config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
 
   # Setting default host for devise
-  config.action_mailer.default_url_options = {:host => "uzsta.com"}
+  config.action_mailer.default_url_options = {:host => "www.uzsta.com"}
 
 end
