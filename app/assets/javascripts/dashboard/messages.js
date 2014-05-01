@@ -7,7 +7,7 @@ ready = function() {
     /** Events **/
     $('#btn-new-ticket').click( function() {
         $('#new-ticket-wrapper').slideToggle("fast","linear")
-    })
+    });
 
     $('#btn-close-ticket').click( function() {
         $('#new-ticket-wrapper').slideToggle("fast","linear")
