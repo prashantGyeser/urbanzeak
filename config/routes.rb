@@ -2,7 +2,12 @@ require 'subdomain'
 
 Urbanzeak::Application.routes.draw do
 
+
+  get 'user_root' => 'dashboard/purchases#index', as: :user_root
+
   devise_for :users
+
+
 
   post "conversations/create" => "conversations#create"
 

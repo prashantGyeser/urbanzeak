@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_resetting_password_path_for(resource)
+    logger.debug "hdskfhds #{dnmslfsd}"
+    root_path
+  end
+
   def layout
     if devise_controller?
       "devise"
