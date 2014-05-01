@@ -30,4 +30,7 @@ Urbanzeak::Application.configure do
   # To raise any errors in the sprokets compile
   config.assets.raise_production_errors = true
 
+  # Setting default host for devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 end

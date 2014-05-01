@@ -32,17 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 # Postgres Sql gem
 gem 'pg'
@@ -51,13 +42,12 @@ gem 'pg'
 gem 'filepicker-rails'
 
 # Authentication
-gem 'devise'
+gem 'devise', '~> 3.2.4'
 
-# Geocoding the location
-gem 'geocoder'
+# Url shortner
+gem 'shortener'
 
-# Setting environment variables for the different values that need to be used in different environments
-gem "figaro"
+gem 'friendly_id'
 
 # Carrierwave
 gem 'carrierwave'
@@ -65,24 +55,7 @@ gem 'carrierwave'
 # Image resizing
 gem 'rmagick'
 
-# Storing the images in s3
-gem 'fog'
-
-# Fancy box for a modal window
-gem 'fancybox2-rails', '~> 0.2.4'
-
-# Url shortner
-gem 'shortener'
-
-# Heoku cannot find this gem when pushing so adding it there
-# Refer to http://stackoverflow.com/questions/22510461/could-not-find-thread-safe-0-3-0-in-any-of-the-sources for details
-gem 'thread_safe', '0.2.0'
-
-# New relic monitoring tool
-gem 'newrelic_rpm'
-
-gem 'friendly_id'
-
+gem 'gon'
 
 group :staging, :production do
   # gzip on heroku
@@ -102,6 +75,12 @@ group :staging, :production do
   # Heroku logging
   gem 'rails_12factor'
 
+  # Heoku cannot find this gem when pushing so adding it there
+  # Refer to http://stackoverflow.com/questions/22510461/could-not-find-thread-safe-0-3-0-in-any-of-the-sources for details
+  gem 'thread_safe', '0.2.0'
+
+  # New relic monitoring tool
+  gem 'newrelic_rpm'
 end
 
 group :production do
@@ -111,21 +90,11 @@ end
 # Page tracking for hosts
 gem 'impressionist'
 
-# Mixpanel tracking
-gem 'mixpanel-ruby'
-
 # External service integration api
 gem 'temboo'
 
-# Realtime Notifications
-gem 'pubnub'
-gem 'json'
-
 # Email management for messages to the host from their customers
 gem 'griddler'
-
-# Gem to allow access of controller data from a javascript file
-gem 'gon'
 
 group :development do
   gem 'annotate'

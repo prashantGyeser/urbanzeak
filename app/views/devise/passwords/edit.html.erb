@@ -1,16 +1,70 @@
-<h2>Change your password</h2>
+<div class="container">
+  <div class="row login-container column-seperation">
+    <div class="col-md-5 col-md-offset-1">
+      <h2>Change your password</h2>
+      <br>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+    </div>
 
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div class="col-md-5 "> <br>
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put}) do |f| %>
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-success">
+            <button data-dismiss="alert" class="close"></button>
+            <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
+          </div>
+        <% end %>
 
-<%= render "devise/shared/links" %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :password, "New password", :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.password_field :password, :class => "form-control", :autofocus => true %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <%= f.label :password_confirmation, "Confirm new password", :class => "form-label" %>
+            <div class="controls">
+              <div class="input-with-icon  right">
+                <i class=""></i>
+                <%= f.password_field :password_confirmation, :class => "form-control" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="control-group  col-md-12">
+            <div class="checkbox checkbox check-success">
+              <%= render "devise/shared/links" %>
+              <!--<label for="checkbox1">Remember me </label>-->
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-md-10">
+            <%= f.submit "Change my password", :class => "btn btn-primary btn-cons pull-right" %>
+          </div>
+        </div>
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>
+
