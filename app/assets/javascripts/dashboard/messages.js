@@ -31,6 +31,27 @@ ready = function() {
         alert('k ebnter pressed');
     });
 
+    $('.post-reply-button').click(function(e){
+        e.preventDefault();
+        var conversation_reply_to = $(this).siblings('.hidden_conversation_id').val();
+        var message = $(this).siblings('.form-control').val();
+//
+//        contentToAppend = '<div class="post p-b-20">' + '<h4><span class="semi-bold">You</span> said:</h4>' + '<div class="info-wrapper">' + '<div class="info">' + message + '</div>' + '<div class="clearfix"></div>' + '</div>' + '<div class="clearfix"></div>' + '</div>';
+//        var divToAppendBefore = $(this).parent().parent().parent().parent().parent();
+//
+//
+//        $(contentToAppend).insertBefore( divToAppendBefore );
+
+
+        $.post( "messages/create", { message: message, conversation_id: conversation_reply_to }, function(data){
+            contentToAppend = '<div class="post p-b-20">' + '<h4><span class="semi-bold">You</span> said:</h4>' + '<div class="info-wrapper">' + '<div class="info">' + message + '</div>' + '<div class="clearfix"></div>' + '</div>' + '<div class="clearfix"></div>' + '</div>';
+            var divToAppendBefore = $(this).parent().parent().parent().parent().parent();
+
+
+
+        });
+    });
+
     $('.form-control').keypress(function(event){
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
