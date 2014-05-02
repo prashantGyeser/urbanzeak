@@ -30,7 +30,6 @@
 //= require plugins/sisyphus/sisyphus
 //= require dashboard/core
 //= require dashboard/chat
-//= require dashboard/demo
 //= require dashboard/reviews
 //= require turbolinks
 
