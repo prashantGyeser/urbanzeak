@@ -55,21 +55,6 @@ ready = function() {
         $(this).parent().children('.input-group-addon').addClass('input-focus');
     })
 
-    $(".bootstrap-tagsinput input").blur(function(){
-        $(this).parent().removeClass('input-focus');
-    })
-
-    $(".bootstrap-tagsinput input").focus(function(){
-        $(this).parent().addClass('input-focus');
-    })
-
-    $('#my-task-list').popover({
-        html : true,
-        content: function() {
-            return $('#notification-list').html();
-        }
-    });
-
     $('#user-options').click(function(){
         $('#my-task-list').popover('hide')
     })

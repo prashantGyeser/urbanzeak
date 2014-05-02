@@ -35,7 +35,7 @@ ready = function() {
         e.preventDefault();
         var conversation_reply_to = $(this).siblings('.hidden_conversation_id').val();
         var message = $(this).siblings('.form-control').val();
-//
+        var element_selected = $(this);
 //        contentToAppend = '<div class="post p-b-20">' + '<h4><span class="semi-bold">You</span> said:</h4>' + '<div class="info-wrapper">' + '<div class="info">' + message + '</div>' + '<div class="clearfix"></div>' + '</div>' + '<div class="clearfix"></div>' + '</div>';
 //        var divToAppendBefore = $(this).parent().parent().parent().parent().parent();
 //
@@ -45,9 +45,9 @@ ready = function() {
 
         $.post( "messages/create", { message: message, conversation_id: conversation_reply_to }, function(data){
             contentToAppend = '<div class="post p-b-20">' + '<h4><span class="semi-bold">You</span> said:</h4>' + '<div class="info-wrapper">' + '<div class="info">' + message + '</div>' + '<div class="clearfix"></div>' + '</div>' + '<div class="clearfix"></div>' + '</div>';
-            var divToAppendBefore = $(this).parent().parent().parent().parent().parent();
+            var divToAppendBefore = element_selected.parent().parent().parent().parent().parent();
 
-
+            $(contentToAppend).insertBefore( divToAppendBefore );
 
         });
     });
