@@ -27,6 +27,10 @@
       multidate: true,
       startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
+    $('#datepicker-button').datepicker({
+      multidate: true,
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
+    });
     $('#experience_exp_date').datepicker('setDates', dates_previous_selected);
     $('#experience_exp_date').datepicker('update');
   </script>
