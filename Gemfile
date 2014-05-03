@@ -112,13 +112,6 @@ end
 
 group :test, :development do
   gem 'guard'
-  gem 'rspec-rails'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'capybara'
-  gem 'launchy'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
   #gem "rb-readline", "~> 0.5.0"
@@ -127,4 +120,12 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'email_spec'
 end
