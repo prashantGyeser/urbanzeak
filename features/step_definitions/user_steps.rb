@@ -7,7 +7,6 @@ def create_user
   click_button 'Sign up'
 end
 
-
 Given(/^I want to sign up$/) do
   visit '/users/sign_up'
 end
@@ -34,4 +33,48 @@ end
 
 Then(/^I should be told the email already exists$/) do
   page.should have_content 'Email has already been taken'
+end
+
+Given(/^I want to sign in$/) do
+  visit 'users/sign_in'
+end
+
+When(/^I enter valid credentials$/) do
+  # add this 3 lines for a startup
+  # make your delivery state to 'test' mode
+  ActionMailer::Base.delivery_method = :test
+  # make sure that actionMailer perform an email delivery
+  ActionMailer::Base.perform_deliveries = true
+  # clear all the email deliveries, so we can easily checking the new ones
+  ActionMailer::Base.deliveries.clear
+
+  User.create(:email => 'cucumber@urbanzeak.com', :first_name => 'Cucumber Test', :password => 'password@123', :password_confirmation => 'password@123', :subdomain => 'cucumbersubdomain' )
+
+  fill_in 'user_email', :with => 'cucumber@urbanzeak.com'
+  fill_in 'user_password', :with => 'password@123'
+  click_button 'Login'
+end
+
+Then(/^I should be logged into urbanzeak$/) do
+  page.should have_content 'Signed in successfully.'
+end
+
+When(/^I enter invalid credentials$/) do
+  # add this 3 lines for a startup
+  # make your delivery state to 'test' mode
+  ActionMailer::Base.delivery_method = :test
+  # make sure that actionMailer perform an email delivery
+  ActionMailer::Base.perform_deliveries = true
+  # clear all the email deliveries, so we can easily checking the new ones
+  ActionMailer::Base.deliveries.clear
+
+  User.create(:email => 'cucumber@urbanzeak.com', :first_name => 'Cucumber Test', :password => 'password@123', :password_confirmation => 'password@123', :subdomain => 'cucumbersubdomain' )
+
+  fill_in 'user_email', :with => 'cucumber@urbanzeaks.com'
+  fill_in 'user_password', :with => 'password@123'
+  click_button 'Login'
+end
+
+Then(/^I should not be logged in$/) do
+  page.should have_content 'Invalid email or password'
 end

@@ -128,4 +128,5 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'email_spec'
+  gem 'capybara-screenshot'
 end
