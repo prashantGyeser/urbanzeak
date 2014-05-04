@@ -52,10 +52,10 @@ describe Experience do
   it 'should have a price' do
     FactoryGirl.build(:experience, price: nil).should_not be_valid
   end
-  it 'should have a exp_date' do
-    FactoryGirl.build(:experience, exp_date: nil).should_not be_valid
+
+  it 'should return an array of available dates' do
+    experience = FactoryGirl.build(:experience)
+
   end
-  it 'should have a exp_time' do
-    FactoryGirl.build(:experience, exp_time: nil).should_not be_valid
-  end
+
 end

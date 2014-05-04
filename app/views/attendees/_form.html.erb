@@ -33,8 +33,9 @@
             <% seats = @experience.max_seats - seats_filled %>
             <% if i == 0 %>
               <div class="date-option">
-                <input type="radio" checked="checked" value="yes" name="optionyes" id="yes">
-                <label for="yes"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
+                <!--<input type="radio" checked="checked" value="yes" name="optionyes" id="yes">-->
+                <%= f.radio_button :attending_date, "#{available_date.experience_date.strftime('%m/%d/%Y')}", :checked => 'checked' %>
+                <label for="attendee_attending_date_<%= available_date.experience_date.strftime('%m%d%Y') %>"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
                 <%= available_date.experience_time.strftime('%I:%d %p') %>
                 to
                 <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>
@@ -42,8 +43,10 @@
               </div>
             <% else %>
               <div class="date-option">
-                <input type="radio" value="no" name="optionyes" id="no">
-                <label for="no"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
+                <!--<input type="radio" value="no" name="optionyes" id="no">-->
+                <%= f.radio_button :attending_date, "#{available_date.experience_date.strftime('%m/%d/%Y')}" %>
+                <label for="attendee_attending_date_<%= available_date.experience_date.strftime('%m%d%Y') %>"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
+
                 <%= available_date.experience_time.strftime('%I:%d %p') %>
                 to
                 <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>

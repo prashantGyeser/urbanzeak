@@ -16,7 +16,6 @@ class AttendeesController < ApplicationController
 
   # GET /attendees/new
   def new
-    logger.debug "It is getting to this function in some way"
     @attendee = Attendee.new
   end
 

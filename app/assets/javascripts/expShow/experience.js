@@ -117,6 +117,5 @@ console.log($('form#new_review').serialize());
 
     });
     */
-    //var datesEnabled = <%= raw @dates_array %>;
 
 });

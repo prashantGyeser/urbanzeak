@@ -38,7 +38,7 @@
 #
 
 class Experience < ActiveRecord::Base
-  #validates :name, :description, :price, :exp_date, :exp_time, presence: true
+  validates :name, :description, :price, presence: true
 
   #has_many :exp_images
   #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
@@ -116,6 +116,24 @@ class Experience < ActiveRecord::Base
     return sales_today
   end
 
+  def available_dates(seats)
+    attendees = Attendee.where(:experience_id => self.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => self.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      if (dates_with_attendees + seats) < self.max_seats
+        available_dates << experience_date
+      end
+
+    end
+
+    return available_dates
+
+  end
 
   private
 
