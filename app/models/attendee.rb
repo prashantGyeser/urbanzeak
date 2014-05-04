@@ -18,7 +18,7 @@
 
 class Attendee < ActiveRecord::Base
   belongs_to :experience
-  after_create :confirmation_email
+  #after_create :confirmation_email
 
 
   def confirmation_email

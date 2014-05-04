@@ -80,43 +80,31 @@ console.log($('form#new_review').serialize());
         $(this).addClass('disabled');
     });
 
-    /*
+
     $( "#attendee_seats" ).change(function(e) {
 
         var number_of_seats = $(this).val();
-        var experience_id = $('#experience_id').val();
-        var url_to_get = "/experiences/available_dates?seats_required=" + number_of_seats + "&experience_id=" + experience_id;
 
-        $('#join-notifications').show();
+        var available_seats = $('#new_attendee input[type=radio]:checked').siblings('.text-info').children('.available_seats').text();
+
+        $(this).css('border','');
+        $('label.error').remove();
+
+        if (number_of_seats > parseInt(available_seats))
+        {
+            $(this).css('border','1px solid #f35958');
+            var error_message_insert = '<label for="attendee_seats" class="error" style="font-size: 12px; color: #f35958; display: block;">There are only ' + available_seats + ' seats left.</label>'
+            $(error_message_insert).insertAfter($(this));
+        }
+        else
+        {
+            $(this).css('border','');
+            $('label.error').remove();
+        }
 
 
-        $.get( url_to_get, function( data ) {
-            $( ".result" ).html( data );
-            console.log("The data returend from the server is:", data);
-            var available_dates = data;
-            // Removing the datepicker if is already there
-            $('#attendee_attending_date').datepicker('remove');
-
-            // Loading the date picker after the number of seats is selected.
-            $('#attendee_attending_date').datepicker({
-                beforeShowDay: function(date) {
-                    if ($.inArray($.datepicker.formatDate('yy-mm-dd', date), available_dates) == -1) {
-                        return {
-                            enabled: false
-                        };
-                    }
-                    return;
-
-                }
-            })
-                .on('show', function(event){
-                    $('#join-notifications').hide();
-                });
-
-        });
 
     });
-    */
-    //var datesEnabled = <%= raw @dates_array %>;
+
 
 });

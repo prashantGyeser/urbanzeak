@@ -16,7 +16,6 @@ class AttendeesController < ApplicationController
 
   # GET /attendees/new
   def new
-    logger.debug "It is getting to this function in some way"
     @attendee = Attendee.new
   end
 
@@ -28,13 +27,7 @@ class AttendeesController < ApplicationController
   # POST /attendees.json
   def create
     @attendee = Attendee.new(attendee_params)
-    logger.debug "The params are: #{params.inspect}"
-    #@attendee.attending_date = Date.strptime(params[:attendee][:attending_date].to_s, '%m/%d/%Y')
-    exp_date = ExperienceDate.where(:experience_id => params[:attendee][:experience_id]).first.experience_date
 
-    @attendee.attending_date = exp_date
-    logger.debug "The attending date is: #{exp_date}"
-    logger.debug "The attending date is: #{@attendee.inspect}"
     respond_to do |format|
       if @attendee.save
         #format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }

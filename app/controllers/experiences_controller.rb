@@ -23,38 +23,10 @@ class ExperiencesController < ApplicationController
   def show
     @attendee = Attendee.new
     @message = Message.new
-    @advance_booking = AdvanceBooking.new
-    @header_images = ExperienceImage.where(:random_id => @experience.random_id).first(3)
     @images =ExperienceImage.where(:experience_id=> @experience.id)
     @host = Host.where(:user_id => @experience.user_id).first
-    dates_hash = ExperienceDate.where(:experience_id => @experience.id).pluck(:experience_date)
-    @dates_array = []
     @reviews = Review.where(:experience_id => @experience.id).where(:show => true).limit(3)
-
-    dates_hash.each do |experience_date_item|
-      @dates_array << experience_date_item.strftime("%Y-%m-%d").to_s
-    end
-
-    # Finding available dates -- start
-    experience = @experience
-    attendees = Attendee.where(:experience_id => experience.id)
-
-    experience_dates = ExperienceDate.where(:experience_id => experience.id)
-    available_dates = []
-    experience_dates.each do |experience_date|
-      logger.debug "The experience date is: #{experience_date.experience_date}"
-      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
-
-      if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
-        available_dates << experience_date
-      end
-
-    end
-
-    @available_dates = available_dates
-
-    # Finding available dates -- end
-
+    @available_dates = @experience.available_dates(params[:seats].to_i)
 
     impressionist(@experience)
     render layout: false
@@ -185,12 +157,8 @@ class ExperiencesController < ApplicationController
     experience_dates = ExperienceDate.where(:experience_id => experience.id)
     available_dates = []
     experience_dates.each do |experience_date|
-      logger.debug "The experience date is: #{experience_date.experience_date}"
       dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
-      logger.debug "The values in the dates_with_attendees is: #{dates_with_attendees}"
-      logger.debug "The params seats is: #{params[:seats_required].to_i}"
-      logger.debug "The max seats are: #{experience.max_seats}"
-      logger.debug "The seats subtracted are: #{dates_with_attendees - params[:seats_required].to_i}"
+
 
       if (dates_with_attendees + params[:seats_required].to_i) < experience.max_seats
         available_dates << experience_date.experience_date.strftime("%Y-%m-%d").to_s
