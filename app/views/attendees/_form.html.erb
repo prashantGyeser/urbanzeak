@@ -33,24 +33,22 @@
             <% seats = @experience.max_seats - seats_filled %>
             <% if i == 0 %>
               <div class="date-option">
-                <!--<input type="radio" checked="checked" value="yes" name="optionyes" id="yes">-->
                 <%= f.radio_button :attending_date, "#{available_date.experience_date.strftime('%Y-%m-%d')}", :checked => 'checked' %>
                 <label for="attendee_attending_date_<%= available_date.experience_date.strftime('%Y-%m-%d') %>"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
                 <%= available_date.experience_time.strftime('%I:%d %p') %>
                 to
                 <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>
-                <span class="pull-right text-info"><%= seats %> Spots Remaining</span>
+                <span class="pull-right text-info"><span class="available_seats"><%= seats %></span> Spots Remaining</span>
               </div>
             <% else %>
               <div class="date-option">
-                <!--<input type="radio" value="no" name="optionyes" id="no">-->
                 <%= f.radio_button :attending_date, "#{available_date.experience_date.strftime('%Y-%m-%d')}" %>
                 <label for="attendee_attending_date_<%= available_date.experience_date.strftime('%Y-%m-%d') %>"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
 
                 <%= available_date.experience_time.strftime('%I:%d %p') %>
                 to
                 <%= (available_date.experience_time + duration).strftime('%I:%d %p') %>
-                <span class="pull-right text-info"><%= seats %> Spots Remaining</span>
+                <span class="pull-right text-info"><span class="available_seats"><%= seats %></span> Spots Remaining</span>
               </div>
             <% end %>
 
@@ -58,45 +56,6 @@
 
         </div>
       </div>
-
-
-      <!--<div class="row">-->
-        <!--<div class="col-md-12">-->
-          <!--<% exp_time = ExperienceDate.where(:experience_id => experience.id).first  %>-->
-          <!--<p>All the experiences happen at <span class="bold"><%# exp_time.experience_time.strftime("%I:%M%p")
-          %></span> and go on for <%# experience.hours %> hours</p> -->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--<div class="row">-->
-      <!--<div class="col-md-12">-->
-      <!--click on one of the dates below to select it.-->
-      <!--</div>-->
-      <!--</div>-->
-
-      <!---->
-      <!--<div class="row">-->
-      <!--<div class="col-md-12">-->
-      <!--<div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">-->
-      <!--<label class="form-label">Available Dates</label>-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--</div>-->
-
-      <!--<div class="row form-row">-->
-
-      <!--<% @available_dates.each do |available_date| %>-->
-        <!--<% seats = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum  %>-->
-
-        <!--<div class="col-md-6">-->
-        <!--<a class="btn btn-block date_select"><%= available_date.experience_date.strftime("%m/%d/%Y").to_s %> - <%= seats %> Tickets Available</a>-->
-        <!--</div>-->
-
-        <!--<% end %>-->
-      <!--</div>-->
-      <!--<%= f.hidden_field :attending_date, :value => "" %>-->
-      <!--<br/>-->
-
 
       <div class="row form-row">
         <div class="col-md-12">
