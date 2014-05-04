@@ -39,7 +39,7 @@ Urbanzeak::Application.routes.draw do
     get "experiences/new/:experience_id" => "experiences#new"
     get "experiences/new"
     get "experiences/show"
-    get "experience/edit"
+    get "experiences/edit"
     get "experiences/templates"
     get "experiences/new/:template_id" => "experiences#new"
     get "integrations" => "integrations#index"

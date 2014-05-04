@@ -58,8 +58,6 @@ class ExperiencesController < ApplicationController
           end
         end
 
-
-
         experience_dates.each do |experience_date|
           @experience_date = ExperienceDate.new
           @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
@@ -143,7 +141,9 @@ class ExperiencesController < ApplicationController
         format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
+        edit_path = dashboard_experiences_url + '/' + @experience.id.to_s + '/edit'
+        format.html { redirect_to edit_path, :flash => { :error => 'Something went wrong. We are looking into it, please try again later' }  }
         format.json { render json: @experience.errors, status: :unprocessable_entity }
       end
     end
