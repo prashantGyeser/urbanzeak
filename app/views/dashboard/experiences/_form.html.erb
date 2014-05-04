@@ -99,12 +99,13 @@
             <label class="form-label">Select the dates when this experience is available</label>
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
-              <div class="input-group">
+
+              <div class="input-group date" id="experience_date_container">
                 <!--<input type="text" class="form-control" id="date_picker">-->
                 <%= f.text_field :exp_date, :class => "form-control" %>
                 <%# text_field_tag 'exp_dates[]', @experience.exp_date, :class => "form-control" %>
                 <span class="input-group-btn">
-              <button class="btn btn-default" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
+                  <button class="btn btn-default" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
             </span>
               </div><!-- /input-group -->
             </div>

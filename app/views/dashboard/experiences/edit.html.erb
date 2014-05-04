@@ -11,6 +11,17 @@
 </div>
 <!-- END PAGE TITLE -->
 
+<div class="row">
+  <div class="col-md-12">
+    <% if flash[:error] %>
+      <div class="alert alert-error">
+        <button data-dismiss="alert" class="close"></button>
+        Danger: <%= flash[:error] %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <!-- BEGIN PlACE PAGE CONTENT HERE -->
 <%= render 'form' %>
 <!-- END PLACE PAGE CONTENT HERE -->
@@ -18,21 +29,16 @@
 <%= content_for :edit_js do %>
   <script>
     var dates_previous_selected = <%= @available_dates %>;
-    console.log("the previous dates are:" + dates_previous_selected)
     $.each(dates_previous_selected, function( index, value ) {
       dates_previous_selected[index] = new Date(dates_previous_selected[index] * 1000);
     });
 
-    $('#experience_exp_date').datepicker({
+    $('.input-group.date' ).datepicker({
       multidate: true,
       startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
-    $('#datepicker-button').datepicker({
-      multidate: true,
-      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
-    });
-    $('#experience_exp_date').datepicker('setDates', dates_previous_selected);
-    $('#experience_exp_date').datepicker('update');
+    $('.input-group.date').datepicker('setDates', dates_previous_selected);
+    $('.input-group.date').datepicker('update');
   </script>
   <script>
 
