@@ -14,10 +14,7 @@
 
 
         <% flash.each do |name, msg| %>
-          <div class="alert alert-success">
-            <button data-dismiss="alert" class="close"></button>
-            <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
-          </div>
+          <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
         <% end %>
 
         <%= devise_error_messages! %>

@@ -7,5 +7,5 @@ ActionMailer::Base.smtp_settings = {
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'urbanzeak.com' # your domain to identify your server when connecting
 }
-ActionMailer::Base.delivery_method = :smtp
-#ActionMailer::Base.default_url_options[:host] = "letsdine.co"
+# Commenting the smtp line out becuase it is overriding the config setting to prevent emails from being sent in the test environment
+#ActionMailer::Base.delivery_method = :smtp

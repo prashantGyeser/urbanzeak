@@ -78,3 +78,19 @@ end
 Then(/^I should not be logged in$/) do
   page.should have_content 'Invalid email or password'
 end
+
+Given(/^I want to reset my password$/) do
+  visit 'users/password/new'
+end
+
+When(/^I want to reset the password for "(.*?)"$/) do |arg1|
+
+  ActionMailer::Base.delivery_method = :test
+
+  User.create(:email => 'cucumber@urbanzeak.com', :first_name => 'Cucumber Test', :password => 'password@123', :password_confirmation => 'password@123', :subdomain => 'cucumbersubdomain' )
+
+  fill_in 'user_email', :with => 'cucumber@urbanzeaks.com'
+  click_button 'Send me reset instructions'
+end
+
+

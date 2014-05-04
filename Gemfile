@@ -129,4 +129,6 @@ group :test do
   gem 'launchy'
   gem 'email_spec'
   gem 'capybara-screenshot'
+  gem 'capybara-email'
+  gem 'selenium-webdriver'
 end

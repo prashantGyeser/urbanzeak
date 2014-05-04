@@ -6,6 +6,8 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'email_spec'
+require 'capybara/email/rspec'
+require 'selenium-webdriver'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -21,8 +23,6 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 
 RSpec.configure do |config|
-  config.include(EmailSpec::Helpers)
-  config.include(EmailSpec::Matchers)
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -30,14 +30,6 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -52,5 +44,38 @@ RSpec.configure do |config|
 
   # Configuring rspec to show backtrace for failed tests
   config.fail_fast = true
+
+  # Clean up and initialize database before
+  # running test exmaples
+  config.before(:suite) do
+    # Truncate database to clean up garbage from
+    # interrupted or badly written examples
+    DatabaseCleaner.clean_with(:truncation)
+
+    # Seed dataase. Use it only for essential
+    # to run application data.
+    load "#{Rails.root}/db/seeds.rb"
+  end
+
+  config.around(:each) do |example|
+    # Use really fast transaction strategy for all
+    # examples except `js: true` capybara specs
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+
+    # Start transaction
+    DatabaseCleaner.start
+
+    # Run example
+    example.run
+
+    # Rollback transaction
+    DatabaseCleaner.clean
+
+    # Clear session data
+    Capybara.reset_sessions!
+  end
+
+  # Including mailer helpers
+  config.include(MailerMacros)
 
 end
