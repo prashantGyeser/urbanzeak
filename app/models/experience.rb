@@ -101,7 +101,7 @@ class Experience < ActiveRecord::Base
       end
     end
 
-    return has_experience
+    return has_purchase
 
   end
 
