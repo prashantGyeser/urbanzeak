@@ -92,12 +92,12 @@ class Experience < ActiveRecord::Base
 
   def self.host_has_purchases(host)
     experiences = Experience.where(:user_id => host.id)
-    has_experience = false
+    has_purchase = false
 
     experiences.each do |experience|
       attendees_count = Attendee.where(:experience_id => experience.id).count
-      if attendees_count == 0
-        has_experience = true
+      if attendees_count > 0
+        has_purchase = true
       end
     end
 
