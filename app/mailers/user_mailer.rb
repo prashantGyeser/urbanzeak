@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def founder_welcome(user, time_to_send)
     email_subject = "UrbanZeak - Need help?"
-    from = "prashant@urbanzeak.co"
+    from = "prashant@urbanzeak.com"
     @name = user.first_name
 
     mail   to:      user.email, # normal mailer stuff

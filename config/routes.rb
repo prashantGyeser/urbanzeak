@@ -62,6 +62,7 @@ Urbanzeak::Application.routes.draw do
     post 'experiences/facebook_share' => "experiences#facebook_share"
     get 'experiences/:id/edit' => "experiences#edit"
     post 'experiences/:experience_id/remove-photos' => "experiences#remove_photos"
+    post 'profile/delete-picture' => "profile#delete_picture"
   end
 
   get "home/index"
