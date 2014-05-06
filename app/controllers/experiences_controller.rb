@@ -141,7 +141,7 @@ class ExperiencesController < ApplicationController
 
         show_url_with_subdomain  = [url_with_subdomain(current_user.subdomain), experience_path(@experience)].join
 
-        format.html { redirect_to show_url_with_subdomain, notice: 'Experience was successfully updated.' }
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
         #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
@@ -212,12 +212,6 @@ class ExperiencesController < ApplicationController
       # or you can use the authenticate_user! devise provides to only allow signed_in users
       raise 'Please sign in!'
     end
-  end
-
-  def url_with_subdomain(subdomain)
-    subdomain = (subdomain || "")
-    subdomain += "." unless subdomain.empty?
-    [subdomain, request.domain, request.port_string].join
   end
 
   private
