@@ -139,8 +139,6 @@ class ExperiencesController < ApplicationController
 
       if @experience.update(experience_params)
 
-        show_url_with_subdomain  = [url_with_subdomain(current_user.subdomain), experience_path(@experience)].join
-
         format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
