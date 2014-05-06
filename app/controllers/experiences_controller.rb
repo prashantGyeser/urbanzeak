@@ -72,8 +72,8 @@ class ExperiencesController < ApplicationController
           
         @experience.shortened_url = root_url + url.unique_key + '/'
         @experience.save
-          
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully created.', status: 301 }
         format.json { render action: 'show', status: :created, location: @experience }
       else
         format.html { render action: 'new' }
@@ -138,7 +138,8 @@ class ExperiencesController < ApplicationController
 
 
       if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
         #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }

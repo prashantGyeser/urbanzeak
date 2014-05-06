@@ -23,6 +23,21 @@ class Dashboard::ProfileController < Dashboard::ApplicationController
 
   end
 
+  def delete_picture
+
+    host = Host.find(params[:host_id])
+    host.remove_avatar!
+
+    respond_to do |format|
+      if host.save
+        format.json { render json: host, status: :created, location: host}
+      else
+        format.json { render json: host.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
   protected 
 
   def host_params

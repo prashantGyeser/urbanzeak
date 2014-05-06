@@ -60,8 +60,10 @@
             <% if @host.avatar.blank? %>
               <%= f.file_field :avatar, :class => "form-control"%>
             <% else %>
-              <%= image_tag @host.avatar, :class => "img-responsive" %>
-            <% end %>
+              <button class="btn btn-danger btn-cons" id="delete-profile-picture" data-host-id="<%= @host.id %>">Delete Your Photo</button>
+              <%= f.file_field :avatar, :class => "form-control avatar-uploader" %>
+              <%= image_tag @host.avatar, :class => "img-responsive", :id => "profile-picture" %>
+          <% end %>
 
           </div>
         </div>
