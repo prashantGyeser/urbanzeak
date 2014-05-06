@@ -72,8 +72,8 @@ class ExperiencesController < ApplicationController
           
         @experience.shortened_url = root_url + url.unique_key + '/'
         @experience.save
-          
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully created.', status: 301 }
         format.json { render action: 'show', status: :created, location: @experience }
       else
         format.html { render action: 'new' }
@@ -138,7 +138,10 @@ class ExperiencesController < ApplicationController
 
 
       if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+
+        show_url_with_subdomain  = [url_with_subdomain(current_user.subdomain), experience_path(@experience)].join
+
+        format.html { redirect_to show_url_with_subdomain, notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
         #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
@@ -209,6 +212,12 @@ class ExperiencesController < ApplicationController
       # or you can use the authenticate_user! devise provides to only allow signed_in users
       raise 'Please sign in!'
     end
+  end
+
+  def url_with_subdomain(subdomain)
+    subdomain = (subdomain || "")
+    subdomain += "." unless subdomain.empty?
+    [subdomain, request.domain, request.port_string].join
   end
 
   private
