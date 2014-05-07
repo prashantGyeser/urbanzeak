@@ -1,5 +1,20 @@
 <!-- NEW EXPERIENCE FORM -->
 <%= form_for [:dashboard, @experience] do |f| %>
+
+  <% if @experience.errors.any? %>
+
+    <div id="error_explanation" class="alert alert-error">
+      <button data-dismiss="alert" class="close"></button>
+      <h2 style="color: #db7c7e" class="bold"><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-md-8">
       <div class="grid simple">
@@ -14,7 +29,7 @@
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
               <!--<input type="text" class="form-control">-->
-              <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+              <%= f.text_field :name, :class => "form-control", :autofocus => true %>
             </div>
           </div>
 

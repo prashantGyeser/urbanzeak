@@ -117,8 +117,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
         format.json { head :no_content }
       else
         #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
-        edit_path = dashboard_experiences_url + '/' + @experience.id.to_s + '/edit'
-        format.html { redirect_to edit_path, :flash => { :error => 'Something went wrong. We are looking into it, please try again later' }  }
+        format.html { redirect_to 'edit' }
         format.json { render json: @experience.errors, status: :unprocessable_entity }
       end
     end
