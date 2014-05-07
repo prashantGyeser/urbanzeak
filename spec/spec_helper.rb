@@ -8,6 +8,8 @@ require 'database_cleaner'
 require 'email_spec'
 require 'capybara/email/rspec'
 require 'selenium-webdriver'
+require 'support/subdomains'
+require 'capybara-screenshot/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -44,6 +46,9 @@ RSpec.configure do |config|
 
   # Configuring rspec to show backtrace for failed tests
   config.fail_fast = true
+
+  # Setting fixtures to false so that capybara selinium does not have any issues
+  config.use_transactional_fixtures = false
 
   # Clean up and initialize database before
   # running test exmaples
