@@ -1,0 +1,62 @@
+require 'spec_helper'
+require 'faker'
+
+feature 'Edit Experience' do
+  background do
+    user = FactoryGirl.create(:user)
+    visit '/users/sign_in'
+    within('#new_user') do
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
+    end
+    click_button 'Login'
+  end
+
+  scenario 'Update without any changes to the values' do
+    experience = FactoryGirl.create(:experience)
+
+    visit "/dashboard/experiences/#{experience.id}/edit"
+    click_button 'Update Experience'
+    expect(page).to have_content "Experience was successfully updated."
+
+  end
+
+  scenario 'Update after changing the tagline' do
+    experience = FactoryGirl.create(:experience)
+
+    visit "/dashboard/experiences/#{experience.id}/edit"
+    modified_tagline = Faker::Lorem.sentence(5)
+    fill_in 'experience_tagline', :with => modified_tagline
+    click_button 'Update Experience'
+    expect(page).to have_content modified_tagline
+  end
+
+  scenario 'The page has a notification telling the user the experience was updated' do
+    experience = FactoryGirl.create(:experience)
+
+    visit "/dashboard/experiences/#{experience.id}/edit"
+    modified_tagline = Faker::Lorem.sentence(5)
+    fill_in 'experience_tagline', :with => modified_tagline
+    click_button 'Update Experience'
+    expect(page).to have_content "Experience was successfully updated."
+  end
+
+  scenario 'Update the experience after changing the dates' do
+    experience = FactoryGirl.create(:experience)
+
+    visit "/dashboard/experiences/#{experience.id}/edit"
+    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/28/2014'
+    click_button 'Update Experience'
+    expect(page).to have_content "Experience was successfully updated."
+  end
+
+  scenario 'Update the experience after changing the dates', :js => true do
+    experience = FactoryGirl.create(:experience)
+
+    visit "/dashboard/experiences/#{experience.id}/edit"
+    fill_in 'experience_land_mark', with: 'new york'
+    click_button 'Update Experience'
+    expect(page).to have_content "New York, NY, USA"
+  end
+
+end

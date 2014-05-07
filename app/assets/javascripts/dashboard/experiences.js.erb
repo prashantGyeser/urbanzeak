@@ -53,6 +53,14 @@ ready = function() {
     $("#reset").show();
   });
 
+  $('.edit_experience').submit(function(){
+    var landmark_entered = $('#experience_land_mark').val();
+    if(landmark_entered !== "")
+    {
+      $("#experience_land_mark").trigger("geocode");
+    }
+    return true
+  });
 
 
   // File picker code -- end

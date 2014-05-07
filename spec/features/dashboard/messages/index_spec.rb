@@ -26,4 +26,10 @@ feature 'I should be able to see and reply to messages' do
     expect(page).to have_content(@conversation.sender_email_id)
   end
 
+  scenario 'I should see the messages when I go to another page and come back', :js => true do
+    visit '/dashboard/messages'
+    find('#experiences_nav').click
+    #find(:xpath, "//a[@href='/dashboard/experiences']").click
+  end
+
 end
