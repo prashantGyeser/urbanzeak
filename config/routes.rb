@@ -42,6 +42,7 @@ Urbanzeak::Application.routes.draw do
     get "experiences/edit"
     get "experiences/templates"
     get "experiences/new/:template_id" => "experiences#new"
+    resources :experiences
     get "integrations" => "integrations#index"
     get 'integrations/facebook'
     get 'integrations/facebook_finalizeOAuth'
