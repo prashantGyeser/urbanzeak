@@ -38,7 +38,7 @@
 #
 
 class Experience < ActiveRecord::Base
-  validates :name, :price, presence: true
+  validates :name, :price, :max_seats, :line_one, :city, :country, presence: true
 
   #has_many :exp_images
   #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true

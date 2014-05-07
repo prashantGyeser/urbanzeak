@@ -23,7 +23,6 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 #Capybara.server_port = 7000
 #Capybara.app_host = "http://localhost:#{Capybara.server_port}"
 
-
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -62,22 +61,20 @@ RSpec.configure do |config|
     load "#{Rails.root}/db/seeds.rb"
   end
 
-  config.around(:each) do |example|
-    # Use really fast transaction strategy for all
-    # examples except `js: true` capybara specs
-    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
 
-    # Start transaction
+  config.before(:each) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
     DatabaseCleaner.start
+  end
 
-    # Run example
-    example.run
-
-    # Rollback transaction
+  config.after(:each) do
     DatabaseCleaner.clean
-
-    # Clear session data
-    Capybara.reset_sessions!
   end
 
   # Including mailer helpers

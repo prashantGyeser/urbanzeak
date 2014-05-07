@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  #validates :city, :first_name, :last_name, :presence => true
+  validates :first_name, :subdomain, :presence => true
 
   has_many :integration_tokens
   has_many :templates

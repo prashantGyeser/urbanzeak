@@ -8,6 +8,122 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     @about = Host.where(:user_id => current_user.id)
   end
 
+  # POST /experiences
+  # POST /experiences.json
+  def create
+
+    #@experience = Experience.new(experience_params)
+    @experience = Experience.new(experience_params)
+    @experience.user_id = current_user.id
+    #images_string = params[:experience][:images]
+    images = params[:experience_image][:image]
+
+    if images.blank?
+    else
+      experience_images = JSON.parse(params[:experience_image][:image])
+    end
+
+
+    respond_to do |format|
+      if @experience.save
+        experience_dates = params[:experience][:exp_date].split(',')
+
+        if experience_images.present?
+          experience_images.each do |experience_image|
+            ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+          end
+        end
+
+        experience_dates.each do |experience_date|
+          @experience_date = ExperienceDate.new
+          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+          @experience_date.experience_id = @experience.id
+          @experience_date.save
+        end
+
+
+
+        url = Shortener::ShortenedUrl.generate(experience_url(@experience), current_user)
+
+        @experience.shortened_url = root_url + url.unique_key + '/'
+        @experience.save
+
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully created.', status: 301 }
+        format.json { render action: 'show', status: :created, location: @experience }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+
+      experience_dates = params[:experience][:exp_date].split(',')
+      images = params[:experience_image][:image]
+      if images.blank?
+
+      else
+        experience_images = JSON.parse(params[:experience_image][:image])
+      end
+
+      logger.debug "The experience_images are: #{experience_images}"
+
+      previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+      previous_images = ExperienceImage.where(:experience_id => @experience.id)
+
+
+      if experience_dates.blank?
+
+      else
+
+        prev_date_count = previous_dates.count
+
+        previous_dates.each do |prev_date|
+          prev_date.destroy
+        end
+
+        experience_dates.each do |experience_date|
+          #if experience_dates.count == prev_date_count
+          @experience_date = ExperienceDate.new
+          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+          @experience_date.experience_id = @experience.id
+          @experience_date.save
+        end
+      end
+      #logger.debug "the images are blank: #{imageasas.blank?}"
+
+      if previous_images.blank?
+      else
+        previous_images.each do |previous_image|
+          previous_image.destroy
+        end
+      end
+
+
+      if experience_images.present?
+        experience_images.each do |experience_image|
+          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+        end
+      end
+
+
+      if @experience.update(experience_params)
+
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully updated.' }
+        format.json { head :no_content }
+      else
+        #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
+        format.html { redirect_to 'edit' }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   def new
     @experience = Experience.new
     @experience_image = ExperienceImage.new
@@ -40,21 +156,6 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
     @experience.exp_time = @experience.exp_time.strftime("%I:%M %p") #"7:15 PM"
     @experience_images = ExperienceImage.where(:experience_id => @experience.id)
-  end
-
-
-  # PATCH/PUT /experiences/1
-  # PATCH/PUT /experiences/1.json
-  def update
-    respond_to do |format|
-      if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def remove_photos
@@ -122,5 +223,11 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
   end
 
+  private
+
+  def experience_params
+    #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
+    params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category, :hours, :experience_image_attributes => [:id, :image])
+  end
 
 end
