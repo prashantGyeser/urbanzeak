@@ -86,10 +86,6 @@ group :staging, :production do
   gem 'newrelic_rpm'
 end
 
-group :production do
-
-end
-
 # Page tracking for hosts
 gem 'impressionist'
 
@@ -121,7 +117,6 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
