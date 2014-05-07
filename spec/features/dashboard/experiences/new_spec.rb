@@ -33,6 +33,10 @@ feature 'New Experience' do
     fill_in 'experience_hours', with: 3
     fill_in 'experience_price', with: 12.50
     fill_in 'experience_max_seats', with: 10
+    fill_in 'experience_line_one', with: "110 Cross Street"
+    fill_in 'experience_city', with: "New York"
+    fill_in 'experience_country', with: "United States"
+
     fill_in 'experience_land_mark', with: "New York, NY, USA"
 
     click_button "Create Experience"
