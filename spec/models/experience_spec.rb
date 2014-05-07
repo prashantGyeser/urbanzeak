@@ -52,6 +52,12 @@ describe Experience do
   it 'should have a what is included' do
     FactoryGirl.build(:experience, what_does_this_include: nil)
   end
+
+  it {should validate_presence_of(:max_seats)}
+  it {should validate_presence_of(:line_one)}
+  it {should validate_presence_of(:city)}
+  it {should validate_presence_of(:country)}
+
   it 'should return an array of available dates' do
     experience = FactoryGirl.build(:experience)
   end
