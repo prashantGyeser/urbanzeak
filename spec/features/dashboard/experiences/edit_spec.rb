@@ -21,7 +21,7 @@ feature 'Edit Experience' do
 
   end
 
-  scenario 'Update after changing the tagline' do
+  scenario 'Update after changing the tagline', :js => true do
     experience = FactoryGirl.create(:experience)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
