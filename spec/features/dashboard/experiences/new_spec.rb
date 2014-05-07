@@ -2,13 +2,13 @@ require 'spec_helper'
 
 feature 'New Experience' do
   scenario 'I should be able to select multiple dates from the datepicker' do
-    User.create(:email => 'capybara@urbanzeak.com', :password => 'password@123', :password_confirmation => 'password@123', :subdomain => "capybara")
+    user = FactoryGirl.create(:user)
 
     # Logging in
     visit '/users/sign_in'
     within('#new_user') do
-      fill_in 'user_email', with: 'capybara@urbanzeak.com'
-      fill_in 'user_password', with: 'password@123'
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
     end
     click_button 'Login'
 

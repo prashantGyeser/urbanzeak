@@ -6,4 +6,4 @@
 
 #Urbanzeak::Application.config.session_store :cookie_store, key: '_application_devise_session', domain: ".lvh.me"
 
-Rails.application.config.session_store :cookie_store, :key => '_application_devise_session', :domain => :all
+Rails.application.config.session_store :cookie_store, :key => '_application_devise_session', :domain => '.lvh.me'
