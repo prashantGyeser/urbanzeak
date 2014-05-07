@@ -3,6 +3,11 @@ require 'temboo'
 require 'Library/Facebook'
 
 class Dashboard::ExperiencesController < Dashboard::ApplicationController
+  before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_filter :check_if_host, only: [:create]
+
+
   def index
     @experiences = Experience.where(:user_id => current_user.id)
     @about = Host.where(:user_id => current_user.id)
@@ -59,65 +64,62 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   end
 
   def update
+    experience_dates = params[:experience][:exp_date].split(',')
+    logger.debug "The experience dates are: #{experience_dates.inspect}"
+    images = params[:experience_image][:image]
+    if images.blank?
+    else
+      experience_images = JSON.parse(params[:experience_image][:image])
+    end
+
+    logger.debug "The experience_images are: #{experience_images}"
+
+    previous_dates = ExperienceDate.where(:experience_id => @experience.id)
+    previous_images = ExperienceImage.where(:experience_id => @experience.id)
+
+
+    if experience_dates.blank?
+
+    else
+
+      prev_date_count = previous_dates.count
+
+      previous_dates.each do |prev_date|
+        prev_date.destroy
+      end
+
+      experience_dates.each do |experience_date|
+        #if experience_dates.count == prev_date_count
+        @experience_date = ExperienceDate.new
+        @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
+        @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
+        @experience_date.experience_id = @experience.id
+        @experience_date.save
+      end
+    end
+    #logger.debug "the images are blank: #{imageasas.blank?}"
+
+    if previous_images.blank?
+    else
+      previous_images.each do |previous_image|
+        previous_image.destroy
+      end
+    end
+
+
+    if experience_images.present?
+      experience_images.each do |experience_image|
+        ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
+      end
+    end
+
     respond_to do |format|
-
-      experience_dates = params[:experience][:exp_date].split(',')
-      images = params[:experience_image][:image]
-      if images.blank?
-
-      else
-        experience_images = JSON.parse(params[:experience_image][:image])
-      end
-
-      logger.debug "The experience_images are: #{experience_images}"
-
-      previous_dates = ExperienceDate.where(:experience_id => @experience.id)
-      previous_images = ExperienceImage.where(:experience_id => @experience.id)
-
-
-      if experience_dates.blank?
-
-      else
-
-        prev_date_count = previous_dates.count
-
-        previous_dates.each do |prev_date|
-          prev_date.destroy
-        end
-
-        experience_dates.each do |experience_date|
-          #if experience_dates.count == prev_date_count
-          @experience_date = ExperienceDate.new
-          @experience_date.experience_date =  Date.strptime(experience_date.to_s, '%m/%d/%Y')
-          @experience_date.experience_time = Time.zone.parse(params[:experience][:exp_time])
-          @experience_date.experience_id = @experience.id
-          @experience_date.save
-        end
-      end
-      #logger.debug "the images are blank: #{imageasas.blank?}"
-
-      if previous_images.blank?
-      else
-        previous_images.each do |previous_image|
-          previous_image.destroy
-        end
-      end
-
-
-      if experience_images.present?
-        experience_images.each do |experience_image|
-          ExperienceImage.create!(:experience_id => @experience.id, :url => experience_image["url"], :file_name => experience_image["filename"])
-        end
-      end
-
-
       if @experience.update(experience_params)
-
         format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully updated.' }
         format.json { head :no_content }
       else
         #format.html { render :controller => 'dashboard/experiences' ,action: 'edit' }
-        format.html { redirect_to 'edit' }
+        format.html { render action: 'edit' }
         format.json { render json: @experience.errors, status: :unprocessable_entity }
       end
     end
@@ -228,6 +230,11 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   def experience_params
     #params.require(:experience).permit(:name, :description, :price, :exp_date, :exp_time, :latitude, :longitude, :city, exp_images_attributes: [:url])
     params.require(:experience).permit(:name, :description, :price, :things_to_remember, :line_one, :line_two, :state, :city, :land_mark, :country, :exp_date, :exp_time, :template_id, :random_id, :pincode, :latitude, :longitude, :tagline, :what_does_this_include, :max_seats, :category, :hours, :experience_image_attributes => [:id, :image])
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_experience
+    @experience = Experience.friendly.find(params[:id])
   end
 
 end

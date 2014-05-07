@@ -24,12 +24,12 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :message do
-    name "MyString"
-    email "MyString"
-    message "MyText"
-    user_id 1
-    experience_id 1
+    name Faker::Name.name
+    #email Faker::Internet.email
+    body Faker::Lorem.paragraph(3)
   end
 end

@@ -8,6 +8,7 @@ $(document).ready(function(){
 
     $('#review_created_success').hide();
     $('#conversation_created_success').hide();
+    $('#conversation_created_fail').hide();
     $('#create_review').click(function(e){
         e.preventDefault();
         $.post('/experiences/create_review', $('form#new_review').serialize(), function(data){
@@ -25,14 +26,25 @@ $(document).ready(function(){
     $('#send_conversation').click(function(e){
         e.preventDefault();
 
-        $.post('/conversations/create', $('form#new_conversation').serialize(), function(data){
-            $('.new_conversation_body').hide();
-            $('#conversation_created_success').show();
-            $('#send_conversation').attr('disabled', true);
-            $('#send_conversation').addClass('disabled');
-        },
-            'json'
-        );
+        $.post('/conversations/create', $('form#new_conversation').serialize())
+            .done( function(msg) {
+                $('.new_conversation_body').hide();
+                $('#conversation_created_success').show();
+                $('#send_conversation').attr('disabled', true);
+                $('#send_conversation').addClass('disabled');
+            } )
+            .fail( function(xhr, textStatus, errorThrown) {
+                $('#conversation_created_fail').show();
+            });
+
+//        $.post('/conversations/create', $('form#new_conversation').serialize(), function(data){
+//            $('.new_conversation_body').hide();
+//            $('#conversation_created_success').show();
+//            $('#send_conversation').attr('disabled', true);
+//            $('#send_conversation').addClass('disabled');
+//        },
+//            'json'
+//        );
     });
 
     $('#get_dates').click(function(event){

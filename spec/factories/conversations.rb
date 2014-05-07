@@ -13,9 +13,11 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :conversation do
-    user_id 1
-    sender_email_id "MyString"
+    sender_email_id Faker::Internet.email
+    customer_name Faker::Name.name
   end
 end

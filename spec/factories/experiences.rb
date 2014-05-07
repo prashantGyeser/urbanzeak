@@ -45,16 +45,18 @@ require 'faker'
 
 FactoryGirl.define do
   factory :experience do
-    name "experience name"
+    name Faker::Lorem.sentence(1)
     what_does_this_include Faker::Lorem.paragraph(2)
+    tagline Faker::Lorem.sentence(3)
     line_one Faker::Address.street_name
     city Faker::Address.city
     country Faker::Address.country
     price 9.99
     max_seats 5
-    exp_date "2013-11-28"
-    exp_time "2013-11-28 16:41:04"
+    #exp_date "2013-11-28"
+    exp_time "7:15 PM"
     latitude  38.898556
     longitude -77.037852
+    land_mark Faker::Address.city
   end
 end
