@@ -9,11 +9,17 @@
           <h4 id="myModalLabel" class="semi-bold">Have a question?</h4>
           <p class="no-margin">Send the host a message and they will get back to you shortly. </p>
           <br>
-
-          <div class="alert alert-success" id="conversation_created_success">
-            <button data-dismiss="alert" class="close"></button>
-            Success: Your message was submitted successfully.
+          <div id="message_notifications">
+            <div class="alert alert-success" id="conversation_created_success">
+              <button data-dismiss="alert" class="close"></button>
+              Success: Your message was submitted successfully.
+            </div>
+            <div class="alert alert-error" id="conversation_created_fail">
+              <button data-dismiss="alert" class="close"></button>
+              Danger: Something went wrong. Please try again later.
+            </div>
           </div>
+
 
         </div>
         <div class="modal-body new_conversation_body">
