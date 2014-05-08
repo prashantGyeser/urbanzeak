@@ -27,13 +27,15 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :user do
-    email 'john@doe.com'
-    first_name 'John'
+    email Faker::Internet.email
+    first_name Faker::Name.name
     password 'password@123'
     password_confirmation 'password@123'
-    subdomain 'john'
+    subdomain Faker::Name.name
   end
 
 end

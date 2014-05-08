@@ -10,6 +10,7 @@ require 'capybara/email/rspec'
 require 'selenium-webdriver'
 require 'support/subdomains'
 require 'capybara-screenshot/rspec'
+require 'shoulda-matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

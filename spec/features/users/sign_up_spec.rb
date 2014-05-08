@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'support/mailer_macros'
+require 'faker'
 
 feature 'Sign up' do
 
@@ -60,6 +61,40 @@ feature 'Sign up' do
 
   scenario 'Shop name is unique' do
     pending
+  end
+
+  scenario 'I should not be able to sign up with a blacklisted subdomain' do
+    user = FactoryGirl.build(:user)
+    visit '/users/sign_up'
+    within('#new_user') do
+      fill_in 'user_email', with: user.email
+      fill_in 'user_first_name', with: user.first_name
+      fill_in 'user_password', with: 'password@123'
+      fill_in 'user_password_confirmation', with: 'password@123'
+      fill_in 'user_subdomain', with: 'www'
+    end
+    click_button 'Sign up'
+
+    #expect(page).to have_content('The shopname you entered is already in use. Please pick another.')
+    expect(page).to have_content('Subdomain is reserved')
+
+  end
+
+  scenario 'It should show me an error message when I try to sign up with an existing subdomain' do
+    user = FactoryGirl.create(:user)
+
+    visit '/users/sign_up'
+    within('#new_user') do
+      fill_in 'user_email', with: Faker::Internet.email
+      fill_in 'user_first_name', with: user.first_name
+      fill_in 'user_password', with: 'password@123'
+      fill_in 'user_password_confirmation', with: 'password@123'
+      fill_in 'user_subdomain', with: user.subdomain
+    end
+    click_button 'Sign up'
+
+    expect(page).to have_content('Subdomain has already been taken')
+
   end
 
 end
