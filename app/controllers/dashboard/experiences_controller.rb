@@ -225,6 +225,17 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     end
   end
 
+  protected
+
+  def check_if_host
+    if signed_in?
+      raise 'Only hosts can create experiences!' unless current_user.host?
+    else
+      # or you can use the authenticate_user! devise provides to only allow signed_in users
+      raise 'Please sign in!'
+    end
+  end
+
   private
 
   def experience_params

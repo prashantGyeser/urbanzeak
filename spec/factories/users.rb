@@ -35,7 +35,7 @@ FactoryGirl.define do
     first_name Faker::Name.name
     password 'password@123'
     password_confirmation 'password@123'
-    subdomain Faker::Name.name
+    subdomain Faker::Internet.domain_word
   end
 
 end
