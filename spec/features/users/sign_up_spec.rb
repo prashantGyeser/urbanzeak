@@ -63,7 +63,7 @@ feature 'Sign up' do
     pending
   end
 
-  scenario 'I should not be able to sign up with a blacklisted subdomain' do
+  scenario 'I should not be able to sign up with a reserved subdomain' do
     user = FactoryGirl.build(:user)
     visit '/users/sign_up'
     within('#new_user') do

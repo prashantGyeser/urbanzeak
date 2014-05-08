@@ -31,7 +31,9 @@ describe User do
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:first_name) }
   it { should validate_presence_of(:subdomain) }
-  it { should ensure_exclusion_of(:subdomain).in_array(['www', 'admin', 'dashboard']) }
-  # Todo: Add a test to check for uniqueness of the subdomain, leaving it out for now
-  # because it is causing a lot of errors
+  it { should ensure_exclusion_of(:subdomain).in_array(['www', 'admin', 'dashboard', 'pop', 'mail', 'ftp', 'ssl', 'sftp']) }
+  it do
+    FactoryGirl.create(:user)
+    should validate_uniqueness_of(:subdomain)
+  end
 end

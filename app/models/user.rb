@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   validates :first_name, :subdomain, :presence => true
 
   # Making sure users do not use a subdomain we might need
-  validates_exclusion_of :subdomain, in: ['www', 'admin', 'dashboard']
+  validates_exclusion_of :subdomain, in: ['www', 'admin', 'dashboard', 'pop', 'mail', 'ftp', 'ssl', 'sftp']
   # Ensuring the subdomain is unique
   validates :subdomain, :uniqueness => true
 
