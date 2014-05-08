@@ -7,8 +7,6 @@ Urbanzeak::Application.routes.draw do
 
   devise_for :users
 
-
-
   post "conversations/create" => "conversations#create"
 
   # Sending a user to the dashboard page once they login
