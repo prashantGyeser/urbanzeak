@@ -36,4 +36,11 @@ describe User do
     FactoryGirl.create(:user)
     should validate_uniqueness_of(:subdomain)
   end
+  it { should ensure_length_of(:subdomain).is_at_least(3).is_at_most(50) }
+  it { should allow_value('test').for(:subdomain) }
+  it { should allow_value('test-test').for(:subdomain) }
+  it { should allow_value('test_test').for(:subdomain) }
+  it { should_not allow_value('_test').for(:subdomain).with_message('The subdomain can only contain alphanumeric characters and dashes.') }
+  it { should_not allow_value('te$#%').for(:subdomain).with_message('The subdomain can only contain alphanumeric characters and dashes.') }
+
 end
