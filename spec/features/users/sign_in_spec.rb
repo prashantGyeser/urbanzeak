@@ -26,4 +26,8 @@ feature 'Sign in' do
     expect(page).to have_content 'Invalid email or password'
   end
 
+  scenario 'When I select the remember me checkbox I should stay logged in' do
+    pending
+  end
+
 end

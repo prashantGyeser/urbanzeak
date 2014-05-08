@@ -54,4 +54,12 @@ feature 'Sign up' do
 
   end
 
+  scenario 'I should not be able to sign up if I use an already existing shop name' do
+    pending
+  end
+
+  scenario 'Shop name is unique' do
+    pending
+  end
+
 end

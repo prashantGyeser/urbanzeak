@@ -66,4 +66,28 @@ feature 'Edit Experience' do
 
   end
 
+  scenario 'back button should work' do
+    pending
+  end
+
+  scenario '' do
+    pending
+  end
+
+  scenario '' do
+    pending
+  end
+
+  scenario 'When the max seats change it should be reflected in the show page' do
+    pending
+  end
+
+  scenario 'Versioning for the price, should be reflected in the dashboard' do
+    pending
+  end
+
+  scenario 'There should be a link to the profile edit page on the experience show page' do
+    pending
+  end
+
 end
