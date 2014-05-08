@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   # Ensuring the subdomain is unique
   validates :subdomain, :uniqueness => true
   validates :subdomain, :length => { :in => 3..50}
-  validates_format_of :subdomain, :with => /\A[a-zA-Z0-9\#\*][a-zA-Z0-9\#\*\.\(\)\s\-_]*[a-zA-Z0-9\.\)]\z/, :message => 'The subdomain can only contain alphanumeric characters and dashes.'
+  validates_format_of :subdomain, :with => /\A[a-zA-Z0-9\#\*][a-zA-Z0-9\#\*\.\(\)\s\-_]*[a-zA-Z0-9\.\)]\z/, :message => 'can only contain alphanumeric characters and dashes.'
 
   has_many :integration_tokens
   has_many :templates

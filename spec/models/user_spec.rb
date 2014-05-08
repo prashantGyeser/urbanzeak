@@ -40,7 +40,7 @@ describe User do
   it { should allow_value('test').for(:subdomain) }
   it { should allow_value('test-test').for(:subdomain) }
   it { should allow_value('test_test').for(:subdomain) }
-  it { should_not allow_value('_test').for(:subdomain).with_message('The subdomain can only contain alphanumeric characters and dashes.') }
-  it { should_not allow_value('te$#%').for(:subdomain).with_message('The subdomain can only contain alphanumeric characters and dashes.') }
+  it { should_not allow_value('_test').for(:subdomain).with_message('can only contain alphanumeric characters and dashes.') }
+  it { should_not allow_value('te$#%').for(:subdomain).with_message('can only contain alphanumeric characters and dashes.') }
 
 end
