@@ -95,7 +95,7 @@
     <div class="clearfix"></div>
     <ul>
       <!-- BEGIN SELECTED LINK -->
-      <li class="start active">
+      <li class="<%= 'active' if current_page? dashboard_purchases_path %>">
         <a href="<%= dashboard_purchases_path %>" id="home_nav">
           <i class="icon-custom-home"></i>
           <span class="title">Purchases</span>
@@ -104,14 +104,14 @@
       </li>
       <!-- END SELECTED LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
+      <li class="<%= 'active' if current_page? dashboard_experiences_path %>">
         <a href="<%= dashboard_experiences_path %>" id="experiences_nav">
           <i class="fa fa-envelope"></i>
           <span class="title">Experiences</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
-      <li class="">
+      <li class="<%= 'active' if current_page? dashboard_profile_about_path %>">
         <a href="<%= dashboard_profile_about_path %>" id="profile_nav">
           <i class="fa fa-envelope"></i>
           <span class="title">About You</span>
@@ -120,7 +120,7 @@
       </li>
       <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
+      <li class="<%= 'active' if current_page? dashboard_messages_path %>">
         <a href="<%= dashboard_messages_path %>" id="messages_nav">
           <i class="fa fa-envelope"></i>
           <span class="title">Messages</span>
@@ -130,7 +130,7 @@
       </li>
       <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
+      <li class="<%= 'active' if current_page? dashboard_reviews_path %>">
         <a href="<%= dashboard_reviews_path %>" id="reviews_nav">
           <i class="fa fa-envelope"></i>
           <span class="title">Reviews</span>
@@ -140,7 +140,7 @@
       </li>
       <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
+      <li class="<%= 'active' if current_page? dashboard_integrations_path %>">
         <a href="<%= dashboard_integrations_path %>" id="integrations_nav">
           <i class="fa fa-envelope"></i>
           <span class="title">Integrations</span>
