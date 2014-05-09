@@ -48,8 +48,8 @@ class User < ActiveRecord::Base
   has_many :conversations
   has_many :experiences
 
-  #after_create :send_welcome_email
-  #after_create :autoresponder
+  after_create :send_welcome_email
+  after_create :autoresponder
   after_create :add_guid
   after_create :set_tour_status
   after_create :set_host

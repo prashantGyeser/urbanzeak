@@ -58,31 +58,6 @@ ready = function() {
     $('#user-options').click(function(){
         $('#my-task-list').popover('hide')
     })
-//*********************************** BEGIN CHAT POPUP*****************************
-    $('.chat-menu-toggle').sidr({
-        name:'sidr',
-        side: 'right',
-        complete:function(){
-        }
-    });
-    $(".simple-chat-popup").click(function(){
-        $(this).addClass('hide');
-        $('#chat-message-count').addClass('hide');
-    });
-
-    setTimeout( function(){
-        $('#chat-message-count').removeClass('hide');
-        $('#chat-message-count').addClass('animated bounceIn');
-        $('.simple-chat-popup').removeClass('hide');
-        $('.simple-chat-popup').addClass('animated fadeIn');
-    },5000);
-    setTimeout( function(){
-        $('.simple-chat-popup').addClass('hide');
-        $('.simple-chat-popup').removeClass('animated fadeIn');
-        $('.simple-chat-popup').addClass('animated fadeOut');
-    },8000);
-
-//*********************************** END CHAT POPUP*****************************
 
 //**********************************BEGIN MAIN MENU********************************
     jQuery('.page-sidebar li > a').on('click', function (e) {
@@ -292,48 +267,21 @@ ready = function() {
         $('#main-menu-toggle-wrapper').hide();
         $('#portrait-chat-toggler').hide();
         $('#header_inbox_bar').show();
-        closeAndRestSider();
     });
 
     $(window).bind('exitBreakpoint480',function() {
         $('#main-menu-toggle-wrapper').hide();
         $('#portrait-chat-toggler').hide();
         $('#header_inbox_bar').show();
-        closeAndRestSider();
     });
 
     $(window).bind('exitBreakpoint768',function() {
         $('#main-menu-toggle-wrapper').hide();
         $('#portrait-chat-toggler').hide();
         $('#header_inbox_bar').show();
-        closeAndRestSider();
     });
 //***********************************END Layout Readjust *****************************
 
-//***********************************BEGIN Function calls *****************************
-    function closeAndRestSider(){
-        if($('#main-menu').attr('data-inner-menu')=='1'){
-            $('#main-menu').addClass("mini");
-            $.sidr('close', 'main-menu');
-            $.sidr('close', 'sidr');
-            $('#main-menu').removeClass("sidr");
-            $('#main-menu').removeClass("left");
-        }
-        else{
-            $.sidr('close', 'main-menu');
-            $.sidr('close', 'sidr');
-            $('#main-menu').removeClass("sidr");
-            $('#main-menu').removeClass("left");
-        }
-
-    }
-    function rebuildSider(){
-        $('#main-menu-toggle').sidr({
-            name : 'main-menu',
-            side: 'left'
-        });
-    }
-//***********************************END Function calls *****************************
 
 //***********************************BEGIN Main Menu Toggle *****************************
     $('#layout-condensed-toggle').click(function(){
