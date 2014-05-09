@@ -24,7 +24,13 @@ ready = function() {
 
     $('.grid .clickable').on('click', function () {
         var el = jQuery(this).parents(".grid").children(".grid-body");
-        el.slideToggle(200);
+        //el.slideToggle(200);
+        if (el.is(":visible")){
+            el.hide();
+        }
+        else {
+            el.show();
+        }
     });
 
     $('.form-control').bind("enterKey",function(e){
