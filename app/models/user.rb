@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  before_validation :downcase_subdomain
+
   validates :first_name, :subdomain, :presence => true
 
   # Making sure users do not use a subdomain we might need
@@ -46,8 +48,8 @@ class User < ActiveRecord::Base
   has_many :conversations
   has_many :experiences
 
-  after_create :send_welcome_email
-  after_create :autoresponder
+  #after_create :send_welcome_email
+  #after_create :autoresponder
   after_create :add_guid
   after_create :set_tour_status
   after_create :set_host
@@ -78,6 +80,10 @@ class User < ActiveRecord::Base
     time_30_mins_from_now_utc = (Time.now.utc) + (32*60)
     time_to_send_this_mail_at = time_30_mins_from_now_utc.strftime("%Y-%m-%d %H:%M:%S")
     UserMailer.founder_welcome(self, time_to_send_this_mail_at).deliver
+  end
+
+  def downcase_subdomain
+    self.subdomain = self.subdomain.downcase if self.subdomain.present?
   end
 
 end

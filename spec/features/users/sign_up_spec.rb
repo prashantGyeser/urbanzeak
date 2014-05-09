@@ -114,4 +114,20 @@ feature 'Sign up' do
 
   end
 
+  scenario 'Uniqueness testing has to be case insensitive' do
+    user = FactoryGirl.create(:user, :subdomain => "test")
+
+    visit '/users/sign_up'
+    within('#new_user') do
+      fill_in 'user_email', with: Faker::Internet.email
+      fill_in 'user_first_name', with: user.first_name
+      fill_in 'user_password', with: 'password@123'
+      fill_in 'user_password_confirmation', with: 'password@123'
+      fill_in 'user_subdomain', with: 'TEST'
+    end
+    click_button 'Sign up'
+
+    expect(page).to have_content('Subdomain has already been taken')
+  end
+
 end
