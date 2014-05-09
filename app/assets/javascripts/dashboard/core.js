@@ -58,31 +58,6 @@ ready = function() {
     $('#user-options').click(function(){
         $('#my-task-list').popover('hide')
     })
-//*********************************** BEGIN CHAT POPUP*****************************
-    $('.chat-menu-toggle').sidr({
-        name:'sidr',
-        side: 'right',
-        complete:function(){
-        }
-    });
-    $(".simple-chat-popup").click(function(){
-        $(this).addClass('hide');
-        $('#chat-message-count').addClass('hide');
-    });
-
-    setTimeout( function(){
-        $('#chat-message-count').removeClass('hide');
-        $('#chat-message-count').addClass('animated bounceIn');
-        $('.simple-chat-popup').removeClass('hide');
-        $('.simple-chat-popup').addClass('animated fadeIn');
-    },5000);
-    setTimeout( function(){
-        $('.simple-chat-popup').addClass('hide');
-        $('.simple-chat-popup').removeClass('animated fadeIn');
-        $('.simple-chat-popup').addClass('animated fadeOut');
-    },8000);
-
-//*********************************** END CHAT POPUP*****************************
 
 //**********************************BEGIN MAIN MENU********************************
     jQuery('.page-sidebar li > a').on('click', function (e) {
