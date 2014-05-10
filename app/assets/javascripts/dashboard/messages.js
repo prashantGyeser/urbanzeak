@@ -50,6 +50,7 @@ ready = function() {
             $(failure_content).prependTo( divToAppendBefore );
             return false;
         }
+        $(this).addClass('disabled');
         $.post( "messages/create", { message: message, conversation_id: conversation_reply_to })
             .done(function(e){
             contentToAppend = '<div class="post p-b-20">' + '<h4><span class="semi-bold">You</span> said:</h4>' + '<div class="info-wrapper">' + '<div class="info">' + message + '</div>' + '<div class="clearfix"></div>' + '</div>' + '<div class="clearfix"></div>' + '</div>';
@@ -67,7 +68,10 @@ ready = function() {
                 var parent_container = element_selected.parent();
                 $('.alert').remove();
                 $(failure_content).prependTo( divToAppendBefore );
-        });
+        })
+            .always( function(){
+                element_selected.removeClass('disabled');
+            });
 
         $('#send_conversation').click(function(e){
             e.preventDefault();
