@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :experiences
   resources :attendees
+  resources :hosts
   post "conversations/create" => "conversations#create"
 
   namespace :dashboard do
