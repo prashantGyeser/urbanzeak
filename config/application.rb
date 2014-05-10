@@ -58,6 +58,7 @@ module Urbanzeak
     config.assets.precompile += %w( dashboard/reviews.js )
     config.assets.precompile += %w( homepage/template.css )
     config.assets.precompile += %w( homepage/core.js )
+    config.assets.precompile += %w( dashboard/experiences.js )
 
   end
 end
