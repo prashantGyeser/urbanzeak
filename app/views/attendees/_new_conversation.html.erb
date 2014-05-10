@@ -18,6 +18,10 @@
               <button data-dismiss="alert" class="close"></button>
               Danger: Something went wrong. Please try again later.
             </div>
+            <div class="alert alert-error" id="message_field_blank">
+              <button data-dismiss="alert" class="close"></button>
+              Danger: Please fill in the your email id and add a message.
+            </div>
           </div>
 
 
@@ -28,7 +32,7 @@
               <input type="text" id="message_name" class="form-control" name="message[name]" placeholder="Your Name">
             </div>
             <div class="col-md-6">
-              <input type="text" id="message_email" class="form-control" name="message[from]" placeholder="Your Email Id" required>
+              <input type="email" id="message_email" class="form-control required" name="message[from]" placeholder="Your Email Id" required>
             </div>
           </div>
           <div class="row form-row">

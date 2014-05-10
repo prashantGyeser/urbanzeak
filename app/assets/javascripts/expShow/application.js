@@ -26,5 +26,6 @@
 //= require plugins/jquery-isotope/jquery.isotope.js
 //= require plugins/jquery-gmap/gmaps.js
 //= require plugins/jquery-singlePageNav/jquery.singlePageNav
+//= require plugins/jquery-validation/js/jquery.validate.min
 //= require turbolinks
 //= require_tree .

@@ -46,4 +46,17 @@ feature 'When I am on the experience page, I should be able to send the host a m
 
   end
 
+  scenario 'I should see an error message in case I leave the email field blank', :js => true do
+    visit experience_path(@experience)
+    click_button('ask_a_question_top')
+
+    fill_in "message_name", with: Faker::Name.name
+    fill_in "message_body", with: Faker::Lorem.paragraph(2)
+
+    click_button "Send Message"
+
+    expect(page).to have_content "Please fill in the your email id and add a message."
+  end
+
+
 end
