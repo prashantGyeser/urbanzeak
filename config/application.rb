@@ -1,15 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Urbanzeak
   class Application < Rails::Application
@@ -24,48 +19,5 @@ module Urbanzeak
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # Precompiling assets in the vendor dir. Rails does not do it by default
-    config.assets.enable = true
-
-    # Ink filepicker config
-    config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
-
-    config.generators do |g|
-      g.test_framework :rspec,
-                       :fixtures => true,
-                       :view_specs => false,
-                       :helper_specs => false,
-                       :routing_specs => false,
-                       :controller_specs => true,
-                       :request_specs => true
-      g.fixture_replacement :factory_girl, :dir => "spec/factories"
-    end
-
-    # Adding the vendor/plugin dir to the precompile list
-    config.assets.paths << Rails.root.join("vendor")
-
-    # Adding this to fix the issue with dashboard/application.js not being served
-    config.assets.precompile += %w( dashboard/reports.js )
-    config.assets.precompile += %w( jquery-slider/jquery.sidr.min )
-    config.assets.precompile += %w( jquery-slimscroll/jquery.slimscroll.min )
-    config.assets.precompile += %w( pace/pace.min )
-    config.assets.precompile += %w( jquery-numberAnimate/jquery.animateNumbers )
-    config.assets.precompile += %w( jquery-morris-chart/js/morris.min )
-    config.assets.precompile += %w( dashboard/core.js )
-    config.assets.precompile += %w( dashboard/chat.js )
-    config.assets.precompile += %w( dashboard/calendar.js )
-    config.assets.precompile += %w( bootstrap-datepicker/css/datepicker.css )
-    config.assets.precompile += %w( bootstrap-timepicker/css/bootstrap-timepicker.css )
-    config.assets.precompile += %w( bootstrap-datepicker/js/bootstrap-datepicker.js )
-    config.assets.precompile += %w( bootstrap-timepicker/js/bootstrap-timepicker.min.js )
-    config.assets.precompile += %w( dashboard/experiences.js.erb )
-    config.assets.precompile += %w( dashboard/profile.js )
-    config.assets.precompile += %w( dashboard/experience_index.js )
-    config.assets.precompile += %w( dashboard/messages.js )
-    config.assets.precompile += %w( plugins/bootstrap-datepicker/css/datepicker.css )
-    config.assets.precompile += %w( plugins/bootstrap-datepicker/js/bootstrap-datepicker.js )
-    config.assets.precompile += %w( dashboard/reviews.js )
-
   end
 end
