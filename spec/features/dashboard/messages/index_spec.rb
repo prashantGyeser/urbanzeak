@@ -1,6 +1,7 @@
 require 'spec_helper'
+require 'faker'
 
-feature 'I should be able to see and reply to messages' do
+feature 'Messages List' do
 
   background do
     user = FactoryGirl.create(:user)
@@ -15,6 +16,11 @@ feature 'I should be able to see and reply to messages' do
     click_button 'Login'
   end
 
+  scenario 'The messages page should open without any errors' do
+    visit '/dashboard/messages'
+    expect(page.status_code).to eq 200
+  end
+
   scenario 'I should see a list of conversations on the messages page', :js => true do
     visit '/dashboard/messages'
     expect(page).to have_content "Message from #{@conversation.customer_name}"
@@ -26,7 +32,7 @@ feature 'I should be able to see and reply to messages' do
     expect(page).to have_content(@conversation.sender_email_id)
   end
 
-  scenario 'I should be able to go to a different page after coming to the messages page' do
+  scenario 'I should be able to go to a different page from messages' do
     visit '/dashboard/messages'
     find('#experiences_nav').click
     expect(page).to have_content "Experiences"
@@ -37,7 +43,16 @@ feature 'I should be able to see and reply to messages' do
     find('#experiences_nav').click
     find('#messages_nav').click
     find('.clickable', :text => "Message from #{@conversation.customer_name}").click
+    sleep(1)
     expect(page).to have_content(@conversation.sender_email_id)
+  end
+
+  scenario 'I should be able to reply' do
+    pending 'Clicking on the conversation does not open up the conversation. Still need to find out why that is happening and fix it.'
+    visit '/dashboard/messages'
+    find('.clickable', :text => "Message from #{@conversation.customer_name}").click
+    sleep(1)
+    fill_in('messages_body', with: Faker::Lorem.sentence(5))
   end
 
   scenario 'I should see a list of conversations on the messages page in the following order: latest to oldest', :js => true do
