@@ -56,6 +56,8 @@ module Urbanzeak
     config.assets.precompile += %w( plugins/bootstrap-datepicker/css/datepicker.css )
     config.assets.precompile += %w( plugins/bootstrap-datepicker/js/bootstrap-datepicker.js )
     config.assets.precompile += %w( dashboard/reviews.js )
+    config.assets.precompile += %w( homepage/template.css )
+    config.assets.precompile += %w( homepage/core.js )
 
   end
 end
