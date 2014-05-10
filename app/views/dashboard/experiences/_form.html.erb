@@ -117,7 +117,7 @@
 
               <div class="input-group date" id="experience_date_container">
                 <!--<input type="text" class="form-control" id="date_picker">-->
-                <%= f.text_field :exp_date, :class => "form-control" %>
+                <%= f.text_field :exp_date, :class => "form-control", :required => true %>
                 <%# text_field_tag 'exp_dates[]', @experience.exp_date, :class => "form-control" %>
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
@@ -132,7 +132,7 @@
             <div class="controls">
               <!--<input type="text" class="form-control">-->
               <div class="input-append bootstrap-timepicker-component">
-                <%= f.text_field :exp_time, :class => "timepicker-default form-control" %>
+                <%= f.text_field :exp_time, :class => "timepicker-default form-control", :required => true %>
                 <span class="add-on"><span class="arrow"></span><i class="fa fa-clock-o" id="clock-button"></i></span> </div>
             </div>
           </div>
