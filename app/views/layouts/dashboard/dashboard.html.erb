@@ -19,6 +19,17 @@
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 
 
+  <!-- BEGIN CORE JS FRAMEWORK-->
+  <%= include_gon %>
+  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+  <!-- END CORE JS FRAMEWORK -->
+
+  <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
   <%= csrf_meta_tag %>
 
   <% if ENV['RAILS_ENV'].to_s == 'staging' %>
@@ -188,16 +199,7 @@ mixpanel.init("fa69bc1b560b99a68310e55ce5aa1278");</script><!-- end Mixpanel -->
 </div>
 <!-- END CONTENT -->
 
-<!-- BEGIN CORE JS FRAMEWORK-->
-<%= include_gon %>
-<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
-<!-- END CORE JS FRAMEWORK -->
 
-<!-- END NEED TO WORK ON -->
-
-<!-- CUSTOM JAVASCRIPT -->
-<%= yield :js %>
-<!-- END CUSTOM JAVASCRIPT -->
 
 <%= yield :edit_js %>
 
