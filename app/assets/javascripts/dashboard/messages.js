@@ -73,20 +73,20 @@ ready = function() {
                 element_selected.removeClass('disabled');
             });
 
-        $('#send_conversation').click(function(e){
-            e.preventDefault();
-
-            $.post('/conversations/create', $('form#new_conversation').serialize())
-                .done( function(msg) {
-                    $('.new_conversation_body').hide();
-                    $('#conversation_created_success').show();
-                    $('#send_conversation').attr('disabled', true);
-                    $('#send_conversation').addClass('disabled');
-                } )
-                .fail( function(xhr, textStatus, errorThrown) {
-                    $('#conversation_created_fail').show();
-                });
-        });
+//        $('#send_conversation').click(function(e){
+//            e.preventDefault();
+//
+//            $.post('/conversations/create', $('form#new_conversation').serialize())
+//                .done( function(msg) {
+//                    $('.new_conversation_body').hide();
+//                    $('#conversation_created_success').show();
+//                    $('#send_conversation').attr('disabled', true);
+//                    $('#send_conversation').addClass('disabled');
+//                } )
+//                .fail( function(xhr, textStatus, errorThrown) {
+//                    $('#conversation_created_fail').show();
+//                });
+//        });
 
 
     });
