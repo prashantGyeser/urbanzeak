@@ -53,7 +53,9 @@ feature 'When I am on the experience page, I should be able to send the host a m
     fill_in "message_name", with: Faker::Name.name
     fill_in "message_body", with: Faker::Lorem.paragraph(2)
 
-    expect(page).to have_content "Something went wrong"
+    click_button "Send Message"
+
+    expect(page).to have_content "Please fill in the your email id and add a message."
   end
 
 
