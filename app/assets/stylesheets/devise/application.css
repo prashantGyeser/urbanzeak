@@ -11,6 +11,7 @@
  *= require plugins/boostrapv3/css/bootstrap.min
  *= require plugins/boostrapv3/css/bootstrap-theme.min
  *= require plugins/font-awesome/css/font-awesome
+ *= require devise/style
  *= require_self
  *= require_tree .
  */
