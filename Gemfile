@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 4.0.4"
+gem "rails", "~> 4.1.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
