@@ -10,6 +10,7 @@ $(document).ready(function(){
     $('#conversation_created_success').hide();
     $('#conversation_created_fail').hide();
     $('#message_field_blank').hide();
+    $('#invalid_email').hide();
     $('#create_review').click(function(e){
         e.preventDefault();
         $.post('/experiences/create_review', $('form#new_review').serialize(), function(data){
@@ -43,6 +44,17 @@ $(document).ready(function(){
             return false;
         }
 
+        var atpos=message_email.indexOf("@");
+        var dotpos=message_email.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=message_email.length)
+        {
+            $('#conversation_created_fail').hide();
+            $('#message_field_blank').hide();
+            $('#conversation_created_success').hide();
+            $('#invalid_email').show();
+            return false;
+        }
+        $('#invalid_email').hide();
         $.post('/conversations/create', $('form#new_conversation').serialize())
             .done( function(msg) {
                 $('#conversation_created_fail').hide();
