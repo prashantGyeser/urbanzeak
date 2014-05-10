@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('#review_created_success').hide();
     $('#conversation_created_success').hide();
     $('#conversation_created_fail').hide();
+    $('#message_field_blank').hide();
     $('#create_review').click(function(e){
         e.preventDefault();
         $.post('/experiences/create_review', $('form#new_review').serialize(), function(data){
@@ -23,11 +24,29 @@ $(document).ready(function(){
 
     });
 
+    /////////////////////////////////////////////////////////////////
+    // Validation
+    /////////////////////////////////////////////////////////////////
+    $('#send_conversation').validate();
+    /////////////////////////////////////////////////////////////////
+
+
+
     $('#send_conversation').click(function(e){
         e.preventDefault();
 
+        var message_email = $('#message_email').val();
+        var message_body = $('#message_body').val();
+        if(message_email.length ==0 || message_body.length == 0)
+        {
+            $('#message_field_blank').show();
+            return false;
+        }
+
         $.post('/conversations/create', $('form#new_conversation').serialize())
             .done( function(msg) {
+                $('#conversation_created_fail').hide();
+                $('#message_field_blank').hide();
                 $('.new_conversation_body').hide();
                 $('#conversation_created_success').show();
                 $('#send_conversation').attr('disabled', true);
@@ -35,16 +54,9 @@ $(document).ready(function(){
             } )
             .fail( function(xhr, textStatus, errorThrown) {
                 $('#conversation_created_fail').show();
+                $('#message_field_blank').hide();
+                $('#conversation_created_success').hide();
             });
-
-//        $.post('/conversations/create', $('form#new_conversation').serialize(), function(data){
-//            $('.new_conversation_body').hide();
-//            $('#conversation_created_success').show();
-//            $('#send_conversation').attr('disabled', true);
-//            $('#send_conversation').addClass('disabled');
-//        },
-//            'json'
-//        );
     });
 
     $('#get_dates').click(function(event){
