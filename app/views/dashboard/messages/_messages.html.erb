@@ -3,7 +3,11 @@
   <% messages.each do |message|%>
     <!--INDIVIDUAL POST START-->
     <div class="post p-b-20">
-      <h4><span class="semi-bold"><%= message.from %></span> said:</h4>
+      <% if message.from == current_user.internal_email_id %>
+        <h4><span class="semi-bold">You</span> said:</h4>
+      <% else %>
+        <h4><span class="semi-bold"><%= message.from %></span> said:</h4>
+      <% end %>
       <div class="info-wrapper">
         <div class="info">
           <%= message.body %>
