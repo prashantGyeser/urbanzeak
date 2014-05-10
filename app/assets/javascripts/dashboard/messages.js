@@ -65,6 +65,7 @@ ready = function() {
         })
             .fail( function(xhr, textStatus, errorThrown) {
                 var failure_content = '<div class="alert alert-error"><button data-dismiss="alert" class="close"></button>Danger: Oops! Something went wrong, please try again later.</div>'
+                var divToAppendBefore = element_selected.parent().parent().parent().parent().parent();
                 var parent_container = element_selected.parent();
                 $('.alert').remove();
                 $(failure_content).prependTo( divToAppendBefore );
