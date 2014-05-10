@@ -1,4 +1,36 @@
+require 'subdomain'
+
 Rails.application.routes.draw do
+
+  get 'user_root' => 'dashboard/purchases#index', as: :user_root
+  devise_for :users
+
+  root 'home#index'
+
+  resources :experiences
+  resources :attendees
+
+  namespace :dashboard do
+    root :to => "purchases#index"
+    resources :experiences
+    resources :purchases
+    get 'profile/about'
+    post 'profile/delete-picture' => "profile#delete_picture"
+    get "messages" => "messages#index"
+    post "messages/create" => "messages#create"
+    get "reviews" => "reviews#index"
+    post 'reviews/add_review_to_show' => "reviews#add_review_to_show"
+    post 'experiences/facebook_share' => "experiences#facebook_share"
+    get "integrations" => "integrations#index"
+    get 'integrations/facebook'
+    get 'integrations/facebook_finalizeOAuth'
+    post 'integrations/postToFacebook'
+    post 'integrations/setConfig'
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

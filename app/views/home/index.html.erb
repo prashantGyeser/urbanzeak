@@ -10,9 +10,9 @@
   <meta content="" name="author" />
 
 
-  <%= stylesheet_link_tag    "homepage/application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "homepage/application" %>
 
-  <%= stylesheet_link_tag "homepage/template", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "homepage/template" %>
 
   <!-- BEGIN CORE CSS FRAMEWORK -->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -121,12 +121,12 @@
 
 <!-- END CORE JS FRAMEWORK -->
 
-<%= javascript_include_tag "homepage/application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "homepage/application" %>
 <script>
   new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
 </script>
 
-<%= javascript_include_tag "homepage/core", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "homepage/core" %>
 
 </body>
 </html>

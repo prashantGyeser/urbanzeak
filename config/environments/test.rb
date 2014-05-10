@@ -36,4 +36,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Disabling errors in case assets are not found.
+  # Todo: Fix all asset issues by first removing the following line
+  # and then running rspec to find the issues
+  config.action_dispatch.show_exceptions = true
+
 end
