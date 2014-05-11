@@ -15,7 +15,7 @@
   <!--END CUSTOM CSS-->
 
   <!-- NEED TO WORK ON -->
-  <%= stylesheet_link_tag    "dashboard/application" %>
+  <%= stylesheet_link_tag    "dashboard/application", 'data-turbolinks-track' => true %>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
@@ -32,6 +32,15 @@
   <!-- CUSTOM JAVASCRIPT -->
   <%= yield :js %>
   <!-- END CUSTOM JAVASCRIPT -->
+
+  <script>
+    document.addEventListener('page:change', function() {
+      document.getElementById('page-content-container').className += 'animated fadeIn';
+    });
+    document.addEventListener('page:fetch', function() {
+      document.getElementById('page-content-container').className += 'animated fadeOut';
+    });
+  </script>
 
   <%= csrf_meta_tag %>
 
@@ -193,9 +202,9 @@ mixpanel.init("fa69bc1b560b99a68310e55ce5aa1278");</script><!-- end Mixpanel -->
 <!-- BEGIN PAGE CONTAINER-->
 <div class="page-content">
   <div class="content">
-
-    <%= yield %>
-
+    <div id="page-content-container">
+      <%= yield %>
+    </div>
   </div>
 </div>
 <!-- END PAGE CONTAINER -->
