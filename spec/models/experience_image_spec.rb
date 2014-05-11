@@ -9,6 +9,9 @@
 #  updated_at    :datetime
 #  random_id     :string(255)
 #  image_type    :string(255)
+#  status        :string(255)
+#  file_name     :string(255)
+#  url           :string(255)
 #
 
 require 'spec_helper'

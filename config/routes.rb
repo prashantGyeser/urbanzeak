@@ -28,8 +28,10 @@ Rails.application.routes.draw do
     get 'integrations/facebook_finalizeOAuth'
     post 'integrations/postToFacebook'
     post 'integrations/setConfig'
+    get 'events/index'
+    get 'events/new'
+    get 'events/:id/edit' => 'events#edit'
   end
-
 
 
 
