@@ -21,20 +21,29 @@
 #  longitude              :float
 #  created_at             :datetime
 #  updated_at             :datetime
+#  user_id                :integer
 #
 
 require 'spec_helper'
 
 describe Event do
-  it {should validate_presence_of(:name)}
-  it {should validate_presence_of(:tagline)}
-  it {should validate_presence_of(:what_does_this_include)}
-  it {should validate_presence_of(:price)}
-  it {should validate_presence_of(:max_seats)}
-  it {should validate_presence_of(:line_one)}
-  it {should validate_presence_of(:city)}
-  it {should validate_presence_of(:country)}
-  it {should validate_presence_of(:landmark)}
-  it {should validate_presence_of(:latitude)}
-  it {should validate_presence_of(:longitude)}
+  it "should have a valid factory" do
+    create(:event).should be_valid
+  end
+  it "should have a name" do
+    build(:event, name: nil).should_not be_valid
+  end
+  it "should have a landmark" do
+    build(:event, landmark: nil).should_not be_valid
+  end
+  it "should have a price" do
+    build(:event, price: nil).should_not be_valid
+  end
+  it "should have a max seats" do
+    build(:event, max_seats: nil).should_not be_valid
+  end
+  it 'should belong to user' do
+    e = Event.reflect_on_association(:user)
+    expect(e.macro).to eq :belongs_to
+  end
 end

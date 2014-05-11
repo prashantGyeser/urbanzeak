@@ -81,4 +81,8 @@ RSpec.configure do |config|
   # Including mailer helpers
   config.include(MailerMacros)
 
+  # Factory Girl Settings
+  # Refer to: https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
+  config.include FactoryGirl::Syntax::Methods
+
 end

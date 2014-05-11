@@ -21,8 +21,11 @@
 #  longitude              :float
 #  created_at             :datetime
 #  updated_at             :datetime
+#  user_id                :integer
 #
 
 class Event < ActiveRecord::Base
-  validates :name, :tagline, :what_does_this_include, :price, :max_seats, :line_one, :city, :country, :landmark, :latitude, :longitude, :presence => true
+  validates :name, :tagline, :what_does_this_include, :price, :max_seats, :line_one, :city, :country, :landmark, :latitude, :longitude, :user_id, :presence => true
+
+  belongs_to :user
 end

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+  </script>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title><%= @event.name %> in <%= @event.city %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <!--TYPEKIT FONTS -- START-->
+  <script type="text/javascript" src="//use.typekit.net/yjy6rjo.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--TYPEKIT FONTS -- END-->
+  <!-- BEGIN CSS TEMPLATE -->
+  <%= stylesheet_link_tag    "plugins/bootstrap-datepicker/css/datepicker.css" %>
+  <%= stylesheet_link_tag    "expShow/application" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- END CSS TEMPLATE -->
+
+  <!--CUSTOM CSS START-->
+  <!--CUSTOM CSS END-->
+
+  <!--JAVASCRIPT INCLUDES START-->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "plugins/bootstrap-datepicker/js/bootstrap-datepicker.js", 'data-turbolinks-track' => true %>
+  <!--JAVASCRIPT INCLUDES END-->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "ur-bdccc91-2edd-103e-668f-89b5c48e233", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  <%= csrf_meta_tag %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39739783-2', 'urbanzeak.com');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<!-- END HEAD -->
+<body>
+
+<div class="main-wrapper">
+
+
+
+  <!--NAV AFTER WAYPOINT START-->
+  <%= render "navigation" %>
+  <!--NAV AFTER WAYPOINT END-->
+
+  <!--HEADER START-->
+  <%= render partial: 'header' %>
+  <!--HEADER END-->
+
+  <!--TAGLINE START-->
+  <%# render partial: 'tagline', :locals => {:experience => @experience} %>
+  <!--TAGLINE END-->
+
+
+  <!--ABOUT EXPERIENCE AND JOIN NOW START-->
+  <input type="hidden" id="experience_id" value="<%= @event.id %>"/>
+  <%= render partial: 'about_event'%>
+  <!--ABOUT EXPERIENCE AND JOIN NOW END-->
+
+  <!--VENUE MAP START-->
+  <%= render partial: 'venue_map'%>
+  <!--VENUE MAP END-->
+
+  <!--ABOUT HOST START-->
+  <% if @host.nil? %>
+
+  <% else %>
+    <%= render :partial => "about_host", :locals =>{:host => @host, :experience_id => @experience.id } %>
+  <% end %>
+  <!--ABOUT HOST END-->
+
+  <!--SOCIAL SHARE START-->
+  <div class="section white">
+    <div class="container">
+      <div class="p-t-60 p-b-50 ">
+        <div class="row feature-list">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="center-text">Spread <span class="semi-bold">the word</span></h2>
+            <!--SOCIAL MEDIA SHARE BUTTONS START-->
+            <span class='st_facebook_hcount' displayText='Facebook' style="padding-bottom: 5px;"></span>
+            <span class='st_twitter_hcount' displayText='Tweet'></span>
+            <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+            <span class='st_googleplus_hcount' displayText='Google +'></span>
+            <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+            <!--SOCIAL MEDIA SHARE BUTTONS END-->
+
+            <br/>
+            <br/>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--SOCIAL SHARE END-->
+
+  <% if @reviews.blank? %>
+
+  <% else %>
+    <!--REVIEWS START-->
+    <%= render :partial => "reviews" %>
+    <!--REVIEWS END-->
+  <% end %>
+
+
+  <!--THINGS TO REMEMBER START-->
+  <%= render :partial => "things_to_remember", :locals => {:experience => @experience} %>
+  <!--THINGS TO REMEMBER END-->
+
+
+  <div class="section white footer">
+    <div class="container">
+      <div class="p-b-50">
+        <div class="row">
+          <div class="col-md-8 col-lg-8 col-sm-8  col-xs-12 xs-m-b-20">
+            <div class="xs-no-padding col-md-4 col-lg-4 col-sm-4">
+              <!--SEND A MESSAGE START-->
+              <!--<button class="btn btn-cons" data-toggle="modal" data-target="#messageHost" id="ask_a_question"> Ask a question </button>-->
+              <!--SEND A MESSAGE END-->
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-sm-12  col-xs-12 xs-m-b-20">
+            <h4>This page is powered by <a href="urbanzeak.com">Urbanzeak</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="hidden" name="internal_experience_landmark" value="<%= @event.landmark %>" id="internal_experience_landmark">
+
+<script id="map_location_latitude" type="text/json">
+  <%= @event.latitude.to_json %>
+</script>
+
+<script id="map_location_longitude" type="text/json">
+  <%= @event.longitude.to_json %>
+</script>
+
+<script>
+
+</script>
+
+</body>

@@ -21,27 +21,28 @@
 #  longitude              :float
 #  created_at             :datetime
 #  updated_at             :datetime
+#  user_id                :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :event do
-    name "MyString"
-    tagline "MyString"
-    what_does_this_include "MyText"
-    things_to_remember "MyText"
-    price "9.99"
-    max_seats 1
-    line_one "MyString"
-    line_two "MyString"
-    city "MyString"
-    state "MyString"
-    country "MyString"
-    pincode "MyString"
-    landmark "MyString"
-    duration 1
-    latitude 1.5
-    longitude 1.5
+    name Faker::Lorem.word
+    tagline Faker::Lorem.sentence(3)
+    what_does_this_include Faker::Lorem.paragraph(5)
+    things_to_remember Faker::Lorem.paragraph(3)
+    price 9.99
+    max_seats 6
+    line_one Faker::Address.street_name
+    city Faker::Address.city
+    country Faker::Address.country
+    landmark Faker::Address.street_name
+    duration 2
+    latitude Faker::Address.latitude
+    longitude Faker::Address.longitude
+    user_id 1
   end
 end

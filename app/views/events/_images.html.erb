@@ -1,0 +1,11 @@
+<% @images.each do |image| %>
+  <li class="item web isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px); margin-bottom: 10px;">
+    <div class="portfolio-image-wrapper" style="height: 271px">
+      <%# image_tag image.image_url.to_s %>
+      <%= filepicker_image_tag image.url, w: 371, h: 271, fit: 'crop', style: "margin-bottom: 10px" %>
+    </div>
+    <div class="item-info">
+    </div>
+    <div class="clearfix"></div>
+  </li>
+<% end %>

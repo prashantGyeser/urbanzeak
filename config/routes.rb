@@ -2,6 +2,8 @@ require 'subdomain'
 
 Rails.application.routes.draw do
 
+  get 'events/:id' => "events#show", as: :event
+
   get '/purchases' => 'dashboard/purchases#index', as: :user_root
   devise_for :users
 
@@ -28,9 +30,7 @@ Rails.application.routes.draw do
     get 'integrations/facebook_finalizeOAuth'
     post 'integrations/postToFacebook'
     post 'integrations/setConfig'
-    get 'events/index'
-    get 'events/new'
-    get 'events/:id/edit' => 'events#edit'
+    resources :events
   end
 
 
