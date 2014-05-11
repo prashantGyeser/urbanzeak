@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 feature 'New Experience' do
-  scenario 'I should be able to select multiple dates from the datepicker' do
-    user = FactoryGirl.create(:user)
 
+  background do
+    user = FactoryGirl.create(:user)
     # Logging in
     visit '/users/sign_in'
     within('#new_user') do
@@ -11,8 +11,9 @@ feature 'New Experience' do
       fill_in 'user_password', with: user.password
     end
     click_button 'Login'
+  end
 
-    expect(page).to have_content "Signed in successfully."
+  scenario 'I should be able to select multiple dates from the datepicker' do
 
     # Filling up the form
     visit '/dashboard/experiences/new'
@@ -42,6 +43,29 @@ feature 'New Experience' do
     click_button "Create Experience"
     expect(page).to have_title "Bungee jumping in "
 
+  end
+
+  scenario 'I should see a window to upload my photos', :js => true do
+    visit '/dashboard/experiences/new'
+    click_link 'file_picker_button'
+
+    within_frame 'filepicker_dialog' do
+      expect(page).to have_content "OR Select a file to upload"
+    end
+
+    #within_frame 'filepicker_dialog' do
+    #  attach_file '#fileUploadInput', Rails.root.join('spec', 'files', 'photo.jpg')
+    #end
+
+  end
+
+  scenario 'I should be able to upload a file', :js => true do
+    visit '/dashboard/experiences/new'
+    click_link 'file_picker_button'
+
+    within_frame 'filepicker_dialog' do
+      attach_file 'fileUpload', Rails.root.join('spec', 'files', 'photo.jpg'), visible: false
+    end
   end
 
   scenario 'I should not be able to select more than 4 dates in the datepicker' do
@@ -80,21 +104,7 @@ feature 'New Experience' do
     pending "The user should not be allowed to put something like 23:00"
   end
 
-  scenario 'I should automatically see the location when I enter a partial landmark' do
-
-    Capybara.current_driver = :selenium
-
-    # Logging in
-    visit '/users/sign_up'
-    within('#new_user') do
-      fill_in 'user_email', with: 'capybara@urbanzeak.com'
-      fill_in 'user_first_name', with: 'Capybara User'
-      fill_in 'user_password', with: 'password@123'
-      fill_in 'user_password_confirmation', with: 'password@123'
-      fill_in 'user_subdomain', with: 'capybarasubdomain'
-    end
-    click_button 'Sign up'
-
+  scenario 'I should automatically see the location when I enter a partial landmark', :js => true do
     # Filling up the form
     visit '/dashboard/experiences/new'
 
@@ -102,7 +112,6 @@ feature 'New Experience' do
     fill_in 'experience_name', with: "Bungee jumping"
 
     expect(page).to have_content "Report a map error"
-    Capybara.use_default_driver       # switch back to default driver
 
   end
 
@@ -139,16 +148,6 @@ feature 'New Experience' do
   end
 
   scenario 'I should be shown an error message in case I enter invalid data' do
-
-    user = FactoryGirl.create(:user)
-
-    # Logging in
-    visit '/users/sign_in'
-    within('#new_user') do
-      fill_in 'user_email', with: user.email
-      fill_in 'user_password', with: user.password
-    end
-    click_button 'Login'
 
     visit '/dashboard/experiences/new'
 
