@@ -111,8 +111,10 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
+  gem 'spring-commands-rspec'
   #gem "rb-readline", "~> 0.5.0"
   #gem 'rack-mini-profiler'
+  #gem 'spring'
 end
 
 group :test do

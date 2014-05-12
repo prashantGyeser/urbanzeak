@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428185638) do
+ActiveRecord::Schema.define(version: 20140512133422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,45 @@ ActiveRecord::Schema.define(version: 20140428185638) do
     t.datetime "updated_at"
     t.integer  "experience_id"
     t.string   "customer_name"
+  end
+
+  create_table "event_dates", force: true do |t|
+    t.date     "event_date"
+    t.time     "event_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+  end
+
+  create_table "event_images", force: true do |t|
+    t.string   "url"
+    t.string   "filename"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "tagline"
+    t.text     "what_does_this_include"
+    t.text     "things_to_remember"
+    t.decimal  "price"
+    t.integer  "max_seats"
+    t.string   "line_one"
+    t.string   "line_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "pincode"
+    t.string   "landmark"
+    t.integer  "duration"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.time     "event_time"
   end
 
   create_table "exp_images", force: true do |t|

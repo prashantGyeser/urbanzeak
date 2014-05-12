@@ -1,0 +1,49 @@
+<%= content_for :js do %>
+  <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+  <script src="https://api.filepicker.io/v1/filepicker_debug.js"></script>
+  <%= javascript_include_tag "dashboard/experiences", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/file_picker" %>
+<% end %>
+
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Edit Experience</h3>
+</div>
+<!-- END PAGE TITLE -->
+
+<div class="row">
+  <div class="col-md-12">
+    <% if flash[:error] %>
+      <div class="alert alert-error">
+        <button data-dismiss="alert" class="close"></button>
+        Danger: <%= flash[:error] %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- BEGIN PlACE PAGE CONTENT HERE -->
+<%= render 'form' %>
+<!-- END PLACE PAGE CONTENT HERE -->
+
+<%= content_for :edit_js do %>
+  <script>
+    var dates_previous_selected = <%= @available_dates %>;
+    $.each(dates_previous_selected, function( index, value ) {
+      dates_previous_selected[index] = new Date(dates_previous_selected[index] * 1000);
+    });
+
+    $('.input-group.date' ).datepicker({
+      multidate: true,
+      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
+    });
+    $('.input-group.date').datepicker('setDates', dates_previous_selected);
+    $('.input-group.date').datepicker('update');
+  </script>
+  <script>
+
+  </script>
+
+<% end %>
+
+

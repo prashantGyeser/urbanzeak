@@ -1,0 +1,26 @@
+<!--GALLERY START-->
+<div class="container">
+  <!--MARGIN TOP AND BOTTOM START-->
+  <div class="p-t-20" id="experience_pictures">
+    <!--<h2 class="p-t-10">Experience <span class="semi-bold">Pictures</span></h2>-->
+    <h4 class="center-text semi-bold"><%= @event.city %></h4>
+    <h1 class="center-text semi-bold"><%= @event.name %></h1>
+    <h4 class="center-text semi-bold p-b-10"><%= @event.tagline %></h4>
+    <div class="center-text p-b-40">
+      <a href="#about_experience" class="btn btn-purple btn-lg  btn-large m-r-10 center-block" style="-webkit-transition: all 0.12s linear 0s; transition: all 0.12s linear 0s; min-height: 0px; min-width: 0px; white-space: nowrap; line-height: 15px; border-width: 0px; margin: 0px 7.68px 11.52px 0px; padding: 12px 19px; font-size: 15px; text-transform: uppercase">JOIN NOW</a>
+    </div>
+
+    <div class="portfolio-grid portfolioContainer p-b-20">
+      <ul id="thumbs" class="col3 isotope" style="position: relative; overflow: hidden; height: 1406px">
+
+        <!--Todo: Enable the images-->
+        <%= render :partial => "images" %>
+
+      </ul>
+    </div>
+  </div>
+  <!--MARGIN TOP AND BOTTOM END-->
+</div>
+<br>
+<br>
+<!--GALLERY END-->

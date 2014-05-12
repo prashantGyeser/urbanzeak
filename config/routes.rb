@@ -2,10 +2,17 @@ require 'subdomain'
 
 Rails.application.routes.draw do
 
+  get 'events/:id' => "events#show", as: :event
+
   get '/purchases' => 'dashboard/purchases#index', as: :user_root
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root 'home#index'
+
+  # Redirecting when a subdomain is found to the appropriate page
+  constraints(Subdomain) do
+    get '/' => "experiences#index"
+  end
 
   resources :experiences
   resources :attendees
@@ -14,6 +21,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root :to => "purchases#index"
+    get 'preview' => "preview#index"
     resources :experiences
     resources :purchases
     get 'profile/about'
@@ -28,8 +36,8 @@ Rails.application.routes.draw do
     get 'integrations/facebook_finalizeOAuth'
     post 'integrations/postToFacebook'
     post 'integrations/setConfig'
+    resources :events
   end
-
 
 
 

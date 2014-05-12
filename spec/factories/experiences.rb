@@ -58,5 +58,7 @@ FactoryGirl.define do
     latitude  38.898556
     longitude -77.037852
     land_mark Faker::Address.city
+    exp_date '05/19/2014,05/27/2014,05/28/2014'
+    hours 3
   end
 end

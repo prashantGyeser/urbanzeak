@@ -111,7 +111,7 @@
       -->
 
       <div class="field">
-        <%= f.hidden_field :experience_id, :value => experience_id %>
+        <%= f.hidden_field :experience_id, :value => @experience.id%>
 
       </div>
 
@@ -129,5 +129,5 @@
 
 
 <!--SEND MESSAGE MODAL WINDOW START-->
-<%= render partial: 'attendees/new_conversation', :locals => {:experience_id => experience.id, :experience => experience} %>
+<%= render partial: 'attendees/new_conversation', :locals => {:experience_id => @experience.id, :experience => @experience} %>
 <!--SEND MESSAGE MODAL WINDOW END-->
