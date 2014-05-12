@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  # Redirecting when a subdomain is found to the appropriate page
+  constraints(Subdomain) do
+    get '/' => "experiences#index"
+  end
+
   resources :experiences
   resources :attendees
   resources :hosts

@@ -25,6 +25,7 @@ feature 'Edit Experience' do
     experience = FactoryGirl.create(:experience)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
+    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/28/2014'
     modified_tagline = Faker::Lorem.sentence(5)
     fill_in 'experience_tagline', :with => modified_tagline
     click_button 'Update Experience'
@@ -35,6 +36,7 @@ feature 'Edit Experience' do
     experience = FactoryGirl.create(:experience)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
+    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/28/2014'
     modified_tagline = Faker::Lorem.sentence(5)
     fill_in 'experience_tagline', :with => modified_tagline
     click_button 'Update Experience'
@@ -45,7 +47,7 @@ feature 'Edit Experience' do
     experience = FactoryGirl.create(:experience)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
-    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/28/2014'
+    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/29/2014'
     click_button 'Update Experience'
     expect(page).to have_content "Experience was successfully updated."
   end
