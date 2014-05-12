@@ -20,6 +20,24 @@
   <!-- END CSS TEMPLATE -->
 
   <!--CUSTOM CSS START-->
+  <style>
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 60px;
+    }
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      background-color: red;
+    }
+  </style>
   <!--CUSTOM CSS END-->
 
   <!--JAVASCRIPT INCLUDES START-->
@@ -104,28 +122,35 @@
   <%= render :partial => "things_to_remember" %>
   <!--THINGS TO REMEMBER END-->
 
-
-  <div class="section white footer">
-    <div class="container">
-      <div class="p-b-50">
-        <div class="row">
-          <div class="col-md-8 col-lg-8 col-sm-8  col-xs-12 xs-m-b-20">
-            <div class="xs-no-padding col-md-4 col-lg-4 col-sm-4">
-              <!--SEND A MESSAGE START-->
-              <!--<button class="btn btn-cons" data-toggle="modal" data-target="#messageHost" id="ask_a_question"> Ask a question </button>-->
-              <!--SEND A MESSAGE END-->
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="col-md-12 col-lg-12 col-sm-12  col-xs-12 xs-m-b-20">
-            <h4>This page is powered by <a href="urbanzeak.com">Urbanzeak</a></h4>
-          </div>
-        </div>
-      </div>
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container p-t-20">
+      <h2><a href="<%= new_dashboard_experience_path %>">Create your own experience page like this one</a></h2>
     </div>
-  </div>
+  </nav>
+
 </div>
 
+<script>
+  $(window).bind('load', function () {
+
+    resizeElements();
+
+    function resizeElements() {
+
+      headerHeight = $('.navbar').height();
+      footerHeight = $('footer').height();
+
+      if (($(document.body).height() + footerHeight) < $(window).height()) {
+        $footer.addClass('navbar-fixed-bottom');
+      } else {
+        $footer.removeClass('navbar-fixed-bottom');
+      }
+    }
+
+    $(window).resize(resizeElements);
+
+  });
+</script>
 
 <script>
   var latitude = 40.893275;
