@@ -19,7 +19,7 @@ feature 'Sign up' do
     end
     click_button 'Sign up'
 
-    expect(page).to have_content 'Welcome to urbanzeak'
+    expect(page).to have_content 'Sample experience name'
   end
 
   scenario 'I should not be able to sign up with an already existing email id' do

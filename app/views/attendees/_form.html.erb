@@ -26,14 +26,14 @@
       <div class="date-container">
         <div class="radio radio-success">
 
-          <% duration = (@event.hours.to_i).hours  %>
+          <% duration = (@experience.hours.to_i).hours  %>
           <% @available_dates.each_with_index do |available_date, i| %>
 
-            <% seats_filled = Attendee.where(:experience_id => @event.id).where(:attending_date => available_date.event_date).pluck(:seats).sum %>
-            <% seats = @event.max_seats - seats_filled %>
+            <% seats_filled = Attendee.where(:experience_id => @experience.id).where(:attending_date => available_date.experience_date).pluck(:seats).sum %>
+            <% seats = @experience.max_seats - seats_filled %>
             <% if i == 0 %>
               <div class="date-option">
-                <%= f.radio_button :attending_date, "#{available_date.event_date.strftime('%Y-%m-%d')}", :checked => 'checked' %>
+                <%= f.radio_button :attending_date, "#{available_date.experience_date.strftime('%Y-%m-%d')}", :checked => 'checked' %>
                 <label for="attendee_attending_date_<%= available_date.experience_date.strftime('%Y-%m-%d') %>"><%= available_date.experience_date.strftime('%B %d, %Y') %></label>
                 <%= available_date.experience_time.strftime('%I:%d %p') %>
                 to
@@ -111,7 +111,7 @@
       -->
 
       <div class="field">
-        <%= f.hidden_field :experience_id, :value => @event.id%>
+        <%= f.hidden_field :experience_id, :value => @experience.id%>
 
       </div>
 
@@ -129,5 +129,5 @@
 
 
 <!--SEND MESSAGE MODAL WINDOW START-->
-<%= render partial: 'attendees/new_conversation', :locals => {:experience_id => @event.id, :experience => @event} %>
+<%= render partial: 'attendees/new_conversation', :locals => {:experience_id => @experience.id, :experience => @experience} %>
 <!--SEND MESSAGE MODAL WINDOW END-->

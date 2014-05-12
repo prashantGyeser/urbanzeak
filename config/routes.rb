@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'events/:id' => "events#show", as: :event
 
   get '/purchases' => 'dashboard/purchases#index', as: :user_root
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root 'home#index'
 
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root :to => "purchases#index"
+    get 'preview' => "preview#index"
     resources :experiences
     resources :purchases
     get 'profile/about'
