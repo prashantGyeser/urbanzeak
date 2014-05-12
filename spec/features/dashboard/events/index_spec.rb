@@ -25,9 +25,16 @@ feature 'Events' do
   end
 
   scenario 'Page should have a link to the event show page' do
-    pending
     click_link(@event.name)
     expect(page).to have_content @event.name
+  end
+
+  scenario "Page should have a new event button" do
+    expect(page).to have_content "New Event"
+  end
+
+  scenario 'Page should allow me to edit an event' do
+    expect(page).to have_content "Edit"
   end
 
   scenario 'Page should have the right event url for the share function' do

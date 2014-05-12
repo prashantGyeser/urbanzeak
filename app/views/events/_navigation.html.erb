@@ -1,7 +1,7 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top">
 
   <% if current_user.present? %>
-    <% if current_user.id == @experience.user_id %>
+    <% if current_user.id == @event.user_id %>
       <div class="host-nav alert alert-info" style="margin-bottom: 0">
         <div class="container">
           <div class="row">

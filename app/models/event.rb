@@ -25,7 +25,9 @@
 #
 
 class Event < ActiveRecord::Base
-  validates :name, :tagline, :what_does_this_include, :price, :max_seats, :line_one, :city, :country, :landmark, :latitude, :longitude, :user_id, :presence => true
+  validates :name, :tagline, :what_does_this_include, :price, :max_seats, :line_one, :city, :country, :landmark, :user_id, :presence => true
 
   belongs_to :user
+  has_many :event_dates
+  has_many :event_images
 end
