@@ -26,6 +26,7 @@
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
 //= require plugins/bootstrap-timepicker/js/bootstrap-timepicker.min
 //= require plugins/bootstrap-select2/select2.min
+//= require chardinjs
 //= require plugins/sisyphus/sisyphus
 //= require dashboard/core
 //= require dashboard/chat
