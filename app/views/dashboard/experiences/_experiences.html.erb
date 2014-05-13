@@ -30,7 +30,7 @@
                 <div class="user-comment-wrapper pull-left">
                   <div class="comment">
                     <div class="text-black bold">
-                      <%= link_to experience.name, experience_path(experience) %>
+                      <%= link_to experience.name, experience_url(experience, :subdomain => current_user.subdomain) %>
                     </div>
                   </div>
                   <div class="clearfix"></div>
