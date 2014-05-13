@@ -16,7 +16,7 @@ feature 'Edit Experience' do
     experience = FactoryGirl.create(:experience)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
-    click_button 'Update Experience'
+    click_button 'create_experience'
     expect(page).to have_content "Experience was successfully updated."
 
   end

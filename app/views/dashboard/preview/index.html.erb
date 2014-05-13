@@ -122,35 +122,19 @@
   <%= render :partial => "things_to_remember" %>
   <!--THINGS TO REMEMBER END-->
 
-  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-    <div class="container p-t-20">
-      <h2><a href="<%= new_dashboard_experience_path %>">Create your own experience page like this one</a></h2>
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="background: #fffcee; color: #ce8f22; border: 1px solid #F0DBB4">
+    <div class="container p-t-10">
+      <h2>
+        Build a website like this page in under 10 minutes
+        <a href="<%= new_dashboard_experience_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;">
+          Create your website now
+        </a>
+      </h2>
     </div>
   </nav>
 
 </div>
 
-<script>
-  $(window).bind('load', function () {
-
-    resizeElements();
-
-    function resizeElements() {
-
-      headerHeight = $('.navbar').height();
-      footerHeight = $('footer').height();
-
-      if (($(document.body).height() + footerHeight) < $(window).height()) {
-        $footer.addClass('navbar-fixed-bottom');
-      } else {
-        $footer.removeClass('navbar-fixed-bottom');
-      }
-    }
-
-    $(window).resize(resizeElements);
-
-  });
-</script>
 
 <script>
   var latitude = 40.893275;
