@@ -15,7 +15,7 @@
   <!--TYPEKIT FONTS -- END-->
   <!-- BEGIN CSS TEMPLATE -->
   <%= stylesheet_link_tag    "plugins/bootstrap-datepicker/css/datepicker.css" %>
-  <%= stylesheet_link_tag    "expShow/application" %>
+  <%= stylesheet_link_tag    "dashboard/preview/application" %>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- END CSS TEMPLATE -->
 
@@ -42,12 +42,12 @@
 
   <!--JAVASCRIPT INCLUDES START-->
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <%= javascript_include_tag "expShow/application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "plugins/bootstrap-datepicker/js/bootstrap-datepicker.js", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "dashboard/preview/application", "data-turbolinks-track" => true %>
   <!--JAVASCRIPT INCLUDES END-->
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "ur-bdccc91-2edd-103e-668f-89b5c48e233", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
   <%= csrf_meta_tag %>
 </head>
 <!-- END HEAD -->
@@ -123,7 +123,7 @@
     <div class="container p-t-10">
       <h2>
         Build a website like this page in under 10 minutes
-        <a href="<%= new_dashboard_experience_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;">
+        <a href="<%= new_dashboard_experience_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;" data-intro="An awesome 18th-century painter, who found beauty in everyday, common things." data-position="top">
           Create your website now
         </a>
       </h2>
@@ -134,10 +134,14 @@
 
 
 <script>
+  $(document).ready(function(){
+    $('body').chardinJs('start')
+  });
+</script>
+
+<script>
   var latitude = 40.893275;
   var longitude =  -73.826941;
-
-  //console.log(longitude);
 
   //Initialize Map
   map = new GMaps({

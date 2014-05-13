@@ -62,6 +62,10 @@ gem 'fog'
 
 gem 'gon'
 
+# Overlay with help items
+gem "chardinjs-rails"
+
+
 group :staging, :production do
   # gzip on heroku
   gem 'heroku-deflater'
