@@ -2,6 +2,14 @@
   <%= javascript_include_tag "dashboard/experience_index.js", 'data-turbolinks-track' => true %>
 <% end %>
 
+<%= content_for :experience_share do %>
+  <!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- START -->
+  <%= render :partial => "share" %>
+  <!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- END -->
+<% end %>
+
+
+
 <!-- BEGIN PAGE TITLE -->
 <div class="page-title">
   <h3>Experiences</h3>
@@ -42,6 +50,3 @@
 
 <% end %>
 
-<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- START -->
-<%= render :partial => "share" %>
-<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- END -->
