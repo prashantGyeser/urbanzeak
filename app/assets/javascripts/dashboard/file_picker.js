@@ -17,7 +17,7 @@ ready = function() {
             function(InkBlobs){
                 var strigifiedInkBlobs = JSON.stringify(InkBlobs);
                 console.log(strigifiedInkBlobs);
-                $('#images').val(strigifiedInkBlobs);
+                $('#experience_image_image').val(strigifiedInkBlobs);
                 $('#file-upload-success-message').show();
                 $('#files_uploaded_list tr').remove();
                 $('#select_file_container').hide();
@@ -46,7 +46,7 @@ ready = function() {
     $(function(){
         $('#delete-all-files-container').on('click','button', function(e){
             e.preventDefault();
-            $('#images').val("");
+            $('#experience_image_image').val("");
             $('#files_uploaded_list tr').remove();
             $('#select_file_container').show();
             $('#delete-all-files-container').hide();

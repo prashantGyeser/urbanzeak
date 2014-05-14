@@ -67,6 +67,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     experience_dates = params[:experience][:exp_date].split(',')
     logger.debug "The experience dates are: #{experience_dates.inspect}"
     images = params[:experience_image][:image]
+    logger.debug "The images are: #{images}"
     if images.blank?
     else
       experience_images = JSON.parse(params[:experience_image][:image])
