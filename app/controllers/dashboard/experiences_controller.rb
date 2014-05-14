@@ -6,7 +6,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_filter :check_if_host, only: [:create]
-
+  skip_before_filter :verify_authenticity_token, :only => [:create, :edit]
 
   def index
     @experiences = Experience.where(:user_id => current_user.id)
