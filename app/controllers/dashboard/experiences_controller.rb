@@ -155,7 +155,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     if @available_dates.blank?
       
     else
-      #@experience.exp_date = @available_dates.map(&:inspect).join(', ')
+      @experience.exp_date = @available_dates.map(&:inspect).join(', ')
     end
     @experience.exp_time = @experience.exp_time.strftime("%I:%M %p") #"7:15 PM"
     @experience_images = ExperienceImage.where(:experience_id => @experience.id)
