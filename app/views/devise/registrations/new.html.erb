@@ -3,8 +3,7 @@
     <div class="col-md-5 col-md-offset-1">
       <h2>Sign up for urbanzeak</h2>
       <p>
-        urbanzeak is the easiest way to create, show and find customers.
-        Sign up for a <span class="semi-bold">30 free trial</span> and start finding customers.
+        urbanzeak is the easiest way to sell your city tour or activity. Sign up for a <span class="semi-bold">30 day free trial</span> period and start selling.
         <br/>
         <%= link_to "Sign in now", new_session_path(resource_name) %> if you already have an account.
       </p>
@@ -67,7 +66,10 @@
 
         <div class="row">
           <div class="form-group col-md-10">
-            <%= f.label :subdomain, "Shop Name" , :class => "form-label" %>
+            <%= f.label :subdomain, "Name your business (eg. vegantours )" , :class => "form-label" %>
+            <p>
+              Your website will be businessname.urbanzeak.com
+            </p>
             <div class="controls">
               <div class="input-with-icon  right">
                 <i class=""></i>
