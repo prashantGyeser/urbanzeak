@@ -144,6 +144,9 @@
   <% if current_user.id == @experience.user_id %>
     <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="background: #fffcee; color: #ce8f22; border: 1px solid #F0DBB4" id="create-experience-footer-nav">
       <div class="container p-t-10">
+
+        <h3 style="padding-left: 10px;">Your url to share is: <%= experience_url(@experience, :subdomain => current_user.subdomain) %></h3>
+
         <h2>
           <a href="<%= dashboard_purchases_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;">
             Go back to dashboard
