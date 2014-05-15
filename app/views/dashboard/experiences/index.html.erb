@@ -21,24 +21,38 @@
   <%= render :partial => "no_experiences" %>
 <% else %>
 
-  <% if @about.blank? %>
+  <% if @about.blank? || @integration_tokens.blank? %>
 
     <div class="row">
       <div class="col-md-8">
         <%= render :partial => "experiences", :locals => { :columns => 2 } %>
       </div>
       <div class="col-md-4">
-        <div class="well well-large">
-          <h4>
-            <span class="semi-bold">No about</span>
-            you added
-            <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
-          </h4>
-          <p>
-            An about you helps your customers find out a little about who you are and why you love conducting your experiences.
-          </p>
-          <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-success btn-con" %>
-        </div>
+        <% if @about.blank? %>
+          <div class="well well-large">
+            <h4>
+              <span class="semi-bold">No about</span>
+              you added
+              <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
+            </h4>
+            <p>
+              An about you helps your customers find out a little about who you are and why you love conducting your experiences.
+            </p>
+            <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-success btn-con" %>
+          </div>
+        <% elsif @integration_tokens %>
+          <div class="well well-large">
+            <h4>
+              <span class="semi-bold">No integrations</span>
+               added
+              <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
+            </h4>
+            <p>
+              Add an integration to share your experience on Facebook any time you want.
+            </p>
+            <%= link_to "Add About", dashboard_integrations_path, :class => "btn btn-success btn-con" %>
+          </div>
+        <% end %>
       </div>
 
     </div>

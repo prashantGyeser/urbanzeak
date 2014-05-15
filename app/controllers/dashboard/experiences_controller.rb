@@ -11,6 +11,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   def index
     @experiences = Experience.where(:user_id => current_user.id)
     @about = Host.where(:user_id => current_user.id)
+    @integration_tokens = IntegrationToken.where(:user_id => current_user.id)
   end
 
   # POST /experiences
