@@ -139,6 +139,25 @@
 </div>
 </div>
 
+
+<% if current_user.present? %>
+  <% if current_user.id == @experience.user_id %>
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="background: #fffcee; color: #ce8f22; border: 1px solid #F0DBB4" id="create-experience-footer-nav">
+      <div class="container p-t-10">
+        <h2>
+          <a href="<%= dashboard_purchases_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;">
+            Go back to dashboard
+          </a>
+        </h2>
+      </div>
+    </nav>
+  <% end %>
+<% end %>
+
+
+
+
+
 <input type="hidden" name="internal_experience_landmark" value="<%= @experience.land_mark %>" id="internal_experience_landmark">
 
 <script id="map_location_latitude" type="text/json">
