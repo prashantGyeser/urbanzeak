@@ -22,26 +22,36 @@
         </div>
 
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="alert alert-info">
-              <button data-dismiss="alert" class="close"></button>
-              Info: The following message will be shared with your network when you share.
-              <div class="bold" id="share-message">
-
-              </div>
-       modal-backdrop fade in     </div>
+        <% if @integration_tokens.blank? %>
+          <div class="alert">
+            <button data-dismiss="alert" class="close"></button>
+            To share on Facebook, go to the integrations page or click the button below
+            <br/>
+            <a href="<%= dashboard_integrations_path %>" class="btn btn-primary m-t-10">Integrate now</a>
           </div>
-        </div>
+        <% else %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-info">
+                <button data-dismiss="alert" class="close"></button>
+                Info: The following message will be shared with your network when you share.
+                <div class="bold" id="share-message">
 
-        <div class="row">
-          <div class="col-md-4">
-            <div style="background: #E5E9EC;text-align: center;padding:20px 10px 10px 10px;">
-              <i class="fa fa-facebook-square" style="font-size: 3em; display: inline"></i>
-              <button class="btn btn-primary btn-cons facebook-share" type="button">Share</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div style="background: #E5E9EC;text-align: center;padding:20px 10px 10px 10px;">
+                <i class="fa fa-facebook-square" style="font-size: 3em; display: inline"></i>
+                <button class="btn btn-primary btn-cons facebook-share" type="button">Share</button>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+
       </div>
 
       <div class="modal-footer">
