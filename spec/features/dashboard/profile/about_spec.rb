@@ -2,8 +2,29 @@ require 'spec_helper'
 require 'faker'
 
 feature 'About host' do
+
+  background do
+    user = FactoryGirl.create(:user)
+    # Logging in
+    visit '/users/sign_in'
+    within('#new_user') do
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
+    end
+    click_button 'Login'
+
+  end
+
   scenario 'I should be able to add an about text' do
-    pending
+    visit '/dashboard/profile/about'
+
+    fill_in 'host[name]', :with => Faker::Name.name
+    fill_in 'host[about]', :with => Faker::Lorem.sentence
+
+    click_button('Add about')
+
+    expect(page).to have_content "Success: Added your details successfully."
+
   end
 
   scenario 'I should be able to upload a photo of mine' do

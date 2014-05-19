@@ -14,9 +14,11 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :host do
-    title "MyString"
-    about "MyText"
+    name Faker::Lorem.word
+    about Faker::Lorem.sentence
   end
 end

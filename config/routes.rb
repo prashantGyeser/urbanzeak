@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :attendees
   resources :hosts
   post "conversations/create" => "conversations#create"
+  post 'experiences/create_review' => "experiences#create_review"
 
   namespace :dashboard do
     root :to => "purchases#index"
