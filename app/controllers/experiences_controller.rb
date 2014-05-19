@@ -23,6 +23,7 @@ class ExperiencesController < ApplicationController
   def show
     @attendee = Attendee.new
     @message = Message.new
+    @user = User.find(@experience.user_id)
     @images =ExperienceImage.where(:experience_id=> @experience.id)
     @host = Host.where(:user_id => @experience.user_id).first
     @reviews = Review.where(:experience_id => @experience.id).where(:show => true).limit(3)
