@@ -205,7 +205,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
       # Set inputs
       postInputs.set_AccessToken(token);
-      #postInputs.set_Message(message_to_post);
+      postInputs.set_Message(message_to_post);
       postInputs.set_Link("http://#{current_user.subdomain}.lvh.me:3000/experiences/#{experience.slug}");
       #postInputs.set_Picture('https://www.filepicker.io/api/file/U98OrjUZQxilOpdwawD7');
 
