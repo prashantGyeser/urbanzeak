@@ -201,7 +201,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
       postInputs = postChoreo.new_input_set()
 
       # Constructing message to post
-      message_to_post = "Come join us for a great experience: #{experience.name} by going to http://#{current_user.subdomain}.urbanzeak.com/experiences/#{experience.slug} "
+      message_to_post = "Come join us for a great experience: #{experience.name} by going to http://#{current_user.subdomain}.uzsta.com/experiences/#{experience.slug} "
 
       # Set inputs
       postInputs.set_AccessToken(token);
