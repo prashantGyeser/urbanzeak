@@ -40,7 +40,7 @@ class Dashboard::IntegrationsController < Dashboard::ApplicationController
   end
 
   def postToFacebook
-    logger.debug "It is getting to the fb post function"
+
     if cookies[:facebookAccessToken]
       token = cookies[:facebookAccessToken]
 

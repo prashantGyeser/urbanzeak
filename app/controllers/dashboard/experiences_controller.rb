@@ -195,8 +195,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
       # Instantiate the Choreo, using a previously instantiated TembooSession object, eg:
       session = TembooSession.new("urbanzeak", 'socialMediaIntegration', '24583a5a-0098-4660-9')
-      logger.debug "Tje session is: #{session}"
-      postChoreo = Facebook::Publishing::Post.new(session)
+      postChoreo = Facebook::Publishing::PublishLink.new(session)
 
       # Get an InputSet object for the choreo
       postInputs = postChoreo.new_input_set()
@@ -206,7 +205,9 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
 
       # Set inputs
       postInputs.set_AccessToken(token);
-      postInputs.set_Message(message_to_post);
+      #postInputs.set_Message(message_to_post);
+      postInputs.set_Link("http://#{current_user.subdomain}.lvh.me:3000/experiences/#{experience.slug}");
+      #postInputs.set_Picture('https://www.filepicker.io/api/file/U98OrjUZQxilOpdwawD7');
 
       # Execute Choreo
       @postResults = postChoreo.execute(postInputs)
