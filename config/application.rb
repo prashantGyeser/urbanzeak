@@ -62,6 +62,8 @@ module Urbanzeak
     config.assets.precompile += %w( dashboard/file_picker.js )
     config.assets.precompile += %w( plugins/chardinjs/chardinjs.min.js )
     config.assets.precompile += %w( plugins/chardinjs/chardinjs.css )
+    config.assets.precompile += %w( dashboard/algo.js )
+    config.assets.precompile += %w( dashboard/algo.css )
 
   end
 end

@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     post 'integrations/postToFacebook'
     post 'integrations/setConfig'
     resources :events
+    get 'algo' => 'algo#index'
   end
 
 

@@ -6786,6 +6786,10 @@ input.error{
 	display:inline-block;
 	float:left;
 }
+.user-comment-wrapper .comment a:hover {
+  background: #1285d1;
+  color: white;
+}
 .user-comment-wrapper .comment .user-name{
 	color:#0090d9;
 	font-size:15px;
