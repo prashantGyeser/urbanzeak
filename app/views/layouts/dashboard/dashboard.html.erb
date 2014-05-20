@@ -19,7 +19,7 @@
   <!--TYPEKIT FONTS -- END-->
   <!-- NEED TO WORK ON -->
   <%= stylesheet_link_tag    "dashboard/application", 'data-turbolinks-track' => true %>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
@@ -156,7 +156,7 @@ mixpanel.init("fa69bc1b560b99a68310e55ce5aa1278");</script><!-- end Mixpanel -->
       <!-- BEGIN BADGE LINK -->
       <li class="<%= 'active' if current_page? dashboard_messages_path %>">
         <a href="<%= dashboard_messages_path %>" id="messages_nav">
-          <i class="fa fa-ticket"></i>
+          <i class="fa fa-life-ring"></i>
           <span class="title">Helpdesk</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
           <!--<span class="badge badge-important pull-right">5</span>-->

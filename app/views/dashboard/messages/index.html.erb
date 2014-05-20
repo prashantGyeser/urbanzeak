@@ -10,6 +10,10 @@
   </p>
 </div>
 
+<% if @conversations.blank? %>
+    <%= render :partial => "no_messages" %>
+<% end %>
+
 <!--ROW START-->
 <div class="row">
   <!--12 COL START-->
