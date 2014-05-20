@@ -152,7 +152,7 @@ class Experience < ActiveRecord::Base
 
   def send_experience_created_notification
     host = User.find(self.user_id)
-    NotificationsMailer.experience_created(self, host)
+    NotificationsMailer.experience_created(self, host).deliver
   end
 
 end
