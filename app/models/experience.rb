@@ -61,7 +61,7 @@ class Experience < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   before_save :store_version
-
+  after_create :send_experience_created_notification
 
   def self.total_visits_this_month(user_id)
     experiences = Experience.where(:user_id => user_id)
@@ -148,6 +148,11 @@ class Experience < ActiveRecord::Base
       end
       version.save
     end
+  end
+
+  def send_experience_created_notification
+    host = User.find(self.user_id)
+    NotificationsMailer.experience_created(self, host)
   end
 
 end

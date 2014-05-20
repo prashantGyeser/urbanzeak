@@ -782,70 +782,26 @@
                       </tr>
                       <tr>
                         <td>
-                          <!--<span><img src="https://s3.amazonaws.com/urbanzeak-static-assets/logo.png" style="float:right;margin-top:-10px"></span>-->
+                          <span><img src="https://s3.amazonaws.com/urbanzeak-static-assets/logo.png" style="float:right;margin-top:-10px"></span>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 20px;">
                           <p style="line-height: 1.5em; padding-bottom: 15px;">
-                            You have reserved your tickets for the Experience: <a href="<%= "#{@host.subdomain}.urbanzeak.com/experiences/#{@experience.name}" %>"><%= @experience.name %></a>
+                            Your site has been created. You can view it by going to the following url
                           </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <table>
-                          <tr>
-                            <td style="padding-right: 10px;padding-bottom: 10px;">
-                              Number of Tickets:
-                            </td>
-                            <td>
-                              <strong><%= @attendee.seats %></strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="padding-right: 10px; padding-bottom: 10px;">
-                              Date:
-                            </td>
-                            <td>
-                              <strong><%= @experience_date %></strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="padding-right: 10px;padding-bottom: 10px;">
-                              Time:
-                            </td>
-                            <td>
-                              <strong><%= @experience_time %></strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="padding-right: 10px;padding-bottom: 10px;">
-                              Total Amount:
-                            </td>
-                            <td>
-                              <strong>$<%= @total_paid %></strong>
-                            </td>
-                          </tr>
-                        </table>
-                      </tr>
-                      <tr>
-                        <td style="padding-top: 15px;">
                           <p style="line-height: 1.5em; padding-bottom: 15px;">
-                            Please arrive at the venue at the scheduled date & time.
+                            <a href="<%= "#{@host.subdomain}.urbanzeak.com/experiences/#{@experience.name}" %>"><%= @experience.name %></a>
+                          </p>                          
+                          <p style="line-height: 1.5em; padding-bottom: 15px;">
+                            You can now share the website link with your customers & friends.
+
+                          </p>
+                          <p style="line-height: 1.5em; padding-bottom: 15px;">
+                            Thanks
                             <br/>
-                            Please bring a copy of this email for attendance.
+                            <strong>urbanzeak team</strong>
                           </p>
-                          <p style="line-height: 1.5em; padding-bottom: 15px;">
-                            In case of any queries you can contact here:
-                            <a href="<%= "#{@host.subdomain}.urbanzeak.com/experiences/#{@experience.name}" %>">Ask a question</a>
-                          </p>
-                        </td>
-                      </tr>
-
-
-                      <tr>
-                        <td style="padding-top: 30px;">
-                          Powered by <a href="www.urbanzeak.com">urbanzeak</a>
                         </td>
                       </tr>
                     </table>

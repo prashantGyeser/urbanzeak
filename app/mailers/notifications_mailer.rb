@@ -18,12 +18,22 @@ class NotificationsMailer < ActionMailer::Base
     mail(:to => message.to, :subject => "You have a new message", :from => message.from)
   end
 
-  def joined_experience(experience, attendee, exp_time)
+  def joined_experience(experience, attendee, exp_time, experience_date)
     @experience = experience
     @attendee = attendee
     @experience_time = exp_time
+    @experience_date = experience_date
+    @total_paid = experience.price * attendee.seats
+    @host = User.find(@experience.user_id)
+    mail(:to => @attendee.email, :subject => "Ticket purchase confirmation for #{@experience.name}", :from => "notifications@urbanzeak.com")
+  end
 
-    mail(:to => @attendee.email, :subject => "Experience details and RSVP Confirmation", :from => "notifications@urbanzeak.com")
+  def experience_created(experience, host)
+    to  = "#{host.first_name} <#{host.email}>"
+    from = "urbanzeak support <support@urbanzeak.com>"
+    @experience = experience
+    @host = host
+    mail(:to => to, :subject => "urbanzeak - Website created", :from => from)
   end
 
 end
