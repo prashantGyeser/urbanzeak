@@ -2,6 +2,11 @@ require 'subdomain'
 
 Rails.application.routes.draw do
 
+  # Redirecting when a subdomain is found to the appropriate page
+  constraints(Subdomain) do
+    get '/' => "experiences#index"
+  end
+
   get 'events/:id' => "events#show", as: :event
 
   get '/purchases' => 'dashboard/purchases#index', as: :user_root
@@ -36,10 +41,7 @@ Rails.application.routes.draw do
     get 'algo' => 'algo#index'
   end
 
-  # Redirecting when a subdomain is found to the appropriate page
-  constraints(Subdomain) do
-    get '/' => "experiences#index"
-  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
