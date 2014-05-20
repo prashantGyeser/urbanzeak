@@ -23,6 +23,7 @@ class ExperiencesController < ApplicationController
   def show
     @attendee = Attendee.new
     @message = Message.new
+    logger.debug "The experience is: #{@experience.inspect}"
     @user = User.find(@experience.user_id)
     @images =ExperienceImage.where(:experience_id=> @experience.id)
     @host = Host.where(:user_id => @experience.user_id).first

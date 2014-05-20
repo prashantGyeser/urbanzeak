@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-feature 'User log out', :js => true do
+feature 'User log out' do
 
-  scenario 'I should be able to logout once I login' do
+  scenario 'I should be able to logout once I login', :js => true do
 
     user = FactoryGirl.create(:user)
 
