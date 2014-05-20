@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+    $('#overlay').click(function(){
+        $('#overlay').remove();
+    });
+
     //$('#join-notifications').hide();
     $('#available_date').hide();
     // SINGLE PAGE NAV START

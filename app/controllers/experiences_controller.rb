@@ -29,6 +29,7 @@ class ExperiencesController < ApplicationController
     @host = Host.where(:user_id => @experience.user_id).first
     @reviews = Review.where(:experience_id => @experience.id).where(:show => true).limit(3)
     @available_dates = @experience.available_dates(params[:seats].to_i)
+    @newly_created = params[:newly_created]
 
     impressionist(@experience)
     render layout: false

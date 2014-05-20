@@ -55,7 +55,9 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
         @experience.shortened_url = root_url + url.unique_key + '/'
         @experience.save
 
-        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain), notice: 'Experience was successfully created.', status: 301 }
+        @newly_created = true
+        logger.debug "The newly created statys - #{@newly_created}"
+        format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain, :newly_created => true), notice: 'Experience was successfully created.', status: 301 }
         format.json { render action: 'show', status: :created, location: @experience }
       else
         format.html { render action: 'new' }
@@ -65,6 +67,7 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
   end
 
   def update
+    @newly_created = false
     experience_dates = params[:experience][:exp_date].split(',')
     logger.debug "The experience dates are: #{experience_dates.inspect}"
     images = params[:experience_image][:image]
