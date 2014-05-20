@@ -39,7 +39,10 @@
                 <!--<img src="assets/img/gallery/1.jpg" alt="" />-->
                 <%experience_image = experience.experience_images.first %>
                 <!--<%= image_tag experience_image %>-->
-                <%= filepicker_image_tag experience_image.image, w: 371, h: 271 %>
+                <% if experience_image.present? %>
+                    <%= filepicker_image_tag experience_image.image, w: 371, h: 271 %>
+                <% end %>
+
               </div>
               <div class="item-info">
                 <h4 class="text-dark no-margin p-t-10 title semi-bold"><a href="<%= experience_path(experience) %>"><%=  experience.name %></a></h4>
