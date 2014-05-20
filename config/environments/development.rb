@@ -36,6 +36,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Mailer preview config
-  config.action_mailer.preview_path = "#{Rails.root}/test/mailers"
+  config.action_mailer.preview_path = "#{Rails.root}/spec/email_previews"
 
 end

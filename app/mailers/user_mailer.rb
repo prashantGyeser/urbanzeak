@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def signup_confirmation(user)
     @user = user
     logger.debug "The user is: #{user}"
-    mail(:to => user.email, :subject => "Sign Up Confirmation")
+    mail(:to => user.email, :subject => "Welcome to urbanzeak!")
   end
 
   def founder_welcome(user, time_to_send)
