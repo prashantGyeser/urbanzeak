@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => 'hello@urbanzeak.com'
+  default :from => 'support@urbanzeak.com'
 
   def signup_confirmation(user)
     @user = user
