@@ -26,4 +26,12 @@ class NotificationsMailer < ActionMailer::Base
     mail(:to => @attendee.email, :subject => "Experience details and RSVP Confirmation", :from => "notifications@urbanzeak.com")
   end
 
+  def experience_created(experience, host)
+    to  = "#{host.first_name} <#{host.email}>"
+    from = "urbanzeak support <support@urbanzeak.com>"
+    @experience = experience
+    @host = host
+    mail(:to => to, :subject => "urbanzeak - Website created", :from => from)
+  end
+
 end
