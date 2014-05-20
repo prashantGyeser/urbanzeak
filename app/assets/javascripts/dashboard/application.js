@@ -31,5 +31,7 @@
 //= require dashboard/core
 //= require dashboard/chat
 //= require dashboard/reviews
+//= require dashboard/messages
+//= require dashboard/experience_index
 //= require turbolinks
 

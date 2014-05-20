@@ -1,4 +1,5 @@
-$(document).ready(function(){
+var ready;
+ready = function() {
     $('.table input:checkbox').change(function(){
         if($(this).is(':checked'))
         {
@@ -19,4 +20,6 @@ $(document).ready(function(){
             // Todo: Send the data to the server to remove this item from the reviews list
         }
     });
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);

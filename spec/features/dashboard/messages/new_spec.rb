@@ -5,7 +5,7 @@ feature 'When I am on the experience page, I should be able to send the host a m
 
   background do
     user = FactoryGirl.create(:user)
-    @experience = FactoryGirl.create(:experience)
+    @experience = FactoryGirl.create(:experience, :user => user)
     @experience.user_id = user.id
     @experience.save
   end
@@ -13,7 +13,17 @@ feature 'When I am on the experience page, I should be able to send the host a m
   scenario 'I should see a send message modal window', :js => true do
     visit experience_path(@experience)
     click_button('ask_a_question_top')
-    expect(page).to have_content "Have a question?"
+
+
+    page.document.synchronize( 10 ) do
+      element = first('#myModalLabel')
+      if element
+        expect(page).to have_content "Have a question?"
+      else
+        raise Capybara::ElementNotFound
+      end
+    end
+
   end
 
   scenario 'I should be able to send a message with valid details', :js => true do

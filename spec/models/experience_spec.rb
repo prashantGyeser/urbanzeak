@@ -41,7 +41,8 @@ require 'spec_helper'
 
 describe Experience do
   it "should have a valid factory" do
-    FactoryGirl.create(:experience).should be_valid
+    user = create(:user)
+    FactoryGirl.create(:experience, :user => user).should be_valid
   end
   it "should have a name" do
     FactoryGirl.build(:experience, name: nil).should_not be_valid

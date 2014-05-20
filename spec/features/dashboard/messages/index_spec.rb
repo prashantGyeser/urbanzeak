@@ -4,16 +4,19 @@ require 'faker'
 feature 'Messages List' do
 
   background do
-    user = FactoryGirl.create(:user)
-    experience = FactoryGirl.create(:experience, :user_id => user.id)
-    @conversation = FactoryGirl.create(:conversation, experience_id: experience.id, user_id: user.id )
+    @user = FactoryGirl.create(:user)
+    experience = FactoryGirl.create(:experience, :user_id => @user.id)
+    @conversation = FactoryGirl.create(:conversation, experience_id: experience.id, user_id: @user.id )
     message = FactoryGirl.create(:message, :conversation_id => @conversation.id, :from => @conversation.sender_email_id)
+
     visit '/users/sign_in'
+
     within('#new_user') do
-      fill_in 'user_email', with: user.email
-      fill_in 'user_password', with: user.password
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
     end
     click_button 'Login'
+
   end
 
   scenario 'The messages page should open without any errors' do
@@ -53,6 +56,24 @@ feature 'Messages List' do
     find('.clickable', :text => "Message from #{@conversation.customer_name}").click
     sleep(1)
     fill_in('messages_body', with: Faker::Lorem.sentence(5))
+  end
+
+  scenario 'I should be able to see the conversations when I logout and login and go to the messages page', :js => true do
+    visit '/dashboard/messages'
+    click_link('Logout')
+
+    click_link('Login')
+    within('#new_user') do
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
+    end
+    click_button 'Login'
+
+    find('#messages_nav').click
+
+    find('.clickable', :text => "Message from #{@conversation.customer_name}").click
+    sleep(1)
+    expect(page).to have_content(@conversation.sender_email_id)
   end
 
   scenario 'I should see a list of conversations on the messages page in the following order: latest to oldest', :js => true do
