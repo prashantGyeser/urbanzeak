@@ -14,4 +14,11 @@ class NotificationsMailerPreview < ActionMailer::Preview
     NotificationsMailer.joined_experience(experience, attendee, experience_time, experience_date)
   end
 
+  def message_notification
+    conversation = Conversation.first
+    message = Message.where(:conversation_id => conversation.id).first
+    host = User.find(conversation.user_id)
+    NotificationsMailer.message_notification(message, conversation, host)
+  end
+
 end
