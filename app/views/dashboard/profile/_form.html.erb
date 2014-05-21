@@ -35,7 +35,7 @@
             <div class="controls">
               <label class="form-label">About the person hosting the experience.</label>
               <!--<input type="text" class="form-control">-->
-              <%= f.text_area :about, :class => "form-control", :placeholder => "Enter the your experience description", :rows => 5, :required => "required" %>
+              <%= f.text_area :about, :class => "form-control", :rows => 5, :required => "required" %>
             </div>
           </div>
 
@@ -48,13 +48,13 @@
     </div>
     <div class="col-md-4">
       <div class="grid simple">
-        <div class="grid-title no-border">
-          <h4>Your photo</h4>
-        </div>
+
         <div class="grid-body no-border">
 
-          <div class="row-fluid">
+          <div class="row-fluid p-t-40">
+            <label class="form-label">Your photo</label>
             <% if @host.avatar.blank? %>
+
               <%= f.file_field :avatar, :class => "form-control"%>
             <% else %>
               <button class="btn btn-danger btn-cons" id="delete-profile-picture" data-host-id="<%= @host.id %>">Delete Your Photo</button>
