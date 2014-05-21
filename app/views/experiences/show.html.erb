@@ -12,7 +12,9 @@
   <!--FACEBOOK META TAGS -- START -->
   <meta property="og:title" content="Some awesome title" />
   <!--<meta property="og:type" content="article" />-->
-  <meta property="og:image" content="<%= @images.first.url %>" />
+  <% if @images.first.present? %>
+      <meta property="og:image" content="<%= @images.first.url %>" />
+  <% end %>
   <meta property="og:url" content="<%= "http://#{@user.subdomain}.urbanzeak.com/experiences/#{@experience.slug}" %>" />
   <meta property="og:description" content="Come join us for a great" />
   <!--FACEBOOK META TAGS -- END -->
