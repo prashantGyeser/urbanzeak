@@ -5,6 +5,7 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_filter :check_if_host, only: [:create]
+  skip_before_filter :authenticate_user!, :only => [:create_review]
 
 
   def index

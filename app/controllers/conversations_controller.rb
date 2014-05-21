@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:create]
 
   # POST /messages
   # POST /messages.json
