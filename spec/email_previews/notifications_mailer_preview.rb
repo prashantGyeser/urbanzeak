@@ -21,4 +21,11 @@ class NotificationsMailerPreview < ActionMailer::Preview
     NotificationsMailer.message_notification(message, conversation, host)
   end
 
+  def host_message_notification
+    conversation = Conversation.first
+    message = Message.where(:conversation_id => conversation.id).first
+    host = User.find(conversation.user_id)
+    NotificationsMailer.host_message_notification(message, conversation, host)
+  end
+
 end
