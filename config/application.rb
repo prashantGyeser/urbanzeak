@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Urbanzeak
   class Application < Rails::Application
+
+
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -64,6 +67,7 @@ module Urbanzeak
     config.assets.precompile += %w( plugins/chardinjs/chardinjs.css )
     config.assets.precompile += %w( dashboard/algo.js )
     config.assets.precompile += %w( dashboard/algo.css )
+    config.assets.precompile += %w( icon/top-tray.png )
 
   end
 end

@@ -87,4 +87,8 @@ Urbanzeak::Application.configure do
   # Setting default host for devise
   config.action_mailer.default_url_options = {:host => "www.uzsta.com"}
 
+  # Setting the assets to precompile
+  config.assets.compile = true
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.js.erb']
+
 end

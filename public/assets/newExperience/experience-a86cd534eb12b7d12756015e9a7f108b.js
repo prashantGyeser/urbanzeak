@@ -1,0 +1,1 @@
+$(document).ready(function(){$(function(){$("#schedule_calendar").multiDatesPicker()})});

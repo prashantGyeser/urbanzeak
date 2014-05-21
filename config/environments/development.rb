@@ -38,4 +38,8 @@ Rails.application.configure do
   # Mailer preview config
   config.action_mailer.preview_path = "#{Rails.root}/spec/email_previews"
 
+  # Setting the assets to precompile
+  config.assets.compile = true
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.js.erb']
+
 end
