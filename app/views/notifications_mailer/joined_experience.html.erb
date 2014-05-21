@@ -807,7 +807,7 @@
                               Date:
                             </td>
                             <td>
-                              <strong><%= @experience_date %></strong>
+                              <strong><%= @experience_date.strftime('%e %B %Y') %></strong>
                             </td>
                           </tr>
                           <tr>
@@ -815,7 +815,7 @@
                               Time:
                             </td>
                             <td>
-                              <strong><%= @experience_time %></strong>
+                              <strong><%= @experience_time.strftime('%l:%M %p') %></strong>
                             </td>
                           </tr>
                           <tr>
