@@ -204,13 +204,12 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
       postInputs = postChoreo.new_input_set()
 
       # Constructing message to post
-      message_to_post = "Come join us for a great experience: #{experience.name} by going to http://#{current_user.subdomain}.uzsta.com/experiences/#{experience.slug} "
+      message_to_post = "Come join us for a great experience: #{experience.name} by going to http://#{current_user.subdomain}.urbanzeak.com/experiences/#{experience.slug} "
 
       # Set inputs
       postInputs.set_AccessToken(token);
       postInputs.set_Message(message_to_post);
-      postInputs.set_Link("http://#{current_user.subdomain}.uzsta.com/experiences/#{experience.slug}");
-      #postInputs.set_Picture('https://www.filepicker.io/api/file/U98OrjUZQxilOpdwawD7');
+      postInputs.set_Link("http://#{current_user.subdomain}.urbanzeak.com/experiences/#{experience.slug}");
 
       # Execute Choreo
       @postResults = postChoreo.execute(postInputs)
@@ -220,10 +219,8 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
     respond_to do |format|
 
       if no_token == false
-        logger.debug "Ok it is getting here"
         format.json { render :json => {:message => "Successfully posted"}, status: :created}
       else
-        logger.debug "Ok it is getting here"
         format.json { render :json => {:error => "no tokens"}.to_json, status: :unprocessable_entity, :message => "No tokens found"}
       end
 
