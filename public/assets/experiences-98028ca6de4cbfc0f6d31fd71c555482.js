@@ -1,1 +1,0 @@
-$(document).ready(function(){$(".input-group").datepicker({autoclose:!0,todayHighlight:!0})});
