@@ -3,6 +3,7 @@ ready = function() {
 
     $('.alert-error').hide();
     $('.alert-success').hide();
+    $('.posting-to-fb-notification').hide();
 
     // Post to the location the user shared
     $('button.share-button-load-modal').click(function(){
@@ -24,16 +25,19 @@ ready = function() {
 
     $('.facebook-share').click(function(e){
         e.preventDefault();
+        $('.posting-to-fb-notification').show();
         var experience_id_from_field = $('#experience_id').val();
         $.post('/dashboard/experiences/facebook_share', {experience_id: experience_id_from_field}, function(data){
                 console.log(data);
                 $('.alert-error').hide();
                 $('.alert-success').show();
+                $('.posting-to-fb-notification').hide();
             })
             .fail(function(){
                 console.log('Could not find a token');
                 $('.alert-success').hide();
                 $('.alert-error').show();
+                $('.posting-to-fb-notification').hide();
             });
     });
 
