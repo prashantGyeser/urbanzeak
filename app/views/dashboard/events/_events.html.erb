@@ -1,0 +1,68 @@
+<input type="hidden" name="event_id" id="event_id" value="" />
+
+<% @events.in_groups_of(columns, false) do |events| %>
+  <div class="row" style="margin-bottom: 20px;">
+    <% events.each do |event| %>
+
+      <% if columns == 2 %>
+        <div class="col-md-6">
+      <% else %>
+        <div class="col-md-4">
+      <% end %>
+
+      <div class="widget-item narrow-margin">
+        <div style="max-height:214px" class="tiles green  overflow-hidden full-height">
+
+          <!--TODO: Add an event image -->
+          <%# experience_image = ExperienceImage.where(:experience_id => experience.id).first %>
+          <%# if experience_image.nil? %>
+
+          <%# else %>
+            <%# filepicker_image_tag event_image.url, w: 400, h: 300, fit: 'clip' %>
+          <%#end%>
+
+        </div>
+        <div class="tiles white ">
+          <div class="tiles-body">
+            <div class="row">
+              <div class="user-comment-wrapper pull-left">
+                <div class="comment">
+                  <div class="text-black bold">
+                    <!--Todo: Add a event path-->
+                    <%= link_to event.name, event_path(event) %>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="p-l-15 p-t-10 p-r-20">
+                <p><%= truncate(event.what_does_this_include, length: 100) %></p>
+                <div class="p-t-10">
+                  <!--Todo: Correct the slug name. Disabled it for now-->
+                  <button
+                    class="btn btn-cons share-button-load-modal"
+                    data-toggle="modal" data-target="#share"
+                    data-button="<%= event.id %>"
+                    data-name="<%= event.name %>"
+                    data-url="http:// <%= current_user.subdomain %>.urbanzeak.com/events/<%# event.slug %>"> Share
+                  </button>
+
+                  <% edit_url = dashboard_events_path + '/' + event.id.to_s + '/edit' %>
+                  <%= link_to "Edit", edit_url, :class => "btn btn-success btn-cons" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div> <!-- END EXPERIENCE ITEM -->
+    <% end %>
+    </div>
+<% end %>
+
+<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- START -->
+<%= render :partial => "share" %>
+<!--MODAL WINDOW FOR SHARING ON SOCIAL MEDIA -- END -->
+
+
+

@@ -3,8 +3,14 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require "capybara/rspec"
+require 'capybara/rspec'
 require 'database_cleaner'
+require 'email_spec'
+require 'capybara/email/rspec'
+require 'selenium-webdriver'
+require 'support/subdomains'
+require 'capybara-screenshot/rspec'
+require 'shoulda-matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -18,7 +24,6 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 #Capybara.server_port = 7000
 #Capybara.app_host = "http://localhost:#{Capybara.server_port}"
 
-
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -27,14 +32,6 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -49,5 +46,43 @@ RSpec.configure do |config|
 
   # Configuring rspec to show backtrace for failed tests
   config.fail_fast = true
+
+  # Setting fixtures to false so that capybara selinium does not have any issues
+  config.use_transactional_fixtures = false
+
+  # Clean up and initialize database before
+  # running test exmaples
+  config.before(:suite) do
+    # Truncate database to clean up garbage from
+    # interrupted or badly written examples
+    DatabaseCleaner.clean_with(:truncation)
+
+    # Seed dataase. Use it only for essential
+    # to run application data.
+    load "#{Rails.root}/db/seeds.rb"
+  end
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
+  # Including mailer helpers
+  config.include(MailerMacros)
+
+  # Factory Girl Settings
+  # Refer to: https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
+  config.include FactoryGirl::Syntax::Methods
 
 end

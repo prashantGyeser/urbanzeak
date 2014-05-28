@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <head>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+  </script>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
   <title><%= @experience.name %> in <%= @experience.city %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta content="" name="description" />
   <meta content="" name="author" />
+  <!--FACEBOOK META TAGS -- START -->
+  <meta property="og:title" content="Some awesome title" />
+  <!--<meta property="og:type" content="article" />-->
+  <% if @images.first.present? %>
+      <meta property="og:image" content="<%= @images.first.url %>" />
+  <% end %>
+  <meta property="og:url" content="<%= "http://#{@user.subdomain}.urbanzeak.com/experiences/#{@experience.slug}" %>" />
+  <meta property="og:description" content="Come join us for a great" />
+  <!--FACEBOOK META TAGS -- END -->
   <!--TYPEKIT FONTS -- START-->
   <script type="text/javascript" src="//use.typekit.net/yjy6rjo.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!--TYPEKIT FONTS -- END-->
   <!-- BEGIN CSS TEMPLATE -->
-  <%= stylesheet_link_tag    "plugins/bootstrap-datepicker/css/datepicker.css", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "expShow/application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "plugins/bootstrap-datepicker/css/datepicker.css" %>
+  <%= stylesheet_link_tag    "expShow/application" %>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- END CSS TEMPLATE -->
 
@@ -38,13 +50,45 @@
     ga('send', 'pageview');
 
   </script>
+
+  <!--CUSTOM CSS START-->
+  <style>
+      #overlay
+      {
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          left: 0;
+          top: 0;
+          background-color: #000;
+          opacity: .8;
+          z-index: 1000;
+      }
+      #overlay h2
+      {
+          width: 650px;
+          margin: 20% auto;
+          color: white;
+      }
+  </style>
+  <!--CUSTOM CSS END-->
+
 </head>
 <!-- END HEAD -->
 <body>
 
 <div class="main-wrapper">
 
+<% if @newly_created == 'true' %>
+  <!--ONLOAD OVERLAY -- START -->
+  <div id="overlay">
+    <h2 class="bold">
+      This is your website. You click below and go back to the dashboard or edit the page at any time. Click anywhere to view your website.
+    </h2>
 
+  </div>
+  <!--ONLOAD OVERLAY -- END -->
+<% end %>
 
 <!--NAV AFTER WAYPOINT START-->
   <%= render "navigation" %>
@@ -136,6 +180,29 @@
 </div>
 </div>
 
+
+<% if current_user.present? %>
+  <% if current_user.id == @experience.user_id %>
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="background: #fffcee; color: #ce8f22; border: 1px solid #F0DBB4" id="create-experience-footer-nav">
+      <div class="container p-t-10">
+
+        <h3 style="padding-left: 10px;">Your url to share is: <%= experience_url(@experience, :subdomain => current_user.subdomain) %></h3>
+
+        <h2>
+          <a href="<%= dashboard_purchases_path %>" class="btn btn-primary" style="margin-top: -5px;; margin-left: 10px;">
+            Go back to dashboard
+          </a>
+        </h2>
+      </div>
+    </nav>
+  <% end %>
+<% end %>
+
+
+
+
+
+<input type="hidden" name="internal_experience_landmark" value="<%= @experience.land_mark %>" id="internal_experience_landmark">
 
 <script id="map_location_latitude" type="text/json">
   <%= @experience.latitude.to_json %>

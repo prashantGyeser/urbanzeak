@@ -22,31 +22,47 @@
         </div>
 
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="alert alert-info">
-              <button data-dismiss="alert" class="close"></button>
-              Info: The following message will be shared with your network when you share.
-              <div class="bold" id="share-message">
+        <% if @integration_tokens.blank? %>
+          <div class="alert">
+            <button data-dismiss="alert" class="close"></button>
+            To share on Facebook, go to the integrations page or click the button below
+            <br/>
+            <a href="<%= dashboard_integrations_path %>" class="btn btn-primary m-t-10">Integrate now</a>
+          </div>
+        <% else %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-info">
+                <button data-dismiss="alert" class="close"></button>
+                Info: The following message will be shared with your network when you share.
+                <div class="bold" id="share-message">
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div style="background: #E5E9EC;text-align: center;padding:20px 10px 10px 10px;">
-              <i class="fa fa-facebook-square" style="font-size: 3em; display: inline"></i>
-              <button class="btn btn-primary btn-cons facebook-share" type="button">Share</button>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-warning posting-to-fb-notification">
+                Posting your message to Facebook, this might take some time...
+              </div>
             </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div style="background: #E5E9EC;text-align: center;padding:20px 10px 10px 10px;">
+                <i class="fa fa-facebook-square" style="font-size: 3em; display: inline"></i>
+                <button class="btn btn-primary btn-cons facebook-share" type="button">Share</button>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="send_conversation">Send Message</button>
       </div>
     </div>
     <!-- /.modal-content -->

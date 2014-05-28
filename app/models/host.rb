@@ -9,6 +9,7 @@
 #  updated_at :datetime
 #  avatar     :string(255)
 #  user_id    :integer
+#  name       :string(255)
 #
 
 class Host < ActiveRecord::Base

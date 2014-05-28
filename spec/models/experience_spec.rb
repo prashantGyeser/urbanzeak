@@ -41,21 +41,26 @@ require 'spec_helper'
 
 describe Experience do
   it "should have a valid factory" do
-    FactoryGirl.create(:experience).should be_valid
+    user = create(:user)
+    FactoryGirl.create(:experience, :user => user).should be_valid
   end
   it "should have a name" do
     FactoryGirl.build(:experience, name: nil).should_not be_valid
   end
-  it 'should have a description' do
-    FactoryGirl.build(:experience, description: nil).should_not be_valid
-  end
   it 'should have a price' do
     FactoryGirl.build(:experience, price: nil).should_not be_valid
   end
-  it 'should have a exp_date' do
-    FactoryGirl.build(:experience, exp_date: nil).should_not be_valid
+  it 'should have a what is included' do
+    FactoryGirl.build(:experience, what_does_this_include: nil)
   end
-  it 'should have a exp_time' do
-    FactoryGirl.build(:experience, exp_time: nil).should_not be_valid
+
+  it {should validate_presence_of(:max_seats)}
+  it {should validate_presence_of(:line_one)}
+  it {should validate_presence_of(:city)}
+  it {should validate_presence_of(:country)}
+
+  it 'should return an array of available dates' do
+    experience = FactoryGirl.build(:experience)
   end
+
 end

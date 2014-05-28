@@ -24,6 +24,15 @@ test: &test
   password: password@123
   host:     localhost
 
+staging:
+  adapter: postgresql
+  database: urbanzeak_staging
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: password@123
+  host:     localhost
+
 production:
   adapter: postgresql
   database: urbanzeak_production

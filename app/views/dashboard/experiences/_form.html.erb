@@ -1,5 +1,20 @@
 <!-- NEW EXPERIENCE FORM -->
-<%= form_for(@experience) do |f| %>
+<%= form_for [:dashboard, @experience] do |f| %>
+
+  <% if @experience.errors.any? %>
+
+    <div id="error_explanation" class="alert alert-error">
+      <button data-dismiss="alert" class="close"></button>
+      <h2 style="color: #db7c7e" class="bold"><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% @experience.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-md-8">
       <div class="grid simple">
@@ -14,7 +29,7 @@
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
               <!--<input type="text" class="form-control">-->
-              <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => "required" %>
+              <%= f.text_field :name, :class => "form-control", :autofocus => true, :required => true %>
             </div>
           </div>
 
@@ -63,7 +78,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label class="form-label">Maximum number of people per session</label>
+                <label class="form-label">Number of seats</label>
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
@@ -79,7 +94,7 @@
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
               <!--<input type="text" class="form-control">-->
-              <%= f.text_area :things_to_remember, :class => "form-control", :rows => 5, :required => "required" %>
+              <%= f.text_area :things_to_remember, :class => "form-control", :rows => 5 %>
             </div>
           </div>
 
@@ -96,27 +111,28 @@
           <h3>Experience <span class="semi-bold">Schedule</span></h3>
           <br>
           <div class="form-group">
-            <label class="form-label">Select the dates when this experience is available</label>
+            <label class="form-label">Select all dates when you want to schedule this activity.</label>
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
-              <div class="input-group">
+
+              <div class="input-group date" id="experience_date_container">
                 <!--<input type="text" class="form-control" id="date_picker">-->
-                <%= f.text_field :exp_date, :class => "form-control" %>
+                <%= f.text_field :exp_date, :class => "form-control", :required => true %>
                 <%# text_field_tag 'exp_dates[]', @experience.exp_date, :class => "form-control" %>
                 <span class="input-group-btn">
-              <button class="btn btn-default" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
+                  <button class="btn btn-default" type="button" id="datepicker-button"><i class="fa fa-calendar"></i></button>
             </span>
               </div><!-- /input-group -->
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">What time does the experience happen every day</label>
+            <label class="form-label">What time will the experience happen?</label>
             <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
             <div class="controls">
               <!--<input type="text" class="form-control">-->
               <div class="input-append bootstrap-timepicker-component">
-                <%= f.text_field :exp_time, :class => "timepicker-default form-control" %>
+                <%= f.text_field :exp_time, :class => "timepicker-default form-control", :required => true %>
                 <span class="add-on"><span class="arrow"></span><i class="fa fa-clock-o" id="clock-button"></i></span> </div>
             </div>
           </div>
@@ -132,7 +148,7 @@
                       Hours
                     </span>
                   <!--<input type="text" placeholder="Username" class="form-control">-->
-                  <%= f.number_field :hours, :class => "form-control" %>
+                  <%= f.number_field :hours, :class => "form-control", :required => true %>
                 </div>
 
               </div>
@@ -159,7 +175,7 @@
         <!--GRID BODY-->
         <div class="grid-body no-border">
           <br/>
-          <h3>Experience <span class="semi-bold">Meeting Place</span></h3>
+          <h3>Where will the experience be held?</h3>
           <br>
           <div class="row">
             <div class="col-md-6">
@@ -169,7 +185,7 @@
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
-                  <%= f.text_field :line_one, :class => "form-control" %>
+                  <%= f.text_field :line_one, :class => "form-control", :required => true %>
                 </div>
               </div>
             </div> <!-- END COL 6 -->
@@ -192,7 +208,7 @@
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
-                  <%= f.text_field :city, :class => "form-control" %>
+                  <%= f.text_field :city, :class => "form-control", :required => true %>
                 </div>
               </div>
 
@@ -217,7 +233,7 @@
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
-                  <%= f.text_field :country, :class => "form-control" %>
+                  <%= f.text_field :country, :class => "form-control", :required => true %>
                 </div>
               </div>
 
@@ -238,7 +254,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <label class="form-label">What is the closest landmark?</label>
+                <label class="form-label">Pick the closest landmark to your venue. You can also drag and drop the marker on the map below to select your venue</label>
                 <!--<span class="help">e.g. "Mona Lisa Portrait"</span>-->
                 <div class="controls">
                   <!--<input type="text" class="form-control">-->
@@ -271,8 +287,9 @@
         <div class="grid-body no-border">
           <br/>
           <h3>Experience <span class="semi-bold">Photos</span></h3>
-          <p>
-            Upload pictures to show your customers what your experience looks like. <span class="bold">( Maximum 6 )</span>
+          <p style="font-size: 13px">
+            Upload beautiful images to show your customers what your
+            experience looks like. <span class="semi-bold">Use 6 images for the best design.</span>
           </p>
           <div class="row-fluid" style="display: table; vertical-align:middle;text-align:center">
 

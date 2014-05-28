@@ -1,0 +1,103 @@
+<div class="new-attendee-form">
+  <form action="" class="new_attendee" id="new_attendee" method="post">
+
+    <div class="form-container">
+
+      <div class="date-container">
+        <div class="radio radio-success">
+
+
+          <div class="date-option">
+            <input checked="checked" id="attendee_attending_date_2014-05-21" name="attendee[attending_date]" type="radio" value="2014-05-21">
+            <label for="attendee_attending_date_2014-05-21">May 21, 2014</label>
+            10:01 AM
+            to
+            12:01 PM
+            <span class="pull-right text-info"><span class="available_seats">10</span> Spots Remaining</span>
+          </div>
+
+
+          <div class="date-option">
+            <input id="attendee_attending_date_2014-05-28" name="attendee[attending_date]" type="radio" value="2014-05-28">
+            <label for="attendee_attending_date_2014-05-28">May 28, 2014</label>
+
+            10:01 AM
+            to
+            12:01 PM
+            <span class="pull-right text-info"><span class="available_seats">10</span> Spots Remaining</span>
+          </div>
+
+
+          <div class="date-option">
+            <input id="attendee_attending_date_2014-05-27" name="attendee[attending_date]" type="radio" value="2014-05-27">
+            <label for="attendee_attending_date_2014-05-27">May 27, 2014</label>
+
+            10:01 AM
+            to
+            12:01 PM
+            <span class="pull-right text-info"><span class="available_seats">10</span> Spots Remaining</span>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="col-md-12">
+          <div class="form-group" style="margin-bottom: 0; padding-bottom: 10px">
+            <label class="form-label">Tickets</label>
+            <span class="help">How many people are coming?</span>
+            <div class="controls">
+
+              <input class="form-control" id="attendee_seats" min="1" name="attendee[seats]" required="required" type="number">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="col-md-12">
+
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <span class="help">e.g. "(541) 754-3010"</span>
+            <div class="controls">
+              <input class="form-control" id="attendee_phone_number" name="attendee[phone_number]" type="text">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="col-md-12">
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <span class="help">e.g. "example@example.com"</span>
+            <div class="controls">
+              <input class="form-control" id="attendee_email" name="attendee[email]" required="required" type="text">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row form-row">
+      <div class="col-md-12">
+        <button class="btn btn-primary btn-cons btn-block" style="margin-top: 10px;">RSVP Now</button>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+<!--SEND MESSAGE MODAL WINDOW START-->
+<%= render partial: 'new_conversation' %>
+<!--SEND MESSAGE MODAL WINDOW END-->

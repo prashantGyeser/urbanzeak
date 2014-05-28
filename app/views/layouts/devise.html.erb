@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+  </script>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
   <title>urbanzeak - Find customers fast</title>
@@ -8,14 +11,8 @@
   <meta content="" name="description" />
   <meta content="" name="author" />
   <!-- BEGIN CORE CSS FRAMEWORK -->
-  <%= stylesheet_link_tag    "devise/application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "devise/animate.min", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "devise/application" %>
   <!-- END CORE CSS FRAMEWORK -->
-  <!-- BEGIN CSS TEMPLATE -->
-  <%= stylesheet_link_tag    "devise/style", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "devise/responsive", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "devise/custom-icon-set", media: "all", "data-turbolinks-track" => true %>
-  <!-- END CSS TEMPLATE -->
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->

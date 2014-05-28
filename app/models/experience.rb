@@ -38,7 +38,7 @@
 #
 
 class Experience < ActiveRecord::Base
-  #validates :name, :description, :price, :exp_date, :exp_time, presence: true
+  validates :name, :price, :max_seats, :line_one, :city, :country, presence: true
 
   #has_many :exp_images
   #accepts_nested_attributes_for :exp_images, :reject_if => :all_blank, :allow_destroy => true
@@ -61,7 +61,7 @@ class Experience < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   before_save :store_version
-
+  after_create :send_experience_created_notification
 
   def self.total_visits_this_month(user_id)
     experiences = Experience.where(:user_id => user_id)
@@ -92,16 +92,16 @@ class Experience < ActiveRecord::Base
 
   def self.host_has_purchases(host)
     experiences = Experience.where(:user_id => host.id)
-    has_experience = false
+    has_purchase = false
 
     experiences.each do |experience|
       attendees_count = Attendee.where(:experience_id => experience.id).count
-      if attendees_count == 0
-        has_experience = true
+      if attendees_count > 0
+        has_purchase = true
       end
     end
 
-    return has_experience
+    return has_purchase
 
   end
 
@@ -116,6 +116,24 @@ class Experience < ActiveRecord::Base
     return sales_today
   end
 
+  def available_dates(seats)
+    attendees = Attendee.where(:experience_id => self.id)
+
+    experience_dates = ExperienceDate.where(:experience_id => self.id)
+    available_dates = []
+    experience_dates.each do |experience_date|
+
+      dates_with_attendees = attendees.where(:attending_date => experience_date.experience_date).pluck(:seats).sum
+
+      if (dates_with_attendees + seats) < self.max_seats
+        available_dates << experience_date
+      end
+
+    end
+
+    return available_dates
+
+  end
 
   private
 
@@ -130,6 +148,11 @@ class Experience < ActiveRecord::Base
       end
       version.save
     end
+  end
+
+  def send_experience_created_notification
+    host = User.find(self.user_id)
+    NotificationsMailer.experience_created(self, host).deliver
   end
 
 end

@@ -28,9 +28,19 @@
 require 'spec_helper'
 
 describe User do
-  it {should validate_presence_of(:email)}
-  it {should validate_presence_of(:first_name)}
-  it {should validate_presence_of(:last_name)}
-  it {should validate_presence_of(:city)}
-  #it {should have_one(:host)}
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:first_name) }
+  it { should validate_presence_of(:subdomain) }
+  it { should ensure_exclusion_of(:subdomain).in_array(['www', 'admin', 'dashboard', 'pop', 'mail', 'ftp', 'ssl', 'sftp']) }
+  it do
+    FactoryGirl.create(:user)
+    should validate_uniqueness_of(:subdomain)
+  end
+  it { should ensure_length_of(:subdomain).is_at_least(3).is_at_most(50) }
+  it { should allow_value('test').for(:subdomain) }
+  it { should allow_value('test-test').for(:subdomain) }
+  it { should allow_value('test_test').for(:subdomain) }
+  it { should_not allow_value('_test').for(:subdomain).with_message('can only contain alphanumeric characters and dashes.') }
+  it { should_not allow_value('te$#%').for(:subdomain).with_message('can only contain alphanumeric characters and dashes.') }
+
 end

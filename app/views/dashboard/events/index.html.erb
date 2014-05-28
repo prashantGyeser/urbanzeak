@@ -1,0 +1,39 @@
+<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+  <h3>Events</h3>
+  <%= link_to "New Event", new_dashboard_event_path, :class => "btn btn-primary btn-cons pull-right" %>
+</div>
+<!-- END PAGE TITLE -->
+
+<% if @events.count == 0 %>
+  <%= render :partial => "no_events" %>
+<% else %>
+
+  <% if @about.blank? %>
+
+    <div class="row">
+      <div class="col-md-8">
+        <%= render :partial => "events", :locals => { :columns => 2 } %>
+      </div>
+      <div class="col-md-4">
+        <div class="well well-large">
+          <h4>
+            <span class="semi-bold">No about</span>
+            you added
+            <!--<span class="semi-bold">BOLD</span> , <i>EVERYTHING</i>-->
+          </h4>
+          <p>
+            An about you helps your customers find out a little about who you are and why you love conducting your events.
+          </p>
+          <%= link_to "Add About", dashboard_profile_about_path, :class => "btn btn-success btn-con" %>
+        </div>
+      </div>
+
+    </div>
+
+  <% else %>
+    <%= render :partial => "experiences", :locals => { :columns => 3 } %>
+  <% end %>
+
+
+<% end %>

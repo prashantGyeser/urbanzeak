@@ -1,4 +1,4 @@
-Urbanzeak::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -14,23 +14,32 @@ Urbanzeak::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-  # Raise an error on page load if there are pending migrations
+  # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
-  # To raise any errors in the sprokets compile
-  config.assets.raise_production_errors = true
+  # Adds additional error checking when serving assets at runtime.
+  # Checks for improperly declared sprockets dependencies.
+  # Raises helpful error messages.
+  config.assets.raise_runtime_errors = true
 
-  # Setting default host for devise
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+
+  # Mailer preview config
+  config.action_mailer.preview_path = "#{Rails.root}/spec/email_previews"
+
+  # Setting the assets to precompile
+  config.assets.compile = true
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.js.erb']
 
 end

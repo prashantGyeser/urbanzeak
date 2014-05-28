@@ -33,7 +33,7 @@ Urbanzeak::Application.configure do
   config.assets.digest = true
 
   # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  config.assets.version = '4.0'
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
@@ -79,12 +79,16 @@ Urbanzeak::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Config for heroku to use cloudfront cdn
-  config.static_cache_control = 'public, max-age=31536000'
+  #config.static_cache_control = 'public, max-age=31536000'
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
+  #config.action_controller.asset_host = "d2962b05f65fka.cloudfront.net"
 
   # Setting default host for devise
   config.action_mailer.default_url_options = {:host => "www.uzsta.com"}
+
+  # Setting the assets to precompile
+  config.assets.compile = true
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.js.erb']
 
 end

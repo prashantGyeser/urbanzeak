@@ -10,13 +10,26 @@
   <meta content="" name="author" />
 
 
-  <%= stylesheet_link_tag    "homepage/application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "homepage/application" %>
 
-  <%= stylesheet_link_tag "homepage/template", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "homepage/template" %>
 
   <!-- BEGIN CORE CSS FRAMEWORK -->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- END CORE CSS FRAMEWORK -->
+
+  <!-- ZOPIM LIVE CHAT -- START -->
+  <!--Start of Zopim Live Chat Script-->
+  <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+            d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+            _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+      $.src='//v2.zopim.com/?26HnMxEAZtOadohZdqDSi6Pa3axDkJm7';z.t=+new Date;$.
+              type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+  </script>
+  <!--End of Zopim Live Chat Script-->
+  <!-- ZOPIM LIVE CHAT -- END -->
+
 
 </head>
 <!-- END HEAD -->
@@ -30,7 +43,7 @@
 </div>
 <div class="section white text-center p-t-40 p-b-40" id="banner-footer">
   <h2 class="normal m-b-10">
-    All your customers are online...<span class="semi-bold">are you?</span>
+    All of your customers are online .... <span class="semi-bold">Are you?</span>
   </h2>
   <p>
     You can setup your website in <span class="semi-bold">under 5 minutes</span>
@@ -96,24 +109,50 @@
     </article>
   </section>
 
+  <section class="cbp-so-section">
+    <article class="cbp-so-side cbp-so-side-left text-center middle">
+      <div class="row">
+        <div class="col-md-12 p-t-40 col-vlg-8 col-vlg-offset-2">
+
+          <h1 class="m-b-20"><span class="semi-bold">Helpdesk</span></h1>
+          <p>
+            Delight your customers. Use our simple messaging system that helps you to answer all your customer queries.
+          </p>
+          <%= link_to "Join Now", new_user_registration_path, :class => "btn btn-primary btn-cons m-t-20" %>
+
+        </div>
+      </div>
+    </article>
+    <figure class="cbp-so-side cbp-so-side-right">
+      <%= image_tag "homepage/helpdesk-with-pc.png" %>
+    </figure>
+  </section>
 
 </div>
 
 
 
 
+</div>
+
+<div id="footer" style="background: #0aa699">
+  <div class="container">
+    <h3 style="color: #fff">Need help? Email us: <span class="bold">support@urbanzeak.com</span></h3>
+  </div>
 </div>
 
 <!-- BEGIN CORE JS FRAMEWORK -->
 
 <!-- END CORE JS FRAMEWORK -->
 
-<%= javascript_include_tag "homepage/application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "homepage/application" %>
 <script>
   new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
 </script>
 
-<%= javascript_include_tag "homepage/core", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "homepage/core" %>
+
+
 
 </body>
 </html>

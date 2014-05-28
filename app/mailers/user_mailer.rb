@@ -1,15 +1,16 @@
 class UserMailer < ActionMailer::Base
-  default :from => 'hello@urbanzeak.com'
+  default :from => "urbanzeak support <support@urbanzeak.com>"
 
   def signup_confirmation(user)
     @user = user
     logger.debug "The user is: #{user}"
-    mail(:to => user.email, :subject => "Sign Up Confirmation")
+
+    mail(:to => user.email, :subject => "Welcome to urbanzeak!")
   end
 
   def founder_welcome(user, time_to_send)
     email_subject = "UrbanZeak - Need help?"
-    from = "prashant@urbanzeak.co"
+    from = "prashant@urbanzeak.com"
     @name = user.first_name
 
     mail   to:      user.email, # normal mailer stuff

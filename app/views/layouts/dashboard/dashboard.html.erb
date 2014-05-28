@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+  </script>
   <title>urbanzeak | Host Dashboard</title>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8" />
@@ -10,16 +13,47 @@
   <!--CUSTOM CSS-->
   <%= yield :css %>
   <!--END CUSTOM CSS-->
-
+  <!--TYPEKIT FONTS -- START-->
+  <script type="text/javascript" src="//use.typekit.net/yjy6rjo.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--TYPEKIT FONTS -- END-->
   <!-- NEED TO WORK ON -->
-  <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "dashboard/application", 'data-turbolinks-track' => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 
 
+  <!-- BEGIN CORE JS FRAMEWORK-->
+  <%= include_gon %>
+  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+  <!-- END CORE JS FRAMEWORK -->
+
+  <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
+  <script>
+    document.addEventListener('page:change', function() {
+      document.getElementById('page-content-container').className += 'animated fadeIn';
+    });
+    document.addEventListener('page:fetch', function() {
+      document.getElementById('page-content-container').className += 'animated fadeOut';
+    });
+  </script>
+
   <%= csrf_meta_tag %>
+
+  <% if ENV['RAILS_ENV'].to_s == 'staging' %>
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("fa69bc1b560b99a68310e55ce5aa1278");</script><!-- end Mixpanel -->
+  <% elsif ENV['RAILS_ENV'].to_s == 'production' %>
+
+  <% end %>
 
 </head>
 <body class="">
@@ -95,44 +129,54 @@
     <div class="clearfix"></div>
     <ul>
       <!-- BEGIN SELECTED LINK -->
-      <li class="start active">
-        <a href="<%= dashboard_purchases_path %>">
+      <li class="<%= 'active' if current_page? dashboard_purchases_path %>">
+        <a href="<%= dashboard_purchases_path %>" id="home_nav">
           <i class="icon-custom-home"></i>
-          <span class="title">Purchases</span>
+          <span class="title">Customers</span>
           <span class="selected"></span>
         </a>
       </li>
       <!-- END SELECTED LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
-        <a href="<%= dashboard_experiences_path %>">
-          <i class="fa fa-envelope"></i>
+      <li class="<%= 'active' if current_page? dashboard_experiences_path %>">
+        <a href="<%= dashboard_experiences_path %>" id="experiences_nav">
+          <i class="fa fa-dot-circle-o"></i>
           <span class="title">Experiences</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
-      <li class="">
-        <a href="<%= dashboard_profile_about_path %>">
-          <i class="fa fa-envelope"></i>
-          <span class="title">About You</span>
+      <li class="<%= 'active' if current_page? dashboard_profile_about_path %>">
+        <a href="<%= dashboard_profile_about_path %>" id="profile_nav">
+          <i class="fa fa-user"></i>
+          <span class="title">About the Host</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
         </a>
       </li>
       <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
-        <a href="<%= dashboard_messages_path %>">
-          <i class="fa fa-envelope"></i>
-          <span class="title">Messages</span>
+      <li class="<%= 'active' if current_page? dashboard_messages_path %>">
+        <a href="<%= dashboard_messages_path %>" id="messages_nav">
+          <i class="fa fa-life-ring"></i>
+          <span class="title">Helpdesk</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
           <!--<span class="badge badge-important pull-right">5</span>-->
         </a>
       </li>
       <!-- END BADGE LINK -->
       <!-- BEGIN BADGE LINK -->
-      <li class="">
-        <a href="<%= dashboard_integrations_path %>">
-          <i class="fa fa-envelope"></i>
+      <li class="<%= 'active' if current_page? dashboard_reviews_path %>">
+        <a href="<%= dashboard_reviews_path %>" id="reviews_nav">
+          <i class="fa fa-comments"></i>
+          <span class="title">Reviews</span>
+          <!--<span class="badge badge-disable pull-right">203</span>-->
+          <!--<span class="badge badge-important pull-right">5</span>-->
+        </a>
+      </li>
+      <!-- END BADGE LINK -->
+      <!-- BEGIN BADGE LINK -->
+      <li class="<%= 'active' if current_page? dashboard_integrations_path %>">
+        <a href="<%= dashboard_integrations_path %>" id="integrations_nav">
+          <i class="fa fa-cog""></i>
           <span class="title">Integrations</span>
           <!--<span class="badge badge-disable pull-right">203</span>-->
           <!--<span class="badge badge-important pull-right">5</span>-->
@@ -161,27 +205,44 @@
 <!-- BEGIN PAGE CONTAINER-->
 <div class="page-content">
   <div class="content">
-
-    <%= yield %>
-
+    <div id="page-content-container">
+      <%= yield %>
+    </div>
   </div>
 </div>
 <!-- END PAGE CONTAINER -->
 </div>
 <!-- END CONTENT -->
 
-<!-- BEGIN CORE JS FRAMEWORK-->
-<%= include_gon %>
-<%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
-<!-- END CORE JS FRAMEWORK -->
 
-<!-- END NEED TO WORK ON -->
-
-<!-- CUSTOM JAVASCRIPT -->
-<%= yield :js %>
-<!-- END CUSTOM JAVASCRIPT -->
 
 <%= yield :edit_js %>
+
+<% if ENV['RAILS_ENV'].to_s == 'staging' %>
+  <script id="IntercomSettingsScriptTag">
+    window.intercomSettings = {
+      name: "<%= current_user.first_name %>",
+      email: "<%= current_user.email %>",
+      created_at: <%= current_user.created_at.to_time.to_i %>,
+      app_id: "5suewg1k"
+    };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+<% elsif ENV['RAILS_ENV'].to_s == 'production' %>
+  <script id="IntercomSettingsScriptTag">
+    window.intercomSettings = {
+      name: "<%= current_user.first_name %>",
+      email: "<%= current_user.email %>",
+      created_at: <%= current_user.created_at.to_time.to_i %>,
+      app_id: "097dfc285d319e934abc6409a3bb35dedd16a585"
+    };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<% end %>
+
+
+<%= yield :experience_share %>
 
 </body>
 </html>

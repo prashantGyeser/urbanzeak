@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://hKxDZcxZyrm25AbWxg4M@gem.fury.io/app19602358_heroku_com/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 4.0.4"
+gem "rails", "~> 4.1.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'rubygems-update', '~> 2.2.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -80,14 +82,10 @@ group :staging, :production do
 
   # Heoku cannot find this gem when pushing so adding it there
   # Refer to http://stackoverflow.com/questions/22510461/could-not-find-thread-safe-0-3-0-in-any-of-the-sources for details
-  gem 'thread_safe', '0.2.0'
+  gem 'thread_safe', '~> 0.3.3'
 
   # New relic monitoring tool
   gem 'newrelic_rpm'
-end
-
-group :production do
-
 end
 
 # Page tracking for hosts
@@ -107,24 +105,28 @@ group :development do
   gem "rails_best_practices"
   gem "reek"
   gem "metric_fu"
-  gem 'sprockets_better_errors'
 end
 
 group :test, :development do
   gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-migrate'
+  gem 'spring-commands-rspec'
+  #gem "rb-readline", "~> 0.5.0"
+  #gem 'rack-mini-profiler'
+  #gem 'spring'
+end
+
+group :test do
+  gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
-  gem 'guard-rspec', require: false
-  gem 'guard-migrate'
-  #gem "rb-readline", "~> 0.5.0"
-  #gem 'rack-mini-profiler'
-end
-
-group :test do
-  gem 'shoulda-matchers'
+  gem 'email_spec'
+  gem 'capybara-screenshot'
+  gem 'capybara-email'
+  gem 'selenium-webdriver'
 end

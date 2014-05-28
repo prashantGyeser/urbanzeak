@@ -119,7 +119,7 @@ Page sidebar
 .page-sidebar{
 	background-color:#1b1e24 !important;
 	height:100%;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova", 'Open Sans';
 	
 }
 
@@ -311,13 +311,13 @@ h4{
 }
 
 h3 small, h4 small, h5 small {
-  font-family: 'Open Sans';
+  font-family: "proxima-nova",'Open Sans';
   font-weight: 300;	
   color: #444;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans';
+  font-family: "proxima-nova",'Open Sans';
   font-weight: 300;
   color:#505458
 }
@@ -1651,7 +1651,7 @@ span.iconset{
  
 /* Sidebar chat and elements */
 .chat-window-wrapper{
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	font-size:13px;
 }
 .chat-window-wrapper .chat-header{
@@ -2004,7 +2004,7 @@ display:none;
 	display: inline-block;
     position: absolute;	
 	width: 200px;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	background-color:#1b1e24;
 	height:100%
 }
@@ -2196,7 +2196,7 @@ display:none;
   color: #666;
    margin: 0 0 10px;
   font-weight: 300;
-  font-family: 'Open Sans';
+  font-family: "proxima-nova",'Open Sans';
 }
 .page-title h3{
 	display:inline-block;
@@ -2228,7 +2228,7 @@ display:none;
 }
 /* Breadcrumb */
 .page-content .breadcrumb {
-font-family: 'Open Sans';
+font-family: "proxima-nova",'Open Sans';
   -webkit-border-radius: 0px;
      -moz-border-radius: 0px;
           border-radius: 0px;
@@ -3998,7 +3998,7 @@ div.DTTT_print_info p {
 }
 .tiles  .tiles-title{
 	font-size:10.5px;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	letter-spacing:0.5px;
 	font-weight:600;
 }
@@ -4138,7 +4138,7 @@ background-position: -95px -40px;
 .tiles .heading{
   font-size:25px;
   display:block;
-  font-family: 'Open Sans';
+  font-family: "proxima-nova",'Open Sans';
   font-weight:600;
   margin:4px 0px;
 }
@@ -5557,7 +5557,7 @@ box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.11)!important;
 }
 /*** Notifications **/
 .notification-messages{
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	background-color:#eef9f8;
 	padding:15px 18px 10px;
 	display:block;
@@ -5798,14 +5798,14 @@ ul.progress-list li  .progress{
 	font-size: 11px;
 	text-shadow:none;
 	background-color:#D1DADE;	
-	 font-family: 'Open Sans';
+	 font-family: "proxima-nova",'Open Sans';
 	 font-weight:600;
 	 color: #5E5E5E;
 }
 
 .badge{
 	text-shadow:none;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	font-weight:600;
 	background-color:#D1DADE;	
 	font-size:11px;
@@ -6786,6 +6786,10 @@ input.error{
 	display:inline-block;
 	float:left;
 }
+.user-comment-wrapper .comment a:hover {
+  background: #1285d1;
+  color: white;
+}
 .user-comment-wrapper .comment .user-name{
 	color:#0090d9;
 	font-size:15px;
@@ -6912,7 +6916,7 @@ input.error{
 
 .error-body{
 	background-color:#e5e9ec !important;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	height: 100%;
 }
 .error-wrapper{
@@ -6931,7 +6935,7 @@ input.error{
 }
 
 .error-container{
-	font-family: 'Open Sans';
+	font-family: "proxima-nova",'Open Sans';
 	margin-left:auto;
 	margin-right:auto;
 	float:none;
@@ -7764,7 +7768,7 @@ ul.my-friends li .profile-pic{
 	width: 25%;
 	padding-right: 100px;
 	position: absolute;
-	font-family: 'Open Sans';
+	font-family: "proxima-nova", 'Open Sans';
 }
 
 .cbp_tmtimeline > li .cbp_tmtime {
@@ -8071,3 +8075,13 @@ ul.my-friends li .profile-pic{
   color: #0090d9;
 }
 /* INITIAL PAGE LOAD PAGE STYLES -- END*/
+
+#clock-button:hover
+{
+  cursor: pointer;
+}
+
+.field_with_errors input
+{
+  border: 1px solid #f35958;
+}

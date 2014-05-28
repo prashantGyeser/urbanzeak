@@ -17,14 +17,11 @@
 
 <%= content_for :edit_js do %>
   <script>
-    $('#experience_exp_date').datepicker({
+    $('.input-group.date' ).datepicker({
       multidate: true,
       startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
     });
-    $('#datepicker-button').datepicker({
-      multidate: true,
-      startDate: "<%=  Date.today.strftime('%m/%d/%Y') %>"
-    });
+    $('.input-group.date').datepicker('update');
   </script>
 <% end %>
 

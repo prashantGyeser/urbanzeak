@@ -1,5 +1,5 @@
-require 'spec_helper'
-
-describe Dashboard::ReviewsController do
-
-end
+#require 'spec_helper'
+#
+#describe Dashboard::ReviewsController do
+#
+#end

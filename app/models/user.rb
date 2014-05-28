@@ -32,7 +32,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  #validates :city, :first_name, :last_name, :presence => true
+  before_validation :downcase_subdomain
+
+  validates :first_name, :subdomain, :presence => true
+
+  # Making sure users do not use a subdomain we might need
+  validates_exclusion_of :subdomain, in: ['www', 'admin', 'dashboard', 'pop', 'mail', 'ftp', 'ssl', 'sftp']
+  # Ensuring the subdomain is unique
+  validates :subdomain, :uniqueness => true
+  validates :subdomain, :length => { :in => 3..50}
+  validates_format_of :subdomain, :with => /\A[a-zA-Z0-9\#\*][a-zA-Z0-9\#\*\.\(\)\s\-_]*[a-zA-Z0-9\.\)]\z/, :message => 'can only contain alphanumeric characters and dashes.'
 
   has_many :integration_tokens
   has_many :templates
@@ -71,6 +80,10 @@ class User < ActiveRecord::Base
     time_30_mins_from_now_utc = (Time.now.utc) + (32*60)
     time_to_send_this_mail_at = time_30_mins_from_now_utc.strftime("%Y-%m-%d %H:%M:%S")
     UserMailer.founder_welcome(self, time_to_send_this_mail_at).deliver
+  end
+
+  def downcase_subdomain
+    self.subdomain = self.subdomain.downcase if self.subdomain.present?
   end
 
 end
