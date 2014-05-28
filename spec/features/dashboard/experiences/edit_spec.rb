@@ -21,11 +21,11 @@ feature 'Edit Experience' do
 
   end
 
-  scenario 'Update after changing the tagline', :js => true do
+  scenario 'Update after changing the tagline' do
     experience = FactoryGirl.create(:experience, user_id: @user.id)
 
     visit "/dashboard/experiences/#{experience.id}/edit"
-    fill_in 'experience_exp_date', with: '05/19/2014,05/27/2014,05/28/2014'
+    fill_in 'experience[exp_date]', with: '05/19/2014,05/27/2014,05/28/2014'
     modified_tagline = Faker::Lorem.sentence(5)
     fill_in 'experience_tagline', :with => modified_tagline
     click_button 'Update Experience'
