@@ -85,4 +85,7 @@ Rails.application.configure do
   config.assets.compile = true
   config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.js.erb']
 
+  # Setting default host for devise
+  config.action_mailer.default_url_options = {:host => "www.urbanzeak.com"}
+
 end
