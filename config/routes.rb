@@ -2,6 +2,10 @@ require 'subdomain'
 
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'dashboard/index'
+  end
+
   # Redirecting when a subdomain is found to the appropriate page
   constraints(Subdomain) do
     get '/' => "experiences#index"
