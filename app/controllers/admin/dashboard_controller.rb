@@ -1,6 +1,5 @@
-class Admin::DashboardController < ApplicationController
+class Admin::DashboardController < Admin::ApplicationController
   def index
-    @hosts = User.all
-
+    @hosts = User.all.includes(:experience)
   end
 end

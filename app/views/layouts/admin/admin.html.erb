@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+  </script>
+  <title>urbanzeak | Host Dashboard</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <!--CUSTOM CSS-->
+  <%= yield :css %>
+  <!--END CUSTOM CSS-->
+  <!--TYPEKIT FONTS -- START-->
+  <script type="text/javascript" src="//use.typekit.net/yjy6rjo.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--TYPEKIT FONTS -- END-->
+  <!-- NEED TO WORK ON -->
+  <%= stylesheet_link_tag    "dashboard/application", 'data-turbolinks-track' => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
+
+  <!-- BEGIN CORE JS FRAMEWORK-->
+  <%= include_gon %>
+  <%= javascript_include_tag "dashboard/application", "data-turbolinks-track" => true %>
+  <!-- END CORE JS FRAMEWORK -->
+
+  <!-- END NEED TO WORK ON -->
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <%= yield :js %>
+  <!-- END CUSTOM JAVASCRIPT -->
+
+  <script>
+    document.addEventListener('page:change', function() {
+      document.getElementById('page-content-container').className += 'animated fadeIn';
+    });
+    document.addEventListener('page:fetch', function() {
+      document.getElementById('page-content-container').className += 'animated fadeOut';
+    });
+  </script>
+
+  <%= csrf_meta_tag %>
+
+  <% if ENV['RAILS_ENV'].to_s == 'staging' %>
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("fa69bc1b560b99a68310e55ce5aa1278");</script><!-- end Mixpanel -->
+  <% elsif ENV['RAILS_ENV'].to_s == 'production' %>
+
+  <% end %>
+
+</head>
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+    <!-- BEGIN NAVIGATION HEADER -->
+    <div class="header-seperation">
+      <!-- BEGIN MOBILE HEADER -->
+      <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+        <li class="dropdown">
+          <a id="main-menu-toggle" href="#main-menu" class="">
+            <div class="iconset top-menu-toggle-white"></div>
+          </a>
+        </li>
+      </ul>
+      <!-- END MOBILE HEADER -->
+      <!-- BEGIN LOGO -->
+      <a href="/">
+        <%# image_tag "logo.png", :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+        <%= image_tag asset_path("logo.png"), :class => "logo", :width => "106", :height => "21", :alt => 'logo', :data => {:src => '/assets/logo.png'} %>
+      </a>
+      <!-- END LOGO -->
+      <!-- BEGIN LOGO NAV BUTTONS -->
+
+      <!-- END LOGO NAV BUTTONS -->
+    </div>
+    <!-- END NAVIGATION HEADER -->
+    <!-- BEGIN CONTENT HEADER -->
+    <div class="header-quick-nav">
+      <!-- BEGIN HEADER LEFT SIDE SECTION -->
+
+      <!-- END USER PROFILE -->
+      <div class="pull-right">
+        <div class="chat-toggler" style="min-width: 0; margin-right: 20px;">
+          <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom" data-content="" data-toggle="dropdown" data-original-title="Notifications">
+            <div class="user-details">
+              <div class="username"> <span class="semi-bold"><%= link_to "Logout", destroy_user_session_path, :method => :delete  %></span> </div>
+            </div>
+            <!--<div class="iconset top-down-arrow"></div>-->
+          </a>
+
+        </div>
+      </div>
+      <!-- END USER PROFILE -->
+
+      <!-- END HEADER LEFT SIDE SECTION -->
+    </div>
+    <!-- END CONTENT HEADER -->
+  </div>
+  <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+
+<!-- BEGIN CONTENT -->
+<div class="page-container row-fluid">
+  <!-- BEGIN SIDEBAR -->
+  <!-- BEGIN MENU -->
+  <div class="page-sidebar" id="main-menu">
+    <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+      <!-- BEGIN MINI-PROFILE -->
+      <div class="user-info-wrapper">
+
+        <div class="user-info">
+          <div class="greeting">Welcome</div>
+          <div class="username"><%= current_user.first_name %></div>
+
+        </div>
+      </div>
+      <!-- END MINI-PROFILE -->
+      <!-- BEGIN SIDEBAR MENU -->
+      <div class="clearfix"></div>
+      <ul>
+        <!-- BEGIN SELECTED LINK -->
+        <li class="">
+          <a href="<%= admin_dashboard_index_path %>" id="home_nav">
+            <i class="icon-custom-home"></i>
+            <span class="title">Home</span>
+            <span class="selected"></span>
+          </a>
+        </li>
+        <!-- END SELECTED LINK -->
+
+      </ul>
+      <!-- END SIDEBAR MENU -->
+      <!-- BEGIN SIDEBAR WIDGETS -->
+      <div class="clearfix"></div>
+      <!-- END SIDEBAR WIDGETS -->
+    </div>
+  </div>
+  <!-- BEGIN SCROLL UP HOVER -->
+  <a href="#" class="scrollup">Scroll</a>
+  <!-- END SCROLL UP HOVER -->
+  <!-- END MENU -->
+  <!-- BEGIN SIDEBAR FOOTER WIDGET -->
+  <div class="footer-widget">
+    <div class="pull-right">
+
+    </div>
+  </div>
+  <!-- END SIDEBAR FOOTER WIDGET -->
+  <!-- END SIDEBAR -->
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content">
+    <div class="content">
+      <div id="page-content-container">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <!-- END PAGE CONTAINER -->
+</div>
+<!-- END CONTENT -->
+
+
+
+<%= yield :edit_js %>
+
+<% if ENV['RAILS_ENV'].to_s == 'staging' %>
+  <script id="IntercomSettingsScriptTag">
+    window.intercomSettings = {
+      name: "<%= current_user.first_name %>",
+      email: "<%= current_user.email %>",
+      created_at: <%= current_user.created_at.to_time.to_i %>,
+      app_id: "5suewg1k"
+    };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+<% elsif ENV['RAILS_ENV'].to_s == 'production' %>
+  <script id="IntercomSettingsScriptTag">
+    window.intercomSettings = {
+      name: "<%= current_user.first_name %>",
+      email: "<%= current_user.email %>",
+      created_at: <%= current_user.created_at.to_time.to_i %>,
+      app_id: "097dfc285d319e934abc6409a3bb35dedd16a585"
+    };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<% end %>
+
+
+<%= yield :experience_share %>
+
+</body>
+</html>
