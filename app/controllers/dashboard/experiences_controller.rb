@@ -56,7 +56,18 @@ class Dashboard::ExperiencesController < Dashboard::ApplicationController
         @experience.save
 
         @newly_created = true
-        logger.debug "The newly created statys - #{@newly_created}"
+
+        # Setting an intercom event to let us track if a user has created an experience or not
+        if ENV['RAILS_ENV'].to_s == 'production'
+
+        else
+          Intercom.app_id = "5suewg1k"
+          Intercom.app_api_key = "64d529cfdec7dc91ee99a2d156afee801ed50b6c"
+        end
+        intercom_results = Intercom::Event.create(:event_name => "created-event", :email => current_user.email, :created_at => Time.now.to_i)
+        logger.debug "The result is: #{intercom_results}"
+
+
         format.html { redirect_to experience_url(@experience, :subdomain => current_user.subdomain, :newly_created => true), notice: 'Experience was successfully created.', status: 301 }
         format.json { render action: 'show', status: :created, location: @experience }
       else

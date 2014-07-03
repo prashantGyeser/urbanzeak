@@ -97,6 +97,10 @@ gem 'temboo'
 # Email management for messages to the host from their customers
 gem 'griddler'
 
+# Intercom settings and gem
+gem 'intercom', "~> 2.1.1"
+
+
 group :development do
   gem 'annotate'
   gem "better_errors"
@@ -111,7 +115,6 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-migrate'
-  gem 'spring-commands-rspec'
   #gem "rb-readline", "~> 0.5.0"
   #gem 'rack-mini-profiler'
   #gem 'spring'
